@@ -1,6 +1,6 @@
 title: Sagar
 logo: /img/panda.svg
-favicon: "/img/panda.svg"
+favicon: /img/panda.svg
 description: DevOps Engineer
 show_downloads: true
 theme: jekyll-theme-minimal
