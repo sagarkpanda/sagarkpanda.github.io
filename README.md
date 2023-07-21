@@ -27,7 +27,6 @@
    <source media="(prefers-color-scheme: light)" srcset="img/Medium-dark.svg" width="105px" height="25px"> 
    <img alt="Medium Alternative Theme." src="img/Medium-dark.svg" width="105px" height="25px">
 </picture>
-</p>
 <!-- https://img.shields.io/badge/medium-%23E4405G.svg?&style=for-the-badge&logo=medium&logoColor=black&white -->
   
 <p align="left"> <strong> Tools and Technologies I work with : </strong> </p> 
