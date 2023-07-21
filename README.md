@@ -99,7 +99,7 @@ https://raw.githubusercontent.com/devicons/devicon/develop/icons/gitlab/gitlab-o
 &nbsp; -->
 <br><br>
 
-**📕 Latest Posts :**
+<b>📕 Latest Posts : <b>
 
 <!-- BLOG-POST-LIST:START -->
 
