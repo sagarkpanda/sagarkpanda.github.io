@@ -91,12 +91,13 @@ https://raw.githubusercontent.com/devicons/devicon/develop/icons/gitlab/gitlab-o
 
 <img align="left" alt="Prometheus" width="26px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/prometheus/prometheus-original.svg" style="padding-right:10px;" />
 
-<img align="left" alt="Grafana" width="26px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" />
+<img align="left" alt="Grafana" width="26px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" /> <br>
 
-\
+<!--\
 &nbsp;
 \
-&nbsp;
+&nbsp; -->
+<br><br>
 
 **📕 Latest Posts :**
 
