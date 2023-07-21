@@ -23,9 +23,9 @@
 
 <a href = "https://sagarkrp.medium.com">
 <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="images/Medium-white1x.png" width="105px" height="25px">
-   <source media="(prefers-color-scheme: light)" srcset="images/Medium-dark.svg" width="105px" height="25px"> 
-   <img alt="Medium Alternative Theme." src="images/Medium-dark.svg" width="105px" height="25px">
+   <source media="(prefers-color-scheme: dark)" srcset="img/Medium-white1x.png" width="105px" height="25px">
+   <source media="(prefers-color-scheme: light)" srcset="img/Medium-dark.svg" width="105px" height="25px"> 
+   <img alt="Medium Alternative Theme." src="img/Medium-dark.svg" width="105px" height="25px">
 </picture>
 </p> 
 <!-- https://img.shields.io/badge/medium-%23E4405G.svg?&style=for-the-badge&logo=medium&logoColor=black&white -->
@@ -101,15 +101,5 @@ https://raw.githubusercontent.com/devicons/devicon/develop/icons/gitlab/gitlab-o
 **📕 Latest Posts :**
 
 <!-- BLOG-POST-LIST:START -->
-- [Terraform — Understanding the .tfstate file](https://sagarkrp.medium.com/understanding-the-tfstate-in-terrafrom-a8c9d78cabeb?source=rss-9505e5fe7f15------2)
-- [Terraform on AWS — Outputs, Indexing and Variables](https://sagarkrp.medium.com/terraform-on-aws-outputs-indexing-and-variables-db2608e087fd?source=rss-9505e5fe7f15------2)
-- [Kubernetes — Exploring ReplicaSet, Service types &amp; Deployment](https://medium.com/cloud-native-daily/kubernetes-exploring-replicaset-service-types-deployment-d8e5ddad488c?source=rss-9505e5fe7f15------2)
-- [Infrastructure Automation: Terraform 101](https://sagarkrp.medium.com/infrastructure-automation-terraform-101-54eeaa357169?source=rss-9505e5fe7f15------2)
-- [Kubernetes Deep Dive — Pods, Pull Policy, Labels &amp; Selectors](https://medium.com/cloud-native-daily/kubernetes-deep-dive-pods-pull-policy-labels-selectors-2bba5200ec5c?source=rss-9505e5fe7f15------2)
+
 <!-- BLOG-POST-LIST:END -->
-
-
-<!---
-sagarkrp/sagarkrp is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
