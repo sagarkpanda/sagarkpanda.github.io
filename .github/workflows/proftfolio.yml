@@ -1,5 +1,8 @@
 name: Latest portfolio
 on:
+  push:
+    branches:
+      - main
   schedule:
       # Runs at the end of every day
       - cron: '30 4 * * *'
@@ -14,6 +17,7 @@ jobs:
         - uses: kaustubhgupta/PortfolioFy@main
           with:
             gh_token: ${{ secrets.TOKEN }}
+            stats_choice: 3
             blogs: True
             theme: 2
             hackathons: False
