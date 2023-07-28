@@ -34,3 +34,7 @@ jobs:
         with:
 
           feed_list: "https://sagarkrp.medium.com/feed"
+          max_post_count: 10
+          readme_path: index.html
+          template: "<h2 class='h2-blog'><a class='a-lightblue' href=$url>$title</a></h2>"
+          gh_token: ${{ secrets.TOKEN }}
