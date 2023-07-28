@@ -35,4 +35,3 @@ jobs:
 
           feed_list: "https://sagarkrp.medium.com/feed"
           max_post_count: 10
-          readme_path: index.html
