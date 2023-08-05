@@ -92,6 +92,9 @@ https://raw.githubusercontent.com/devicons/devicon/develop/icons/gitlab/gitlab-o
 
 <img align="left" alt="Grafana" width="26px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" /> <br>
 
+<br>
+<p align="left"> <strong> <a href="https://sagarkrp.github.io"> Visit my portfolio </a></strong> </p> 
+
 <!--
 
 &nbsp;
