@@ -92,15 +92,16 @@ https://raw.githubusercontent.com/devicons/devicon/develop/icons/gitlab/gitlab-o
 
 <img align="left" alt="Grafana" width="26px" src="https://raw.githubusercontent.com/devicons/devicon/develop/icons/grafana/grafana-original.svg" style="padding-right:10px;" /> <br>
 
+<!--
 
 &nbsp;
 \
 &nbsp; 
 <br><br> 
 
-<b>📕 Latest Posts : <b>
+<b>📕 Latest Posts : <b> 
 
-<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:START 
 - [Delving into the World of Deployments in Kubernetes](https://medium.com/cloud-native-daily/delving-into-the-world-of-deployments-in-kubernetes-61f75a05b8a5?source=rss-9505e5fe7f15------2)
 - [Terraform — Understanding the .tfstate file](https://sagarkrp.medium.com/understanding-the-tfstate-in-terrafrom-a8c9d78cabeb?source=rss-9505e5fe7f15------2)
 - [Terraform on AWS — Outputs, Indexing and Variables](https://sagarkrp.medium.com/terraform-on-aws-outputs-indexing-and-variables-db2608e087fd?source=rss-9505e5fe7f15------2)
