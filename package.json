@@ -2,7 +2,7 @@
   "private": true,
   "name": "Portfolio_website",
   "homepage": "sagarkrp.github.io",
-  "version": "1.0",
+  "version": "0.1.0",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
