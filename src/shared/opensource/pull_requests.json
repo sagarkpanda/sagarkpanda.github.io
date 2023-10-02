@@ -1,0 +1,51 @@
+{
+  "closed": 0,
+  "data": [
+    {
+      "id": "",
+      "title": "",
+      "url": "",
+      "state": "",
+      "mergedBy": null,
+      "createdAt": "",
+      "number": 0,
+      "changedFiles": 0,
+      "additions": 0,
+      "deletions": 0,
+      "baseRepository": {
+        "name": "",
+        "url": "",
+        "owner": {
+          "avatarUrl": "",
+          "login": "",
+          "url": ""
+        }
+      }
+    },
+
+    {
+      "id": "",
+      "title": "",
+      "url": "",
+      "state": "",
+      "mergedBy": null,
+      "createdAt": "",
+      "number": 0,
+      "changedFiles": 0,
+      "additions": 0,
+      "deletions": 0,
+      "baseRepository": {
+        "name": "",
+        "url": "",
+        "owner": {
+          "avatarUrl": "",
+          "login": "",
+          "url": ""
+        }
+      }
+    }
+  ],
+  "merged": 0,
+  "open": 0,
+  "totalCount": 0
+}
