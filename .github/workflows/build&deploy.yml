@@ -46,13 +46,12 @@ jobs:
        name: my-artifact
        path: build/ # or path/to/artifact
 
-    - name: download artifact
-    - uses: actions/checkout@v3
-
-    - uses: actions/download-artifact@v3
-      with:
-       name: my-artifact
-       path: build/
+    #- name: download artifact
+    #- uses: actions/checkout@v3
+   # - uses: actions/download-artifact@v3
+     # with:
+     #  name: my-artifact
+     #  path: build/
        
    # - name: Push
     #  uses: s0/git-publish-subdir-action@develop
