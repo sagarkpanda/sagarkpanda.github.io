@@ -40,7 +40,6 @@ jobs:
     # - run: npm run build --if-present
     # # - run: npm test
     
-    - name: upload artifact
     - uses: actions/upload-artifact@v3
       with:
        name: my-artifact
