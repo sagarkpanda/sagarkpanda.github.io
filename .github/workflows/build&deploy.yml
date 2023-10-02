@@ -49,7 +49,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
        name: my-artifact
-       path: build/
+       path: ../../../build/
        
    # - name: Push
     #  uses: s0/git-publish-subdir-action@develop
