@@ -1,0 +1,59 @@
+{
+  "closed": 0,
+  "data": [
+    {
+      "id": "",
+      "closed": false,
+      "title": "",
+      "createdAt": "",
+      "url": "",
+      "number": 0,
+      "assignees": {
+        "nodes": [
+          {
+            "avatarUrl": "",
+            "name": "",
+            "url": ""
+          },
+          {
+            "avatarUrl": "",
+            "name": "",
+            "url": ""
+          }
+        ]
+      },
+      "repository": {
+        "name": "",
+        "url": "",
+        "owner": {
+          "login": "",
+          "avatarUrl": "",
+          "url": ""
+        }
+      }
+    },
+
+    {
+      "id": "",
+      "closed": false,
+      "title": "",
+      "createdAt": "",
+      "url": "",
+      "number": 1,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "",
+        "url": "",
+        "owner": {
+          "login": "",
+          "avatarUrl": "",
+          "url": ""
+        }
+      }
+    }
+  ],
+  "open": 0,
+  "totalCount": 0
+}
