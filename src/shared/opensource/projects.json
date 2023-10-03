@@ -5,16 +5,20 @@
       "name": "Kubernetes Orchestration",
       "createdAt": "2020-03-06T16:26:54Z",
       "url": "https://github.com/sagarkrp/KubernetesOrchestra",
-      "description": "Demonostartation of kuberntes",
+      "description": "Kuberntes key concepts",
       "isFork": false,
       "languages": [
+        {
+          "name": "K8s",
+          "iconifyClass": "logos:kubernetes"
+        }
         {
           "name": "YAML",
           "iconifyClass": "devicon:yaml"
         },
         {
           "name": "Docker",
-          "iconifyClass": "logos:docker-icon"
+          "iconifyClass": "logos:docker"
         }
       ]
     },
@@ -23,7 +27,7 @@
       "name": "FileMovementPy",
       "createdAt": "2022-02-13T20:41:33Z",
       "url": "",
-      "description": "📦 PyTorch based app for operating on files and database.",
+      "description": "Python based app for operating on files and database.",
       "isFork": false,
       "languages": [
         {
@@ -38,19 +42,71 @@
     },
     {
       "id": "",
-      "name": "Monito&Alert",
+      "name": "NGINX Load Balancer with Docker Compose",
+      "createdAt": "2022-02-13T20:41:33Z",
+      "url": "https://github.com/sagarkrp/NGINX_LB_DockerCompose",
+      "description": "🚀 Pyhton and Node JS application running as docker containers with load balancing",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Node.js",
+          "inconifyClass": "logos:nodejs"
+        }
+        {
+          "name": "Docker Compose",
+          "inconifyClass": "devicon:docker-wordmark"
+        }
+        {
+          "name": "NGINX",
+          "inconifyClass": "devicon:nginx"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "SonarQube Gradle CI/CD with Jenkins and Github Action",
+      "createdAt": "2022-02-13T20:41:33Z",
+      "url": "https://github.com/sagarkrp/SonarQubewithGradle_Pipeline",
+      "description": "Python based app for operating on files and database.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Jenkins",
+          "iconifyClass": "logos:jenkins"
+        },
+        {
+          "name": "SonarQube",
+          "inconifyClass": "logos:sonarqube"
+        }
+         {
+          "name": "Github Actions",
+          "inconifyClass": "devicon:githubactions"
+        }
+        {
+          "name": "Gradle",
+          "inconifyClass": "devicon:gradle-wordmark"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Monitor&Alert",
       "createdAt": "2022-02-11T14:50:20Z",
-      "url": "https://github.com/ashutosh1919/react-awesome-shapes",
-      "description": "🌀 Insert Awesome Shapes into Your React Site with Ease.",
+      "url": "https://github.com/sagarkrp/Monitoring_With_Prometheus-and-Grafana",
+      "description": "🌀 Monitoring with Prometheu and Grafna",
       "isFork": false,
       "languages": [
         {
           "name": "Prometheus",
-          "iconifyClass": "logos:prometheus"
+          "iconifyClass": "devicon:prometheus-wordmark"
         },
         {
-          "name": "CSS",
-          "iconifyClass": "logos:grafana"
+          "name": "Grafana",
+          "iconifyClass": "devicon:grafana-wordmark"
         }
       ]
     }
