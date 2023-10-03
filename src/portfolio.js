@@ -196,7 +196,7 @@ const certifications = {
       certificate_link:
         "https://www.udemy.com/certificate/UC-4d0092fe-d099-4aff-a5a4-c0fefbdd678f/",
       alt_name: "aws",
-      color_code: "#00000099",
+      color_code: "8C151599",
     },
 
   ],
@@ -229,7 +229,7 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "Associate Software Engineer",
+          title: "DevOps Engineer",
           company: "Valeo",
           company_url: "https://valeo.com/",
           logo_path: "Valeo.png",
