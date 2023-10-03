@@ -11,7 +11,7 @@
         {
           "name": "K8s",
           "iconifyClass": "logos:kubernetes"
-        }
+        },
         {
           "name": "YAML",
           "iconifyClass": "devicon:yaml"
@@ -55,11 +55,11 @@
         {
           "name": "Node.js",
           "inconifyClass": "logos:nodejs"
-        }
+        },
         {
           "name": "Docker Compose",
           "inconifyClass": "devicon:docker-wordmark"
-        }
+        },
         {
           "name": "NGINX",
           "inconifyClass": "devicon:nginx"
@@ -81,11 +81,11 @@
         {
           "name": "SonarQube",
           "inconifyClass": "logos:sonarqube"
-        }
+        },
          {
           "name": "Github Actions",
           "inconifyClass": "devicon:githubactions"
-        }
+        },
         {
           "name": "Gradle",
           "inconifyClass": "devicon:gradle-wordmark"
