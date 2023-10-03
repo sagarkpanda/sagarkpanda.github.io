@@ -46,7 +46,7 @@ jobs:
         
     - name : Build React app
    # - run: npm ci
-      run: npm run build --if-present
+      run: npm install && npm run build --if-present
     #- run: npm run deploy
 
     - name: Deploy
