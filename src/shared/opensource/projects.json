@@ -20,7 +20,7 @@
     },
     {
       "id": "",
-      "name": "explainable-cnn",
+      "name": "FileMovementPy",
       "createdAt": "2022-03-13T20:41:33Z",
       "url": "https://github.com/ashutosh1919/explainable-cnn",
       "description": "📦 PyTorch based visualization package for generating layer-wise explanations for CNNs.",
@@ -29,6 +29,10 @@
         {
           "name": "Python",
           "iconifyClass": "logos-python"
+        }
+        {
+          "name": "SQL",
+          "inconifyClass": "logos-mysql"
         }
       ]
     },
