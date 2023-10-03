@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "485b34b7e2feb1da3f60af1fa7e0db6e",
+    "revision": "c4a930f0d93996019c623075f6ace6cc",
     "url": "sagarkrp.github.io/index.html"
   },
   {
-    "revision": "42d20a822ac4f01bec14",
-    "url": "sagarkrp.github.io/static/css/main.f5da3243.chunk.css"
+    "revision": "8995d254aea70160dc7d",
+    "url": "sagarkrp.github.io/static/css/main.3d50adf1.chunk.css"
   },
   {
-    "revision": "23b90015b32972bc35a6",
-    "url": "sagarkrp.github.io/static/js/2.ecf7943e.chunk.js"
+    "revision": "c5a7be9ba57c444f6277",
+    "url": "sagarkrp.github.io/static/js/2.7728adb0.chunk.js"
   },
   {
-    "revision": "42d20a822ac4f01bec14",
-    "url": "sagarkrp.github.io/static/js/main.fe5bddc3.chunk.js"
+    "revision": "8995d254aea70160dc7d",
+    "url": "sagarkrp.github.io/static/js/main.45b82bb4.chunk.js"
   },
   {
     "revision": "56db80f22260707df9a8",
