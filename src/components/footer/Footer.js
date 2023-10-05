@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Fade } from "react-reveal";
 //import { greeting } from "../../portfolio.js";
-import footericon from "src/assests/font-awesome/svgs/brands/react.svg"
+//import footericon from "src/assests/font-awesome/svgs/brands/react.svg"
 /* eslint-disable jsx-a11y/accessible-emoji */
 
 export default function Footer(props) {
@@ -11,9 +11,9 @@ export default function Footer(props) {
       <Fade>
         <p className="footer-text" style={{ color: props.theme.secondaryText }}>
 {/* Made with <span role="img">❤️</span> by {greeting.title} */}
-const svgElement = document.getElementById('my-svg');
+// const svgElement = document.getElementById('my-svg');
 
-svgElement.innerHTML = footericon;
+// svgElement.innerHTML = footericon;
 
         </p>
         {/* <ToggleSwitch theme={props.theme} onToggle={props.onToggle}/> */}
