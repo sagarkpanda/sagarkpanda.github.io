@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Fade } from "react-reveal";
 //import { greeting } from "../../portfolio.js";
-import footericon from './src/assests/font-awesome/svgs/brands/react.svg'
+import footericon from '../src/assests/font-awesome/svgs/brands/react.svg'
 /* eslint-disable jsx-a11y/accessible-emoji */
 
 export default function Footer(props) {
