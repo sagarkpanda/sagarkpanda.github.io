@@ -59,8 +59,9 @@ const skills = {
       fileName: "CloudInfraImg",
       skills: [
         "⚡ Experience working on multiple cloud platforms",
-        "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
-        "⚡ Setting up streaming jobs from DB to Server or vice-versa on GCP and AWS",
+        "⚡ Setting up Virtual Machines with Web servers and DB servers"
+        "⚡ Hosting and maintaining webapps along with integration of databases",
+        "⚡ Setup Monitoring and APM and varoius others activities"
       ],
       softwareSkills: [
         {
