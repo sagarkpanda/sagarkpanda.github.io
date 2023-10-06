@@ -233,7 +233,7 @@ const experience = {
           title: "DevOps Engineer",
           company: "Valeo",
           company_url: "https://valeo.com/",
-          logo_path: "Valeo.png",
+          logo_path: "valeo_full.png",
           duration: "June 2018 - Present",
           location: "Chennai, India",
           description:
