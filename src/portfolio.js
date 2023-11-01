@@ -410,7 +410,7 @@ const projectsHeader = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "panda.jpg",
+    profile_image_path: "panda.png",
     description:
       "I am available on Linkedin. You can message me, I will try to reply within 24 hours.",
   },
