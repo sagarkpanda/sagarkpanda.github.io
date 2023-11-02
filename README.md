@@ -5,4 +5,8 @@
 
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/sagarkrp/sagarkrp.github.io/react.yml?style=Plastic%20&logo=Github%20actions&label=actions&link=sagarkrp.github.io&link=sagarkrp.medium.com)
 
+
+<img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/sagarkrp/sagarkrp.github.io/react.yml?style=Plastic&logo=GitHub%20actions&link=sagarkrp.github.io&link=sagarkrp.medium.com">
+
+
 Based on <a href="https://github.com/ashutosh1919/masterPortfolio"> Masterportfolio </a>
