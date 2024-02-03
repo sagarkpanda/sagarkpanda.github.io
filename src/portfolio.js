@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Sagar's Portfolio",
     type: "website",
-    url: "https://sagarkrp.github.io",
+    url: "https://sagarcodectrl.github.io",
   },
 };
 
@@ -26,19 +26,19 @@ const greeting = {
     "A passionate Software Engineer focused on Cloud and DevOps automation",
 
   // portfolio_repository: "https://github.com/ashutosh1919/masterPortfolio",
-  githubProfile: "https://github.com/sagarkrp",
+  githubProfile: "https://github.com/sagarcodectrl",
 };
 
 const socialMediaLinks = [
   {
     name: "Github",
-    link: "https://github.com/sagarkrp",
+    link: "https://github.com/sagarcodectrl",
     fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
     backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/sagarkrp/",
+    link: "https://www.linkedin.com/in/sagarkpanda/",
     fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
     backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
   },
