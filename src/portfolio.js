@@ -418,7 +418,7 @@ const contactPageData = {
     title: "Blogs",
     subtitle:
       "For individual fundamental empowerment, I do a lot of experminet on the filed of Cloud and DevOps that I share on Medium.com so other entusiasts can experience the same.",
-    link: "https://sagarkrp.medium.com/",
+    link: "https://sagarcodectrl.medium.com/",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
