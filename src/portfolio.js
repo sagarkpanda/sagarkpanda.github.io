@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Sagar's Portfolio",
     type: "website",
-    url: "https://sagarcodectrl.github.io",
+    url: "sagarkpanda.medium.com",
   },
 };
 
@@ -26,13 +26,13 @@ const greeting = {
     "A passionate Software Engineer focused on Cloud and DevOps automation",
 
   // portfolio_repository: "https://github.com/ashutosh1919/masterPortfolio",
-  githubProfile: "https://github.com/sagarcodectrl",
+  githubProfile: "https://github.com/sagarkpanda",
 };
 
 const socialMediaLinks = [
   {
     name: "Github",
-    link: "https://github.com/sagarcodectrl",
+    link: "https://github.com/sagarkpanda",
     fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
     backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
   },
@@ -418,7 +418,7 @@ const contactPageData = {
     title: "Blogs",
     subtitle:
       "For individual fundamental empowerment, I do a lot of experminet on the filed of Cloud and DevOps that I share on Medium.com so other entusiasts can experience the same.",
-    link: "https://sagarcodectrl.medium.com/",
+    link: "https://sagarkpanda.medium.com/",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
