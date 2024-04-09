@@ -29,7 +29,7 @@ jobs:
     steps:
 
     - name: Restore node_modules from cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
        path: |
          node_modules
@@ -37,9 +37,9 @@ jobs:
        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
     # - name: Production build
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Production build
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '16.x'
         #${{ matrix.node-version }}
