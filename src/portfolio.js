@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Sagar's Portfolio",
     type: "website",
-    url: "sagarkpanda.medium.com",
+    url: "sagarpanda.com",
   },
 };
 
@@ -46,7 +46,7 @@ const socialMediaLinks = [
   {
     name: "Mail",
     link: "mailto:sagar.chip239@aleeas.com",
-    fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
+    fontAwesomeIcon: "fa-at", // Reference https://fontawesome.com/icons/google?style=brands
     backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
   },
 
