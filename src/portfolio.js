@@ -46,7 +46,7 @@ const socialMediaLinks = [
   {
     name: "Mail",
     link: "mailto:sagar.chip239@aleeas.com",
-    fontAwesomeIcon: "fa-at", // Reference https://fontawesome.com/icons/google?style=brands
+    fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
     backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
   },
 
