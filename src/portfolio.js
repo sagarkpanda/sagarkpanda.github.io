@@ -237,7 +237,7 @@ const experience = {
           duration: "June 2018 - Present",
           location: "Chennai, India",
           description:
-            "Working on CI/CD Platform autoamtion for automotive solutions. Tools and Technologies in use are AWS, Jenkins, Ansible, Python, Nexus, Clockwork SAST. Other Tools and technologies I have used: Docker, Kubernetes, Terraform, Linux, Git, SonarQube, Linux, Apache & NGINX webservers, Prometheus, Grafana, New Relic etc",
+            "Working on CI/CD Platform autoamtion for automotive solutions. Tools and Technologies in use are AWS, Jenkins, Ansible, Python, Nexus, Klocwork SAST. Other Tools and technologies I have used: Docker, Kubernetes, Terraform, Linux, Git, SonarQube, Apache & NGINX webservers, Prometheus, Grafana, New Relic etc",
           color: "#0879bf",
         },
 
