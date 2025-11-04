@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4ff26c36b1bced393a61226b85cc5b85",
+    "revision": "75ea3475cd548eeddab9beb3067605fd",
     "url": "/index.html"
   },
   {
-    "revision": "c63bc972efd420de8cb0",
+    "revision": "b451eb1a62b45544addf",
     "url": "/static/css/main.e7f0be06.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.2ae41eca.chunk.js"
   },
   {
-    "revision": "c63bc972efd420de8cb0",
-    "url": "/static/js/main.9c6268e5.chunk.js"
+    "revision": "b451eb1a62b45544addf",
+    "url": "/static/js/main.9419d895.chunk.js"
   },
   {
     "revision": "a90bbcbf66962bc9d3e2",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Montserrat-Regular.ee653992.ttf"
   },
   {
-    "revision": "6559dcb868b1a76b76ab8c435187d76a",
-    "url": "/static/media/Valeo.6559dcb8.png"
+    "revision": "75c05553ea217fb3d5ae95ee43b7f6b0",
+    "url": "/static/media/Wipro.75c05553.png"
   },
   {
     "revision": "16559172ca1d4d552390b48f19e102ba",
