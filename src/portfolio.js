@@ -230,11 +230,22 @@ const experience = {
       work: true,
       experiences: [
         {
+          title: "Sr. DevOps Engineer",
+          company: "Wipro",
+          company_url: "https://wipro.com/",
+          logo_path: "Wipro.png",
+          duration: "November 2024 - Present",
+          location: "Chennai, India",
+          description:
+            "Working on CI/CD Platform autoamtion. Tools and Technologies in use are AWS, Jenkins, Docker, Kubernetes, Terraform, Linux, Git, Prometheus, Grafana, New Relic etc",
+          color: "#0879bf",
+        },
+        {
           title: "DevOps Engineer",
           company: "Valeo",
           company_url: "https://valeo.com/",
           logo_path: "valeo_full.png",
-          duration: "June 2018 - Present",
+          duration: "June 2018 - October 2024",
           location: "Chennai, India",
           description:
             "Working on CI/CD Platform autoamtion for automotive solutions. Tools and Technologies in use are AWS, Jenkins, Ansible, Python, Nexus, Klocwork SAST. Other Tools and technologies I have used: Docker, Kubernetes, Terraform, Linux, Git, SonarQube, Apache & NGINX webservers, Prometheus, Grafana, New Relic etc",
