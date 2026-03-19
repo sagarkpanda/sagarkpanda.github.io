@@ -602,7 +602,7 @@ params:
         - icon: fab fa-telegram
           url: https://t.me/artisticw1zard
           tooltip: "Telegram"
-        - icon: fas fa-blog
+        - icon: fas fa-newspaper
           url: /blogs
           tooltip: "Blog"
       # customIcons:
