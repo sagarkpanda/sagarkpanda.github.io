@@ -1,4 +1,6 @@
-baseURL: "https://sagarkpanda.github.io/portfolio"
+baseURL: "https://sagarkpanda.github.io/portfolio/"
+relativeURLs: true
+canonifyURLs: true
 languageCode: "en-us"
 title: "Sagar Panda"
 Description: "DevOps Engineer specializing in cloud infrastructure, CI/CD and Kubernetes."
