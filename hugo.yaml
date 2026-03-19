@@ -1,0 +1,915 @@
+baseURL: "https://sagarkpanda.github.io/portfolio"
+languageCode: "en-us"
+title: "Sagar Panda"
+Description: "DevOps Engineer specializing in cloud infrastructure, CI/CD and Kubernetes."
+theme: hugo-profile
+
+
+# Multilingual configuration
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    contentDir: "content"
+    menu:
+      main:
+        - identifier: blog
+          name: Blog
+          title: Blog posts
+          url: /blogs
+          weight: 1
+        # - identifier: gallery
+        #   name: Gallery
+        #   title: Image gallery
+        #   url: /gallery
+        #   weight: 2
+  # es:
+  #   languageName: "Español"
+  #   weight: 2
+  #   contentDir: "content/es"
+  #   menu:
+  #     main:
+  #       - identifier: blog
+  #         name: Blog
+  #         title: Publicaciones del blog
+  #         url: /es/blogs
+  #         weight: 1
+  #       - identifier: gallery
+  #         name: Galería
+  #         title: Galería de imágenes
+  #         url: /es/gallery
+  #         weight: 2
+  #   params:
+  #     hero:
+  #       intro: "Hola, mi nombre es"
+  #       title: "Isabella."
+  #       subtitle: "Construyo cosas para la web"
+  #       content: "Una desarrolladora apasionada de aplicaciones web. Tiendo a hacer uso de tecnologías web modernas para construir sitios web que se ven geniales, se sienten fantásticos y funcionan correctamente."
+  #       button:
+  #         name: "Currículum"
+  #     about:
+  #       title: "Sobre Mí"
+  #       content: |-
+  #         Soy una desarrolladora de software con pasión por el desarrollo web. Tengo experiencia en ciencias de la computación y matemáticas, y tengo un fuerte interés en la intersección de la tecnología y el arte. Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA.
+
+  #         Actualmente estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad.
+  #       skills:
+  #         title: "Aquí hay algunas tecnologías con las que he estado trabajando recientemente:"
+  #     experience:
+  #       items:
+  #         - company: "Facebook"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Desarrolladora Senior de Software"
+  #               date: "Ene 2023 - presente"
+  #               content: "Actualmente trabajo como desarrolladora senior de software en [ejemplo org.](https://example.com) en San Francisco, CA. Estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad."
+  #               info:
+  #                 content: Trabajando como desarrolladora senior de software
+  #               featuredItems:
+  #                 fontAwesomeIcons:
+  #                   - icon: fa-brands fa-react
+  #                     url: https://react.dev/
+  #                     tooltip: Contenido de ejemplo de tooltip
+  #                   - icon: fab fa-x-twitter
+  #                     url: https://example.com
+  #                 customIcons:
+  #                   - icon: /fav.png
+  #                     url: "https://example.com"
+  #                     tooltip: Contenido de ejemplo de tooltip
+  #             - name: "Desarrolladora de Software"
+  #               date: "Ene 2022 - Dic 2023"
+  #               content: "Trabajé como desarrolladora de software. Trabajé en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad."
+  #         - company: "Amazon"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Desarrolladora de Software"
+  #               date: "Sep 2020 - Dic 2021"
+  #               info:
+  #                 content: Trabajé como desarrolladora de software durante más de un año en Amazon.
+  #               content: |
+  #                 Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA. Estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad.
+
+  #                 - Desarrolladora backend principal de un producto.
+  #                 - Creé un diseño frontend para un producto.
+  #         - company: "Apple"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Desarrolladora Junior de Software"
+  #               date: "Ene 2020 - Ago 2020"
+  #               featuredItems:
+  #                 fontAwesomeIcons:
+  #                   - icon: fa-brands fa-react
+  #                     url: https://react.dev/
+  #                   - icon: fab fa-x-twitter
+  #                     url: https://example.com
+  #                 customIcons:
+  #                   - icon: /fav.png
+  #                     url: "https://example.com"
+  #               content: |
+  #                 Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA. Estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad.
+
+  #                 - Desarrolladora backend principal de un producto.
+  #                 - Creé un diseño frontend para un producto.
+  #         - company: "Netflix"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Diseñadora UI/UX"
+  #               date: "Junio 2017 - Nov 2019"
+  #               content: |
+  #                 Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA. Estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad.
+
+  #                 - Desarrolladora backend principal de un producto.
+  #                 - Creé un diseño frontend para un producto.
+  #         - company: "Google"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Diseñadora de Productos"
+  #               date: "Feb 2016 - Mar 2017"
+  #               content: "Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA. Estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad."
+  #     education:
+  #       items:
+  #         - title: "Maestría en Administración de Empresas"
+  #           school:
+  #             name: "Universidad de California, Berkeley"
+  #             url: "https://example.org"
+  #           date: "2013 - 2015"
+  #           GPA: "3.8 de 5.0"
+  #           content: |-
+  #             Actividades Extracurriculares
+  #               - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  #               - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+  #         - title: "Licenciatura en Ciencias de la Computación"
+  #           school:
+  #             name: "Instituto Tecnológico de Massachusetts"
+  #             url: "https://example.org"
+  #           date: "2009 - 2013"
+  #           GPA: "3.9 de 5.0"
+  #           content: |-
+  #             Publiqué dos artículos en la Conferencia ACM SIGCHI sobre Inteligencia Artificial.
+  #             - [Detección de Objetos Rápida y Precisa con una Red Neuronal Convolucional](https://example.com)
+  #             - Detección de mascarillas faciales usando una red neuronal convolucional.
+
+  #             Actividades Extracurriculares
+  #               - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  #               - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+  #           featuredLink:
+  #             enable: true
+  #             name: "Mi expediente académico"
+  #             url: "https://example.com"
+  #         - title: "Escuela Secundaria"
+  #           school:
+  #             name: "Escuela Secundaria Thomas Jefferson para Ciencia y Tecnología."
+  #             url: "https://example.org"
+  #           GPA: "4.2 de 5.0"
+  #           featuredLink:
+  #             enable: true
+  #             url: "https://example.com"
+  #     projects:
+  #       items:
+  #         - title: Hugo Profile
+  #           content: Una plantilla Hugo altamente personalizable y centrada en dispositivos móviles para portafolio personal y blog.
+  #           image: /images/projects/profile.png
+  #           featured:
+  #             name: Demo
+  #             link: https://hugo-profile.netlify.app
+  #           badges:
+  #             - "Hugo"
+  #             - "Bootstrap"
+  #             - "Javascript"
+  #           links:
+  #             - icon: fa fa-envelope
+  #               url: mailto:?subject=Plantilla%20Hugo%20Profile&body=Échale%20un%20vistazo:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/hugo-profile
+  #             - icon: fab fa-twitter
+  #               url: https://twitter.com/intent/tweet?text=Échale+un+vistazo:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+  #         - title: Conversor de Imágenes
+  #           content: Una aplicación web para convertir imágenes a pdf, png a jpg, png a jpg y png a webp sin base de datos usando django.
+  #           image: /images/projects/converter.jpg
+  #           featured:
+  #             name: Demo
+  #             link: https://django-converter.herokuapp.com
+  #           badges:
+  #             - "Django"
+  #             - "Bootstrap"
+  #           links:
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/converter
+  #         - title: Hugo Profile V2
+  #           content: Una plantilla Hugo limpia y simple para portafolio personal y blog.
+  #           image: /images/projects/profile2.jpg
+  #           featured:
+  #             name: Demo V2
+  #             link: https://hugo-profile-2.netlify.app
+  #           badges:
+  #             - "Hugo"
+  #             - "Bootstrap"
+  #             - "Javascript"
+  #           links:
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/HugoProfileV2
+  #     achievements:
+  #       items:
+  #         - title: Finalista de Google Kickstart
+  #           content: Resolví todos los problemas con solución óptima.
+  #           url: https://example.com
+  #           image: /images/achievement.jpg
+  #         - title: Ganador del Hackathon de Facebook
+  #           content: Desarrollé un producto usando Inteligencia Artificial.
+  #           image: /images/achievement.jpg
+  #         - title: Hugo Profile
+  #           content: Desarrollé un tema y obtuve más de 1K descargas por mes.
+  #           url: "https://github.com/gurusabarish/hugo-profile"
+  #           image: /images/achievement.jpg
+  #         - title: Finalista de Microsoft Imagine
+  #           content: Desarrollamos un producto que puede ayudar a otros.
+  #         - title: Google Summer of Code
+  #           content: Contribuí a un proyecto de código abierto.
+  #           url: https://example.com
+  #     contact:
+  #       content: Mi bandeja de entrada siempre está abierta. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible para responderte!
+  #       btnName: Escríbeme
+  # fr:
+  #   contentDir: "content/fr"
+  #   languageName: "Français"
+  #   weight: 3
+  #   menu:
+  #     main:
+  #       - identifier: blog
+  #         name: Blog
+  #         title: Articles de blog
+  #         url: /fr/blogs
+  #         weight: 1
+  #       - identifier: gallery
+  #         name: Galerie
+  #         title: Galerie d'images
+  #         url: /fr/gallery
+  #         weight: 2
+  #   params:
+  #     hero:
+  #       intro: "Bonjour, je m'appelle"
+  #       title: "Isabella."
+  #       subtitle: "Je construis des choses pour le web"
+  #       content: "Une développeuse passionnée d'applications web. J'ai tendance à utiliser des technologies web modernes pour créer des sites web qui ont fière allure, qui sont agréables et qui fonctionnent correctement."
+  #       button:
+  #         name: "CV"
+  #     about:
+  #       title: "À Propos de Moi"
+  #       content: |-
+  #         Je suis une développeuse de logiciels passionnée par le développement web. J'ai une formation en informatique et en mathématiques, et je m'intéresse vivement à l'intersection de la technologie et de l'art. Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA.
+
+  #         Je travaille actuellement sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville.
+  #       skills:
+  #         title: "Voici quelques technologies avec lesquelles j'ai travaillé récemment:"
+  #     experience:
+  #       items:
+  #         - company: "Facebook"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Développeuse Senior de Logiciels"
+  #               date: "Jan 2023 - présent"
+  #               content: "Je travaille actuellement comme développeuse senior de logiciels chez [exemple org.](https://example.com) à San Francisco, CA. Je travaille sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville."
+  #               info:
+  #                 content: Travaille comme développeuse senior de logiciels
+  #               featuredItems:
+  #                 fontAwesomeIcons:
+  #                   - icon: fa-brands fa-react
+  #                     url: https://react.dev/
+  #                     tooltip: Exemple de contenu d'info-bulle
+  #                   - icon: fab fa-x-twitter
+  #                     url: https://example.com
+  #                 customIcons:
+  #                   - icon: /fav.png
+  #                     url: "https://example.com"
+  #                     tooltip: Exemple de contenu d'info-bulle
+  #             - name: "Développeuse de Logiciels"
+  #               date: "Jan 2022 - Déc 2023"
+  #               content: "J'ai travaillé comme développeuse de logiciels. J'ai travaillé sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville."
+  #         - company: "Amazon"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Développeuse de Logiciels"
+  #               date: "Sep 2020 - Déc 2021"
+  #               info:
+  #                 content: J'ai travaillé comme développeuse de logiciels pendant plus d'un an chez Amazon.
+  #               content: |
+  #                 Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA. Je travaille sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville.
+
+  #                 - Développeuse backend principale pour un produit.
+  #                 - J'ai créé un design frontend pour un produit.
+  #         - company: "Apple"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Développeuse Junior de Logiciels"
+  #               date: "Jan 2020 - Août 2020"
+  #               featuredItems:
+  #                 fontAwesomeIcons:
+  #                   - icon: fa-brands fa-react
+  #                     url: https://react.dev/
+  #                   - icon: fab fa-x-twitter
+  #                     url: https://example.com
+  #                 customIcons:
+  #                   - icon: /fav.png
+  #                     url: "https://example.com"
+  #               content: |
+  #                 Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA. Je travaille sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville.
+
+  #                 - Développeuse backend principale pour un produit.
+  #                 - J'ai créé un design frontend pour un produit.
+  #         - company: "Netflix"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Designer UI/UX"
+  #               date: "Juin 2017 - Nov 2019"
+  #               content: |
+  #                 Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA. Je travaille sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville.
+
+  #                 - Développeuse backend principale pour un produit.
+  #                 - J'ai créé un design frontend pour un produit.
+  #         - company: "Google"
+  #           companyUrl: "https://example.com"
+  #           jobs:
+  #             - name: "Designer de Produits"
+  #               date: "Fév 2016 - Mar 2017"
+  #               content: "Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA. Je travaille sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville."
+  #     education:
+  #       items:
+  #         - title: "Master en Administration des Affaires"
+  #           school:
+  #             name: "Université de Californie, Berkeley"
+  #             url: "https://example.org"
+  #           date: "2013 - 2015"
+  #           GPA: "3.8 sur 5.0"
+  #           content: |-
+  #             Activités Extrascolaires
+  #               - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  #               - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+  #         - title: "Licence en Sciences Informatiques"
+  #           school:
+  #             name: "Institut de Technologie du Massachusetts"
+  #             url: "https://example.org"
+  #           date: "2009 - 2013"
+  #           GPA: "3.9 sur 5.0"
+  #           content: |-
+  #             J'ai publié deux articles lors de la Conférence ACM SIGCHI sur l'Intelligence Artificielle.
+  #             - [Détection d'Objets Rapide et Précise avec un Réseau de Neurones Convolutifs](https://example.com)
+  #             - Détection de masques faciaux à l'aide d'un réseau de neurones convolutifs.
+
+  #             Activités Extrascolaires
+  #               - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  #               - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+  #           featuredLink:
+  #             enable: true
+  #             name: "Mon dossier académique"
+  #             url: "https://example.com"
+  #         - title: "Lycée"
+  #           school:
+  #             name: "Lycée Thomas Jefferson pour les Sciences et la Technologie."
+  #             url: "https://example.org"
+  #           GPA: "4.2 sur 5.0"
+  #           featuredLink:
+  #             enable: true
+  #             url: "https://example.com"
+  #     projects:
+  #       items:
+  #         - title: Hugo Profile
+  #           content: Un modèle Hugo hautement personnalisable et axé sur le mobile pour portfolio personnel et blog.
+  #           image: /images/projects/profile.png
+  #           featured:
+  #             name: Démo
+  #             link: https://hugo-profile.netlify.app
+  #           badges:
+  #             - "Hugo"
+  #             - "Bootstrap"
+  #             - "Javascript"
+  #           links:
+  #             - icon: fa fa-envelope
+  #               url: mailto:?subject=Modèle%20Hugo%20Profile&body=Découvrez-le:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/hugo-profile
+  #             - icon: fab fa-twitter
+  #               url: https://twitter.com/intent/tweet?text=Découvrez-le:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+  #         - title: Convertisseur d'Images
+  #           content: Une application web pour convertir des images en pdf, png en jpg, png en jpg et png en webp sans base de données en utilisant django.
+  #           image: /images/projects/converter.jpg
+  #           featured:
+  #             name: Démo
+  #             link: https://django-converter.herokuapp.com
+  #           badges:
+  #             - "Django"
+  #             - "Bootstrap"
+  #           links:
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/converter
+  #         - title: Hugo Profile V2
+  #           content: Un modèle Hugo propre et simple pour portfolio personnel et blog.
+  #           image: /images/projects/profile2.jpg
+  #           featured:
+  #             name: Démo V2
+  #             link: https://hugo-profile-2.netlify.app
+  #           badges:
+  #             - "Hugo"
+  #             - "Bootstrap"
+  #             - "Javascript"
+  #           links:
+  #             - icon: fab fa-github
+  #               url: https://github.com/gurusabarish/HugoProfileV2
+  #     achievements:
+  #       items:
+  #         - title: Finaliste Google Kickstart
+  #           content: J'ai résolu tous les problèmes avec une solution optimale.
+  #           url: https://example.com
+  #           image: /images/achievement.jpg
+  #         - title: Gagnant du Hackathon Facebook
+  #           content: J'ai développé un produit utilisant l'Intelligence Artificielle.
+  #           image: /images/achievement.jpg
+  #         - title: Hugo Profile
+  #           content: J'ai développé un thème et j'obtiens plus de 1K téléchargements par mois.
+  #           url: "https://github.com/gurusabarish/hugo-profile"
+  #           image: /images/achievement.jpg
+  #         - title: Finaliste Microsoft Imagine
+  #           content: Nous avons développé un produit qui peut aider les autres.
+  #         - title: Google Summer of Code
+  #           content: J'ai contribué à un projet open source.
+  #           url: https://example.com
+  #     contact:
+  #       content: Ma boîte de réception est toujours ouverte. Que vous ayez une question ou que vous vouliez simplement dire bonjour, je ferai de mon mieux pour vous répondre!
+  #       btnName: Écrivez-moi
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+#services:
+  #googleAnalytics:
+    #id: G-MEASUREMENT_ID
+  #disqus:
+    #shortname: your-disqus-shortname
+
+pagination:
+  pagerSize: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: gallery
+      name: Gallery
+      title: Gallery
+      url: /gallery
+      weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Hugo Profile"
+  description: Personal Portfolio and Blog
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/images/circle_profile.png"
+
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    # fontSize: 1.1rem
+    # fontWeight: 400
+    # lineHeight: 1.7
+    # textAlign: left
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # When using hex codes for colors, quotations must be used along with the # sign
+  # color:
+  #   textColor: "#343a40"
+  #   secondaryTextColor: "#6c757d"
+  #   textLinkColor: "#007bff"
+  #   backgroundColor: "#eaedf0"
+  #   secondaryBackgroundColor: "#64ffda1a"
+  #   primaryColor: "#007bff"
+  #   secondaryColor: "#f8f9fa"
+
+  #   darkmode:
+  #     textColor: "#e4e6eb"
+  #     secondaryTextColor: "#b0b3b8"
+  #     textLinkColor: "#ffffff"
+  #     backgroundColor: "#18191a"
+  #     secondaryBackgroundColor: "#212529"
+  #     primaryColor: "#ffffff"
+  #     secondaryColor: "#212529"
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Sagar Panda" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: true
+      disableAchievements: true
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Sagar."
+    subtitle: "I build and operate reliable systems."
+    content: "A DevOps engineer focused on cloud infrastructure, automation, and scalable platforms. I enjoy designing resilient systems, improving deployment pipelines, and making software delivery faster and more reliable."
+    image: /images/red_bg_full.png
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: false
+      name: "Resume"
+      url: "#"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/sagarkpanda
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/sagarkpanda/
+        - icon: fab fa-medium
+          url: https://sagarkpanda.medium.com/
+        - icon: fas fa-envelope
+          url: mailto:sagar.chip239@aleeas.com
+        - icon: fab fa-telegram
+          url: https://t.me/artisticw1zard
+      # customIcons:
+      #   - icon: /fav.png
+      #     url: "https://example.com"
+
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/red_bg_full.png"
+    content: |-
+      Senior DevOps Engineer with 7+ years of experience in cloud infrastructure, CI/CD automation, and Kubernetes-based deployments. Proven expertise in GitOps, microservices migration, and improving deployment reliability for enterprise-scale systems.
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "AWS"
+        - "Jenkins"
+        - "SonarQube"
+        - "GitHub Actions"
+        - "Gitlab CI/CD"
+        - "Docker"
+        - "Ansible"
+        - "Terraform"
+        - "Docker"
+        - "Kubernetes"
+        - "Linux"
+        - "Argo CD"
+        - "Prometheus"
+        - "Grafana"
+
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - company: "Wipro"
+        companyUrl: "https://wipro.com"
+        jobs:
+          - name: "Sr. Software Engineer"
+            date: "Nov 2024 - present"
+            # content: |
+            content: |
+               I am currently working as a Sr DevOps engineer at [Wipro](https://wipro.com). I am currently working on a project that generates be shelf labels for retail stores for Metro Cash and Carry.
+               - Led the onboarding and migration of 30+ microservices to Kubernetes using a GitOps approach (Argo CD, ConfigMaps, Secrets, Ingress) for a global retail client (Metro AG).
+               - Responsible for the core deployment pipeline and infrastructure management
+            # info:
+            #   content: Working as a senior software developer
+            featuredItems:
+              customIcons:
+                - icon: /images/kubernetes.svg
+                  url: https://kubernetes.io
+                  tooltip: "Kubernetes"
+              # fontAwesomeIcons:
+              #   - icon: fab fa-kubernetes
+              #     url: https://kubernetes.io/
+              #     tooltip: Example tooltip content
+                # - icon: fab fa-x-twitter
+                #   url: https://example.com
+                #   tooltip: Example tooltip content
+                - icon: /images/argo.svg
+                  url: "https://example.com"
+                  tooltip: Argo CD
+
+                - icon: /images/gitlab.svg
+                  url: "https://example.com"
+                  tooltip: GitLab
+          # - name: "Software Developer"
+          #   date: "Jan 2022 - Dec 2023"
+          #   content: "I worked as a software developer. I worked on a project that will be used to help people find the best way to get around the city."
+
+      - company: "Valeo"
+        companyUrl: "https://valeo.com"
+        jobs:
+          - name: "DevOps Engineer"
+            date: "Aug 2023 - Oct 2024"
+            # info:
+            #   content: I worked as a devops engineer for more than one year at Valeo.
+            content: |
+              Managed CI/CD processes for 10+ OEM automotive projects (Mahindra, Nissan,BYD, BMW, Geely) across Development, QA, and Production environments.
+              - Reduced build and testing time from days to a few hours by optimizing Jenkins pipelines.
+              - Automated mandatory Static Analysis (SAST) using KlocWork eliminating manual code review errors.
+              - Achieved an approximately 25% faster deployment success rate using AWS, Jenkins, and Ansible.
+
+            featuredItems:
+              customIcons:
+                 - icon: images/aws.svg
+                   url: "https://aws.amazon.com/"
+                   tooltip: "AWS"
+                 - icon: images/jenkins.svg
+                   url: "https://example.com"
+                   tooltip: "Jenkins"
+                 - icon: images/docker.svg
+                   url: "https://example.com"
+                   tooltip: "Docker"
+                 - icon: images/terraform.svg
+                   url: "https://example.com"
+                   tooltip: "Terraform"
+
+      - company: "Waycool Foods"
+        companyUrl: "https://waycool.in"
+        jobs:
+        - name: "DevOps Engineer"
+          date: "Jan 2022 - July 2023"
+          featuredItems:
+            # fontAwesomeIcons:
+            #   - icon: fab fa-aws
+            #     url: https://aws.amazon.com/
+            customIcons:
+              - icon: images/aws.svg
+                url: "https://aws.amazon.com/"
+                tooltip: "AWS"
+              - icon: images/jenkins.svg
+                url: "https://example.com"
+                tooltip: "AWS"
+              - icon: images/ansible.svg
+                url: "https://ansible.com/"
+                tooltip: "Ansible"
+          content: |
+            I worked as a devops enginner at [Waycool foods.](https://waycool.in) focusing on web and mobile appplications operations that help farmers and businesses.
+            - Initiated and established the foundational DevOps process, implementing Jenkins, Docker, SonarQube, and Nexus.
+            - Migrated applications to multi-cloud platforms (AWS/Azure) utilizing web servers (Nginx, Apache) on Linux instances.
+            - Produced a Proof of Concept (POC) for infrastructure deployment using Kubernetes and Terraform.
+            - Secured applications by implementing TLS certificates and eliminated vulnerable SFTP deployment practices.
+            - Improved time-to-market for key applications (IGrade and SunnyBee).
+
+
+      - company: "Straive"
+        companyUrl: "https://straive.com"
+        jobs:
+        - name: "Automation Engineer"
+          date: "Nov 2019 - Jan 2022"
+          content: |
+            As an Automation engineer at [Straive](https://straive.com), I automated web app testing.
+            - Automated web application testing using Python, Selenium, and SQL.
+            - Configured CI environment on AWS by setting up Jenkins and SonarQube for automated test suite execution
+
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "Master of Computer Applications"
+        school:
+          name: "Biju Pattnaik University of Technology, Odisha"
+          url: "https://bput.ac.in"
+        date: "2015 - 2018"
+        GPA: "8.2 out of 10"
+        content: |-
+          Specialization
+            - Computer Applications
+            - OS and Networking
+            - Programming Languages
+
+      - title: "Bachelor of Computer Applications"
+        school:
+          name: "Berhampur University, Odisha"
+          url: "https://buodisha.edu.in/"
+        date: "2012 - 2015"
+        GPA: "7.8 out of 10"
+      # - title: "Bachelor of Science in Computer Science"
+      #   school:
+      #     name: "Massachusetts Institute of Technology"
+      #     url: "https://example.org"
+      #   date: "2009 - 2013"
+      #   GPA: "3.9 out of 5.0"
+      #   content: |-
+      #     I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+      #     - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+      #     - Face mask detection using a single convolutional neural network.
+
+      #     Extracurricular Activities
+      #       - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      #       - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+      #   featuredLink:
+      #     enable: true
+      #     name: "My academic record"
+      #     url: "https://example.com"
+      # - title: "High School"
+      #   school:
+      #     name: "Thomas Jefferson High School for Science and Technology."
+      #     url: "https://example.org"
+      #   GPA: "4.2 out of 5.0"
+      #   featuredLink:
+      #     enable: true
+      #     url: "https://example.com"
+
+  # Achievements
+  achievements:
+    enable: false
+    # title: "Custom Name"
+    items:
+      - title: Google kickstart runner
+        content: I solved all problems with optimal solution.
+        url: https://example.com
+        image: /images/achievement.jpg
+      - title: Facebook Hackathon Winner
+        content: Developed a product using Artificial Intelligence.
+        image: /images/achievement.jpg
+      - title: Hugo Profile
+        content: Developed a theme and getting 1K+ downloads per month.
+        url: "https://github.com/gurusabarish/hugo-profile"
+        image: /images/achievement.jpg
+      - title: Microsoft Imagine Runner
+        content: We are developed a product which can help others.
+      - title: Google Summer of Code
+        content: Contributed to a open source project.
+        url: https://example.com
+
+  # projects
+  projects:
+    enable: false
+    # title: "Custom Name"
+    items:
+      - title: Hugo Profile
+        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
+        image: /images/projects/profile.png
+        featured:
+          name: Demo
+          link: https://hugo-profile.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fa fa-envelope
+            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/hugo-profile
+          - icon: fab fa-twitter
+            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+
+      - title: Image Converter
+        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+        image: /images/projects/converter.jpg
+        featured:
+          name: Demo
+          link: https://django-converter.herokuapp.com
+        badges:
+          - "Django"
+          - "Bootstrap"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/converter
+
+      - title: Hugo Profile V2
+        content: A clean and simple Hugo template for personal portfolio and blog.
+        image: /images/projects/profile2.jpg
+        featured:
+          name: Demo V2
+          link: https://hugo-profile-2.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/HugoProfileV2
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+    btnName: Mail me
+    btnLink: mailto:sagar.chip239@aleeas.com
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+    #   messageRows: 5
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: true
+    socialNetworks:
+      github: https://github.com
+      linkedin: https://linkedin.com
+      twitter: https://twitter.com
+      instagram: https://instagram.com
+      facebook: https://facebook.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: true
+
+  # Single pages like blog and post
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>

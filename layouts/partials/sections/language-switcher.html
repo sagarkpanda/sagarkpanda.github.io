@@ -1,0 +1,34 @@
+{{ if hugo.IsMultilingual }}
+<li class="nav-item navbar-text dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ with .Language }}
+            🌐
+            <span class="d-none d-md-inline">{{ .LanguageName }}</span>
+        {{ end }}
+    </a>
+    <div class="dropdown-menu shadow-lg rounded" aria-labelledby="languageDropdown">
+        {{- /* Use page translations if available, otherwise fall back to site languages */ -}}
+        {{- $translations := .AllTranslations -}}
+        {{- if eq (len $translations) 1 -}}
+            {{- /* No translations for this page, use home page translations */ -}}
+            {{- range site.Home.AllTranslations -}}
+            <a class="dropdown-item text-center nav-link{{ if eq .Language.Lang $.Language.Lang }} active{{ end }}" 
+               href="{{ .RelPermalink }}" 
+               title="{{ .Language.LanguageName }}">
+                {{ .Language.LanguageName }}
+            </a>
+            {{- end -}}
+        {{- else -}}
+            {{- /* Page has translations, use them */ -}}
+            {{- range $translations -}}
+            <a class="dropdown-item text-center nav-link{{ if eq .Language.Lang $.Language.Lang }} active{{ end }}" 
+               href="{{ .RelPermalink }}" 
+               title="{{ .Language.LanguageName }}">
+                {{ .Language.LanguageName }}
+            </a>
+            {{- end -}}
+        {{- end -}}
+    </div>
+</li>
+{{ end }}
