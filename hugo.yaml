@@ -1,4 +1,4 @@
-baseURL: "https://sagarkpanda.github.io/portfolio/"
+baseURL: "https://sagarkpanda.github.io/"
 relativeURLs: true
 canonifyURLs: true
 languageCode: "en-us"
@@ -597,6 +597,8 @@ params:
           url: mailto:sagar.chip239@aleeas.com
         - icon: fab fa-telegram
           url: https://t.me/artisticw1zard
+        - icon: fas fa-blog
+          url: /blogs
       # customIcons:
       #   - icon: /fav.png
       #     url: "https://example.com"
