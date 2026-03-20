@@ -3,7 +3,7 @@
     appear in <head>.
 */}}
 
-<style>
+<!-- <style>
     /* =========================================
        PART 1: HERO SOCIAL ICONS
        ========================================= */
@@ -101,9 +101,151 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
-  </style>
+  </style> -->
+  <style>
+    /* =========================================
+       PART 1: HERO SOCIAL ICONS
+       ========================================= */
 
+    #hero a.btn.social-icon {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      margin-top: 1.5rem !important;
+      margin-right: 12px !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      width: auto !important;
+      height: auto !important;
+      text-decoration: none !important;
+      position: relative !important;
+    }
 
+    #hero a.btn.social-icon img {
+      width: 24px !important;
+      height: 24px !important;
+      background: transparent !important;
+      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
+      transition: transform 0.2s ease-in-out !important;
+    }
+
+    .dark #hero a.btn.social-icon img,
+    [data-theme="dark"] #hero a.btn.social-icon img {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    #hero a.btn.social-icon:hover img {
+      transform: scale(1.2) !important;
+    }
+
+    /* =========================================
+       PART 2: BLACK BOX TOOLTIP (NO TRIANGLE)
+       ========================================= */
+
+    #hero a.btn.social-icon::after {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #000000 !important;
+      color: #ffffff !important;
+      padding: 6px 8px !important;
+      border-radius: 4px !important;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3) !important;
+      font-size: 12px;
+      line-height: 1 !important;
+      font-family: sans-serif !important;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    #hero a[href*="github.com"]::after { content: "GitHub"; }
+    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
+    #hero a[href*="medium.com"]::after { content: "Medium"; }
+    #hero a[href*="mailto:"]::after { content: "Email"; }
+    #hero a[href*="t.me"]::after { content: "Telegram"; }
+    #hero a[href*="blog"]::after { content: "Blog"; }
+
+    #hero a.btn.social-icon:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #hero a.btn.social-icon:hover {
+      color: transparent !important;
+    }
+
+    /* =========================================
+       GLOBAL CARD ANIMATION
+       ========================================= */
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    /* =========================================
+       PART 3: BLOG LIST CARDS (ULTRA COMPACT)
+       ========================================= */
+
+    /* 1. Crush the padding inside the card */
+    #list-page .card-body {
+      padding: 1.25rem !important;
+    }
+
+    /* 2. THE NUCLEAR OPTION FOR TITLES (Forces 18px size) */
+    html body #list-page .card .card-body h5.card-title.primary-font {
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 12px !important;
+      font-weight: 700 !important;
+    }
+
+    /* 3. Style the category text (e.g., "Kafka Basics") like a clean badge */
+    html body #list-page .card .card-body > div:first-child,
+    html body #list-page .card .card-body small {
+      font-size: 11px !important;
+      margin-bottom: 8px !important;
+      opacity: 0.7 !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    /* 4. Tightly pack the preview text */
+    html body #list-page .card .card-body .card-text,
+    html body #list-page .card .card-body .card-text p,
+    html body #list-page .card .card-body .secondary-font {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* 5. Shrink the Footer and its padding */
+    #list-page .card .post-footer {
+      padding: 0.75rem 1.25rem !important;
+    }
+
+    html body #list-page .card .post-footer span {
+      font-size: 12px !important;
+    }
+
+    html body #list-page .card .post-footer a.btn {
+      font-size: 12px !important;
+      padding: 3px 10px !important;
+    }
+</style>
 <!-- ---------------
 2
 ----------------------- -->
