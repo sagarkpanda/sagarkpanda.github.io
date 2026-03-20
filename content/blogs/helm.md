@@ -1,7 +1,7 @@
 ---
 date: '2024-01-05T19:26:10+05:30'
 draft: false
-title: 'Heml in Kubernetes'
+title: 'Helm in Kubernetes'
 Description: Part XI — Getting started with Helm, the package manager for Kubernetes for easy application management.
 tags:
   - helm
