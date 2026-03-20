@@ -495,7 +495,7 @@ params:
   title: "Hugo Profile"
   description: Personal Portfolio and Blog
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/images/circle_profile.png"
+  favicon: "/images/circle_profile.webp"
 
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
@@ -575,7 +575,7 @@ params:
     title: "Sagar."
     subtitle: "I build and operate reliable systems."
     content: "A DevOps engineer focused on cloud infrastructure, automation, and scalable platforms. I enjoy designing resilient systems, improving deployment pipelines, and making software delivery faster and more reliable."
-    image: /images/red_bg_full.png
+    image: /images/red_bg_full.webp
     bottomImage:
       enable: true
     # roundImage: true # Make hero image circular | default false
@@ -613,7 +613,7 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: "/images/red_bg_full.png"
+    image: "/images/red_bg_full.webp"
     content: |-
       Senior DevOps Engineer with 7+ years of experience in cloud infrastructure, CI/CD automation, and Kubernetes-based deployments. Proven expertise in GitOps, microservices migration, and improving deployment reliability for enterprise-scale systems.
     skills:
