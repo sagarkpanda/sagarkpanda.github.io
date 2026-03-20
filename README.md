@@ -5,3 +5,5 @@ Hosted on github pages (github.io)
 ⏩ Have a look at the [website](https://sagarpanda.com/)
 
 Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profiile theme </a>
+
+[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml)
