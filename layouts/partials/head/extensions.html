@@ -2,3 +2,237 @@
     You can add further theme extensions or customizations here if they should
     appear in <head>.
 */}}
+
+<style>
+    /* =========================================
+       PART 1: HERO SOCIAL ICONS
+       ========================================= */
+
+    #hero a.btn.social-icon {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      margin-top: 1.5rem !important;
+      margin-right: 12px !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      width: auto !important;
+      height: auto !important;
+      text-decoration: none !important;
+      position: relative !important; /* Required for the tooltips to attach */
+    }
+
+    #hero a.btn.social-icon img {
+      width: 20px !important;
+      height: 20px !important;
+      background: transparent !important;
+      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
+      transition: transform 0.2s ease-in-out !important;
+    }
+
+    .dark #hero a.btn.social-icon img,
+    [data-theme="dark"] #hero a.btn.social-icon img {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    #hero a.btn.social-icon:hover img {
+      transform: scale(1.2) !important;
+    }
+
+    /* =========================================
+       PART 2: BLACK BOX TOOLTIP (NO TRIANGLE)
+       ========================================= */
+
+    /* --- 1. The Black Box --- */
+    #hero a.btn.social-icon::after {
+      position: absolute;
+      bottom: calc(100% + 8px); /* Floats just above the icon */
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-color: #000000 !important; /* Pure Black */
+      color: #ffffff !important;            /* Pure White text */
+
+      padding: 6px 8px !important;
+      border-radius: 4px !important;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3) !important;
+
+      font-size: 12px;
+      line-height: 1 !important;
+      font-family: sans-serif !important;
+      font-weight: 600;
+      white-space: nowrap;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    /* --- 2. Hardcode Text Based on URL --- */
+    #hero a[href*="github.com"]::after { content: "GitHub"; }
+    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
+    #hero a[href*="medium.com"]::after { content: "Medium"; }
+    #hero a[href*="mailto:"]::after { content: "Email"; }
+    #hero a[href*="t.me"]::after { content: "Telegram"; }
+    #hero a[href*="blog"]::after { content: "Blog"; }
+
+    /* --- 3. Show Box on Hover --- */
+    #hero a.btn.social-icon:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hide default browser tooltip */
+    #hero a.btn.social-icon:hover {
+      color: transparent !important;
+    }
+  </style>
+
+
+<!-- ---------------
+2
+----------------------- -->
+
+<!-- <style>
+    /* --- 1. HERO SOCIAL ICONS CONTAINER --- */
+    #hero a.btn.social-icon {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+
+      /* Spacing */
+      margin-top: 1.5rem !important;
+      margin-right: 12px !important;
+      padding: 0 !important;
+
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      width: auto !important;
+      height: auto !important;
+      text-decoration: none !important;
+
+      /* Required for the Tooltip to stick to the icon */
+      position: relative !important;
+    }
+
+    /* --- 2. THE SVG ICON IMAGES --- */
+    #hero a.btn.social-icon img {
+      width: 20px !important;
+      height: 20px !important;
+      background: transparent !important;
+
+      /* Blue Filter for Light Mode */
+      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
+      transition: transform 0.2s ease-in-out !important;
+    }
+
+    /* --- 3. DARK MODE OVERRIDE (ICONS) --- */
+    .dark #hero a.btn.social-icon img,
+    [data-theme="dark"] #hero a.btn.social-icon img {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    /* --- 4. HOVER ANIMATION --- */
+    #hero a.btn.social-icon:hover img {
+      transform: scale(1.2) !important;
+    }
+
+    /* --- 5. THE THEME-AWARE FLOATING TOOLTIP --- */
+
+    /* Base Style (Light Mode) */
+    #hero a.btn.social-icon::after {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: transparent !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+
+      /* Dark text for Light Mode visibility */
+      color: #444444 !important;
+      font-size: 11px;
+      font-family: sans-serif !important;
+      font-weight: 600; /* Made slightly bolder to read easily without a box */
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    /* Dark Mode Override (Tooltip Text) */
+    .dark #hero a.btn.social-icon::after,
+    [data-theme="dark"] #hero a.btn.social-icon::after {
+      color: #ffffff !important; /* Flips to white text in Dark Mode */
+    }
+
+    /* Hardcode the text based on the link's URL */
+    #hero a[href*="github.com"]::after { content: "GitHub"; }
+    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
+    #hero a[href*="medium.com"]::after { content: "Medium"; }
+    #hero a[href*="mailto:"]::after { content: "Email"; }
+    #hero a[href*="t.me"]::after { content: "Telegram"; }
+    #hero a[href*="blog"]::after { content: "Blog"; }
+
+    /* Show floating text on hover */
+    #hero a.btn.social-icon:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hide the browser's default yellow tooltip to prevent overlapping */
+    #hero a.btn.social-icon:hover {
+      color: transparent !important;
+    }
+  </style> -->
+
+  <!-- 3 -->
+
+<!-- <style>
+    /* 1. The Container (fixes the "odd" alignment and spacing) */
+    #hero a.btn.social-icon {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+
+      /* Spacing fixes */
+      margin-top: 1.5rem !important; /* This pushes icons down away from the text */
+      margin-right: 8px !important;  /* Space between individual icons */
+      padding: 0 !important;
+
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      width: auto !important;
+      height: auto !important;
+    }
+
+    /* 2. The Icons (Small & Crisp) */
+    #hero a.btn.social-icon img {
+      width: 20px !important;
+      height: 20px !important;
+      background: transparent !important;
+      /* Blue Filter for Light Mode */
+      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
+      transition: transform 0.2s ease-in-out !important;
+    }
+
+    /* 3. Dark Mode Filter */
+    .dark #hero a.btn.social-icon img,
+    [data-theme="dark"] #hero a.btn.social-icon img {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    /* 4. Hover Animation */
+    #hero a.btn.social-icon:hover img {
+      transform: scale(1.2) !important;
+    }
+  </style> -->

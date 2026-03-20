@@ -4,4 +4,4 @@ Hosted on github pages (github.io)
 
 ⏩ Have a look at the [website](https://sagarpanda.com/)
 
-Based on <a href="https://gohugo.io)"> Hugo and Hugo Profiile theme </a>
+Based on <a href="https://gohugo.io"> Hugo and <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profiile theme </a>
