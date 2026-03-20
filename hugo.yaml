@@ -586,28 +586,45 @@ params:
       download: true
       newPage: false
     socialLinks:
-      fontAwesomeIcons:
-        - icon: fab fa-github
+      customIcons:
+        - icon: /images/github.svg
           url: https://github.com/sagarkpanda
-          tooltip: "GitHub"
-        - icon: fab fa-linkedin
+          title: "GitHub"
+        - icon: /images/linkedin.svg
           url: https://www.linkedin.com/in/sagarkpanda/
-          tooltip: "LinkedIn"
-        - icon: fab fa-medium
+          title: "LinkedIn"
+        - icon: images/medium.svg
           url: https://sagarkpanda.medium.com/
-          tooltip: "Medium"
-        - icon: fas fa-envelope
+          title: "Medium"
+        - icon: images/email.svg
           url: mailto:sagar.chip239@aleeas.com
-          tooltip: "Email"
-        - icon: fab fa-telegram
+          title: "Email"
+        - icon: images/telegram.svg
           url: https://t.me/artisticw1zard
-          tooltip: "Telegram"
-        - icon: fas fa-newspaper
+          title: "Telegram"
+        - icon: images/blog.svg
           url: /blogs
-          tooltip: "Blog"
-      # customIcons:
-      #   - icon: /fav.png
-      #     url: "https://example.com"
+          title: "Blog"
+
+    # fontAwesomeIcons:
+    #     - icon: fab fa-github
+    #       url: https://github.com/sagarkpanda
+    #       tooltip: "GitHub"
+    #     - icon: fab fa-linkedin
+    #       url: https://www.linkedin.com/in/sagarkpanda/
+    #       tooltip: "LinkedIn"
+    #     - icon: fab fa-medium
+    #       url: https://sagarkpanda.medium.com/
+    #       tooltip: "Medium"
+    #     - icon: fas fa-envelope
+    #       url: mailto:sagar.chip239@aleeas.com
+    #       tooltip: "Email"
+    #     - icon: fab fa-telegram
+    #       url: https://t.me/artisticw1zard
+    #       tooltip: "Telegram"
+    #     - icon: fas fa-newspaper
+    #       url: /blogs
+    #       tooltip: "Blog"
 
   # About
   about:
