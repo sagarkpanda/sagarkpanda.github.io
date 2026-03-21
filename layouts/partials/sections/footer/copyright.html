@@ -1,4 +1,4 @@
-<div class="container py-4">
+<!-- <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
             {{ if or .Site.Params.navbar.brandLogo .Site.Params.favicon }}
@@ -12,10 +12,10 @@
             &copy; {{ now.Format "2006"}} {{ .Site.Params.copyright }} {{ .Site.Params.terms.copyright | default (i18n "copyright") }}
             <div class="text-secondary">
                 Made with
-                <!-- <span class="text-danger">
+                <span class="text-danger">
                     &#10084;
-                </span> -->
-                <!-- and -->
+                </span>
+                and
                 <a href="https://gohugo.io/" target="_blank"
                     title="Hugo">
                     Hugo
@@ -30,6 +30,41 @@
                 <a href="https://sagarpanda.com/upptime/" target="_blank" title="System Status" class="text-decoration-none text-secondary d-inline-flex align-items-center" style="font-size: 0.85em; font-weight: 500;">
                     <span class="status-dot mr-2" style="margin-right: 8px;"></span>
                     All Systems Operational
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            {{ if or .Site.Params.navbar.brandLogo .Site.Params.favicon }}
+                <div class="pb-2">
+                    <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
+                        <img alt="Footer logo" src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            {{ end }}
+            &copy; {{ now.Format "2006"}} {{ .Site.Params.copyright }} {{ .Site.Params.terms.copyright | default (i18n "copyright") }}
+            <div class="text-secondary">
+                Made with
+                <a href="https://gohugo.io/" target="_blank"
+                    title="Hugo">
+                    Hugo
+                </a>
+                &
+                <a href="https://themes.gohugo.io/themes/hugo-profile/" target="_blank"
+                    title="Hugo Theme">
+                    Hugo Profile
+                </a>
+            </div>
+
+            <div class="status-indicator mt-2">
+                <a href="https://sagarpanda.com/upptime/" target="_blank" title="System Status" class="text-decoration-none d-inline-flex align-items-center" style="font-size: 1em;">
+                    <span class="status-dot" style="margin-right: 8px;"></span>
+                    <span class="status-text">All Systems Operational</span>
                 </a>
             </div>
         </div>

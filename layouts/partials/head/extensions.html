@@ -274,34 +274,33 @@
     /* =========================================
        FOOTER STATUS INDICATOR
        ========================================= */
-
-       .status-dot {
+    .status-dot {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background-color: #2ea043; /* Standard GitHub operational green */
       border-radius: 50%;
-
       /* The pulsing radar effect using box-shadow */
       animation: status-pulse 1s infinite;
     }
 
     @keyframes status-pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(46, 160, 67, 0.8);
-      }
-      70% {
-        box-shadow: 0 0 0 8px rgba(46, 160, 67, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(46, 160, 67, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0.8); }
+      70% { box-shadow: 0 0 0 8px rgba(46, 160, 67, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0); }
     }
 
-    /* Add a subtle hover effect to the text */
-    .status-indicator a:hover {
-      color: #2ea043 !important;
-      transition: color 0.2s ease;
+    /* Target the text specifically */
+    .status-text {
+      color: #2ea043 !important; /* Standard GitHub operational green */
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+    }
+
+    /* Glow effect on hover */
+    .status-indicator a:hover .status-text {
+      color: #3fb950 !important; /* Brighter neon green */
+      text-shadow: 0 0 8px rgba(63, 185, 80, 0.4);
     }
 
 </style>
