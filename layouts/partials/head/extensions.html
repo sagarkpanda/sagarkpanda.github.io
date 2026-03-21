@@ -195,56 +195,82 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
-    /* =========================================
-       PART 3: BLOG LIST CARDS (ULTRA COMPACT)
-       ========================================= */
-
-    /* 1. Crush the padding inside the card */
-    #list-page .card-body {
+    /* 1. Unify Card Padding */
+    #list-page .card-body,
+    #recent-posts .card-body {
       padding: 1.25rem !important;
     }
 
-    /* 2. THE NUCLEAR OPTION FOR TITLES (Forces 18px size) */
-    html body #list-page .card .card-body h5.card-title.primary-font {
-      font-size: 14px !important;
+    /* 2. Unify Card Titles (Dark grey, slightly bold) */
+    html body #list-page .card .card-body h5.card-title,
+    html body #recent-posts .card .card-body h5.card-title {
+      font-size: 20px !important;
       line-height: 1.4 !important;
-      margin-bottom: 12px !important;
-      font-weight: 700 !important;
-    }
-
-    /* 3. Style the category text (e.g., "Kafka Basics") like a clean badge */
-    html body #list-page .card .card-body > div:first-child,
-    html body #list-page .card .card-body small {
-      font-size: 11px !important;
       margin-bottom: 8px !important;
-      opacity: 0.7 !important;
-      font-weight: 600 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.5px !important;
+      font-weight: 500 !important;
+      color: #222222 !important;
+      font-family: sans-serif !important;
     }
 
-    /* 4. Tightly pack the preview text */
-    html body #list-page .card .card-body .card-text,
+    /* 3. Unify Card Descriptions (Blue, readable) */
     html body #list-page .card .card-body .card-text p,
-    html body #list-page .card .card-body .secondary-font {
-      font-size: 14px !important;
+    html body #recent-posts .card .card-body .card-text p {
+      font-size: 16px !important;
       line-height: 1.5 !important;
       margin-bottom: 0 !important;
+      font-weight: 400 !important;
+      color: #0d6efd !important; /* Bootstrap primary blue */
     }
 
-    /* 5. Shrink the Footer and its padding */
-    #list-page .card .post-footer {
-      padding: 0.75rem 1.25rem !important;
+    /* 4. Unify Footer Sizing */
+    #list-page .card .card-footer span,
+    #recent-posts .card .card-footer span {
+      font-size: 13px !important;
+      color: #555555 !important;
     }
 
-    html body #list-page .card .post-footer span {
-      font-size: 12px !important;
+    #list-page .card .card-footer a.btn,
+    #recent-posts .card .card-footer a.btn {
+      font-size: 13px !important;
+      padding: 4px 12px !important;
     }
 
-    html body #list-page .card .post-footer a.btn {
-      font-size: 12px !important;
-      padding: 3px 10px !important;
+    /* =========================================
+       PART 4: DARK MODE OVERRIDES
+       ========================================= */
+
+    /* 1. Fix Category Text ("Kafka Basics") to be light grey */
+    html[data-theme="dark"] body #list-page .card .card-body > div:first-child,
+    html[data-theme="dark"] body #recent-posts .card .card-body > div:first-child,
+    .dark body #list-page .card .card-body > div:first-child,
+    .dark body #recent-posts .card .card-body > div:first-child {
+      color: #e2e8f0 !important;
     }
+
+    /* 2. Fix the Main Title to be pure white */
+    html[data-theme="dark"] body #list-page .card .card-body h5.card-title,
+    html[data-theme="dark"] body #recent-posts .card .card-body h5.card-title,
+    .dark body #list-page .card .card-body h5.card-title,
+    .dark body #recent-posts .card .card-body h5.card-title {
+      color: #ffffff !important;
+    }
+
+    /* 3. Fix the Footer Date to be light grey */
+    html[data-theme="dark"] body #list-page .card .card-footer span,
+    html[data-theme="dark"] body #recent-posts .card .card-footer span,
+    .dark body #list-page .card .card-footer span,
+    .dark body #recent-posts .card .card-footer span {
+      color: #cbd5e1 !important;
+    }
+
+    /* 4. Make the Preview Text a brighter blue so it pops on dark cards */
+    html[data-theme="dark"] body #list-page .card .card-body .card-text p,
+    html[data-theme="dark"] body #recent-posts .card .card-body .card-text p,
+    .dark body #list-page .card .card-body .card-text p,
+    .dark body #recent-posts .card .card-body .card-text p {
+      color: #60a5fa !important;
+    }
+
     /* =========================================
        FOOTER STATUS INDICATOR
        ========================================= */

@@ -41,8 +41,8 @@
                         <p>{{ .Summary | truncate 300}}</p>
                     </div>
                 </div> -->
-                <div class="mt-auto post-footer bg-transparent py-3">
-                    <span class="float-start bg-transparent">{{ .Date | time.Format (":date_long" | default "January 2, 2006") }}</span>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">{{ .Date | time.Format (":date_long" | default "January 2, 2006") }}</span>
                     <a href="{{ .RelPermalink }}" class="float-end btn btn-outline-info btn-sm">{{ .Site.Params.terms.read | default (i18n "read") }}</a>
                 </div>
             </div>
