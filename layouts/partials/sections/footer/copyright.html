@@ -10,17 +10,22 @@
                 </div>
             {{ end }}
             &copy; {{ now.Format "2006"}} {{ .Site.Params.copyright }} {{ .Site.Params.terms.copyright | default (i18n "copyright") }}
-            <!-- <div class="text-secondary">
+            <div class="text-secondary">
                 Made with
-                <span class="text-danger">
+                <!-- <span class="text-danger">
                     &#10084;
-                </span>
-                and
-                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
-                    title="Designed and developed by gurusabarish">
+                </span> -->
+                <!-- and -->
+                <a href="https://gohugo.io/" target="_blank"
+                    title="Hugo">
+                    Hugo
+                </a>
+                &
+                <a href="https://themes.gohugo.io/themes/hugo-profile/" target="_blank"
+                    title="Hugo Theme">
                     Hugo Profile
                 </a>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
