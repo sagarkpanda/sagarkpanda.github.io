@@ -599,7 +599,7 @@ params:
         - icon: images/telegram.svg
           url: https://t.me/artisticw1zard
           title: "Telegram"
-        - icon: images/blog.svg
+        - icon: images/pen.svg
           url: /blogs
           title: "Blog"
         - icon: images/medium.svg
