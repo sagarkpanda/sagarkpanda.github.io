@@ -593,9 +593,6 @@ params:
         - icon: /images/linkedin.svg
           url: https://www.linkedin.com/in/sagarkpanda/
           title: "LinkedIn"
-        - icon: images/medium.svg
-          url: https://sagarkpanda.medium.com/
-          title: "Medium"
         - icon: images/email.svg
           url: mailto:sagar.chip239@aleeas.com
           title: "Email"
@@ -605,6 +602,9 @@ params:
         - icon: images/blog.svg
           url: /blogs
           title: "Blog"
+        - icon: images/medium.svg
+          url: https://sagarkpanda.medium.com/
+          title: "Medium"
 
     # fontAwesomeIcons:
     #     - icon: fab fa-github
