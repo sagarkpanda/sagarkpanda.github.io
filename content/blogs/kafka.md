@@ -2,7 +2,7 @@
 date: '2026-03-18T19:26:10+05:30'
 draft: false
 title: 'Kafka Basics'
-Description: Learn How to setup kafka
+Description: Microservices are loud. Kafka makes them finally think together
 tags:
   - kafka
   - microservices

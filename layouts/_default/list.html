@@ -28,7 +28,8 @@
                         </h5>
 
                         <div class="card-text secondary-font">
-                            <p>{{ .Summary | truncate 146 }}</p>
+                            <!-- <p>{{ .Summary | truncate 146 }}</p> -->
+                            <p>{{ .Params.Description | default (.Summary | plainify) | truncate 140 }}</p>
                         </div>
                     </div>
                 </a>
