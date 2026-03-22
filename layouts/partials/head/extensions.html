@@ -344,6 +344,48 @@ html[data-theme="dark"] #recent-posts .btn-view-all:hover,
     box-shadow: 0 4px 20px rgba(255,255,255,0.1); /* Lighter shadow for dark mode */
 }
 
+  /* =========================================
+   PART 5: VIEW ALL POSTS BUTTON
+   ========================================= */
+
+/* 1. Base / Light Mode Styles (Blue) */
+#recent-posts .btn-view-all {
+    border: 1px solid #0d6efd !important;
+    color: #0d6efd !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease-in-out !important;
+    font-weight: 500;
+    display: inline-block;
+}
+
+#recent-posts .btn-view-all:hover {
+    color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    background-color: transparent !important;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* 2. Dark Mode Overrides (White) */
+html[data-theme="dark"] #recent-posts .btn-view-all,
+.dark #recent-posts .btn-view-all {
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+/* 3. Dark Mode Hover (Stays White & Transparent) */
+html[data-theme="dark"] #recent-posts .btn-view-all:hover,
+.dark #recent-posts .btn-view-all:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    background-color: transparent !important;
+
+    transform: translateY(-4px);
+    /* Subtle white glow for the lift effect */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
 </style>
 
 <!-- ---------------
