@@ -307,6 +307,43 @@
       text-shadow: 0 0 8px rgba(63, 185, 80, 0.4);
     }
 
+    /* =========================================
+   PART 5: VIEW ALL POSTS BUTTON
+   ========================================= */
+
+/* Default / Light Mode Styles */
+#recent-posts .btn-view-all {
+    border: 1px solid #222222 !important;
+    color: #222222 !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease-in-out !important; /* Smooth transition for color and movement */
+    font-weight: 500;
+    display: inline-block;
+}
+
+#recent-posts .btn-view-all:hover {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    transform: translateY(-4px); /* Matches your card hover lift */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Adds a subtle shadow on lift */
+}
+
+/* Dark Mode Overrides */
+html[data-theme="dark"] #recent-posts .btn-view-all,
+.dark #recent-posts .btn-view-all {
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #recent-posts .btn-view-all:hover,
+.dark #recent-posts .btn-view-all:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(255,255,255,0.1); /* Lighter shadow for dark mode */
+}
+
 </style>
 
 <!-- ---------------
