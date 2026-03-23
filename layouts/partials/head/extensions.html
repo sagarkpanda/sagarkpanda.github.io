@@ -195,4 +195,29 @@
     /* padding-bottom: 2px !important; */
 }
 
+/* =========================================
+   Part 7: STIKCY FOOTER FIX
+   ========================================= */
+
+/* Ensure the body takes up the full height of the browser */
+html, body {
+    height: 100%;
+}
+
+/* Use Flexbox on the main container to push the footer down */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* This targets the main content area (usually 'main' or 'div' before footer) */
+main, #content, .main-content {
+    flex: 1 0 auto;
+}
+
+/* Prevents the footer from shrinking */
+footer {
+    flex-shrink: 0;
+}
+
 </style>
