@@ -1,155 +1,67 @@
 {{/*
-    You can add further theme extensions or customizations here if they should
-    appear in <head>.
+  Theme extensions or customizations for the <head> section.
 */}}
- <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- <style>
-    /* =========================================
-       PART 1: HERO SOCIAL ICONS
-       ========================================= */
+<style>
+  /* =========================================
+     PART 1: HERO SOCIAL ICONS & ALIGNMENT
+     ========================================= */
+     #hero a.btn.social-icon {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
 
-    #hero a.btn.social-icon {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      margin-top: 1.5rem !important;
-      margin-right: 12px !important;
-      padding: 0 !important;
-      min-width: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      width: auto !important;
-      height: auto !important;
-      text-decoration: none !important;
-      position: relative !important; /* Required for the tooltips to attach */
-    }
+    /* 1. KILL THE CIRCLE SHAPE */
+    border-radius: 0 !important;
 
-    #hero a.btn.social-icon img {
-      width: 24px !important;
-      height: 24px !important;
-      background: transparent !important;
-      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
-      transition: transform 0.2s ease-in-out !important;
-    }
+    margin-top: 3rem !important;
+    margin-right: 15px !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    text-decoration: none !important;
+    position: relative !important;
 
-    .dark #hero a.btn.social-icon img,
-    [data-theme="dark"] #hero a.btn.social-icon img {
-      filter: brightness(0) invert(1) !important;
-    }
+    /* 2. ALIGNMENT CONTAINER */
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 42px !important;
+    vertical-align: middle !important;
+}
 
-    #hero a.btn.social-icon:hover img {
-      transform: scale(1.2) !important;
-    }
+#hero a.btn.social-icon img {
+    width: 24px !important;
+    height: 24px !important;
+    background: transparent !important;
+    display: block !important;
 
-    /* =========================================
-       PART 2: BLACK BOX TOOLTIP (NO TRIANGLE)
-       ========================================= */
+    /* 3. REMOVE MARGIN & MOVE LOWER */
+    margin-top: 0 !important;
+    /* Adjust this number (e.g., 4px or 5px) to move them even lower */
+    transform: translateY(3px) !important;
 
-    /* --- 1. The Black Box --- */
-    #hero a.btn.social-icon::after {
+    transition: transform 0.2s ease-in-out !important;
+    filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
+}
+
+/* 4. UPDATE HOVER TO KEEP THE LOWER POSITION */
+#hero a.btn.social-icon:hover img {
+    transform: translateY(3px) scale(1.2) !important;
+}
+
+.dark #hero a.btn.social-icon img,
+[data-theme="dark"] #hero a.btn.social-icon img {
+    filter: brightness(0) invert(1) !important;
+}
+  /* =========================================
+     PART 2: TOOLTIPS (BLACK BOX)
+     ========================================= */
+  #hero a.btn.social-icon::after {
       position: absolute;
-      bottom: calc(100% + 8px); /* Floats just above the icon */
+      bottom: 100%;
       left: 50%;
-      transform: translateX(-50%);
-
-      background-color: #000000 !important; /* Pure Black */
-      color: #ffffff !important;            /* Pure White text */
-
-      padding: 6px 8px !important;
-      border-radius: 4px !important;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.3) !important;
-
-      font-size: 12px;
-      line-height: 1 !important;
-      font-family: sans-serif !important;
-      font-weight: 600;
-      white-space: nowrap;
-
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease;
-      z-index: 999;
-      pointer-events: none;
-    }
-
-    /* --- 2. Hardcode Text Based on URL --- */
-    #hero a[href*="github.com"]::after { content: "GitHub"; }
-    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
-    #hero a[href*="medium.com"]::after { content: "Medium"; }
-    #hero a[href*="mailto:"]::after { content: "Email"; }
-    #hero a[href*="t.me"]::after { content: "Telegram"; }
-    #hero a[href*="blog"]::after { content: "Blog"; }
-
-    /* --- 3. Show Box on Hover --- */
-    #hero a.btn.social-icon:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Hide default browser tooltip */
-    #hero a.btn.social-icon:hover {
-      color: transparent !important;
-    }
-
-    .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
-
-  </style> -->
-  <style>
-    /* =========================================
-       PART 1: HERO SOCIAL ICONS
-       ========================================= */
-
-    #hero a.btn.social-icon {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      margin-top: 1.5rem !important;
-      margin-right: 12px !important;
-      padding: 0 !important;
-      min-width: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      width: auto !important;
-      height: auto !important;
-      text-decoration: none !important;
-      position: relative !important;
-    }
-
-    #hero a.btn.social-icon img {
-      width: 24px !important;
-      height: 24px !important;
-      background: transparent !important;
-      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
-      transition: transform 0.2s ease-in-out !important;
-    }
-
-    .dark #hero a.btn.social-icon img,
-    [data-theme="dark"] #hero a.btn.social-icon img {
-      filter: brightness(0) invert(1) !important;
-    }
-
-    #hero a.btn.social-icon:hover img {
-      transform: scale(1.2) !important;
-    }
-
-    /* =========================================
-       PART 2: BLACK BOX TOOLTIP (NO TRIANGLE)
-       ========================================= */
-
-    #hero a.btn.social-icon::after {
-      position: absolute;
-      bottom: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -5px);
       background-color: #000000 !important;
       color: #ffffff !important;
       padding: 6px 8px !important;
@@ -162,384 +74,125 @@
       white-space: nowrap;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.2s ease;
+      transition: all 0.2s ease;
       z-index: 999;
       pointer-events: none;
-    }
+  }
 
-    #hero a[href*="github.com"]::after { content: "GitHub"; }
-    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
-    #hero a[href*="medium.com"]::after { content: "Medium"; }
-    #hero a[href*="mailto:"]::after { content: "Email"; }
-    #hero a[href*="t.me"]::after { content: "Telegram"; }
-    #hero a[href*="blog"]::after { content: "Blog"; }
+  #hero a[href*="github.com"]::after { content: "GitHub"; }
+  #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
+  #hero a[href*="medium.com"]::after { content: "Medium"; }
+  #hero a[href*="mailto:"]::after { content: "Email"; }
+  #hero a[href*="t.me"]::after { content: "Telegram"; }
+  #hero a[href*="blog"]::after { content: "Blog"; }
 
-    #hero a.btn.social-icon:hover::after {
+  #hero a.btn.social-icon:hover::after {
       opacity: 1;
       visibility: visible;
-    }
+      transform: translate(-50%, -12px); /* Slight slide up */
+  }
 
-    #hero a.btn.social-icon:hover {
-      color: transparent !important;
-    }
-
-    /* =========================================
-       GLOBAL CARD ANIMATION
-       ========================================= */
-    .card {
+  /* =========================================
+     PART 3: GLOBAL CARD STYLING
+     ========================================= */
+  .card {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
-    }
+  }
 
-    .card:hover {
+  .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
+  }
 
-    /* 1. Unify Card Padding */
-    #list-page .card-body,
-    #recent-posts .card-body {
-      padding: 1.25rem !important;
-    }
+  #list-page .card-body, #recent-posts .card-body { padding: 1.25rem !important; }
 
-    /* 2. Unify Card Titles (Dark grey, slightly bold) */
-    html body #list-page .card .card-body h5.card-title,
-    html body #recent-posts .card .card-body h5.card-title {
-      font-size: 20px !important;
-      line-height: 1.4 !important;
-      margin-bottom: 8px !important;
-      font-weight: 500 !important;
-      color: #222222 !important;
-      font-family: sans-serif !important;
-    }
+  /* Card Text Colors */
+  html body .card .card-body h5.card-title { font-size: 20px !important; color: #222222 !important; }
+  html[data-theme="dark"] body .card .card-body h5.card-title { color: #ffffff !important; }
 
-    /* 3. Unify Card Descriptions (Blue, readable) */
-    html body #list-page .card .card-body .card-text p,
-    html body #recent-posts .card .card-body .card-text p {
-      font-size: 16px !important;
-      line-height: 1.5 !important;
-      margin-bottom: 0 !important;
-      font-weight: 400 !important;
-      color: #0d6efd !important; /* Bootstrap primary blue */
-    }
+  html body .card .card-body .card-text p { color: #0d6efd !important; }
+  html[data-theme="dark"] body .card .card-body .card-text p { color: #60a5fa !important; }
 
-    /* 4. Unify Footer Sizing */
-    #list-page .card .card-footer span,
-    #recent-posts .card .card-footer span {
-      font-size: 13px !important;
-      color: #555555 !important;
-    }
+  /* =========================================
+     PART 4: VIEW ALL POSTS BUTTON
+     ========================================= */
+  #recent-posts .btn-view-all {
+      border: 1px solid #0d6efd !important;
+      color: #0d6efd !important;
+      background-color: transparent !important;
+      transition: all 0.3s ease-in-out !important;
+      font-weight: 500;
+      display: inline-block;
+      border-radius: 4px; /* Matches your non-circle preference */
+  }
 
-    #list-page .card .card-footer a.btn,
-    #recent-posts .card .card-footer a.btn {
-      font-size: 13px !important;
-      padding: 4px 12px !important;
-    }
+  #recent-posts .btn-view-all:hover {
+      color: #0d6efd !important;
+      border-color: #0d6efd !important;
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+  }
 
-    /* =========================================
-       PART 4: DARK MODE OVERRIDES
-       ========================================= */
-
-    /* 1. Fix Category Text ("Kafka Basics") to be light grey */
-    html[data-theme="dark"] body #list-page .card .card-body > div:first-child,
-    html[data-theme="dark"] body #recent-posts .card .card-body > div:first-child,
-    .dark body #list-page .card .card-body > div:first-child,
-    .dark body #recent-posts .card .card-body > div:first-child {
-      color: #e2e8f0 !important;
-    }
-
-    /* 2. Fix the Main Title to be pure white */
-    html[data-theme="dark"] body #list-page .card .card-body h5.card-title,
-    html[data-theme="dark"] body #recent-posts .card .card-body h5.card-title,
-    .dark body #list-page .card .card-body h5.card-title,
-    .dark body #recent-posts .card .card-body h5.card-title {
+  /* View All Button Dark Mode */
+  html[data-theme="dark"] #recent-posts .btn-view-all {
+      border: 1px solid #ffffff !important;
       color: #ffffff !important;
-    }
+  }
 
-    /* 3. Fix the Footer Date to be light grey */
-    html[data-theme="dark"] body #list-page .card .card-footer span,
-    html[data-theme="dark"] body #recent-posts .card .card-footer span,
-    .dark body #list-page .card .card-footer span,
-    .dark body #recent-posts .card .card-footer span {
-      color: #cbd5e1 !important;
-    }
+  html[data-theme="dark"] #recent-posts .btn-view-all:hover {
+      color: #ffffff !important;
+      border-color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  }
 
-    /* 4. Make the Preview Text a brighter blue so it pops on dark cards */
-    html[data-theme="dark"] body #list-page .card .card-body .card-text p,
-    html[data-theme="dark"] body #recent-posts .card .card-body .card-text p,
-    .dark body #list-page .card .card-body .card-text p,
-    .dark body #recent-posts .card .card-body .card-text p {
-      color: #60a5fa !important;
-    }
-
-    /* =========================================
-       FOOTER STATUS INDICATOR
-       ========================================= */
-    .status-dot {
+  /* =========================================
+     PART 5: FOOTER STATUS INDICATOR
+     ========================================= */
+  .status-dot {
       display: inline-block;
       width: 12px;
       height: 12px;
-      background-color: #2ea043; /* Standard GitHub operational green */
+      background-color: #2ea043;
       border-radius: 50%;
-      /* The pulsing radar effect using box-shadow */
       animation: status-pulse 1s infinite;
-    }
+  }
 
-    @keyframes status-pulse {
+  @keyframes status-pulse {
       0% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0.8); }
       70% { box-shadow: 0 0 0 8px rgba(46, 160, 67, 0); }
       100% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0); }
-    }
+  }
 
-    /* Target the text specifically */
-    .status-text {
-      color: #2ea043 !important; /* Standard GitHub operational green */
+  .status-text {
+      color: #2ea043 !important;
       font-family: 'JetBrains Mono', monospace !important;
-      white-space: nowrap;
       font-size: 0.9em;
       font-weight: 500;
-      transition: all 0.2s ease-in-out;
-    }
-
-    /* Glow effect on hover */
-    .status-indicator a:hover .status-text {
-      color: #3fb950 !important; /* Brighter neon green */
-      text-shadow: 0 0 8px rgba(63, 185, 80, 0.4);
-    }
-
-    /* =========================================
-   PART 5: VIEW ALL POSTS BUTTON
-   ========================================= */
-
-/* Default / Light Mode Styles */
-#recent-posts .btn-view-all {
-    border: 1px solid #222222 !important;
-    color: #222222 !important;
-    background-color: transparent !important;
-    transition: all 0.3s ease-in-out !important; /* Smooth transition for color and movement */
-    font-weight: 500;
-    display: inline-block;
-}
-
-#recent-posts .btn-view-all:hover {
-    background-color: #222222 !important;
-    color: #ffffff !important;
-    transform: translateY(-4px); /* Matches your card hover lift */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Adds a subtle shadow on lift */
-}
-
-/* Dark Mode Overrides */
-html[data-theme="dark"] #recent-posts .btn-view-all,
-.dark #recent-posts .btn-view-all {
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    color: #ffffff !important;
-}
-
-html[data-theme="dark"] #recent-posts .btn-view-all:hover,
-.dark #recent-posts .btn-view-all:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff !important;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px rgba(255,255,255,0.1); /* Lighter shadow for dark mode */
-}
+  }
 
   /* =========================================
-   PART 5: VIEW ALL POSTS BUTTON
+   PART 6: RESUME BUTTON SLIMMING
    ========================================= */
 
-/* 1. Base / Light Mode Styles (Blue) */
-#recent-posts .btn-view-all {
-    border: 1px solid #0d6efd !important;
-    color: #0d6efd !important;
-    background-color: transparent !important;
-    transition: all 0.3s ease-in-out !important;
-    font-weight: 500;
-    display: inline-block;
-}
+#hero .btn-outline-primary,
+#hero a[href*="resume"],
+#hero .btn {
+    /* Reduce horizontal padding to shrink from sides */
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 
-#recent-posts .btn-view-all:hover {
-    color: #0d6efd !important;
-    border-color: #0d6efd !important;
-    background-color: transparent !important;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
-}
+    /* Ensure no minimum width is forcing it to be wide */
+    min-width: 0 !important;
+    width: auto !important;
 
-/* 2. Dark Mode Overrides (White) */
-html[data-theme="dark"] #recent-posts .btn-view-all,
-.dark #recent-posts .btn-view-all {
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-    background-color: transparent !important;
-}
-
-/* 3. Dark Mode Hover (Stays White & Transparent) */
-html[data-theme="dark"] #recent-posts .btn-view-all:hover,
-.dark #recent-posts .btn-view-all:hover {
-    color: #ffffff !important;
-    border-color: #ffffff !important;
-    background-color: transparent !important;
-
-    transform: translateY(-4px);
-    /* Subtle white glow for the lift effect */
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    /* Keeps it aligned with your 42px icons */
+    height: 42px !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* padding-bottom: 2px !important; */
 }
 
 </style>
-
-<!-- ---------------
-2
------------------------ -->
-
-<!-- <style>
-    /* --- 1. HERO SOCIAL ICONS CONTAINER --- */
-    #hero a.btn.social-icon {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-
-      /* Spacing */
-      margin-top: 1.5rem !important;
-      margin-right: 12px !important;
-      padding: 0 !important;
-
-      min-width: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      width: auto !important;
-      height: auto !important;
-      text-decoration: none !important;
-
-      /* Required for the Tooltip to stick to the icon */
-      position: relative !important;
-    }
-
-    /* --- 2. THE SVG ICON IMAGES --- */
-    #hero a.btn.social-icon img {
-      width: 20px !important;
-      height: 20px !important;
-      background: transparent !important;
-
-      /* Blue Filter for Light Mode */
-      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
-      transition: transform 0.2s ease-in-out !important;
-    }
-
-    /* --- 3. DARK MODE OVERRIDE (ICONS) --- */
-    .dark #hero a.btn.social-icon img,
-    [data-theme="dark"] #hero a.btn.social-icon img {
-      filter: brightness(0) invert(1) !important;
-    }
-
-    /* --- 4. HOVER ANIMATION --- */
-    #hero a.btn.social-icon:hover img {
-      transform: scale(1.2) !important;
-    }
-
-    /* --- 5. THE THEME-AWARE FLOATING TOOLTIP --- */
-
-    /* Base Style (Light Mode) */
-    #hero a.btn.social-icon::after {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      background: transparent !important;
-      padding: 0 !important;
-      box-shadow: none !important;
-
-      /* Dark text for Light Mode visibility */
-      color: #444444 !important;
-      font-size: 11px;
-      font-family: sans-serif !important;
-      font-weight: 600; /* Made slightly bolder to read easily without a box */
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease;
-      z-index: 999;
-      pointer-events: none;
-    }
-
-    /* Dark Mode Override (Tooltip Text) */
-    .dark #hero a.btn.social-icon::after,
-    [data-theme="dark"] #hero a.btn.social-icon::after {
-      color: #ffffff !important; /* Flips to white text in Dark Mode */
-    }
-
-    /* Hardcode the text based on the link's URL */
-    #hero a[href*="github.com"]::after { content: "GitHub"; }
-    #hero a[href*="linkedin.com"]::after { content: "LinkedIn"; }
-    #hero a[href*="medium.com"]::after { content: "Medium"; }
-    #hero a[href*="mailto:"]::after { content: "Email"; }
-    #hero a[href*="t.me"]::after { content: "Telegram"; }
-    #hero a[href*="blog"]::after { content: "Blog"; }
-
-    /* Show floating text on hover */
-    #hero a.btn.social-icon:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Hide the browser's default yellow tooltip to prevent overlapping */
-    #hero a.btn.social-icon:hover {
-      color: transparent !important;
-    }
-  </style> -->
-
-  <!-- 3 -->
-
-<!-- <style>
-    /* 1. The Container (fixes the "odd" alignment and spacing) */
-    #hero a.btn.social-icon {
-      border: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-
-      /* Spacing fixes */
-      margin-top: 1.5rem !important; /* This pushes icons down away from the text */
-      margin-right: 8px !important;  /* Space between individual icons */
-      padding: 0 !important;
-
-      min-width: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      width: auto !important;
-      height: auto !important;
-    }
-
-    /* 2. The Icons (Small & Crisp) */
-    #hero a.btn.social-icon img {
-      width: 20px !important;
-      height: 20px !important;
-      background: transparent !important;
-      /* Blue Filter for Light Mode */
-      filter: invert(36%) sepia(85%) saturate(3000%) hue-rotate(205deg) brightness(90%) contrast(110%) !important;
-      transition: transform 0.2s ease-in-out !important;
-    }
-
-    /* 3. Dark Mode Filter */
-    .dark #hero a.btn.social-icon img,
-    [data-theme="dark"] #hero a.btn.social-icon img {
-      filter: brightness(0) invert(1) !important;
-    }
-
-    /* 4. Hover Animation */
-    #hero a.btn.social-icon:hover img {
-      transform: scale(1.2) !important;
-    }
-  </style> -->
-
-<!--
-  /* Target giant Markdown headers (H1/H2) sneaking into the preview text */
-    html body #list-page .card .card-body .card-text h1,
-    html body #list-page .card .card-body .card-text h2 {
-      font-size: 14px !important;
-      font-weight: 700 !important;
-      line-height: 1.4 !important;
-      margin-bottom: 6px !important;
-      margin-top: 0 !important;
-      color: #444444 !important; /* Overrides the giant blue theme color */
-} -->
