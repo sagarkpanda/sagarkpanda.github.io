@@ -240,4 +240,27 @@ footer {
     flex-shrink: 0;
 }
 
+/* =========================================
+   PART 9: LYKET ALIGNMENT FIX
+   ========================================= */
+   .post-actions {
+    display: flex !important;
+    align-items: center !important; /* Centers heart and text vertically */
+    gap: 12px !important;           /* Space between heart and text */
+    margin-top: 2rem !important;    /* Pushes it away from the content */
+}
+
+/* Fixes the Lyket widget internal spacing */
+[data-lyket-type="like"] {
+    display: inline-flex !important;
+}
+
+/* Optional: Make the "Like this post?" text look like your status indicator */
+.post-actions .status-text {
+    margin: 0 !important;
+    font-size: 0.9em !important;
+}
+
 </style>
+
+<script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_37ab81db19fac635f25e6859ba29cf"></script>
