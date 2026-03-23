@@ -1,15 +1,15 @@
 ---
 date: '2026-03-18T19:26:10+05:30'
 draft: false
-title: 'Kafka Basics'
+title: 'Kafka — The Calm Brain in the Middle of Chaotic Microservices.'
 Description: Microservices are loud. Kafka makes them finally think together
 tags:
   - kafka
   - microservices
 ---
 
-Kafka — The Calm Brain in the Middle of Chaotic Microservices.
-==============================================================
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FtTi1Yxel568GbnO7l0_0Q.png)
+
 ### 💡 What it is:
 
 At its core, **Kafka is like a high-speed, super-durable logbook** for a company.
