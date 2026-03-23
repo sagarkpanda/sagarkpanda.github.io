@@ -95,7 +95,7 @@
   /* =========================================
      PART 3: GLOBAL CARD STYLING
      ========================================= */
-  .card {
+     .card {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
   }
@@ -107,12 +107,27 @@
 
   #list-page .card-body, #recent-posts .card-body { padding: 1.25rem !important; }
 
-  /* Card Text Colors */
-  html body .card .card-body h5.card-title { font-size: 20px !important; color: #222222 !important; }
-  html[data-theme="dark"] body .card .card-body h5.card-title { color: #ffffff !important; }
+  /* Card Titles - Light Mode */
+  #recent-posts .card .card-body h5.card-title,
+  #list-page .card .card-body h5.card-title {
+      font-size: 20px !important;
+      color: #222222 !important;
+  }
 
+  /* Card Titles - Dark Mode (FORCE WHITE) */
+  html[data-theme="dark"] #recent-posts .card .card-body h5.card-title,
+  html[data-theme="dark"] #list-page .card .card-body h5.card-title,
+  .dark #recent-posts .card .card-body h5.card-title,
+  .dark #list-page .card .card-body h5.card-title {
+      color: #ffffff !important;
+  }
+
+  /* Card Description - Light Mode */
   html body .card .card-body .card-text p { color: #0d6efd !important; }
-  html[data-theme="dark"] body .card .card-body .card-text p { color: #60a5fa !important; }
+
+  /* Card Description - Dark Mode */
+  html[data-theme="dark"] body .card .card-body .card-text p,
+  .dark body .card .card-body .card-text p { color: #60a5fa !important; }
 
   /* =========================================
      PART 4: VIEW ALL POSTS BUTTON
