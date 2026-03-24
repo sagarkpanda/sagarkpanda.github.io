@@ -278,7 +278,7 @@ html[data-theme="light"] .like-count {
     color: #212529 !important;
 }
 
-/* Part 9: Sidebar Nav Buttons (Solid Background & Theme Match) */
+/* Part 9: Sidebar Nav Buttons - Dark Mode Forced */
 .post-navigation {
     display: flex;
     flex-direction: column;
@@ -293,23 +293,15 @@ html[data-theme="light"] .like-count {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 15px; /* Increased padding for better 'card' feel */
+    padding: 15px;
     border-radius: 8px;
     transition: all 0.2s ease-in-out;
     width: 100% !important;
     border: 1px solid rgba(128, 128, 128, 0.1) !important;
 
-    /* LIGHT MODE: Solid White Background */
+    /* DEFAULT (Light Mode) */
     background-color: #ffffff !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* Hover Effect: No Red, just a subtle lift and shadow */
-.nav-btn:hover {
-    background-color: #ffffff !important;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-color: rgba(128, 128, 128, 0.3) !important;
 }
 
 .nav-text {
@@ -322,7 +314,7 @@ html[data-theme="light"] .like-count {
     font-size: 10px !important;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #007bff !important; /* Keep the Blue for the label visibility */
+    color: #007bff !important;
     font-weight: 700;
 }
 
@@ -330,34 +322,38 @@ html[data-theme="light"] .like-count {
     font-size: 13px !important;
     line-height: 1.4;
     margin-top: 2px;
-    color: #212529 !important; /* Force Black for Light Mode */
+    color: #212529 !important; /* Black text for light mode */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* --- DARK MODE THEME MATCH --- */
+/* --- DARK MODE OVERRIDE (Forced) --- */
+
+/* This specifically targets when 'dark' is present, regardless of 'light' */
+body.dark .nav-btn,
 body.light-dark .nav-btn {
-    /* DARK MODE: Solid Dark Grey/Black Background to match Sidebar */
-    background-color: #1e1e1e !important;
+    background-color: #252525 !important; /* Dark card color */
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-body.light-dark .nav-btn:hover {
-    background-color: #252525 !important; /* Slightly lighter on hover in dark mode */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-
+body.dark .nav-text strong,
 body.light-dark .nav-text strong {
-    color: #ffffff !important; /* Force White for Dark Mode */
+    color: #ffffff !important; /* White text for dark mode */
 }
 
+body.dark .nav-text span,
 body.light-dark .nav-text span {
-    color: #58a6ff !important;
+    color: #58a6ff !important; /* Brighter blue label */
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .nav-btn i {
-    color: #888888 !important; /* Subtle grey icons instead of red */
+    color: #888888 !important;
     font-size: 14px;
     flex-shrink: 0;
 }
