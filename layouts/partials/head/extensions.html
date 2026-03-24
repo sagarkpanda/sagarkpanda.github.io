@@ -278,13 +278,13 @@ html[data-theme="light"] .like-count {
     color: #212529 !important;
 }
 
-/* Part 9: Nav buttons */
+/* Part 9: Sidebar Nav Buttons (Solid Background & Theme Match) */
 .post-navigation {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin: 80px 0 40px 0;
-    padding-top: 30px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(128, 128, 128, 0.2);
 }
 
@@ -292,45 +292,74 @@ html[data-theme="light"] .like-count {
     text-decoration: none !important;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    background: rgba(128, 128, 128, 0.1) !important;
-    transition: all 0.3s ease;
-    width: 48%;
+    gap: 12px;
+    padding: 15px; /* Increased padding for better 'card' feel */
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    width: 100% !important;
+    border: 1px solid rgba(128, 128, 128, 0.1) !important;
+
+    /* LIGHT MODE: Solid White Background */
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Hover Effect: No Red, just a subtle lift and shadow */
+.nav-btn:hover {
+    background-color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: rgba(128, 128, 128, 0.3) !important;
 }
 
 .nav-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
-/* --- THE FORCED THEME FIX --- */
-
-/* 1. Target Light Mode specifically when NOT in dark mode */
-body.light:not(.dark) .nav-text strong {
-    color: #212529 !important;
+.nav-text span {
+    font-size: 10px !important;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #007bff !important; /* Keep the Blue for the label visibility */
+    font-weight: 700;
 }
 
-/* 2. Target Dark Mode with maximum priority */
-/* This rule says: If body has 'dark' class, find the nav button and force white */
-body.dark .nav-btn .nav-text strong,
-body.light-dark .nav-btn .nav-text strong,
-.dark .nav-btn .nav-text strong {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important; /* Forces color on some mobile browsers */
+.nav-text strong {
+    font-size: 13px !important;
+    line-height: 1.4;
+    margin-top: 2px;
+    color: #212529 !important; /* Force Black for Light Mode */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* 3. Force the labels (Previous/Next) */
-body.dark .nav-btn .nav-text span,
-body.light-dark .nav-btn .nav-text span {
+/* --- DARK MODE THEME MATCH --- */
+body.light-dark .nav-btn {
+    /* DARK MODE: Solid Dark Grey/Black Background to match Sidebar */
+    background-color: #1e1e1e !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.light-dark .nav-btn:hover {
+    background-color: #252525 !important; /* Slightly lighter on hover in dark mode */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+body.light-dark .nav-text strong {
+    color: #ffffff !important; /* Force White for Dark Mode */
+}
+
+body.light-dark .nav-text span {
     color: #58a6ff !important;
-    font-weight: 700 !important;
 }
 
 .nav-btn i {
-    color: #ff3b5c !important;
-    font-size: 20px !important;
+    color: #888888 !important; /* Subtle grey icons instead of red */
+    font-size: 14px;
+    flex-shrink: 0;
 }
 
 </style>
