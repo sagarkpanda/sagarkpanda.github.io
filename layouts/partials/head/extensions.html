@@ -240,4 +240,93 @@ footer {
     flex-shrink: 0;
 }
 
+/* =========================================
+   Part 8: Supabase likes
+   ========================================= */
+   .post-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin: 30px 0 !important;
+    position: relative !important;
+    z-index: 9999 !important; /* Move to the absolute front */
+    pointer-events: auto !important;
+}
+
+.btn-like {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    font-size: 28px !important;
+    color: #ff3b5c !important; /* Force Red Heart */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    outline: none !important;
+}
+
+.like-count {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    /* Theme Awareness */
+    color: #ffffff !important;
+}
+
+html[data-theme="light"] .like-count {
+    color: #212529 !important;
+}
 </style>
+
+<script>
+    var SB_URL = 'https://dghpmgmaxkrabkccuprr.supabase.co';
+    var SB_KEY = 'sb_publishable_t-qvYe3VpU-jx5bV6L2BBg_bJX24bvU';
+
+    async function handleLike() {
+        var slug = window.location.pathname;
+        var storageKey = 'liked_' + slug;
+
+        if (localStorage.getItem(storageKey)) {
+            alert("You already liked this!");
+            return;
+        }
+
+        try {
+            const res = await fetch(SB_URL + '/rest/v1/rpc/increment_like', {
+                method: 'POST',
+                headers: {
+                    'apikey': SB_KEY,
+                    'Authorization': 'Bearer ' + SB_KEY,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ post_id: slug })
+            });
+
+            if (res.ok) {
+                localStorage.setItem(storageKey, 'true');
+                var countEl = document.getElementById('like-count');
+                if (countEl) {
+                    countEl.innerText = (parseInt(countEl.innerText) || 0) + 1;
+                }
+                document.getElementById('like-btn').style.opacity = "0.5";
+            }
+        } catch (e) {
+            console.error("Supabase error:", e);
+        }
+    }
+
+    // Load the count when the page opens
+    document.addEventListener('DOMContentLoaded', function() {
+        var slug = window.location.pathname;
+        fetch(SB_URL + '/rest/v1/likes?id=eq.' + encodeURIComponent(slug) + '&select=count', {
+            headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data && data[0]) {
+                document.getElementById('like-count').innerText = data[0].count;
+            }
+        });
+    });
+</script>
