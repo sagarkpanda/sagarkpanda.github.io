@@ -40,14 +40,6 @@
           <article class="page-content  p-2">
           {{ .Content | emojify }}
           </article>
-          <div class="post-actions mb-5">
-            <div
-              data-lyket-type="like"
-              data-lyket-id="{{ .Slug | default .File.ContentBaseName }}"
-              data-lyket-namespace="blog"
-              data-lyket-template="twitter"
-            ></div>
-          </div>
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
