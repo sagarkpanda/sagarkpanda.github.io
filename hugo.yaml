@@ -492,7 +492,7 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Sagar Panda | DevOps Engineer"
+  title: "Sagar Panda | DevOps & Cloud infra Engineer"
   description: "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing expert tutorials on cloud infrastructure and CI/CD automation."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/images/circle_profile.webp"
