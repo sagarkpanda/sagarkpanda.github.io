@@ -1,9 +1,9 @@
-baseURL: "https://sagarkpanda.github.io/"
-relativeURLs: true
-canonifyURLs: true
+baseURL: "https://sagarpanda.com/"
+relativeURLs: false
+canonifyURLs: false
 languageCode: "en-us"
-title: "Sagar Panda"
-Description: "DevOps Engineer specializing in cloud infrastructure, CI/CD and Kubernetes."
+title: "Sagar Panda | DevOps & Cloud Infrastructure Engineer"
+Description: "Expert DevOps insights on AWS, Kubernetes, Terraform, and CI/CD. Providing deep-dive technical guides for building scalable cloud infrastructure."
 theme: hugo-profile
 
 
@@ -58,8 +58,8 @@ languages:
   #         Soy una desarrolladora de software con pasión por el desarrollo web. Tengo experiencia en ciencias de la computación y matemáticas, y tengo un fuerte interés en la intersección de la tecnología y el arte. Actualmente trabajo como desarrolladora de software en [ejemplo org.](https://example.com) en San Francisco, CA.
 
   #         Actualmente estoy trabajando en un proyecto que se utilizará para ayudar a las personas a encontrar la mejor manera de moverse por la ciudad.
-  #       skills:
-  #         title: "Aquí hay algunas tecnologías con las que he estado trabajando recientemente:"
+  #     skills:
+  #       title: "Aquí hay algunas tecnologías con las que he estado trabajando recientemente:"
   #     experience:
   #       items:
   #         - company: "Facebook"
@@ -264,8 +264,8 @@ languages:
   #         Je suis une développeuse de logiciels passionnée par le développement web. J'ai une formation en informatique et en mathématiques, et je m'intéresse vivement à l'intersection de la technologie et de l'art. Je travaille actuellement comme développeuse de logiciels chez [exemple org.](https://example.com) à San Francisco, CA.
 
   #         Je travaille actuellement sur un projet qui sera utilisé pour aider les gens à trouver le meilleur moyen de se déplacer dans la ville.
-  #       skills:
-  #         title: "Voici quelques technologies avec lesquelles j'ai travaillé récemment:"
+  #     skills:
+  #       title: "Voici quelques technologies avec lesquelles j'ai travaillé récemment:"
   #     experience:
   #       items:
   #         - company: "Facebook"
@@ -492,10 +492,11 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Hugo Profile"
-  description: Personal Portfolio and Blog
+  title: "Sagar Panda | DevOps Engineer"
+  description: "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing expert tutorials on cloud infrastructure and CI/CD automation."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/images/circle_profile.webp"
+  images: ["/images/og-image.png"]
 
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
@@ -708,18 +709,18 @@ params:
 
             featuredItems:
               customIcons:
-                 - icon: images/aws.svg
-                   url: "https://aws.amazon.com/"
-                   tooltip: "AWS"
-                 - icon: images/jenkins.svg
-                   url: "https://example.com"
-                   tooltip: "Jenkins"
-                 - icon: images/docker.svg
-                   url: "https://example.com"
-                   tooltip: "Docker"
-                 - icon: images/terraform.svg
-                   url: "https://example.com"
-                   tooltip: "Terraform"
+                  - icon: images/aws.svg
+                    url: "https://aws.amazon.com/"
+                    tooltip: "AWS"
+                  - icon: images/jenkins.svg
+                    url: "https://example.com"
+                    tooltip: "Jenkins"
+                  - icon: images/docker.svg
+                    url: "https://example.com"
+                    tooltip: "Docker"
+                  - icon: images/terraform.svg
+                    url: "https://example.com"
+                    tooltip: "Terraform"
 
       - company: "Waycool Foods"
         companyUrl: "https://waycool.in"
@@ -939,4 +940,4 @@ params:
     articleRecent: "Jan 2, 2006"
 
   #customScripts: -| # You can add custom scripts which will be added before </body> tag
-  #  <script type="text/javascript"><!-- any script here --></script>
+  #  <script type="text/javascript"></script>
