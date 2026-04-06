@@ -645,18 +645,18 @@ params:
       items:
         - "AWS"
         - "Jenkins"
-        - "SonarQube"
         - "GitHub Actions"
         - "Gitlab CI/CD"
-        - "Docker"
         - "Ansible"
         - "Terraform"
         - "Docker"
         - "Kubernetes"
         - "Linux"
+        - "Apache/Nginx"
         - "Argo CD"
         - "Prometheus"
         - "Grafana"
+        - "SonarQube"
 
 
   # Experience
