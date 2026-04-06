@@ -373,6 +373,24 @@ body.dark {
     color: var(--heart-cherry);
 }
 
+/* --- Refined "Micro-Shake" (Subtle & Clean) --- */
+.shake-animation {
+    animation: micro-shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes micro-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+}
+
+/* Optional: Add a 'not-allowed' cursor when already liked */
+.liked #like-btn {
+    cursor: default !important;
+}
+
 /* Part 9: Sidebar Nav Buttons - Dark Mode Forced */
 .post-navigation {
     display: flex;
@@ -463,20 +481,30 @@ body.light-dark .nav-text span {
         const slug = window.location.pathname;
         const storageKey = 'liked_' + slug;
         const container = document.getElementById('custom-heart-section');
+        const btn = document.getElementById('like-btn');
         const countEl = document.getElementById('like-count');
 
-        // Prevent double-liking based on localStorage
+        if (!container || !btn || !countEl) return;
+
+        // --- CASE 1: ALREADY LIKED ---
+        // Trigger the "Shake" animation to show it's already done
         if (localStorage.getItem(storageKey)) {
-            console.log("Already liked");
+            btn.classList.remove('shake-animation'); // Reset class
+            void btn.offsetWidth;                    // Trigger reflow to restart animation
+            btn.classList.add('shake-animation');
+
+            // Clean up class after animation (400ms)
+            setTimeout(() => btn.classList.remove('shake-animation'), 400);
             return;
         }
 
-        // 1. Trigger UI Animation & Optimistic Increment
+        // --- CASE 2: NEW LIKE ---
+        // 1. Optimistic UI update (Instant feedback)
         container.classList.add('liked');
         let currentCount = parseInt(countEl.innerText) || 0;
         countEl.innerText = currentCount + 1;
 
-        // 2. Sync with Supabase
+        // 2. Network Request to Supabase
         try {
             const res = await fetch(SB_URL + '/rest/v1/rpc/increment_like', {
                 method: 'POST',
@@ -491,31 +519,39 @@ body.light-dark .nav-text span {
             if (res.ok) {
                 localStorage.setItem(storageKey, 'true');
             } else {
-                throw new Error("Supabase update failed");
+                throw new Error("Supabase RPC failed");
             }
         } catch (e) {
-            console.error("Supabase error:", e);
-            // Optional: Rollback UI if it fails
+            console.error("Like Sync Error:", e);
+            // Optional: Revert UI if the server is down
             // container.classList.remove('liked');
             // countEl.innerText = currentCount;
         }
     }
 
-    // Load state and count on page load
+    /**
+     * Page Load Initialization
+     * Syncs UI state with LocalStorage and fetches fresh count
+     */
     document.addEventListener('DOMContentLoaded', function() {
         const slug = window.location.pathname;
         const storageKey = 'liked_' + slug;
         const container = document.getElementById('custom-heart-section');
         const countEl = document.getElementById('like-count');
 
-        // Check if user already liked this (UI state)
+        if (!container || !countEl) return;
+
+        // Check if user already liked this post previously
         if (localStorage.getItem(storageKey)) {
             container.classList.add('liked');
         }
 
-        // Fetch current count from Supabase
+        // Fetch the current like count from Supabase
         fetch(SB_URL + '/rest/v1/likes?id=eq.' + encodeURIComponent(slug) + '&select=count', {
-            headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+            headers: {
+                'apikey': SB_KEY,
+                'Authorization': 'Bearer ' + SB_KEY
+            }
         })
         .then(res => res.json())
         .then(data => {
@@ -523,6 +559,6 @@ body.light-dark .nav-text span {
                 countEl.innerText = data[0].count;
             }
         })
-        .catch(err => console.error("Error loading likes:", err));
+        .catch(err => console.error("Error loading like count:", err));
     });
 </script>
