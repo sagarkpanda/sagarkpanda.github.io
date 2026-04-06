@@ -243,39 +243,134 @@ footer {
 /* =========================================
    Part 8: Supabase likes
    ========================================= */
-   .post-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin: 30px 0 !important;
-    position: relative !important;
-    z-index: 9999 !important; /* Move to the absolute front */
-    pointer-events: auto !important;
+/* --- Bluesky Like Button Styles (No Hover Circle) --- */
+:root {
+    --heart-grey: #8899a6;
+    --heart-cherry: #D2042D;
 }
 
-.btn-like {
+/* Dark Mode Theme Overrides */
+body.dark {
+    --heart-grey: #657786;
+}
+
+.bluesky-heart-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+    position: relative;
+    z-index: 10;
+}
+
+#like-btn {
     background: none !important;
     border: none !important;
-    padding: 0 !important;
+    padding: 0 !important; /* Removed padding to tighten the layout */
     cursor: pointer !important;
-    font-size: 28px !important;
-    color: #ff3b5c !important; /* Force Red Heart */
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
     outline: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
 }
 
-.like-count {
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    /* Theme Awareness */
-    color: #ffffff !important;
+
+#like-btn:hover {
+    transform: scale(1.2);
 }
 
-html[data-theme="light"] .like-count {
-    color: #212529 !important;
+.icon-stack {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.icon-stack svg {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 24px !important;
+    height: 24px !important;
+    transition: all 0.2s ease !important;
+    pointer-events: none;
+}
+
+.heart-outline {
+    color: var(--heart-grey) !important;
+    opacity: 1 !important;
+    z-index: 2;
+}
+
+.heart-filled {
+    color: var(--heart-cherry) !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    z-index: 3;
+    filter: drop-shadow(0 0 2px rgba(210, 4, 45, 0.3));
+}
+
+/* --- THE EXPLOSION --- */
+.particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow:
+        0 -18px 0 0 var(--heart-cherry), 13px -13px 0 0 var(--heart-cherry),
+        18px 0 0 0 var(--heart-cherry), 13px 13px 0 0 var(--heart-cherry),
+        0 18px 0 0 var(--heart-cherry), -13px 13px 0 0 var(--heart-cherry),
+        -18px 0 0 0 var(--heart-cherry), -13px -13px 0 0 var(--heart-cherry);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- ANIMATION TRIGGERS --- */
+.liked .heart-outline {
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0.5) !important;
+}
+
+.liked .heart-filled {
+    opacity: 1 !important;
+    animation: heart-bounce-svg 0.45s cubic-bezier(0.17, 0.89, 0.32, 1.49) forwards !important;
+}
+
+.liked .particles {
+    animation: particle-burst 0.45s ease-out forwards;
+}
+
+@keyframes heart-bounce-svg {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.4); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes particle-burst {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
+
+#like-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--heart-grey);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.liked #like-count {
+    color: var(--heart-cherry);
 }
 
 /* Part 9: Sidebar Nav Buttons - Dark Mode Forced */
@@ -361,18 +456,27 @@ body.light-dark .nav-text span {
 </style>
 
 <script>
-    var SB_URL = 'https://dghpmgmaxkrabkccuprr.supabase.co';
-    var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnaHBtZ21heGtyYWJrY2N1cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzMjM2OTMsImV4cCI6MjA4OTg5OTY5M30.jiaAgBQ55EgweW33BUV8uFKssmEPOTxjNQvw4qJ4Lrs';
+    const SB_URL = 'https://dghpmgmaxkrabkccuprr.supabase.co';
+    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnaHBtZ21heGtyYWJrY2N1cHJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzMjM2OTMsImV4cCI6MjA4OTg5OTY5M30.jiaAgBQ55EgweW33BUV8uFKssmEPOTxjNQvw4qJ4Lrs';
 
     async function handleLike() {
-        var slug = window.location.pathname;
-        var storageKey = 'liked_' + slug;
+        const slug = window.location.pathname;
+        const storageKey = 'liked_' + slug;
+        const container = document.getElementById('custom-heart-section');
+        const countEl = document.getElementById('like-count');
 
+        // Prevent double-liking based on localStorage
         if (localStorage.getItem(storageKey)) {
-            alert("You already liked this!");
+            console.log("Already liked");
             return;
         }
 
+        // 1. Trigger UI Animation & Optimistic Increment
+        container.classList.add('liked');
+        let currentCount = parseInt(countEl.innerText) || 0;
+        countEl.innerText = currentCount + 1;
+
+        // 2. Sync with Supabase
         try {
             const res = await fetch(SB_URL + '/rest/v1/rpc/increment_like', {
                 method: 'POST',
@@ -386,28 +490,39 @@ body.light-dark .nav-text span {
 
             if (res.ok) {
                 localStorage.setItem(storageKey, 'true');
-                var countEl = document.getElementById('like-count');
-                if (countEl) {
-                    countEl.innerText = (parseInt(countEl.innerText) || 0) + 1;
-                }
-                document.getElementById('like-btn').style.opacity = "0.5";
+            } else {
+                throw new Error("Supabase update failed");
             }
         } catch (e) {
             console.error("Supabase error:", e);
+            // Optional: Rollback UI if it fails
+            // container.classList.remove('liked');
+            // countEl.innerText = currentCount;
         }
     }
 
-    // Load the count when the page opens
+    // Load state and count on page load
     document.addEventListener('DOMContentLoaded', function() {
-        var slug = window.location.pathname;
+        const slug = window.location.pathname;
+        const storageKey = 'liked_' + slug;
+        const container = document.getElementById('custom-heart-section');
+        const countEl = document.getElementById('like-count');
+
+        // Check if user already liked this (UI state)
+        if (localStorage.getItem(storageKey)) {
+            container.classList.add('liked');
+        }
+
+        // Fetch current count from Supabase
         fetch(SB_URL + '/rest/v1/likes?id=eq.' + encodeURIComponent(slug) + '&select=count', {
             headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
         })
         .then(res => res.json())
         .then(data => {
             if (data && data[0]) {
-                document.getElementById('like-count').innerText = data[0].count;
+                countEl.innerText = data[0].count;
             }
-        });
+        })
+        .catch(err => console.error("Error loading likes:", err));
     });
 </script>

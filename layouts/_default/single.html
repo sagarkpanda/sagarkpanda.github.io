@@ -42,14 +42,17 @@
           </article>
 
           <!-- like button-->
-          <div id="custom-heart-section" style="position: relative; z-index: 99999; margin: 40px 0; display: flex; align-items: center; gap: 15px;">
-            <button id="like-btn"
-                    onclick="handleLike()"
-                    style="background: none !important; border: none !important; cursor: pointer !important; padding: 0 !important; outline: none !important;">
-                <i class="fas fa-heart" style="font-size: 30px; color: #ff3b5c !important;"></i>
-            </button>
-            <span id="like-count" style="font-size: 20px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: #ff3b5c;">0</span>
+
+        <div id="custom-heart-section" class="bluesky-heart-wrapper">
+    <button id="like-btn" onclick="handleLike()">
+        <div class="icon-stack">
+            <div class="particles"></div>
+            <i class="far fa-heart heart-outline"></i>
+            <i class="fas fa-heart heart-filled"></i>
         </div>
+    </button>
+    <span id="like-count">0</span>
+</div>
 
         <!--end like-->
 
