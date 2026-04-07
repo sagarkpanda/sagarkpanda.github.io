@@ -93,77 +93,104 @@
   }
 
   /* =========================================
-     PART 3: GLOBAL CARD STYLING
-     ========================================= */
-     .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-  }
+   PART 3: GLOBAL CARD STYLING
+   ========================================= */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
 
-  .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  }
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
 
-  #list-page .card-body, #recent-posts .card-body { padding: 1.25rem !important; }
+#list-page .card-body, #recent-posts .card-body {
+    padding: 1.25rem !important;
+}
 
-  /* Card Titles - Light Mode */
-  #recent-posts .card .card-body h5.card-title,
-  #list-page .card .card-body h5.card-title {
-      font-size: 20px !important;
-      color: #222222 !important;
-  }
+/* Card Titles - Light/Dark Mode */
+#recent-posts .card .card-body h5.card-title,
+#list-page .card .card-body h5.card-title {
+    font-size: 20px !important;
+    color: #222222 !important;
+}
 
-  /* Card Titles - Dark Mode (FORCE WHITE) */
-  html[data-theme="dark"] #recent-posts .card .card-body h5.card-title,
-  html[data-theme="dark"] #list-page .card .card-body h5.card-title,
-  .dark #recent-posts .card .card-body h5.card-title,
-  .dark #list-page .card .card-body h5.card-title {
-      color: #ffffff !important;
-  }
+html[data-theme="dark"] #recent-posts .card .card-body h5.card-title,
+html[data-theme="dark"] #list-page .card .card-body h5.card-title,
+.dark #recent-posts .card .card-body h5.card-title,
+.dark #list-page .card .card-body h5.card-title {
+    color: #ffffff !important;
+}
 
-  /* Card Description - Light Mode */
-  html body .card .card-body .card-text p { color: #0d6efd !important; }
+/* Card Description - Light/Dark Mode */
+html body .card .card-body .card-text p { color: #0d6efd !important; }
+html[data-theme="dark"] body .card .card-body .card-text p,
+.dark body .card .card-body .card-text p { color: #60a5fa !important; }
 
-  /* Card Description - Dark Mode */
-  html[data-theme="dark"] body .card .card-body .card-text p,
-  .dark body .card .card-body .card-text p { color: #60a5fa !important; }
+/* --- Fix: Remove Recent Post Card Separators --- */
+#recent-posts .card-footer {
+    border-top: none !important;
+    border: 0 !important;
+    padding-top: 0 !important;
+    background-color: transparent !important;
+}
 
-  /* =========================================
-     PART 4: VIEW ALL POSTS BUTTON
-     ========================================= */
-  #recent-posts .btn-view-all {
-      border: 1px solid #0d6efd !important;
-      color: #0d6efd !important;
-      background-color: transparent !important;
-      transition: all 0.3s ease-in-out !important;
-      font-weight: 500;
-      display: inline-block;
-      border-radius: 4px; /* Matches your non-circle preference */
-       /* TRIM SIDE SPACES HERE */
+/* --- Fix: Date Contrast (Black/White) --- */
+.card-date {
+    font-weight: 600;
+    color: #212529 !important;
+}
+
+html[data-theme="dark"] .card-date,
+.dark .card-date {
+    color: #ffffff !important;
+}
+
+/* --- Fix: Remove "Box" / Background from Read More link --- */
+#recent-posts .card-footer a.text-info {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    outline: none !important;
+}
+
+/* =========================================
+   PART 4: VIEW ALL POSTS BUTTON
+   ========================================= */
+#recent-posts .btn-view-all {
+    border: 1px solid #0d6efd !important;
+    color: #0d6efd !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease-in-out !important;
+    font-weight: 500;
+    display: inline-block;
+    border-radius: 4px;
     padding: 6px 14px !important;
     width: auto !important;
     min-width: 0 !important;
-  }
+}
 
-  #recent-posts .btn-view-all:hover {
-      color: #0d6efd !important;
-      border-color: #0d6efd !important;
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
-  }
+#recent-posts .btn-view-all:hover {
+    color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    background-color: transparent !important;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
 
-  /* View All Button Dark Mode */
-  html[data-theme="dark"] #recent-posts .btn-view-all {
-      border: 1px solid #ffffff !important;
-      color: #ffffff !important;
-  }
+html[data-theme="dark"] #recent-posts .btn-view-all {
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+}
 
-  html[data-theme="dark"] #recent-posts .btn-view-all:hover {
-      color: #ffffff !important;
-      border-color: #ffffff !important;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
-  }
+html[data-theme="dark"] #recent-posts .btn-view-all:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    background-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
 
   /* =========================================
      PART 5: FOOTER STATUS INDICATOR

@@ -13,11 +13,11 @@ tags:
 
 ![Image Souce: KubeBlogs](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jhtaeySqKrPpqKg8p3WRqA.png)
 
-### What is StatefulSet:
+### What is StatefulSet
 
 StatefulSets are used to manage stateful applications, such as databases or other applications that keep track of their state. By using StatefulSets, a set of pods can be deployed and scaled, ensuring that they are ordered and unique.
 
-### Why use StatefulSet:
+### Why use StatefulSet
 
 Since ips are random, we have hostname as a stable way to connect to pods. However, when we deploy any app, the service generally have hostname like this and since pod names are also generated with random characters it would become difficult to track them.
 
@@ -29,7 +29,7 @@ In such case when we use statefultset, we would get stable pod name and from whi
 
 Example: For MySQL, if we want to create the first pod as master pod and the next ones as read replicas, we can make mysql-0 pod as master.
 
-### Pod Identity and Ordering:
+### Pod Identity and Ordering
 
 StatefulSet pods have a unique ordinal index (0, 1, 2…). This provides:
 
@@ -70,7 +70,7 @@ If we scale up and down, the change are also going to be sequential.
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1188/format:webp/1*P5t0wzIZaGMpxyZ8_1qe8g.png)
 
-### Headless Service:
+### Headless Service
 
 Headless service is a regular Kubernetes service where the **spec.clusterIP** is explicitly set to “None” and **spec.type** is set to “ClusterIP”. Instead, SRV records are created for all the named ports of service’s endpoints.
 
@@ -94,14 +94,14 @@ Apply it, and list all the services, we can see clusterIP set to None for headle
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1218/format:webp/1*Xh-8509zrREO7TBkfYsnjA.png)
 
-### Using VolumeClaimTemplates:
+### Using VolumeClaimTemplates
 
 StatefulSets uses `volumeClaimTemplates` to provide **dedicated storage** to each pod. In a Deployment, all pods share the same volume; in a StatefulSet, each pod gets its own.
 
 1.  **Sticky Storage:** If `web-0` is deleted, the new `web-0` will automatically re-attach to the same Persistent Volume.
 2.  **Safety:** PVCs are not deleted when a StatefulSet is deleted, preventing accidental data loss.
 
-### Taking an existing storage class:
+### Taking an existing storage class
 
 There are several storage classes in azure, to view them list all the sorage classes.
 
@@ -148,6 +148,6 @@ Apply the config and list all the pods and PVCs. You will see that each pod inde
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*vccghxbBnH85me9yibZijw.png)
 
-### **Summary:**
+### Summary
 
 StatefulSets are the key to running databases and other state-heavy applications on Kubernetes. By providing each pod with a **unique ID**, a **stable hostname**, and its own **dedicated storage**, we ensure that our data stays safe and our cluster remains predictable even during restarts or scaling.
