@@ -462,6 +462,60 @@ body.light-dark .nav-text strong {
     flex-shrink: 0;
 }
 
+/* Modern Pill Tabs */
+.topic-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.tab-button {
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    color: #555;
+    padding: 8px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.tab-button.active {
+    background-color: #007bff !important; /* Standard Bootstrap Blue or your Info Blue */
+    color: white !important;
+    border-color: #007bff !important;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+}
+
+.tab-button:hover:not(.active) {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Ensure tab content animates slightly */
+.tab-content {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark Mode fixes for Tabs */
+body.dark .tab-button {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #ccc;
+}
+body.dark .tab-button.active {
+    background: #17a2b8 !important;
+    color: white !important;
+}
+
 </style>
 
 <script>
@@ -552,4 +606,23 @@ body.light-dark .nav-text strong {
         })
         .catch(err => console.error("Error loading like count:", err));
     });
+
+
+function openTopic(evt, topicName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  const target = document.getElementById(topicName);
+  if (target) {
+    target.style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+}
+
 </script>
