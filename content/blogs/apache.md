@@ -1,7 +1,7 @@
 ---
 date: '2023-01-25T19:26:10+05:30'
 draft: false
-title: 'Apache Installation'
+title: 'How to install Apache HTTP web server on Linux.'
 Description: Learn How to setup Apache HTTP webserver
 tags:
   - apache
@@ -9,8 +9,6 @@ tags:
   - devops
 ---
 
-How to install Apache HTTP web server on Linux.
-===============================================
 
 ### Introduction:
 

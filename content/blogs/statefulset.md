@@ -1,7 +1,7 @@
 ---
 date: '2026-04-07T10:30:10+05:30'
 draft: false
-title: 'Kubernetes StatefulSets Explained — When and Why to Use Them'
+title: 'Kubernetes StatefulSets Explained - When and Why to Use Them'
 Description: 'Part XV: Understanding Stable Pod Identity, Headless Services, and Persistent Storage in StatefulSets'
 tags:
   - kubernetes

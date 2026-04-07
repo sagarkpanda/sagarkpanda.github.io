@@ -1,16 +1,14 @@
 ---
 date: '2023-03-27T19:26:10+05:30'
 draft: false
-title: 'Apache Configurations'
-Description: Learn How to configure Apache HTTP webserver
+title: 'Apache HTTP Server Configurations'
+Description: 'Apache HTTP Server Setup: A Guide to Key Configurations'
 tags:
   - apache
   - http server
   - devops
 ---
 
-Apache HTTP Server Setup: A Guide to Key Configurations
-=======================================================
 
 In the previous post, we saw how to install and setup Apache web server. In this article we’ll see how to configure a basic web application, enable SSL/TLS and few more basic configuration in regards to security enhancements.
 

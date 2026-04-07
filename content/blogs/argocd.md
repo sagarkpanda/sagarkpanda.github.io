@@ -1,8 +1,8 @@
 ---
 date: '2024-02-10T19:26:10+05:30'
 draft: false
-title: 'GitOps in K8s using Argo CD '
-Description: Part VII — Continuous deployment of containerized applications into Kubernetes.
+title: 'ArgoCD GitOps for Kubernetes - From Code to Cluster'
+Description: Part VII - Continuous deployment of containerized applications into Kubernetes.
 tags:
   - argo cd
   - kubernetes
@@ -11,8 +11,6 @@ tags:
   - ci/cd
 ---
 
-From Code to Cluster — ArgoCD GitOps for Kubernetes
-===================================================
 
 ### What is GitOps:
 

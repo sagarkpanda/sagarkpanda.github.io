@@ -1,16 +1,14 @@
 ---
 date: '2024-05-05T19:26:10+05:30'
 draft: false
-title: 'Linux Terminal tips'
-Description: Learn a few tips for linux terminal
+title: 'Linux Terminal tips - Part 1'
+Description: Essential Linux Terminal Hacks for Efficiency
 tags:
   - linux
-  - teminal
+  - terminal
   - tips
 ---
 
-Essential Linux Terminal Hacks for Efficiency
-=============================================
 
 ### Introduction:
 
@@ -150,9 +148,7 @@ Used Ctrl S to save our changes? In terminal this key combination freezes the te
 To increase the terminal font size use Ctrl and + button, to reduce it, use Ctrl and — button.
 
 ### Next up:
+**Read part 2:**
+[here]({{< relref "linux_tips2" >}})
 
-Part 2:
 
-[Essential Linux Terminal Hacks for Efficiency — Part 2](https://sagarkpanda.medium.com/essential-linux-terminal-hacks-for-efficiency-part-2-84c1036d8258?source=post_page-----1ea5f5bac437---------------------------------------)
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*dvtaXV0yoOEU4W9v.png)

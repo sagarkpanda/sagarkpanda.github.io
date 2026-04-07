@@ -1,7 +1,7 @@
 ---
 date: '2023-05-01T19:26:10+05:30'
 draft: false
-title: 'SonarQube with Jenkins'
+title: 'SonarQube Setup with Jenkins'
 Description: Code Quality Analysis with SonrQube on Jenkins
 tags:
   - Jenkins
@@ -9,8 +9,6 @@ tags:
   - DevOps
 ---
 
-How to Install and Integrate SonarQube with Jenkins.
-====================================================
 
 ### Introduction:
 
