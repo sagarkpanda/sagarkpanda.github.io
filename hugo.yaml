@@ -689,11 +689,11 @@ params:
                 #   url: https://example.com
                 #   tooltip: Example tooltip content
                 - icon: /images/argo.svg
-                  url: "https://example.com"
+                  url: "https://argoproj.github.io/"
                   tooltip: Argo CD
 
                 - icon: /images/gitlab.svg
-                  url: "https://example.com"
+                  url: "https://gitlab.com"
                   tooltip: GitLab
           # - name: "Software Developer"
           #   date: "Jan 2022 - Dec 2023"
