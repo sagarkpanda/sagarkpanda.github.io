@@ -10,8 +10,6 @@ tags:
   - devops
 ---
 
-Automation with Ansible 101
-===========================
 
 ### Introduction:
 
