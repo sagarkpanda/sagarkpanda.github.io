@@ -116,26 +116,24 @@
           {{ end }}
 
           <!--nav buttons on blog-->
-          <div class="post-navigation">
-            {{ if .PrevInSection }}
-            <a href="{{ .PrevInSection.Permalink }}" class="nav-btn prev">
-                <i class="fas fa-chevron-left"></i>
-                <div class="nav-text">
-                    <span>Previous</span>
-                    <strong>{{ .PrevInSection.Title }}</strong>
-                </div>
-            </a>
-            {{ end }}
+            <div class="post-navigation">
+              {{ if .PrevInSection }}
+              <a href="{{ .PrevInSection.Permalink }}" class="nav-btn prev">
+                  <i class="fas fa-chevron-left"></i>
+                  <div class="nav-text">
+                      <strong>{{ .PrevInSection.Title }}</strong>
+                  </div>
+              </a>
+              {{ end }}
 
-            {{ if .NextInSection }}
-            <a href="{{ .NextInSection.Permalink }}" class="nav-btn next">
-                <div class="nav-text">
-                    <span>Next</span>
-                    <strong>{{ .NextInSection.Title }}</strong>
-                </div>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-            {{ end }}
+              {{ if .NextInSection }}
+              <a href="{{ .NextInSection.Permalink }}" class="nav-btn next">
+                  <div class="nav-text">
+                      <strong>{{ .NextInSection.Title }}</strong>
+                  </div>
+                  <i class="fas fa-chevron-right"></i>
+              </a>
+              {{ end }}
           </div>
           <!--nav end-->
 

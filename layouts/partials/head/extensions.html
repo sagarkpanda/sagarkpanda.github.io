@@ -391,10 +391,10 @@ body.dark {
     cursor: default !important;
 }
 
-/* Part 9: Sidebar Nav Buttons - Dark Mode Forced */
+/* Part 9: Sidebar Nav Buttons - Snug Version */
 .post-navigation {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 12px;
     margin-top: 30px;
     padding-top: 20px;
@@ -403,61 +403,52 @@ body.dark {
 
 .nav-btn {
     text-decoration: none !important;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px;
+    display: flex !important;
+    align-items: center !important;
+    padding: 18px 20px !important;
     border-radius: 8px;
     transition: all 0.2s ease-in-out;
     width: 100% !important;
     border: 1px solid rgba(128, 128, 128, 0.1) !important;
-
-    /* DEFAULT (Light Mode) */
     background-color: #ffffff !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    /* This ensures the content doesn't stretch to the edges */
+    justify-content: flex-start !important;
+    gap: 10px !important; /* This is the specific gap between arrow and text */
+}
+
+/* For the Next button, we still want it left-aligned but the arrow follows text */
+.nav-btn.next {
+    flex-direction: row !important;
 }
 
 .nav-text {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.nav-text span {
-    font-size: 10px !important;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #007bff !important;
-    font-weight: 700;
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
 }
 
 .nav-text strong {
-    font-size: 13px !important;
+    font-size: 14px !important;
     line-height: 1.4;
-    margin-top: 2px;
-    color: #212529 !important; /* Black text for light mode */
+    color: #212529 !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 600;
 }
 
-/* --- DARK MODE OVERRIDE (Forced) --- */
-
-/* This specifically targets when 'dark' is present, regardless of 'light' */
+/* Dark Mode */
 body.dark .nav-btn,
 body.light-dark .nav-btn {
-    background-color: #252525 !important; /* Dark card color */
+    background-color: #252525 !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 body.dark .nav-text strong,
 body.light-dark .nav-text strong {
-    color: #ffffff !important; /* White text for dark mode */
-}
-
-body.dark .nav-text span,
-body.light-dark .nav-text span {
-    color: #58a6ff !important; /* Brighter blue label */
+    color: #ffffff !important;
 }
 
 .nav-btn:hover {
@@ -466,8 +457,8 @@ body.light-dark .nav-text span {
 }
 
 .nav-btn i {
-    color: #888888 !important;
-    font-size: 14px;
+    color: #007bff !important;
+    font-size: 16px;
     flex-shrink: 0;
 }
 
