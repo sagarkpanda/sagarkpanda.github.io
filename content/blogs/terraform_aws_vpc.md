@@ -10,7 +10,6 @@ tags:
   - terraform
 ---
 
-
 ### Introduction
 
 The VPC is a logical private network that allows us to control how our resources, like servers, are connected and protected.
@@ -238,7 +237,3 @@ In this article, we’ve walked through the process of setting up an AWS VPC bot
 Be sure to delete/destroy resources once you are done with the experiment.
 
 In future articles we’ll learn more about NAT gateway, bastion host, VPC peering and other features of VPC.
-
-**Read more on AWS and Terraform:**
-
-[Sagar](https://sagarkpanda.medium.com/?source=post_page-----795903ce15dc---------------------------------------)
