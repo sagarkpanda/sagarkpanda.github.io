@@ -6,7 +6,6 @@ Description: Part XIV — Learn how Kubernetes Readiness, Liveness, and Startup 
 tags:
   - kubernetes
   - probes
-  - cloud
   - k8s
 ---
 

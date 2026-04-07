@@ -1,7 +1,7 @@
 ---
 date: '2026-03-18T19:26:10+05:30'
 draft: false
-title: 'Kafka — The Calm Brain in the Middle of Chaotic Microservices.'
+title: 'Kafka - The Calm Brain in the Middle of Chaotic Microservices.'
 Description: Microservices are loud. Kafka makes them finally think together
 tags:
   - kafka

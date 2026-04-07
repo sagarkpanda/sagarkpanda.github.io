@@ -5,8 +5,6 @@ title: 'Get started with Assible'
 Description: Chapter 1 - Installation, basics and playbook
 tags:
   - ansible
-  - linux
-  - cloud
   - devops
 ---
 
