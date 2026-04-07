@@ -718,13 +718,13 @@ params:
                     url: "https://aws.amazon.com/"
                     tooltip: "AWS"
                   - icon: images/jenkins.svg
-                    url: "https://example.com"
+                    url: "https://jenkins.io"
                     tooltip: "Jenkins"
                   - icon: images/docker.svg
-                    url: "https://example.com"
+                    url: "https://docker.com"
                     tooltip: "Docker"
                   - icon: images/terraform.svg
-                    url: "https://example.com"
+                    url: "https://terraform.io"
                     tooltip: "Terraform"
 
       - company: "Waycool Foods"
@@ -741,7 +741,7 @@ params:
                 url: "https://aws.amazon.com/"
                 tooltip: "AWS"
               - icon: images/jenkins.svg
-                url: "https://example.com"
+                url: https://jenkins.io
                 tooltip: "AWS"
               - icon: images/ansible.svg
                 url: "https://ansible.com/"
