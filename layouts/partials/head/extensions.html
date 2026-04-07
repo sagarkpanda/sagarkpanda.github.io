@@ -523,8 +523,9 @@ body.light-dark .nav-text strong {
     transition: all 0.25s ease;
 }
 
+/* --- Active State (Light Mode) --- */
 .tab-button.active {
-    background-color: #007bff !important; /* Standard Bootstrap Blue or your Info Blue */
+    background-color: #007bff !important; /* Pure Primary Blue */
     color: white !important;
     border-color: #007bff !important;
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
@@ -535,7 +536,33 @@ body.light-dark .nav-text strong {
     background-color: rgba(0, 123, 255, 0.05);
 }
 
-/* Ensure tab content animates slightly */
+/* --- Dark Mode Overrides --- */
+/* Base buttons in Dark Mode */
+html[data-theme="dark"] .tab-button,
+.dark .tab-button {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #ccc;
+}
+
+/* Active Button in Dark Mode - Removed Cyan, now using Primary Blue */
+html[data-theme="dark"] .tab-button.active,
+.dark .tab-button.active {
+    background-color: #0d6efd !important; /* Solid Blue instead of Cyan */
+    border-color: #0d6efd !important;
+    color: white !important;
+    /* Neutral glow to avoid the 'neon' look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover on Dark Mode tabs */
+html[data-theme="dark"] .tab-button:hover:not(.active),
+.dark .tab-button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Tab Content Animation */
 .tab-content {
     animation: fadeIn 0.4s ease;
 }
@@ -543,17 +570,6 @@ body.light-dark .nav-text strong {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* Dark Mode fixes for Tabs */
-body.dark .tab-button {
-    background: #2d2d2d;
-    border-color: #444;
-    color: #ccc;
-}
-body.dark .tab-button.active {
-    background: #17a2b8 !important;
-    color: white !important;
 }
 
 </style>
