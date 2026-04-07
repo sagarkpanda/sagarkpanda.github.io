@@ -6,6 +6,7 @@ Description: Build Your Own AWS VPC - Simple Terraform Deployment Steps!
 tags:
   - AWS
   - vpc
+  - cloud
   - terraform
 ---
 
