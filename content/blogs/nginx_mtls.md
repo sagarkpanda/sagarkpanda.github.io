@@ -1,7 +1,7 @@
 ---
 date: '2024-12-09T19:26:10+05:30'
 draft: false
-title: 'Setting up mTLS in Nginx'
+title: 'Set Up mTLS in NGINX for Robust Web Security.'
 Description: Discover how mTLS strengthens security and learn to set it up with NGINX.
 tags:
   - nginx
@@ -11,8 +11,6 @@ tags:
   - devops
 ---
 
-How to Set Up mTLS in NGINX for Robust Web Security.
-====================================================
 
 ![Image bg credit; Nginx](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZhRTae65blWVYB0aXvHoJA.png)
 

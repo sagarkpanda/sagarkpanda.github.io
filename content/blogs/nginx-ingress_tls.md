@@ -1,8 +1,8 @@
 ---
 date: '2024-04-07T19:26:10+05:30'
 draft: false
-title: 'Part IX — Using Domain name with TLS Cert for Nginx Ingress Controller.'
-Description: Ingress in K8s — Name based Routing with TLS
+title: 'Ingress in K8s - Name based Routing with TLS'
+Description: Part IX - Using Domain name with TLS Cert for Nginx Ingress Controller.
 tags:
   - nginx
   - tls
@@ -15,7 +15,7 @@ tags:
 
 ### Preface:
 
-In the [**_previous article_**](https://medium.com/faun/nginx-ingress-controller-for-kubernetes-networking-8a452fb66d62) we saw how to use nginx ingress for routing. Today we will experiment with adding domain to our app and will also use TLS cert for the domain.
+In the [**_previous article_**]({{< relref "nginx_ingress" >}}) we saw how to use nginx ingress for routing. Today we will experiment with adding domain to our app and will also use TLS cert for the domain.
 
 ### Getting started:
 

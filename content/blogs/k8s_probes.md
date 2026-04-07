@@ -1,8 +1,8 @@
 ---
 date: '2024-11-11T19:26:10+05:30'
 draft: false
-title: 'Part XIV — Learn how Kubernetes Readiness, Liveness, and Startup probes keep your applications healthy and resilient'
-Description: Kubernetes Health Checks with Probes
+title: 'Kubernetes Health Checks with Probes'
+Description: Part XIV — Learn how Kubernetes Readiness, Liveness, and Startup probes keep your applications healthy and resilient
 tags:
   - kubernetes
   - probes

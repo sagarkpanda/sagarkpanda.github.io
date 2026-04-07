@@ -1,7 +1,7 @@
 ---
 date: '2024-04-01T19:26:10+05:30'
 draft: false
-title: 'Kubernetes Ingress'
+title: 'Getting Started with Ingress In Kubernetes'
 Description: Nginx Ingress setup in kubernetes
 tags:
   - ingress
@@ -9,8 +9,6 @@ tags:
   - kubernetes
 ---
 
-Nginx Ingress for Kubernetes Networking.
-========================================
 
 ### Introduction:
 
@@ -146,12 +144,8 @@ A **prefix** path type will always route to the destination even if the url does
 
 ### **Up Next**:
 
-Here we used IP based routing. In [**_the next article_**](https://sagarkpanda.medium.com/ingress-in-k8s-hostname-based-routing-with-tls-9173b09ad5c9) we’ll experiment with host name based routing. We’ll also use TLS certificate on the domain name with ingress.
+Here we used IP based routing. In [**_the next article_**]({{< relref "nginx-ingress_tls" >}}) we’ll experiment with host name based routing. We’ll also use TLS certificate on the domain name with ingress.
 
 **Read More on K8s:**
 
-[Sagar](https://sagarkpanda.medium.com/?source=post_page-----8a452fb66d62---------------------------------------)
-
-
 [Kubernetes list](https://sagarkpanda.medium.com/list/kubernetes-a0f8fab4ee0d?source=post_page-----8a452fb66d62---------------------------------------)
-

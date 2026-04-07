@@ -1,8 +1,8 @@
 ---
 date: '2024-01-05T19:26:10+05:30'
 draft: false
-title: 'Helm in Kubernetes'
-Description: Part XI — Getting started with Helm, the package manager for Kubernetes for easy application management.
+title: 'Helm in Kubernetes - A Beginner’s guide'
+Description: Part XI - Getting started with Helm, the package manager for Kubernetes for easy application management.
 tags:
   - helm
   - kubernetes
@@ -10,8 +10,6 @@ tags:
   - devops
 ---
 
-A Beginner’s guide to Helm in Kubernetes.
-=========================================
 
 ### What is Helm:
 
