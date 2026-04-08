@@ -6,6 +6,7 @@ Description: Chapter 1 - Installation, basics and playbook
 tags:
   - ansible
   - devops
+  - cloud
 ---
 
 
@@ -167,10 +168,12 @@ As we can see, Apache has been installed, started and enabled. Lets browse the I
 
 Congratulations on completing the basic Ansible setup. This marks the end of this tutorial. We’ll see advanced configuration in future tutorial.
 
-[Automation with Ansible -- Groups, Variables, Conditionals and Loops](https://sagarkrp.medium.com/automation-with-ansible-groups-variables-conditionals-and-loops-b5020d39115b?source=post_page-----27f709f4f8a---------------------------------------)
-
 **_Make sure to terminate any vm instances if you have created to avoid incurring charges._**
 
 Thanks for reading.
+
+Read More on Ansible:
+
+[Chapter 2]({{< relref "ansible2" >}}), [Chapter 3]({{< relref "ansible3" >}})
 
 Reference: Ansible Docs, ChatGPT
