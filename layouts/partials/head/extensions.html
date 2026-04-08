@@ -581,8 +581,8 @@ html[data-theme="dark"] .tab-button:hover:not(.active),
    Part 11 - CENTERED PAGE COUNTER
    ================================ */
 .page-count-text {
-    font-family: "Georgia", serif;
-    font-style: italic;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
     font-size: 14px;
     color: #6c757d;
     letter-spacing: 0.5px;
@@ -598,73 +598,54 @@ html[data-theme="dark"] .page-count-text {
 /* =========================================
    PART 12: SQUIRCLE PAGINATION (BUTTON MATCH)
    ========================================= */
-.page-count-text {
-    font-family: "Georgia", serif;
-    font-style: italic;
-    font-size: 13px;
-    color: #6c757d;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    display: block;
+
+#list-page .pagination {
+    display: inline-flex !important;
+    padding: 2px !important;
+    border: 1px solid #007bff !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important; /* Solid white like your button */
+    box-shadow: none !important;
+    margin: 0 auto !important;
 }
 
-/* --- Light Theme (Blue Outline) --- */
-.pagination {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    gap: 1px;
-    border: 1px solid #007bff !important; /* Matches your View All blue */
-    border-radius: 12px;
-    background: #ffffff !important;
-    list-style: none;
-    margin: 0 auto;
-}
-
-.pagination .page-link {
-    border: none !important;
+#list-page .pagination li a {
+    font-family: 'JetBrains Mono', monospace;
     background: transparent !important;
+    border: none !important;
     min-width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9px;
-    color: #000000;
+    border-radius: 9px !important;
+    color: #000000 !important; /* Black text like your button */
     font-size: 13px;
     font-weight: 500;
-    transition: all 0.2s ease;
     text-decoration: none !important;
 }
 
-/* Active State - Blue background */
-.pagination .page-item.active .page-link {
+/* Active State (Blue) */
+#list-page .pagination li.active a {
     background-color: #007bff !important;
     color: #ffffff !important;
 }
 
-/* --- Dark Theme Style (White Outline) --- */
-/* We use both selectors to ensure it catches your theme's dark mode toggle */
-html[data-theme="dark"] .pagination,
-.dark .pagination {
-    background-color: transparent !important;
+/* --- 3. Dark Theme (Transparent BG + White Outline) --- */
+html[data-theme="dark"] #list-page .pagination,
+.dark #list-page .pagination {
+    background-color: transparent !important; /* Transparent like your button */
     border: 1px solid #ffffff !important;
 }
 
-html[data-theme="dark"] .page-count-text,
-.dark .page-count-text {
-    color: #999;
-}
-
-html[data-theme="dark"] .pagination .page-link,
-.dark .pagination .page-link {
+html[data-theme="dark"] #list-page .pagination li a,
+.dark #list-page .pagination li a {
     color: #ffffff !important;
 }
 
-/* Active State in Dark Mode - Solid white with black text */
-html[data-theme="dark"] .pagination .page-item.active .page-link,
-.dark .pagination .page-item.active .page-link {
+/* Active State in Dark Mode (Solid White) */
+html[data-theme="dark"] #list-page .pagination li.active a,
+.dark #list-page .pagination li.active a {
     background-color: #ffffff !important;
     color: #000000 !important;
 }
