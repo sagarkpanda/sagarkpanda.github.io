@@ -138,8 +138,23 @@ html[data-theme="dark"] body .card .card-body .card-text p,
 
 /* --- Fix: Date Contrast (Black/White) --- */
 .card-date {
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
     color: #212529 !important;
+}
+
+/* --- Fix: Read More Color (Light/Dark Mode) --- */
+.card-footer span.text-primary,
+.card-footer a.text-primary {
+    color: #0d6efd !important; /* Blue in Light Mode */
+    font-weight: 500;
+}
+
+html[data-theme="dark"] .card-footer span.text-primary,
+html[data-theme="dark"] .card-footer a.text-primary,
+.dark .card-footer span.text-primary,
+.dark .card-footer a.text-primary {
+    color: #ffffff !important; /* White in Dark Mode */
 }
 
 html[data-theme="dark"] .card-date,
