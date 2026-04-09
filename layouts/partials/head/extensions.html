@@ -522,7 +522,6 @@ body.light-dark .nav-text strong {
 /* ===========================
    Part 10 - Modern Pill Tabs
    =========================== */
-
 .topic-tabs {
     display: flex;
     gap: 10px;
@@ -533,8 +532,9 @@ body.light-dark .nav-text strong {
 
 .tab-button {
     background: #f8f9fa;
-    border: 1px solid #eee;
-    color: #555;
+    border: 2px solid transparent;
+    /* Text is always Black in Light Mode */
+    color: #000000 !important;
     padding: 8px 22px;
     border-radius: 50px;
     cursor: pointer;
@@ -545,34 +545,33 @@ body.light-dark .nav-text strong {
 
 /* --- Active State (Light Mode) --- */
 .tab-button.active {
-    background-color: #007bff !important; /* Pure Primary Blue */
-    color: white !important;
-    border-color: #007bff !important;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+    background-color: #ffffff !important;
+    color: #000000 !important;       /* Stays Black */
+    border-color: #007bff !important; /* Only the border turns Blue */
+    box-shadow: none !important;
 }
 
+/* --- Hover State (Light Mode) --- */
 .tab-button:hover:not(.active) {
-    color: #007bff;
-    background-color: rgba(0, 123, 255, 0.05);
+    color: #000000 !important;       /* Stays Black on hover */
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle gray hover instead of blue */
 }
 
 /* --- Dark Mode Overrides --- */
-/* Base buttons in Dark Mode */
 html[data-theme="dark"] .tab-button,
 .dark .tab-button {
     background: #2d2d2d;
-    border-color: #444;
-    color: #ccc;
+    /* Text is always White in Dark Mode */
+    color: #ffffff !important;
+    border-color: transparent;
 }
 
-/* Active Button in Dark Mode - Removed Cyan, now using Primary Blue */
 html[data-theme="dark"] .tab-button.active,
 .dark .tab-button.active {
-    background-color: #0d6efd !important; /* Solid Blue instead of Cyan */
-    border-color: #0d6efd !important;
-    color: white !important;
-    /* Neutral glow to avoid the 'neon' look */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;         /* Stays White */
+    border-color: #ffffff !important; /* White Outline */
+    box-shadow: none !important;
 }
 
 /* Hover on Dark Mode tabs */
@@ -580,34 +579,6 @@ html[data-theme="dark"] .tab-button:hover:not(.active),
 .dark .tab-button:hover:not(.active) {
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: #ffffff !important;
-}
-
-/* Tab Content Animation */
-.tab-content {
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =================================
-   Part 11 - CENTERED PAGE COUNTER
-   ================================ */
-.page-count-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-style: normal;
-    font-size: 14px;
-    color: #6c757d;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px; /* Space between text and buttons */
-    display: block;
-}
-
-/* Dark Mode Adaptation */
-html[data-theme="dark"] .page-count-text {
-    color: #999;
 }
 
 /* =========================================
