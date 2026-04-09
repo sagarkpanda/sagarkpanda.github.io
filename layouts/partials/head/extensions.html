@@ -587,7 +587,7 @@ html[data-theme="dark"] .tab-button:hover:not(.active),
 .page-count-text {
     font-family: 'JetBrains Mono', monospace;
     font-style: normal;
-    font-size: 14px;
+    font-size: 11px;
     color: #6c757d;
     letter-spacing: 0.5px;
     margin-bottom: 8px; /* Space between text and buttons */
@@ -600,58 +600,52 @@ html[data-theme="dark"] .page-count-text {
 }
 
 /* =========================================
-   PART 12: SQUIRCLE PAGINATION (BUTTON MATCH)
+   PART 12: PAGINATION - THE OVERRIDE
    ========================================= */
+/* 1. This selector is designed to BEAT the list.css:73 rule */
 
-#list-page .pagination {
-    display: inline-flex !important;
-    padding: 2px !important;
-    border: 1px solid #007bff !important;
-    border-radius: 12px !important;
-    background-color: #ffffff !important; /* Solid white like your button */
-    box-shadow: none !important;
-    margin: 0 auto !important;
+#list-page .pagination .page-item.active .page-link,
+#list-page .pagination li.active a {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important; /* Text stays black */
+    border: 2px solid #007bff !important; /* Only the blue outline */
+    font-weight: 500;
 }
-
+/* 2. Base state for all buttons */
+#list-page .pagination .page-item .page-link,
 #list-page .pagination li a {
-    font-family: 'JetBrains Mono', monospace;
     background: transparent !important;
-    border: none !important;
+    border: 2px solid transparent !important;
+    border-radius: 7px !important;
     min-width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9px !important;
-    color: #000000 !important; /* Black text like your button */
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none !important;
+    color: #000000 !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    box-sizing: border-box;
 }
-
-/* Active State (Blue) */
-#list-page .pagination li.active a {
-    background-color: #007bff !important;
-    color: #ffffff !important;
-}
-
-/* --- 3. Dark Theme (Transparent BG + White Outline) --- */
-html[data-theme="dark"] #list-page .pagination,
-.dark #list-page .pagination {
-    background-color: transparent !important; /* Transparent like your button */
-    border: 1px solid #ffffff !important;
-}
-
+/* --- 3. Dark Mode - Visibility Fix --- */
+/* Force all numbers to be white so they don't hide in the dark */
+html[data-theme="dark"] #list-page .pagination .page-item .page-link,
+.dark #list-page .pagination .page-item .page-link,
 html[data-theme="dark"] #list-page .pagination li a,
 .dark #list-page .pagination li a {
     color: #ffffff !important;
+    background: transparent !important;
+    border: 2px solid transparent !important;
 }
 
-/* Active State in Dark Mode (Solid White) */
-html[data-theme="dark"] #list-page .pagination li.active a,
-.dark #list-page .pagination li.active a {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+/* The Active State (White Outline) */
+html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
+.dark #list-page .pagination .page-item.active .page-link {
+    background: transparent !important;
+    border-color: #ffffff !important; /* White Outline */
+    color: #ffffff !important;         /* White Text */
+    font-weight: 500;
 }
 
 </style>
