@@ -757,4 +757,27 @@ function openTopic(evt, topicName) {
   }
 }
 
+/* remember page when reloading */
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Check if there's a saved tab in localStorage
+    const savedTab = localStorage.getItem('activeTab');
+    const tabs = document.querySelectorAll('.tab-button');
+
+    if (savedTab) {
+        tabs.forEach(tab => {
+            // 2. If a tab's text matches the saved name, trigger a click
+            if (tab.textContent.trim() === savedTab) {
+                tab.click();
+            }
+        });
+    }
+
+    // 3. Listen for clicks on tabs to save the new state
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            localStorage.setItem('activeTab', this.textContent.trim());
+        });
+    });
+});
+
 </script>
