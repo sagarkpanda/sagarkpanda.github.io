@@ -89,5 +89,5 @@ The end!! Thanks for reading.
 
 **Read More on AWS:**
 
-[AWS list](https://sagarkpanda.medium.com/list/aws-5ff991857bb7?source=post_page-----0363beabb20b---------------------------------------)
+[**WAF**]({{< relref "aws_Waf" >}}), [**Lambda**]({{< relref "aws_lambda" >}}), [**ALB**]({{< relref "aws_alb" >}})
 
