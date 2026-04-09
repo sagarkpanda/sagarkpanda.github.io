@@ -67,4 +67,4 @@ Cool. Now experiment further to find out more on what WAF has to offer. Delete t
 
 Read more on aws:
 
-[AWS List](https://sagarkpanda.medium.com/list/aws-5ff991857bb7?source=post_page-----ec28d36728a4---------------------------------------)
+[**Secrets Manager**]({{< relref "aws_secretmanager" >}}), [**ALB**]({{< relref "aws_alb" >}}), [**Lambda**]({{< relref "aws_lambda" >}})
