@@ -7,6 +7,7 @@ tags:
   - ansible
   - devops
   - cloud
+feaured_image: 
 ---
 
 
