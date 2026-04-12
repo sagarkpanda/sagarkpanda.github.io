@@ -7,7 +7,7 @@ tags:
   - gitlab
   - aws
   - cloud
-
+featured_image: /images/gitlab_thumnail.jpg
 ---
 
 ![GitLab](/images/gitlab_thumnail.jpg)
