@@ -3,7 +3,7 @@ relativeURLs: false
 canonifyURLs: false
 languageCode: "en-us"
 title: "Sagar Panda | DevOps & Cloud Infrastructure Engineer"
-Description: "Expert DevOps insights on AWS, Kubernetes, Terraform, and CI/CD. Providing deep-dive technical guides for building scalable cloud infrastructure."
+description: "Expert DevOps insights on AWS, Kubernetes, Terraform, and CI/CD. Providing deep-dive technical guides for building scalable cloud infrastructure."
 theme: hugo-profile
 
 
