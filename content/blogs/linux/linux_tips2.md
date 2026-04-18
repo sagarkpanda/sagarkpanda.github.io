@@ -9,6 +9,7 @@ tags:
   - tips
 ---
 
+![Image credit - itsfoss](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oJHs4IQgdGgHM-W4aiBuwQ.png)
 
 ### 1. Reverse search cmds:
 
