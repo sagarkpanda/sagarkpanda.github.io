@@ -7,7 +7,7 @@ tags:
   - ansible
   - devops
   - cloud
-feaured_image: 
+feaured_image:
 ---
 
 
@@ -175,6 +175,5 @@ Thanks for reading.
 
 Read More on Ansible:
 
-[Chapter 2]({{< relref "ansible2" >}}), [Chapter 3]({{< relref "ansible3" >}})
 
 Reference: Ansible Docs, ChatGPT

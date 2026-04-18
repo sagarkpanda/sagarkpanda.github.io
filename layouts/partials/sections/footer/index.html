@@ -1,10 +1,9 @@
 <footer>
-    <!-- Recent blog posts -->
-    {{- partial "sections/footer/recentBlogPosts.html" . -}}
+    {{- if .IsHome -}}
+        {{- partial "sections/footer/recentBlogPosts.html" . -}}
+    {{- end -}}
 
-    <!-- Social Icons -->
     {{- partial "sections/footer/socialNetwork.html" . -}}
 
-    <!-- Copyright -->
     {{- partial "sections/footer/copyright.html" . -}}
 </footer>
