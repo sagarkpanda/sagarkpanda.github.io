@@ -237,3 +237,5 @@ In this article, we’ve walked through the process of setting up an AWS VPC bot
 Be sure to delete/destroy resources once you are done with the experiment.
 
 In future articles we’ll learn more about NAT gateway, bastion host, VPC peering and other features of VPC.
+
+[Read more on Terraform →](/blogs/#terraform)

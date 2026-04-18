@@ -185,7 +185,7 @@ Kubernetes probes are crucial for maintaining healthy and reliable applications.
 
 **Read More on K8s:**
 
-[View list](https://sagarkpanda.medium.com/list/kubernetes-a0f8fab4ee0d?source=post_page-----159d762a4ea3---------------------------------------)
+[Read more on K8s →](/blogs/#kubernetes)
 
 **References**: [K8s Docs](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/), [Pod Restart policy](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 

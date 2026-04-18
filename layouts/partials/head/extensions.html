@@ -780,4 +780,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    function activateTab() {
+        // 1. Get the hash (e.g., 'ci-cd' or 'ansible')
+        let hash = window.location.hash.substring(1).toLowerCase();
+        if (!hash) return;
+
+        // 2. Clean the hash (replace dashes with spaces to match button text)
+        // 'ci-cd' becomes 'ci/cd' or 'ci cd'
+        let cleanHash = hash.replace('-', ' ');
+
+        // 3. Find the button by its visible text
+        let buttons = document.querySelectorAll('.tab-button');
+        let match = Array.from(buttons).find(btn => {
+            let btnText = btn.innerText.toLowerCase().trim();
+            // This matches if button says "Ci/Cd" and hash is "ci-cd"
+            return btnText === cleanHash || btnText.replace('/', ' ') === cleanHash || btnText.replace('/', '-') === hash;
+        });
+
+        if (match) {
+            // Force a small delay to let the page settle
+            setTimeout(() => {
+                match.click();
+                match.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 50);
+        }
+    }
+
+    activateTab();
+    window.addEventListener('hashchange', activateTab);
+});
+
 </script>

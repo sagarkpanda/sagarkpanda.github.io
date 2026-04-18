@@ -148,4 +148,4 @@ Here we used IP based routing. In [**_the next article_**]({{< relref "nginx-ing
 
 **Read More on K8s:**
 
-[Kubernetes list](https://sagarkpanda.medium.com/list/kubernetes-a0f8fab4ee0d?source=post_page-----8a452fb66d62---------------------------------------)
+[Read more on K8s →](/blogs/#kubernetes)
