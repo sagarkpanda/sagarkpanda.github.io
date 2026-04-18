@@ -8,6 +8,9 @@ tags:
   - aws
   - cloud
 featured_image: https://i.ibb.co/ZpbkFk97/x.jpg
+url: "/blogs/gitlab/gitlab_setup/"
+aliases:
+    - /blogs/gitlab_setup/
 ---
 
 ![GitLab](https://i.ibb.co/ZpbkFk97/x.jpg)
