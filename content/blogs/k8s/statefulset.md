@@ -8,7 +8,9 @@ tags:
   - statefulset
   - pv
   - pvc
-  - storageclass
+url: "/blogs/k8s/statefulset/"
+aliases:
+    - /blogs/statefulset/
 ---
 
 ![Image Souce: KubeBlogs](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jhtaeySqKrPpqKg8p3WRqA.png)
