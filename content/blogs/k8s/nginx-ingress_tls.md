@@ -6,7 +6,7 @@ Description: Part IX - Using Domain name with TLS Cert for Nginx Ingress Con
 tags:
   - nginx
   - tls
-  - k8s
+  - kubernetes
   - ingress
   - devops
 ---
@@ -195,6 +195,4 @@ Noice 😁
 
 There you go. Our app running on k8s with nginx ingress using our own domain.
 
-**Read more on K8s:**
-
-[View list](https://sagarkpanda.medium.com/list/kubernetes-a0f8fab4ee0d?source=post_page-----9173b09ad5c9---------------------------------------)
+[Read more on K8s →](/blogs/#kubernetes)

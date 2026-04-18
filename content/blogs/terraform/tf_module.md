@@ -153,6 +153,4 @@ When we define the source as “terraform-aws-modules”, and do init, terraform
 
 Terraform modules simplify infrastructure management by organizing and reusing code. Whether you create custom modules or use community-provided ones, it save time, ensure consistency, and make our IaC more maintainable. Start small and go modular.
 
-**Read More on Terraform:**
-
-[View list](https://sagarkpanda.medium.com/list/terraform-20b3355e3dbb?source=post_page-----5a6add95bb07---------------------------------------)
+[Read more on Terraform →](/blogs/#terraform)

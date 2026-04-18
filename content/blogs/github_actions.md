@@ -287,3 +287,5 @@ Thanks for reading.
 ### Further Reading
 
 [How to Setup Jenkins and Push Docker Image using Pileline Job](https://sagarkrp.medium.com/how-to-install-and-setup-jenkins-on-linux-with-pipeline-job-3e2973229a8f?source=post_page-----55e14f62713b---------------------------------------)
+
+[Read more on CI/CD →](/blogs/#ci-cd)

@@ -151,3 +151,5 @@ Apply the config and list all the pods and PVCs. You will see that each pod inde
 ### Summary
 
 StatefulSets are the key to running databases and other state-heavy applications on Kubernetes. By providing each pod with a **unique ID**, a **stable hostname**, and its own **dedicated storage**, we ensure that our data stays safe and our cluster remains predictable even during restarts or scaling.
+
+[Read more on K8s →](/blogs/#kubernetes)

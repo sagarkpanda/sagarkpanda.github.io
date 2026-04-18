@@ -7,10 +7,10 @@ tags:
   - gitlab
   - aws
   - cloud
-# featured_image: /blogs/gitlab/gitlab_thumnail.jpg
+featured_image: https://i.ibb.co/ZpbkFk97/x.jpg
 ---
 
-![GitLab](/blogs/gitlab/gitlab_thumnail.jpg)
+![GitLab](https://i.ibb.co/ZpbkFk97/x.jpg)
 
 ### Setup Host
 First, set up an instance. I chose **AWS EC2**, but you can use any cloud provider or your own physical server.
