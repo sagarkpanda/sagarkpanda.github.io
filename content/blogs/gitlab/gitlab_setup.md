@@ -15,17 +15,17 @@ aliases:
 
 ![GitLab](https://i.ibb.co/ZpbkFk97/x.jpg)
 
-### Setup Host
+## Setup Host
 First, set up an instance. I chose **AWS EC2**, but you can use any cloud provider or your own physical server.
 
-#### Hardware Requirements
+### Hardware Requirements
 Do not try to use the "Free Tier" `t2.micro` or `t3.micro`. GitLab runs several background services (PostgreSQL, Redis, Sidekiq) that require significant memory.
 
 * **Minimum:** 4GB RAM (e.g., `t3.medium`). *Note: If you use 4GB, you must configure a 4GB Swap file or the installation will crash.*
 * **Recommended:** 8GB RAM or more (e.g., `t3.large` or `t3.xlarge`). This ensures a smooth experience without lag.
 * **Storage:** At least 20GB–40GB . For learning purposes, 8GB is enough.
 
-#### Network Configuration
+### Network Configuration
 Before launching, ensure your **AWS Security Group** has the following Inbound Rules open to the world (`0.0.0.0/0`):
 
 | Port | Protocol | Purpose |
@@ -35,12 +35,12 @@ Before launching, ensure your **AWS Security Group** has the following Inbound R
 | 22 | SSH | Remote Terminal Access |
 
 
-### Mapping your Domain
+## Mapping your Domain
 Create an **A record** DNS entry at your domain registrar pointing your desired subdomain (e.g., `gitlab.sagapanda.com`) to the machine's Public IP.
 
 ![A record](/blogs/gitlab/dns_entry.png)
 
-### Add GitLab Repository
+## Add GitLab Repository
 First, update the cache and install `curl` if it's not already there. Then, add the GitLab repository to your system:
 
 ```
@@ -53,7 +53,7 @@ Here I have added the gitlab-ee package, you can choose to replace the ee with c
 
 ![A record](/blogs/gitlab//gl_add.png)
 
-### Installation & SSL Setup
+## Installation & SSL Setup
 
 Now run the cmd to install GitLab.
 You can either setup external URL now or can configure it later if you choose. I chose to configure later.

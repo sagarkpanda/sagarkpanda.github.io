@@ -13,7 +13,7 @@ tags:
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*EZhHBHT8pGu_65yiT600_g.jpeg)
 
-### Intro:
+## Intro
 
 **AWS CloudFront** is a service that makes websites and apps load faster for users around the world. It stores copies of our application content (like images, videos, and web pages) in different data centers across the globe, called **edge locations**.
 
@@ -21,7 +21,7 @@ When someone visits your site, the data is first fetched from the origin (The ac
 
 You can set up different services as origin for AWS cloud front, however S3 is a better one as CDN is best for caching static content. In this particular example however I’m using EC2 with ALB as origin.
 
-### Setup
+## Setup
 
 I am using to EC2 instances with ALB managing traffic with round robin except the SSL setup at ALB.
 
@@ -29,7 +29,7 @@ Refer this post:
 
 [ALB Setup]({{< relref "aws_alb" >}})
 
-### Create distribution:
+### Create distribution
 
 We can now create a CloudFront distribution that would have ALB as the origin.
 
@@ -37,11 +37,11 @@ We can now create a CloudFront distribution that would have ALB as the origin.
 
 Select the origin protocol. Generally http if your origin is s3 bucket and http/https if elb has https enabled. For now my alb does not have https listeners so I'll stick to http.
 
-Note 1: The data is from Dec 2024 so the UI might have changed but concepts remain same.
+> <small>`Note 1:` <small>The data is from Dec 2024 so the UI might have changed but concepts remain same. </small></small>
 
-Note 2: Having the CachingOptimized policy will use cdn cache for most of times and hence reducing the effect of load balancing here. If you choose the other policy for disabling cache, the ALB works but might hit the origin frequently, so you might have to set custom headers here or in web server.
+> <small>`Note 2:` <small>Having the CachingOptimized policy will use cdn cache for most of times and hence reducing the effect of load balancing here. If you choose the other policy for disabling cache, the ALB works but might hit the origin frequently, so you might have to set custom headers here or in web server.</small></small>
 
-CDN is best suitable to static content.
+> <small> CDN is best suitable to static content.</small>
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*0zK1F0EQhIq22gjyDDhAgA.png)
 
@@ -97,7 +97,7 @@ Once you remove the cache, it will fetch the data from origin again.
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*DGc_eKMhKn2xEp5JgX5doA.png)
 
-### Wrap up:
+## Wrap up
 
 Alright, so that's all, you can explore other features such as blocking or allowing to certain regions, integrate waf and etc. Once you are, done disable the distribution first and you should be able to delete it.
 
