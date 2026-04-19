@@ -154,3 +154,5 @@ Note:1. You can install and setup CS by following the visual guide from the cons
 ### Wrap up:
 
 That’s all about it. Explore further on blocklists, collections and the dashboard. Be cautious about doing this experiment as you might get blocked by cloud providers (not sure yet). And delete your instances (if any) once you are done with the experiment.
+
+[Read more on Linux →](/blogs/#linux)

@@ -173,7 +173,6 @@ Congratulations on completing the basic Ansible setup. This marks the end of thi
 
 Thanks for reading.
 
-Read More on Ansible:
-
+[Read more on Ansible →](/blogs/#ansible)
 
 Reference: Ansible Docs, ChatGPT

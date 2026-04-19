@@ -86,4 +86,6 @@ sudo systemctl enable httpd
 
 Hurray! Now Apache server is ready to server your web application.
 
-More on Apache : 1. [Basic configuration in Apache](https://medium.com/@sagarkrp/configuring-apache-http-server-in-linux-and-with-ssl-d59ff62c8a35). 2 [Apache as Reverse Proxy](https://medium.com/@sagarkrp/how-to-setup-apche-http-server-as-reverse-proxy-on-ubutnu-rhel-87316805de0a).
+More on Apache :
+<!-- [Basic configuration in Apache] ({{< relref "apache_config" >}}) -->
+[Read more on Ansible →](/blogs/#apache)

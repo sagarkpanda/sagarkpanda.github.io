@@ -151,6 +151,4 @@ To increase the terminal font size use Ctrl and + button, to reduce it, use Ctrl
 **Read part 2:**
 [here]({{< relref "linux_tips2" >}})
 
-#ci-cd
-
 

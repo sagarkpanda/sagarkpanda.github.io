@@ -464,7 +464,7 @@ enableRobotsTXT: true
     #shortname: your-disqus-shortname
 
 pagination:
-  pagerSize: 3
+  pagerSize: 4
 
 markup:
   goldmark:

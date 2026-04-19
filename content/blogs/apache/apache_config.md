@@ -12,8 +12,8 @@ tags:
 
 In the previous post, we saw how to install and setup Apache web server. In this article we’ll see how to configure a basic web application, enable SSL/TLS and few more basic configuration in regards to security enhancements.
 
-
-[Apache installtion.](https://medium.com/@sagarkrp/installing-apache-web-server-on-linux-899d694542eb?source=post_page-----d59ff62c8a35---------------------------------------)
+### Prerequiste:
+[Install Apache]({{< relref "apache" >}})
 
 
 ![Image: PNG ALL](https://miro.medium.com/v2/resize:fit:900/format:webp/1*lP93d4wUMT7XNug-XyzuQQ.png)
@@ -229,6 +229,8 @@ Header set X-Robots-Tag "noindex, nofollow"
 That’s all for now.
 Reference : MDN Docs [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options), [2](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options), [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag).
 
-See more : [Install Apache](https://medium.com/@sagarkrp/installing-apache-web-server-on-linux-899d694542eb), [LAMP Stack](https://medium.com/@sagarkrp/installing-apache-mysql-php-on-ubuntu-lamp-stack-990b0527d3ad), [Apache as Proxy Server](https://medium.com/@sagarkrp/how-to-setup-apche-http-server-as-reverse-proxy-on-ubutnu-rhel-87316805de0a).
+Read More On Apache:
+<!-- [Installtion]({{< relref "apache" >}}) -->
+[Read more on Apache →](/blogs/#apache)
 
 [SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot](https://sagarkrp.medium.com/ssl-for-everyone-a-guide-to-configure-lets-encrypt-with-certbot-13c4098b84d9?source=post_page-----d59ff62c8a35---------------------------------------)

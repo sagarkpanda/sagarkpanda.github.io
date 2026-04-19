@@ -242,8 +242,6 @@ There are many more features with role such as using jinja2 template, variables,
 
 **_This is the final chapter on ansible series_.** Thanks for reading it.
 
-Read previous chapters here.
-
-[Chapter 1]({{< relref "ansible1" >}}), [Chapter 2]({{< relref "ansible2" >}})
+[Read more on Ansible →](/blogs/#ansible)
 
 Referneces: [Ansible Docs](https://docs.ansible.com/)
