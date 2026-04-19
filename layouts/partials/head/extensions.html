@@ -648,6 +648,59 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     font-weight: 500;
 }
 
+/* =========================================
+   Part 13 - BLOG LIST SPECIFIC (Symmetry)
+   ========================================= */
+.card-img-container {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+.card-img-top-custom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title-custom {
+    font-size: 1rem !important;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+
+    /* Clamping Logic */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Added standard property */
+    overflow: hidden;
+    height: 2.6em;
+}
+
+.card-description-custom {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+
+    /* Clamping Logic */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3; /* Added standard property */
+    overflow: hidden;
+    height: 4.2em;
+}
+
+/* Footer clearance for the list page */
+#list-page {
+    padding-bottom: 3rem !important;
+}
+
+/* Card Body spacing match */
+.card-body {
+    padding: 1rem !important;
+}
+
 </style>
 
 <script>
