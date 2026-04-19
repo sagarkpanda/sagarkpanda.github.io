@@ -101,4 +101,4 @@ Once you remove the cache, it will fetch the data from origin again.
 
 Alright, so that's all, you can explore other features such as blocking or allowing to certain regions, integrate waf and etc. Once you are, done disable the distribution first and you should be able to delete it.
 
-[Read more on AWS →](/blogs/#aws)
+[Read more on AWS →](/blogs/#cloud)
