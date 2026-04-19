@@ -7,6 +7,7 @@ tags:
   - Jenkins
   - SonarQube
   - DevOps
+  - ci/cd
 ---
 
 
@@ -279,5 +280,7 @@ Rebuild the job. Once the job is complete, we should see it fail because of qual
 That’s all about it. Hope you found it useful.
 
 Reference: [SonarQube Docs](https://docs.sonarqube.org/latest/), [Vultur](https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts/), [TecMint](https://www.tecmint.com/install-postgresql-and-pgadmin-in-ubuntu/)
+
+[Read more on CI/CD →](/blogs/#ci-cd)
 
 More on Jenkins : [Install and Setup Job](https://medium.com/@sagarkrp/how-to-install-and-setup-jenkins-on-linux-with-pipeline-job-3e2973229a8f)

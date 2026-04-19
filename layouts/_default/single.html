@@ -117,19 +117,26 @@
 
           <!--nav buttons on blog-->
             <div class="post-navigation">
-              {{ if .PrevInSection }}
-              <a href="{{ .PrevInSection.Permalink }}" class="nav-btn prev">
+              {{/* Get all posts from your main technical sections */}}
+              {{ $allPosts := where site.RegularPages "Section" "in" (slice "blogs" "gitlab" "ansible") }}
+
+              {{/* Use global Prev/Next logic instead of InSection */}}
+              {{ $prev := $allPosts.Prev . }}
+              {{ $next := $allPosts.Next . }}
+
+              {{ if $prev }}
+              <a href="{{ $prev.Permalink }}" class="nav-btn prev">
                   <i class="fas fa-chevron-left"></i>
                   <div class="nav-text">
-                      <strong>{{ .PrevInSection.Title }}</strong>
+                      <strong>{{ $prev.Title }}</strong>
                   </div>
               </a>
               {{ end }}
 
-              {{ if .NextInSection }}
-              <a href="{{ .NextInSection.Permalink }}" class="nav-btn next">
+              {{ if $next }}
+              <a href="{{ $next.Permalink }}" class="nav-btn next">
                   <div class="nav-text">
-                      <strong>{{ .NextInSection.Title }}</strong>
+                      <strong>{{ $next.Title }}</strong>
                   </div>
                   <i class="fas fa-chevron-right"></i>
               </a>

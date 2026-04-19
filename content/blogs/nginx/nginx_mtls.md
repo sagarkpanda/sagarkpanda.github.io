@@ -161,6 +161,8 @@ If you found this article helpful, click the 👏 button, it keeps me motivated 
 
 **Read More on Web Servers:**
 
-[Apache HTTP Server Setup: A Guide to Key Configurations](https://sagarkrp.medium.com/configuring-apache-http-server-in-linux-and-with-ssl-d59ff62c8a35?source=post_page-----3b306ec7061d---------------------------------------)
+[Apache →](/blogs/#apache)
+<br></br>
+[Nginx →](/blogs/#nginx)
 
 [Load Balancing Magic: Unleashing the Potential of NGINX](https://sagarkrp.medium.com/how-to-configure-nginx-to-load-balance-multiple-servers-nginx-docker-compose-c8e1d746f02b?source=post_page-----3b306ec7061d---------------------------------------)
