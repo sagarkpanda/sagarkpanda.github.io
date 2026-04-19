@@ -704,29 +704,37 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
 /* =========================================
    Part 14 - Recent post SPECIFIC (Symmetry)
    ========================================= */
-    /* ONLY shrink the width. This forces the entire card (including image) to scale down */
-    #recent-posts .col-lg-4 {
-        max-width: 320px;
+     /* 1. DESKTOP: Only restrict the width on large screens */
+    @media (min-width: 992px) {
+        #recent-posts .col-lg-4 {
+            max-width: 350px; /* Your chosen card width */
+        }
     }
 
-    /* Ensure the image container follows the same style as list.html */
+    /* 2. MOBILE: Remove restrictions so it spans the whole area like List page */
+    @media (max-width: 991px) {
+        #recent-posts .col-md-6 {
+            max-width: 100%;
+        }
+    }
+
+    /* Common Card Styling (Matches List.html) */
     #recent-posts .card-img-container {
         width: 100%;
         overflow: hidden;
     }
 
-    /* Use the exact image class from list.html so it doesn't crop or distort */
     #recent-posts .card-img-top-custom {
         width: 100%;
         height: auto;
         object-fit: cover;
     }
 
-    /* Keeps titles and descriptions aligned across the row */
     #recent-posts .card-title-custom {
         height: 2.6em;
         overflow: hidden;
     }
+
     #recent-posts .card-description-custom {
         height: 4.2em;
         overflow: hidden;
