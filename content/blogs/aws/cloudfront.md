@@ -11,7 +11,7 @@ tags:
   - cloud
 ---
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*EZhHBHT8pGu_65yiT600_g.jpeg)
+![thumbnail](https://i.ibb.co/cSvqh9kd/x.jpg)
 
 ## Intro
 

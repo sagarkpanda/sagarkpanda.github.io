@@ -86,6 +86,5 @@ sudo systemctl enable httpd
 
 Hurray! Now Apache server is ready to server your web application.
 
-More on Apache :
 <!-- [Basic configuration in Apache] ({{< relref "apache_config" >}}) -->
-[Read more on Ansible →](/blogs/#apache)
+[Read more on Apache →](/blogs/#apache)
