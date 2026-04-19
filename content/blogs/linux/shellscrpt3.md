@@ -1,5 +1,5 @@
 ---
-date: '2024-03-10T19:26:10+05:30'
+date: '2024-03-22T19:26:10+05:30'
 draft: false
 title: 'If Statement - Conditional in Bash Scripting'
 Description: "Part 3: Usage of if, else and elif statements in shell scripting"
