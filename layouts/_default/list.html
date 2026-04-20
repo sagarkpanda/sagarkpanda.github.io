@@ -82,9 +82,29 @@
         </div>
     </a>
 
-    <div class="mt-auto card-footer bg-transparent border-0 p-3 pt-0 d-flex justify-content-between align-items-center">
+    <!-- <div class="mt-auto card-footer bg-transparent border-0 p-3 pt-0 d-flex justify-content-between align-items-center">
         <small class="card-date">{{ .Date | time.Format ":date_medium" }}</small>
         <span class="text-primary font-weight-bold" style="font-size: 0.75rem;">Read More →</span>
-    </div>
+    </div> -->
+
+    <!-- <div class="mt-auto card-footer bg-transparent border-0 p-3 pt-0 d-flex justify-content-between align-items-center">
+    <small class="card-date">{{ .Date | time.Format ":date_medium" }}</small>
+    <span class="text-secondary" style="font-size: 0.75rem;">
+        <i class="far fa-clock"></i> {{ .ReadingTime }} min read
+    </span>
+</div> -->
+
+<div class="mt-auto card-footer bg-transparent border-0 p-3 pt-0 d-flex justify-content-between align-items-center">
+    <small class="card-date">{{ .Date | time.Format ":date_medium" }}</small>
+    <span class="card-reading-time">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16" style="opacity: 0.8;">
+        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+    </svg>
+    {{ .ReadingTime }} min read
+</span>
+
+</div>
+
 </div>
 {{ end }}
