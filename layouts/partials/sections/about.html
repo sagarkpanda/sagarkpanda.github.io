@@ -16,11 +16,48 @@
 
                 {{ if .Site.Params.about.skills.enable }}
                 {{ $about.skills.title | default .Site.Params.about.skills.title }}
-                <ul>
+                <!-- <ul>
                     {{ range .Site.Params.about.skills.items }}
                     <li>{{ . | markdownify }}</li>
                     {{ end }}
-                </ul>
+                </ul> -->
+
+               <!-- <ul class="skills-grid">
+    {{ range .Site.Params.about.skills.items }}
+    <li class="skill-item">
+        <span class="skill-icon-wrapper">
+            <img src="/images/{{ . | urlize }}.svg"
+                 class="skill-icon-img"
+                 alt="{{ . }} icon"
+                 onerror="this.style.visibility='hidden';">
+        </span>
+        {{ . }}
+    </li>
+    {{ end }}
+</ul> -->
+
+            <ul class="skills-grid">
+    {{/* 1. Define your filename overrides here */}}
+    {{- $overrides := dict "GitHub Actions" "gh_action" "Gitlab CI/CD" "gitlab" "Apache/Nginx" "nginx" -}}
+
+    {{ range .Site.Params.about.skills.items }}
+        {{- $skillName := . -}}
+
+        {{/* 2. Check if the skill has a manual filename, otherwise urlize it */}}
+        {{- $fileName := index $overrides $skillName | default ($skillName | urlize) -}}
+
+        <li class="skill-item">
+            <span class="skill-icon-wrapper">
+                <img src="/images/{{ $fileName }}.svg"
+                     class="skill-icon-img"
+                     alt="{{ $skillName }} icon"
+                     onerror="this.style.display='none';">
+            </span>
+            {{ $skillName }}
+        </li>
+    {{ end }}
+</ul>
+
                 {{ end }}
             </div>
         </div>
