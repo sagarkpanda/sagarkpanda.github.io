@@ -136,25 +136,43 @@ html[data-theme="dark"] body .card .card-body .card-text p,
     background-color: transparent !important;
 }
 
-/* Unified Style for Date and Reading Time */
-.card-date,
-.card-reading-time {
+/* =========================================
+   NATURAL METADATA (DATE & READ TIME)
+   ========================================= */
+
+body .card-date,
+body .card-reading-time,
+body .post-date,
+body .post-meta,
+body [class*="card-date"],
+body [class*="reading-time"] {
     font-family: 'JetBrains Mono', monospace !important;
-    font-weight: 500 !important;
     font-size: 11px !important;
-    color: #6c757d !important;
+    font-weight: 500 !important;
+    color: #475569 !important; /* Deep Slate */
     display: inline-flex !important;
     align-items: center !important;
     gap: 6px !important;
-    opacity: 0.85;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-/* Dark Mode Adaptation */
-html[data-theme="dark"] .card-date,
-html[data-theme="dark"] .card-reading-time,
-.dark .card-date,
-.dark .card-reading-time {
-    color: #adb5bd !important;
+/* 2. Dark Theme Override */
+html[data-theme="dark"] body .card-date,
+html[data-theme="dark"] body .card-reading-time,
+html[data-theme="dark"] body .post-date,
+html[data-theme="dark"] body [class*="card-date"],
+html[data-theme="dark"] body [class*="reading-time"],
+.dark body .card-date,
+.dark body .card-reading-time {
+    color: #a7afb8 !important; /* Bright Slate White */
+}
+
+/* 3. Force Icon visibility */
+.card-reading-time svg,
+[class*="reading-time"] svg {
+    fill: currentColor !important;
+    width: 12px !important;
 }
 
 /* --- Fix: Read More Color (Light/Dark Mode) --- */
