@@ -771,6 +771,46 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
         overflow: hidden;
     }
 
+   /* --- Skill Grid: Clean Alignment --- */
+.skills-grid {
+    list-style: none !important;
+    padding: 0 !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    position: relative;
+    font-size: 14px;
+    font-family: inherit !important;
+}
+
+/* Kills the theme's default > triangles */
+.skill-item::before {
+    content: none !important;
+    display: none !important;
+}
+
+.skill-icon-wrapper {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 </style>
 
 <script>
