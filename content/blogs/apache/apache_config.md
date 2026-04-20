@@ -232,4 +232,4 @@ Reference : MDN Docs [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 <!-- [Installtion]({{< relref "apache" >}}) -->
 [Read more on Apache →](/blogs/#apache)
 
-[SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot]({{< relref "linux_tips2" >}})
+[SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot]({{< relref "letsencrypt_ssl" >}})

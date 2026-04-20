@@ -93,7 +93,7 @@
   }
 
   /* =========================================
-   PART 3: GLOBAL CARD STYLING
+   PART 3: GLOBAL CARD STYLING & FOOTER
    ========================================= */
 .card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -109,7 +109,7 @@
     padding: 1.25rem !important;
 }
 
-/* Card Titles - Light/Dark Mode */
+/* Card Titles */
 #recent-posts .card .card-body h5.card-title,
 #list-page .card .card-body h5.card-title {
     font-size: 20px !important;
@@ -123,30 +123,44 @@ html[data-theme="dark"] #list-page .card .card-body h5.card-title,
     color: #ffffff !important;
 }
 
-/* Card Description - Light/Dark Mode */
+/* Card Description */
 html body .card .card-body .card-text p { color: #0d6efd !important; }
 html[data-theme="dark"] body .card .card-body .card-text p,
 .dark body .card .card-body .card-text p { color: #60a5fa !important; }
 
-/* --- Fix: Remove Recent Post Card Separators --- */
-#recent-posts .card-footer {
+/* 1. Global Footer Reset */
+#recent-posts .card-footer, #list-page .card-footer {
     border-top: none !important;
     border: 0 !important;
     padding-top: 0 !important;
     background-color: transparent !important;
 }
 
-/* --- Fix: Date Contrast (Black/White) --- */
-.card-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    color: #212529 !important;
+/* Unified Style for Date and Reading Time */
+.card-date,
+.card-reading-time {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+    color: #6c757d !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    opacity: 0.85;
+}
+
+/* Dark Mode Adaptation */
+html[data-theme="dark"] .card-date,
+html[data-theme="dark"] .card-reading-time,
+.dark .card-date,
+.dark .card-reading-time {
+    color: #adb5bd !important;
 }
 
 /* --- Fix: Read More Color (Light/Dark Mode) --- */
-.card-footer span.text-primary,
+/* .card-footer span.text-primary,
 .card-footer a.text-primary {
-    color: #0d6efd !important; /* Blue in Light Mode */
+    color: #0d6efd !important;
     font-weight: 500;
 }
 
@@ -154,7 +168,7 @@ html[data-theme="dark"] .card-footer span.text-primary,
 html[data-theme="dark"] .card-footer a.text-primary,
 .dark .card-footer span.text-primary,
 .dark .card-footer a.text-primary {
-    color: #ffffff !important; /* White in Dark Mode */
+    color: #ffffff !important;
 }
 
 html[data-theme="dark"] .card-date,
@@ -162,14 +176,13 @@ html[data-theme="dark"] .card-date,
     color: #ffffff !important;
 }
 
-/* --- Fix: Remove "Box" / Background from Read More link --- */
 #recent-posts .card-footer a.text-info {
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
     outline: none !important;
-}
+} */
 
 /* ==============================
    PART 4: VIEW ALL POSTS BUTTON
