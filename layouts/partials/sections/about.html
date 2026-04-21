@@ -37,14 +37,15 @@
 </ul> -->
 
             <ul class="skills-grid">
-    {{/* 1. Define your filename overrides here */}}
-    {{- $overrides := dict "GitHub Actions" "github-actions" "Argo CD" "argo" "Gitlab CI/CD" "gitlab" "Apache/Nginx" "nginx" -}}
+    {{/* 1. Define all keys in LOWERCASE here */}}
+    {{- $overrides := dict "github actions" "github-actions" "gitlab ci/cd" "gitlab" "apache/nginx" "nginx" "argo cd" "argo" -}}
 
     {{ range .Site.Params.about.skills.items }}
+        {{/* 2. Convert the YAML input to lowercase before checking the map */}}
         {{- $skillName := . -}}
+        {{- $skillLower := $skillName | lower -}}
 
-        {{/* 2. Check if the skill has a manual filename, otherwise urlize it */}}
-        {{- $fileName := index $overrides $skillName | default ($skillName | urlize) -}}
+        {{- $fileName := index $overrides $skillLower | default ($skillName | urlize) -}}
 
         <li class="skill-item">
             <span class="skill-icon-wrapper">
