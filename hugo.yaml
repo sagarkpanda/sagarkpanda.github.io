@@ -646,7 +646,7 @@ params:
         - "AWS"
         - "Jenkins"
         - "GitHub Actions"
-        - "Gitlab CI/CD"
+        - "GitLab CI/CD"
         - "Ansible"
         - "Terraform"
         - "Docker"
