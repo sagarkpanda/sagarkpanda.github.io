@@ -38,7 +38,7 @@
 
             <ul class="skills-grid">
     {{/* 1. Define your filename overrides here */}}
-    {{- $overrides := dict "GitHub Actions" "gh_action" "Gitlab CI/CD" "gitlab" "Apache/Nginx" "nginx" -}}
+    {{- $overrides := dict "GitHub Actions" "github-actions" "Argo CD" "argo" "Gitlab CI/CD" "gitlab" "Apache/Nginx" "nginx" -}}
 
     {{ range .Site.Params.about.skills.items }}
         {{- $skillName := . -}}
