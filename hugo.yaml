@@ -654,9 +654,9 @@ params:
         - "Argo CD"
         - "Linux"
         - "Apache/Nginx"
+        - "SonarQube"
         - "Prometheus"
         - "Grafana"
-        - "SonarQube"
 
 
   # Experience
@@ -671,7 +671,7 @@ params:
             date: "Nov 2024 - present"
             # content: |
             content: |
-               I am currently working as a Sr DevOps engineer at [Wipro](https://wipro.com). I am currently working on a project that generates be shelf labels for retail stores for Metro Cash and Carry.
+               I am currently working as a Sr DevOps engineer at Wipro. I am currently working on a project that generates be shelf labels for retail stores for Metro Cash and Carry.
                - Led the onboarding and migration of 30+ microservices to Kubernetes using a GitOps approach (Argo CD, ConfigMaps, Secrets, Ingress) for a global retail client (Metro AG).
                - Responsible for the core deployment pipeline and infrastructure management
             # info:
@@ -707,7 +707,7 @@ params:
             # info:
             #   content: I worked as a devops engineer for more than one year at Valeo.
             content: |
-              Managed CI/CD processes for 10+ OEM automotive projects (Mahindra, Nissan,BYD, BMW, Geely) across Development, QA, and Production environments.
+              Orchestrated end-to-end CI/CD lifecycles for 10+ global automotive OEM projects (including BMW, Nissan, BYD, Mahindra, and Geely), streamlining delivery across Dev, QA, and Production environments
               - Reduced build and testing time from days to a few hours by optimizing Jenkins pipelines.
               - Automated mandatory Static Analysis (SAST) using KlocWork eliminating manual code review errors.
               - Achieved an approximately 25% faster deployment success rate using AWS, Jenkins, and Ansible.
@@ -747,7 +747,7 @@ params:
                 url: "https://ansible.com/"
                 tooltip: "Ansible"
           content: |
-            I worked as a devops enginner at [Waycool foods.](https://waycool.in) focusing on web and mobile appplications operations that help farmers and businesses.
+            I worked as a devops enginner at Waycool foods focusing on web and mobile appplications operations that help farmers and businesses.
             - Initiated and established the foundational DevOps process, implementing Jenkins, Docker, SonarQube, and Nexus.
             - Migrated applications to multi-cloud platforms (AWS/Azure) utilizing web servers (Nginx, Apache) on Linux instances.
             - Produced a Proof of Concept (POC) for infrastructure deployment using Kubernetes and Terraform.
@@ -761,7 +761,7 @@ params:
         - name: "Automation Engineer"
           date: "Nov 2019 - Jan 2022"
           content: |
-            As an Automation engineer at [Straive](https://straive.com), I automated web app testing.
+            As an Automation engineer at Straive, I automated web app testing.
             - Automated web application testing using Python, Selenium, and SQL.
             - Configured CI environment on AWS by setting up Jenkins and SonarQube for automated test suite execution
 
