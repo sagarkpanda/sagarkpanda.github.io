@@ -1,7 +1,7 @@
 ---
 date: '2024-09-20T19:26:10+05:30'
 draft: false
-title: 'AWS VPC setup with Terraform'
+title: 'Automate AWS VPC Setup with Terraform'
 Description: Build Your Own AWS VPC - Simple Terraform Deployment Steps!
 tags:
   - AWS
