@@ -6,6 +6,7 @@ Description: Chapter I — Getting Started, setup, terminologies and basic e
 tags:
   - AWS
   - Terraform
+  - DevOps
 ---
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fCBP8ShpFHETAU7JEenXLQ.png)

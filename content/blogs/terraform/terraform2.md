@@ -6,7 +6,7 @@ Description: Chapter II —Generating Output, using Variables and Refactoring th
 tags:
   - AWS
   - vpc
-  - cloud
+  - devops
   - terraform
 ---
 

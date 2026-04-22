@@ -6,7 +6,6 @@ Description: "Part 3: Learn about Notify Handler, Error handling, Vault and Role
 tags:
   - ansible
   - devops
-  - cloud
 ---
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-anirzVIreNx1SOSAJl88w.jpeg)

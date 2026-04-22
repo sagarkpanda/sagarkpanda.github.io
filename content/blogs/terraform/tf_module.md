@@ -7,6 +7,7 @@ tags:
   - AWS
   - Terraform
   - Terraform Module
+  - devops
 ---
 
 
