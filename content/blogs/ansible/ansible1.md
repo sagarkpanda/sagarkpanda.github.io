@@ -1,15 +1,13 @@
 ---
 date: '2023-05-21T19:26:10+05:30'
 draft: false
-title: 'Get started with Ansible'
+title: 'Getting started with Ansible - Configuration Managament'
 Description: Chapter 1 - Installation, basics and playbook
 tags:
   - ansible
   - devops
   - cloud
-feaured_image:
 ---
-
 
 ### Introduction:
 
@@ -175,4 +173,4 @@ Thanks for reading.
 
 [Read more on Ansible →](/blogs/#ansible)
 
-Reference: Ansible Docs, ChatGPT
+Reference: Ansible Docs
