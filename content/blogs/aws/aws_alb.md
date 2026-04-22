@@ -11,7 +11,7 @@ tags:
 ---
 
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AwQwNEaCXS2QP21ndvCFSg.png)
+![AWS_ALB](https://i.ibb.co/GvPkHTRn/x.jpg)
 
 ## What is Load Balancer
 
