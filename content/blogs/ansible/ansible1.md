@@ -6,7 +6,6 @@ Description: Chapter 1 - Installation, basics and playbook
 tags:
   - ansible
   - devops
-  - cloud
 ---
 
 ### Introduction:

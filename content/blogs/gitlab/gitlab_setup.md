@@ -6,8 +6,6 @@ Description: Launch Your Own GitLab Instance in Minutes
 tags:
   - gitlab
   - aws
-  - cloud
-featured_image: https://i.ibb.co/ZpbkFk97/x.jpg
 url: "/blogs/gitlab/gitlab_setup/"
 aliases:
     - /blogs/gitlab_setup/

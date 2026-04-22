@@ -6,7 +6,7 @@ Description: Chapter V - Dynamically fetch data from remote using data source in
 tags:
   - AWS
   - vpc
-  - cloud
+  - devops
   - terraform
 ---
 
