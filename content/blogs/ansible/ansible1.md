@@ -1,7 +1,7 @@
 ---
 date: '2023-05-21T19:26:10+05:30'
 draft: false
-title: 'Get started with Assible'
+title: 'Get started with Ansible'
 Description: Chapter 1 - Installation, basics and playbook
 tags:
   - ansible
