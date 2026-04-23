@@ -1,3 +1,4 @@
+{{/* 1. BREADCRUMB LOGIC */}}
 {{- if not .IsHome -}}
 <script type="application/ld+json">
 {
@@ -30,3 +31,43 @@
 }
 </script>
 {{- end -}}
+
+{{/* 2. PERSON SCHEMA (Shows up on Homepage) */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sagar Panda",
+  "url": "{{ .Permalink }}",
+  "jobTitle": "DevOps & Cloud Infrastructure Engineer",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/your-profile",
+    "https://github.com/your-username"
+  ]
+}
+</script>
+{{ end }}
+
+{{/* 3. BLOGPOSTING SCHEMA (Shows up on Article Pages) */}}
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Description | default .Summary | plainify }}",
+  "image": "{{ if .Params.feature_image }}{{ .Params.feature_image | absURL }}{{ else }}{{ .Site.Params.favicon | absURL }}{{ end }}",
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "author": {
+    "@type": "Person",
+    "name": "Sagar Panda"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+}
+</script>
+{{ end }}

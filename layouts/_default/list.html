@@ -65,7 +65,10 @@
     <div class="card-header p-0 border-0">
         <a href="{{ .RelPermalink }}">
             <div class="card-img-container">
-                <img src="{{ $cardImage | absURL }}" class="card-img-top-custom" alt="{{ .Title }}">
+                <img src="{{ $cardImage | absURL }}"
+                width="300"
+                height="200"
+                class="card-img-top-custom" alt="{{ .Title }}">
             </div>
         </a>
     </div>
