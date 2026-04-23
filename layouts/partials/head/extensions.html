@@ -771,7 +771,9 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
         overflow: hidden;
     }
 
-   /* --- Skill Grid: Clean Alignment --- */
+  /* =====================
+   Part 15 - Skill Grid
+   ====================== */
 .skills-grid {
     list-style: none !important;
     padding: 0 !important;
@@ -809,6 +811,114 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* ==========================
+   Part 16 - SIde bar revamp
+   ========================== */
+
+/* 1. Global Reset: No underlines, borders, or shadows in sidebar */
+#stickySideBar a,
+.sidebar-section a,
+.toc-content a,
+.tidy-tag,
+.tidy-nav-card {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Section Headers: Theme-Aware visibility */
+.tidy-label {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    color: #1e293b !important; /* Visible in Light Theme */
+    margin-bottom: 12px !important;
+    display: block !important;
+}
+
+/* 3. Tags: Text-Only, No Background */
+.tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px 0 !important;
+}
+
+.tidy-tag {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #0d6efd !important;
+}
+
+/* 4. Nav Cards: Theme-Aware Backgrounds & Slimming */
+.sidebar-section {
+    margin-bottom: 20px !important;
+}
+
+.tidy-nav-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tidy-nav-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 15px !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important; /* White in Light Theme */
+    color: #1e293b !important;
+    border: 1px solid #e2e8f0 !important;
+    min-height: 38px !important;
+}
+
+.tidy-nav-card i {
+    color: #0d6efd !important;
+}
+
+.truncate-title {
+    flex: 1;
+    font-size: 13px;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- DARK MODE SPECIFIC FIXES (SHARE & TOC) --- */
+
+html[data-theme="dark"] .tidy-label,
+body.dark .tidy-label {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .tidy-nav-card,
+body.dark .tidy-nav-card {
+    background-color: #000000 !important; /* Black in Dark Theme */
+    color: #ffffff !important;
+    border-color: #334155 !important;
+}
+
+/* Social Icons & TOC Links to White in Dark Mode */
+html[data-theme="dark"] .social-content a,
+body.dark .social-content a,
+html[data-theme="dark"] .toc-content a,
+body.dark .toc-content a,
+html[data-theme="dark"] .tidy-tag,
+body.dark .tidy-tag,
+html[data-theme="dark"] .tidy-nav-card i,
+body.dark .tidy-nav-card i {
+    color: #ffffff !important;
+}
+
+/* Ansible Visibility Fix */
+html[data-theme="dark"] img[src*="ansible"] {
+    filter: brightness(0) invert(1) !important;
 }
 
 </style>
