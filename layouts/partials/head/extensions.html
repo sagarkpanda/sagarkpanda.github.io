@@ -742,10 +742,10 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
 }
 
 /* ==========================
-   Part 16 - Sidebar revamp 
+   Part 16 - Sidebar revamp
    ========================== */
 
-/* 1. Global Reset: No underlines, borders, or shadows */
+/* 1. Global Reset: Kill underlines, borders, and shadows */
 #stickySideBar a,
 .sidebar-section a,
 .toc-content a,
@@ -782,14 +782,19 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     color: #0d6efd !important;
 }
 
-/* 4. Social Share: Spacing fixed to 15px */
+/* 4. Social Share: 15px spacing */
 .social-content {
     display: flex !important;
     gap: 15px !important;
     padding: 5px 0 !important;
 }
 
-/* 5. Nav Cards: Slimming & Color Logic */
+.social-content a {
+    color: #0d6efd !important;
+    font-size: 18px !important;
+}
+
+/* 5. Nav Cards: Blended with Background */
 .sidebar-section {
     margin-bottom: 20px !important;
 }
@@ -804,15 +809,14 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 6px 15px !important;
-    border-radius: 8px !important;
-    background-color: #ffffff !important;
+    padding: 6px 0 !important; /* No side padding so it aligns with headers */
+    background-color: transparent !important; /* Removes the "box" look */
     color: #1e293b !important;
-    border: 1px solid #e2e8f0 !important;
-    min-height: 38px !important;
+    border: none !important;
+    min-height: 32px !important;
 }
 
-/* FORCE BLUE CHEVRON: Targeted at the specific FontAwesome icon */
+/* FORCE BLUE CHEVRON (Stays blue in both themes as requested) */
 .tidy-nav-card i.fas,
 .tidy-nav-card i.fab,
 .tidy-nav-card .fa-chevron-left,
@@ -836,22 +840,21 @@ body.dark .tidy-label {
     color: #ffffff !important;
 }
 
+/* Transparent background for dark mode nav */
 html[data-theme="dark"] .tidy-nav-card,
 body.dark .tidy-nav-card {
-    background-color: #000000 !important;
+    background-color: transparent !important;
     color: #ffffff !important;
-    border-color: #334155 !important;
+    border: none !important;
 }
 
-/* Social Icons, TOC, Tags & Nav Icons forced to White in Dark Mode */
+/* Social Icons, TOC, and Tags to White in Dark Mode */
 html[data-theme="dark"] .social-content a,
 body.dark .social-content a,
 html[data-theme="dark"] .toc-content a,
 body.dark .toc-content a,
 html[data-theme="dark"] .tidy-tag,
-body.dark .tidy-tag,
-html[data-theme="dark"] .tidy-nav-card i,
-body.dark .tidy-nav-card i {
+body.dark .tidy-tag {
     color: #ffffff !important;
 }
 
