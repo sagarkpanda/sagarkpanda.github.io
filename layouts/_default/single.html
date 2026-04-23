@@ -76,9 +76,31 @@
           <aside class="sidebar-section">
             <h5 class="tidy-label">Share</h5>
             <div class="social-content">
-                <a target="_blank" href="https://www.linkedin.com/feed/?shareActive=true&text={{ .Params.description }} {{ .Site.Params.hostName }}{{ .Permalink | absURL }}"><i class="fab fa-linkedin-in"></i></a>
-                <a target="_blank" href="https://twitter.com/share?text={{ .Title }}&url={{ .Site.Params.hostName }}{{ .Permalink | absURL }}"><i class="fab fa-x-twitter"></i></a>
-                <a target="_blank" href="https://api.whatsapp.com/send?text={{ .Title }}: {{ .Site.Params.hostName }}{{ .Permalink | absURL }}"><i class="fab fa-whatsapp"></i></a>
+
+              {{/* LinkedIn */}}
+              <a target="_blank"
+                href="https://www.linkedin.com/feed/?shareActive=true&text={{ .Title }} {{ .Permalink }}"
+                aria-label="Share on LinkedIn"
+                title="Share on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+
+              {{/* Twitter/X */}}
+              <a target="_blank"
+                href="https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}"
+                aria-label="Share on X"
+                title="Share on X">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+
+              {{/* WhatsApp */}}
+              <a target="_blank"
+                href="https://api.whatsapp.com/send?text={{ .Title }}: {{ .Permalink }}"
+                aria-label="Share on WhatsApp"
+                title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+
             </div>
           </aside>
           {{ end }}
