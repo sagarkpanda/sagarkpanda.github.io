@@ -477,78 +477,6 @@ body.dark {
     cursor: default !important;
 }
 
-/* ==============================
-   Part 9 - Sidebar Nav buttons
-   ============================== */
-.post-navigation {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-}
-
-.nav-btn {
-    text-decoration: none !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 18px 20px !important;
-    border-radius: 8px;
-    transition: all 0.2s ease-in-out;
-    width: 100% !important;
-    border: 1px solid rgba(128, 128, 128, 0.1) !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-
-    /* This ensures the content doesn't stretch to the edges */
-    justify-content: flex-start !important;
-    gap: 10px !important; /* This is the specific gap between arrow and text */
-}
-
-/* For the Next button, we still want it left-aligned but the arrow follows text */
-.nav-btn.next {
-    flex-direction: row !important;
-}
-
-.nav-text {
-    display: flex !important;
-    flex-direction: column !important;
-    min-width: 0 !important;
-}
-
-.nav-text strong {
-    font-size: 14px !important;
-    line-height: 1.4;
-    color: #212529 !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 600;
-}
-
-/* Dark Mode */
-body.dark .nav-btn,
-body.light-dark .nav-btn {
-    background-color: #252525 !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-body.dark .nav-text strong,
-body.light-dark .nav-text strong {
-    color: #ffffff !important;
-}
-
-.nav-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.nav-btn i {
-    color: #007bff !important;
-    font-size: 16px;
-    flex-shrink: 0;
-}
 
 /* ===========================
    Part 10 - Modern Pill Tabs
@@ -814,10 +742,10 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
 }
 
 /* ==========================
-   Part 16 - SIde bar revamp
+   Part 16 - Sidebar revamp 
    ========================== */
 
-/* 1. Global Reset: No underlines, borders, or shadows in sidebar */
+/* 1. Global Reset: No underlines, borders, or shadows */
 #stickySideBar a,
 .sidebar-section a,
 .toc-content a,
@@ -828,16 +756,16 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     box-shadow: none !important;
 }
 
-/* 2. Section Headers: Theme-Aware visibility */
+/* 2. Section Headers */
 .tidy-label {
     font-size: 16px !important;
     font-weight: 300 !important;
-    color: #1e293b !important; /* Visible in Light Theme */
+    color: #1e293b !important;
     margin-bottom: 12px !important;
     display: block !important;
 }
 
-/* 3. Tags: Text-Only, No Background */
+/* 3. Tags: Text-Only */
 .tags-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -854,7 +782,14 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     color: #0d6efd !important;
 }
 
-/* 4. Nav Cards: Theme-Aware Backgrounds & Slimming */
+/* 4. Social Share: Spacing fixed to 15px */
+.social-content {
+    display: flex !important;
+    gap: 15px !important;
+    padding: 5px 0 !important;
+}
+
+/* 5. Nav Cards: Slimming & Color Logic */
 .sidebar-section {
     margin-bottom: 20px !important;
 }
@@ -871,13 +806,17 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     justify-content: space-between !important;
     padding: 6px 15px !important;
     border-radius: 8px !important;
-    background-color: #ffffff !important; /* White in Light Theme */
+    background-color: #ffffff !important;
     color: #1e293b !important;
     border: 1px solid #e2e8f0 !important;
     min-height: 38px !important;
 }
 
-.tidy-nav-card i {
+/* FORCE BLUE CHEVRON: Targeted at the specific FontAwesome icon */
+.tidy-nav-card i.fas,
+.tidy-nav-card i.fab,
+.tidy-nav-card .fa-chevron-left,
+.tidy-nav-card .fa-chevron-right {
     color: #0d6efd !important;
 }
 
@@ -890,7 +829,7 @@ html[data-theme="dark"] #list-page .pagination .page-item.active .page-link,
     text-overflow: ellipsis;
 }
 
-/* --- DARK MODE SPECIFIC FIXES (SHARE & TOC) --- */
+/* --- DARK MODE SPECIFIC FIXES --- */
 
 html[data-theme="dark"] .tidy-label,
 body.dark .tidy-label {
@@ -899,12 +838,12 @@ body.dark .tidy-label {
 
 html[data-theme="dark"] .tidy-nav-card,
 body.dark .tidy-nav-card {
-    background-color: #000000 !important; /* Black in Dark Theme */
+    background-color: #000000 !important;
     color: #ffffff !important;
     border-color: #334155 !important;
 }
 
-/* Social Icons & TOC Links to White in Dark Mode */
+/* Social Icons, TOC, Tags & Nav Icons forced to White in Dark Mode */
 html[data-theme="dark"] .social-content a,
 body.dark .social-content a,
 html[data-theme="dark"] .toc-content a,
@@ -914,11 +853,6 @@ body.dark .tidy-tag,
 html[data-theme="dark"] .tidy-nav-card i,
 body.dark .tidy-nav-card i {
     color: #ffffff !important;
-}
-
-/* Ansible Visibility Fix */
-html[data-theme="dark"] img[src*="ansible"] {
-    filter: brightness(0) invert(1) !important;
 }
 
 </style>
