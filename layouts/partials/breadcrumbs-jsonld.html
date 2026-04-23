@@ -1,0 +1,32 @@
+{{- if not .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL | absURL }}"
+    }
+    {{- range $index, $element := .Ancestors.Reverse -}}
+    {{- if not .IsHome -}}
+    ,{
+      "@type": "ListItem",
+      "position": {{ add $index 2 }},
+      "name": "{{ or .Title "Archive" }}",
+      "item": "{{ .Permalink | absURL }}"
+    }
+    {{- end -}}
+    {{- end -}}
+    ,{
+      "@type": "ListItem",
+      "position": {{ add (len .Ancestors) 1 }},
+      "name": "{{ or .Title "Post" }}",
+      "item": "{{ .Permalink | absURL }}"
+    }
+  ]
+}
+</script>
+{{- end -}}
