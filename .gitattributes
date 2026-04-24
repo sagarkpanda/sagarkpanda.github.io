@@ -9,4 +9,3 @@
 *.yml linguist-detectable=true
 *.yaml linguist-detectable=true
 
-*.css linguist-detectable=true
