@@ -615,22 +615,6 @@ params:
     # fontAwesomeIcons:
     #     - icon: fab fa-github
     #       url: https://github.com/sagarkpanda
-    #       tooltip: "GitHub"
-    #     - icon: fab fa-linkedin
-    #       url: https://www.linkedin.com/in/sagarkpanda/
-    #       tooltip: "LinkedIn"
-    #     - icon: fab fa-medium
-    #       url: https://sagarkpanda.medium.com/
-    #       tooltip: "Medium"
-    #     - icon: fas fa-envelope
-    #       url: mailto:sagar.chip239@aleeas.com
-    #       tooltip: "Email"
-    #     - icon: fab fa-telegram
-    #       url: https://t.me/artisticw1zard
-    #       tooltip: "Telegram"
-    #     - icon: fas fa-newspaper
-    #       url: /blogs
-    #       tooltip: "Blog"
 
   # About
   about:
@@ -790,32 +774,7 @@ params:
           url: "https://buodisha.edu.in/"
         date: "2012 - 2015"
         GPA: "7.8 out of 10"
-      # - title: "Bachelor of Science in Computer Science"
-      #   school:
-      #     name: "Massachusetts Institute of Technology"
-      #     url: "https://example.org"
-      #   date: "2009 - 2013"
-      #   GPA: "3.9 out of 5.0"
-      #   content: |-
-      #     I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-      #     - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-      #     - Face mask detection using a single convolutional neural network.
 
-      #     Extracurricular Activities
-      #       - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      #       - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-      #   featuredLink:
-      #     enable: true
-      #     name: "My academic record"
-      #     url: "https://example.com"
-      # - title: "High School"
-      #   school:
-      #     name: "Thomas Jefferson High School for Science and Technology."
-      #     url: "https://example.org"
-      #   GPA: "4.2 out of 5.0"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
 
   # Achievements
   achievements:

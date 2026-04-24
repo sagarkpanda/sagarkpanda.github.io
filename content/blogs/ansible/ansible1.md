@@ -71,7 +71,8 @@ The ansible.cfg is the main configuration that Ansible uses. We can create it in
 #172.31.32.149
 #43.205.125.236
 Managed
-``````
+```
+
 ```
 # the ansible.cfg file
 [defaults]
