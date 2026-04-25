@@ -27,4 +27,4 @@ Sagar Panda is a Senior DevOps & Cloud Infrastructure Engineer. This website ser
 ## Social Profiles & Contact
 - LinkedIn: https://linkedin.com/in/sagarkpanda
 - GitHub: https://github.com/sagarkpanda
-- Bluesky: https://twitter.com/[Your-Handle]
+- Bluesky: https://bsky.app/profile/sagarpanda.com
