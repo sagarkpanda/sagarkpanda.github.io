@@ -3,6 +3,25 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
 
+{{ if .IsHome }}
+  <link rel="preload" as="image" href="{{ (.Site.Params.profilePic | default "/images/red_bg_full.webp") | absURL }}" fetchpriority="high">
+{{ else if .IsPage }}
+  {{- $lcp_img := "" -}}
+  {{- if .Params.image -}}
+      {{- $lcp_img = .Params.image | absURL -}}
+  {{- else if .Params.feature_image -}}
+      {{- $lcp_img = .Params.feature_image | absURL -}}
+  {{- else -}}
+      {{- $img := findRE "<img [^>]*src=\"([^\"]+)\"" .Content 1 -}}
+      {{- if $img -}}
+          {{- $lcp_img = index $img 0 | replaceRE "<img [^>]*src=\"([^\"]+)\"" "$1" | absURL -}}
+      {{- end -}}
+  {{- end -}}
+  {{- if $lcp_img -}}
+    <link rel="preload" as="image" href="{{ $lcp_img }}" fetchpriority="high">
+  {{- end -}}
+{{ end }}
+
 {{- if .Permalink -}}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end -}}
@@ -39,27 +58,22 @@
     {{- if $img -}}
         {{- $og_image = index $img 0 | replaceRE "<img [^>]*src=\"([^\"]+)\"" "$1" | absURL -}}
     {{- else -}}
+        {{/* Final fallback to site favicon or logo if no image exists */}}
         {{- $og_image = (.Site.Params.favicon | default "fav.png") | absURL -}}
     {{- end -}}
 {{- end -}}
 
-{{- $description := .Description | default .Summary | default .Site.Params.description -}}
-
-<meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ $description }}">
+<meta property="og:description" content="{{ .Description | default .Summary }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ $og_image }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
-<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:description" content="{{ .Description | default .Summary }}">
 <meta name="twitter:image" content="{{ $og_image }}">
-{{ with .Site.Params.social.twitter }}
-<meta name="twitter:site" content="@{{ . }}">
-<meta name="twitter:creator" content="@{{ . }}">
-{{ end }}
+
 {{ if hugo.IsMultilingual }}
   {{ range .AllTranslations }}
     <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
@@ -81,58 +95,6 @@
 
 <link rel="stylesheet" href="{{ (printf "%scss/theme.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
 
-<style>
-    :root {
-        --text-color: {{ .Site.Params.color.textColor | default "#343a40" }};
-        --text-secondary-color: {{ .Site.Params.color.secondaryTextColor | default "#6c757d" }};
-        --text-link-color: {{ .Site.Params.color.textLinkColor | default (.Site.Params.color.primaryColor | default "#007bff") }};
-        --background-color: {{ .Site.Params.color.backgroundColor | default "#eaedf0" }};
-        --secondary-background-color: {{ .Site.Params.color.secondaryBackgroundColor | default "#64ffda1a" }};
-        --primary-color: {{ .Site.Params.color.primaryColor | default "#007bff" }};
-        --secondary-color: {{ .Site.Params.color.secondaryColor | default "#f8f9fa" }};
-
-        /* dark mode colors */
-        --text-color-dark: {{ .Site.Params.color.darkmode.textColor | default "#e4e6eb" }};
-        --text-secondary-color-dark: {{ .Site.Params.color.darkmode.secondaryTextColor | default "#b0b3b8" }};
-        --text-link-color-dark: {{ .Site.Params.color.darkmode.textLinkColor | default (.Site.Params.color.darkmode.primaryColor | default "#ffffff") }};
-        --background-color-dark: {{ .Site.Params.color.darkmode.backgroundColor | default "#18191a" }};
-        --secondary-background-color-dark: {{ .Site.Params.color.darkmode.secondaryBackgroundColor | default "#212529" }};
-        --primary-color-dark: {{ .Site.Params.color.darkmode.primaryColor | default "#ffffff" }};
-        --secondary-color-dark: {{ .Site.Params.color.darkmode.secondaryColor | default "#212529" }};
-    }
-    body {
-        font-size: {{ .Site.Params.font.fontSize | default "1rem" }};
-        font-weight: {{ .Site.Params.font.fontWeight | default "400" }};
-        line-height: {{ .Site.Params.font.lineHeight | default "1.5" }};
-        text-align: {{ .Site.Params.font.textAlign | default "left" }};
-    }
-
-    html {
-        background-color: var(--background-color) !important;
-    }
-
-    body::-webkit-scrollbar {
-        height: 0px;
-        width: 8px;
-        background-color: var(--background-color);
-    }
-
-    ::-webkit-scrollbar-track {
-        border-radius: 1rem;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        border-radius: 1rem;
-        background: #b0b0b0;
-        outline: 1px solid var(--background-color);
-    }
-
-    #search-content::-webkit-scrollbar {
-        width: .5em;
-        height: .1em;
-        background-color: var(--background-color);
-    }
-</style>
 
 {{ partial "head/extensions.html" . }}
 {{ partial "breadcrumbs-jsonld.html" . }}
