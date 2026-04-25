@@ -24,15 +24,16 @@
                                 <div class="float-end">
                                     <small>{{ .date }}</small>
                                 </div>
-
-                                <h4 class="card-title h5">{{ .title }}</h4>
+                                <h5 class="card-title">{{ .title }}</h5>
 
                                 {{ if .school.url }}
-                                <a href="{{ .school.url }}" target="_blank" class="text-decoration-none">
-    <h5 class="h6">{{ .school.name }}</h5>
-</a>
+                                <a href="{{ .school.url }}" target="_blank">
+                                    <h6>
+                                    {{ .school.name }}
+                                    </h6>
+                                </a>
                                 {{ else }}
-                                    <h5 class="h6">{{ .school.name }}</h5>
+                                {{ .school.name }}
                                 {{ end }}
 
                                 {{ if .GPA }}
