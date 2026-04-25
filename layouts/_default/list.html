@@ -76,7 +76,7 @@
 
     <a href="{{ .RelPermalink }}" class="text-decoration-none">
         <div class="card-body">
-            <h5 class="card-title card-title-custom">{{ .Title }}</h5>
+            <h4 class="card-title card-title-custom h5">{{ .Title }}</h4>
             <div class="card-text">
                 <p class="card-description-custom text-muted">
                     {{ .Params.Description | default (.Summary | plainify) }}

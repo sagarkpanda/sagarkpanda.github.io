@@ -24,16 +24,15 @@
                                 <div class="float-end">
                                     <small>{{ .date }}</small>
                                 </div>
-                                <h5 class="card-title">{{ .title }}</h5>
-                                
+
+                                <h4 class="card-title h5">{{ .title }}</h4>
+
                                 {{ if .school.url }}
-                                <a href="{{ .school.url }}" target="_blank">
-                                    <h6>
-                                    {{ .school.name }}
-                                    </h6>
-                                </a>
+                                <a href="{{ .school.url }}" target="_blank" class="text-decoration-none">
+    <h5 class="h6">{{ .school.name }}</h5>
+</a>
                                 {{ else }}
-                                {{ .school.name }}
+                                    <h5 class="h6">{{ .school.name }}</h5>
                                 {{ end }}
 
                                 {{ if .GPA }}
@@ -41,7 +40,7 @@
                                     GPA:
                                     <i>
                                         <small>{{ .GPA }}</small>
-                                    </i> 
+                                    </i>
                                 </div>
                                 {{ end }}
                                 <div class="py-1 education-content">
