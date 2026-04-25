@@ -1,0 +1,30 @@
+# Sagar Panda - DevOps & Cloud Infrastructure Engineer
+
+## About
+Sagar Panda is a Senior DevOps & Cloud Infrastructure Engineer. This website serves as a professional portfolio and a technical blog where Sagar shares expert tutorials on cloud infrastructure, system reliability, container orchestration, and Infrastructure as Code (IaC).
+
+## Key Technical Domain
+- Cloud Platforms: AWS (Amazon Web Services)
+- Containerization & Orchestration: Kubernetes (K8s), Docker
+- Infrastructure as Code (IaC): Terraform
+- CI/CD & Automation: GitLab CI, Jenkins, GitHub Actions
+- Configuration Management: Ansible
+- OS & Scripting: Linux, Shell Scripting, Python
+
+## Site Structure & Navigation
+- Homepage: https://sagarpanda.com/
+- Main Technical Blog: https://sagarpanda.com/blogs/
+- AWS Architecture & Tutorials: https://sagarpanda.com/blogs/#cloud
+- CI/CD Architecture & Tutorials: https://sagarpanda.com/blogs/#ci-cd
+- Kubernetes Orchestration: https://sagarpanda.com/blogs/#kubernetes
+- Terraform IaC: https://sagarpanda.com//blogs/#terraform/
+
+## Notable Publications & Tutorials
+- Cache Me If You Can - AWS CloudFront in Action
+- Beyond Objects — Using Amazon S3 Files as a Native File System on EC2
+- Automating AWS Infrastructure with Terraform
+
+## Social Profiles & Contact
+- LinkedIn: https://linkedin.com/in/sagarkpanda
+- GitHub: https://github.com/sagarkpanda
+- Bluesky: https://twitter.com/[Your-Handle]
