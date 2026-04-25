@@ -1,12 +1,11 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Params.description }}">
 <link rel="stylesheet" href="{{ (printf "%scss/single.css" (.Site.Params.staticPath | default "")) | relURL }}">
-<!-- <script defer src="{{ (printf "%sfontawesome-6/all-6.4.2.js" (.Site.Params.staticPath | default "")) | relURL }}"></script> -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script defer src="{{ (printf "%sfontawesome-6/all-6.4.2.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
 {{ end }}
 
 {{ define "title" }}
-{{.Title }} | {{ .Site.Title }}
+{{ .Title }} | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
@@ -38,11 +37,11 @@
 
           <div id="custom-heart-section" class="bluesky-heart-wrapper">
             <button id="like-btn" onclick="handleLike()">
-                <div class="icon-stack">
-                    <div class="particles"></div>
-                    <i class="far fa-heart heart-outline"></i>
-                    <i class="fas fa-heart heart-filled"></i>
-                </div>
+              <div class="icon-stack">
+                <div class="particles"></div>
+                <i class="far fa-heart heart-outline"></i>
+                <i class="fas fa-heart heart-filled"></i>
+              </div>
             </button>
             <span id="like-count">0</span>
           </div>
@@ -51,13 +50,10 @@
 
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
-
-          {{ if .Params.toc | default true}}
+          {{ if .Params.toc | default true }}
           <aside class="sidebar-section">
-              <h5 class="tidy-label">{{ .Site.Params.terms.toc | default (i18n "toc") }}</h5>
-              <div class="toc-content">
-                {{.TableOfContents}}
-              </div>
+            <h5 class="tidy-label">{{ .Site.Params.terms.toc | default (i18n "toc") }}</h5>
+            <div class="toc-content">{{ .TableOfContents }}</div>
           </aside>
           {{ end }}
 
@@ -77,31 +73,9 @@
           <aside class="sidebar-section">
             <h5 class="tidy-label">Share</h5>
             <div class="social-content">
-
-              {{/* LinkedIn */}}
-              <a target="_blank"
-                href="https://www.linkedin.com/feed/?shareActive=true&text={{ .Title }} {{ .Permalink }}"
-                aria-label="Share on LinkedIn"
-                title="Share on LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-
-              {{/* Twitter/X */}}
-              <a target="_blank"
-                href="https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}"
-                aria-label="Share on X"
-                title="Share on X">
-                <i class="fab fa-x-twitter"></i>
-              </a>
-
-              {{/* WhatsApp */}}
-              <a target="_blank"
-                href="https://api.whatsapp.com/send?text={{ .Title }}: {{ .Permalink }}"
-                aria-label="Share on WhatsApp"
-                title="Share on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-
+              <a target="_blank" href="https://www.linkedin.com/feed/?shareActive=true&text={{ .Title }} {{ .Permalink }}"><i class="fab fa-linkedin-in"></i></a>
+              <a target="_blank" href="https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}"><i class="fab fa-x-twitter"></i></a>
+              <a target="_blank" href="https://api.whatsapp.com/send?text={{ .Title }}: {{ .Permalink }}"><i class="fab fa-whatsapp"></i></a>
             </div>
           </aside>
           {{ end }}
@@ -146,15 +120,14 @@
 
 {{ if or (.Site.Params.singlePages.scrollprogress.enable | default true) (.Params.enableScrollProgress) }}
 <div class="progress">
-  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar"></div>
 </div>
 <script src="{{ (printf "%sjs/scrollProgressBar.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
 {{ end }}
 
 <script>
   var topScroll = document.getElementById("topScroll");
-  window.onscroll = function() {scrollFunction()};
-
+  window.onscroll = function() { scrollFunction() };
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       topScroll.style.display = "block";
@@ -162,13 +135,10 @@
       topScroll.style.display = "none";
     }
   }
-
   function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-
-  // Dynamic sticky sidebar height
   let stickySideBarElem = document.getElementById("stickySideBar");
   let stickyNavBar = {{ .Site.Params.navbar.stickyNavBar.enable | default false }};
   if(stickyNavBar) {
@@ -182,6 +152,5 @@
 
 {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
 <script src="{{ (printf "%sjs/readingTime.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
-{{end}}
-
+{{ end }}
 {{ end }}
