@@ -47,22 +47,22 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div>
                                                 <span class="{{ if eq $jobIdx 0 }}h4{{ else }}h5{{ end }}">{{ $job.name }}</span>
-                                                
+
                                                 {{ if $job.info.content }}
                                                     <span class="p-2">
                                                         <span
                                                             data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
-                                                            data-bs-original-title={{$job.info.content}}
-                                                        > 
+                                                            data-bs-original-title="{{ $job.info.content }}"
+                                                        >
                                                             <i class="fas fa-info-circle fa-xs"></i>
                                                         </span>
                                                     </span>
                                                 {{ end }}
-                                                
+
                                                 {{ if eq $jobIdx 0 }}
                                                     <small>-</small>
-                                                    <a href="{{ $companyUrl }}" target="_blank">{{ $company }}</a>
+                                                    <a href="{{ $companyUrl }}" target="_blank" rel="noopener">{{ $company }}</a>
                                                 {{ end }}
                                             </div>
                                             <div class="d-block">
@@ -74,10 +74,12 @@
                                                                 <a
                                                                     href="{{ .url }}"
                                                                     target="_blank"
-                                                                    {{ if .tooltip}}
-                                                                        data-bs-toggle="tooltip" 
-                                                                        data-bs-placement="top" 
-                                                                        data-bs-original-title={{.tooltip}}
+                                                                    rel="noopener"
+                                                                    aria-label="{{ .tooltip | default "External Link" }}"
+                                                                    {{ if .tooltip }}
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top"
+                                                                        data-bs-original-title="{{ .tooltip }}"
                                                                     {{ end }}
                                                                 >
                                                                     <i class="{{ .icon }}"></i>
@@ -87,17 +89,20 @@
                                                         {{ range $job.featuredItems.customIcons }}
                                                             <div class="list-inline-item">
                                                                 <a
-                                                                    class="d-flex align-items-center justify-content-between" 
-                                                                    href="{{ .url }}" 
+                                                                    class="d-flex align-items-center justify-content-between"
+                                                                    href="{{ .url }}"
                                                                     target="_blank"
-
-                                                                    {{ if .tooltip}}
-                                                                        data-bs-toggle="tooltip" 
-                                                                        data-bs-placement="top" 
-                                                                        data-bs-original-title={{.tooltip}}
+                                                                    rel="noopener"
+                                                                    aria-label="{{ .tooltip | default "Project Link" }}"
+                                                                    {{ if .tooltip }}
+                                                                        data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top"
+                                                                        data-bs-original-title="{{ .tooltip }}"
                                                                     {{ end }}
                                                                 >
-                                                                    <img src="{{ .icon }}">
+                                                                    <img src="{{ .icon | relURL }}"
+                                                                         alt="{{ .tooltip | default "Project Icon" }}"
+                                                                         width="20" height="20">
                                                                 </a>
                                                             </div>
                                                         {{ end }}
@@ -106,12 +111,11 @@
                                             </div>
                                         </div>
                                         <div class="pb-2 pb-3">
-                                            {{ $job.content | markdownify}}
+                                            {{ $job.content | markdownify }}
                                         </div>
                                     </div>
                                 {{ end }}
                             </div>
-                        
                         {{ end }}
                     </div>
                 </div>

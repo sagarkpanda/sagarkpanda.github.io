@@ -726,7 +726,7 @@ params:
                 tooltip: "AWS"
               - icon: images/jenkins.svg
                 # url: https://jenkins.io
-                tooltip: "AWS"
+                tooltip: "Jenkins"
               - icon: images/ansible.svg
                 url: "https://www.redhat.com/en/ansible-collaborative"
                 tooltip: "Ansible"

@@ -2,8 +2,9 @@
     {{ range .Site.Params.hero.socialLinks.fontAwesomeIcons }}
     <span class="px-1">
         <a href="{{ .url }}"
-            {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
+            {{ if not (hasPrefix .url "#") }} target="_blank" rel="noopener" {{ end }}
             class="btn social-icon"
+            aria-label="{{ .name | default "Social Link" }}"
         >
             <i class="{{ .icon }}"></i>
         </a>
@@ -13,10 +14,11 @@
     {{ range .Site.Params.hero.socialLinks.customIcons }}
     <span class="px-1">
         <a href="{{ .url }}"
-            {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
+            {{ if not (hasPrefix .url "#") }} target="_blank" rel="noopener" {{ end }}
             class="btn social-icon"
+            aria-label="{{ .title }}"
         >
-            <img src="{{ .icon }}">
+            <img src="{{ .icon | relURL }}" alt="{{ .title }} Icon">
         </a>
     </span>
     {{ end }}
