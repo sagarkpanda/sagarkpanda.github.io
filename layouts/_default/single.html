@@ -108,7 +108,8 @@
           <aside class="sidebar-section">
             <h5 class="tidy-label">Continue Reading</h5>
             <div class="tidy-nav-stack">
-                {{ $allPosts := where site.RegularPages "Section" "in" (slice "blogs" "gitlab" "ansible") }}
+                <!-- {{ $allPosts := where site.RegularPages "Section" "in" (slice "blogs" "gitlab" "ansible") }} -->
+                {{ $allPosts := where site.RegularPages "Section" "blogs" }}
                 {{ $prev := $allPosts.Prev . }}
                 {{ $next := $allPosts.Next . }}
 
