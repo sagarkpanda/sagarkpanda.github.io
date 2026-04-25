@@ -649,7 +649,7 @@ params:
     # title: "Custom Name"
     items:
       - company: "Wipro"
-        companyUrl: "https://wipro.com"
+        companyUrl: "https://www.wipro.com/"
         jobs:
           - name: "Sr. Software Engineer"
             date: "Nov 2024 - present"
@@ -677,14 +677,14 @@ params:
                   tooltip: Argo CD
 
                 - icon: /images/gitlab.svg
-                  url: "https://gitlab.com"
+                  url: "https://about.gitlab.com/"
                   tooltip: GitLab
           # - name: "Software Developer"
           #   date: "Jan 2022 - Dec 2023"
           #   content: "I worked as a software developer. I worked on a project that will be used to help people find the best way to get around the city."
 
       - company: "Valeo"
-        companyUrl: "https://valeo.com"
+        companyUrl: "https://www.valeo.com/en/"
         jobs:
           - name: "DevOps Engineer"
             date: "Aug 2023 - Oct 2024"
@@ -702,13 +702,13 @@ params:
                     url: "https://aws.amazon.com/"
                     tooltip: "AWS"
                   - icon: images/jenkins.svg
-                    url: "https://jenkins.io"
+                    url: "https://www.jenkins.io/"
                     tooltip: "Jenkins"
                   - icon: images/docker.svg
-                    url: "https://docker.com"
+                    url: "https://www.docker.com/"
                     tooltip: "Docker"
                   - icon: images/terraform.svg
-                    url: "https://terraform.io"
+                    url: "https://developer.hashicorp.com/terraform"
                     tooltip: "Terraform"
 
       - company: "Waycool Foods"
@@ -725,10 +725,10 @@ params:
                 url: "https://aws.amazon.com/"
                 tooltip: "AWS"
               - icon: images/jenkins.svg
-                url: https://jenkins.io
+                # url: https://jenkins.io
                 tooltip: "AWS"
               - icon: images/ansible.svg
-                url: "https://ansible.com/"
+                url: "https://www.redhat.com/en/ansible-collaborative"
                 tooltip: "Ansible"
           content: |
             I worked as a devops enginner at Waycool foods focusing on web and mobile appplications operations that help farmers and businesses.
@@ -740,7 +740,7 @@ params:
 
 
       - company: "Straive"
-        companyUrl: "https://straive.com"
+        companyUrl: "https://www.straive.com"
         jobs:
         - name: "Automation Engineer"
           date: "Nov 2019 - Jan 2022"
@@ -759,7 +759,7 @@ params:
       - title: "Master of Computer Applications"
         school:
           name: "Biju Pattnaik University of Technology, Odisha"
-          url: "https://bput.ac.in"
+          url: "https://www.bput.ac.in"
         date: "2015 - 2018"
         GPA: "8.2 out of 10"
         content: |-
@@ -871,7 +871,7 @@ params:
       disableFeaturedImage: true
     socialNetworks:
       github: https://github.com
-      linkedin: https://linkedin.com
+      linkedin: https://www.linkedin.com/in/sagarkpanda/
       twitter: https://twitter.com
       instagram: https://instagram.com
       facebook: https://facebook.com
