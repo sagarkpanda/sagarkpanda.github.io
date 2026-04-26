@@ -25,11 +25,21 @@
             </div>
           </div>
 
+          <!--font matter image properties -->
           {{ if .Params.image }}
           <div class="featured-image">
-            <img class="img-fluid mx-auto d-block" src="{{ .Params.image }}" alt="{{ .Title }}">
+            <img
+              class="img-fluid mx-auto d-block"
+              src="{{ .Params.image }}"
+              alt="{{ .Title }}"
+              width="1200"
+              height="630"
+              fetchpriority="high"
+            >
           </div>
           {{ end }}
+
+          <!--font matter image properties -->
 
           <article class="page-content p-2">
             {{ .Content | emojify }}

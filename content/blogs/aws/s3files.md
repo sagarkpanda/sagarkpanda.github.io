@@ -3,6 +3,7 @@ date: '2026-04-22T12:30:10+05:30'
 draft: false
 title: 'Beyond Objects — Using Amazon S3 Files as a Native File System on EC2'
 Description: 'Learn how to mount S3 buckets natively on your EC2 instances using the new NFS v4.1+ interface.'
+image: "https://i.ibb.co/cSqmmDcV/x.jpg"
 tags:
   - aws
   - s3
@@ -11,7 +12,7 @@ tags:
   - devops
 ---
 
-![AWS_S3Files](https://i.ibb.co/cSqmmDcV/x.jpg)
+<!-- {{< figure src=@image alt="AWS_S3Files Architecture" width="1200" height="630" >}} -->
 
 ## Introduction
 
@@ -31,15 +32,16 @@ Create a ‘General Purpose’ S3 bucket and turn on versioning, you can’t cre
 
 Now click on the file systems tab
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*waJtD90VhnjNP3sIHqSjHw.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*waJtD90VhnjNP3sIHqSjHw.png" alt="S3 File Systems Tab" width="1000" height="600" >}}
 
 Change the bucket prefix or vpc if you want or proceed with the creation.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*x1BfwDM-RZuB28IDgENdJw.png)![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*wSbgWbcZNkj97zCQHQHuYQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*x1BfwDM-RZuB28IDgENdJw.png" alt="S3 Configuration" width="800" height="500" >}}
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*wSbgWbcZNkj97zCQHQHuYQ.png" alt="Creation Progress" width="800" height="500" >}}
 
 It would take a few mins to create the file system and mount targets, mount targets will be created in all the AZs of the particular region where the bucket is created.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*D70AXK92UN7a7CTNWDRiIA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*D70AXK92UN7a7CTNWDRiIA.png" alt="Mount Targets available" width="800" height="500" >}}
 
 Once the mount targets are available, we are ready to mount this. Now as you can see we can attach this to not only EC2 but Lambda and ECS tasks as well.
 
@@ -53,7 +55,8 @@ Click add shared file system by choosing S3 in files option. You should see moun
 
 Additionally you have to attach an IAM role to the instance with specific S3files policy, or attach existing policy of S3FilesClientFullAccess. Check the documentation for more info
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bs2_QXvBouHe9_amrA8vKA.png)![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZFDne33c-aOUkopnGBXnOA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bs2_QXvBouHe9_amrA8vKA.png" alt="EC2 Shared File System Option" width="1000" height="600" >}}
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZFDne33c-aOUkopnGBXnOA.png" alt="IAM and Policy settings" width="800" height="500" >}}
 
 ### Step 3: Mounting S3 file system
 
@@ -66,18 +69,19 @@ curl https://amazon-efs-utils.aws.com/efs-utils-installer.sh | sh -s -- --instal
 
 If you see any permission errors, it could be misconfigured IAM role or the inbound port of the security group attached to S3 does not have FNS rule.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-u_pGsMlLu_2QCbU1mQsQQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-u_pGsMlLu_2QCbU1mQsQQ.png" alt="Terminal Mounting Success" width="800" height="500" >}}
 
 When all the permission are sorted (if any) the mounting will be successful. And you can view and list the mount point.
 
 You can now create file in that particular mount point and the files will be visible in S3 bucket or upload files in S3 bucket and the same will be available inside the instance.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KA2LKcE3q2c8z6JDGUB4Ig.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KA2LKcE3q2c8z6JDGUB4Ig.png" alt="Final File List" width="800" height="500" >}}
 
 ## Wrap up
-
 Amazon S3 Files marks a major turning point by providing native NFS v4.1+ support and full POSIX semantics directly on your buckets. For a deeper dive into the technical setup and implementation details, be sure to explore the official documentation and the launch announcement linked below.
 
 Source: [AWS News](https://aws.amazon.com/blogs/aws/launching-s3-files-making-s3-buckets-accessible-as-file-systems/), [AWS Docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files.html)
 
-[Read more on AWS →](/blogs/#cloud)
+[Check out my other AWS tutorials →](/blogs/#cloud)
+
+<!-- <a href="/blogs/#cloud">Read my other posts on AWS →</a> -->

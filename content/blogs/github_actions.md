@@ -3,6 +3,8 @@ date: '2023-10-21T19:26:10+05:30'
 draft: false
 title: 'A Beginner’s Introduction to GitHub Actions'
 Description: GitHub Actions is a modern CI/CD alternative to Jenkins.
+image: https://miro.medium.com/v2/resize:fit:1358/format:webp/1*_7mJjD1resPodxT7agk16w.png
+
 tags:
   - ci/cd
   - github
@@ -10,7 +12,7 @@ tags:
   - pipeline
 ---
 
-![action workflow](https://miro.medium.com/v2/resize:fit:1358/format:webp/1*_7mJjD1resPodxT7agk16w.png)
+<!-- ![action workflow](https://miro.medium.com/v2/resize:fit:1358/format:webp/1*_7mJjD1resPodxT7agk16w.png) -->
 
 **Intro:** GitHub action is a CI/CD platform to create build, test and deployment pipeline for our application. This is a yaml based configuration.
 
