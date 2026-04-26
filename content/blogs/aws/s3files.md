@@ -32,7 +32,7 @@ Create a ‘General Purpose’ S3 bucket and turn on versioning, you can’t cre
 
 Now click on the file systems tab
 
-{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*waJtD90VhnjNP3sIHqSjHw.png" alt="S3 File Systems Tab" width="1000" height="600" >}}
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*waJtD90VhnjNP3sIHqSjHw.png" alt="S3 File Systems Tab" width="1000" height="600" title="S3 File Systems Tab" >}}
 
 Change the bucket prefix or vpc if you want or proceed with the creation.
 

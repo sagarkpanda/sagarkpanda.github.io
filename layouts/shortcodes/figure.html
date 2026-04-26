@@ -11,16 +11,19 @@
        loading="lazy" /> {{ if .Get "link" }}</a>{{ end }}
 
   {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
-    <figcaption>
-      {{ with .Get "title" }}<h4>{{ . }}</h4>{{ end }}
+    <figcaption class="figure-caption text-center">
+      {{ with .Get "title" }}
+        <span class="d-block small text-muted font-weight-bold">{{ . }}</span>
+      {{ end }}
+
       {{ if or (.Get "caption") (.Get "attr") -}}
-        <p>
+        <small class="text-muted">
           {{ .Get "caption" | markdownify -}}
           {{ with .Get "attrlink" }} <a href="{{ . }}">{{- end -}}
             {{ .Get "attr" | markdownify -}}
           {{- if .Get "attrlink" }}</a>{{ end }}
-        </p>
+        </small>
       {{- end }}
     </figcaption>
-  {{- end }}
+{{- end }}
 </figure>
