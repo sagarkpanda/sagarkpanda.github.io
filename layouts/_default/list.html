@@ -1,3 +1,7 @@
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
 {{ define "head" }}
 <meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
 <link rel="stylesheet" href="{{ (printf "%scss/list.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
