@@ -6,7 +6,7 @@ Description: Launch Your Own GitLab Instance in Minutes
 tags:
   - gitlab
   - aws
-url: "/blogs/gitlab/gitlab_setup/"
+url: "/blogs/gitlab/gitlab-setup/"
 aliases:
     - /blogs/gitlab_setup/
 ---
