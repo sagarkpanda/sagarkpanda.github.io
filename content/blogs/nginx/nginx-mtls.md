@@ -165,4 +165,4 @@ If you found this article helpful, click the 👏 button, it keeps me motivated 
 <br></br>
 [Nginx →](/blogs/#nginx)
 
-[Load Balancing Magic: Unleashing the Potential of NGINX](https://sagarkrp.medium.com/how-to-configure-nginx-to-load-balance-multiple-servers-nginx-docker-compose-c8e1d746f02b?source=post_page-----3b306ec7061d---------------------------------------)
+[Load Balancing Magic: Unleashing the Potential of NGINX]({{< relref "nginx-lb" >}})

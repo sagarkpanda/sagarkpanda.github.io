@@ -12,7 +12,7 @@ tags:
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ADb5oFBqgBA4h-SDyW2D7Q.jpeg)
 
-[**_In the previous article_**]({{< relref "terraform_setup" >}}), we setup tf and got familiar with it with basic example. Now lets proceed further.
+[**_In the previous article_**]({{< relref "terraform-setup" >}}), we setup tf and got familiar with it with basic example. Now lets proceed further.
 
 All configs can be found on [GitHub](https://github.com/sagarkrp/Terraform_Automation).
 

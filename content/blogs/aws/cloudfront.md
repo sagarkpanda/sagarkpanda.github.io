@@ -27,7 +27,7 @@ I am using to EC2 instances with ALB managing traffic with round robin except th
 
 Refer this post:
 
-[ALB Setup]({{< relref "aws_alb" >}})
+[ALB Setup]({{< relref "aws-alb" >}})
 
 ### Create distribution
 

@@ -137,4 +137,4 @@ eg : a .sh file with python interpreter on #!
 That’s all for today.
 
 **Read part 1:**
-[here]({{< relref "linux_tips1" >}})
+[here]({{< relref "linux-tips1" >}})

@@ -197,5 +197,5 @@ Lambda, a server less function runs only when called (just like functions/method
 **Reference:** [**AWS re:Post**](https://repost.aws/knowledge-center/start-stop-lambda-eventbridge)
 
 **Read More on AWS:**
-[**WAF**]({{< relref "aws_Waf" >}}), [**Secrets Manager**]({{< relref "aws_secretmanager" >}}), [**ALB**]({{< relref "aws_alb" >}})
+[Read more on AWS →](/blogs/#cloud)
 

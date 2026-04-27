@@ -144,7 +144,7 @@ A **prefix** path type will always route to the destination even if the url does
 
 ### **Up Next**:
 
-Here we used IP based routing. In [**_the next article_**]({{< relref "nginx-ingress_tls" >}}) we’ll experiment with host name based routing. We’ll also use TLS certificate on the domain name with ingress.
+Here we used IP based routing. In [**_the next article_**]({{< relref "nginx-ingress-tls" >}}) we’ll experiment with host name based routing. We’ll also use TLS certificate on the domain name with ingress.
 
 **Read More on K8s:**
 

@@ -36,7 +36,7 @@ In this article, we’ll use ALB for our web application with http and https.
 
 If you would like to know how to get a free TLS certificate, check out the below article.
 
-[The Complete DIY Guide — Let’s Encrypt SSL Setup Using Certbot](https://blog.devops.dev/ssl-for-everyone-a-guide-to-configure-lets-encrypt-with-certbot-13c4098b84d9?source=post_page-----b0bb4a0b63e0---------------------------------------)
+[The Complete DIY Guide — Let’s Encrypt SSL Setup Using Certbot](letsencrypt-ssl.md)
 
 For importing certs to ACM, just copy the contents of the cert.pem and private.key to the respective fields in ACM and you are good to go.
 
@@ -143,4 +143,4 @@ After you are done, delete all the resources to avoid incurring charges.
 **Reference**: [AWS Docs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
 
 **Read More on AWS:**
-[**WAF**]({{< relref "aws_Waf" >}}), [**Secrets Manager**]({{< relref "aws_secretmanager" >}}), [**Lambda**]({{< relref "aws_lambda" >}})
+[Read more on AWS →](/blogs/#cloud)
