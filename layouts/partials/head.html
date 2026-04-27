@@ -56,7 +56,7 @@
     {{- if .Site.Params.images -}}
         {{- $og_image = index .Site.Params.images 0 | absURL -}}
     {{- else -}}
-        {{- $og_image = "/images/og-image.png" | absURL -}}
+        {{- $og_image = "/images/og-image.jpg" | absURL -}}
     {{- end -}}
 {{- else if .Params.image -}}
     {{- $og_image = .Params.image | absURL -}}
@@ -72,7 +72,7 @@
         {{- if .Site.Params.images -}}
             {{- $og_image = index .Site.Params.images 0 | absURL -}}
         {{- else -}}
-            {{- $og_image = "/images/og-image.png" | absURL -}}
+            {{- $og_image = "/images/og-image.jpg" | absURL -}}
         {{- end -}}
     {{- end -}}
 {{- end -}}
