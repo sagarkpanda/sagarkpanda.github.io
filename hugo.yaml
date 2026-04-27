@@ -501,7 +501,7 @@ params:
   description: "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing expert tutorials on cloud infrastructure and CI/CD automation."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/images/circle_profile.webp"
-  images: ["/images/og-image.png"]
+  images: ["/images/og-image.jpg"]
 
   author:
     name: "Sagar Panda"
