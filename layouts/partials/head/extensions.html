@@ -92,7 +92,7 @@
       transform: translate(-50%, -12px); /* Slight slide up */
   }
 
-  /* =========================================
+/* =========================================
    PART 3: GLOBAL CARD STYLING & FOOTER
    ========================================= */
 .card {
@@ -109,26 +109,36 @@
     padding: 1.25rem !important;
 }
 
-/* Card Titles */
-#recent-posts .card .card-body h5.card-title,
-#list-page .card .card-body h5.card-title {
+/* --- LIGHT THEME (Default) --- */
+
+/* Header Black (#222222) */
+#recent-posts .card .card-body h5.card-title a,
+#list-page .card .card-body h5.card-title a {
     font-size: 20px !important;
+    color: #007bff !important;
+    text-decoration: none !important;
+}
+
+/* Description Blue (#0d6efd) */
+html body .card .card-body .card-text p {
     color: #222222 !important;
 }
 
-html[data-theme="dark"] #recent-posts .card .card-body h5.card-title,
-html[data-theme="dark"] #list-page .card .card-body h5.card-title,
-.dark #recent-posts .card .card-body h5.card-title,
-.dark #list-page .card .card-body h5.card-title {
+
+/* --- DARK THEME OVERRIDES --- */
+
+/* Everything White (#ffffff) */
+html[data-theme="dark"] #recent-posts .card .card-body h5.card-title a,
+html[data-theme="dark"] #list-page .card .card-body h5.card-title a,
+html[data-theme="dark"] .card .card-body .card-text p,
+.dark #recent-posts .card .card-body h5.card-title a,
+.dark #list-page .card .card-body h5.card-title a,
+.dark .card .card-body .card-text p {
     color: #ffffff !important;
 }
 
-/* Card Description */
-html body .card .card-body .card-text p { color: #0d6efd !important; }
-html[data-theme="dark"] body .card .card-body .card-text p,
-.dark body .card .card-body .card-text p { color: #60a5fa !important; }
 
-/* 1. Global Footer Reset */
+/* --- FOOTER RESET --- */
 #recent-posts .card-footer, #list-page .card-footer {
     border-top: none !important;
     border: 0 !important;
