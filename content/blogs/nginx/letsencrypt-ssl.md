@@ -224,4 +224,4 @@ In this article we configure mTLS with Nginx, mTLS enables two way validation wi
 <br></br>
 [Nginx →](/blogs/#nginx)
 
-[Load Balancing Magic: Unleashing the Potential of NGINX](https://sagarkrp.medium.com/how-to-configure-nginx-to-load-balance-multiple-servers-nginx-docker-compose-c8e1d746f02b?source=post_page-----13c4098b84d9---------------------------------------)
+[Load Balancing Magic: Unleashing the Potential of NGINX]({{< relref "nginx-lb" >}})

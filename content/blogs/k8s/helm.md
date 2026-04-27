@@ -190,4 +190,3 @@ And there we have it, all the basics of Helm. Hope you found it useful. Explore 
 
 
 [Read more on K8s →](/blogs/#kubernetes)
-

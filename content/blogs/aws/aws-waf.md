@@ -21,7 +21,7 @@ Create your instance and host your web app.
 
 Read more about how to set up your web app:
 
-[Install Apache](https://sagarkpanda.medium.com/configuring-apache-http-server-in-linux-and-with-ssl-d59ff62c8a35) , [Configure Apache](https://sagarkpanda.medium.com/configuring-apache-http-server-in-linux-and-with-ssl-d59ff62c8a35)
+[Install Apache]({{< relref "apache-setup" >}}) , [Configure Apache]({{< relref "apache-config" >}})
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*n0UbGNgxJ2_-hYr6epuv_g.png)
 
@@ -66,5 +66,4 @@ Refresh the webpage again, and we shall see captcha page.
 Cool. Now experiment further to find out more on what WAF has to offer. Delete the resources once you are done with the experiment.
 
 Read more on aws:
-
-[**Secrets Manager**]({{< relref "aws_secretmanager" >}}), [**ALB**]({{< relref "aws_alb" >}}), [**Lambda**]({{< relref "aws_lambda" >}})
+[Read more on AWS →](/blogs/#cloud)

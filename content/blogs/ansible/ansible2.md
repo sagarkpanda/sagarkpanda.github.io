@@ -414,5 +414,3 @@ This is the End of the article. We’ll see more features in future tutorial. Th
 **_Make sure to terminate any vm instances if you have created to avoid incurring charges._**
 
 [Read more on Ansible →](/blogs/#ansible)
-
-Reference: [Ansible Docs.](https://docs.ansible.com/)

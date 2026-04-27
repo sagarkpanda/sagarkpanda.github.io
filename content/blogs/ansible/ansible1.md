@@ -3,6 +3,7 @@ date: '2023-05-21T19:26:10+05:30'
 draft: false
 title: 'Getting started with Ansible - Configuration Managament'
 Description: Chapter 1 - Installation, basics and playbook
+image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a1Bd73PrCYh4g2P7IU1vOA.jpeg
 tags:
   - ansible
   - devops
@@ -12,7 +13,6 @@ tags:
 
 Ansible is an open source configuration management utility. It can automate and standardize the configuration of remote hosts and virtual machines. We can perform application installation, system update and many such operations.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a1Bd73PrCYh4g2P7IU1vOA.jpeg)
 
 ### Why use Ansible:
 
@@ -50,7 +50,7 @@ pip3 install ansible
 
 Check ansible verison with “ansible — version” command.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fZkCnkTWHKh0WYS3auUVWQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fZkCnkTWHKh0WYS3auUVWQ.png" alt="Anible Version" width="1000" height="600">}}
 
 In this example, I have 2 machines. Ansible is installed in one machine and I have generated ssh keys, added that to the 2nd machine. I have also set hostnames for easy identification and added them to /etc/hostname.
 
@@ -86,7 +86,7 @@ become_method=sudo
 
 Now, lets try to ping the server with the below command: **ansible -m ping all.** We are getting response from the other machine.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_aZNBaMSaS5DtazGDjNGAw.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_aZNBaMSaS5DtazGDjNGAw.png" alt="Anible ping test" width="1000" height="600">}}
 
 ### Getting help in Ansible:
 
@@ -120,11 +120,11 @@ Now after we find out the module name we can pass that to get full details of th
 ```
 ansible-doc apt
 ```
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*RUwJxY6onToz3EFTVEpJBA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*RUwJxY6onToz3EFTVEpJBA.png" alt="Anible doc" width="1000" height="600">}}
 
 To find example of any module type “**_/EXAMPLE_**”.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ppQcEhwf9B2KYVN5j17h-w.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ppQcEhwf9B2KYVN5j17h-w.png" alt="Anible doc example" width="1000" height="600">}}
 
 ### Using Playbook:
 
@@ -147,7 +147,7 @@ Create a yaml file with the task of installing apache http server, start and ena
 
 Now to apply the playbook, we need to use ansible-playbook command as below:
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5ETaRO8Nep2TsnM26KbdKA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5ETaRO8Nep2TsnM26KbdKA.png" alt="Anible playrbook run" width="1000" height="600">}}
 
 We can see the tasks we defined were executed. Lets check the 2nd machine to see if apache was installed and running.
 
@@ -159,11 +159,12 @@ playbook: apache.yaml
 ----------------------------------
 ansible-playbook apache.yaml -C
 ```
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Njnj10eR1_odzEwGy4jlTQ.png)
+
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Njnj10eR1_odzEwGy4jlTQ.png" alt="apache status" width="1000" height="600">}}
 
 As we can see, Apache has been installed, started and enabled. Lets browse the IP to see our webpage.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*67iNbur6yJaBlh_HpQ8W2A.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*67iNbur6yJaBlh_HpQ8W2A.png" alt="app webpage" width="1000" height="600">}}
 
 Congratulations on completing the basic Ansible setup. This marks the end of this tutorial. We’ll see advanced configuration in future tutorial.
 

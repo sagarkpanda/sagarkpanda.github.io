@@ -15,7 +15,7 @@ tags:
 
 ### Preface:
 
-In the [**_previous article_**]({{< relref "nginx_ingress" >}}) we saw how to use nginx ingress for routing. Today we will experiment with adding domain to our app and will also use TLS cert for the domain.
+In the [**_previous article_**]({{< relref "nginx-ingress" >}}) we saw how to use nginx ingress for routing. Today we will experiment with adding domain to our app and will also use TLS cert for the domain.
 
 ### Getting started:
 

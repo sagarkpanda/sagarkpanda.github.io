@@ -148,7 +148,6 @@ Used Ctrl S to save our changes? In terminal this key combination freezes the te
 To increase the terminal font size use Ctrl and + button, to reduce it, use Ctrl and — button.
 
 ### Next up:
-**Read part 2:**
-[here]({{< relref "linux_tips2" >}})
+[**Checkout the part 2:**]({{< relref "linux-tips2" >}})
 
 

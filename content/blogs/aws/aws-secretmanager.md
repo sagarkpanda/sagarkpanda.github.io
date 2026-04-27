@@ -88,6 +88,5 @@ Run the python app with “python app_name.py”
 The end!! Thanks for reading.
 
 **Read More on AWS:**
-
-[**WAF**]({{< relref "aws_Waf" >}}), [**Lambda**]({{< relref "aws_lambda" >}}), [**ALB**]({{< relref "aws_alb" >}})
+[Read more on AWS →](/blogs/#cloud)
 

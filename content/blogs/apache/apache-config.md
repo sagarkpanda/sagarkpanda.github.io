@@ -229,7 +229,7 @@ Header set X-Robots-Tag "noindex, nofollow"
 That’s all for now.
 Reference : MDN Docs [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options), [2](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options), [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag).
 
-<!-- [Installtion]({{< relref "apache" >}}) -->
+
 [Read more on Apache →](/blogs/#apache)
 
-[SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot]({{< relref "letsencrypt_ssl" >}})
+[SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot]({{< relref "letsencrypt-ssl" >}})
