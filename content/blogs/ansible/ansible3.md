@@ -3,12 +3,11 @@ date: '2023-06-18T19:26:10+05:30'
 draft: false
 title: 'Ansible — Error Handling, Roles and Valult'
 Description: "Part 3: Learn about Notify Handler, Error handling, Vault and Roles"
+image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-anirzVIreNx1SOSAJl88w.jpeg
 tags:
   - ansible
   - devops
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-anirzVIreNx1SOSAJl88w.jpeg)
 
 In the earlier posts, we saw how to [**_Setup Ansible_**]({{< relref "ansible1" >}}), [**_simple playbooks with groups, variables, conditionals and loop_**]({{< relref "ansible2" >}})
 
@@ -40,7 +39,7 @@ For example, when we are operating on any webserver, instead of restarting the s
      state: restarted
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*s-dwBpWIRtMz47pY4jwXKw.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*s-dwBpWIRtMz47pY4jwXKw.png" alt="handler" width="1000" height="600">}}
 
 ## Error Handling using Block, Rescue and Always
 
@@ -64,9 +63,9 @@ In the below example, we have motioned some random words as a package to install
      dest: /var/www/html/index.html
 ```
 
-![Task without ignore_errors](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Zwml22oqQRMRNb8t47U9lg.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Zwml22oqQRMRNb8t47U9lg.png" alt="without ignore_errors" width="1000" height="600" title="Task without ignore_errors">}}
 <br></br>
-![Task with ignore_errors](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bSLB-kuWdvkeYk02-4JZXA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bSLB-kuWdvkeYk02-4JZXA.png" alt="with ignore_errors" width="1000" height="600" title="Task with ignore_errors">}}
 
 ### Blocks
 
@@ -90,7 +89,7 @@ We create logical groups of tasks using blocks. It also offer ways to handle tas
     when: ansible_distribution == 'Centos'
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ql424mVS7KfOMaTXmEA7kQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ql424mVS7KfOMaTXmEA7kQ.png" alt="block" width="1000" height="600" title="block">}}
 
 ### Handling errors with Block
 
@@ -126,7 +125,7 @@ We can also add an `always` section to a block. Tasks in the `always` section ru
        dest: /var/www/html/index.html
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*q3bn71MiW9dY1YrHzyhXnA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*q3bn71MiW9dY1YrHzyhXnA.png" alt="resuce_always" width="1000" height="600" title="block">}}
 
 In the above example, we are installing and restartng apache web server. However on the first restart task, the package name is set to be httpd, which is not correct in case of debian based machines.
 
@@ -144,15 +143,15 @@ To create a new encrypted file use the command. Use a password when prompted. th
 ansible-vault create <filename>
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:992/format:webp/1*aaUlsKShZx63aQ4nL6Y2JQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:992/format:webp/1*aaUlsKShZx63aQ4nL6Y2JQ.png" alt="vault" width="1000" height="600" title="vault">}}
 
 Now lets try to see the content of the file with cat.
 
-![All the contents are encrypted.](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fQiRXXlnQbfkTsTjxjz2LQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fQiRXXlnQbfkTsTjxjz2LQ.png" alt="vault_content" width="1000" height="600" title="All the contents are encrypted">}}
 
 To view the content, we can ansible-vault view command. Enter your password when prompted.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1242/format:webp/1*AnIgdMtPBpzoFbWeM__TSw.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1242/format:webp/1*AnIgdMtPBpzoFbWeM__TSw.png" alt="vault_pw" width="1000" height="600">}}
 
 Lets encrypt an existing playbook. Use the below commad:
 
@@ -160,7 +159,7 @@ Lets encrypt an existing playbook. Use the below commad:
 ansible-vault encrypt <filename>
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1114/format:webp/1*Vd85EzVScTSBDPLFZMdPgg.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1114/format:webp/1*Vd85EzVScTSBDPLFZMdPgg.png" alt="vault_encrypt" width="1000" height="600" title="vault_encrypt">}}
 
 Since this playbook is encrypted, we can’t simple use ansible-playbook for task execution. We need to specify — — ask-vault-pass and provide the pw.
 
@@ -169,7 +168,7 @@ Since this playbook is encrypted, we can’t simple use ansible-playbook for tas
 ERROR! Attempting to decrypt but no vault secrets found
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AxtECV9nsHLUQwEPU4vF9Q.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AxtECV9nsHLUQwEPU4vF9Q.png" alt="error" width="1000" height="600" title="We need to specify — — ask-vault-pass">}}
 
 ## Roles:
 
@@ -211,7 +210,7 @@ Lets create a role named “apache”
 ansible-galaxy init apache
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QYDcZDcdcazloD6U85ZG4g.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QYDcZDcdcazloD6U85ZG4g.png" alt="role" width="1000" height="600" title="role named apache">}}
 
 Move inside apache/tasks/ and edit the main.yml with your play.
 
@@ -235,7 +234,7 @@ To run this, we need to crate a playbook at outside our roles directry and call 
 
 Now we can run the playbook role.yml and it will execute the taks we have defined in the apache role we created earlier.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cYTOrRHP0-CVAqUGsv1JWQ.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cYTOrRHP0-CVAqUGsv1JWQ.png" alt="role_run" width="1000" height="600" title="Run the role">}}
 
 There are many more features with role such as using jinja2 template, variables, handler and etc.
 
