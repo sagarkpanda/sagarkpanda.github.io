@@ -3,12 +3,12 @@ date: '2023-05-29T19:26:10+05:30'
 draft: false
 title: 'Ansible - Groups, Vars and Loop'
 Description: "Chapter 2 - Groups, Variables, Conditionals and Loops in Ansible"
+image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bT5aEzzjUduWEy4rTVniFQ.jpeg
 tags:
   - ansible
   - devops
 ---
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bT5aEzzjUduWEy4rTVniFQ.jpeg)
 
 In the [**_previous article_**]({{< relref "ansible1" >}}), we saw how to install Ansible, ping a server and a simple playbook.
 
@@ -118,7 +118,6 @@ Now lets change our playbook to include 2nd group and run the playbook.
 ```
 <br></br>
 
-
 **ansible-playbook groups.yaml**
 ```
 PLAY [Install Apache HTTP server] ********************
@@ -135,7 +134,6 @@ PLAY RECAP *******************************************
 35.154.191.210             : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 65.0.7.153                 : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
-
 
 ### Group alll
 
