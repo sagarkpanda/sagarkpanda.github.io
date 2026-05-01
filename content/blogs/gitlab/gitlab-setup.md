@@ -3,6 +3,7 @@ date: '2026-04-12T10:45:10+05:30'
 draft: false
 title: 'GitLab Setup Unlocked: Your 10-Minute Fast-Track Guide'
 Description: Launch Your Own GitLab Instance in Minutes
+image: https://i.ibb.co/ZpbkFk97/x.jpg
 tags:
   - gitlab
   - aws
@@ -10,8 +11,6 @@ url: "/blogs/gitlab/gitlab-setup/"
 aliases:
     - /blogs/gitlab_setup/
 ---
-
-![GitLab](https://i.ibb.co/ZpbkFk97/x.jpg)
 
 ## Setup Host
 First, set up an instance. I chose **AWS EC2**, but you can use any cloud provider or your own physical server.
