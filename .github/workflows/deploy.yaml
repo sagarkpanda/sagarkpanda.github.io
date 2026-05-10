@@ -9,7 +9,7 @@ on:
     - .gitignore
     - License
     - .gitattributes
-    - '.github/workflows/release.yml'
+    - '.github/workflows/release.yaml'
   workflow_dispatch:
 
 permissions:
