@@ -3,6 +3,7 @@ date: '2024-04-27T19:26:10+05:30'
 draft: false
 title: 'How AWS ALB Keeps Your Apps in Line!'
 Description: 'See how AWS ALB effortlessly manages traffic, and supports high availability to keep your app running smoothly.'
+image: https://i.ibb.co/GvPkHTRn/x.jpg
 tags:
   - aws
   - alb
@@ -10,8 +11,6 @@ tags:
   - load balanncer
 ---
 
-
-![AWS_ALB](https://i.ibb.co/GvPkHTRn/x.jpg)
 
 ## What is Load Balancer
 
@@ -48,15 +47,15 @@ In the security group attached to these machines, allow ssh and http. Optionally
 
 Make a distinguishable change to the webpage so that we can see the load balancing on the browser or just install Apache in one and Nginx in the other.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xyY0eXjK7xQRXfP-TSOTSw.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xyY0eXjK7xQRXfP-TSOTSw.png" alt="instances" width="1000" height="600">}}
 
 ### Load Balancer Setup
 
 First create a target group from the EC2 menu. Choose EC2 as the target. Provide a name and keep the port as 80 as our web app is running on http.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oo24AiDWMcbLQblWaUVLVA.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oo24AiDWMcbLQblWaUVLVA.png" alt="target group" width="1000" height="600">}}
 <br></br>
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ei5JLwmJ_Cx5QioB0fkr9g.png)
+{{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ei5JLwmJ_Cx5QioB0fkr9g.png" alt="target group protocol" width="1000" height="600">}}
 
 Choose IPv4, choose a vpc. Keep the health check as is, again because our app is running on port 80.
 
