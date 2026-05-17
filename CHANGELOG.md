@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.7.0...v1.8.0) (2026-05-17)
+
+
+### Features
+
+* **ui:** add decorative dot matrix to footer ([1ac0935](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/1ac0935a074c1a7f67a8e8db519ee31fd779d0e4))
+
 # [1.7.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.6.1...v1.7.0) (2026-05-17)
 
 
