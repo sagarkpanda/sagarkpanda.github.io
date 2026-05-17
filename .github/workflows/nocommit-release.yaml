@@ -1,9 +1,9 @@
-name: Release
+name: No commit Release
 
 on:
   push:
     branches:
-      - main
+      - mainnn
     paths-ignore:
     - README.md
     - .gitignore
