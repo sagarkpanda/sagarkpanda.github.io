@@ -12,6 +12,7 @@ on:
     - package.json
     - '.github/workflows/github-release.yaml'
     - '.github/workflows/nocommit-release.yaml'
+    - '.github/workflows/semantic-release.yaml'
   workflow_dispatch:
 
 permissions:

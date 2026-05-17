@@ -11,6 +11,7 @@ on:
     - .gitattributes
     - '.github/workflows/deploy.yaml'
     - '.github/workflows/github-release.yaml'
+    - '.github/workflows/semantic-release.yaml'
 jobs:
   release:
     runs-on: ubuntu-latest

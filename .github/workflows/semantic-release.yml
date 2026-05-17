@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - README.md
+      - .gitignore
+      - License
+      - .gitattributes
+      - '.github/workflows/deploy.yaml'
+      - '.github/workflows/nocommit-release.yaml'
+      - '.github/workflows/github-release.yaml'
 
 jobs:
   release:
@@ -25,10 +33,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run semantic-release
         run: npm run release
