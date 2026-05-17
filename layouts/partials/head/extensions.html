@@ -922,6 +922,53 @@ body.dark .tidy-tag {
 
     /*--Move inline CSS from head.html--*/
 
+/* ========================================= */
+/* 2. TECH-INSPIRED DOTTED STATUS BACKGROUND */
+/* ========================================= */
+
+.tech-footer-bg {
+    position: relative;
+
+    /* 1. BREAK OUT OF CONTAINER TO SPAN FULL SCREEN */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    /* 2. PADDING ADJUSTMENTS */
+    padding-bottom: 0px !important; /* Anchors the text directly to the bottom */
+    z-index: 1;
+}
+
+.tech-footer-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    background-size: 11px 11px;
+
+    /* Default: Dark dots for Light Mode */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+
+    /* 3. PRECISION TOP-TO-BOTTOM FADE */
+    /* 0% to 50%: Stays completely transparent (Hides dots behind Avatar/Copyright)
+       50% to 85%: Smoothly fades in (Starts around "Made with")
+       85% to 100%: Completely solid dots at the bottom
+    */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 50%, black 85%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 50%, black 85%, black 100%);
+}
+
+/* Dark Mode Override: White dots */
+body.dark .tech-footer-bg::before,
+html.dark .tech-footer-bg::before,
+[data-theme="dark"] .tech-footer-bg::before,
+[data-bs-theme="dark"] .tech-footer-bg::before {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px) !important;
+}
+
 </style>
 
 <script>
