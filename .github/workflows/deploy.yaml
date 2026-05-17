@@ -9,8 +9,9 @@ on:
     - .gitignore
     - License
     - .gitattributes
+    - package.json
     - '.github/workflows/github-release.yaml'
-    - '.github/workflows/semantic-release.yaml'
+    - '.github/workflows/nocommit-release.yaml'
   workflow_dispatch:
 
 permissions:
