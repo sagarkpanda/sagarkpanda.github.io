@@ -126,19 +126,20 @@
                 {{ $prev := $allPosts.Prev . }}
                 {{ $next := $allPosts.Next . }}
 
-                {{ if $next }}
-                <a href="{{ $next.Permalink }}" class="tidy-nav-card">
+                {{ if $prev }}
+                <a href="{{ $prev.Permalink }}" class="tidy-nav-card">
                     <i class="fas fa-chevron-left"></i>
-                    <span class="truncate-title">{{ $next.Title }}</span>
+                    <span class="truncate-title">{{ $prev.Title }}</span>
                 </a>
                 {{ end }}
 
-                {{ if $prev }}
-                <a href="{{ $prev.Permalink }}" class="tidy-nav-card">
-                    <span class="truncate-title">{{ $prev.Title }}</span>
+                {{ if $next }}
+                <a href="{{ $next.Permalink }}" class="tidy-nav-card">
+                    <span class="truncate-title">{{ $next.Title }}</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
                 {{ end }}
+
             </div>
           </aside>
         </div>
