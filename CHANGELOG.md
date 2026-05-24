@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.0...v1.8.1) (2026-05-24)
+
+
+### Bug Fixes
+
+* remove duplicate changelog ([323b0f2](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/323b0f21380750e32725a1f20818ab5f18bfa704))
+
 # [1.8.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.7.0...v1.8.0) (2026-05-17)
 
 
