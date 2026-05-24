@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.2...v1.8.3) (2026-05-24)
+
+
+### Bug Fixes
+
+* copyright footer text ([719dbfb](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/719dbfbb4273e9f6b2a37d5cf8a173740d8d44c7))
+
 ## [1.8.2](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.1...v1.8.2) (2026-05-24)
 
 
