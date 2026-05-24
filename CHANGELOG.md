@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.1...v1.8.2) (2026-05-24)
+
+
+### Bug Fixes
+
+* update nav buttons ([fd30592](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/fd30592d1b35210571c5aee23f4cca6cfedeb7a3))
+
 ## [1.8.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.0...v1.8.1) (2026-05-24)
 
 
