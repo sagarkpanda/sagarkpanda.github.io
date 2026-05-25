@@ -1,7 +1,7 @@
 ---
 date: '2026-05-24T12:45:10+05:30'
 draft: false
-title: 'Beyond CI/CD — Automating Repository Workflows with GitHub Actions'
+title: 'Turn Your GitHub Repository into a Self-Managing Workflow'
 Description: Learn to manage github repo with automation. Create PR/Issue templates, label PRs automatically and more.
 image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BKfu-QFmcuj1zpFzHqWSYA.png
 
@@ -55,7 +55,7 @@ GitHub supports both:
 *   Pull Request templates
 *   Issue/Feature request template
 
-PR Template:
+**PR Template:**
 
 create the template under .github as below and add your data how you want to show.
 
@@ -81,7 +81,7 @@ Describe the changes made.
 Additional context if needed.
 ```
 
-Issue template/feature req:
+**Issue template/feature req:**
 
 Similarly create folder .github/ISSUE_TEMPLATE and you can add bug report and feature request template.
 
@@ -136,11 +136,31 @@ body:
 GitHub recognises these templates and will show a panel at the top.
 Note that for feature request also it says the same.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zzi6JQE8rXku9Ti4uFPkKg.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zzi6JQE8rXku9Ti4uFPkKg.png"
+    alt="GitHub issue"
+    width="1000"
+    height="600"
+>}}
 
-Now when you try to create issue or PR it shows diff templates instead of blank pages.
+Creating a new issue or PR now shows predefined templates instead of a blank page.
 
-![Templates](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*p11PpcnuJaWdaXFln975vw.png)![Issue Template with Predinfied fileds](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*WuPi-lYPLga7DrotVUL6Gg.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*p11PpcnuJaWdaXFln975vw.png"
+    alt="Issue template"
+    width="1000"
+    height="600"
+    title="Issue templates"
+>}}
+
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*WuPi-lYPLga7DrotVUL6Gg.png"
+    alt="Template fields"
+    width="1000"
+    height="600"
+    title="Issue template with predefined fields"
+>}}
+
 
 ### Automatic PR Labeling
 
@@ -148,7 +168,12 @@ Instead of manually labeling every PR, GitHub Actions can automatically apply la
 
 You can view list of labels already created or create any if you want under the PR menu.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*B8EIM6a6bb7ryg8sCV90Wg.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*B8EIM6a6bb7ryg8sCV90Wg.png"
+    alt="PR Labels"
+    width="1000"
+    height="600"
+>}}
 
 Click on Labels to view, once inside the view you can create your own.
 
@@ -201,7 +226,12 @@ jobs:
 
 And whenever a PR is created github action bot automatically assigns labels.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nb_s-RRaDXWHk2oi4gEypg.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nb_s-RRaDXWHk2oi4gEypg.png"
+    alt="Auto Labels"
+    width="1000"
+    height="600"
+>}}
 
 ### Automated PR Comments
 
@@ -232,7 +262,13 @@ jobs:
             --body "Thanks for the PR!"
 ```
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QAOaeO8wYa9iGGrBQBQ5ZQ.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QAOaeO8wYa9iGGrBQBQ5ZQ.png"
+    alt="PR comment"
+    width="1000"
+    height="600"
+    title="auto comment on a new PR"
+>}}
 
 ### Semantic Release Automation
 
@@ -330,13 +366,32 @@ Version bump rules:
 *   `feat:` → minor release (`1.0.0` → `1.1.0`)
 *   `BREAKING CHANGE:` or `feat!:` → major release (`1.0.0` → `2.0.0`)
 
-any other commits or formats such as chore: or simple commits will be ignored.
+any other commits or formats such as chore: or simple commits will be ignored marking no tag or release, you can view the semantic release workflow action for the details.
 
-![Release for commit with feat!:](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*2tWLNG_tMtdOjYB6wn8OLQ.png)![patch release for commit with fix:](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dsRB6fXJrWxxmsyjHH5UWQ.png)
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*2tWLNG_tMtdOjYB6wn8OLQ.png"
+    alt="major release"
+    width="1000"
+    height="600"
+    title="Major Release commit with feat!:"
+>}}
 
-The changelog, the tags and release all have been updated.
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dsRB6fXJrWxxmsyjHH5UWQ.png"
+    alt="PR comment"
+    width="1000"
+    height="600"
+    title="patch release for commit with fix:"
+>}}
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PhsfVY0lQhib9PrNpB6CiQ.png)
+The changelog.md, the tags and the release, all have been updated.
+
+{{< figure
+    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PhsfVY0lQhib9PrNpB6CiQ.png"
+    alt="changelog"
+    width="1000"
+    height="600"
+>}}
 
 ## Wrap Up:
 

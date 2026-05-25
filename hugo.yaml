@@ -899,7 +899,7 @@ params:
   terms:
     read: "Read"
     toc: "Table Of Contents"
-    copyright: "Sagar • MIT"
+    copyright: "Sagar • MIT License"
     emailText: "Check out this site"
 
   datesFormat:
