@@ -1,3 +1,17 @@
+## [2.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.3...v2.0.0) (2026-05-26)
+
+### ⚠ BREAKING CHANGES
+
+* add simple analytics
+
+### Features
+
+* add simple analytics ([f2fa448](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/f2fa448563f33def628009a21f0da3da454fbb6e))
+
+### Bug Fixes
+
+* update commit attributes for feat! [skip ci] ([02382ff](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/02382ff4731fae46d06641bd251fc5241b920a11))
+
 ## [1.8.3](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.2...v1.8.3) (2026-05-24)
 
 
