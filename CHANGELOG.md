@@ -1,3 +1,9 @@
+## [3.1.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.0...v3.1.1) (2026-05-28)
+
+### 🐛 Bug Fixes
+
+* update sa script ([755369c](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/755369c709b3479ddf87fe8ffe8d305c89c3a2ab))
+
 ## [3.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.0.0...v3.1.0) (2026-05-28)
 
 ### ✨ Features
