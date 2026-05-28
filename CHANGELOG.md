@@ -1,3 +1,9 @@
+## [3.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.0.0...v3.1.0) (2026-05-28)
+
+### ✨ Features
+
+* back to SA with Vercel proxy ([397eda9](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/397eda92925c8a340ce313d9f10a09acd3576dfe))
+
 ## [3.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.1.0...v3.0.0) (2026-05-28)
 
 ### ⚠ BREAKING CHANGES
