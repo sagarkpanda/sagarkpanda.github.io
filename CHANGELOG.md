@@ -1,3 +1,9 @@
+## [3.1.2](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.1...v3.1.2) (2026-05-28)
+
+### 🐛 Bug Fixes
+
+* sa host script ([89ec544](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/89ec54425751d323ae9b6db0016e771e118d49c6))
+
 ## [3.1.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.0...v3.1.1) (2026-05-28)
 
 ### 🐛 Bug Fixes
