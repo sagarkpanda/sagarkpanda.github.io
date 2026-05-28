@@ -1,3 +1,13 @@
+## [3.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.1.0...v3.0.0) (2026-05-28)
+
+### ⚠ BREAKING CHANGES
+
+* replace analytics stack with Umami + Vercel proxy
+
+### ✨ Features
+
+* replace analytics stack with Umami + Vercel proxy ([81718b6](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/81718b6ae1759dcceaf2c4229a1ebabf3c9dba23))
+
 ## [2.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v2.1.0) (2026-05-28)
 
 ### Features
