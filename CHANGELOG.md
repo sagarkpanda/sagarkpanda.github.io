@@ -1,3 +1,9 @@
+## [2.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v2.1.0) (2026-05-28)
+
+### Features
+
+* add new script in baseof ([b32b9bc](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/b32b9bcc9ad6a72dfd370a66b6c8267df0b18388))
+
 ## [2.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.3...v2.0.0) (2026-05-26)
 
 ### ⚠ BREAKING CHANGES
