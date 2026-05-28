@@ -1,3 +1,9 @@
+## [3.1.3](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.2...v3.1.3) (2026-05-28)
+
+### 🐛 Bug Fixes
+
+* umami host script ([2161b1c](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/2161b1c294da52cb73fd906d87537281e68bc1d7))
+
 ## [3.1.2](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.1...v3.1.2) (2026-05-28)
 
 ### 🐛 Bug Fixes
