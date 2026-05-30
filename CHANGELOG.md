@@ -1,3 +1,13 @@
+## [3.1.4](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.3...v3.1.4) (2026-05-30)
+
+### 🐛 Bug Fixes
+
+* update taxomony to handle tabs matching tags ([3b7f8b7](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/3b7f8b7d905db7ae71f093bff84ecda414cf77e8))
+
+### 🧹 Maintenance
+
+* update articles ([13165ed](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/13165ed39e68a0dda00580bc88141cb3237e1b9e))
+
 ## [3.1.3](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.1.2...v3.1.3) (2026-05-28)
 
 ### 🐛 Bug Fixes
