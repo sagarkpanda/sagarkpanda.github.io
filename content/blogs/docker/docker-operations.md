@@ -2,7 +2,7 @@
 date: '2023-04-16T19:26:10+05:30'
 draft: false
 title: 'Docker - Build and Push operations.'
-Description: Docker Chapter 2 — How to IBuild and Push your first image.
+Description: Docker Chapter 2 — How to Build and Push your first image.
 image: https://miro.medium.com/v2/resize:fit:1016/format:webp/1*ktQe3mbLm09C8kyetxI-aA.png
 tags:
   - docker
