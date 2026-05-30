@@ -1,0 +1,31 @@
+{{ $featuredTags := slice "kubernetes" "cloud" "linux" "nginx" "terraform" "apache" "ansible" "shell scripting" "ci/cd" "docker" }}
+
+{{ $tag := .Title | lower }}
+
+{{ if in $featuredTags $tag }}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/blogs/#{{ .Title | urlize }}">
+  <script>
+    window.location.replace("/blogs/#{{ .Title | urlize }}");
+  </script>
+</head>
+<body></body>
+</html>
+
+{{ else }}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/blogs/">
+  <script>
+    window.location.replace("/blogs/");
+  </script>
+</head>
+<body></body>
+</html>
+
+{{ end }}
