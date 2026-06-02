@@ -10,6 +10,7 @@ tags:
   - devops
   - prometheus
   - grafana
+  - observability
 ---
 
 ## Introduction:
