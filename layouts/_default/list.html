@@ -13,7 +13,7 @@
 
     <div class="topic-tabs text-center mb-4">
         <button class="tab-button active" onclick="openTopic(event, 'all')">All Posts</button>
-        {{ $featuredTags := slice "kubernetes" "cloud" "linux" "nginx" "terraform" "apache" "ansible" "shell scripting" "ci/cd" "docker" "observability"}}
+        {{ $featuredTags := slice "kubernetes" "cloud" "linux" "nginx" "terraform" "apache" "ansible" "shell scripting" "ci/cd" "docker" "o11y"}}
         {{ range .Site.Taxonomies.tags }}
             {{ if in $featuredTags (.Page.Title | lower) }}
               <button class="tab-button" onclick="openTopic(event, '{{ .Page.Title | urlize }}')">
