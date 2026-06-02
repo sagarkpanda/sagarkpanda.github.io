@@ -7,6 +7,7 @@ image: https://i.ibb.co/ZRxDRkKj/x.png
 tags:
   - monitoring
   - observability
+  - o11y
   - devops
   - opentelemetry
   - otel
@@ -428,3 +429,5 @@ Whether telemetry ultimately ends up in Prometheus, Jaeger, OpenSearch, Grafana,
 Understanding OpenTelemetry is becoming an essential skill for engineers working with modern cloud-native systems.
 
 In the next article, we'll move from concepts to implementation and explore OpenTelemetry along with the tools commonly used to collect, store, and visualize telemetry.
+
+[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
