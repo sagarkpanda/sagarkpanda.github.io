@@ -1,9 +1,9 @@
 ---
 date: '2026-06-02T19:30:10+05:30'
 draft: false
-title: 'Observability 101: Understanding Metrics, Traces, Logs'
+title: 'Observability 101: Understanding Metrics, Traces and Logs'
 Description: Part 1 - Get to know the 3 pillars and 4 golden signals of distrubuted observability
-image: https://i.ibb.co/ZRxDRkKj/x.png
+image: https://i.ibb.co/Qjqd7Syh/x.jpg
 tags:
   - monitoring
   - observability
