@@ -3,6 +3,7 @@ date: '2024-02-10T19:26:10+05:30'
 draft: false
 title: 'ArgoCD GitOps for Kubernetes - From Code to Cluster'
 Description: Part VII - Continuous deployment of containerized applications into Kubernetes.
+image: https://i.ibb.co/ZzMChTSF/x.jpg
 tags:
   - argo cd
   - kubernetes
@@ -17,8 +18,6 @@ tags:
 Gitops is a practice in devops where managing applications using git is considered as a single source of truth. This is generally used in the Kubernetes world.
 
 This means we define our application for kubernetes using declarative objects in our git repo and no manul modifications are allowed to do in the k8s cluster.
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QFhrqiHlvCVYN4SG48DXCA.png)
 
 ### What’s ArgoCD:
 
