@@ -3,7 +3,7 @@ date: '2024-02-10T19:26:10+05:30'
 draft: false
 title: 'ArgoCD GitOps for Kubernetes - From Code to Cluster'
 Description: Part VII - Continuous deployment of containerized applications into Kubernetes.
-image: https://i.ibb.co/ZzMChTSF/x.jpg
+image: https://i.ibb.co/tT8ZWJyH/x.jpg
 tags:
   - argo cd
   - kubernetes
