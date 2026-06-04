@@ -8,7 +8,8 @@
        {{ if .Get "width" }}width="{{ .Get "width" }}"{{ end }}
        {{ if .Get "height" }}height="{{ .Get "height" }}"{{ end }}
        class="img-fluid mx-auto d-block"
-       loading="lazy" /> {{ if .Get "link" }}</a>{{ end }}
+       loading="lazy"
+       decoding="async" /> {{ if .Get "link" }}</a>{{ end }}
 
   {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
     <figcaption class="figure-caption text-center">
