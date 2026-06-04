@@ -11,6 +11,9 @@ tags:
   - devops
   - opentelemetry
   - otel
+url: "/blogs/monitoring/observability/"
+aliases:
+    - /blogs/monitoring/observabilty/
 ---
 
 # Introduction
