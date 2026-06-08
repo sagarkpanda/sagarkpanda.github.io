@@ -1,7 +1,7 @@
 ---
 date: '2026-06-08T09:10:10+05:30'
 draft: false
-title: 'Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana, and the OTel Demo'
+title: 'Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo'
 Description: Explore Prometheus, Jaegar and Grafna in details for distributed metrics
 image: https://i.ibb.co/TxQpjhPB/x.jpg
 tags:
