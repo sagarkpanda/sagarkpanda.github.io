@@ -2,7 +2,7 @@
 date: '2026-06-08T09:10:10+05:30'
 draft: false
 title: 'Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo'
-Description: Explore Prometheus, Jaegar and Grafna in details for distributed metrics
+description: Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics
 image: https://i.ibb.co/TxQpjhPB/x.jpg
 tags:
   - monitoring
@@ -964,7 +964,7 @@ Logs → What exactly happened?
 
 Grafana provides dashboards and visualization capabilities. It helps visualize metrics, logs, and traces, while also enabling the creation of operational dashboards.
 
-Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a core observability backend. It does not store telemetry itself. Instead, it connects to backends ('data source' in grafana terminoloy) and provides a unified interface for exploring and visualizing telemetry data.
+Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a core observability backend. It does not store telemetry itself. Instead, it connects to backends ('data source' in grafana terminology) and provides a unified interface for exploring and visualizing telemetry data.
 
 Several alternatives exist in this space, with Kibana from the ELK stack being one of the most widely used.
 
