@@ -1,3 +1,9 @@
+## [3.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v3.0.0...v3.1.0) (2026-06-09)
+
+### ✨ Features
+
+* update desc and typo ([b92dd7c](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/b92dd7c032297ad835550d5784452f5c56a22cbb))
+
 ## [3.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v3.0.0) (2026-06-08)
 
 ### ⚠ BREAKING CHANGES
