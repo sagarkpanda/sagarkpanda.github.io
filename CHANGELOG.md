@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v2.0.1) (2026-06-12)
+
+### 🐛 Bug Fixes
+
+* update code snippets types ([1300231](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/130023143dba2744884030c91236f440deb34307))
+
 ## [2.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.8.2...v2.0.0) (2026-06-12)
 
 ### ⚠ BREAKING CHANGES
