@@ -30,7 +30,7 @@ By the end, you’ll have a cleaner, more maintainable, and partially self-manag
 
 ### Repository Structure
 
-```
+```text
 .github/
 ├── ISSUE_TEMPLATE/
 ├── workflows/
@@ -85,7 +85,7 @@ Additional context if needed.
 
 Similarly create folder .github/ISSUE_TEMPLATE and you can add bug report and feature request template.
 
-```
+```yaml
 ## --> bugreport.yml
 name: Bug Report
 description: Report a bug
@@ -179,7 +179,7 @@ Click on Labels to view, once inside the view you can create your own.
 
 Then create a list of files labels and their associated files or path under .github/labeler.yml. This is just the config file.
 
-```
+```yaml
 documentation:
   - changed-files:
       - any-glob-to-any-file:
@@ -208,7 +208,7 @@ For example any changes to .md file will be labeled as documentation, and any ch
 
 To have github auto assign these labels we have to create a workflow under .github/workflow.
 
-```
+```yaml
 #pr-labeler.yml
 name: PR Labeler
 on:
@@ -239,7 +239,7 @@ Maintainers often manually thank contributors for their suggested changes and th
 
 Create the workflow the same way under .github/workflows.
 
-```
+```yaml
 #.github/workflows/pr-comment.yml
 name: PR Comment
 on:
@@ -276,7 +276,7 @@ Semantic release bot can automatically do the tagging and release, could also up
 
 First add the dependencies in a package.json and .releaserc.json
 
-```
+```json
 #package.json
 {
   "name": "dummy-semantic-release",
@@ -321,7 +321,7 @@ First add the dependencies in a package.json and .releaserc.json
     ]
   ]
 }
----------------------------
+---------------
 #release.yml
 name: Semantic Release
 on:
@@ -352,7 +352,7 @@ jobs:
 
 This bot works based on commit message formats.
 
-```
+```json
 feat: add user authentication
 fix: resolve login timeout issue
 perf: improve API response caching
