@@ -1,3 +1,15 @@
+## [2.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v2.1.0) (2026-06-20)
+
+### ✨ Features
+
+* add lightbox image pop ([a43e768](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/a43e7688ffe53a59124167164e979ed600d46340))
+
+### 🧹 Maintenance
+
+* fix typos eks-otel post ([675fc85](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/675fc85a191cfc90da2f870f9bd359f2383bd781))
+* update title ([49b07a6](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/49b07a6fe80dff92eb270a288ae98207825eacfa))
+* updated few detaisl in eks-otel post ([1a27295](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/1a27295bf58488074158fe69c77af8966a9365a2))
+
 ## [2.0.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v1.6.1...v2.0.0) (2026-06-20)
 
 ### ⚠ BREAKING CHANGES
