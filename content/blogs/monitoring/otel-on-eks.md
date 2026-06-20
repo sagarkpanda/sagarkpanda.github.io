@@ -480,7 +480,9 @@ In this platform, telemetry is exported to both New Relic and Honeycomb. Now we 
 
 ### New Relic
 
-New Relic provides a user-friendly interface with built-in dashboards, APM views, service maps, tracing, logging, and alerting capabilities. While Kubernetes metrics collected through OpenTelemetry are available and queryable using NRQL, some of New Relic's prebuilt Kubernetes experiences may require the New Relic Kubernetes integration for full functionality.. K8s Metrics works as usual via query. Or we can create our own dashboards by running NRQL on k8s metrics.
+New Relic provides a user-friendly interface with built-in dashboards, APM views, service maps, tracing, logging, and alerting capabilities. While Kubernetes metrics collected through OpenTelemetry are available and queryable using NRQL, some of New Relic's prebuilt Kubernetes experiences may require the New Relic Kubernetes integration for full functionality..
+
+K8s Metrics works as usual via query. Or we can create our own dashboards by running NRQL on k8s metrics.
 
 {{< figure src="https://i.ibb.co/Gvrrs6yx/x.jpg" alt="argo apps db" width="1000" height="600" title="neww relic dashboard created with nrql" >}}
 
@@ -488,10 +490,10 @@ NR free tier is pretty generous, it has builtin pannels to view.
 
 * APM
 * Metrics and Logs
-* Traces and Span corelation view
-* Service Map and Depedency discovery
+* Traces and Span correlation view
+* Service Map and Dependency discovery
 
-You can also configure alerts using NRQL, choose alert channel such as email, slack, MS teams or webook. And when the condition is matched by threshold set, you will get the notification.
+You can also configure alerts using NRQL, choose alert channel such as email, slack, MS teams or webhook. And when the condition is matched by threshold set, you will get the notification.
 
 {{< figure src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hxdh5qiyzEHsd54-9qQu6w.png" alt="NR views" width="1000" height="600" title="New Relic Overview" >}}
 
@@ -520,7 +522,7 @@ You can also ask questions to HC using canvas.
 
 Honeycomb also supports MCP server. The integration is easy. The MCP server can be connected directly to Claude with just api key, no json and extra configurations required. This makes it possible to ask questions about application and Kubernetes telemetry using natural language. You can also ask the same questions in the canvas section of HC itself.
 
-For example, ask about application opearations
+For example, ask about application operations
 
 {{< figure src="https://i.ibb.co/ks7FvvxV/x.jpg" alt="claude questions" width="1000" height="600" title="App operations" >}}
 
