@@ -969,6 +969,191 @@ html.dark .tech-footer-bg::before,
     background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px) !important;
 }
 
+/* ========================================= */
+/*           Lightbox image popup */
+/* ========================================= */
+
+/* .lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+
+  opacity: 0;
+  transform: scale(0.8);
+
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lightbox.active img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+
+  background: transparent;
+  border: none;
+
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  opacity: 0.7;
+}
+
+.lightbox-trigger {
+  text-decoration: none !important;
+}
+
+.lightbox-trigger:hover {
+  text-decoration: none !important;
+}
+
+.lightbox-trigger img {
+  cursor: zoom-in;
+  border: none;
+}
+
+.lightbox-trigger::after,
+.lightbox-trigger:hover::after {
+  display: none !important;
+  content: none !important;
+} */
+
+.lightbox {
+position: fixed;
+inset: 0;
+z-index: 9999;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+background: rgba(0, 0, 0, 0.9);
+
+opacity: 0;
+visibility: hidden;
+
+transition:
+opacity 0.45s ease,
+visibility 0.45s ease;
+}
+
+.lightbox.active {
+opacity: 1;
+visibility: visible;
+}
+
+.lightbox img {
+max-width: 95vw;
+max-height: 90vh;
+object-fit: contain;
+
+opacity: 0;
+transform: scale(0.75);
+
+will-change: transform, opacity;
+backface-visibility: hidden;
+
+transition:
+opacity 0.45s ease,
+transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox.active img {
+opacity: 1;
+transform: scale(1);
+}
+
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 25px;
+
+width: 32px;
+height: 32px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: none;
+border-radius: 50%;
+
+background: rgba(0, 0, 0, 0.55);
+
+color: #fff;
+font-size: 2rem;
+line-height: 1;
+
+cursor: pointer;
+
+transition:
+opacity 0.2s ease,
+background 0.2s ease;
+}
+
+.lightbox-close:hover {
+background: rgba(0, 0, 0, 0.75);
+}
+
+
+.lightbox-trigger {
+text-decoration: none !important;
+}
+
+.lightbox-trigger:hover {
+text-decoration: none !important;
+}
+
+.lightbox-trigger img {
+cursor: zoom-in;
+border: none;
+}
+
+.lightbox-trigger::after,
+.lightbox-trigger:hover::after {
+display: none !important;
+content: none !important;
+}
+
+
 </style>
 
 <script>
@@ -1130,6 +1315,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
     activateTab();
     window.addEventListener('hashchange', activateTab);
+});
+
+/* ========================================= */
+/*           Lightbox image popup js*/
+/* ========================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox-close');
+
+function openLightbox(src) {
+lightboxImg.src = src;
+lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+lightbox.classList.remove('active');
+}
+
+document.querySelectorAll('.lightbox-trigger').forEach(link => {
+link.addEventListener('click', e => {
+e.preventDefault();
+openLightbox(link.href);
+});
+});
+
+closeBtn.addEventListener('click', closeLightbox);
+
+lightbox.addEventListener('click', e => {
+if (e.target === lightbox) {
+closeLightbox();
+}
+});
+
+document.addEventListener('keydown', e => {
+if (e.key === 'Escape') {
+closeLightbox();
+}
+});
 });
 
 </script>
