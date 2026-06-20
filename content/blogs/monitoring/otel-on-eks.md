@@ -364,7 +364,7 @@ ArgoCD Server
 
 ## OpenTelemetry Collector
 
-The OpenTelemetry Collector acts as the central telemetry pipeline for the platform.
+The OpenTelemetry Collector acts as the central telemetry pipeline for the platform. The collector is deployed as a DaemonSet to ensure node-local Kubernetes metrics are collected from every worker node in the cluster.
 
 Instead of applications sending telemetry directly to observability platforms, traces, metrics, and logs are first sent to the collector. This provides a central location for processing, enrichment, filtering, and routing while keeping application instrumentation vendor-neutral.
 
@@ -480,7 +480,7 @@ In this platform, telemetry is exported to both New Relic and Honeycomb. Now we 
 
 ### New Relic
 
-New Relic is the primary platform I used for data analysis. Its user friendly and has buttons to pannels to view data. However it does not show kubernetes data in the prebuilt layouts (data via otlp), and i get the imppression that we need to setup its own k8s agent to be able to view k8s data. K8s Metrics works as usual via query. Or we can create our own dashboards by running NRQL on k8s metrics.
+New Relic provides a user-friendly interface with built-in dashboards, APM views, service maps, tracing, logging, and alerting capabilities. While Kubernetes metrics collected through OpenTelemetry are available and queryable using NRQL, some of New Relic's prebuilt Kubernetes experiences may require the New Relic Kubernetes integration for full functionality.. K8s Metrics works as usual via query. Or we can create our own dashboards by running NRQL on k8s metrics.
 
 {{< figure src="https://i.ibb.co/Gvrrs6yx/x.jpg" alt="argo apps db" width="1000" height="600" title="neww relic dashboard created with nrql" >}}
 
@@ -518,9 +518,9 @@ You can also ask questions to HC using canvas.
 
 ## Ask Claude
 
-Honeycomb also supports MCP server. The integration is easy. The MCP server can be connected directly to Claude with just api key, no json and extra configurations required. This makes it possible to ask questions about application and Kubernetes telemetry using natural language. You can also as the same questions in the canvas section of HC itself.
+Honeycomb also supports MCP server. The integration is easy. The MCP server can be connected directly to Claude with just api key, no json and extra configurations required. This makes it possible to ask questions about application and Kubernetes telemetry using natural language. You can also ask the same questions in the canvas section of HC itself.
 
-For example, ask about apps opearations
+For example, ask about application opearations
 
 {{< figure src="https://i.ibb.co/ks7FvvxV/x.jpg" alt="claude questions" width="1000" height="600" title="App operations" >}}
 
@@ -533,12 +533,14 @@ or if there are any unhealthy pods, or any questions that can help you with your
 To avoid issues during teardown, delete the ArgoCD applications first, remove the ingress resources, and then run `terraform destroy` to tear down the EKS infrastructure.
 
 ```text
-ArgoCD Applications (kubectl delete k8s/argo-apps/root-apps.yml or Depending on the deployment method used, delete either the individual applications, the root application, or the Kustomize bootstrap before destroying the EKS infrastructure.)
+Delete ArgoCD Applications
         ↓
-Ingress Resources (kubectl delete -f k8s/infra/argo/argo-ingress.yml)
+Delete Ingress Resources
         ↓
 terraform destroy
 ```
+Depending on the deployment approach used, remove the individual applications, root application, or Kustomize bootstrap before destroying the EKS infrastructure.
+
 ## Wrap Up
 
 At this stage, the platform is fully operational and telemetry is flowing from both the applications and the Kubernetes cluster into multiple observability backends. Continue exploring New Relic and Honeycomb to analyze traces, metrics, logs, and Kubernetes telemetry from different perspectives, or integrate the telemetry pipeline with other observability stacks such as LGTM, ELK, Splunk or Dynatrace and compare how they fit your needs.
