@@ -1,7 +1,7 @@
 ---
 date: '2026-06-20T07:45:10+05:30'
 draft: false
-title: 'Seeing Inside Amazon EKS with OpenTelemetry'
+title: 'Seeing Inside Amazon EKS with OpenTelemetry 🔍'
 description: Building a Kubernetes observability platform on AWS using Amazon EKS, ArgoCD and New Relic
 image: https://i.ibb.co/SDbxVXmx/x.jpg
 tags:
