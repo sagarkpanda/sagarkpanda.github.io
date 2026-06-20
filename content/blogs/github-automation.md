@@ -321,7 +321,9 @@ First add the dependencies in a package.json and .releaserc.json
     ]
   ]
 }
----------------
+```
+
+```yaml
 #release.yml
 name: Semantic Release
 on:
@@ -352,7 +354,7 @@ jobs:
 
 This bot works based on commit message formats.
 
-```json
+```ini
 feat: add user authentication
 fix: resolve login timeout issue
 perf: improve API response caching
