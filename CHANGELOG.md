@@ -1,3 +1,14 @@
+## [2.1.1](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.1.0...v2.1.1) (2026-06-21)
+
+### 🐛 Bug Fixes
+
+* lightbox image close and fix typo ([bef90fb](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/bef90fba26d728d6d485476420ad614be6d4b8ee))
+
+### 🧹 Maintenance
+
+* update markdown image in a lightbox ([0818088](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/0818088be865b0ff138cef4bf81e222020837d92))
+* update post description ([76a083a](https://github.com/sagarkpanda/sagarkpanda.github.io/commit/76a083a9e5df15a3aeb53d46f7feb64e8f9900ba))
+
 ## [2.1.0](https://github.com/sagarkpanda/sagarkpanda.github.io/compare/v2.0.0...v2.1.0) (2026-06-20)
 
 ### ✨ Features
