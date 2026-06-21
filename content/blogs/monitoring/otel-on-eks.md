@@ -15,6 +15,10 @@ tags:
   - terraform
 ---
 
+## Why This Setup?
+
+Before getting into the architecture, a few quick notes on choices. Telemetry goes to both **New Relic** and **Honeycomb** — partly to compare a dashboard-first platform against a query-first one, partly to put OpenTelemetry's backend-independence promise to the test. The more interesting payoff: with Honeycomb's MCP server connected to **Claude**, you can ask plain-English questions like "which pods are unhealthy right now?" and get a real answer from live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
+
 ## Introduction
 
 Observability has become a critical part of operating modern cloud-native applications. While application metrics, logs, and traces provide valuable insights, true observability also requires visibility into the Kubernetes platform itself.
@@ -239,14 +243,6 @@ kubectl apply -f python-orders-app.yml
 kubectl apply -f go-inventory-app.yml
 ```
 
-Flow:
-
-```text
-Application
-     ↓
-Workload
-```
-
 This approach provides maximum flexibility and is useful when deploying or troubleshooting applications individually.
 
 ### Option 2: Root Application (App of Apps)
@@ -335,7 +331,7 @@ source:
 
 Within this platform, Traefik acts as the entry point for external traffic and routes requests to services running inside the cluster.
 
-The node-frontend is exposed via treafik ingress. To view the ingress dns name run `kubectl get ing -A`. Then map that dns records to a CNAME record with your domain registrar.
+The node-frontend is exposed via Treafik Ingress. To view the ingress dns name run `kubectl get ing -A`. Then map that dns records to a CNAME record with your domain registrar.
 
 {{< figure src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*4sEpzWN8j4uzq_cBakjbIQ.gif" alt="otel app" width="1000" height="600" title="otel app with ingress" >}}
 
@@ -348,16 +344,6 @@ To provide browser access, a Kubernetes Ingress resource is created. Traefik det
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-```
-
-Traffic flow:
-
-```text
-Browser
-    ↓
-Traefik
-    ↓
-ArgoCD Server
 ```
 
 {{< figure src="https://i.ibb.co/fdtzqTsV/x.jpg" alt="argo apps db" width="1000" height="600" title="Argo CD Apps Dashboard exposed with Ingress" >}}
@@ -488,15 +474,13 @@ Kubernetes metrics can be queried directly using NRQL, or used to build custom d
 
 New Relic offers a generous free tier for learning and personal projects. The platform includes features such as:
 
-* APM
+* APM and Dashboards
 * Metrics and Logs
 * Distributed Tracing
 * Span Correlation
 * Service Maps
 * Dependency Discovery
-* Dashboards
 * Alerts
-* NRQL Queries
 
 Alerts can be configured using NRQL conditions and delivered through channels such as Email, Slack, Microsoft Teams, or Webhooks. When a threshold is met, New Relic automatically triggers the configured notification.
 
@@ -511,7 +495,7 @@ To explore distributed tracing, open the Node Frontend service from the APM view
 
 {{< figure src="https://i.ibb.co/WNqfgCCG/x.jpg" alt="Honeycomb" width="1000" height="600" title="Honeycomb Home view" >}}
 
-Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities.. It also provides templates, trace analysis, and telemetry exploration capabilities.
+Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities. It also provides templates, trace analysis, and telemetry exploration capabilities.
 
 Since both application and Kubernetes telemetry are exported through the OpenTelemetry Collector, the same data is available in Honeycomb without requiring additional instrumentation.
 
@@ -558,8 +542,6 @@ Found this article helpful? Consider leaving a like if it added value or helped 
 <br></br>
 [**Checkout more Monitoring and Observability Articles →**](/blogs/#o11y)
 
-[**Read more artciles on Kubernetes →**](/blogs/#kubernetes)
+[**Read more articles on Kubernetes →**](/blogs/#kubernetes)
 
 [**Explore ArgoCD in Detail →**]({{< relref "argocd" >}})
-
-
