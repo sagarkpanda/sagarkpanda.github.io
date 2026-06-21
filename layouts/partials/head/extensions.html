@@ -973,89 +973,6 @@ html.dark .tech-footer-bg::before,
 /*           Lightbox image popup */
 /* ========================================= */
 
-/* .lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.9);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition:
-    opacity 0.35s ease,
-    visibility 0.35s ease;
-}
-
-.lightbox.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox img {
-  max-width: 95vw;
-  max-height: 90vh;
-  object-fit: contain;
-
-  opacity: 0;
-  transform: scale(0.8);
-
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.lightbox.active img {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-
-  background: transparent;
-  border: none;
-
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-.lightbox-close:hover {
-  opacity: 0.7;
-}
-
-.lightbox-trigger {
-  text-decoration: none !important;
-}
-
-.lightbox-trigger:hover {
-  text-decoration: none !important;
-}
-
-.lightbox-trigger img {
-  cursor: zoom-in;
-  border: none;
-}
-
-.lightbox-trigger::after,
-.lightbox-trigger:hover::after {
-  display: none !important;
-  content: none !important;
-} */
-
 .lightbox {
 position: fixed;
 inset: 0;
@@ -1322,39 +1239,63 @@ document.addEventListener("DOMContentLoaded", function() {
 /* ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox-close');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
 
-function openLightbox(src) {
-lightboxImg.src = src;
-lightbox.classList.add('active');
-}
+  let lightboxOpen = false;
 
-function closeLightbox() {
-lightbox.classList.remove('active');
-}
+  function openLightbox(src) {
+    lightboxImg.src = src;
 
-document.querySelectorAll('.lightbox-trigger').forEach(link => {
-link.addEventListener('click', e => {
-e.preventDefault();
-openLightbox(link.href);
+    document.body.style.overflow = 'hidden';
+
+    lightbox.classList.add('active');
+
+    if (!lightboxOpen) {
+      history.pushState({ lightbox: true }, '');
+      lightboxOpen = true;
+    }
+  }
+
+  function closeLightbox(fromHistory = false) {
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+    if (lightboxOpen && !fromHistory) {
+      lightboxOpen = false;
+      history.back();
+    }
+  }
+
+  document.querySelectorAll('.lightbox-trigger').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      openLightbox(link.href);
+    });
+  });
+
+  closeBtn.addEventListener('click', () => closeLightbox());
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    if (lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxOpen = false;
+    }
+  });
 });
-});
-
-closeBtn.addEventListener('click', closeLightbox);
-
-lightbox.addEventListener('click', e => {
-if (e.target === lightbox) {
-closeLightbox();
-}
-});
-
-document.addEventListener('keydown', e => {
-if (e.key === 'Escape') {
-closeLightbox();
-}
-});
-});
-
 </script>
