@@ -343,7 +343,7 @@ The node-frontend is exposed via treafik ingress. To view the ingress dns name r
 
 After installation, the ArgoCD server is only accessible from within the cluster.
 
-To provide browser access, a Kubernetes Ingress resource is created. Traefik detects the Ingress and automatically configures routing for the ArgoCD service. Apply the ingress resource under `k8s/infra/argo/argo-ingress.yml`, which also uses the same ingress created ealier for node app. Similarly create another CNAME record for argo ui.
+To provide browser access, a Kubernetes Ingress resource is created. Traefik detects the Ingress and automatically configures routing for the ArgoCD service. Apply the ingress resource under `k8s/infra/argo/argo-ingress.yml`, which also uses the same ingress created earlier for node app. Similarly create another CNAME record for argo ui.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -480,32 +480,38 @@ In this platform, telemetry is exported to both New Relic and Honeycomb. Now we 
 
 ### New Relic
 
-New Relic provides a user-friendly interface with built-in dashboards, APM views, service maps, tracing, logging, and alerting capabilities. While Kubernetes metrics collected through OpenTelemetry are available and queryable using NRQL, some of New Relic's prebuilt Kubernetes experiences may require the New Relic Kubernetes integration for full functionality..
+New Relic provides a user-friendly interface with built-in dashboards, APM views, service maps, tracing, logging, and alerting capabilities. While Kubernetes metrics collected through OpenTelemetry are available and queryable using NRQL, some of New Relic's prebuilt Kubernetes experiences may require the New Relic Kubernetes integration for full functionality.
 
-K8s Metrics works as usual via query. Or we can create our own dashboards by running NRQL on k8s metrics.
+Kubernetes metrics can be queried directly using NRQL, or used to build custom dashboards and visualizations tailored to your environment.
 
-{{< figure src="https://i.ibb.co/Gvrrs6yx/x.jpg" alt="argo apps db" width="1000" height="600" title="neww relic dashboard created with nrql" >}}
+{{< figure src="https://i.ibb.co/Gvrrs6yx/x.jpg" alt="New Relic dashboard" width="1000" height="600" title="Custom dashboard built using NRQL queries" >}}
 
-NR free tier is pretty generous, it has builtin pannels to view.
+New Relic offers a generous free tier for learning and personal projects. The platform includes features such as:
 
 * APM
 * Metrics and Logs
-* Traces and Span correlation view
-* Service Map and Dependency discovery
+* Distributed Tracing
+* Span Correlation
+* Service Maps
+* Dependency Discovery
+* Dashboards
+* Alerts
+* NRQL Queries
 
-You can also configure alerts using NRQL, choose alert channel such as email, slack, MS teams or webhook. And when the condition is matched by threshold set, you will get the notification.
+Alerts can be configured using NRQL conditions and delivered through channels such as Email, Slack, Microsoft Teams, or Webhooks. When a threshold is met, New Relic automatically triggers the configured notification.
 
-{{< figure src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hxdh5qiyzEHsd54-9qQu6w.png" alt="NR views" width="1000" height="600" title="New Relic Overview" >}}
 
-From the APM menu, pickup node app, go to distributed traces and checkout the GET/Order, and from there choose the latest one, view the trace spans, attributes, logs etc. Copy the trace id and match it with other servic traces.
+{{< figure src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hxdh5qiyzEHsd54-9qQu6w.png" alt="New Relic Overview" width="1000" height="600" title="New Relic Overview" >}}
 
-Note: The go app does not have its own logs.
+To explore distributed tracing, open the Node Frontend service from the APM view and navigate to Distributed Traces. Open a recent request, inspect the spans, attributes, and logs, then copy the Trace ID to correlate activity across the other services participating in the same request flow.
+
+> Note: The Go Inventory service does not generate application logs in this demo.
 
 ### Honeycomb.io
 
 {{< figure src="https://i.ibb.co/WNqfgCCG/x.jpg" alt="Honeycomb" width="1000" height="600" title="Honeycomb Home view" >}}
 
-Honeycomb is an observability platform built around OpenTelemetry and AI o11y. It also provides templates, trace analysis, and telemetry exploration capabilities.
+Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities.. It also provides templates, trace analysis, and telemetry exploration capabilities.
 
 Since both application and Kubernetes telemetry are exported through the OpenTelemetry Collector, the same data is available in Honeycomb without requiring additional instrumentation.
 
@@ -520,15 +526,15 @@ You can also ask questions to HC using canvas.
 
 ## Ask Claude
 
-Honeycomb also supports MCP server. The integration is easy. The MCP server can be connected directly to Claude with just api key, no json and extra configurations required. This makes it possible to ask questions about application and Kubernetes telemetry using natural language. You can also ask the same questions in the canvas section of HC itself.
+Honeycomb also provides an MCP server. The integration is straightforward and can be connected directly to Claude using only an API key, without requiring additional JSON configuration or setup. This makes it possible to ask questions about application and Kubernetes telemetry using natural language. Similar questions can also be asked directly from the Honeycomb Canvas interface shown earlier.
 
-For example, ask about application operations
+For example, you can ask questions about application operations:
 
-{{< figure src="https://i.ibb.co/ks7FvvxV/x.jpg" alt="claude questions" width="1000" height="600" title="App operations" >}}
+{{< figure src="https://i.ibb.co/ks7FvvxV/x.jpg" alt="Claude questions" width="1000" height="600" title="Application Operations" >}}
 
-or if there are any unhealthy pods, or any questions that can help you with your app and cluster analysis.
+You can also investigate cluster health, identify unhealthy pods, or ask other questions that help analyze application and Kubernetes behavior.
 
-{{< figure src="https://i.ibb.co/ZphdWtbJ/x.jpg" alt="claude questions" width="1000" height="600" title="Unhealthy pods view" >}}
+{{< figure src="https://i.ibb.co/ZphdWtbJ/x.jpg" alt="Claude questions" width="1000" height="600" title="Unhealthy Pods View" >}}
 
 ## Cleanup
 
