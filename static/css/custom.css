@@ -1038,3 +1038,38 @@ display: none !important;
 content: none !important;
 }
 
+/* =========================================
+   SCROLLABLE TOC
+   ========================================= */
+
+.toc-content {
+  max-height: 60vh;
+  /* max-height: calc(100vh - 300px); */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 0.5rem;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.6) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.toc-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-content::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.6);
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.toc-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.9);
+}
