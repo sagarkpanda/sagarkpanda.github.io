@@ -17,7 +17,7 @@ tags:
 
 ## Why This Setup?
 
-Before getting into the architecture, a few quick notes. Telemetry goes to both New Relic and Honeycomb to test OpenTelemetry's backend-independence promise and compare the two. New Relic wins on day-to-day usability — dashboards, APM, and alerts work intuitively. Honeycomb takes more getting used to, but its MCP server is where it genuinely shines: connected to Claude, you can ask plain-English questions against live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
+Before getting into the architecture, a few quick notes. Telemetry goes to both **New Relic** and ***Honeycomb** to test OpenTelemetry's backend-independence promise and compare the two. New Relic wins on day-to-day usability — dashboards, APM, and alerts work intuitively. Honeycomb takes more getting used to, but its MCP server is where it genuinely shines: connected to Claude, you can ask plain-English questions against live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
 
 ## Introduction
 
@@ -488,8 +488,6 @@ Alerts can be configured using NRQL conditions and delivered through channels su
 {{< figure src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hxdh5qiyzEHsd54-9qQu6w.png" alt="New Relic Overview" width="1000" height="600" title="New Relic Overview" >}}
 
 To explore distributed tracing, open the Node Frontend service from the APM view and navigate to Distributed Traces. Open a recent request, inspect the spans, attributes, and logs, then copy the Trace ID to correlate activity across the other services participating in the same request flow.
-
-> Note: The Go Inventory service is not not instumented to generate application logs in this demo.
 
 ### Honeycomb.io
 
