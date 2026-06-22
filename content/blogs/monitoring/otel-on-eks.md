@@ -17,7 +17,7 @@ tags:
 
 ## Why This Setup?
 
-Before getting into the architecture, a few quick notes. Telemetry goes to both **New Relic** and ***Honeycomb** to test OpenTelemetry's backend-independence promise and compare the two. New Relic wins on day-to-day usability — dashboards, APM, and alerts work intuitively. Honeycomb takes more getting used to, but its MCP server is where it genuinely shines: connected to Claude, you can ask plain-English questions against live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
+Before getting into the architecture, a few quick notes. Telemetry goes to both **New Relic** and **Honeycomb** to test OpenTelemetry's backend-independence promise and compare the two. New Relic wins on day-to-day usability — dashboards, APM, and alerts work intuitively. Honeycomb takes more getting used to, but its MCP server is where it genuinely shines: connected to Claude, you can ask plain-English questions against live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
 
 ## Introduction
 
