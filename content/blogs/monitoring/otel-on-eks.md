@@ -17,7 +17,7 @@ tags:
 
 ## Why This Setup?
 
-Before getting into the architecture, a few quick notes on choices. Telemetry goes to both **New Relic** and **Honeycomb** — partly to compare a dashboard-first platform against a query-first one, partly to put OpenTelemetry's backend-independence promise to the test. The more interesting payoff: with Honeycomb's MCP server connected to **Claude**, you can ask plain-English questions like "which pods are unhealthy right now?" and get a real answer from live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
+Before getting into the architecture, a few quick notes. Telemetry goes to both New Relic and Honeycomb to test OpenTelemetry's backend-independence promise and compare the two. New Relic wins on day-to-day usability — dashboards, APM, and alerts work intuitively. Honeycomb takes more getting used to, but its MCP server is where it genuinely shines: connected to Claude, you can ask plain-English questions against live telemetry — no NRQL or PromQL required. That's the part worth [***jumping to*** 👇](#ask-claude) first if you're short on time.
 
 ## Introduction
 
@@ -90,7 +90,7 @@ Each service is instrumented using OpenTelemetry SDKs and exports telemetry usin
 
 The repository also contains a GitHub Actions workflow responsible for building container images and publishing them to GitHub Container Registry (GHCR).
 
-Unlike traditional deployment pipelines where manifests are updated manually, the workflow automatically updates the image tag inside the platform repository after a successful build.
+The image tag update is handled by `sed`, which rewrites the tag directly in the platform repo's `kustomization.yml`. ArgoCD detects the change on its next sync and rolls out the new version automatically — no manual `kubectl apply` required. Git remains the only source of truth; the cluster just follows it.
 
 ```text
 Code Change
@@ -489,22 +489,15 @@ Alerts can be configured using NRQL conditions and delivered through channels su
 
 To explore distributed tracing, open the Node Frontend service from the APM view and navigate to Distributed Traces. Open a recent request, inspect the spans, attributes, and logs, then copy the Trace ID to correlate activity across the other services participating in the same request flow.
 
-> Note: The Go Inventory service does not generate application logs in this demo.
+> Note: The Go Inventory service is not not instumented to generate application logs in this demo.
 
 ### Honeycomb.io
 
 {{< figure src="https://i.ibb.co/WNqfgCCG/x.jpg" alt="Honeycomb" width="1000" height="600" title="Honeycomb Home view" >}}
 
-Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities. It also provides templates, trace analysis, and telemetry exploration capabilities.
+Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities. Since both application and Kubernetes telemetry flow through the OTel Collector's multi-exporter pipeline, the same data lands in Honeycomb without additional instrumentation.
 
-Since both application and Kubernetes telemetry are exported through the OpenTelemetry Collector, the same data is available in Honeycomb without requiring additional instrumentation.
-
-<!-- {{< figure src="https://i.ibb.co/XfYk5DZs/x.jpg" alt="Honeycomb Trcae" width="1000" height="600" title="Honeycomb Trcae View" >}} -->
-
-Honeycomb also includes built-in templates for common workloads and infrastructure components, including Kubernetes nodes, pods, workload health, Linux hosts, and application telemetry. These templates provide a quick way to visualize telemetry without building dashboards from scratch.
-View the templates in the boards menu → templates.
-
-You can also ask questions to HC using canvas.
+The query builder is solid for slicing metrics and traces, but where Honeycomb stands out is the MCP server and Canvas — once connected to Claude, your telemetry becomes something you can interrogate in plain English rather than hand-writing queries.
 
 {{< figure src="https://i.ibb.co/TqMSNr2D/x.jpg" alt="Honeycomb Canvas" width="1000" height="600" title="Honeycomb Canvas" >}}
 
