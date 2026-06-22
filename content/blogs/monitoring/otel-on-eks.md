@@ -88,9 +88,9 @@ The application repository contains three microservices:
 
 Each service is instrumented using OpenTelemetry SDKs and exports telemetry using the OTLP protocol.
 
-The repository also contains a GitHub Actions workflow responsible for building container images and publishing them to GitHub Container Registry (GHCR).
+The repository also contains a GitHub Actions workflow that builds container images and publishes them to GitHub Container Registry (GHCR). Images are tagged with both a `short commit hash` and a `latest` tag, although the Kubernetes manifests always reference the immutable commit-based tag.
 
-The image tag update is handled by `sed`, which rewrites the tag directly in the platform repo's `kustomization.yml`. ArgoCD detects the change on its next sync and rolls out the new version automatically — no manual `kubectl apply` required. Git remains the only source of truth; the cluster just follows it.
+After publishing an image, the workflow updates the image tag in the platform repository's `kustomization.yml` using `sed`. The workflow then commits and pushes the change to the platform using the GitHub Actions bot account. ArgoCD detects the Git change during its next sync cycle and automatically deploys the new version. No manual `kubectl apply` commands are required, and Git remains the single source of truth.
 
 ```text
 Code Change
@@ -111,7 +111,7 @@ otel-labs-platform
 
 This means the application repository is responsible only for producing deployable artifacts, while the platform repository remains responsible for deployment.
 
-{{< figure src="https://i.ibb.co/396Y58Z5/x.jpg" alt="tag update" width="1000" height="600" title="GitHub Actions updating image tags in the platform repository" >}}
+{{< figure src="https://i.ibb.co/vvj3k2MF/x.jpg" alt="tag update" width="1000" height="600" title="GitHub Actions updating image tags in the platform repository" >}}
 
 For local development, the entire application stack can be started using Docker Compose.
 
@@ -523,6 +523,13 @@ Delete Ingress Resources
 terraform destroy
 ```
 Depending on the deployment approach used, remove the individual applications, root application, or Kustomize bootstrap before destroying the EKS infrastructure.
+
+## Lessons Learned
+
+* The OpenTelemetry Collector's multi-exporter pipeline makes backend independence practical — New Relic and Honeycomb can receive the same telemetry without requiring any application changes.
+* Deploying the OpenTelemetry Collector as a DaemonSet ensures node-level metrics are collected from every worker node. A single collector Deployment only scrapes the kubelet of the node where it is running, resulting in incomplete metrics in multi-node clusters.
+* Kubernetes observability requires combining multiple telemetry sources — `kubeletstats`, `k8s_cluster`, and `kube-state-metrics` each provide a different view of cluster health and workload behavior.
+* `kube-state-metrics` exposes Prometheus metrics that can be scraped by the OpenTelemetry Collector and forwarded alongside application telemetry through a single telemetry pipeline.
 
 ## Wrap Up
 
