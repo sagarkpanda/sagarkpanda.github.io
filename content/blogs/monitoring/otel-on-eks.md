@@ -3,7 +3,7 @@ date: '2026-06-20T07:45:10+05:30'
 draft: false
 title: 'Seeing Inside Amazon EKS with OpenTelemetry 🔍'
 description: Building a Cloud Native observability platform on Amazon EKS with OpenTelemetry, GitOps, Terraform, multi-backend telemetry, and Claude powered analysis
-image: https://i.ibb.co/SDbxVXmx/x.jpg
+image: https://i.ibb.co/BHFC79FT/x.jpg
 tags:
   - monitoring
   - o11y
