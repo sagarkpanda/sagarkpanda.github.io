@@ -35,7 +35,8 @@ Before launching, ensure your **AWS Security Group** has the following Inbound R
 ## Mapping your Domain
 Create an **A record** DNS entry at your domain registrar pointing your desired subdomain (e.g., `gitlab.sagapanda.com`) to the machine's Public IP.
 
-![A record](/blogs/gitlab/dns_entry.png)
+<!-- ![A record](/blogs/gitlab/dns_entry.png) -->
+{{< figure src="https://i.ibb.co/WvNCpJ1F/x.png" alt="dns entry" width="1000" height="600" title="DNS Record" >}}
 
 ## Add GitLab Repository
 First, update the cache and install `curl` if it's not already there. Then, add the GitLab repository to your system:
@@ -48,7 +49,7 @@ curl -sS [https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/scri
 
 Here I have added the gitlab-ee package, you can choose to replace the ee with ce for community edition. However ee without a license essentially works as ce and we can upgrade to ee seamlessly when we want. We also have 30 days of GitLab ultimate free trial with ee.
 
-![A record](/blogs/gitlab//gl_add.png)
+{{< figure src="https://i.ibb.co/cXxjPCR2/x.png" alt="add gitlab repo" width="1000" height="600" title="Add gitlab repo" >}}
 
 ## Installation & SSL Setup
 
@@ -62,7 +63,7 @@ sudo EXTERNAL_URL="https://gitlab.yourdomain.com" apt install gitlab-ee
 ```
 Note: Replace ee with ce if you added ce package earlier.
 
-![A record](/blogs/gitlab//gl_installation.png)
+{{< figure src="https://i.ibb.co/DHrZPtPq/x.png" alt="gitlab installation" width="1000" height="600" title="GitLab Installation" >}}
 
 Now open the gitlab config file located at /etc/gitlab/gitlab.rb and search for external URL and update your domain. use ctrl+w to search in nano or any other key combo in other editors.
 
@@ -72,23 +73,24 @@ sudo nano /etc/gitlab/gitlab.rb
 
 If you ran the install cmd with external URL, this would already be set.
 <br></br>
-![config](/blogs/gitlab//glrb.png)
+
+{{< figure src="https://i.ibb.co/3xkCkHy/x.png" alt="external url" width="1000" height="600" title="Set external url" >}}
 <br></br>
 Again search for letsencrypt and the lets encrypt section for cert. Uncomment the first 2 lines and set the first value to 'true' which would be nil. Add your valid email address for the 2nd value inside quotes.
 <br></br>
-![config2](/blogs/gitlab/glrb2.png)
+{{< figure src="https://i.ibb.co/WN6Yhd0c/x.png" alt="tls setup" width="1000" height="600" title="Enable Lets Encrypt TLS" >}}
 <br></br>
 Once set, you can save it and run the gitlb-ctl reconfigure for the changes to take effect.
 sudo gitlab-ctl reconfigure.
 <br></br>
-![pw](/blogs/gitlab/pw.png)
+{{< figure src="https://i.ibb.co/ZRfCgm50/x.png" alt="Get initial PW" width="1000" height="600" title="Get Initial password" >}}
 <br></br>
-![login](/blogs/gitlab/login.png)
+{{< figure src="https://i.ibb.co/5gB3m1rx/x.png" alt="add gitlab lgoin landing" width="1000" height="600" title="Insital login" >}}
 <br></br>
 There we go, we have our gitlab ready. Get the initial admin pw from /etc/gitlab/initial_root_password, this expires in 24 hours.
 The username is root and with the pw obtained earlier, you can login. As we can see sign up is enabled by default, meaning anyone could access our GitLab by just signing up themselves so its better to disable it and allow only user creation by admin. Click on the first deactivate button to do so.
 <br></br>
-![user](/blogs/gitlab/view.png)
+{{< figure src="https://i.ibb.co/n8V92tdd/x.png" alt="gitlab landing" width="1000" height="600" title="GitLab Landing page" >}}
 <br></br>
 Now you can create another user and other relevant user management in the same page.
 
