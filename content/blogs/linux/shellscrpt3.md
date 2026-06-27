@@ -2,7 +2,7 @@
 date: '2024-03-22T19:26:10+05:30'
 draft: false
 title: 'If Statement - Conditional in Bash Scripting'
-Description: "Part 3: Usage of if, else and elif statements in shell scripting"
+description: "Part 3: Usage of if, else and elif statements in shell scripting"
 tags:
   - linux
   - shell scrpting
@@ -19,7 +19,7 @@ So, what’s the deal with 'if' statements? Think of them as the script’s way 
 
 Syntax:
 
-```
+```bash
 if [ condition ]; then
     # Do this if the condition is true
 fi
@@ -30,7 +30,7 @@ We have a set of keywords: if, then, elif, else and fi.
 
 Let's see a basic example:
 
-```
+```bash
 #!/bin/bash
 a=5
 if [ $a -eq 5 ]
@@ -45,13 +45,13 @@ In this example, we assigned the var a with the value 5. Now the **if** conditio
 
 The [] is an alias of Linux command test. The -eq is an operator, which means “equals to”. Similarly, there are many other operators like -ne for not equals, -gt for greater than, -f for existence of a file, -d for directory and etc. To see all use man page.
 
-```
+```bash
 man test
 ```
 
 We can even do the test without using [].
 
-```
+```bash
 #!/bin/bash
 a=5
 if test $a -eq 5
@@ -64,7 +64,7 @@ fi
 
 If we have multiple checks, then we can use multiple if statements or better yet use else condition.
 
-```
+```bash
 #!/bin/bash
 a=5
 if test $a -eq 8
@@ -77,7 +77,7 @@ fi
 
 Let's see another example to check if a file exists, if it does then simply print the content of the file. If it does not then create the file and then print its content.
 
-```
+```bash
 #!/bin/bash
 file="/home/sagar/random.txt"
 data="Hello there, this is testing."
@@ -105,14 +105,14 @@ In case we want to install, we need to use package managers. As there are multip
 
 **Note:** We can use either -f to check for the command using its path or use the Linux co**mmand called “command”. Use which command to find location of a program.
 
-```
+```text
 $ which nano
 /usr/bin/nano
 $ command -v nano
 ```
 <br></br>
 
-```
+```bash
 #!/bin/bash
 cmd=/usr/bin/nano
 if [ -f $cmd ]
@@ -138,7 +138,7 @@ Let's now proceed with the main script.
 
 **Note :** Use update command to refresh the package cache first and then install.
 
-```
+```bash
 #!/bin/bash
 app=htop
 if command -v "$app" &> /dev/null; then

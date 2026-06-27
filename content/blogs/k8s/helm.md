@@ -62,7 +62,7 @@ Get the official chart for Prometheus. You can also find the cmds to use.
 
 To add a repository, use helm repo add. Then update the repo.
 
-```
+```bash
 $ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 $ helm repo update
 ```
@@ -70,7 +70,7 @@ $ helm repo update
 
 To install a particular app use helm install.
 
-```
+```bash
 $ helm install prom-prod prometheus-community/prometheus --version 25.20.0
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Dhs2g6qIzABPI26N8rEkvw.png)
@@ -82,14 +82,14 @@ It also gives you the commands to use port forward, so you can access the prom U
 
 You can list the the releases by using helm list or helm ls.
 
-```
+```bash
 helm ls --all-namespaces
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*itrGESTJciNIZAKZ_g9-Qg.png)
 
 To view all the resources created from this, use the generic kubectl get cmd.
 
-```
+```bash
 kubectl get all
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*yUe6u2CgAzP9XEs9R8QJVg.png)
@@ -98,7 +98,7 @@ Lets install another instance of Prometheus in a different namespace.
 
 First create a namespace. Then helm install.
 
-```
+```bash
 $ kctl create ns 2ndns
 $ helm install prom-2 prometheus-community/prometheus --version 25.20.0 -n 2ndns
 ```
@@ -109,7 +109,7 @@ And there we have it. Another prom installation.
 
 List all the Prometheus releases. Keep an eye on the revisions and and the chart versions as we’ll experiment with them.
 
-```
+```bash
 sagar [ ~ ]$ helm ls --all-namespaces
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 prom-2          2ndns           1               2024-04-21 09:13:35.404985363 +0000 UTC deployed        prometheus-25.20.0      v2.51.2
@@ -125,13 +125,13 @@ The other operations apart for installation are uninstalling, updating to differ
 
 To remove a release use helm uninstall release-name. Additionally use the flag _— —keep-history_, so we can rollback if we want to.
 
-```
+```bash
 helm uninstall prom-2 -n 2ndns --keep-history
 ```
 
 Listing the releases now will now show the 2nd release which was prom-2, however we can still see its status with -a flag. The status is uninstalled as expected.
 
-```
+```bash
 helm ls --all-namespaces
 helm ls --all-namespaces -a
 ```
@@ -141,7 +141,7 @@ helm ls --all-namespaces -a
 
 Consider there is a new version that I want to change. the version of prom-pord to another version.
 
-```
+```bash
 sagar [ ~ ]$ helm upgrade prom-prod prometheus-community/prometheus --version 25.18.0
 Release "prom-prod" has been upgraded. Happy Helming!
 NAME: prom-prod
@@ -165,7 +165,7 @@ To find out all the revisions, use helm history release name.
 
 We can also bring back the prom instance that was uninstalled.
 
-```
+```bash
 sagar [ ~ ]$ helm rollback prom-2 1 -n 2ndns
 Rollback was a success! Happy Helming!
 sagar [ ~ ]$ helm ls --all-namespaces
