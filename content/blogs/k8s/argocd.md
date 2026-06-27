@@ -45,7 +45,7 @@ All the code and the configuration are available on [github](https://github.com/
 
 To set up terraform, follow the below article. Now create a .tf file with the below configuration and apply it to create the aks cluster.
 
-```
+```terraform
 provider "azurerm" {
   features {}
 }
@@ -85,20 +85,20 @@ To install argocd, follow the official document.
 
 Create a namespace first, and apply the argocd manifest.
 
-```
+```bash
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 ```
 
 Expose argo svc with LB:
 
-```
+```bash
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
 
 forward argocd port to access directly
 
-```
+```bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
@@ -112,7 +112,7 @@ Note : If you get any security warnings, just click proceed anyway. This error i
 
 The username is admin. To get the initial pw, run the following command:
 
-```
+```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
 ```
@@ -160,7 +160,7 @@ Since we’ll use Jenkins for docker build and push, lets install both of them u
 
 **Install Jenkins:** Under the playbook directory, run the jenkins playbook first.
 
-```
+```yaml
 ---
 - name: Install Jenkins
   hosts: jenkins
@@ -206,7 +206,7 @@ Browse ip:8080 and continue the rest of the installation as per your need.
 
 **Install Docker:** Now run the docker playbook. This installs docker and adds the jenkins user to the docker group, so we can run docker commands from jenkins without sudo.
 
-```
+```yaml
 ---
 - name: Install Docker and add Jenkins user to Docker group
   hosts: jenkins
@@ -270,7 +270,7 @@ Now we can build and push the docker images to any preferred repo. Also since th
 
 You’ll need docker login in the VM to be able to push image with jenkins.
 
-```
+```groovy
  stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "ArgoMagic"

@@ -27,7 +27,7 @@ We can create a variable using equals symbol and to call a variable we use $. Ca
 
 The bash default variables are always set with caps letters, we can do that too for our own variables, but it's generally a good idea to keep our vars in lowercase so we can easily distinguish if the variables are default or custom.
 
-```
+```bash
 #!/bin/bash
 host="Windows"
 os="Ubuntu"
@@ -43,7 +43,7 @@ Now when we execute this, we get the $os and $host values parsed and replaced.
 Variables allow us to define something once and use it multiple times.
 For example now I want to change the rocky Linux, then I don’t need to change in all the places.
 
-```
+```bash
 #!/bin/bash
 host="Windows"
 os="Rocky Linux"
@@ -63,7 +63,7 @@ So for multiplication we need to inform bash to ignore the general meaning by ad
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*eJgqMctorC9x3Z-lkMH9gQ.png)
 
-```
+```bash
 #!/bin/bash
 first=50
 second=3
@@ -73,13 +73,13 @@ echo "The third value is: $(expr $first + $second)"
 
 Note: expr does not calculate floating point in division, for doing so we need to use basic calculator (bc). Install it if not available with apt install.
 
-```
+```bash
 sudo apt update && sudo apt install bc
 ```
 
 Now we can perform division with correct way.
 
-```
+```bash
 sagar@DELL-G5:~$ echo  "5 / 2" | bc -l
 2.50000000000000000000
 sagar@DELL-G5:~$ echo "scale=0; 5 / 2" | bc -l
@@ -93,7 +93,7 @@ So updating the script form earlier we have the below operations. The number use
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:850/format:webp/1*opp7-a40-5bL8apkK4-EkA.png)
 
-```
+```bash
 #!/bin/bash
 first=50
 second=3

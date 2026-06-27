@@ -44,20 +44,20 @@ If you have any other results, then use /bin/bash to switch the shell to bash.
 
 Create a file with sh extension (having sh extension is not mandatory but standard) and add the following echo statement.
 
-```
+```bash
 # vim hello.sh
 echo Hello World!
 ```
 
 Now we simply can’t run a shell script, first we have to make it executable.
 
-```
+```bash
 sudo chmod +x hello.sh
 ```
 
 It’s ready to be executed. Run the script.
 
-```
+```bash
 ./hello.sh
 ```
 <br></br>
@@ -81,7 +81,7 @@ Update the script content and lets run again.
 
 **_Note: you can also use “#!/usr/bin/env bash”_**
 
-```
+```bash
 #!/bin/bash
 echo 'Hello World'
 #print("hello")
@@ -105,7 +105,7 @@ Now when you run it, you should get hello from python.
 
 Include even more python program and run it.
 
-```
+```bash
 sagar@DELL-G5:~$ vim hello
 #!/usr/bin/python3
 #print("hello")
@@ -119,7 +119,7 @@ print("pwd is" + dir)
 
 Here’s another example:
 
-```
+```bash
 #!/bin/bash
 echo 'Hello There'
 #current_date=$(date +%Y-%m-%d)
