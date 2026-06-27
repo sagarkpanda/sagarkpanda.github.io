@@ -1,5 +1,5 @@
 ---
-date: '2024-01-05T19:26:10+05:30'
+date: '2024-05-01T19:26:10+05:30'
 draft: false
 title: 'Helm — Your Compass in the Kubernetes Universe'
 Description: Part XI - Getting started with Helm, the package manager for Kubernetes for easy application management.
@@ -9,7 +9,6 @@ tags:
   - k8s
   - devops
 ---
-
 
 ### What is Helm:
 
@@ -187,6 +186,5 @@ List the history of the 2nd release.
 And there we have it, all the basics of Helm. Hope you found it useful. Explore further more on how to create your own helm charts, the folder structure, ways to override the values to customize the templates. Happy Helming!
 
 ![Img src: helm.sh](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IeU1wgJuI2ApzGmDrbr7vA.gif)
-
 
 [Read more on K8s →](/blogs/#kubernetes)

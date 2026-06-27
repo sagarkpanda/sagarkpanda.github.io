@@ -1,5 +1,5 @@
 ---
-date: '2024-01-05T19:26:10+05:30'
+date: '2024-05-20T19:26:10+05:30'
 draft: false
 title: 'Kubernetes Security — Role Based Access Control (RBAC)'
 description: Part XII — User Management in K8s with RBAC using Entra ID aka Azure Active Directory.
@@ -184,4 +184,4 @@ That’s all for today. Thanks for reading.
 
 References: [Sysdig](https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-rbac/)
 
-[Read more on K8s →](/blogs/#kubernetes)
+[Checkout more articles on K8s →](/blogs/#kubernetes)
