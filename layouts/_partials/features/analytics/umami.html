@@ -1,0 +1,12 @@
+<script
+  async
+  defer
+  src="{{ .Site.Params.analytics.umami.src }}"
+  data-website-id="{{ .Site.Params.analytics.umami.id }}"
+  {{ with .Site.Params.analytics.umami.domains }}
+    data-domains="{{ . }}"
+  {{ end }}
+  {{ with .Site.Params.analytics.umami.host }}
+    data-host-url="{{ . }}"
+  {{ end }}
+></script>

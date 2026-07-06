@@ -118,7 +118,14 @@ comments:
 
 # Analytics (off by default -- fill in an id and flip to true when ready)
 analytics:
-  enabled: false
+  enabled: true
+
+  umami:
+    enabled: true
+    src: https://data.sagarpanda.com/data.js
+    id: d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50
+    domains: sagarpanda.com
+    host: https://data.sagarpanda.com
 
 katex:
   enabled: true
@@ -201,7 +208,7 @@ projects:
     - name: "OTel Labs Platform"
       link: "https://github.com/sagarkpanda/otel-labs-platform"
       status: "Completed"
-      image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
+      # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
         GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS. Provisions the cluster with Terraform and deploys ArgoCD, Traefik, and the OpenTelemetry Collector via GitOps, exporting metrics/logs/traces to New Relic and Honeycomb. The companion `otel-labs` repo holds the instrumented demo apps (Node frontend, Python orders API, Go inventory API) this cluster runs.
       icons:
@@ -217,7 +224,7 @@ projects:
     - name: "DevSecOps Labs (PyGoat)"
       link: "https://github.com/sagarkpanda/devsecops-labs"
       status: "Active"
-      image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
+      # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
         Intentionally vulnerable Django web app for hands-on OWASP Top 10 practice, with Docker-based labs, guided challenges, and step-by-step solutions for each vulnerability class.
       icons:
