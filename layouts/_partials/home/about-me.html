@@ -12,14 +12,12 @@
 
 {{ if $about }}
   <section id="about-me" class="about-me-section">
-    <div
-      class="bg-card border-border overflow-hidden rounded-2xl border shadow-sm"
-    >
-      <!-- items-stretch: image column's height auto-matches whichever
-           column is taller (in practice, the text column). -->
+    <div class="bg-card border-border overflow-hidden rounded-2xl border shadow-sm">
+
       <div class="flex flex-col items-stretch md:flex-row">
-        <!-- Text (left) -->
-        <div class="flex flex-1 flex-col justify-center p-8 md:p-10">
+
+        <!-- Text -->
+        <div class="order-2 flex flex-1 flex-col justify-center p-8 md:order-1 md:p-10">
           {{ if $about.title }}
             <h2 class="text-foreground mb-4 text-2xl font-bold md:text-3xl">
               {{ $about.title }}
@@ -37,22 +35,34 @@
              background shows through), rounded corners, height stretches
              to match the text column exactly via the parent's
              items-stretch + h-full here. -->
-        {{ if $about.image }}
+
+        <!-- {{ if $about.image }}
 
           <div class="flex w-80 items-center justify-center p-6">
-          <img
-            src="{{ $about.image | relURL }}"
-            alt="{{ $about.title | default `About Me` }}"
-            class="mt-8 w-64 rounded-xl object-cover object-top"
-            loading="lazy"
-          />
-        </div>
+            <img
+              src="{{ $about.image | relURL }}"
+              alt="{{ $about.title | default `About Me` }}"
+              class="mt-8 w-64 rounded-xl object-cover object-top"
+              loading="lazy"
+            />
+          </div>
 
+        {{ end }} -->
+
+        {{ if $about.image }}
+          <div class="order-1 flex w-full justify-center p-6 md:order-2 md:w-80 md:items-center">
+            <img
+              src="{{ $about.image | relURL }}"
+              alt="{{ $about.title | default `About Me` }}"
+              class="w-64 rounded-xl object-cover object-top md:mt-8"
+              loading="lazy"
+            />
+          </div>
         {{ end }}
+
       </div>
 
-      <!-- Skills: full-width strip spanning the whole card (both columns
-           above). -->
+      <!-- Skills -->
       {{ if $skills }}
         <div class="p-8 md:p-10">
           {{ if $skills.title }}
@@ -81,6 +91,7 @@
           {{ end }}
         </div>
       {{ end }}
+
     </div>
   </section>
 {{ end }}
