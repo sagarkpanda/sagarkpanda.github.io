@@ -38,14 +38,16 @@
              to match the text column exactly via the parent's
              items-stretch + h-full here. -->
         {{ if $about.image }}
-          <div class="flex flex-1 p-6 py-10 md:p-8 md:py-12">
-            <img
-              src="{{ $about.image | relURL }}"
-              alt="{{ $about.title | default `About Me` }}"
-              class="h-full w-full rounded-xl object-cover"
-              loading="lazy"
-            />
-          </div>
+
+          <div class="flex w-80 items-center justify-center p-6">
+          <img
+            src="{{ $about.image | relURL }}"
+            alt="{{ $about.title | default `About Me` }}"
+            class="mt-8 w-64 rounded-xl object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+
         {{ end }}
       </div>
 
