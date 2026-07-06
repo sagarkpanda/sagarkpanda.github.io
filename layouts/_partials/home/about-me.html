@@ -1,53 +1,82 @@
-{{/* About Me section, OPTION 2: text left / image right in one fixed-height
-     card, matching the Hero card's height. To use this instead of the
-     default about-me.html, either:
-       (a) rename this file to about-me.html (replacing the original), or
-       (b) rename to something else and add its name to home.contentOrder
-           in params.yaml in place of "about-me".
-     Reads site.Params.aboutMe = { title, image, content } (same data as
-     the other version -- no params.yaml changes needed to switch). */}}
+{{/* About Me card: text left / image right, image height auto-matches
+     the text column's natural height (not a fixed card height), inset
+     with padding + rounded corners so the card background shows on all
+     4 sides of the image. Skills is merged in as a full-width strip
+     below both columns (this file is now the SINGLE source for Skills --
+     it is NOT also listed separately in home.contentOrder, which would
+     duplicate it).
+     Reads site.Params.aboutMe = { title, image, content } and
+     site.Params.skills = { title, items[] }. */}}
 {{ $about := site.Params.aboutMe }}
-
-{{/* <<< ADJUST THIS: card height. Currently matches the Hero card's
-     typical rendered height at ~480px. Change both values (mobile/desktop
-     are the same here on purpose -- edit both if you want them to differ)
-     if your Hero card is taller/shorter than that in practice. */}}
-{{ $cardHeight := "480px" }}
+{{ $skills := site.Params.skills }}
 
 {{ if $about }}
   <section id="about-me" class="about-me-section">
     <div
-      class="bg-card border-border flex flex-col overflow-hidden rounded-2xl border shadow-sm md:flex-row"
-      style="min-height: {{ $cardHeight }}"
+      class="bg-card border-border overflow-hidden rounded-2xl border shadow-sm"
     >
-      <!-- Text (left) -->
-      <div class="flex flex-1 flex-col justify-center p-8 md:p-10">
-        {{ if $about.title }}
-          <h2 class="text-foreground mb-4 text-2xl font-bold md:text-3xl">
-            {{ $about.title }}
-          </h2>
-        {{ end }}
+      <!-- items-stretch: image column's height auto-matches whichever
+           column is taller (in practice, the text column). -->
+      <div class="flex flex-col items-stretch md:flex-row">
+        <!-- Text (left) -->
+        <div class="flex flex-1 flex-col justify-center p-8 md:p-10">
+          {{ if $about.title }}
+            <h2 class="text-foreground mb-4 text-2xl font-bold md:text-3xl">
+              {{ $about.title }}
+            </h2>
+          {{ end }}
 
-        {{ if $about.content }}
-          <div class="prose prose-neutral dark:prose-invert max-w-none">
-            {{ $about.content | markdownify }}
+          {{ if $about.content }}
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              {{ $about.content | markdownify }}
+            </div>
+          {{ end }}
+        </div>
+
+        <!-- Image (right): inset with padding on all 4 sides (card
+             background shows through), rounded corners, height stretches
+             to match the text column exactly via the parent's
+             items-stretch + h-full here. -->
+        {{ if $about.image }}
+          <div class="flex flex-1 p-6 py-10 md:p-8 md:py-12">
+            <img
+              src="{{ $about.image | relURL }}"
+              alt="{{ $about.title | default `About Me` }}"
+              class="h-full w-full rounded-xl object-cover"
+              loading="lazy"
+            />
           </div>
         {{ end }}
       </div>
 
-      <!-- Image (right): full image, never cropped, with fixed breathing
-           room above/below inside its half of the card. -->
-      {{ if $about.image }}
-        <div
-          class="bg-muted flex flex-1 items-center justify-center p-6 md:p-8"
-          style="min-height: {{ $cardHeight }}"
-        >
-          <img
-            src="{{ $about.image | relURL }}"
-            alt="{{ $about.title | default `About Me` }}"
-            class="max-h-full w-full rounded-xl object-contain"
-            loading="lazy"
-          />
+      <!-- Skills: full-width strip spanning the whole card (both columns
+           above). -->
+      {{ if $skills }}
+        <div class="p-8 md:p-10">
+          {{ if $skills.title }}
+            <p class="text-muted-foreground mb-6 text-base md:text-lg">
+              {{ $skills.title }}
+            </p>
+          {{ end }}
+
+          {{ if $skills.items }}
+            <div class="flex flex-wrap gap-3">
+              {{ range $skills.items }}
+                <div
+                  class="bg-card border-border text-foreground hover:border-primary/50 hover:text-primary flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium shadow-sm transition-colors duration-200"
+                >
+                  {{ if .icon }}
+                    <img
+                      src="{{ .icon | relURL }}"
+                      alt="{{ .name }}"
+                      class="h-5 w-5 shrink-0"
+                    />
+                  {{ end }}
+                  <span>{{ .name }}</span>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
         </div>
       {{ end }}
     </div>

@@ -50,7 +50,7 @@ toc:
   enabled: true
   position: "center"
 
-colorScheme: "Sunset"
+colorScheme: "claude"
 themes:
   default:
     name: "Default"
@@ -98,7 +98,6 @@ home:
   contentOrder:
     - author-section
     - about-me
-    - skills
     - projects
     - experience
     - education
@@ -213,16 +212,6 @@ projects:
           tooltip: "ArgoCD"
         - src: "/images/kubernetes.svg"
           tooltip: "Kubernetes"
-
-    - name: "My New Project"
-      link: "https://github.com/sagarkpanda/some-repo"
-      status: "In Progress"
-      image: "/images/og-image.jpg" # testing for now.
-      content: |
-        GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, prov
-      icons:
-        - src: "/images/docker.svg"
-          tooltip: "Docker"
 
 # Experience (rendered by layouts/_partials/home/experience.html)
 experience:
@@ -340,4 +329,3 @@ contact:
     - name: "Bluesky"
       url: "#"
       icon: "bluesky"
-

@@ -18,17 +18,18 @@
   opacity: 0.8;
 }
 
-/* Fix: external hotlinked images (Medium/Miro/etc.) get no width/height
-   HTML attributes from the theme's image processor, since their real
-   dimensions aren't known at build time. Without reserved space, the
-   browser collapses their box to 0 height until the image finishes
-   loading, which shifts everything below it -- so a click aimed at where
-   the image *will* be can land on the wrong element while it's still
-   loading. This was almost certainly why the lightbox worked for some
-   external images and not others (pure timing/scroll-position luck).
-   Reserving a sensible aspect ratio up front fixes the shift. */
+/* Fix: external hotlinked images (Medium/Miro/ibb.co/etc.) get no
+   width/height HTML attributes from the theme's image processor, so the
+   browser collapses their box to 0 height until they finish loading --
+   anything below shifts, so a click aimed at an image can land on the
+   wrong element while it's still loading in.
+   A plain min-height alone (earlier version of this fix) let the browser
+   stretch/distort small images, since width and height both ended up
+   constrained without anything preserving the source aspect ratio.
+   aspect-ratio + object-fit:cover reserves the space AND fills it without
+   visible empty letterbox bars AND never distorts the image (crops
+   slightly instead, if its ratio doesn't match 16:10). */
 .image-container img:not([width]) {
   aspect-ratio: 16 / 10;
-  object-fit: contain;
-  background-color: var(--color-muted);
+  object-fit: cover;
 }
