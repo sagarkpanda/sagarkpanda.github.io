@@ -17,12 +17,6 @@ main:
     params:
       icon: briefcase
 
-  - name: Education
-    url: /#education
-    weight: 20
-    params:
-      icon: book-open
-
   - name: Contact
     url: /#contact
     weight: 25
@@ -38,24 +32,31 @@ main:
   - name: More
     weight: 35
     params:
-      icon: layers
+      icon: menu
+
+  - name: Education
+    weight: 1
+    url: /#education
+    parent: More
+    params:
+      icon: book-open
 
   - name: Archives
-    weight: 1
+    weight: 2
     pageRef: /archives
     parent: More
     params:
       icon: archive
 
   - name: Tags
-    weight: 2
+    weight: 3
     pageRef: /tags
     parent: More
     params:
       icon: tags
 
   - name: Series
-    weight: 3
+    weight: 4
     pageRef: /series
     parent: More
     params:
