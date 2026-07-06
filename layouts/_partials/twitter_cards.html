@@ -1,4 +1,4 @@
-{{/* Twitter Card metadata */}}
+{{/* Twitter/X Card metadata */}}
 
 {{ $title := .Title }}
 {{ if .IsHome }}
@@ -7,7 +7,7 @@
 
 {{ $description := .Description | default .Summary | default site.Params.description }}
 
-{{/* Determine the Twitter image */}}
+{{/* Determine the social image */}}
 {{ $image := "" }}
 
 {{ with .Params.cover }}
@@ -27,10 +27,10 @@
 <meta name="twitter:description" content="{{ $description }}">
 
 {{ with $image }}
-<meta name="twitter:image" content="{{ . }}">
+  <meta name="twitter:image" content="{{ . }}">
 {{ end }}
 
 {{ with site.Params.social.twitter }}
-<meta name="twitter:site" content="@{{ . }}">
-<meta name="twitter:creator" content="@{{ . }}">
+  <meta name="twitter:site" content="@{{ . }}">
+  <meta name="twitter:creator" content="@{{ . }}">
 {{ end }}

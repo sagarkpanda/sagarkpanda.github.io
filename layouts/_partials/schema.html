@@ -1,0 +1,69 @@
+{{/* JSON-LD Schema */}}
+
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ site.BaseURL }}#website",
+  "url": "{{ site.BaseURL }}",
+  "name": {{ site.Title | jsonify }},
+  "description": {{ site.Params.description | jsonify }},
+  "inLanguage": "{{ site.Language.Lang }}"
+}
+</script>
+
+{{ else if .IsPage }}
+
+{{/* Determine social image */}}
+{{ $image := "" }}
+{{ with .Params.cover }}
+  {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+    {{ $image = . }}
+  {{ else }}
+    {{ $image = . | absURL }}
+  {{ end }}
+{{ else }}
+  {{ with site.Params.images }}
+    {{ $image = (index . 0 | absURL) }}
+  {{ end }}
+{{ end }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "{{ .Permalink }}#article",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ (.Description | default .Summary) | jsonify }},
+  "url": "{{ .Permalink }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $image }}"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Person",
+    "name": "Sagar Panda",
+    "url": "{{ site.BaseURL }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify }},
+    "url": "{{ site.BaseURL }}"
+  },
+  "keywords": [
+    {{- range $i, $tag := .Params.tags -}}
+      {{- if $i }},{{ end }}
+      {{ $tag | jsonify }}
+    {{- end }}
+  ]
+}
+</script>
+
+{{ end }}
