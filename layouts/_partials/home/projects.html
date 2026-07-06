@@ -1,9 +1,14 @@
 {{/* Projects section for the homepage, placed before Experience.
+     Restyled to match the theme's own project-card.html design (full
+     background cover image with gradient overlay, tech chips) but without
+     the "featured" star badge, and driven by params.yaml data instead of
+     actual Hugo content pages.
      Reads site.Params.projects = { title, items[] } where each item is:
      { name, link, status, image (optional), content, icons: [{src, tooltip}] }
-     `image` is optional -- if set, shows a banner at the top of the card;
-     if omitted, the card just renders as text like before. To add a new
-     project, add another entry under `projects.items` in params.yaml. */}}
+     `image` is optional -- with it, the whole card becomes a full-bleed
+     background image with a dark gradient for text readability; without
+     it, the card just renders as a plain text card. To add a new project,
+     add another entry under `projects.items` in params.yaml. */}}
 {{ $projects := site.Params.projects }}
 
 {{ if $projects }}
@@ -14,69 +19,90 @@
       </h2>
     {{ end }}
 
-    <div class="flex flex-col gap-6">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {{ range $projects.items }}
-        <div class="bg-card border-border overflow-hidden rounded-xl border shadow-sm">
-          {{ if .image }}
-            {{ $isExternalImg := or (hasPrefix .image "http://") (hasPrefix .image "https://") }}
-            <img
-              src="{{ if $isExternalImg }}{{ .image }}{{ else }}{{ .image | relURL }}{{ end }}"
-              alt="{{ .name }}"
-              class="h-48 w-full object-cover md:h-64"
-              loading="lazy"
-            />
-          {{ end }}
+        {{ $isExternalImg := and .image (or (hasPrefix .image "http://") (hasPrefix .image "https://")) }}
+        {{ $imgSrc := "" }}
+        {{ if .image }}
+          {{ $imgSrc = cond $isExternalImg .image (.image | relURL) }}
+        {{ end }}
 
-          <div class="p-6 md:p-8">
+        <article class="group h-full">
+          {{ $cardInner := printf "block h-full" }}
+          <a
+            {{ if .link }}href="{{ .link }}" target="_blank" rel="noopener noreferrer"{{ end }}
+            class="block h-full"
+          >
             <div
-              class="mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-baseline"
+              class="border-border bg-card relative flex h-full min-h-64 flex-col overflow-hidden rounded-xl border p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg"
             >
-              <h3 class="text-foreground text-lg font-semibold md:text-xl">
-                {{ if .link }}
-                  <a
-                    href="{{ .link }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:text-primary underline decoration-dotted underline-offset-4"
-                    >{{ .name }}</a
-                  >
-                {{ else }}
-                  {{ .name }}
-                {{ end }}
-              </h3>
-              {{ if .status }}
-                <span class="text-muted-foreground text-sm whitespace-nowrap">
-                  {{ .status }}
-                </span>
+              <!-- Background image + gradient overlay -->
+              {{ if $imgSrc }}
+                <img
+                  src="{{ $imgSrc }}"
+                  alt="{{ .name }}"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div
+                  class="absolute inset-0 bg-linear-to-t from-black/90 via-black/60 to-black/30"
+                ></div>
+              {{ else }}
+                <div
+                  class="bg-primary/5 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                ></div>
               {{ end }}
-            </div>
 
-            {{ if .content }}
-              <div
-                class="prose prose-neutral dark:prose-invert mb-3 max-w-none"
-              >
-                {{ .content | markdownify }}
-              </div>
-            {{ end }}
+              {{ $textColorClass := "text-foreground" }}
+              {{ $mutedColorClass := "text-muted-foreground" }}
+              {{ $chipClass := "bg-muted/50 text-foreground border-muted/30" }}
+              {{ if $imgSrc }}
+                {{ $textColorClass = "text-white" }}
+                {{ $mutedColorClass = "text-white/80" }}
+                {{ $chipClass = "bg-white/20 text-white border-white/10 backdrop-blur-sm" }}
+              {{ end }}
 
-            {{ if .icons }}
-              <div class="flex flex-wrap gap-2">
-                {{ range .icons }}
-                  <span
-                    class="bg-muted flex h-8 w-8 items-center justify-center rounded-md"
-                    title="{{ .tooltip }}"
+              <!-- Text content, floats above the background -->
+              <div class="relative z-10 flex h-full flex-1 flex-col">
+                <div class="flex-1"></div>
+
+                <div class="mt-auto">
+                  <h3
+                    class="{{ $textColorClass }} group-hover:text-primary {{ if $imgSrc }}group-hover:text-white{{ end }} mb-2 text-xl leading-tight font-bold transition-colors duration-200"
                   >
-                    <img
-                      src="{{ .src | relURL }}"
-                      alt="{{ .tooltip }}"
-                      class="h-5 w-5"
-                    />
-                  </span>
-                {{ end }}
+                    {{ .name }}
+                  </h3>
+
+                  {{ if .status }}
+                    <p class="{{ $mutedColorClass }} mb-2 text-xs font-medium tracking-wide uppercase">
+                      {{ .status }}
+                    </p>
+                  {{ end }}
+
+                  {{ if .content }}
+                    <div class="{{ $mutedColorClass }} mb-4 line-clamp-3 text-sm leading-relaxed">
+                      {{ .content | markdownify }}
+                    </div>
+                  {{ end }}
+
+                  <!-- Tech chips -->
+                  {{ if .icons }}
+                    <div class="flex w-full flex-wrap gap-2 pt-1">
+                      {{ range .icons }}
+                        <span
+                          class="{{ $chipClass }} inline-flex shrink-0 items-center gap-1.5 rounded border px-2.5 py-0.5 text-xs font-medium"
+                        >
+                          <img src="{{ .src | relURL }}" alt="" class="h-3.5 w-3.5" />
+                          {{ .tooltip }}
+                        </span>
+                      {{ end }}
+                    </div>
+                  {{ end }}
+                </div>
               </div>
-            {{ end }}
-          </div>
-        </div>
+            </div>
+          </a>
+        </article>
       {{ end }}
     </div>
   </section>
