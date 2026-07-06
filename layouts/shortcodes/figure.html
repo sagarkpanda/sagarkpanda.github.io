@@ -8,10 +8,12 @@
 
      Unlike plain markdown images, width/height are known here (every call
      site already passes them), so we set them as real HTML attributes --
-     this is what prevents the browser from collapsing the image box to 0
-     height before it loads (the cause of the external-image layout-shift/
-     misclick bug), which plain markdown images from external hosts can't
-     get automatically since Hugo has no way to know their dimensions. */}}
+     this prevents layout shift for external images.
+
+     IMPORTANT:
+     Set the page Store flags so the theme knows this page contains images
+     and loads the gallery/lightbox JavaScript.
+*/}}
 
 {{ $src := .Get "src" }}
 {{ $alt := .Get "alt" | default "" }}
@@ -22,6 +24,9 @@
 {{ $attr := .Get "attr" }}
 {{ $attrlink := .Get "attrlink" }}
 {{ $extraClass := .Get "class" }}
+
+{{ .Page.Store.Set "hasImageFigure" true }}
+{{ .Page.Store.Set "hasLightboxFigure" true }}
 
 <figure
   class="image-figure not-prose my-8{{ with $extraClass }} {{ . }}{{ end }}"
@@ -47,12 +52,24 @@
       {{ with $title }}
         <span class="block font-medium">{{ . }}</span>
       {{ end }}
+
       {{ if or $caption $attr }}
         <span class="block">
-          {{ with $caption }}{{ . | markdownify }}{{ end }}
-          {{ if $attrlink }}<a href="{{ $attrlink }}" target="_blank" rel="noopener noreferrer">{{ end }}
-          {{ with $attr }}{{ . | markdownify }}{{ end }}
-          {{ if $attrlink }}</a>{{ end }}
+          {{ with $caption }}
+            {{ . | markdownify }}
+          {{ end }}
+
+          {{ if $attrlink }}
+            <a href="{{ $attrlink }}" target="_blank" rel="noopener noreferrer">
+          {{ end }}
+
+          {{ with $attr }}
+            {{ . | markdownify }}
+          {{ end }}
+
+          {{ if $attrlink }}
+            </a>
+          {{ end }}
         </span>
       {{ end }}
     </figcaption>

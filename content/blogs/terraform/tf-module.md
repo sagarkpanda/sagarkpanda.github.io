@@ -112,7 +112,7 @@ Cool, we just need to go to dev/users and run the config as usual to create my_i
 So lets see if it works as expected, do the tf init and tf plan and we should be able to see the name shown. Apply the config and indeed the was created.
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zYBYxEAcsnKkQSC0mMhmHQ.png)
-<br> </br>
+
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*SuIVPUM8ryNy3aLcoqceQg.png)
 
 Alright, that was a fairly easy and quick example to understand modules.
