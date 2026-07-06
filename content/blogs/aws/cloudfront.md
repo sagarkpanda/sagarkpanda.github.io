@@ -2,6 +2,7 @@
 date: '2026-04-19T10:15:10+05:30'
 draft: false
 title: 'Cache Me If You Can - AWS CloudFront in Action 🌏'
+cover: https://i.ibb.co/cSvqh9kd/x.jpg
 description: CloudFront is a CDN service that speeds up web content delivery by caching it on servers around the world.
 tags:
   - aws
@@ -11,7 +12,7 @@ tags:
   - cloud
 ---
 
-![thumbnail](https://i.ibb.co/cSvqh9kd/x.jpg)
+<!-- ![thumbnail](https://i.ibb.co/cSvqh9kd/x.jpg) -->
 
 ## Intro
 

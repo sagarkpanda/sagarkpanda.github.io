@@ -1,0 +1,113 @@
+{{/* 图片处理器 -- site-level override.
+     Adds one thing on top of the theme's original: for external images
+     (Medium/ibb.co/etc.), it now tries fetching them at BUILD TIME via
+     resources.GetRemote purely to read their real width/height -- the
+     actual <img src> displayed on the page still points at the original
+     external URL (no re-hosting, no repo/artifact size increase). This
+     gives external images real width/height attributes just like local
+     ones, which is what actually prevents layout-shift/crop/stretch
+     issues -- not a CSS guess.
+     If the fetch fails for any reason (network blip, host blocks it,
+     not an image, etc.) it fails silently and falls back to the
+     original behavior (no width/height, current CSS fallback applies).
+     Requires config/_default/hugo.yaml to allow the relevant hosts under
+     security.http.urls (see that file). */}}
+
+{{- $context := .context -}}
+{{- $src := .src | string -}}
+{{- $alt := .alt | default "" -}}
+{{- $caption := .caption | default "" -}}
+{{- $enablePlaceholder := .enablePlaceholder | default true -}}
+{{- $outputType := .outputType | default "both" -}}
+
+{{- $resource := false -}}
+{{- $resourceType := "" -}}
+{{- $isExternal := false -}}
+{{- $finalUrl := "" -}}
+{{- $searchPath := $src -}}
+{{- $isRootRelative := hasPrefix $src "/" -}}
+{{- $knownWidth := 0 -}}
+{{- $knownHeight := 0 -}}
+
+{{- if or
+  (hasPrefix $src "http://")
+  (hasPrefix $src "https://")
+  (hasPrefix $src "data:")
+  (hasPrefix $src "blob:")
+-}}
+  {{- $isExternal = true -}}
+  {{- $resourceType = "external" -}}
+  {{- $finalUrl = $src -}}
+
+  {{/* NEW: try to fetch just for dimension metadata; display URL stays
+       the original external one regardless of outcome. */}}
+  {{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+    {{- $remote := try (resources.GetRemote $src) -}}
+    {{- with $remote -}}
+      {{- if .Err -}}
+        {{/* fetch failed -- fall back silently, no width/height */}}
+      {{- else if .Value -}}
+        {{- $remoteMediaType := .Value.MediaType.SubType -}}
+        {{- if in (slice "jpeg" "jpg" "png" "gif" "webp") $remoteMediaType -}}
+          {{- $knownWidth = .Value.Width -}}
+          {{- $knownHeight = .Value.Height -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if hasPrefix $src "./" -}}
+    {{- $searchPath = strings.TrimPrefix "./" $src -}}
+  {{- else if hasPrefix $src "/" -}}
+    {{- $searchPath = strings.TrimPrefix "/" $src -}}
+  {{- end -}}
+
+  {{- if not $isRootRelative -}}
+    {{- with $context.Resources.GetMatch $searchPath -}}
+      {{- $resource = . -}}
+      {{- $resourceType = "page" -}}
+      {{- $finalUrl = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $resource -}}
+    {{- with resources.Get $searchPath -}}
+      {{- $resource = . -}}
+      {{- $resourceType = "global" -}}
+      {{- $finalUrl = .RelPermalink -}}
+    {{- else -}}
+      {{- $resourceType = "static" -}}
+      {{- $finalUrl = $searchPath | relURL -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if or (eq $outputType "data") (eq $outputType "both") -}}
+  {{- $context.Scratch.Set "imageResource" $resource -}}
+  {{- $context.Scratch.Set "imageUrl" $finalUrl -}}
+  {{- $context.Scratch.Set "imageType" $resourceType -}}
+  {{- $context.Scratch.Set "isExternal" $isExternal -}}
+{{- end -}}
+
+{{- if or (eq $outputType "img") (eq $outputType "both") -}}
+  <img
+    src="{{ $finalUrl }}"
+    alt="{{ $alt }}"
+    {{ with $caption }}title="{{ . }}"{{ end }}
+    {{ if and $resource (not $isExternal) }}
+      {{ $mediaType := $resource.MediaType.SubType }}
+      {{ if in (slice "jpeg" "jpg" "png" "gif" "webp" "svg") $mediaType }}
+        {{ if ne $mediaType "svg" }}
+          width="{{ $resource.Width }}" height="{{ $resource.Height }}"
+        {{ end }}
+      {{ end }}
+    {{ else if and (gt $knownWidth 0) (gt $knownHeight 0) }}
+      width="{{ $knownWidth }}" height="{{ $knownHeight }}"
+    {{ end }}
+    loading="lazy"
+    decoding="async"
+    data-gallery-src="{{ $finalUrl }}"
+    data-gallery-alt="{{ $alt }}"
+    data-gallery-title="{{ $caption }}"
+  />
+{{- end -}}

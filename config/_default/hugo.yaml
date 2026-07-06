@@ -73,3 +73,11 @@ module:
   hugoVersion:
     extended: true
     min: 0.158.0
+
+# Required for resources.GetRemote to fetch external image dimensions at
+# build time (image-processor.html override). Blocked by default for
+# security -- this only allows HTTPS fetches, still no arbitrary exec/etc.
+security:
+  http:
+    urls:
+      - "^https://.*"

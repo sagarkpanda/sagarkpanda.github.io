@@ -114,34 +114,87 @@ class ImageGallery {
 
   processImages() {
     const imageFigures = document.querySelectorAll('.image-figure[data-gallery-type="auto"]');
-    if (imageFigures.length === 0) {
+
+    if (imageFigures.length > 0) {
+      const groups = this.detectImageGroups(imageFigures);
+
+      /* Fix: standalone (non-adjacent) images used to each get their own
+         isolated 1-item gallery, so the lightbox always showed "1 / 1" even
+         when the post had several images elsewhere, separated by text.
+         We now collect every standalone figure across the whole page and
+         register them together as one shared gallery, so Next/Prev can
+         step through all of a post's images regardless of where text sits
+         between them. Visually-adjacent groups (real image grids) are
+         untouched and keep their own separate gallery, since merging those
+         would break the grid layout. */
+      const standaloneFigures = [];
+
+      groups.forEach((group, index) => {
+        if (group.length > 1 && this.config.gallery) {
+          this.createGalleryGroup(group, index);
+        } else {
+          standaloneFigures.push(...group);
+        }
+      });
+
+      if (standaloneFigures.length > 0) {
+        this.processIndividualImages(standaloneFigures);
+      }
+    }
+
+    this.processFallbackImages();
+  }
+
+  /* Fix: images written as raw HTML directly in markdown (e.g. a
+     hand-written <img> tag, or a shortcode that doesn't use the theme's
+     own image-processor partial) bypass the whole .image-figure pipeline
+     above -- gallery.js never even sees them, so clicking does nothing at
+     all. This is a safety net: any plain <img> inside the post body that
+     ISN'T already part of the .image-figure system above gets its own
+     1-item lightbox gallery, using its real src/width/height if present
+     (falling back to natural size once loaded, or a sane default). */
+  processFallbackImages() {
+    if (!this.lightbox) {
       return;
     }
 
-    const groups = this.detectImageGroups(imageFigures);
+    const candidates = document.querySelectorAll(
+      'article img, .prose img, .post-content img'
+    );
 
-    /* Fix: standalone (non-adjacent) images used to each get their own
-       isolated 1-item gallery, so the lightbox always showed "1 / 1" even
-       when the post had several images elsewhere, separated by text.
-       We now collect every standalone figure across the whole page and
-       register them together as one shared gallery, so Next/Prev can
-       step through all of a post's images regardless of where text sits
-       between them. Visually-adjacent groups (real image grids) are
-       untouched and keep their own separate gallery, since merging those
-       would break the grid layout. */
-    const standaloneFigures = [];
-
-    groups.forEach((group, index) => {
-      if (group.length > 1 && this.config.gallery) {
-        this.createGalleryGroup(group, index);
-      } else {
-        standaloneFigures.push(...group);
+    candidates.forEach((img) => {
+      if (img.closest('.image-figure')) {
+        return; // already handled above
       }
-    });
+      if (img.dataset.lightboxFallbackBound) {
+        return; // avoid double-binding if selectors overlap
+      }
+      img.dataset.lightboxFallbackBound = 'true';
 
-    if (standaloneFigures.length > 0) {
-      this.processIndividualImages(standaloneFigures);
-    }
+      const src = img.currentSrc || img.src;
+      if (!src) {
+        return;
+      }
+
+      const width = parseInt(img.getAttribute('width'), 10) || img.naturalWidth || 800;
+      const height = parseInt(img.getAttribute('height'), 10) || img.naturalHeight || 600;
+
+      const galleryId = 'fallback-image-' + String(this.singleImageCount);
+      this.singleImageCount += 1;
+
+      this.lightbox.registerGallery(galleryId, [{
+        src,
+        width,
+        height,
+        alt: img.alt || '',
+        captionHTML: ''
+      }]);
+
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        this.lightbox.open(galleryId, 0, { triggerElement: img });
+      });
+    });
   }
 
   detectImageGroups(figures) {
