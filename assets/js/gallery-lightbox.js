@@ -195,14 +195,26 @@ class GalleryLightbox {
     const previous = root.querySelector('.gallery-lightbox__nav--prev');
     const next = root.querySelector('.gallery-lightbox__nav--next');
 
+    // dialog.addEventListener('click', (event) => {
+    //   if (
+    //     !event.target.closest('.gallery-lightbox__media')
+    //     && !event.target.closest('.gallery-lightbox__nav')
+    //     && !event.target.closest('.gallery-lightbox__close')
+    //   ) {
+    //     this.close();
+    //   }
+    // });
+
     dialog.addEventListener('click', (event) => {
       if (
-        !event.target.closest('.gallery-lightbox__media')
-        && !event.target.closest('.gallery-lightbox__nav')
-        && !event.target.closest('.gallery-lightbox__close')
+        event.target.closest('.gallery-lightbox__image')
+        || event.target.closest('.gallery-lightbox__nav')
+        || event.target.closest('.gallery-lightbox__close')
       ) {
-        this.close();
+        return;
       }
+
+      this.close();
     });
 
     close.addEventListener('click', () => this.close());
