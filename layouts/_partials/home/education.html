@@ -1,0 +1,59 @@
+{{/* Education section for the homepage.
+     Reads site.Params.education = { title, items[] } where each item is:
+     { degree, school, schoolUrl, date, gpa, content } */}}
+{{ $edu := site.Params.education }}
+
+{{ if $edu }}
+  <section id="education" class="education-section scroll-mt-28">
+    {{ if $edu.title }}
+      <h2 class="text-foreground mb-8 text-2xl font-bold md:text-3xl">
+        {{ $edu.title }}
+      </h2>
+    {{ end }}
+
+    <div class="flex flex-col gap-6">
+      {{ range $edu.items }}
+        <div class="bg-card border-border rounded-xl border p-6 shadow-sm md:p-8">
+          <div
+            class="mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-baseline"
+          >
+            <h3 class="text-foreground text-lg font-semibold md:text-xl">
+              {{ .degree }}
+              <span class="text-muted-foreground font-normal">
+                ·
+                {{ if .schoolUrl }}
+                  <a
+                    href="{{ .schoolUrl }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-primary underline decoration-dotted underline-offset-4"
+                    >{{ .school }}</a
+                  >
+                {{ else }}
+                  {{ .school }}
+                {{ end }}
+              </span>
+            </h3>
+            {{ if .date }}
+              <span class="text-muted-foreground text-sm whitespace-nowrap">
+                {{ .date }}
+              </span>
+            {{ end }}
+          </div>
+
+          {{ if .gpa }}
+            <p class="text-muted-foreground mb-2 text-sm">GPA: {{ .gpa }}</p>
+          {{ end }}
+
+          {{ if .content }}
+            <div
+              class="prose prose-neutral dark:prose-invert max-w-none"
+            >
+              {{ .content | markdownify }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

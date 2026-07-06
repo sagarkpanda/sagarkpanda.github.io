@@ -1,0 +1,15 @@
+{
+  "name": "sagarpanda-site",
+  "version": "1.0.0",
+  "private": true,
+  "_comment": "Required now: several homepage/lightbox customizations use Tailwind classes beyond what the theme ships precompiled. `npm run compile` regenerates assets/css/compiled.css (a site-level override, doesn't touch the theme submodule) by scanning both this repo's layouts/assets/js AND the theme's, since Tailwind v4's auto-detection scans the whole project tree from wherever package.json lives.",
+  "scripts": {
+    "compile": "tailwindcss -i ./themes/hugo-narrow/assets/css/main.css -o ./assets/css/compiled.css --minify",
+    "dev": "npm run compile && hugo server -D",
+    "build": "npm run compile && hugo --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}

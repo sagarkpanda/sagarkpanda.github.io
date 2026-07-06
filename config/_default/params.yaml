@@ -1,0 +1,343 @@
+# Basic site info with SEO
+description: "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing expert tutorials on cloud infrastructure and CI/CD automation."
+keywords: ["DevOps", "AWS", "Kubernetes", "Terraform", "CI/CD", "Cloud Infrastructure"]
+defaultAuthor: "Sagar Panda"
+language: "en"
+shortName: "Sagar Panda"
+images:
+  - "/images/og-image.jpg"
+
+favicon:
+  # Narrow expects an SVG favicon; circle_profile.webp is kept as the author
+  # avatar below. Swap this for a real favicon.svg for best results.
+  svg: "/images/circle_profile.webp"
+
+# Author info (shown in the homepage author-section and site-wide meta)
+author:
+  name: "Sagar Panda"
+  title: "DevOps & Cloud Infrastructure Engineer"
+  description: "A DevOps engineer focused on cloud infrastructure, automation, and scalable platforms. I enjoy designing resilient systems, improving deployment pipelines, and making software delivery faster and more reliable."
+  avatar: "/images/circle_profile.webp"
+  social:
+    - name: "GitHub"
+      url: "https://github.com/sagarkpanda"
+      icon: "github"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/sagarkpanda/"
+      icon: "linkedin"
+    - name: "Email"
+      url: "mailto:sagar.chip239@aleeas.com"
+      icon: "email"
+    - name: "Medium"
+      url: "https://sagarkpanda.medium.com/"
+      icon: "medium"
+
+# Header configuration
+header:
+  sticky: true
+  logo:
+    image: "/images/circle_profile.webp"
+    link: "/"
+  showThemeSwitch: true
+  showDarkModeSwitch: true
+  showLanguageSwitch: false
+  languageSwitchMode: "dropdown"
+
+dock: "scroll"
+contentWidth: "56rem"
+
+toc:
+  enabled: true
+  position: "center"
+
+colorScheme: "Sunset"
+themes:
+  default:
+    name: "Default"
+    order: 1
+  claude:
+    name: "Claude"
+    order: 2
+  bumblebee:
+    name: "Bumblebee"
+    order: 3
+  emerald:
+    name: "Emerald"
+    order: 4
+  nord:
+    name: "Nord"
+    order: 5
+  sunset:
+    name: "Sunset"
+    order: 6
+  abyss:
+    name: "Abyss"
+    order: 7
+  dracula:
+    name: "Dracula"
+    order: 8
+  amethyst:
+    name: "Amethyst"
+    order: 9
+  slate:
+    name: "Slate"
+    order: 10
+  twitter:
+    name: "Twitter"
+    order: 11
+  minimal:
+    name: "Minimal"
+    order: 12
+
+# Homepage-only container width (see layouts/baseof.html override)
+homeContentWidth: "80rem"
+
+# Home page configuration
+home:
+  recentPostsCount: 3
+  contentOrder:
+    - author-section
+    - about-me
+    - skills
+    - projects
+    - experience
+    - education
+    - contact
+    - recent-posts
+
+# Post configuration
+post:
+  showRelated: true
+  relatedPostsCount: 3
+  license:
+    show: false
+
+# Comments (off by default -- enable and fill in a provider when ready)
+comments:
+  enabled: false
+  system: "giscus"
+
+# Analytics (off by default -- fill in an id and flip to true when ready)
+analytics:
+  enabled: false
+
+katex:
+  enabled: true
+
+mermaid:
+  enabled: true
+
+gallery:
+  enabled: true
+
+lightbox:
+  enabled: true
+
+codeblock:
+  collapse:
+    enabled: true
+    defaultState: expanded
+    autoCollapseLines: 30
+    autoCollapseHeight: 400
+    collapsedHeight: 120
+
+readingProgress:
+  enabled: true
+  showOnHomepage: false
+
+dateFormat:
+  full: ":date_full"
+  long: ":date_long"
+  medium: ":date_medium"
+  short: ":date_short"
+
+# Skills pill list (rendered by layouts/_partials/home/skills.html)
+# About Me section (rendered by layouts/_partials/home/about-me.html), shown before Skills
+aboutMe:
+  title: "About Me"
+  image: "/images/red_bg_full.webp"
+  content: |
+    I'm a Senior DevOps Engineer with 7+ years of experience building cloud-native platforms and automating software delivery. My work focuses on creating reliable infrastructure using AWS, Kubernetes, Terraform, GitOps, and CI/CD, enabling development teams to ship software faster and with greater confidence.
+
+    Over the years, I've worked on enterprise-scale microservices migrations, infrastructure automation, deployment optimization, and platform engineering initiatives. I also enjoy documenting what I learn through in-depth tutorials, open-source projects, and practical guides covering cloud infrastructure, Kubernetes, GitHub Actions, observability, and modern DevSecOps practices.
+
+    Whether you're here to explore my projects, read a tutorial, or learn about my professional journey, I hope you find something useful. Here are a few of the tools and technologies I've been working with recently:
+
+# Skills pill list (rendered by layouts/_partials/home/skills.html)
+skills:
+  items:
+    - name: "AWS"
+      icon: "/images/aws.svg"
+    - name: "Jenkins"
+      icon: "/images/jenkins.svg"
+    - name: "GitHub Actions"
+      icon: "/images/github-actions.svg"
+    - name: "GitLab CI/CD"
+      icon: "/images/gitlab.svg"
+    - name: "Ansible"
+      icon: "/images/ansible.svg"
+    - name: "Terraform"
+      icon: "/images/terraform.svg"
+    - name: "Docker"
+      icon: "/images/docker.svg"
+    - name: "Kubernetes"
+      icon: "/images/kubernetes.svg"
+    - name: "Argo CD"
+      icon: "/images/argo.svg"
+    - name: "Linux"
+      icon: "/images/linux.svg"
+    - name: "Apache/Nginx"
+      icon: "/images/nginx.svg"
+    - name: "SonarQube"
+      icon: "/images/sonarqube.svg"
+    - name: "Prometheus"
+      icon: "/images/prometheus.svg"
+    - name: "Grafana"
+      icon: "/images/grafana.svg"
+
+# Projects (rendered by layouts/_partials/home/projects.html)
+projects:
+  title: "Projects"
+  items:
+    - name: "OTel Labs Platform"
+      link: "https://github.com/sagarkpanda/otel-labs-platform"
+      status: "Completed"
+      content: |
+        GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS. Provisions the cluster with Terraform and deploys ArgoCD, Traefik, and the OpenTelemetry Collector via GitOps, exporting metrics/logs/traces to New Relic and Honeycomb. The companion `otel-labs` repo holds the instrumented demo apps (Node frontend, Python orders API, Go inventory API) this cluster runs.
+      icons:
+        - src: "/images/aws.svg"
+          tooltip: "AWS / EKS"
+        - src: "/images/terraform.svg"
+          tooltip: "Terraform"
+        - src: "/images/argo.svg"
+          tooltip: "ArgoCD"
+        - src: "/images/kubernetes.svg"
+          tooltip: "Kubernetes"
+
+    - name: "My New Project"
+      link: "https://github.com/sagarkpanda/some-repo"
+      status: "In Progress"
+      image: "/images/og-image.jpg" # testing for now.
+      content: |
+        GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, prov
+      icons:
+        - src: "/images/docker.svg"
+          tooltip: "Docker"
+
+# Experience (rendered by layouts/_partials/home/experience.html)
+experience:
+  title: "Experience"
+  items:
+    - company: "Wipro"
+      companyUrl: "https://www.wipro.com/"
+      jobs:
+        - name: "Sr. Software Engineer"
+          date: "Nov 2024 - present"
+          content: |
+            I am currently working as a Sr DevOps engineer at Wipro. I am currently working on a project that generates shelf labels for retail stores for Metro Cash and Carry.
+            - Led migration of 30+ microservices to Kubernetes via GitOps workflow with Argo CD, eliminating manual deployments and reducing release risk for a global retail client (Metro AG)
+            - Managed Kubernetes resources (Deployments, Services, ConfigMaps, Secrets, Ingress) using Helm and Kustomize across dev, staging, and production environments.
+            - Designed GitLab CI pipelines for build, test, deployment, and Semgrep SAST scanning,integrated HashiCorp Vault for secure secrets management across all workloads.
+            - Implemented OpenTelemetry-based distributed tracing and observability, enabling proactive incident detection across microservices.
+
+          icons:
+            - src: "/images/kubernetes.svg"
+              url: "https://kubernetes.io"
+              tooltip: "Kubernetes"
+            - src: "/images/argo.svg"
+              url: "https://argoproj.github.io/"
+              tooltip: "Argo CD"
+            - src: "/images/gitlab.svg"
+              url: "https://about.gitlab.com/"
+              tooltip: "GitLab"
+
+    - company: "Valeo"
+      companyUrl: "https://www.valeo.com/en/"
+      jobs:
+        - name: "DevOps Engineer"
+          date: "Aug 2023 - Oct 2024"
+          content: |
+            I worked as a DevOps engineer at Valeo, focusing on automotive software development and deployment.
+            - Designed and optimized Jenkins pipelines, reducing build and testing cycle times from days to hours across 10+ concurrent OEM automotive projects.
+            - Automated code quality and security scanning with SonarQube and KlocWork; managed AWS infrastructure using Terraform for repeatable provisioning.
+            - Implemented monitoring and alerting dashboards with Prometheus and Grafana across Development, QA, and Production environments.
+          icons:
+            - src: "/images/aws.svg"
+              url: "https://aws.amazon.com/"
+              tooltip: "AWS"
+            - src: "/images/jenkins.svg"
+              url: "https://www.jenkins.io/"
+              tooltip: "Jenkins"
+            - src: "/images/docker.svg"
+              url: "https://www.docker.com/"
+              tooltip: "Docker"
+            - src: "/images/terraform.svg"
+              url: "https://developer.hashicorp.com/terraform"
+              tooltip: "Terraform"
+
+    - company: "Waycool Foods"
+      companyUrl: "https://waycool.in"
+      jobs:
+        - name: "DevOps Engineer"
+          date: "Jan 2022 - July 2023"
+          content: |
+            I worked as a devops engineer at Waycool foods focusing on web and mobile application operations that help farmers and businesses.
+            - Initiated and established the foundational DevOps process, implementing Jenkins, Docker, SonarQube, and Nexus.
+            - Migrated applications to multi-cloud platforms (AWS/Azure) utilizing web servers (Nginx, Apache) on Linux instances.
+            - Produced a Proof of Concept (POC) for infrastructure deployment using Kubernetes and Terraform.
+            - Secured applications by implementing TLS certificates and eliminated vulnerable SFTP deployment practices.
+            - Improved time-to-market for key applications (IGrade and SunnyBee).
+          icons:
+            - src: "/images/aws.svg"
+              url: "https://aws.amazon.com/"
+              tooltip: "AWS"
+            - src: "/images/jenkins.svg"
+              tooltip: "Jenkins"
+            - src: "/images/ansible.svg"
+              url: "https://www.redhat.com/en/ansible-collaborative"
+              tooltip: "Ansible"
+
+    - company: "Straive"
+      companyUrl: "https://www.straive.com"
+      jobs:
+        - name: "Automation Engineer"
+          date: "Nov 2019 - Jan 2022"
+          content: |
+            As an Automation engineer at Straive, I automated web app testing.
+            - Automated web application testing using Python, Selenium, and SQL.
+            - Configured CI environment on AWS by setting up Jenkins and SonarQube for automated test suite execution
+
+# Education (rendered by layouts/_partials/home/education.html)
+education:
+  title: "Education"
+  items:
+    - degree: "Master of Computer Applications"
+      school: "Biju Pattnaik University of Technology, Odisha"
+      schoolUrl: "https://www.bput.ac.in"
+      date: "2015 - 2018"
+      gpa: "8.2 out of 10"
+      content: |
+        Specialization
+        - Computer Applications
+        - OS and Networking
+        - Programming Languages
+    - degree: "Bachelor of Computer Applications"
+      school: "Berhampur University, Odisha"
+      schoolUrl: "https://buodisha.edu.in/"
+      date: "2012 - 2015"
+      gpa: "7.8 out of 10"
+
+# Contact (rendered by layouts/_partials/home/contact.html)
+contact:
+  title: "Get in Touch"
+  content: "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!"
+  btnName: "Mail me"
+  btnLink: "mailto:sagar.chip239@aleeas.com"
+  social:
+    - name: "Telegram"
+      url: "https://t.me/artisticw1zard"
+      icon: "telegram"
+    - name: "Bluesky"
+      url: "#"
+      icon: "bluesky"
+

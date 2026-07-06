@@ -1,0 +1,34 @@
+/* Site-level custom CSS overrides for sagarpanda.com (Hugo Narrow theme).
+   This file is imported by the theme's own main.css via
+   `@layer utilities { @import "./custom.css"; }` and Hugo's site-level
+   asset mount takes precedence over the theme's own (empty) version. */
+
+/* Fix: lightbox close button used a bare "&times;" text glyph that renders
+   off-center on some fonts. It's now an inline SVG (see gallery-lightbox.js
+   override) matching the prev/next nav buttons -- this sizes/centers it. */
+.gallery-lightbox__close svg {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Reduce image caption font size below post body text */
+.image-caption {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Fix: external hotlinked images (Medium/Miro/etc.) get no width/height
+   HTML attributes from the theme's image processor, since their real
+   dimensions aren't known at build time. Without reserved space, the
+   browser collapses their box to 0 height until the image finishes
+   loading, which shifts everything below it -- so a click aimed at where
+   the image *will* be can land on the wrong element while it's still
+   loading. This was almost certainly why the lightbox worked for some
+   external images and not others (pure timing/scroll-position luck).
+   Reserving a sensible aspect ratio up front fixes the shift. */
+.image-container img:not([width]) {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background-color: var(--color-muted);
+}

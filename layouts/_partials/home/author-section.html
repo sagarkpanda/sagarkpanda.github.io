@@ -1,0 +1,94 @@
+{{/* Site-level override of theme's home/author-section.html
+     Goal: a proper "portfolio hero" instead of the theme's compact card —
+     bigger avatar, bigger type, and CTA buttons into Blog / About. */}}
+{{ $author := .Params.author | default site.Params.author }}
+{{ $avatarSrc := strings.TrimPrefix "/" ($author.avatar | default "") }}
+
+{{ if $author }}
+  <section id="hero" class="author-section scroll-mt-28">
+    <div
+      class="bg-card border-border relative overflow-hidden rounded-2xl border p-10 shadow-sm md:p-14"
+    >
+      <!-- subtle brand backdrop -->
+      <div
+        class="from-primary/10 pointer-events-none absolute inset-0 bg-gradient-to-br via-transparent to-transparent"
+      ></div>
+
+      <div
+        class="relative flex flex-col items-center gap-8 text-center md:flex-row md:items-center md:text-left"
+      >
+        <!-- Avatar -->
+        <div class="shrink-0">
+          {{ if $author.avatar }}
+            <img
+              src="{{ $avatarSrc | relURL }}"
+              alt="{{ $author.name | default site.Title }}"
+              class="border-primary/30 h-32 w-32 rounded-full border-4 object-cover shadow-lg md:h-40 md:w-40"
+            />
+          {{ else }}
+            <div
+              class="bg-primary text-primary-foreground flex h-32 w-32 items-center justify-center rounded-full text-4xl font-bold shadow-lg md:h-40 md:w-40"
+            >
+              {{ substr ($author.name | default site.Title) 0 1 | upper }}
+            </div>
+          {{ end }}
+        </div>
+
+        <!-- Identity -->
+        <div class="min-w-0 flex-1">
+          <h1 class="text-foreground mb-2 text-4xl font-bold md:text-5xl">
+            {{ $author.name | default site.Title }}
+          </h1>
+
+          {{ if $author.title }}
+            <p class="text-primary mb-4 text-xl font-medium md:text-2xl">
+              {{ $author.title }}
+            </p>
+          {{ end }}
+
+          {{ if $author.description }}
+            <p class="text-muted-foreground mb-6 max-w-2xl text-base leading-relaxed md:text-lg">
+              {{ $author.description }}
+            </p>
+          {{ end }}
+
+          <!-- CTAs -->
+          <div class="mb-6 flex flex-wrap justify-center gap-3 md:justify-start">
+            <a
+              href="{{ "blogs" | relLangURL }}"
+              class="bg-primary text-primary-foreground inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold shadow-sm transition-transform duration-200 ease-out hover:-translate-y-0.5"
+            >
+              Checkout my Blogs
+            </a>
+            <a
+              href="#experience"
+              class="bg-muted text-foreground hover:bg-muted/70 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-transform duration-200 ease-out hover:-translate-y-0.5"
+            >
+              View Experience
+            </a>
+          </div>
+
+          <!-- Social links -->
+          {{ if $author.social }}
+            <div class="flex flex-wrap justify-center gap-3 md:justify-start">
+              {{ range $author.social }}
+                <a
+                  href="{{ .url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-muted text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 inline-flex items-center gap-2 rounded-lg px-3 py-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+                  title="{{ .name }}"
+                >
+                  {{ if .icon }}
+                    {{ partial "features/icon.html" (dict "name" .icon "size" "sm" "ariaLabel" .name) }}
+                  {{ end }}
+                  <span class="text-sm font-medium">{{ .name }}</span>
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

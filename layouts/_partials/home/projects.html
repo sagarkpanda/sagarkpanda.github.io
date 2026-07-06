@@ -1,0 +1,83 @@
+{{/* Projects section for the homepage, placed before Experience.
+     Reads site.Params.projects = { title, items[] } where each item is:
+     { name, link, status, image (optional), content, icons: [{src, tooltip}] }
+     `image` is optional -- if set, shows a banner at the top of the card;
+     if omitted, the card just renders as text like before. To add a new
+     project, add another entry under `projects.items` in params.yaml. */}}
+{{ $projects := site.Params.projects }}
+
+{{ if $projects }}
+  <section id="projects" class="projects-section scroll-mt-28">
+    {{ if $projects.title }}
+      <h2 class="text-foreground mb-8 text-2xl font-bold md:text-3xl">
+        {{ $projects.title }}
+      </h2>
+    {{ end }}
+
+    <div class="flex flex-col gap-6">
+      {{ range $projects.items }}
+        <div class="bg-card border-border overflow-hidden rounded-xl border shadow-sm">
+          {{ if .image }}
+            {{ $isExternalImg := or (hasPrefix .image "http://") (hasPrefix .image "https://") }}
+            <img
+              src="{{ if $isExternalImg }}{{ .image }}{{ else }}{{ .image | relURL }}{{ end }}"
+              alt="{{ .name }}"
+              class="h-48 w-full object-cover md:h-64"
+              loading="lazy"
+            />
+          {{ end }}
+
+          <div class="p-6 md:p-8">
+            <div
+              class="mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-baseline"
+            >
+              <h3 class="text-foreground text-lg font-semibold md:text-xl">
+                {{ if .link }}
+                  <a
+                    href="{{ .link }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-primary underline decoration-dotted underline-offset-4"
+                    >{{ .name }}</a
+                  >
+                {{ else }}
+                  {{ .name }}
+                {{ end }}
+              </h3>
+              {{ if .status }}
+                <span class="text-muted-foreground text-sm whitespace-nowrap">
+                  {{ .status }}
+                </span>
+              {{ end }}
+            </div>
+
+            {{ if .content }}
+              <div
+                class="prose prose-neutral dark:prose-invert mb-3 max-w-none"
+              >
+                {{ .content | markdownify }}
+              </div>
+            {{ end }}
+
+            {{ if .icons }}
+              <div class="flex flex-wrap gap-2">
+                {{ range .icons }}
+                  <span
+                    class="bg-muted flex h-8 w-8 items-center justify-center rounded-md"
+                    title="{{ .tooltip }}"
+                  >
+                    <img
+                      src="{{ .src | relURL }}"
+                      alt="{{ .tooltip }}"
+                      class="h-5 w-5"
+                    />
+                  </span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

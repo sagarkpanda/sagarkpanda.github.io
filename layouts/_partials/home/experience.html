@@ -1,0 +1,85 @@
+{{/* Experience section for the homepage.
+     Reads site.Params.experience = { title, items[] } where each item is:
+     { company, companyUrl, jobs: [ { name, date, content, icons: [{src,url,tooltip}] } ] } */}}
+{{ $exp := site.Params.experience }}
+
+{{ if $exp }}
+  <section id="experience" class="experience-section scroll-mt-28">
+    {{ if $exp.title }}
+      <h2 class="text-foreground mb-8 text-2xl font-bold md:text-3xl">
+        {{ $exp.title }}
+      </h2>
+    {{ end }}
+
+    <div class="flex flex-col gap-8">
+      {{ range $exp.items }}
+        {{ $company := .company }}
+        {{ $companyUrl := .companyUrl }}
+        <div class="bg-card border-border rounded-xl border p-6 shadow-sm md:p-8">
+          {{ range .jobs }}
+            <div class="mb-8 last:mb-0">
+              <div
+                class="mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-baseline"
+              >
+                <h3 class="text-foreground text-lg font-semibold md:text-xl">
+                  {{ .name }}
+                  <span class="text-muted-foreground font-normal">
+                    ·
+                    {{ if $companyUrl }}
+                      <a
+                        href="{{ $companyUrl }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-primary underline decoration-dotted underline-offset-4"
+                        >{{ $company }}</a
+                      >
+                    {{ else }}
+                      {{ $company }}
+                    {{ end }}
+                  </span>
+                </h3>
+                {{ if .date }}
+                  <span class="text-muted-foreground text-sm whitespace-nowrap">
+                    {{ .date }}
+                  </span>
+                {{ end }}
+              </div>
+
+              {{ if .content }}
+                <div
+                  class="prose prose-neutral dark:prose-invert mb-3 max-w-none"
+                >
+                  {{ .content | markdownify }}
+                </div>
+              {{ end }}
+
+              {{ if .icons }}
+                <div class="flex flex-wrap gap-2">
+                  {{ range .icons }}
+                    {{ $img := printf `<img src="%s" alt="%s" class="h-5 w-5" title="%s" />` (relURL .src) .tooltip .tooltip }}
+                    {{ if .url }}
+                      <a
+                        href="{{ .url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-muted hover:bg-primary/10 flex h-8 w-8 items-center justify-center rounded-md transition-colors duration-200"
+                      >
+                        {{ $img | safeHTML }}
+                      </a>
+                    {{ else }}
+                      <span
+                        class="bg-muted flex h-8 w-8 items-center justify-center rounded-md"
+                      >
+                        {{ $img | safeHTML }}
+                      </span>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

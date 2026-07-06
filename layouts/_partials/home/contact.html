@@ -1,0 +1,51 @@
+{{/* Contact section for the homepage.
+     Reads site.Params.contact = { title, content, btnName, btnLink } */}}
+{{ $contact := site.Params.contact }}
+
+{{ if $contact }}
+  <section id="contact" class="contact-section scroll-mt-28">
+    <div
+      class="bg-card border-border rounded-xl border p-8 text-center shadow-sm md:p-12"
+    >
+      {{ if $contact.title }}
+        <h2 class="text-foreground mb-4 text-2xl font-bold md:text-3xl">
+          {{ $contact.title }}
+        </h2>
+      {{ end }}
+
+      {{ if $contact.content }}
+        <p class="text-muted-foreground mx-auto mb-6 max-w-xl leading-relaxed">
+          {{ $contact.content }}
+        </p>
+      {{ end }}
+
+      {{ if $contact.btnLink }}
+        <a
+          href="{{ $contact.btnLink }}"
+          class="bg-primary text-primary-foreground inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold shadow-sm transition-transform duration-200 ease-out hover:-translate-y-0.5"
+        >
+          {{ $contact.btnName | default "Contact Me" }}
+        </a>
+      {{ end }}
+
+      {{ if $contact.social }}
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          {{ range $contact.social }}
+            <a
+              href="{{ .url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-muted text-muted-foreground hover:text-primary hover:bg-primary/10 inline-flex items-center gap-2 rounded-lg px-3 py-2 transition-all duration-300 ease-out hover:-translate-y-0.5"
+              title="{{ .name }}"
+            >
+              {{ if .icon }}
+                {{ partial "features/icon.html" (dict "name" .icon "size" "sm" "ariaLabel" .name) }}
+              {{ end }}
+              <span class="text-sm font-medium">{{ .name }}</span>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

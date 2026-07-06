@@ -1,0 +1,99 @@
+main:
+  - name: About
+    url: /#hero
+    weight: 5
+    params:
+      icon: about
+
+  - name: Projects
+    url: /#projects
+    weight: 10
+    params:
+      icon: projects
+
+  - name: Experience
+    url: /#experience
+    weight: 15
+    params:
+      icon: briefcase
+
+  - name: Education
+    url: /#education
+    weight: 20
+    params:
+      icon: book-open
+
+  - name: Contact
+    url: /#contact
+    weight: 25
+    params:
+      icon: contact
+
+  - name: Blog
+    pageRef: /blogs
+    weight: 30
+    params:
+      icon: posts
+
+  - name: More
+    weight: 35
+    params:
+      icon: layers
+
+  - name: Archives
+    weight: 1
+    pageRef: /archives
+    parent: More
+    params:
+      icon: archive
+
+  - name: Tags
+    weight: 2
+    pageRef: /tags
+    parent: More
+    params:
+      icon: tags
+
+  - name: Series
+    weight: 3
+    pageRef: /series
+    parent: More
+    params:
+      icon: bookmark
+
+# footer menu
+footer:
+  - name: RSS Feed
+    url: /index.xml
+    weight: 20
+    params:
+      icon: rss
+
+  - name: All Systems Operational
+    url: https://status.sagarpanda.com/
+    weight: 30
+    params:
+      icon: status
+
+# footer social link
+social:
+  - name: GitHub
+    url: https://github.com/sagarkpanda
+    weight: 10
+    params:
+      icon: github
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/sagarkpanda/
+    weight: 20
+    params:
+      icon: linkedin
+  - name: Email
+    url: mailto:sagar.chip239@aleeas.com
+    weight: 30
+    params:
+      icon: email
+  - name: Medium
+    url: https://sagarkpanda.medium.com/
+    weight: 40
+    params:
+      icon: medium

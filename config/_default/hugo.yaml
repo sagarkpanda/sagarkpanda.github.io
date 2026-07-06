@@ -1,0 +1,75 @@
+baseURL: https://new.sagarpanda.com/
+locale: en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+title: "Sagar Panda | DevOps & Cloud Infra Engineer"
+theme: "hugo-narrow"
+
+enableEmoji: true
+enableRobotsTXT: true
+
+# IMPORTANT: keeps existing /blogs/... URLs live (search index, homepage
+# "recent posts" widget, and archive pages all read from this section).
+mainSections: ["blogs"]
+
+# No custom permalinks block on purpose: Hugo's default behavior mirrors
+# the content file path, which matches your current live URL structure
+# exactly (content/blogs/k8s/k8s-intro.md -> /blogs/k8s/k8s-intro/).
+
+pagination:
+  pagerSize: 6
+  path: "page"
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+sitemap:
+  changefreq: "weekly"
+  priority: 0.5
+  filename: "sitemap.xml"
+
+markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      extras:
+        delete:
+          enable: true
+        insert:
+          enable: true
+        mark:
+          enable: true
+        subscript:
+          enable: true
+        superscript:
+          enable: true
+      strikethrough: true
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    lineNos: false
+    lineNumbersInTable: false
+    noClasses: false
+    style: github
+    tabWidth: 2
+
+outputs:
+  home: ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+outputFormats:
+  WebAppManifest:
+    mediaType: "application/manifest+json"
+    baseName: "site"
+    isPlainText: true
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.158.0

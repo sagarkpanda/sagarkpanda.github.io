@@ -1,0 +1,34 @@
+{{/* Skills section for the homepage.
+     Reads site.Params.skills = { title, items[] } where each item is
+     { name, icon }. Pills flow left-to-right and wrap naturally based on
+     viewport width (no forced row count). */}}
+{{ $skills := site.Params.skills }}
+
+{{ if $skills }}
+  <section id="skills" class="skills-section">
+    {{ if $skills.title }}
+      <p class="text-muted-foreground mb-6 text-base md:text-lg">
+        {{ $skills.title }}
+      </p>
+    {{ end }}
+
+    {{ if $skills.items }}
+      <div class="flex flex-wrap gap-3">
+        {{ range $skills.items }}
+          <div
+            class="bg-card border-border text-foreground hover:border-primary/50 hover:text-primary flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium shadow-sm transition-colors duration-200"
+          >
+            {{ if .icon }}
+              <img
+                src="{{ .icon | relURL }}"
+                alt="{{ .name }}"
+                class="h-5 w-5 shrink-0"
+              />
+            {{ end }}
+            <span>{{ .name }}</span>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+{{ end }}
