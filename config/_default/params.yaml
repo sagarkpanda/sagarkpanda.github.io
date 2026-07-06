@@ -50,7 +50,7 @@ toc:
   enabled: true
   position: "center"
 
-colorScheme: "claude"
+colorScheme: "Sunset"
 themes:
   default:
     name: "Default"
