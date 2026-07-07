@@ -17,7 +17,12 @@ Personal website of **Sagar Panda** featuring technical blogs, projects, and not
 
 🚀 **Explore my portfolio ↗** [sagarpanda.com](https://sagarpanda.com/)
 
-<img alt="Website Screenshot" src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"/>
+<a href="https://sagarpanda.com/" target="_blank" rel="noopener noreferrer">
+  <img
+    alt="Website Screenshot"
+    src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"
+  />
+</a>
 
 ## What You'll Find Here
 
