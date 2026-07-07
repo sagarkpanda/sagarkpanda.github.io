@@ -100,8 +100,3 @@ social:
     weight: 30
     params:
       icon: email
-  - name: Medium
-    url: https://sagarkpanda.medium.com/
-    weight: 40
-    params:
-      icon: medium

@@ -345,6 +345,9 @@ contact:
   btnName: "Mail me"
   btnLink: "mailto:sagar.chip239@aleeas.com"
   social:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/sagarkpanda/"
+      icon: "linkedin"
     - name: "Telegram"
       url: "https://t.me/artisticw1zard"
       icon: "telegram"
