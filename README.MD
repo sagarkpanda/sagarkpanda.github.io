@@ -32,6 +32,6 @@ Personal website of **Sagar Panda** featuring technical blogs, projects, and not
 * Observability and OpenTelemetry experiments
 * Personal projects and portfolio
 
-Based on <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profile Theme</a>.
+Based on <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow Theme</a>.
 
 [![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml)
