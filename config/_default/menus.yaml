@@ -41,33 +41,33 @@ main:
   #   params:
   #     icon: book-open
 
-  - name: Archives
-    weight: 1
-    pageRef: /archives
-    parent: More
-    params:
-      icon: archive
-
   - name: Tags
-    weight: 2
+    weight: 1
     pageRef: /tags
     parent: More
     params:
       icon: tags
 
   - name: Series
-    weight: 3
+    weight: 2
     pageRef: /series
     parent: More
     params:
       icon: bookmark
 
   - name: Categories
-    weight: 4
+    weight: 3
     pageRef: /categories
     parent: More
     params:
       icon: categories
+
+  - name: Archives
+    weight: 4
+    pageRef: /archives
+    parent: More
+    params:
+      icon: archive
 
 # footer menu
 footer:
