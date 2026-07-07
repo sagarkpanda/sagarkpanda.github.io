@@ -18,7 +18,7 @@ Personal website of **Sagar Panda** featuring technical blogs, projects, and not
 
 ⏩ Have a look at the [website ↗](https://sagarpanda.com/)
 
-<img width="1823" height="688" alt="Website Screenshot" src="" />
+<img width="1823" height="688" alt="Website Screenshot" src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"/>
 
 ## What You'll Find Here
 
