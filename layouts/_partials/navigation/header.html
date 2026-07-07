@@ -1,13 +1,12 @@
 {{- $logoSrc := strings.TrimPrefix "/" site.Params.header.logo.image -}}
 
-
 <header class="{{- if site.Params.header.sticky -}}sticky top-0 z-50{{ end }} px-4 py-6">
   <div
     class="border-border bg-card/80 flex items-center rounded-xl border px-6 py-4 shadow-sm backdrop-blur-sm"
   >
-    <!-- 桌面端布局 -->
+    <!-- Desktop layout -->
     <div class="hidden w-full items-center md:flex md:min-w-0">
-      <!-- 左侧：站点 Logo -->
+      <!-- Left: Site logo -->
       <div class="flex items-center">
         {{ if ne site.Params.header.logo.image "" }}
           <a
@@ -26,7 +25,7 @@
             />
           </a>
         {{ else }}
-          <!-- 默认 Logo：使用站点标题首字母 -->
+          <!-- Fallback logo: first letter of the site title -->
           <a
             href="{{ site.Home.RelPermalink }}"
             class="bg-primary text-primary-foreground hover:bg-primary/90 flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold transition-transform duration-200 hover:scale-105"
@@ -37,12 +36,12 @@
         {{ end }}
       </div>
 
-      <!-- 中间：桌面端导航 -->
+      <!-- Center: Desktop navigation -->
       <nav class="mx-4 flex min-w-0 flex-1 items-center justify-center">
         <div class="flex flex-nowrap items-center justify-center space-x-0.5">
           {{ $currentPage := . }}
           {{ range site.Menus.main }}
-            {{/* 生成语言感知的URL */}}
+            {{/* Resolve language-aware menu URL */}}
             {{ $menuURL := .URL }}
             {{ if .PageRef }}
               {{ with site.GetPage .PageRef }}
@@ -51,8 +50,9 @@
                 {{ $menuURL = .URL | relLangURL }}
               {{ end }}
             {{ end }}
+
             {{ if .HasChildren }}
-              {{/* 有子菜单的父项：渲染为下拉菜单 */}}
+              {{/* Parent menu rendered as a dropdown */}}
               {{ $menuKey := .Name | anchorize }}
               <div class="relative">
                 <button
@@ -67,6 +67,7 @@
                   <span>{{ .Name }}</span>
                   {{ partial "features/icon.html" (dict "name" "chevron-down" "size" "sm" "class" "submenu-chevron transition-transform duration-200") }}
                 </button>
+
                 <div
                   class="nav-submenu border-border bg-popover/95 absolute top-full left-0 z-50 mt-2 hidden min-w-44 space-y-1.5 rounded-xl border p-1.5 shadow-lg backdrop-blur-sm"
                   data-submenu-id="{{ $menuKey }}"
@@ -81,7 +82,9 @@
                         {{ $childURL = .URL | relLangURL }}
                       {{ end }}
                     {{ end }}
+
                     {{ $isChildActive := eq $currentPage.RelPermalink $childURL }}
+
                     <a
                       href="{{ $childURL }}"
                       class="nav-link {{ if $isChildActive }}
@@ -100,8 +103,11 @@
                   {{ end }}
                 </div>
               </div>
+
             {{ else }}
+
               {{ $isActive := eq $currentPage.RelPermalink $menuURL }}
+
               <a
                 href="{{ $menuURL }}"
                 class="nav-link {{ if $isActive }}
@@ -115,18 +121,20 @@
                 {{ end }}
                 <span>{{ .Name }}</span>
               </a>
+
             {{ end }}
           {{ end }}
         </div>
       </nav>
 
-      <!-- 右侧：桌面端控制区域 -->
+      <!-- Right: Desktop controls -->
       <div class="flex items-center space-x-1">
-        <!-- 搜索按钮（新增：常驻顶部导航，而不仅在 dock 中） -->
+
+        <!-- Search -->
         <button
           type="button"
           id="header-search"
-          onclick="window.Search &amp;&amp; window.Search.toggle && window.Search.toggle()"
+          onclick="window.Search && window.Search.toggle && window.Search.toggle()"
           class="border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-300 ease-out hover:scale-105 focus:ring-2 focus:outline-none active:scale-95"
           aria-label="Search"
           title="Search"
@@ -134,41 +142,45 @@
           {{ partial "features/icon.html" (dict "name" "search" "size" "md" "ariaLabel" "Search") }}
         </button>
 
-        <!-- 语言切换按钮 -->
+        <!-- Language switcher -->
         {{ partial "ui/language-switcher.html" . }}
 
-
-        <!-- 主题风格切换按钮 -->
+        <!-- Theme switcher -->
         {{ partial "ui/theme-switcher.html" . }}
 
-
-        <!-- 明暗模式切换按钮 -->
+        <!-- Dark mode switcher -->
         {{ partial "ui/dark-mode-switcher.html" . }}
+
       </div>
     </div>
 
-    <!-- 移动端布局 -->
+    <!-- Mobile layout -->
     <div class="flex w-full items-center justify-between md:hidden">
-      <!-- 左侧：移动端菜单按钮 -->
-      {{ partial "navigation/mobile-menu-toggle.html" . }}
 
-      <!-- 中间：Home 按钮（移动端没有 logo，补一个回首页入口） -->
-      <a
-        href="{{ site.Home.RelPermalink }}"
-        class="border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-200"
-        aria-label="Home"
-        title="Home"
-      >
-        {{ partial "features/icon.html" (dict "name" "home" "size" "md" "ariaLabel" "Home") }}
-      </a>
+      <!-- Left: Menu + Home -->
+      <div class="flex items-center gap-1">
 
-      <!-- 右侧：移动端控制区域 -->
+        {{ partial "navigation/mobile-menu-toggle.html" . }}
+
+        <a
+          href="{{ site.Home.RelPermalink }}"
+          class="border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-200"
+          aria-label="Home"
+          title="Home"
+        >
+          {{ partial "features/icon.html" (dict "name" "home" "size" "md" "ariaLabel" "Home") }}
+        </a>
+
+      </div>
+
+      <!-- Right: Mobile controls -->
       <div class="flex items-center space-x-1">
-        <!-- 搜索按钮 -->
+
+        <!-- Search -->
         <button
           type="button"
           id="header-search-mobile"
-          onclick="window.Search &amp;&amp; window.Search.toggle && window.Search.toggle()"
+          onclick="window.Search && window.Search.toggle && window.Search.toggle()"
           class="border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-200"
           aria-label="Search"
           title="Search"
@@ -176,20 +188,20 @@
           {{ partial "features/icon.html" (dict "name" "search" "size" "md" "ariaLabel" "Search") }}
         </button>
 
-        <!-- 语言切换按钮 -->
+        <!-- Language switcher -->
         {{ partial "ui/language-switcher.html" . }}
 
-
-        <!-- 主题风格切换按钮 -->
+        <!-- Theme switcher -->
         {{ partial "ui/theme-switcher.html" . }}
 
-
-        <!-- 明暗模式切换按钮 -->
+        <!-- Dark mode switcher -->
         {{ partial "ui/dark-mode-switcher.html" . }}
+
       </div>
+
     </div>
   </div>
 
-  <!-- 移动端锚定式宽导航面板（card 下方） -->
+  <!-- Mobile navigation panel -->
   {{ partial "navigation/mobile-nav-panel.html" . }}
 </header>
