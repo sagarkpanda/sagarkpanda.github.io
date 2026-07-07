@@ -5,10 +5,12 @@ on:
     branches:
       - main
     paths-ignore:
-      - README.md
-      - .gitignore
-      - License
-      - .gitattributes
+    - "README.md"
+    - "README.MD"
+    - ".gitignore"
+    - "LICENSE"
+    - "License"
+    - ".gitattributes"
   workflow_dispatch:
 
 permissions:
