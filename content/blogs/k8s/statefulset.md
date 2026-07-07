@@ -1,19 +1,21 @@
 ---
 date: '2026-04-07T10:30:10+05:30'
 draft: false
-title: 'Kubernetes StatefulSets Explained - When and Why to Use Them'
+title: Kubernetes StatefulSets Explained - When and Why to Use Them
 description: 'Part XV: Understanding Stable Pod Identity, Headless Services, and Persistent Storage in StatefulSets'
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jhtaeySqKrPpqKg8p3WRqA.png
 tags:
-  - kubernetes
-  - statefulset
-  - pv
-  - pvc
-url: "/blogs/k8s/statefulset/"
+- kubernetes
+- statefulset
+- pv
+- pvc
+categories:
+- Kubernetes & Containers
+url: /blogs/k8s/statefulset/
 aliases:
-    - /blogs/statefulset/
+- /blogs/statefulset/
 ---
 
-![Image Souce: KubeBlogs](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jhtaeySqKrPpqKg8p3WRqA.png)
 
 ### What is StatefulSet
 

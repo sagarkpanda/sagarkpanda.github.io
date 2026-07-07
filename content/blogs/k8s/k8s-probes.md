@@ -1,15 +1,16 @@
 ---
 date: '2024-11-11T19:26:10+05:30'
 draft: false
-title: 'Kubernetes Health Checks with Probes'
+title: Kubernetes Health Checks with Probes
 description: Part XIV — Learn how Kubernetes Readiness, Liveness, and Startup probes keep your applications healthy and resilient
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*nbqglR7NZ7k96PykFRClQw.png
 tags:
-  - kubernetes
-  - probes
-  - k8s
+- kubernetes
+- probes
+- k8s
+categories:
+- Kubernetes & Containers
 ---
-
-![Image Credit : mobilabsolutions.com](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*nbqglR7NZ7k96PykFRClQw.png)
 
 ### What are probes
 

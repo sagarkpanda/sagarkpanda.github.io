@@ -1,12 +1,17 @@
 ---
 date: '2023-05-21T19:26:10+05:30'
 draft: false
-title: 'Getting started with Ansible - Configuration Managament'
+title: Getting started with Ansible - Configuration Managament
 description: Chapter 1 - Installation, basics and playbook
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a1Bd73PrCYh4g2P7IU1vOA.jpeg
 tags:
-  - ansible
-  - devops
+- ansible
+- devops
+series:
+- Ansible Fundamentals
+series_order: 1
+categories:
+- Linux & Automation
 ---
 
 ### Introduction:

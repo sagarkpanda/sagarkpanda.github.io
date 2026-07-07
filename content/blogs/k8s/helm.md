@@ -1,20 +1,21 @@
 ---
 date: '2024-05-01T19:26:10+05:30'
 draft: false
-title: 'Helm — Your Compass in the Kubernetes Universe'
+title: Helm — Your Compass in the Kubernetes Universe
 description: Part XI - Getting started with Helm, the package manager for Kubernetes for easy application management.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nx1uEfCb2u81ST0RPMB8mg.jpeg
 tags:
-  - helm
-  - kubernetes
-  - k8s
-  - devops
+- helm
+- kubernetes
+- k8s
+- devops
+categories:
+- Kubernetes & Containers
 ---
 
 ### What is Helm:
 
 Helm, the package manager for k8s similar to package manager for linux such as apt (Debian/Ubuntu based) yum/dnf (Red Hat or Fedora family of linux) , which helps us with packaging and deploying application.
-
-![Img src: XENOSTACK](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nx1uEfCb2u81ST0RPMB8mg.jpeg)
 
 Deploying an application with multiple manifests is overwhelmingly time consuming to write the yml manifests and is also error prone.
 

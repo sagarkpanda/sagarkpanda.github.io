@@ -1,22 +1,22 @@
 ---
 date: '2024-12-22T19:26:10+05:30'
 draft: false
-title: 'Terraform Modules - Simplify, Organise and Reuse Your IAC'
+title: Terraform Modules - Simplify, Organise and Reuse Your IAC
 description: Chapter VI - Learn what is Module in Terraform/OpenTofu and how it helps us in reusing the same config.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*I_rBd_SMpsI8tXzk5mk3Zg.png
 tags:
-  - AWS
-  - Terraform
-  - Terraform Module
-  - devops
+- AWS
+- Terraform
+- Terraform Module
+- devops
+categories:
+- Cloud Infrastructure
 ---
 
 
 A **Terraform module** is a container/template for multiple resources that are used together. Modules are a way to organize and reuse code in Terraform, making infrastructure management more efficient and maintainable.
 
 We first define the resource templates, and then we call the templates from outside of the module structures and we can even modify them as per our needs.
-
-![Image credit: Linode](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*I_rBd_SMpsI8tXzk5mk3Zg.png)
-
 
 A typical module module looks something this this:
 

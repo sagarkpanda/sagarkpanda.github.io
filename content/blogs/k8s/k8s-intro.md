@@ -4,11 +4,12 @@ draft: false
 title: 'Container Orchestration: Kubernetes 101'
 description: Part I — Intro, Components and Architecture
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*NoGlXoElqYHzO15bqlEErQ.png
-
 tags:
-  - kubernetes
-  - k8s
-  - devops
+- kubernetes
+- k8s
+- devops
+categories:
+- Kubernetes & Containers
 ---
 
 ## Introduction:

@@ -5,11 +5,13 @@ title: 'Calico and Kubernetes: A Perfect Pair for Robust Network Policy'
 description: Part VI — In K8s, a network policy defines how pods are allowed to communicate with each other.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UEgbzVzkRaUUnRhYEKaCqw.png
 tags:
-  - cni
-  - kubernetes
-  - k8s
-  - networking
-  - calico
+- cni
+- kubernetes
+- k8s
+- networking
+- calico
+categories:
+- Kubernetes & Containers
 ---
 
 ## Before we begin:

@@ -1,16 +1,20 @@
 ---
 date: '2024-02-29T19:26:10+05:30'
 draft: false
-title: 'Introduction to Shell Scripting for Beginners'
-description: "Part 1: Introduction to Bash, shell and scripting for task automation"
+title: Introduction to Shell Scripting for Beginners
+description: 'Part 1: Introduction to Bash, shell and scripting for task automation'
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HVqm9vCg6-5t6qGpu1g86A.png
 tags:
-  - linux
-  - shell scrpting
-  - devops
-  - bash
+- linux
+- shell scrpting
+- devops
+- bash
+series:
+- Shell Scricpting
+series_order: 1
+categories:
+- Linux & Automation
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HVqm9vCg6-5t6qGpu1g86A.png)
 
 ### What’s Shell:
 

@@ -1,13 +1,15 @@
 ---
 date: '2023-06-24T19:26:10+05:30'
 draft: false
-title: 'Delving into the World of Deployments in Kubernetes'
+title: Delving into the World of Deployments in Kubernetes
 description: Part IV— Deployment using YAML, Strategies and Rollback.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6QedAYWDv2AtCstjHta8Dg.png
 tags:
-  - kubernetes
-  - k8s
-  - devops
+- kubernetes
+- k8s
+- devops
+categories:
+- Kubernetes & Containers
 ---
 
 In the [previous]({{< relref "k8s-intro" >}}) article, we saw ReplicaSet, Services and touched base on deployment. In this article, we will explore deployments in more detail.

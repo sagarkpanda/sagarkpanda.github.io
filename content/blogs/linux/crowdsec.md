@@ -1,18 +1,20 @@
 ---
 date: '2024-09-30T19:26:10+05:30'
 draft: false
-title: 'Fortify Your Security with CrowdSec — A Quick Start Guide'
+title: Fortify Your Security with CrowdSec — A Quick Start Guide
 description: Install and configure CrowdSec for securing your infrastructure, a step by step guide for getting started.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iV7RJZ44oOMYMJSi0V517g.png
 tags:
-  - linux
-  - firewall
-  - security
-  - devops
-  - crowdsec
-  - cloud security
+- linux
+- firewall
+- security
+- devops
+- crowdsec
+- cloud security
+categories:
+- Linux & Automation
 ---
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iV7RJZ44oOMYMJSi0V517g.png)
 
 ### What is CrowdSec:
 
@@ -24,10 +26,7 @@ CS’s uniqueness is its “crowd-powered” approach. When it detects a potenti
 
 ⚠️Note: Experimental, cloud provides might ban you for doing this? Proceed with caution. ⚠️
 
-Download and install on your server following the official docs.
-
-![Linux | CrowdSec](https://docs.crowdsec.net/u/getting_started/installation/linux/?source=post_page-----914a6acaf5c6---------------------------------------)
-
+Download and install on your server following the official docs. [CrowdSec](https://docs.crowdsec.net/u/getting_started/installation/linux/)
 
 #### Before getting started it is advised to read the prerequisites page to understand the requirements for running…
 

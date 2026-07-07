@@ -1,17 +1,21 @@
 ---
 date: '2024-03-10T19:26:10+05:30'
 draft: false
-title: 'Variables and Math Functions in Bash'
-description: "Part 2: Usage of variables to set changeable data, and math functions for arithmetic operations"
+title: Variables and Math Functions in Bash
+description: 'Part 2: Usage of variables to set changeable data, and math functions for arithmetic operations'
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XufA9FFra4lI34SOm3UDtA.png
 tags:
-  - linux
-  - shell scrpting
-  - devops
-  - bash
+- linux
+- shell scrpting
+- devops
+- bash
+series:
+- Shell Scricpting
+series_order: 2
+categories:
+- Linux & Automation
 ---
 
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XufA9FFra4lI34SOm3UDtA.png)
 
 ### What is a variable:
 

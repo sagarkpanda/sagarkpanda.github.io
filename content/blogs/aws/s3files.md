@@ -1,15 +1,17 @@
 ---
 date: '2026-04-22T12:30:10+05:30'
 draft: false
-title: 'Beyond Objects — Using Amazon S3 Files as a Native File System on EC2'
-description: 'Learn how to mount S3 buckets natively on your EC2 instances using the new NFS v4.1+ interface.'
-cover: "https://i.ibb.co/cSqmmDcV/x.jpg"
+title: Beyond Objects — Using Amazon S3 Files as a Native File System on EC2
+description: Learn how to mount S3 buckets natively on your EC2 instances using the new NFS v4.1+ interface.
+cover: https://i.ibb.co/cSqmmDcV/x.jpg
 tags:
-  - aws
-  - s3
-  - s3files
-  - cloud
-  - devops
+- aws
+- s3
+- s3files
+- cloud
+- devops
+categories:
+- Cloud Infrastructure
 ---
 
 <!-- {{< figure src=@image alt="AWS_S3Files Architecture" width="1200" height="630" >}} -->

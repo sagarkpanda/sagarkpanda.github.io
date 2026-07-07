@@ -1,12 +1,17 @@
 ---
 date: '2023-06-18T19:26:10+05:30'
 draft: false
-title: 'Ansible — Error Handling, Roles and Valult'
-description: "Part 3: Learn about Notify Handler, Error handling, Vault and Roles"
+title: Ansible — Error Handling, Roles and Valult
+description: 'Part 3: Learn about Notify Handler, Error handling, Vault and Roles'
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-anirzVIreNx1SOSAJl88w.jpeg
 tags:
-  - ansible
-  - devops
+- ansible
+- devops
+series:
+- Ansible Fundamentals
+series_order: 3
+categories:
+- Linux & Automation
 ---
 
 In the earlier posts, we saw how to [**_Setup Ansible_**]({{< relref "ansible1" >}}), [**_simple playbooks with groups, variables, conditionals and loop_**]({{< relref "ansible2" >}})

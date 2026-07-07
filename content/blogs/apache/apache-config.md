@@ -1,12 +1,15 @@
 ---
 date: '2023-03-27T19:26:10+05:30'
 draft: false
-title: 'Apache HTTP Server Configurations'
+title: Apache HTTP Server Configurations
 description: 'Apache HTTP Server Setup: A Guide to Key Configurations'
+cover: https://miro.medium.com/v2/resize:fit:900/format:webp/1*lP93d4wUMT7XNug-XyzuQQ.png
 tags:
-  - apache
-  - http server
-  - devops
+- apache
+- http server
+- devops
+categories:
+- Linux & Automation
 ---
 
 
@@ -15,8 +18,6 @@ In the previous post, we saw how to install and setup Apache web server. In this
 ### Prerequiste:
 [Install Apache]({{< relref "apache" >}})
 
-
-![Image: PNG ALL](https://miro.medium.com/v2/resize:fit:900/format:webp/1*lP93d4wUMT7XNug-XyzuQQ.png)
 
 ### Introduction:
 

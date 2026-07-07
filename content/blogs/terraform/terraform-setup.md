@@ -1,15 +1,17 @@
 ---
 date: '2023-07-02T10:26:10+05:30'
 draft: false
-title: 'Infrastructure as Code (IAC) - Automation using Terraform 101'
+title: Infrastructure as Code (IAC) - Automation using Terraform 101
 description: Chapter I — Getting Started, setup, terminologies and basic examples..
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fCBP8ShpFHETAU7JEenXLQ.png
 tags:
-  - AWS
-  - Terraform
-  - DevOps
+- AWS
+- Terraform
+- DevOps
+categories:
+- Cloud Infrastructure
 ---
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fCBP8ShpFHETAU7JEenXLQ.png)
 
 ## What is Terraform:
 

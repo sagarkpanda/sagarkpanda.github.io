@@ -1,18 +1,23 @@
 ---
 date: '2026-06-20T07:45:10+05:30'
 draft: false
-title: 'Seeing Inside Amazon EKS with OpenTelemetry 🔍'
+title: Seeing Inside Amazon EKS with OpenTelemetry 🔍
 description: Building a Cloud Native observability platform on Amazon EKS with OpenTelemetry, GitOps, Terraform, multi-backend telemetry, and Claude powered analysis
 cover: https://i.ibb.co/pjgVNXn4/x.png
 tags:
-  - monitoring
-  - o11y
-  - devops
-  - opentelemetry
-  - kubernetes
-  - aws
-  - cloud
-  - terraform
+- monitoring
+- o11y
+- devops
+- opentelemetry
+- kubernetes
+- aws
+- cloud
+- terraform
+series:
+- Observability
+series_order: 3
+categories:
+- Observability & Monitoring
 ---
 
 ## Why This Setup?

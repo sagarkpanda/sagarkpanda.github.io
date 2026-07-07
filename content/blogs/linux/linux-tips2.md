@@ -1,15 +1,20 @@
 ---
 date: '2024-05-28T19:26:10+05:30'
 draft: false
-title: 'Linux Terminal tips - Part 2'
+title: Linux Terminal tips - Part 2
 description: Reverse cmd search, date and time in history and more.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oJHs4IQgdGgHM-W4aiBuwQ.png
 tags:
-  - linux
-  - teminal
-  - tips
+- linux
+- teminal
+- tips
+series:
+- Linux Tips
+series_order: 2
+categories:
+- Linux & Automation
 ---
 
-![Image credit - itsfoss](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oJHs4IQgdGgHM-W4aiBuwQ.png)
 
 ### 1. Reverse search cmds:
 

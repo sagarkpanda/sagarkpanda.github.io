@@ -1,15 +1,20 @@
 ---
 date: '2023-08-26T19:30:10+05:30'
 draft: false
-title: 'Setup Monitoring with Prometheus and Grafana.'
+title: Setup Monitoring with Prometheus and Grafana.
 description: Monitoring Linux Server with Prometheus Node exporter. Setup using docker.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*32z2k-B-WPcunJTX3iAF5w.png
 tags:
-  - monitoring
-  - o11y
-  - devops
-  - prometheus
-  - grafana
+- monitoring
+- o11y
+- devops
+- prometheus
+- grafana
+series:
+- Prometheus
+series_order: 1
+categories:
+- Observability & Monitoring
 ---
 
 ## Introduction:

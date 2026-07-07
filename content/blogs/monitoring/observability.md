@@ -5,15 +5,20 @@ title: 'Observability 101: Understanding Metrics, Traces and Logs'
 description: Part 1 - Get to know the 3 pillars and 4 golden signals of distrubuted observability
 cover: https://i.ibb.co/Qjqd7Syh/x.jpg
 tags:
-  - monitoring
-  - observability
-  - o11y
-  - devops
-  - opentelemetry
-  - otel
-url: "/blogs/monitoring/observability/"
+- monitoring
+- observability
+- o11y
+- devops
+- opentelemetry
+- otel
+series:
+- Observability
+series_order: 1
+categories:
+- Observability & Monitoring
+url: /blogs/monitoring/observability/
 aliases:
-    - /blogs/monitoring/observabilty/
+- /blogs/monitoring/observabilty/
 ---
 
 # Introduction

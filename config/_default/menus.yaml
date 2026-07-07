@@ -34,12 +34,12 @@ main:
     params:
       icon: menu
 
-  - name: Education
-    weight: 1
-    url: /#education
-    parent: More
-    params:
-      icon: book-open
+  # - name: Education
+  #   weight: 1
+  #   url: /#education
+  #   parent: More
+  #   params:
+  #     icon: book-open
 
   - name: Archives
     weight: 2
@@ -61,6 +61,13 @@ main:
     parent: More
     params:
       icon: bookmark
+
+  - name: Categories
+    weight: 5
+    pageRef: /categories
+    parent: More
+    params:
+      icon: categories
 
 # footer menu
 footer:

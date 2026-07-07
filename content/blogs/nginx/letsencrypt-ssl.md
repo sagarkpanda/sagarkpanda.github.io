@@ -1,16 +1,17 @@
 ---
 date: '2023-11-06T19:26:10+05:30'
 draft: false
-title: 'Let’s Encrypt SSL Configuration using Certbot'
+title: Let’s Encrypt SSL Configuration using Certbot
 description: Setup SSL certificate for free. Secure your application with Let’s Encrypt - DIY Guide
+cover: https://miro.medium.com/v2/resize:fit:1280/format:webp/1*rYd5jblnBNdOUHyFiQFKXw.png
 tags:
-  - nginx
-  - tls
-  - web security
-  - devops
+- nginx
+- tls
+- web security
+- devops
+categories:
+- Linux & Automation
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1280/format:webp/1*rYd5jblnBNdOUHyFiQFKXw.png)
 
 ### What is SSL/TLS:
 

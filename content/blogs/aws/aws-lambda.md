@@ -1,18 +1,19 @@
 ---
 date: '2024-04-27T19:26:10+05:30'
 draft: false
-title: 'AWS Lambda - The Serverless Function'
-description: 'Schedule auto turn on/off EC2 instances with Lambda Function based on a cron schedule'
+title: AWS Lambda - The Serverless Function
+description: Schedule auto turn on/off EC2 instances with Lambda Function based on a cron schedule
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bTINZh_GvTsK8OrClazywQ.jpeg
 tags:
-  - aws
-  - lambda
-  - cloud
-  - cost optimaization
-  - AWS EC2
+- aws
+- lambda
+- cloud
+- cost optimaization
+- AWS EC2
+categories:
+- Cloud Infrastructure
 ---
 
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bTINZh_GvTsK8OrClazywQ.jpeg)
 
 ## What is Lambda
 

@@ -1,12 +1,15 @@
 ---
 date: '2024-04-01T19:26:10+05:30'
 draft: false
-title: 'Getting Started with Ingress In Kubernetes'
+title: Getting Started with Ingress In Kubernetes
 description: Nginx Ingress setup in kubernetes
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HdEt8m8cjh5ANwSkYL6P4A.png
 tags:
-  - ingress
-  - nginx
-  - kubernetes
+- ingress
+- nginx
+- kubernetes
+categories:
+- Kubernetes & Containers
 ---
 
 
@@ -16,7 +19,6 @@ In Kubernetes, “Ingress” is an API object that manages external access to se
 
 It acts as a layer above the services, providing routing rules and load balancing for HTTP and HTTPS traffic. Essentially, it allows you to define how external traffic should be directed to services based on rules you set up, such as hostnames, paths, or other HTTP headers.
 
-![Image src: Traefiklabs](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HdEt8m8cjh5ANwSkYL6P4A.png)
 
 Ingress typically works in conjunction with Ingress Controllers, which are responsible for actually implementing the routing rules.
 

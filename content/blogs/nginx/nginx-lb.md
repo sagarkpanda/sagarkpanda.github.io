@@ -1,13 +1,15 @@
 ---
 date: '2023-04-22T19:26:10+05:30'
 draft: false
-title: 'Load Balancing Magic — Unleashing the Potential of NGINX.'
+title: Load Balancing Magic — Unleashing the Potential of NGINX.
 description: Load Balance Multiple servers with Nginx. Run multiple servers (containers) using Docker Compose.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KtQHN4HBPNple7bwXDUCsg.png
 tags:
-  - nginx
-  - loadbalancer
-  - devops
+- nginx
+- loadbalancer
+- devops
+categories:
+- Linux & Automation
 ---
 
 ## Introduction

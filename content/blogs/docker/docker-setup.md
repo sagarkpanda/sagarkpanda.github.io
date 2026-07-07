@@ -5,8 +5,10 @@ title: 'Docker: Containerization for beginners.'
 description: Docker Chapter 1 — How to Install Docker on Linux and Windows.
 cover: https://miro.medium.com/v2/resize:fit:1202/format:webp/1*Ms3dGlKGPJhQPkPe9c-73w.jpeg
 tags:
-  - docker
-  - devops
+- docker
+- devops
+categories:
+- Kubernetes & Containers
 ---
 
 ## Introduction

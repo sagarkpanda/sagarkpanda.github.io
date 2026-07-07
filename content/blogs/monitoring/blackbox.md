@@ -1,15 +1,20 @@
 ---
 date: '2023-09-25T19:30:10+05:30'
 draft: false
-title: 'Visualize Your Website Metrics — Blackbox Exporter and Grafana'
+title: Visualize Your Website Metrics — Blackbox Exporter and Grafana
 description: Configure Blackbox Exporter to View Site details in Grafana, get alerts for TLS expiration and other details.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xbFMqG61f22nlG7Yvb9YHA.png
 tags:
-  - monitoring
-  - o11y
-  - devops
-  - prometheus
-  - grafana
+- monitoring
+- o11y
+- devops
+- prometheus
+- grafana
+series:
+- Prometheus
+series_order: 3
+categories:
+- Observability & Monitoring
 ---
 
 

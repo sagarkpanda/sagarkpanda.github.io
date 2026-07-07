@@ -1,12 +1,15 @@
 ---
 date: '2023-01-25T19:26:10+05:30'
 draft: false
-title: 'How to install Apache HTTP web server on Linux.'
+title: How to install Apache HTTP web server on Linux.
 description: Learn How to setup Apache HTTP webserver
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*B-C9bRZB0-23FLkyjZqJQg.png
 tags:
-  - apache
-  - http server
-  - devops
+- apache
+- http server
+- devops
+categories:
+- Linux & Automation
 ---
 
 
@@ -15,8 +18,6 @@ tags:
 If you ever worked with web application then you must have came across the term “Apache”. The Apache HTTP server is an open source web server.
 
 In this article we’ll take a look on how to install and configure Apache on various popular Linux distributions (Debian/Ubuntu, RHEL/Rocky Linux/Alma Linux).
-
-![Source: Apache](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*B-C9bRZB0-23FLkyjZqJQg.png)
 
 ### Installation:
 

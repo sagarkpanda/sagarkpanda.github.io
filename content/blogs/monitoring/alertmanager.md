@@ -1,15 +1,20 @@
 ---
 date: '2023-09-08T19:30:10+05:30'
 draft: false
-title: 'How to Send Email Alerts using Prometheus AlertManager'
+title: How to Send Email Alerts using Prometheus AlertManager
 description: Get mail alerts from Prometheus about server resource usage.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y--eGmBDkRNT1NAWiv-Wtw.jpeg
 tags:
-  - monitoring
-  - o11y
-  - devops
-  - prometheus
-  - grafana
+- monitoring
+- o11y
+- devops
+- prometheus
+- grafana
+series:
+- Prometheus
+series_order: 2
+categories:
+- Observability & Monitoring
 ---
 
 This is the 2nd article, to setup Prometheus with Node exporter and Grafana refer this article, [Setup Monitoring — Prometheus and Grafana]({{< relref "prometheus" >}}).

@@ -5,11 +5,13 @@ title: 'GitLab Setup Unlocked: Your 10-Minute Fast-Track Guide'
 description: Launch Your Own GitLab Instance in Minutes
 cover: https://i.ibb.co/ZpbkFk97/x.jpg
 tags:
-  - gitlab
-  - aws
-url: "/blogs/gitlab/gitlab-setup/"
+- gitlab
+- aws
+categories:
+- Linux & Automation
+url: /blogs/gitlab/gitlab-setup/
 aliases:
-    - /blogs/gitlab_setup/
+- /blogs/gitlab_setup/
 ---
 
 ## Setup Host

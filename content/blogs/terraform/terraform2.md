@@ -1,16 +1,17 @@
 ---
 date: '2023-07-09T10:26:10+05:30'
 draft: false
-title: 'Terraform on AWS — Outputs, Indexing and Variables'
+title: Terraform on AWS — Outputs, Indexing and Variables
 description: Chapter II —Generating Output, using Variables and Refactoring the Script into different files.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ADb5oFBqgBA4h-SDyW2D7Q.jpeg
 tags:
-  - AWS
-  - vpc
-  - devops
-  - terraform
+- AWS
+- vpc
+- devops
+- terraform
+categories:
+- Cloud Infrastructure
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ADb5oFBqgBA4h-SDyW2D7Q.jpeg)
 
 [**_In the previous article_**]({{< relref "terraform-setup" >}}), we setup tf and got familiar with it with basic example. Now lets proceed further.
 

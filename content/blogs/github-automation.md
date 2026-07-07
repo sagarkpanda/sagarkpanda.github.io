@@ -1,15 +1,19 @@
 ---
 date: '2026-05-24T12:45:10+05:30'
 draft: false
-title: 'Turn Your GitHub Repository into a Self-Managing Workflow'
+title: Turn Your GitHub Repository into a Self-Managing Workflow
 description: Learn to manage github repo with automation. Create PR/Issue templates, label PRs automatically and more.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BKfu-QFmcuj1zpFzHqWSYA.png
-
 tags:
-  - ci/cd
-  - github
-  - devops
-  - repo automation
+- ci/cd
+- github
+- devops
+- repo automation
+series:
+- GitHub Actions
+series_order: 1
+categories:
+- Linux & Automation
 ---
 
 ## Introduction

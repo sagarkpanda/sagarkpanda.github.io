@@ -1,13 +1,16 @@
 ---
 date: '2024-09-20T19:26:10+05:30'
 draft: false
-title: 'Automate AWS VPC Setup with Terraform'
+title: Automate AWS VPC Setup with Terraform
 description: Build Your Own AWS VPC - Simple Terraform Deployment Steps!
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*e779UvuArbonBmYoTt9tYQ.png
 tags:
-  - AWS
-  - vpc
-  - cloud
-  - terraform
+- AWS
+- vpc
+- cloud
+- terraform
+categories:
+- Cloud Infrastructure
 ---
 
 ### Introduction
@@ -18,7 +21,6 @@ With the help of VPC, we decide the range of IP addresses for the network, how w
 
 First lets understand the components by setting it manually.
 
-![Image credit: rolfstreefkerk.com](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*e779UvuArbonBmYoTt9tYQ.png)
 
 ### What is CIDR
 

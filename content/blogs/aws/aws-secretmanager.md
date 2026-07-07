@@ -3,14 +3,15 @@ date: '2024-09-14T19:26:10+05:30'
 draft: false
 title: 'AWS Secrets Manager: A Secure Solution for Credential Management'
 description: AWS Secrets Manager is a service designed to help us securely store and manage sensitive information such as passwords, API keys etc.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6eDcfbngtrF1eiKzstWkKA.png
 tags:
-  - aws
-  - secret manager
-  - cloud
-  - app security
+- aws
+- secret manager
+- cloud
+- app security
+categories:
+- Cloud Infrastructure
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6eDcfbngtrF1eiKzstWkKA.png)
 
 ### Introduction:
 

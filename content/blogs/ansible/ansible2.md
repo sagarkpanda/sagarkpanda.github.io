@@ -1,12 +1,17 @@
 ---
 date: '2023-05-29T19:26:10+05:30'
 draft: false
-title: 'Ansible - Groups, Vars and Loop'
-description: "Chapter 2 - Groups, Variables, Conditionals and Loops in Ansible"
+title: Ansible - Groups, Vars and Loop
+description: Chapter 2 - Groups, Variables, Conditionals and Loops in Ansible
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bT5aEzzjUduWEy4rTVniFQ.jpeg
 tags:
-  - ansible
-  - devops
+- ansible
+- devops
+series:
+- Ansible Fundamentals
+series_order: 2
+categories:
+- Linux & Automation
 ---
 
 

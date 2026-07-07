@@ -1,14 +1,16 @@
 ---
 date: '2026-03-18T19:26:10+05:30'
 draft: false
-title: 'Kafka - The Calm Brain in the Middle of Chaotic Microservices.'
+title: Kafka - The Calm Brain in the Middle of Chaotic Microservices.
 description: Microservices are loud. Kafka makes them finally think together
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FtTi1Yxel568GbnO7l0_0Q.png
 tags:
-  - kafka
-  - microservices
+- kafka
+- microservices
+categories:
+- Kubernetes & Containers
 ---
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FtTi1Yxel568GbnO7l0_0Q.png)
 
 ### 💡 What it is:
 

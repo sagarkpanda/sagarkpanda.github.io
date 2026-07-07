@@ -1,21 +1,22 @@
 ---
 date: '2023-05-01T19:26:10+05:30'
 draft: false
-title: 'SonarQube Setup with Jenkins'
+title: SonarQube Setup with Jenkins
 description: Code Quality Analysis with SonrQube on Jenkins
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XIBVAu-3lA0o7rivQ4Cvug.jpeg
 tags:
-  - Jenkins
-  - SonarQube
-  - DevOps
-  - ci/cd
+- Jenkins
+- SonarQube
+- DevOps
+- ci/cd
+categories:
+- Linux & Automation
 ---
-
 
 ### Introduction:
 
 SonarQube is an open-source platform used to perform continuous review and verification of code quality to detect bugs, vulnerabilities and code smells in the application.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XIBVAu-3lA0o7rivQ4Cvug.jpeg)
 
 In this tutorial, we’ll see how to install and configure it for a project. All the codes and configuration are on [Github](https://github.com/sagarkrp/SonarQube_Gradle.git).
 

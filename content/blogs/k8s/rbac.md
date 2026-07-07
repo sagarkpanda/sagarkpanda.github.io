@@ -1,14 +1,16 @@
 ---
 date: '2024-05-20T19:26:10+05:30'
 draft: false
-title: 'Kubernetes Security — Role Based Access Control (RBAC)'
+title: Kubernetes Security — Role Based Access Control (RBAC)
 description: Part XII — User Management in K8s with RBAC using Entra ID aka Azure Active Directory.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JPtYpwRPmc1fOMMLPgiCAQ.png
 tags:
-  - kubernetes
-  - k8s
-  - devops
-  - rbac
+- kubernetes
+- k8s
+- devops
+- rbac
+categories:
+- Kubernetes & Containers
 ---
 
 ## Introduction

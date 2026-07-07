@@ -1,17 +1,18 @@
 ---
 date: '2024-04-07T19:26:10+05:30'
 draft: false
-title: 'Ingress in K8s - Name based Routing with TLS'
+title: Ingress in K8s - Name based Routing with TLS
 description: Part IX - Using Domain name with TLS Cert for Nginx Ingress Controller.
+cover: https://miro.medium.com/v2/resize:fit:1356/format:webp/1*yecPvYFABn0s-xmGCJLLbA.png
 tags:
-  - nginx
-  - tls
-  - kubernetes
-  - ingress
-  - devops
+- nginx
+- tls
+- kubernetes
+- ingress
+- devops
+categories:
+- Kubernetes & Containers
 ---
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1356/format:webp/1*yecPvYFABn0s-xmGCJLLbA.png)
 
 ### Preface:
 

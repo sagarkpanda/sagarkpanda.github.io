@@ -5,12 +5,17 @@ title: 'Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo'
 description: Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics
 cover: https://i.ibb.co/TxQpjhPB/x.jpg
 tags:
-  - monitoring
-  - observability
-  - o11y
-  - devops
-  - opentelemetry
-  - otel
+- monitoring
+- observability
+- o11y
+- devops
+- opentelemetry
+- otel
+series:
+- Observability
+series_order: 2
+categories:
+- Observability & Monitoring
 ---
 
 ## Preface

@@ -1,14 +1,16 @@
 ---
 date: '2024-04-27T19:26:10+05:30'
 draft: false
-title: 'How AWS ALB Keeps Your Apps in Line!'
-description: 'See how AWS ALB effortlessly manages traffic, and supports high availability to keep your app running smoothly.'
+title: How AWS ALB Keeps Your Apps in Line!
+description: See how AWS ALB effortlessly manages traffic, and supports high availability to keep your app running smoothly.
 cover: https://i.ibb.co/GvPkHTRn/x.jpg
 tags:
-  - aws
-  - alb
-  - cloud
-  - load balanncer
+- aws
+- alb
+- cloud
+- load balanncer
+categories:
+- Cloud Infrastructure
 ---
 
 

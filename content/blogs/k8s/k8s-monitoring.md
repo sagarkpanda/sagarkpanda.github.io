@@ -1,16 +1,18 @@
 ---
 date: '2024-06-10T19:26:10+05:30'
 draft: false
-title: 'Monitoring Kubernetes Cluster with Prometheus and Grafana'
+title: Monitoring Kubernetes Cluster with Prometheus and Grafana
 description: Part XIII — Helm setup to Monitor your k8s infra using Prometheus and Grafana.
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3KFSsDiBc2tqs8HhPJmTJA.png
 tags:
-  - kubernetes
-  - monitoring
-  - devops
-  - prometheus
-  - grafana
-  - o11y
+- kubernetes
+- monitoring
+- devops
+- prometheus
+- grafana
+- o11y
+categories:
+- Kubernetes & Containers
 ---
 
 ## Introduction:

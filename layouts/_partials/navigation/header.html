@@ -152,6 +152,15 @@
       <!-- 左侧：移动端菜单按钮 -->
       {{ partial "navigation/mobile-menu-toggle.html" . }}
 
+      <!-- 中间：Home 按钮（移动端没有 logo，补一个回首页入口） -->
+      <a
+        href="{{ site.Home.RelPermalink }}"
+        class="border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-200"
+        aria-label="Home"
+        title="Home"
+      >
+        {{ partial "features/icon.html" (dict "name" "home" "size" "md" "ariaLabel" "Home") }}
+      </a>
 
       <!-- 右侧：移动端控制区域 -->
       <div class="flex items-center space-x-1">

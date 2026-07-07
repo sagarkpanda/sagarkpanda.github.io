@@ -1,17 +1,21 @@
 ---
 date: '2024-03-22T19:26:10+05:30'
 draft: false
-title: 'If Statement - Conditional in Bash Scripting'
-description: "Part 3: Usage of if, else and elif statements in shell scripting"
+title: If Statement - Conditional in Bash Scripting
+description: 'Part 3: Usage of if, else and elif statements in shell scripting'
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aYAEBPL0-U8a-fXcPpr9Ug.png
 tags:
-  - linux
-  - shell scrpting
-  - devops
-  - bash
+- linux
+- shell scrpting
+- devops
+- bash
+series:
+- Shell Scricpting
+series_order: 3
+categories:
+- Linux & Automation
 ---
 
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aYAEBPL0-U8a-fXcPpr9Ug.png)
 
 ### Intro:
 

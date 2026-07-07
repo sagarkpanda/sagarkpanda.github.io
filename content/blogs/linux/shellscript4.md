@@ -1,14 +1,19 @@
 ---
 date: '2024-06-26T19:26:10+05:30'
 draft: false
-title: 'The Essential Role of Exit Codes in Bash Scripting'
-description: "Part 4: Using exit codes with if condition, manipulation by forcing exit codes."
+title: The Essential Role of Exit Codes in Bash Scripting
+description: 'Part 4: Using exit codes with if condition, manipulation by forcing exit codes.'
 cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AMpzINCW_0-_yto6ZmXu2Q.png
 tags:
-  - linux
-  - shell scrpting
-  - devops
-  - bash
+- linux
+- shell scrpting
+- devops
+- bash
+series:
+- Shell Scricpting
+series_order: 4
+categories:
+- Linux & Automation
 ---
 
 ## What are exit codes in linux

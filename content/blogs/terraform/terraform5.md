@@ -1,13 +1,16 @@
 ---
 date: '2024-05-12T10:26:10+05:30'
 draft: false
-title: 'Dynamic Data fetching — Data Sources in Terraform/OpenTofu'
+title: Dynamic Data fetching — Data Sources in Terraform/OpenTofu
 description: Chapter V - Dynamically fetch data from remote using data source in Terraform/OpenTofu.
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6h8tusJxak5v3v4ViKYdw.png
 tags:
-  - AWS
-  - vpc
-  - devops
-  - terraform
+- AWS
+- vpc
+- devops
+- terraform
+categories:
+- Cloud Infrastructure
 ---
 
 

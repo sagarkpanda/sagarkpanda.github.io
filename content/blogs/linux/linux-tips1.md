@@ -1,12 +1,18 @@
 ---
 date: '2024-05-05T19:26:10+05:30'
 draft: false
-title: 'Linux Terminal tips - Part 1'
+title: Linux Terminal tips - Part 1
 description: Essential Linux Terminal Hacks for Efficiency
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LNuC4HwvmpE28qItI9T7RA.png
 tags:
-  - linux
-  - terminal
-  - tips
+- linux
+- terminal
+- tips
+series:
+- Linux Tips
+series_order: 1
+categories:
+- Linux & Automation
 ---
 
 
@@ -19,7 +25,6 @@ In the labyrinth of Linux commands, managing tasks can be daunting. Fear not! He
 
 Use Ctrl + L to clean the terminal instead of typing clear every time.
 
-![Image Credit: Tec Admin](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LNuC4HwvmpE28qItI9T7RA.png)
 
 ### 2. Tab auto complete cmds:
 

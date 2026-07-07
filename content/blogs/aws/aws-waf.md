@@ -1,17 +1,18 @@
 ---
 date: '2024-08-20T19:26:10+05:30'
 draft: false
-title: 'AWS WAF with Load Balancer - Beginner’s Guide'
+title: AWS WAF with Load Balancer - Beginner’s Guide
 description: AWS Web Application Firewall is a security service that helps protect web apps from common web exploits and attacks
+cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JJlzcHjGcywNPhgKk6a6ig.png
 tags:
-  - aws
-  - waf
-  - web security
-  - devops
+- aws
+- waf
+- web security
+- devops
+categories:
+- Cloud Infrastructure
 ---
 
-
-![Img bg: wallpaper cave](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JJlzcHjGcywNPhgKk6a6ig.png)
 
 ### Setup:
 
