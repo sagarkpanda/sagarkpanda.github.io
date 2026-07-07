@@ -73,9 +73,19 @@ main:
 footer:
   - name: RSS Feed
     url: /index.xml
-    weight: 20
+    weight: 15
     params:
       icon: rss
+
+  # Resume page is drafted (content/resume/_index.md, draft: true) -- fill
+  # in its front matter, set draft: false, then uncomment this block to
+  # both build the page AND show this footer link.
+  
+  # - name: Resume
+  #   pageRef: /resume
+  #   weight: 20
+  #   params:
+  #     icon: file-text
 
   - name: All Systems Operational
     url: https://status.sagarpanda.com/

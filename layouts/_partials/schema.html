@@ -13,7 +13,7 @@
 }
 </script>
 
-{{ else if .IsPage }}
+{{ else if and .IsPage (eq .Section "blogs") }}
 
 {{/* Determine social image */}}
 {{ $image := "" }}
@@ -118,6 +118,79 @@
         }
         {{ end }}
 
+      ]
+    }
+
+  ]
+}
+</script>
+
+{{ else if .IsPage }}
+
+{{/* Everything that isn't the homepage or an actual blog post: Projects
+     list/single, Archives, Tags, Categories, Series, etc. These are NOT
+     articles -- a plain WebPage schema with a breadcrumb built from the
+     page's real ancestry (not a hardcoded "Blogs" step) is the correct,
+     accurate thing to emit here. */}}
+{{ $image := "" }}
+{{ with .Params.cover }}
+  {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+    {{ $image = . }}
+  {{ else }}
+    {{ $image = . | absURL }}
+  {{ end }}
+{{ else }}
+  {{ with site.Params.images }}
+    {{ $image = (index . 0 | absURL) }}
+  {{ end }}
+{{ end }}
+
+{{ $crumbs := slice (dict "name" "Home" "item" site.BaseURL) }}
+{{ range .Ancestors.Reverse }}
+  {{ if not .IsHome }}
+    {{ $crumbs = $crumbs | append (dict "name" .Title "item" .Permalink) }}
+  {{ end }}
+{{ end }}
+{{ $crumbs = $crumbs | append (dict "name" .Title "item" .Permalink) }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}",
+      "url": "{{ .Permalink }}",
+      "name": {{ .Title | jsonify }},
+      "description": {{ (.Description | default .Summary) | jsonify }}
+      {{ if $image }}
+      ,
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "{{ $image }}"
+      }
+      {{ end }}
+      ,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{ site.BaseURL }}#website"
+      }
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ .Permalink }}#breadcrumbs",
+      "itemListElement": [
+        {{ range $i, $crumb := $crumbs }}
+          {{ if $i }},{{ end }}
+          {
+            "@type": "ListItem",
+            "position": {{ add $i 1 }},
+            "name": {{ $crumb.name | jsonify }},
+            "item": "{{ $crumb.item }}"
+          }
+        {{ end }}
       ]
     }
 
