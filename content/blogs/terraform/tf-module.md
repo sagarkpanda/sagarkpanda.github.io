@@ -43,7 +43,7 @@ With main.tf for user name also we have a variable here, so that we can override
 
 The output.tf as usual prints the details of the user post creation.
 
-```
+```terraform
 #main.tf
 provider "aws" {
     region = "ap-south-1"
@@ -75,7 +75,7 @@ Ok, so now since the root module is set up, lets create our child module and her
 
 And the main.tf calls the root module by specifying the path of the module we want to run.
 
-```
+```terraform
 module "user_module" {
 
     source = "../../iam_users"
@@ -91,7 +91,7 @@ The dev environment specifies the location, in this case, two directories back. 
 
 So the full dir structure looks like this.
 
-```
+```bash
 sagar@DELL-G5:~/tofu/Modules$ tree
 .
 ├── dev
@@ -132,7 +132,7 @@ Example:
 
 I just copied the S3 bucket module.
 
-```
+```terraform
 provider "aws" {
   region = "ap-south-1"
 }
@@ -154,4 +154,4 @@ When we define the source as “terraform-aws-modules”, and do init, terraform
 
 Terraform modules simplify infrastructure management by organizing and reusing code. Whether you create custom modules or use community-provided ones, it save time, ensure consistency, and make our IaC more maintainable. Start small and go modular.
 
-[Read more on Terraform →](/blogs/#terraform)
+<!-- [Read more on Terraform →](/blogs/#terraform) -->

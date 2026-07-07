@@ -30,7 +30,7 @@ There are multiple vendors implementing ingress api and nginx is one such.
 
 First create deployments of your app.
 
-```
+```bash
 kctl create deployment appname --image=<name>
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FKAD4dtPPmxJpncJxRalGw.png)
@@ -54,7 +54,7 @@ The location of the manifest deploy/static/provider/cloud.
 
 This creates a namespace called “Ingress- nginx”
 
-```
+```bash
 kctl apply -f deploy.yml
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FICA1XdjF_qGvaBk9Qpk0g.png)
@@ -71,7 +71,7 @@ As of now it’s just the nginx, no application is served here so we’ll see a 
 
 Now create an ingress resource which points the controller to the services.
 
-```
+```yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -110,7 +110,7 @@ Here we define the ingress class name as nginx.
 
 Apply and browse the ip of the ingress controller.
 
-```
+```bash
 sagar [ ~ ]$ kctl apply -f ingress.yml
 ingress.networking.k8s.io/myapp-ingress created
 sagar [ ~ ]$
@@ -126,7 +126,7 @@ A **prefix** path type will always route to the destination even if the url does
 
 **Exact** path type loads only when the path matches the url otherwise return a 404 page.
 
-```
+```yml
     - path: /tea
       pathType: Exact
       backend:
@@ -150,4 +150,4 @@ Here we used IP based routing. In [**_the next article_**]({{< relref "nginx-ing
 
 **Read More on K8s:**
 
-[Read more on K8s →](/blogs/#kubernetes)
+<!-- [Read more on K8s →](/blogs/#kubernetes) -->

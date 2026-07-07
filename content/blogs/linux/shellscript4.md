@@ -131,4 +131,4 @@ That’s all about it.
 
 **References:** LearnLinuxTV
 
-[Read More on shell scrpting→](/blogs/#linux)
+<!-- [Read More on shell scrpting→](/blogs/#linux) -->

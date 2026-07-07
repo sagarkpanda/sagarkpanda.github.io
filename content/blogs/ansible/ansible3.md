@@ -11,7 +11,7 @@ series:
 - Ansible Fundamentals
 series_order: 3
 categories:
-- Linux & Automation
+- Asnible
 ---
 
 In the earlier posts, we saw how to [**_Setup Ansible_**]({{< relref "ansible1" >}}), [**_simple playbooks with groups, variables, conditionals and loop_**]({{< relref "ansible2" >}})
@@ -244,5 +244,3 @@ Now we can run the playbook role.yml and it will execute the taks we have define
 There are many more features with role such as using jinja2 template, variables, handler and etc.
 
 **_This is the final chapter on ansible series_.** Thanks for reading it.
-
-[Read more on Ansible →](/blogs/#ansible)

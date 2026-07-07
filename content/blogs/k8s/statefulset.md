@@ -25,7 +25,7 @@ StatefulSets are used to manage stateful applications, such as databases or othe
 
 Since ips are random, we have hostname as a stable way to connect to pods. However, when we deploy any app, the service generally have hostname like this and since pod names are also generated with random characters it would become difficult to track them.
 
-```
+```ini
 podname.svcname.namespace.svc.cluster.local
 ```
 
@@ -40,7 +40,7 @@ StatefulSet pods have a unique ordinal index (0, 1, 2…). This provides:
 *   **Ordered Startup:** Pods start from **0 to N-1**. `web-1` will not start until `web-0` is "Running and Ready."
 *   **Ordered Termination:** When scaling down, pods are deleted in reverse (N-1 down to 0) to ensure data is safely offloaded from “workers” before “masters.”
 
-```
+```yml
 #sf.yml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -80,7 +80,7 @@ Headless service is a regular Kubernetes service where the **spec.clusterIP** is
 
 **DNS Format:** `podname.svcname.namespace.svc.cluster.local`
 
-```
+```yml
 apiVersion: v1
 kind: Service
 metadata:
@@ -113,7 +113,7 @@ There are several storage classes in azure, to view them list all the sorage cla
 
 As we can see there are multiple with different binding mode. lets take managed as it waits for the storage to be claimed first before creating the volumes.
 
-```
+```yml
 #sf_vol.yml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -156,4 +156,4 @@ Apply the config and list all the pods and PVCs. You will see that each pod inde
 
 StatefulSets are the key to running databases and other state-heavy applications on Kubernetes. By providing each pod with a **unique ID**, a **stable hostname**, and its own **dedicated storage**, we ensure that our data stays safe and our cluster remains predictable even during restarts or scaling.
 
-[Read more on K8s →](/blogs/#kubernetes)
+<!-- [Read more on K8s →](/blogs/#kubernetes) -->

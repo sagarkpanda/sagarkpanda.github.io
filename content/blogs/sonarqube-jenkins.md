@@ -10,7 +10,7 @@ tags:
 - DevOps
 - ci/cd
 categories:
-- Linux & Automation
+- CI/CD Automation
 ---
 
 ### Introduction:
@@ -38,7 +38,7 @@ First login to PostgreSQL and create a user named **sonaruser** or any other nam
 
 Create a database named **sonarqubedb** with **sonaruser** as the owner. Grant all the privileges on the **sonarqubedb** database to the **sonaruser**. And exit postgress and the postgress user.
 
-```
+```bash
 sudo su - postgres
 postgres@labputer:~$ psql
 psql (14.7 (Ubuntu 14.7-0ubuntu0.22.10.1))
@@ -69,7 +69,7 @@ At the Database section, uncomment the **jdbc.username and jdbc.password** lines
 
 On the PostgreSQL section uncomment the **jdbc.url** line as following. Save and exit.
 
-```
+```ini
 $ vim /opt/sonarqube/conf/sonar.properties
 -------------------------------------------
 # DATABASE
@@ -87,7 +87,7 @@ First create the systemd service file with the content as below. Save and quit.
 $ sudo vim /etc/systemd/system/sonar.service
 ```
 
-```
+```ini
 [Unit]
 Description=SonarQube service
 After=syslog.target network.target
@@ -237,7 +237,7 @@ Note: SonarQube does not allow webhook on localhost (loopback address) by defaul
 
 Now, we need to modify the Jenkinsfile to receive the quality gate webhook.
 
-```
+```groovy
 pipeline {
     agent any
     stages {
@@ -275,11 +275,11 @@ pipeline {
 Rebuild the job. Once the job is complete, we should see it fail because of quality gate.
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1064/format:webp/1*dt93OFvREWZFVNj1dGuNYA.png)
-<br></br>
+
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C3ZjjdS6qz8WXmoFFexvig.png)
 
 That’s all about it. Hope you found it useful.
 
 Reference: [SonarQube Docs](https://docs.sonarqube.org/latest/), [Vultur](https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts/), [TecMint](https://www.tecmint.com/install-postgresql-and-pgadmin-in-ubuntu/)
 
-[Read more on CI/CD →](/blogs/#ci-cd)
+<!-- [Read more on CI/CD →](/blogs/#ci-cd) -->

@@ -70,7 +70,7 @@ Check this below official docs :
 
 I’ll set the creds as environment variables in the .bashrc file. I have also added an alias for terraform as tf, so whenever I run tf, terraform command is executed.
 
-```
+```bash
 alias tf='terraform'
 export AWS_ACCESS_KEY_ID="<your aws access key id>"
 export AWS_SECRET_ACCESS_KEY="<your aws secret access key>"
@@ -78,7 +78,7 @@ export AWS_SECRET_ACCESS_KEY="<your aws secret access key>"
 
 Now create a file called main.tf and paste in the code below:
 
-```
+```terraform
 provider "aws" {
   region = "ap-south-1"
 }
@@ -98,7 +98,7 @@ And since we got the successful message, we are reedy to go.
 
 As we know the workflow consist of 3 stages and we did 1, so lets proceed with the next two stages with the 2 commnds below.
 
-```
+```bash
 terraform plan -- shows us the overview of the result.
 terraform apply -- applies the configuration and creates the infra as we instruted.
 ```
@@ -109,7 +109,7 @@ For the above config we don’t have any instruction for creating any resource. 
 
 Starting with basics, lets create an IAM user. Add the code below to our .tf file and then run terraform plan, then terraform apply.
 
-```
+```terraform
 resource "aws_iam_user" "my_iam_users" {
   name  = "sagar-iam"
 }
@@ -131,7 +131,7 @@ Now we can see the user has been created.
 
 TF lifecycle includes the destroy command to remove resources which are created using TF. Confirm the action when prompted.
 
-```
+```bash
 terraform destroy
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OfaN81Xu0yxUJ-AktPnpyA.png)
@@ -140,7 +140,7 @@ Now the IAM user has been deleted from our AWS account.
 
 ### Few more terraform commands:
 
-```
+```bash
 terraform validate -- checks syntax of our config.
 terraform fmt -- rearranges the config file with proper alignments.
 ```
@@ -149,7 +149,7 @@ terraform fmt -- rearranges the config file with proper alignments.
 
 Use the config below to create a bucket. Run tf init, tf plan and then tf apply. You can pass -autp-approve arg to apply command.
 
-```
+```terraform
 provider "aws" {
   region = "ap-south-1"
 }
@@ -158,7 +158,7 @@ resource "aws_s3_bucket" "my_s3_bucket" {
 }
 ```
 
-```
+```bash
 terraform apply -auto-approve
 terraform destroy -auto-approve
 ```
@@ -167,8 +167,8 @@ Verify that the bucket has been created in AWS console. After you done practicin
 
 Alright, we are now set to proceed with more examples and understanding in details which we’ll see in next articles. Thanks for reading.
 
-[Read more on Terraform →](/blogs/#terraform)
+<!-- [Read more on Terraform →](/blogs/#terraform)
 
-[Read more on Ansible →](/blogs/#ansible)
+[Read more on Ansible →](/blogs/#ansible) -->
 
 References: [Terraform Docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)

@@ -11,7 +11,7 @@ tags:
 - cloud
 - devops
 categories:
-- Cloud Infrastructure
+- AWS
 ---
 
 <!-- {{< figure src=@image alt="AWS_S3Files Architecture" width="1200" height="630" >}} -->
@@ -84,6 +84,6 @@ Amazon S3 Files marks a major turning point by providing native NFS v4.1+ suppor
 
 Source: [AWS News](https://aws.amazon.com/blogs/aws/launching-s3-files-making-s3-buckets-accessible-as-file-systems/), [AWS Docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files.html)
 
-[Check out my other AWS tutorials →](/blogs/#cloud)
+<!-- [Check out my other AWS tutorials →](/blogs/#cloud) -->
 
 <!-- <a href="/blogs/#cloud">Read my other posts on AWS →</a> -->

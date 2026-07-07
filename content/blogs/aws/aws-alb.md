@@ -10,7 +10,7 @@ tags:
 - cloud
 - load balanncer
 categories:
-- Cloud Infrastructure
+- AWS
 ---
 
 
@@ -143,5 +143,5 @@ After you are done, delete all the resources to avoid incurring charges.
 
 **Reference**: [AWS Docs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
 
-**Read More on AWS:**
-[Read more on AWS →](/blogs/#cloud)
+<!-- **Read More on AWS:**
+[Read more on AWS →](/blogs/#cloud) -->

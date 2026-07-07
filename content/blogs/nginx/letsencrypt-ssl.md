@@ -31,9 +31,9 @@ See supported systems on certbot site.
 
 [Certbot Instructions](https://certbot.eff.org/instructions?source=post_page-----13c4098b84d9---------------------------------------)
 
-*   First update the package index and install Nginx with the below command
+First update the package index and install Nginx with the below command
 
-```
+```bash
 sudo apt update && sudo apt install nginx
 ```
 
@@ -43,20 +43,20 @@ Browse your ip and you should see the default Nginx webpage.
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sEa1jBCNfU-0ehOKKg-kew.png)
 
-*   Add dns entry in your registrar for the above IP.
+Add dns entry in your registrar for the above IP.
 
 ![DNS entry](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QhvmITCOPsqE2cR9Y7HOFQ.png)
 
-*   Create an index.html with your web app content in any directory of your choice. I have it in /var/www/html/<username>.
+ Create an index.html with your web app content in any directory of your choice. I have it in /var/www/html/<username>.
 
-```
+```nginx
 <title> SSL setup </title>
 <h1> Hello There! Welcome to Let's Encrypt setup </h1>
 ```
 
-*   Create a configuration for your website with the server name, enable the site.
+Create a configuration for your website with the server name, enable the site.
 
-```
+```nginx
 server {
        listen 80;
        listen [::]:80;
@@ -71,13 +71,13 @@ server {
 
 Here the **web** is the config file I have created.
 
-```
+```bash
 sudo ln -s /etc/nginx/sites-available/web /etc/nginx/sites-enabled/web
 ```
 
-*   Check syntax of your config and reload nginx. And try browsing your site with the domain or subdomain.
+Check syntax of your config and reload nginx. And try browsing your site with the domain or subdomain.
 
-```
+```bash
 sudo nginx -t
 sudo systemctl reload nginx
 ```
@@ -99,7 +99,7 @@ Follow the instructions on the screen to install snapd (not required on Ubuntu,
 
 Install the certbot tool and create a sysmlink.
 
-```
+```bash
 sudo snap install --classic certbot
 # Create symlink
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
@@ -111,7 +111,7 @@ Choose the first if you want automatic configuration. Certbot will change the ng
 
 However I’ll do the configuration myself. So I chose the second command.
 
-```
+```bash
 sudo certbot --nginx
 OR
 sudo certbot certonly --nginx
@@ -124,7 +124,7 @@ Example below: It found 1 domain so I had to enter the corresponding number “1
 
 After this the certificate files are atore under /etc/lets-encrypt/live directory.
 
-```
+```ini
 Which names would you like to activate HTTPS for?
 We recommend selecting either all domains, or all domains in a VirtualHost/server block.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -141,7 +141,7 @@ This certificate expires on 2024-02-03.
 
 Test Auto renewal:
 
-```
+```text
 sudo certbot renew --dry-run
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -158,7 +158,7 @@ Congratulations, all simulated renewals succeeded:
 *   Change config to add ssl part in nginx conf. Optionally you can add a redirect statement in http server block and remove web root so even http traffic is sent to https.
 *   Add the paths to the certificate files in the https server block.
 
-```
+```nginx
 server {
        listen 80;
        listen [::]:80;
@@ -184,7 +184,7 @@ server {
 
 Save, test the config for syntax errors and reload nginx.
 
-```
+```bash
 sudo nginx -t
 sudo systemctl reload nginx
 ```
@@ -205,7 +205,9 @@ We have 3 months of validity but fret not as we saw with dry run, certbot will r
 
 Another web page for example.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Q4hful2L4VRtV5g-h7aR6Q.png)![captionless image](https://miro.medium.com/v2/resize:fit:1368/format:webp/1*Nsq3BasnUb7Sl_ZgDEp35g.png)
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Q4hful2L4VRtV5g-h7aR6Q.png)
+
+![captionless image](https://miro.medium.com/v2/resize:fit:1368/format:webp/1*Nsq3BasnUb7Sl_ZgDEp35g.png)
 
 If you want to delete the certificate, try certbot delete. However make sure to update the nginx site config as it does not remove the server config for https.
 
@@ -217,12 +219,13 @@ And that’s about it. Thanks for reading!
 
 ### Up next:
 
-In this article we configure mTLS with Nginx, mTLS enables two way validation with client-server handshake for enhanced security.
+In this article we configure mTLS with Nginx, mTLS enables two way validation with client-server handshake for enhanced security and how NGINX helps us load balance mutiple servers.
 
-**Read More on Web Servers:**
+<!-- **Read More on Web Servers:**
 
 [Apache →](/blogs/#apache)
 <br></br>
-[Nginx →](/blogs/#nginx)
+[Nginx →](/blogs/#nginx) -->
+[Mutual TLS Handshake for robust security]({{< relref "nginx-mtls" >}})
 
 [Load Balancing Magic: Unleashing the Potential of NGINX]({{< relref "nginx-lb" >}})

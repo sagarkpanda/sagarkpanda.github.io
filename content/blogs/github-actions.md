@@ -38,7 +38,7 @@ Create a yaml file with any name and we’ll define jobs, steps similarly to Jen
 
 The program that prints hello world. I m using python here.
 
-```
+```python
 #main.py
 import os
 print("Hello World")
@@ -46,7 +46,7 @@ print("Hello World")
 
 The action yml to take this code and run the pipeline.
 
-```
+```yml
 name: github-actions-demo
 on:
   push:
@@ -65,7 +65,7 @@ jobs:
 *   name: The name of our pipeline
 *   on — this is the build trigger. We have different triggers like on push, or pull request or a cron job etc. We also need to define the branch on the the event should be taken from. Here the branch is main.
 
-```
+```yml
 on:
   schedule: # Run workflow automatically
     - cron: '30 4 * * *'
@@ -73,7 +73,7 @@ on:
 
 On a PR. We can also define multiple branches as an array.
 
-```
+```yml
 on:
   push:
     branches:
@@ -92,7 +92,7 @@ Having this, we get an option as below. Skipping this means the pipeline will ru
 *   jobs — same as Stages on Jenkins and we can define multiple jobs (stages). Every job with a particular name. In our example the job name is job1.
 *   runs-on: This is for defining the node (machine) where the pipeline will be executed. It can be Linux, windows or Mac OS. We can also define our own node.
 
-```
+```yml
 steps:
       - uses: actions/checkout@v2
       - run: python main.py
@@ -136,7 +136,7 @@ After you are done, we should see our secrets name. Even you can’t view the va
 
 Now, I’ll update the program to use the secret values.
 
-```
+```python
 import os
 print("Hello World")
 print(os.environ.get('first_name'))
@@ -153,7 +153,7 @@ Now we need to create 2 variables to get the creds values into github action to 
 
 Update the action yml like below:
 
-```
+```yml
 name: github-actions-demo
 on:
   push:
@@ -188,7 +188,7 @@ For example you can build an app and push the result to a remote machine or push
 
 You can also select the version of the programming language you want to use or even use multiple version of the lang.
 
-```
+```yml
 strategy:
       matrix:
         node-version: [10.x, 12.x]
@@ -196,7 +196,7 @@ strategy:
 
 → Here’s an example of pushing to a branch in same repo.
 
-```
+```yml
 name: React App Build and Push
 on:
   push:
@@ -247,7 +247,7 @@ The last step in this example is to push the complied files to the gh-pages bran
 
 → Another github action by Gautam, that runs daily and updates the readme.md with the medium (can be any) blogs.
 
-```
+```yml
 name: medium.com
 on:
   schedule: # Run workflow automatically
@@ -294,4 +294,4 @@ Thanks for reading.
 
 [How to Setup Jenkins and Push Docker Image using Pileline Job](https://sagarkrp.medium.com/how-to-install-and-setup-jenkins-on-linux-with-pipeline-job-3e2973229a8f?source=post_page-----55e14f62713b---------------------------------------)
 
-[Read more on CI/CD →](/blogs/#ci-cd)
+<!-- [Read more on CI/CD →](/blogs/#ci-cd) -->

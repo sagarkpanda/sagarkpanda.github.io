@@ -41,7 +41,7 @@ As of now we have the server certificate ready and it works fine. Now we need to
 
 ### 1. Generate a Self-Signed CA Certificate
 
-```
+```bash
 openssl req -newkey rsa:4096 -x509 -keyout ca.key -out ca.crt -days 30 -nodes -subj "/CN=Sagar"
 ```
 
@@ -102,11 +102,11 @@ This command takes the client’s CSR, signs it with the CA’s private key (`ca
 
 Update the nginx config to include the client cert and restart nginx.
 
-```
+```bash
 ssl_client_certificate /etc/nginx/ssl/ca.crt;
 ssl_verify_client on;
 ```
-```
+```nginx
  server {
     listen 443 ssl;
     server_name app.sagarpanda.com;
@@ -138,7 +138,7 @@ Let’s browse the app in browser and we will get error indicating we did not pr
 
 We need to provide the cert via browser. First convert the cleint.crt to pkcs12 format by combining both client.key and client.crt. This will ask you to enter a passphrase and creates an encrypted file.
 
-```
+```bash
 openssl pkcs12 -export -inkey client.key -in client.crt -out client.pkcs12
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MCXVI-2S8GPqXE6mCDNdbA.png)
@@ -160,10 +160,10 @@ mTLS adds another layer of security to enhance security, and authenticated commu
 
 If you found this article helpful, click the 👏 button, it keeps me motivated to write more!
 
-**Read More on Web Servers:**
+**Read More on Nginx:**
 
-[Apache →](/blogs/#apache)
+<!-- [Apache →](/blogs/#apache)
 <br></br>
-[Nginx →](/blogs/#nginx)
+[Nginx →](/blogs/#nginx) -->
 
 [Load Balancing Magic: Unleashing the Potential of NGINX]({{< relref "nginx-lb" >}})

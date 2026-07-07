@@ -7,8 +7,10 @@ cover: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FtTi1Yxel568GbnO
 tags:
 - kafka
 - microservices
+- mq
 categories:
-- Kubernetes & Containers
+- Data Streaming
+- Message Queue
 ---
 
 
@@ -55,7 +57,7 @@ To simply learning we are going to take e commerce app for example. One called P
 
 In the docker-compose.yaml, we define image, the port and other configuration Kafka needs.
 
-```
+```yml
 services:
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -121,7 +123,7 @@ Our first app is the Producer (representing our Order microservice). Its only jo
 
 `--> producer.flush()`:this tells our script to Stop and wait until that local buffer is empty and Kafka has confirmed it received everything.”
 
-```
+```python
 #producer.py
 import json
 import uuid
@@ -178,7 +180,7 @@ Here is how the consumer works:
 *   When a message arrives, it’s in raw bytes. `msg.value().decode("utf-8")` turns it back into a string, and `json.loads()`converts it back into a usable Python dictionary.
 *   The `try...except...finally` block ensures that if you stop the script with Ctrl+C, it calls `consumer.close().`This gracefully closes kafka consumer app without the python error of KeyboardInerrupt
 
-```
+```python
 # consumer.py
 import json
 from confluent_kafka import Consumer

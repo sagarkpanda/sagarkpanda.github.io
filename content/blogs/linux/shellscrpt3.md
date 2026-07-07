@@ -179,4 +179,4 @@ And there you have it! 'if' statements are the secret sauce that’ll take your 
 
 Thanks for reading!
 
-[Read More on shell scrpting→](/blogs/#linux)
+<!-- [Read More on shell scrpting→](/blogs/#linux) -->

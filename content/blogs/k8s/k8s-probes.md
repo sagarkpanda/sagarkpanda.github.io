@@ -64,7 +64,7 @@ We can probes the contianers in differnet ways such as
 *   `**tcpSocket**`: makes a TCP connection to the container's port to check if it’s accepting connections.
 *   `**exec**`: Executes a command inside the container to check its health.
 
-```
+```yml
 livenessProbe:
       exec:
         command:
@@ -87,7 +87,7 @@ Lets see the demo. This is a python app, with 2 endpoints /health and /readyz wh
 
 Check the [github repo](https://github.com/sagarkpanda/Kubernetes_Labs/tree/main/probes) for the full app and relevant config.
 
-```
+```python
 @app.route('/healthz')
 def health():
     return "Healthy", 200
@@ -104,7 +104,7 @@ def ready():
 And the manifest has been configured with the probes to check the status.
 Check the github repo for the full config.
 
-```
+```yml
         # Liveness Probe: Checks /healthz every 5 seconds
         # after an initial delay of 5 seconds
         livenessProbe:
@@ -184,9 +184,9 @@ When used in combination with liveness and readiness probe, these two probes wil
 
 Kubernetes probes are crucial for maintaining healthy and reliable applications. By using **Liveness**, **Readiness**, and **Startup** probes, we can ensure that our app containers are running properly, ready to handle traffic, and given enough time to start up.
 
-**Read More on K8s:**
+<!-- **Read More on K8s:**
 
-[Read more on K8s →](/blogs/#kubernetes)
+[Read more on K8s →](/blogs/#kubernetes) -->
 
 **References**: [K8s Docs](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/), [Pod Restart policy](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 

@@ -11,7 +11,7 @@ tags:
 - cost optimaization
 - AWS EC2
 categories:
-- Cloud Infrastructure
+- AWS
 ---
 
 
@@ -197,6 +197,6 @@ Lambda, a server less function runs only when called (just like functions/method
 
 **Reference:** [**AWS re:Post**](https://repost.aws/knowledge-center/start-stop-lambda-eventbridge)
 
-**Read More on AWS:**
-[Read more on AWS →](/blogs/#cloud)
+<!-- **Read More on AWS:**
+[Read more on AWS →](/blogs/#cloud) -->
 

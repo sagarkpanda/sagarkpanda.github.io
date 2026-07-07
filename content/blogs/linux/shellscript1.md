@@ -139,4 +139,4 @@ Thanks for reading!
 
 Reference: LearnLinux.tv
 
-[Read More on shell scrpting→](/blogs/#linux)
+<!-- [Read More on shell scrpting→](/blogs/#linux) -->

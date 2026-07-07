@@ -43,7 +43,7 @@ Lets understand one by one.
 >
 > ENTRYPOINT/CMD : Command to start our application.
 
-```
+```docker
 FROM ubuntu:22.10 - We are using Ubuntu as base image.
 RUN apt update -y - Updating repository index as we generally do in Linux.
 RUN apt install lighttpd -y - Installing lighttpd webserver.
@@ -53,7 +53,7 @@ ENTRYPOINT service lighttpd start && /bin/bash - Starting the web server.
 
 To build the image, we need to run the docker build command: docker build -t <name:tag> .
 
-```
+```bash
 docker build -t fbweb:1.0 .
 ```
 
@@ -67,7 +67,7 @@ If there are no errors, this will will be completed with this kind of message:
 
 To view the list of Images we can use : docker images command.
 
-```
+```bash
 └──| docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 fbweb        1.0       bcb23d33bf82   1 minute ago   163MB
@@ -75,7 +75,7 @@ fbweb        1.0       bcb23d33bf82   1 minute ago   163MB
 
 Now lets run this image with the following command:
 
-```
+```bash
 ──| docker run --name fb -td -p 80:80 fbweb:1.0
 551eddaa8434ac7665e85bf7e959493eb21783ad4f332fdcc5b678e5769ae233
 ──| docker ps
@@ -91,7 +91,7 @@ The docker ps command shows the currently active containers. If you don’t see 
 
 If your container is in exited state , use docker logs against the container id or name to find out the reason why it exited.
 
-```
+```bash
 docker ps :- shows active containers
 docker ps -a :-shows both active and stopped containers
 docker logs <container_id> :- find out why container exited
@@ -107,7 +107,7 @@ ta-da! Our application is running fine. We successfully containerized the applic
 
 Tag the image with repository name using below command. After tagging we should see another image appear in the list with same ID.
 
-```
+```bash
 ──| docker tag fbweb:1.0 sagarkp/fbweb:1.0
 
 └──| docker images
@@ -118,13 +118,13 @@ sagarkp/fbweb   1.0       9443bff58bb3   About an hour ago   163MB
 
 Now to push to docker hub, we first need to provide docker hub credentials in our terminal. Use the below command and enter the creds when asked.
 
-```
+```bash
 docker login
 ```
 
 Once we are logged in, we can use the docker push command to push the image.
 
-```
+```bash
 ──| docker push sagarkp/fbweb:1.0
 The push refers to repository [docker.io/sagarkp/fbweb]
 a2517707f654: Pushed
@@ -141,4 +141,4 @@ Now if we login to Docker Hub in our browser, we can see the image and it was pu
 
 Whalesome!!. We have successfully built and pushed our image to docker hub.
 
-[**Checkout more artciles on Docker →**](/blogs/#docker)
+<!-- [**Checkout more artciles on Docker →**](/blogs/#docker) -->

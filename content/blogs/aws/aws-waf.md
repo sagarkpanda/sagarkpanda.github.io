@@ -10,7 +10,7 @@ tags:
 - web security
 - devops
 categories:
-- Cloud Infrastructure
+- AWS
 ---
 
 
@@ -66,5 +66,5 @@ Refresh the webpage again, and we shall see captcha page.
 
 Cool. Now experiment further to find out more on what WAF has to offer. Delete the resources once you are done with the experiment.
 
-Read more on aws:
-[Read more on AWS →](/blogs/#cloud)
+<!-- Read more on aws:
+[Read more on AWS →](/blogs/#cloud) -->

@@ -186,4 +186,4 @@ That’s all for today. Thanks for reading.
 
 References: [Sysdig](https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-rbac/)
 
-[Checkout more articles on K8s →](/blogs/#kubernetes)
+<!-- [Checkout more articles on K8s →](/blogs/#kubernetes) -->

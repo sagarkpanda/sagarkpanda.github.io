@@ -1050,4 +1050,4 @@ In a future article, we'll move beyond the demo application and instrument our o
 
 The more scenarios you experiment with, the easier it becomes to understand how modern observability platforms help diagnose and troubleshoot distributed systems.
 
-[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
+<!-- [**Checkout more on monitoring and o11y →**](/blogs/#o11y) -->

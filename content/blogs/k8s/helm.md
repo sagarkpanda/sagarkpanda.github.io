@@ -188,4 +188,4 @@ And there we have it, all the basics of Helm. Hope you found it useful. Explore 
 
 ![Img src: helm.sh](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IeU1wgJuI2ApzGmDrbr7vA.gif)
 
-[Read more on K8s →](/blogs/#kubernetes)
+<!-- [Read more on K8s →](/blogs/#kubernetes) -->

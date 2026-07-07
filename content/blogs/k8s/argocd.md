@@ -331,8 +331,8 @@ For further experiments
 
 Thanks for reading.
 
-[Read more on K8s →](/blogs/#kubernetes)
+<!-- [Read more on K8s →](/blogs/#kubernetes)
 <br></br>
-[Read more on CI/CD →](/blogs/#ci-cd)
+[Read more on CI/CD →](/blogs/#ci-cd) -->
 
 References: [ArgoCD docs](https://argo-cd.readthedocs.io/en/stable/getting_started/), [Red Hat](https://www.redhat.com/en/blog/argocd-and-gitops-whats-next), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-to-kubernetes-using-argo-cd-and-gitops)

@@ -403,4 +403,4 @@ The changelog.md, the tags and the release, all have been updated.
 
 Alright, thats all for today. In the next article, we will take a look at more automation such as code and dependency scan with codeql and dependabot.
 
-Checkout related article on [CI/CD →](/blogs/#ci-cd)
+<!-- Checkout related article on [CI/CD →](/blogs/#ci-cd) -->

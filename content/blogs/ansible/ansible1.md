@@ -11,7 +11,7 @@ series:
 - Ansible Fundamentals
 series_order: 1
 categories:
-- Linux & Automation
+- Asnible
 ---
 
 ### Introduction:
@@ -71,14 +71,14 @@ Create two files called **ansible.cfg** and **hostlist/inventory** (or any name)
 
 The ansible.cfg is the main configuration that Ansible uses. We can create it inside /etc/ansible, or in our home dir or current working directory. In this example I have created in pwd.
 
-```
+```ini
 # the inventory/hostlist file
 #172.31.32.149
 #43.205.125.236
 Managed
 ```
 
-```
+```ini
 # the ansible.cfg file
 [defaults]
 inventory=./hostlist
@@ -137,7 +137,7 @@ To find example of any module type “**_/EXAMPLE_**”.
 
 Create a yaml file with the task of installing apache http server, start and enable it. Will also send a stiatic html to /var/www/html directory.
 
-```
+```yml
 ---
 - hosts: Managed
   become: true
@@ -176,7 +176,5 @@ Congratulations on completing the basic Ansible setup. This marks the end of thi
 **_Make sure to terminate any vm instances if you have created to avoid incurring charges._**
 
 Thanks for reading.
-
-[Read more on Ansible →](/blogs/#ansible)
 
 Reference: Ansible Docs

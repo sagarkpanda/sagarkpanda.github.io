@@ -34,7 +34,7 @@ A 200 HTTP response indicates that the site is working fine. Check the Mozilla a
 
 First we need to modify docker-compose for the last time. Add Blackbox image.
 
-```
+```yml
   blackbox:
     image: prom/blackbox-exporter:latest
     # privileged: true
@@ -50,7 +50,7 @@ First we need to modify docker-compose for the last time. Add Blackbox image.
 
 Now we’ll need to modify prometheus.yml config to add blackbox job to let Prometheus collect the metrics coming from the blackbox exporter. Also in the config we see that we are looking for status codes that are of 200 class.
 
-```
+```yml
  - job_name: 'blackbox'
     metrics_path: /probe
     params:
@@ -77,7 +77,7 @@ The second rule is to get alert for SSL/TLS certificate expiry duration so that 
 
 Note: You can create or your own expressions or use various sites to get them. Example I have used the expressions from “[https://samber.github.io/awesome-prometheus-alerts/](https://samber.github.io/awesome-prometheus-alerts/)”.
 
-```
+```yml
 - name: HTTP_Status_Failure
   rules:
     - alert: BlackboxProbeHttpFailure
@@ -135,7 +135,7 @@ Well look what we have here. We get various information about the websites.
 Hope you found this useful. Thanks for reading.
 
 
-[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
+<!-- [**Checkout more on monitoring and o11y →**](/blogs/#o11y) -->
 
 [Send Email Alerts using Prometheus AlertManager]({{< relref "prometheus" >}})
 

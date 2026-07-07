@@ -29,7 +29,7 @@ In this article we’ll configure it to send Server Status alerts via email.
 
 First update the docker-compose.yml to include alertmanager image.
 
-```
+```yml
 version: '3.8'
 networks:
   monitoring:
@@ -106,7 +106,7 @@ Create an app password in your Google account. Follow the official guide by Goo
 
 Now create alert manager configuration using below:
 
-```
+```yml
 # alertmanager.yml
 route:
   receiver: 'Mail Alert'
@@ -128,7 +128,7 @@ receivers:
 
 Now, will create rules based on which we’ll get alerts.
 
-```
+```yml
 #alerts.yml
 groups:
 - name: Example
@@ -155,7 +155,7 @@ groups:
 
 We need to modify Prometheus configuration to include alertmanager and the rules configuration. I have added a node which does not exist for this demo. This is for getting the InsatnceDown alert.
 
-```
+```yml
 #prometheus.yml
 global:
   scrape_interval: 30s
@@ -229,6 +229,6 @@ Thanks for reading.
 
 Reference: Prometheus.io
 
-[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
+<!-- [**Checkout more on monitoring and o11y →**](/blogs/#o11y) -->
 
 [Visualize Your Website Metrics — Blackbox Exporter and Grafana]({{< relref "blackbox" >}})

@@ -53,10 +53,10 @@ And apply the external dns.
 
 Now apply the ingress resource.
 
-```
+```bash
 kctl apply -f named_ingress.yml
 ```
-```
+```yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -98,7 +98,7 @@ Once we do that, we can see dns records getting created automatically.
 
 get ip of the ingress and browse.
 
-```
+```bash
 kctl get ingress
 ```
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZZbzHAMDy-B04JGsE96ooA.png)
@@ -115,7 +115,7 @@ Now that our app is set and working fine, lets add ssl certificate.
 Note: Here I’m using lets encrypt cert.
 First we need to install the cert manager.
 
-```
+```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.4/cert-manager.yaml
 ```
 
@@ -123,7 +123,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 Create a certIssuer with cert provider details.
 
-```
+```yml
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -146,7 +146,7 @@ Get the secret created.
 
 Update the ingress with the TLS details.
 
-```
+```yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -196,4 +196,4 @@ Noice 😁
 
 There you go. Our app running on k8s with nginx ingress using our own domain.
 
-[Read more on K8s →](/blogs/#kubernetes)
+<!-- [Read more on K8s →](/blogs/#kubernetes) -->

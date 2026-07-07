@@ -142,4 +142,4 @@ However self managed k8s cluster can be hard to manage in long run. So we can us
 
 In the next post, we’ll discuss how to create a managed cluster on AKS.
 
-[**Checkout more artciles on K8s →**](/blogs/#kubernetes)
+<!-- [**Checkout more artciles on K8s →**](/blogs/#kubernetes) -->

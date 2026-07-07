@@ -8,8 +8,11 @@ tags:
 - apache
 - http server
 - devops
+series:
+- Web Servers
+series_order: 2
 categories:
-- Linux & Automation
+- Webserver
 ---
 
 
@@ -57,7 +60,7 @@ Hosting our web application:
 
 Create a directory with the project name inside /var/www/ or any location.
 
-```
+```bash
 cd /var/www
 sudo mkdir DemoApp
 ```
@@ -70,7 +73,7 @@ vim index.html
 
 ``````
 
-```
+```html
 <html>
   <head>
     <title> Your page title </title>
@@ -87,14 +90,14 @@ Now that we have our application ready, we need to configure Apache to serve the
 
 Create a new file inside /etc/apache2/sites-available/. The file name should end with .conf extension.
 
-```
+```bash
 cd /etc/apache2/sites-available/
 sudo vim abc.conf
 ```
 
 The contents inside the .conf follows a specific pattern as below.
 
-```
+```apache
 <VirtualHost *:80>
         ServerName <url> #example.com
         ServerAlias <www.url> # www.example.com
@@ -113,7 +116,7 @@ Once the above step is complete. We need to enable the configuration by creating
 
 Alternatively on Debian/Ubuntu machines we can use Apache specific command to let Apache create the symlink for us. For the Apache to recognise the newly configured site, we need to reload/restart the web serer.
 
-```
+```bash
 sudo a2ensite abc.conf
 sudo systemctl apache2 reload
 ```
@@ -136,7 +139,7 @@ If we want to have SSL/TLS enabled for your application, we’ll need ssl certif
 
 The configuration should look like this:
 
-```
+```apache
 <VirtualHost *:80>
         ServerName <url> #example.com
         ServerAlias <www.url> # www.example.com
@@ -170,7 +173,7 @@ The configuration should look like this:
 
 Now that we have our configuration ready, we need to enable ssl module in Apache and then reload Apache service to have the new configuration applied. Use the Redirect permanent if you want to transfer all HTTP traffic to HTTPS.
 
-```
+```bash
 sudo a2enmod ssl
 sudo systemctl apache2 reload
 ```
@@ -178,7 +181,7 @@ sudo systemctl apache2 reload
 Note I: If you don’t see the expected result check the Apache status and Apache log under /var/log/syslog/apache2.
 Note II: When we modify/create any new configuration, we can validate the syntax of the config file using below command.
 
-```
+```bash
 apachectl configtest
 ```
 
@@ -207,7 +210,7 @@ These can be set per application basis or globally using /etc/apache2/conf-avail
 
 We need to enable headers modules and restart apache2 to make these work.
 
-```
+```apache
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-Frame-Options: SAMEORIGIN
@@ -223,14 +226,11 @@ sudo systemctl restart apache2
 
 If you want to hide your application from appearing in google search, use X-Robots-Tag header. You can set this individually for the application using .htaccess file or use the tag in virtual host configuration. To use this tag globally, add this header in apache.conf or or security.conf.
 
-```
+```apache
 Header set X-Robots-Tag "noindex, nofollow"
 ```
 
 That’s all for now.
 Reference : MDN Docs [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options), [2](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options), [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag).
-
-
-[Read more on Apache →](/blogs/#apache)
 
 [SSL for Everyone: A Guide to configure Let’s Encrypt with Certbot]({{< relref "letsencrypt-ssl" >}})

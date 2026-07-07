@@ -65,7 +65,7 @@ But we’ll use Docker to spin up 3 servers in and our application will transfer
 
 Dockerfile:
 
-```
+```dockerfile
 # Using node image as base
 FROM node:18
 # Create app directory
@@ -119,7 +119,7 @@ To configure nginx as load balancer, we must edit the nginx.conf file under /etc
 
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*hpdEVDA5xJRacnfUaiZVTw.png)
 
-```
+```nginx
 http {
        upstream beservers{
                server 127.0.0.1:2000;
@@ -134,7 +134,7 @@ Now all the requests coming from all these different servers (ports in this exam
 
 Add the following block to the default site or create a new site.
 
-```
+```nginx
 location / {
                 proxy_pass http://beservers/;
                 # First attempt to serve request as file, then
@@ -147,7 +147,7 @@ I m going to create a new site under /etc/nginx/sites-available called example.c
 
 #example.com
 
-```
+```nginx
 server {
         listen 80;
         server_name example.com #this is your website url
@@ -173,7 +173,7 @@ Note: This “sites-available” , “sites-enabled” are only applicable inca
 
 If you want however, you can imitate the same debian/ubuntu like directory structure by creating “sites-available” , “sites-enabled” and including the “sites-enabled” in nginx.conf.
 
-```
+```bash
 Cretae the directoies:
 $sudo mkdir /etc/nginx/sites-available /etc/nginx/sites-enabled
 $sudo vim /etc/nginx/nginx.conf
@@ -200,7 +200,7 @@ Same as the first example, the hello.py in our main application that runs on the
 
 ### Dockerfile:
 
-```
+```dockerfile
 # using alpine varinat of python image
 FROM python:alpine3.17
 # define working directory
@@ -215,7 +215,7 @@ CMD gunicorn --bind 0.0.0.0:3000 hello:app
 
 ### nginx.conf:
 
-```
+```nginx
 events{
     worker_connections 100;
 }
@@ -235,7 +235,7 @@ Here the proxy_pass transfers the request to flaskapp:3000 which is our python a
 
 ### docker-compose.yaml:
 
-```
+```yml
 version: '3'
 services:
     flaskapp:
@@ -257,7 +257,7 @@ Here we are launching 2 services, the app is our python application and nginx. Y
 
 Not mentioning any host port means the containers will be assigned with random ports. Now comes another problem, if we don’t know the ports then how can we configure upstream servers? In this case docker uses the services to find the ip and port.
 
-```
+```yml
 services:
     flaskapp:
       build:
@@ -280,7 +280,7 @@ This launches 3 instances of the “flaskapp” container and a nginx container.
 
 Check all the running containers with docker ps:
 
-```
+```bash
 ──| docker ps
 CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS              PORTS                                         NAMES
 3479b1e2e677   nginx:1.24.0        "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp             flaskapp-nginx-1

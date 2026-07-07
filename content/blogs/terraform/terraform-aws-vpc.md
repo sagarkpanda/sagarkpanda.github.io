@@ -240,4 +240,4 @@ Be sure to delete/destroy resources once you are done with the experiment.
 
 In future articles we’ll learn more about NAT gateway, bastion host, VPC peering and other features of VPC.
 
-[Read more on Terraform →](/blogs/#terraform)
+<!-- [Read more on Terraform →](/blogs/#terraform) -->

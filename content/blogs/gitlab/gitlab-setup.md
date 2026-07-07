@@ -8,7 +8,7 @@ tags:
 - gitlab
 - aws
 categories:
-- Linux & Automation
+- Git
 url: /blogs/gitlab/gitlab-setup/
 aliases:
 - /blogs/gitlab_setup/

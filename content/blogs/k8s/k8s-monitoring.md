@@ -121,4 +121,4 @@ You can add even more dashboards for different metrics. Example: 6417 for pod me
 
 There we have it. Monitoring K8s with prom and grafana. Next experiment is to configure alert manager for email alerts.
 
-[**Checkout more artciles on K8s →**](/blogs/#kubernetes)
+<!-- [**Checkout more artciles on K8s →**](/blogs/#kubernetes) -->

@@ -539,12 +539,12 @@ Depending on the deployment approach used, remove the individual applications, r
 ## Wrap Up
 
 At this stage, the platform is fully operational and telemetry is flowing from both the applications and the Kubernetes cluster into multiple observability backends. Continue exploring New Relic and Honeycomb to analyze traces, metrics, logs, and Kubernetes telemetry from different perspectives, or integrate the telemetry pipeline with other observability stacks such as LGTM, ELK, Splunk or Dynatrace and compare how they fit your needs.
-<br></br>
+<!-- <br></br> -->
 
-Found this article helpful? Consider leaving a like if it added value or helped you learn something new. 👇
+<!-- Found this article helpful? Consider leaving a like if it added value or helped you learn something new. 👇
 <br></br>
-[**Checkout more Monitoring and Observability Articles →**](/blogs/#o11y)
+[**Checkout more Monitoring and Observability Articles →**](/blogs/#o11y) -->
 
-[**Read more articles on Kubernetes →**](/blogs/#kubernetes)
+<!-- [**Read more articles on Kubernetes →**](/blogs/#kubernetes) -->
 
 [**Explore ArgoCD in Detail →**]({{< relref "argocd" >}})

@@ -141,4 +141,4 @@ Hurray! This completes the docker installation. On next chapter we’ll see how 
 
 Source: [Docker Docs](https://docs.docker.com/engine/install/).
 
-[**Checkout more artciles on Docker →**](/blogs/#docker)
+<!-- [**Checkout more artciles on Docker →**](/blogs/#docker) -->

@@ -41,7 +41,7 @@ Lets understand the configuration:
 
 We are launching 3 containers, so its better to use docker compose.
 
-```
+```yml
 #docker-compose.yml
 version: '3.8'
 networks:
@@ -186,7 +186,7 @@ To do so, we have to create the provisiong and datasources directories with the 
 
 The datasouces.yml configues the desired data-source (prometheus here) and the dashboard.yml is for creating dashboard automatically along with the provided json (obtained from grafna dashboards website [https://grafana.com/grafana/dashboards/](https://grafana.com/grafana/dashboards/), similar to how we need to do ourself with id or the json when doing manually).
 
-```
+```yml
 # datasouces.yml
 apiVersion: 1
 datasources:
@@ -250,9 +250,8 @@ Thanks for reading. In a future article, we will see how to configure alert mana
 
 ### Further Reading:
 
-[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
+<!-- [**Checkout more on monitoring and o11y →**](/blogs/#o11y) -->
 
 [Send Email Alerts using Prometheus AlertManager]({{< relref "alertmanager" >}})
-
 
 [Visualize Your Website Metrics — Blackbox Exporter and Grafana]({{< relref "blackbox" >}})

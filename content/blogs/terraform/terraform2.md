@@ -25,7 +25,7 @@ To do so we need to add output block to our config.
 
 For example on the IAM config, add the below output block at the end of the file.
 
-```
+```terraform
 output "iam_result" {
   value = aws_iam_user.my_iam_users
 }
@@ -40,7 +40,7 @@ Now apply the config and we should see the outpu printed.
 
 **_Note: For this kind of apply where we know that there is no change in our main requirements we can use -refresh=false. Example here since we know the iam user is already present and we don’t need to verify it._**
 
-```
+```terraform
 [root@DELL-G5 iam]# tf apply -refresh=false
 No changes. Your infrastructure matches the configuration.
 Terraform has compared your real infrastructure against your configuration
@@ -74,7 +74,7 @@ Input variables are make the configuration more flexible by defining values that
 
 Unlike variables found in programming languages, Terraform’s input variables don’t change values during a Terraform run such as plan, apply, or destroy. Instead, they allow users to more safely customize their infrastructure by assigning different values to the variables before execution begins, rather than editing configuration files manually.
 
-```
+```terraform
 variable "iam_user_prefix" {
   default = "labputer_user"
 }
@@ -91,7 +91,7 @@ resource "aws_iam_user" "my_iam_users" {
   name  = "${var.iam_user_prefix}_${count.index}"
 }
 ```
-```
+```bash
 aws_iam_user.my_iam_users[0]: Creating...
 aws_iam_user.my_iam_users[1]: Creating...
 aws_iam_user.my_iam_users[0]: Creation complete after 2s [id=labputer_user_0]
@@ -112,7 +112,7 @@ iam_user_prefix = "iam_user_from_tfvars"
 
 Now if we apply, the value from the .tfvars will be used even if we don’t have it commented.
 
-```
+```terraform
 [root@DELL-G5 varibles]# tf plan
 aws_iam_user.my_iam_users[0]: Refreshing state... [id=labputer_user_0]
 aws_iam_user.my_iam_users[1]: Refreshing state... [id=labputer_user_1]
@@ -138,7 +138,7 @@ Plan: 0 to add, 2 to change, 0 to destroy.
 
 If we want to override this, we can pass -var in command line.
 
-```
+```terraform
 [root@DELL-G5 varibles]# tf plan -refresh=false -var="iam_user_prefix=iam_user_from_cmd"
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   ~ update in-place
@@ -164,4 +164,4 @@ Plan: 0 to add, 2 to change, 0 to destroy.
 
 Alright that’s it for now. We’ll see more feature in further articles. Thanks for reading.
 
-[Read more on Terraform →](/blogs/#terraform)
+<!-- [Read more on Terraform →](/blogs/#terraform) -->

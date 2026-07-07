@@ -8,8 +8,11 @@ tags:
 - apache
 - http server
 - devops
+series:
+- Web Servers
+series_order: 2
 categories:
-- Linux & Automation
+- Webserver
 ---
 
 
@@ -27,7 +30,7 @@ The package has different name in different distributions. On Fedora/Red Hat bas
 
 First we need to update the package index to ensure we get the latest applications from the repository. To do so run the command below.
 
-```
+```bash
 sudo apt update
 ```
 
@@ -35,7 +38,7 @@ Don’t worry, this will just update the index, not the packages.
 
 After the above is completed, we need to run the following command
 
-```
+```bash
 sudo apt install apache2
 ```
 
@@ -43,13 +46,13 @@ This downloads and installs the Apache HTTP server.
 
 To check the status of Apache, use the below:
 
-```
+```bash
 systemctl status apache2
 ```
 
 You should see the following output:
 
-```
+```bash
 user@host:~$ systemctl status apache2
 ● apache2.service - The Apache HTTP Server
   Loaded: loaded (/lib/systemd/system/apache2.service; enabled; preset: enabled)
@@ -59,13 +62,13 @@ user@host:~$ systemctl status apache2
 
 In case you don’t see the status as “active (running)”, you need to run the following command:
 
-```
+```bash
 sudo systemctl start apache2
 ```
 
 In addition you can run the below command to enable the service, which means the Apache server will start automatically when the machine is restarted.
 
-```
+```bash
 sudo systemctl enable apache2
 ```
 
@@ -77,7 +80,7 @@ As we have discussed before the package name in this family of Linux distributio
 
 Follow the same process as the above steps:
 
-```
+```bash
 sudo dnf update
 sudo dnf install httpd
 systemctl status httpd
@@ -88,4 +91,4 @@ sudo systemctl enable httpd
 Hurray! Now Apache server is ready to server your web application.
 
 <!-- [Basic configuration in Apache] ({{< relref "apache-config" >}}) -->
-[Read more on Apache →](/blogs/#apache)
+<!-- [Read more on Apache →](/blogs/#apache) -->

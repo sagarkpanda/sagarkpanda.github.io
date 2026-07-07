@@ -355,4 +355,4 @@ This strategy removes all existing pods in the existing ReplicaSet first then cr
 
 This is a wrap of deployments in K8s. Thanks for reading.
 
-[Checkout more articles on K8s →](/blogs/#kubernetes)
+<!-- [Checkout more articles on K8s →](/blogs/#kubernetes) -->

@@ -110,4 +110,4 @@ Alright, that's all for today. Thanks for reading!
 
 Reference: LearnLinux.TV
 
-[Read More on shell scrpting→](/blogs/#linux)
+<!-- [Read More on shell scrpting→](/blogs/#linux) -->

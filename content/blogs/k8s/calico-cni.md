@@ -401,4 +401,4 @@ So that’s all for this one. Thanks for reading!
 
 Reference: [Calico](https://www.tigera.io/project-calico/)
 
-[Checkout more articles on K8s →](/blogs/#kubernetes)
+<!-- [Checkout more articles on K8s →](/blogs/#kubernetes) -->

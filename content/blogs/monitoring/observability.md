@@ -438,4 +438,4 @@ Understanding OpenTelemetry is becoming an essential skill for engineers working
 
 In the next article, we'll move from concepts to implementation and explore OpenTelemetry along with the tools commonly used to collect, store, and visualize telemetry.
 
-[**Checkout more on monitoring and o11y →**](/blogs/#o11y)
+<!-- [**Checkout more on monitoring and o11y →**](/blogs/#o11y) -->

@@ -13,12 +13,7 @@ categories:
 - Cloud Infrastructure
 ---
 
-
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6h8tusJxak5v3v4ViKYdw.png)
-
-I have migrated of OpenTofu.
-
-If you wish to migrate, the process is pretty simple.
+I have migrated of OpenTofu. If you wish to migrate, the process is pretty simple.
 
 Steps to migrate existing terraform infra:
 
@@ -40,7 +35,7 @@ First lets create an EC2 instance with hardcoded details of default VPC, for the
 
 All the config are available on [GitHub](https://github.com/sagarkpanda/Terraform101.git)
 
-```
+```terraform
 #main.tf
 provider "aws" {
   region = "ap-south-1"
@@ -98,7 +93,7 @@ The “aws_default_vpc” is a special block, terraform won’t be deleting this
 
 Now for the security group creation block replace the vpc id with the above.
 
-```
+```terraform
 provider "aws" {
   region = "ap-south-1"
 }
@@ -117,7 +112,7 @@ resource "aws_security_group" "vm_sg" {
 
 For the subnets and AMI, I’ll create a separate file to have modularity.
 
-```
+```terraform
 #datasource.tf
 data "aws_subnets" "default_subnets" {
   filter {
@@ -143,7 +138,7 @@ The first fetches all the subnets from the default VPC. The 2nd block fetches al
 
 So far we are fetching the details, now we need to update the usage in the main config.
 
-```
+```terraform
 resource "aws_instance" "test_machine" {
   # ami = "ami-013e83f579886baeb"
   ami                    = data.aws_ami.amazon_linux_2023.id
@@ -161,7 +156,7 @@ The index with the subnet_id is to choose 1 value as this data block retuns mult
 
 We can also verify these fetched data in the terraform/tofu console or with the show command.
 
-```
+```bash
 tofu show (terraform show)
 tofu/terraform console
 > commads here
@@ -170,7 +165,7 @@ tofu/terraform console
 
 Additionally you may output the info, so these will be printed at the end of the execution.
 
-```
+```terraform
 # outputs.tf
  output "aws_az_linux_2023_ids" {
    value = data.aws_ami.amazon_linux_2023
@@ -186,7 +181,9 @@ Now plan and apply. Upon completion we can verify. We can also see the AMI ID wh
 
 Or on the plan generated and the output if you have created.
 
-![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*SPicy52uiuk3O4GszA9QtQ.png)![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*asrVne8J5OEwnBvdP5aHTg.png)
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*SPicy52uiuk3O4GszA9QtQ.png)
+
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*asrVne8J5OEwnBvdP5aHTg.png)
 
 You may save the output to a josn file with the following command. This josn doc also contains the details.
 
@@ -198,7 +195,7 @@ tofu output -json > output.json
 
 Open tofu console with “tofu console”.
 
-```
+```terraform
 > aws_default_vpc.default
 > data.aws_ami.amazon_linux_2023.id
 > data.aws_subnets.default_subnets
@@ -214,5 +211,5 @@ Don’t forget to destroy the resources with tofu destroy. No need to worry abou
 
 **References:** [**HashiCorp**](https://developer.hashicorp.com/terraform/language/data-sources)
 
-[Read more on Terraform →](/blogs/#terraform)
+<!-- [Read more on Terraform →](/blogs/#terraform) -->
 
