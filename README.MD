@@ -15,10 +15,9 @@ Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/
 
 Personal website of **Sagar Panda** featuring technical blogs, projects, and notes on DevOps, Cloud, Kubernetes, Terraform, GitOps, CI/CD, and Observability.
 
+🚀 **Explore my portfolio ↗** [sagarpanda.com](https://sagarpanda.com/)
 
-⏩ Have a look at the [website ↗](https://sagarpanda.com/)
-
-<img width="1823" height="688" alt="Website Screenshot" src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"/>
+<img alt="Website Screenshot" src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"/>
 
 ## What You'll Find Here
 
