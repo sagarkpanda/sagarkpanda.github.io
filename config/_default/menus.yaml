@@ -1,6 +1,6 @@
 main:
   - name: About
-    url: /#hero
+    url: /#about-me
     weight: 5
     params:
       icon: about
