@@ -90,8 +90,8 @@ footer:
   - name: All Systems Operational
     url: https://status.sagarpanda.com/
     weight: 30
-    # params:
-    #   icon: status
+    params:
+      icon: status
 
 # footer social link
 social:
