@@ -38,10 +38,10 @@
    icon with a pulsating green dot, pure CSS (no template file needed).
    Targets the link by its href, since that's stable regardless of how
    the footer menu markup renders. */
-a[href="https://status.sagarpanda.com/"] svg {
-  display: none;
+a[href*="status.sagarpanda.com"] svg {
+  display: none !important;
 }
-a[href="https://status.sagarpanda.com/"]::before {
+a[href*="status.sagarpanda.com"]::before {
   content: "";
   display: inline-block;
   width: 0.625rem;
