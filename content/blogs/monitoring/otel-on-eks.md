@@ -53,9 +53,11 @@ The OpenTelemetry Collector acts as the central telemetry pipeline and exports d
 
 The project is split into two repositories.
 
-The first repository, [otel-labs](https://github.com/sagarkpanda/otel-labs), contains the application source code, OpenTelemetry instrumentation, Dockerfiles, and GitHub Actions workflows.
-
-The second repository, [otel-labs-platform](https://github.com/sagarkpanda/otel-labs-platform), contains the infrastructure and Kubernetes platform configuration required to run those applications on Amazon EKS.
+The first repository, [{{< icon name="github" size="lg" >}} otel-labs](https://github.com/sagarkpanda/otel-labs), contains the application source code, OpenTelemetry instrumentation, Dockerfiles, and GitHub Actions workflows.
+<!-- <a href="https://github.com/sagarkpanda/otel-labs" target="_blank" rel="noopener noreferrer">
+  {{< icon name="github" size="lg" >}} otel-labs
+</a> -->
+The second repository, [{{< icon name="github" size="lg" >}} otel-labs-platform](https://github.com/sagarkpanda/otel-labs-platform), contains the infrastructure and Kubernetes platform configuration required to run those applications on Amazon EKS.
 
 This separation follows a common GitOps pattern where application development and platform management are handled independently.
 

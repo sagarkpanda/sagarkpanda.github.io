@@ -94,27 +94,23 @@
             {{- range $taxonomyName, $taxonomy := $taxonomies }}
             {{- $terms := $.GetTerms $taxonomyName }}
             {{- if $terms }}
-            <div class="flex items-center gap-2">
-              <div class="shrink-0">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="inline-flex shrink-0 items-center gap-2">
                 {{ partial "features/icon.html" (dict "name" $taxonomyName "size" "sm" "ariaLabel" "") }}
-              </div>
-              <div class="flex-1 min-w-0">
-                {{- $taxonomyLabel := $taxonomyName | humanize }}
-                {{- with $.Site.GetPage (printf "/%s" $taxonomyName) }}
-                  {{- $taxonomyLabel = .LinkTitle | default .Title }}
-                {{- end }}
-                <div class="flex flex-wrap items-center gap-1.5">
-                  <span class="text-muted-foreground text-sm font-medium">
-                    {{ $taxonomyLabel }}:
-                  </span>
-                  {{- range $terms }}
-                  <a href="{{ .RelPermalink }}"
-                    class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
-                    {{ .LinkTitle }}
-                  </a>
-                  {{- end }}
-                </div>
-              </div>
+                <span class="text-muted-foreground text-sm font-medium">
+                  {{- $taxonomyLabel := $taxonomyName | humanize -}}
+                  {{- with $.Site.GetPage (printf "/%s" $taxonomyName) -}}
+                    {{- $taxonomyLabel = .LinkTitle | default .Title -}}
+                  {{- end -}}
+                  {{ $taxonomyLabel }}:
+                </span>
+              </span>
+              {{- range $terms }}
+              <a href="{{ .RelPermalink }}"
+                class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
+                {{ .LinkTitle }}
+              </a>
+              {{- end }}
             </div>
             {{- end }}
             {{- end }}
@@ -140,12 +136,12 @@
               {{- end }}
 
               <button onclick="switchSeries({{ $dataIndex }})"
-                class="series-tab-btn group flex items-center gap-2 px-3 py-2 rounded-lg transition-all border border-transparent {{ if eq $dataIndex 0 }}bg-accent text-foreground border-border shadow-sm{{ else }}hover:bg-accent/50 text-muted-foreground{{ end }}"
+                class="series-tab-btn group flex items-center gap-2 px-3 py-2 rounded-lg transition-all border border-transparent {{ if eq $dataIndex 0 }}bg-primary text-primary-foreground border-primary shadow-sm{{ else }}hover:bg-accent/50 text-muted-foreground{{ end }}"
                 data-index="{{ $dataIndex }}">
                 <span class="text-sm font-semibold whitespace-nowrap max-w-[120px] truncate">
                   {{ $seriesPage.LinkTitle }}
                 </span>
-                <span class="bg-primary/10 text-primary rounded-full px-2 py-0.5 text-[10px] font-bold">
+                <span class="{{ if eq $dataIndex 0 }}bg-primary-foreground/20 text-primary-foreground{{ else }}bg-primary/10 text-primary{{ end }} rounded-full px-2 py-0.5 text-[10px] font-bold">
                   {{ $currentIndex }}/{{ $totalCount }}
                 </span>
               </button>
@@ -166,7 +162,7 @@
             {{- $seriesPages := $seriesPage.Pages.ByParam "series_order" }}
 
             <nav id="series-content-{{ $dataIndex }}"
-              class="series-content overflow-y-auto max-h-32 p-4 transition-opacity duration-300 {{ if eq $dataIndex 0 }}opacity-100 z-10 block{{ else }}opacity-0 z-0 hidden{{ end }}"
+              class="series-content overflow-y-auto max-h-32 p-4 pb-6 transition-opacity duration-300 {{ if eq $dataIndex 0 }}opacity-100 z-10 block{{ else }}opacity-0 z-0 hidden{{ end }}"
               data-link="{{ $seriesPage.RelPermalink }}">
               <ol class="space-y-1.5">
                 {{- range $index, $page := $seriesPages }}

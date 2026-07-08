@@ -80,7 +80,7 @@ footer:
   # Resume page is drafted (content/resume/_index.md, draft: true) -- fill
   # in its front matter, set draft: false, then uncomment this block to
   # both build the page AND show this footer link.
-  
+
   # - name: Resume
   #   pageRef: /resume
   #   weight: 20
@@ -90,8 +90,8 @@ footer:
   - name: All Systems Operational
     url: https://status.sagarpanda.com/
     weight: 30
-    params:
-      icon: status
+    # params:
+    #   icon: status
 
 # footer social link
 social:

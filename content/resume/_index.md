@@ -19,7 +19,7 @@ summary: >
   Experienced in AWS, GitOps, Infrastructure as Code, container orchestration,
   and deployment automation. Passionate about building reliable, scalable
   platforms while improving software delivery, security, and operational
-  efficiency. :contentReference[oaicite:0]{index=0}
+  efficiency.
 
 experience:
   - company: "Wipro"
