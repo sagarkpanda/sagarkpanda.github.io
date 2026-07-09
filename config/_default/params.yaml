@@ -211,6 +211,12 @@ projects:
       # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
         GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS. Provisions the cluster with Terraform and deploys ArgoCD, Traefik, and the OpenTelemetry Collector via GitOps, exporting metrics/logs/traces to New Relic and Honeycomb. The companion `otel-labs` repo holds the instrumented demo apps (Node frontend, Python orders API, Go inventory API) this cluster runs.
+      architecture: >
+        Terraform provisions the EKS cluster; ArgoCD deploys Traefik and the
+        OpenTelemetry Collector via GitOps. The Collector gathers metrics,
+        logs, and traces from the cluster and workloads, exporting to both
+        New Relic and Honeycomb in parallel.
+      # impact: ""  # add a real metric here if you have one, e.g. "Reduced MTTD by X%"
       icons:
         - src: "/images/aws.svg"
           tooltip: "AWS / EKS"
@@ -227,6 +233,11 @@ projects:
       # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
         Intentionally vulnerable Django web app for hands-on OWASP Top 10 practice, with Docker-based labs, guided challenges, and step-by-step solutions for each vulnerability class.
+      architecture: >
+        PyGoat (a deliberately vulnerable Django app) runs in Docker,
+        packaged with a set of guided labs -- each one isolates a specific
+        OWASP Top 10 vulnerability class with a walkthrough and a
+        step-by-step solution.
       icons:
         - src: "/images/docker.svg"
           tooltip: "Docker"
