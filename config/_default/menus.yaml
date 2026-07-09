@@ -32,7 +32,7 @@ main:
   - name: More
     weight: 35
     params:
-      icon: menu
+      icon: 3dot
 
   # - name: Education
   #   weight: 1
