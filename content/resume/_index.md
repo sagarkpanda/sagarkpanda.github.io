@@ -2,7 +2,7 @@
 title: "Resume"
 layout: "resume"
 description: "Professional resume of Sagar Panda"
-draft: true
+draft: false
 
 name: "Sagar Panda"
 jobtitle: "Senior DevOps & Cloud Infrastructure Engineer"

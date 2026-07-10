@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes Observabitily with AI"
-date: 2026-01-15
+date: 2026-06-20
 summary: "GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS."
 status: "completed"
 # cover: "https://i.ibb.co/pjgVNXn4/x.png"
@@ -10,8 +10,8 @@ tags:
   - "new relic"
   - "honeycomb"
 link: "https://github.com/sagarkpanda/otel-labs-platform"
-blogLink: "/blogs/k8s/k8s-monitoring"
-draft: true
+blogLink: "/blogs/monitoring/otel-on-eks"
+draft: false
 ---
 
 <!-- Body content pending -- Sagar will write this. -->
