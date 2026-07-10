@@ -207,15 +207,13 @@ projects:
   items:
     - name: "OTel Labs Platform"
       link: "https://github.com/sagarkpanda/otel-labs-platform"
+      pageLink: "/projects/otel-labs-platform/"
       status: "Completed"
-      # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
+      image: "https://i.ibb.co/pjgVNXn4/x.png"
       content: |
-        GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS. Provisions the cluster with Terraform and deploys ArgoCD, Traefik, and the OpenTelemetry Collector via GitOps, exporting metrics/logs/traces to New Relic and Honeycomb. The companion `otel-labs` repo holds the instrumented demo apps (Node frontend, Python orders API, Go inventory API) this cluster runs.
+        A cloud-native observability platform showcasing GitOps deployments, OpenTelemetry-based telemetry collection, and AI-assisted Kubernetes analysis on Amazon EKS for modern observability practices in microservices environments.
       architecture: >
-        Terraform provisions the EKS cluster; ArgoCD deploys Traefik and the
-        OpenTelemetry Collector via GitOps. The Collector gathers metrics,
-        logs, and traces from the cluster and workloads, exporting to both
-        New Relic and Honeycomb in parallel.
+        Terraform provisions the Amazon EKS cluster and AWS infrastructure. ArgoCD manages the desired state of platform components such as Traefik and the OpenTelemetry Collector, along with application deployments, through GitOps. The OpenTelemetry Collector, running as a DaemonSet, collects application and Kubernetes telemetry (metrics, logs, and traces) and exports it simultaneously to New Relic and Honeycomb, where Claude MCP enables AI-assisted analysis using natural language.
       # impact: ""  # add a real metric here if you have one, e.g. "Reduced MTTD by X%"
       icons:
         - src: "/images/aws.svg"
@@ -230,7 +228,8 @@ projects:
     - name: "DevSecOps Labs (PyGoat)"
       link: "https://github.com/sagarkpanda/devsecops-labs"
       status: "Active"
-      # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
+      pageLink: "/projects/devsecops-labs/"
+      image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
         Intentionally vulnerable Django web app for hands-on OWASP Top 10 practice, with Docker-based labs, guided challenges, and step-by-step solutions for each vulnerability class.
       architecture: >

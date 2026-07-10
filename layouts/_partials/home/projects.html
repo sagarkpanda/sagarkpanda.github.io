@@ -30,7 +30,7 @@
         <article class="group h-full">
           {{ $cardInner := printf "block h-full" }}
           <a
-            {{ if .link }}href="{{ .link }}" target="_blank" rel="noopener noreferrer"{{ end }}
+            {{ if .pageLink }}href="{{ .pageLink | relURL }}"{{ else if .link }}href="{{ .link }}" target="_blank" rel="noopener noreferrer"{{ end }}
             class="block h-full"
           >
             <div
