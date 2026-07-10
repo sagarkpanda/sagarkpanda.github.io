@@ -35,7 +35,6 @@ experience:
       - Kubernetes
       - Argo CD
       - GitLab CI/CD
-      - AWS
       - Docker
       - Helm
 
