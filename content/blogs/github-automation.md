@@ -11,7 +11,7 @@ tags:
 - repo automation
 series:
 - GitHub Actions
-series_order: 1
+series_order: 2
 categories:
 - Linux & Automation
 ---
@@ -382,6 +382,7 @@ any other commits or formats such as chore: or simple commits will be ignored ma
     title="Major Release commit with feat!:"
 >}}
 
+<br></br>
 {{< figure
     src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dsRB6fXJrWxxmsyjHH5UWQ.png"
     alt="PR comment"
