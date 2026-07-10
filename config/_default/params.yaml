@@ -207,9 +207,9 @@ projects:
   items:
     - name: "OTel Labs Platform"
       link: "https://github.com/sagarkpanda/otel-labs-platform"
-      pageLink: "/projects/otel-labs-platform/"
+      pageLink: "/projects/k8s-otel-proj/"
       status: "Completed"
-      image: "https://i.ibb.co/pjgVNXn4/x.png"
+      # image: "https://i.ibb.co/pjgVNXn4/x.png"
       content: |
         A cloud-native observability platform showcasing GitOps deployments, OpenTelemetry-based telemetry collection, and AI-assisted Kubernetes analysis on Amazon EKS for modern observability practices in microservices environments.
       architecture: >
@@ -228,15 +228,20 @@ projects:
     - name: "DevSecOps Labs (PyGoat)"
       link: "https://github.com/sagarkpanda/devsecops-labs"
       status: "Active"
-      pageLink: "/projects/devsecops-labs/"
-      image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
+      pageLink: "/projects/devsecops-proj/"
+      # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
-        Intentionally vulnerable Django web app for hands-on OWASP Top 10 practice, with Docker-based labs, guided challenges, and step-by-step solutions for each vulnerability class.
+       Cloud-native DevSecOps platform demonstrating automated security across the software delivery lifecycle. The project integrates security into CI/CD, GitOps, Kubernetes, and Infrastructure as Code, combining vulnerability management, runtime protection, and policy enforcement using production-style workflows.
+
       architecture: >
-        PyGoat (a deliberately vulnerable Django app) runs in Docker,
-        packaged with a set of guided labs -- each one isolates a specific
-        OWASP Top 10 vulnerability class with a walkthrough and a
-        step-by-step solution.
+        GitHub Actions automate secret detection, dependency updates, container image
+        and infrastructure scanning, and application security testing before
+        publishing images to GHCR. Argo CD continuously deploys workloads to Amazon
+        EKS from a dedicated GitOps repository, while DefectDojo centralizes findings
+        from multiple security tools for vulnerability management. Falco provides
+        runtime threat detection within the Kubernetes cluster, and Kyverno enforces
+        Kubernetes security policies to ensure workloads adhere to organizational
+        security standards.
       icons:
         - src: "/images/docker.svg"
           tooltip: "Docker"
