@@ -13,6 +13,7 @@ tags:
 - aws
 - cloud
 - terraform
+- new relic
 series:
 - Observability
 series_order: 3
