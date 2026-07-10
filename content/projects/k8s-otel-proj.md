@@ -10,7 +10,7 @@ tags:
   - "new relic"
   - "honeycomb"
 link: "https://github.com/sagarkpanda/otel-labs-platform"
-blogLink: "/blogs/monitoring/otel-on-eks"
+blogLink: "otel-on-eks"
 draft: false
 ---
 
@@ -306,6 +306,6 @@ kube-state-metrics
 This telemetry is exported together with application telemetry to both observability backends.
 
 
-[Check out the full project]({{< relref "ansible1" >}})
-
+[Check out the full project]({{< relref "otel-on-eks" >}})
+<!-- [{{< icon name="posts" size="lg" >}} Check out the full project]({{< relref "otel-on-eks" >}}) -->
 

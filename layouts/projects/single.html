@@ -110,8 +110,11 @@
 
       {{ if .Params.blogLink }}
         <a
-          href="{{ .Params.blogLink }}"
+          href="{{ relref . .Params.blogLink }}"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/20 inline-flex h-10 items-center gap-2 rounded-lg px-3.5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 focus:ring-2 focus:outline-none"
+          {{/*
           class="bg-background text-foreground border-border hover:bg-primary hover:text-primary-foreground hover:border-primary focus:ring-primary/20 inline-flex h-10 items-center gap-2 rounded-lg border px-3.5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 focus:ring-2 focus:outline-none"
+          */}}
           aria-label="Read the blog post"
         >
           {{ partial "features/icon.html" (dict "name" "posts" "size" "sm" "class" "shrink-0" "hidden" true) }}
