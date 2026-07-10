@@ -74,26 +74,30 @@ sudo nano /etc/gitlab/gitlab.rb
 ```
 
 If you ran the install cmd with external URL, this would already be set.
-<br></br>
 
 {{< figure src="https://i.ibb.co/3xkCkHy/x.png" alt="external url" width="1000" height="600" title="Set external url" >}}
-<br></br>
+
 Again search for letsencrypt and the lets encrypt section for cert. Uncomment the first 2 lines and set the first value to 'true' which would be nil. Add your valid email address for the 2nd value inside quotes.
-<br></br>
+
 {{< figure src="https://i.ibb.co/WN6Yhd0c/x.png" alt="tls setup" width="1000" height="600" title="Enable Lets Encrypt TLS" >}}
-<br></br>
+<!-- <br></br> -->
+
 Once set, you can save it and run the gitlb-ctl reconfigure for the changes to take effect.
+```bash
 sudo gitlab-ctl reconfigure.
-<br></br>
+```
 {{< figure src="https://i.ibb.co/ZRfCgm50/x.png" alt="Get initial PW" width="1000" height="600" title="Get Initial password" >}}
-<br></br>
-{{< figure src="https://i.ibb.co/5gB3m1rx/x.png" alt="add gitlab lgoin landing" width="1000" height="600" title="Insital login" >}}
-<br></br>
+
+
+{{< figure src="https://i.ibb.co/5gB3m1rx/x.png" alt="add gitlab lgoin landing" width="1000" height="600" title="login page" >}}
+<!-- <br></br> -->
+
 There we go, we have our gitlab ready. Get the initial admin pw from /etc/gitlab/initial_root_password, this expires in 24 hours.
 The username is root and with the pw obtained earlier, you can login. As we can see sign up is enabled by default, meaning anyone could access our GitLab by just signing up themselves so its better to disable it and allow only user creation by admin. Click on the first deactivate button to do so.
-<br></br>
+<!-- <br></br> -->
+
 {{< figure src="https://i.ibb.co/n8V92tdd/x.png" alt="gitlab landing" width="1000" height="600" title="GitLab Landing page" >}}
-<br></br>
+<!-- <br></br> -->
 Now you can create another user and other relevant user management in the same page.
 
 ## Wrapping Up
