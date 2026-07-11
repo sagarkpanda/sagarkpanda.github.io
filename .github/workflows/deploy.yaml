@@ -11,6 +11,7 @@ on:
     - "LICENSE"
     - "License"
     - ".gitattributes"
+    - ".github/workflows/release.yml"
   workflow_dispatch:
 
 permissions:
