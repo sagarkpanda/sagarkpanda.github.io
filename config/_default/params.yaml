@@ -227,7 +227,7 @@ projects:
 
     - name: "DevSecOps Labs (PyGoat)"
       link: "https://github.com/sagarkpanda/devsecops-labs"
-      status: "Active"
+      status: "In Progress"
       pageLink: "/projects/devsecops-proj/"
       # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |

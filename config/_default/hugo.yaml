@@ -2,7 +2,7 @@ baseURL: https://sagarpanda.com/
 locale: en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
-title: "Sagar Panda | DevOps & Cloud Infra Engineer"
+title: "Sagar Panda | DevOps & Cloud Engineer"
 theme: "hugo-narrow"
 
 enableEmoji: true
