@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Observability"
+title: "Kubernetes Observability with AI"
 date: 2026-06-20
 summary: "GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS."
 status: "completed"
