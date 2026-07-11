@@ -304,4 +304,6 @@ kube-state-metrics
 
 This telemetry is exported together with application telemetry to both observability backends.
 
-Integrate Honeycomb MCP server with  [***Claude***](/blogs/monitoring/otel-on-eks/#ask-claude) to and ask questions in natural language about cluster and applications. Honecomb canvas also has the same AI capabilities.
+## Claude MCP
+
+Integrate Honeycomb MCP server with  [***Claude***](/blogs/monitoring/otel-on-eks/#ask-claude) to and ask questions in natural language about cluster and applications. Honeycomb canvas also has the same AI capabilities.
