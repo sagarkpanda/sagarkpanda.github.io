@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Observabitily with AI"
+title: "Kubernetes Observability"
 date: 2026-06-20
 summary: "GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS."
 status: "completed"
@@ -14,7 +14,6 @@ blogLink: "otel-on-eks"
 draft: false
 ---
 
-<!-- Body content pending -- Sagar will write this. -->
 ## OTel Labs Platform – OpenTelemetry on EKS: End-to-End Observability
 
 
@@ -304,8 +303,4 @@ kube-state-metrics
 ```
 
 This telemetry is exported together with application telemetry to both observability backends.
-
-
-[Check out the full project]({{< relref "otel-on-eks" >}})
-<!-- [{{< icon name="posts" size="lg" >}} Check out the full project]({{< relref "otel-on-eks" >}}) -->
 
