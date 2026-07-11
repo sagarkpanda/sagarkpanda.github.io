@@ -16,7 +16,7 @@ tags:
 
 link: "https://github.com/sagarkpanda/devsecops-labs"
 # blogLink: "/blogs/k8s/k8s-monitoring"
-drfat: false
+draft: false
 ---
 
 <!-- Body content pending -- Sagar will write this. -->
