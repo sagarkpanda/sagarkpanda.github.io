@@ -9,6 +9,23 @@
      site.Params.skills = { title, items[] }. */}}
 {{ $about := site.Params.aboutMe }}
 {{ $skills := site.Params.skills }}
+{{ $aboutImgIsExternal := or (hasPrefix ($about.image | default "") "http://") (hasPrefix ($about.image | default "") "https://") }}
+{{ $aboutImgFinalSrc := "" }}
+{{ if $about.image }}
+  {{ $aboutImgFinalSrc = $about.image | relURL }}
+  {{ if not $aboutImgIsExternal }}
+    {{ with resources.Get (strings.TrimPrefix "/" $about.image) }}
+      {{/* Displayed at 256px wide; resizing to 512px covers 2x retina,
+           vs. shipping the full 874x929 original (PageSpeed: 42.5 KiB
+           wasted on this alone). Height left auto to preserve aspect
+           ratio -- object-cover/object-top in the CSS handles cropping
+           to the display box. */}}
+      {{ with .Resize "512x webp q85" }}
+        {{ $aboutImgFinalSrc = .RelPermalink }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 {{ if $about }}
   <section id="about-me" class="about-me-section scroll-mt-28">
@@ -53,8 +70,9 @@
         {{ if $about.image }}
           <div class="hidden md:flex md:w-80 md:items-center md:justify-center md:p-6">
             <img
-              src="{{ $about.image | relURL }}"
+              src="{{ $aboutImgFinalSrc }}"
               alt="{{ $about.title | default `About Me` }}"
+              width="512"
               class="w-64 rounded-xl object-cover object-top md:mt-8"
               loading="lazy"
             />

@@ -1,4 +1,15 @@
 {{- $logoSrc := strings.TrimPrefix "/" site.Params.header.logo.image -}}
+{{- $logoIsExternal := or (hasPrefix site.Params.header.logo.image "http://") (hasPrefix site.Params.header.logo.image "https://") -}}
+{{- $logoFinalSrc := $logoSrc | relURL -}}
+{{- if not $logoIsExternal -}}
+  {{- with resources.Get $logoSrc -}}
+    {{/* Displayed at 40px (h-10 w-10); 80px covers 2x retina, vs. the
+         full-resolution original. */}}
+    {{- with .Resize "80x80 webp q85" -}}
+      {{- $logoFinalSrc = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 <header class="{{- if site.Params.header.sticky -}}sticky top-0 z-50{{ end }} px-4 py-6">
   <div
@@ -19,7 +30,7 @@
             aria-label="{{ site.Title }}"
           >
             <img
-              src="{{ $logoSrc | relURL }}"
+              src="{{ $logoFinalSrc }}"
               alt="{{ site.Title }}"
               class="h-full w-full object-cover"
             />

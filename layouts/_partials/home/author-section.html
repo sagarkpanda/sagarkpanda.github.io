@@ -3,6 +3,18 @@
      bigger avatar, bigger type, and CTA buttons into Blog / About. */}}
 {{ $author := .Params.author | default site.Params.author }}
 {{ $avatarSrc := strings.TrimPrefix "/" ($author.avatar | default "") }}
+{{ $avatarIsExternal := or (hasPrefix ($author.avatar | default "") "http://") (hasPrefix ($author.avatar | default "") "https://") }}
+{{ $avatarFinalSrc := $avatarSrc | relURL }}
+{{ if not $avatarIsExternal }}
+  {{ with resources.Get $avatarSrc }}
+    {{/* Displayed at 128px (mobile) - 160px (desktop); resizing to 320px
+         covers 2x retina at the largest display size, vs. shipping the
+         full 902x902 original (PageSpeed: 52 KiB wasted on this alone). */}}
+    {{ with .Resize "320x320 webp q85" }}
+      {{ $avatarFinalSrc = .RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 {{ if $author }}
   <section id="hero" class="author-section scroll-mt-28">
@@ -21,8 +33,10 @@
         <div class="shrink-0">
           {{ if $author.avatar }}
             <img
-              src="{{ $avatarSrc | relURL }}"
+              src="{{ $avatarFinalSrc }}"
               alt="{{ $author.name | default site.Title }}"
+              width="320"
+              height="320"
               class="border-primary/30 h-32 w-32 rounded-full border-4 object-cover shadow-lg md:h-40 md:w-40"
             />
           {{ else }}

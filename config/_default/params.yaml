@@ -10,7 +10,7 @@ images:
 favicon:
   # Narrow expects an SVG favicon; circle_profile.webp is kept as the author
   # avatar below. Swap this for a real favicon.svg for best results.
-  svg: "/images/circle_profile.webp"
+  svg: "/images/favicon.svg"
 
 # Author info (shown in the homepage author-section and site-wide meta)
 author:
