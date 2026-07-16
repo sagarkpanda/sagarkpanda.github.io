@@ -35,6 +35,9 @@
             <img
               src="{{ $avatarFinalSrc }}"
               alt="{{ $author.name | default site.Title }}"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
               width="320"
               height="320"
               class="border-primary/30 h-32 w-32 rounded-full border-4 object-cover shadow-lg md:h-40 md:w-40"
