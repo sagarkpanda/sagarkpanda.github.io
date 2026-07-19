@@ -13,25 +13,37 @@ Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/
 
 # Sagar Panda | DevOps, Cloud & Kubernetes
 
-Personal website of **Sagar Panda** featuring technical blogs, projects, and notes on DevOps, Cloud, Kubernetes, Terraform, GitOps, CI/CD, and Observability.
+Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blogs, projects, and hands-on labs focused on Cloud, Kubernetes, GitOps, Infrastructure as Code, CI/CD, Observability, and DevSecOps.
 
-🚀 **Explore my portfolio ↗** [sagarpanda.com](https://sagarpanda.com/)
+🚀 **Explore my portfolio ↗** https://sagarpanda.com
 
 <a href="https://sagarpanda.com/" target="_blank" rel="noopener noreferrer">
   <img
-    alt="Website Screenshot"
+    alt="Sagar Panda Portfolio"
     src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-ss.png"
   />
 </a>
 
-## What You'll Find Here
+## 📚 What You'll Find
 
-* Technical blogs and tutorials
-* DevOps and Cloud engineering content
-* Kubernetes and GitOps learning projects
-* Observability and OpenTelemetry experiments
-* Personal projects and portfolio
+- Technical blogs and tutorials
+- DevOps, Cloud, and Kubernetes content
+- GitOps and Infrastructure as Code projects
+- CI/CD and DevSecOps experiments
+- Observability and OpenTelemetry labs
+- Personal portfolio
 
-Based on <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow Theme</a>.
+## 🛠 Built With
+
+- **Hugo**
+- **Hugo Narrow Theme**
+- **GitHub Actions** for automated deployment
+- **GitHub Pages** for hosting
+
+## 🚀 Deployment Status
 
 [![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml)
+
+<!-- Built with ❤️ -->
+
+Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme.
