@@ -89,14 +89,18 @@ Create a namespace first, and apply the argocd manifest.
 
 ```bash
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
+
+> Pick **either** the LoadBalancer step **or** the port-forward step below — not both. LoadBalancer gives you a public IP; port-forward tunnels to localhost. Doing both is redundant.
 
 Expose argo svc with LB:
 
 ```bash
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
+
+> ⚠️ This exposes the ArgoCD UI/API to the public internet with a self-signed cert and the default admin password. Fine for a quick test, but tear it down (`kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "ClusterIP"}}'`) or lock it down afterward — don't leave it running like this.
 
 forward argocd port to access directly
 
@@ -105,7 +109,6 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
 List the services in argocd namespace and browse the ip of the loadbalancer.
-
 ![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZbLtaNIZ5PAvtRJmTT3HRQ.png)
 
 Note : If you get any security warnings, just click proceed anyway. This error is because we forwarded the agro port to 443 port (HTTPS ) but we haven’t used any TLS certificate.
