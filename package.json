@@ -107,6 +107,6 @@
     "@tailwindcss/cli": "^4.1.17",
     "conventional-changelog-conventionalcommits": "^10.2.1",
     "semantic-release": "^25.0.6",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.3.3"
   }
 }
