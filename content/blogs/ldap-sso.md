@@ -1,8 +1,8 @@
 ---
 date: '2026-07-28T10:45:10+05:30'
 draft: false
-title: "Build a Real SSO Identity Stack: LDAP → Keycloak → Grafana → Okta"
-description: "A complete, from-scratch identity and access management project — a directory service, an open-source identity provider, a commercial identity provider, and a real application wired into both — deployed on separate EC2 servers behind a real domain with automatic HTTPS."
+title: "Hands-On Lab: Build Single Sign-On (SSO) with LDAP, Keycloak, Okta, OIDC & Grafana"
+description: "A complete, from-scratch identity and access management project — a directory service, an open-source identity provider, a commercial identity provider, and a real application wired into both."
 cover: https://i.ibb.co/ynq1PYyT/sso.png
 tags:
 - ldap
@@ -71,6 +71,8 @@ A concert analogy that has always stuck with me:
 | **LDAP** | A centralized directory that stores users and groups so multiple applications can share the same identities. |
 | **SSO (OIDC / SAML)** | Users authenticate once with a central Identity Provider, and applications trust the resulting identity instead of verifying passwords themselves. |
 | **WebAuthn / Passkeys** | A modern authentication method that replaces passwords with cryptographic credentials protected by biometrics or security keys. |
+
+Note: This guide focuses on OpenID Connect (OIDC) because it is the preferred protocol for modern web and cloud-native applications. While SAML 2.0 remains widely used in enterprise environments, its concepts are similar enough that covering both would add unnecessary duplication.
 
 ### LDAP Naming Vocabulary
 
@@ -279,13 +281,13 @@ services:
 
 > **Keycloak doesn't require LDAP.**
 >
-> Keycloak includes its own internal database for storing users, groups, roles, and credentials, making it a complete standalone Identity Provider. LDAP federation is optional and is primarily used to integrate with an existing enterprise directory. In this lab LDAP is used to demonstrate federation rather than because Keycloak depends on it.
+> Keycloak includes its own internal database for storing users, groups, roles, and credentials, making it a complete standalone Identity Provider. LDAP federation is optional and is primarily used to integrate with an existing enterprise directory.
 
 In this lab, LDAP is used to demonstrate federation rather than because Keycloak depends on it. You could create the same users and groups directly in Keycloak, assign users to groups, and authenticate Grafana exactly the same way. Keycloak also supports synchronizing data between its internal database and LDAP—importing users and groups from LDAP into Keycloak, or writing changes made in Keycloak back to LDAP when LDAP edit mode is enabled.
 
 ### Federate from LDAP across the network
 
-First create a new relam and enter an id, additonally you can add a display name which will be displayed in sign in page. Switch to the new realm before continuing to user federation.
+First create a new relam, click on the dropdown on the top left corner and you will have the option to create a new one. Enter an id, optionally you can add a display name which will be displayed in sign in page. Switch to the new realm before continuing to user federation.
 
 {{< figure
     src="https://i.ibb.co/fGCBbWBV/add-ldap.png"
@@ -295,7 +297,9 @@ First create a new relam and enter an id, additonally you can add a display name
     title="adding ldap"
 >}}
 
-Point Keycloak's LDAP federation at the directory server's **private IP**, not its public IP — both instances share a VPC and this traffic should never route out through the public internet:
+Point Keycloak's LDAP federation at the directory server using the most direct private network path available. In this lab, both servers reside in the same AWS VPC, so Keycloak connects to the LDAP server's **private IP** rather than its public address.
+
+If private connectivity isn't available, Keycloak can connect using a public IP or DNS name. In that case, the LDAP connection should be secured with **LDAPS (port 636)** or **StartTLS** instead of plain `ldap://`. This is the recommended production best practice whenever LDAP traffic traverses untrusted networks.
 
 - **Connection URL:** `ldap://<LDAP-server-private-IP>:389`
 - **Vendor:** Other
@@ -394,11 +398,11 @@ Keep the distinction between Grafana's two privilege tiers clear:
 - **Grafana Server Admin (`GrafanaAdmin`)** — a higher, instance-wide tier controlling things like the Authentication settings screen itself. This requires the distinct `'GrafanaAdmin'` value in the role path, combined with the toggle above — `'Admin'` alone only grants the lower org-level tier.
 
 {{< figure
-    src="https://i.ibb.co/mrRwmTLy/kc-login.gif"
+    src="https://i.ibb.co/wrCRsP84/kc-login.gif"
     alt="kc login"
     width="1000"
     height="600"
-    title="login with keycloak"
+    title="jdoe login with keycloak and with admin acess"
 >}}
 
 With this correctly configured: log in as `jdoe` (member of `grafana-admins`) and land with full server-admin rights — creating data sources, editing dashboards, managing authentication settings. Log in as `asmith` (no special group) via the same SSO button and land on a read-only dashboard with no edit controls — real, working, group-driven authorization verified end to end.
@@ -413,6 +417,18 @@ With this correctly configured: log in as `jdoe` (member of `grafana-admins`) an
 
 ## Part 4: Adding Okta Alongside Keycloak
 
+Until now we've used a self-hosted Identity Provider. Next, we'll integrate **Okta**, a managed cloud Identity Provider, with the same Grafana instance to demonstrate that applications can trust multiple independent OpenID Connect providers simultaneously.
+
+### Create an Okta Developer Account
+
+If you don't already have an Okta tenant, sign up for the **Okta Integrator Free Plan**.
+
+After completing registration, you'll receive an organization URL similar to:
+
+```text
+https://dev-12345678.okta.com
+```
+
 Register a second, independent Identity Provider on the same Grafana instance. Grafana treats **Okta** as its own dedicated authentication provider, separate from the **Generic OAuth** provider used for Keycloak. Both can be enabled simultaneously, each appearing as its own **"Sign in with..."** button on the Grafana login page.
 
 ### Create Users and Groups
@@ -422,6 +438,8 @@ Create one user for example:
 - **Jane Doe** (`jane.doe@example.com`)
 
 Next, create a group named **`grafana-admins`** and assign **Jane Doe** to it.
+
+Note: Your Okta administrator account can also sign in to applications assigned to it. This guide uses a separate test user (**Jane Doe**) to clearly distinguish administration of Okta from end-user authentication, but you can use your administrator account instead if it has been assigned to the application.
 
 > **Okta doesn't require LDAP either.**
 >
@@ -489,6 +507,8 @@ Enable the provider and save the configuration.
 
 Sign out of Grafana and return to the login page. You should now see two independent authentication options.
 
+Sign in as **Jane Doe** and verify that Grafana grants full server administrator privileges through membership in the **`grafana-admins`** group.
+
 {{< figure
     src="https://i.ibb.co/Mxv5DsTt/okta-login.gif"
     alt="okta login"
@@ -496,8 +516,6 @@ Sign out of Grafana and return to the login page. You should now see two indepen
     height="600"
     title="login with either okta or Keycloak"
 >}}
-
-Sign in as **John Doe** and verify that Grafana grants full server administrator privileges through membership in the **`grafana-admins`** group.
 
 At this point, the same Grafana instance trusts two completely independent OpenID Connect identity providers—one self-hosted (Keycloak backed by LDAP) and one cloud-hosted (Okta). Both authenticate users using the same OIDC standard while independently issuing tokens that Grafana uses to authenticate users and determine their permissions.
 
