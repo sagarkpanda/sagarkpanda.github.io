@@ -1,5 +1,5 @@
 ---
-date: '2026-07-27T10:45:10+05:30'
+date: '2026-07-28T10:45:10+05:30'
 draft: false
 title: "Build a Real SSO Identity Stack: LDAP → Keycloak → Grafana → Okta"
 description: "A complete, from-scratch identity and access management project — a directory service, an open-source identity provider, a commercial identity provider, and a real application wired into both — deployed on separate EC2 servers behind a real domain with automatic HTTPS."
