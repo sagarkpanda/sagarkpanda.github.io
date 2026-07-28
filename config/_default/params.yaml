@@ -250,6 +250,31 @@ projects:
         - src: "/images/kubernetes.svg"
           tooltip: "Kubernetes"
 
+    - name: "Enterprise Identity & SSO"
+      link: "https://github.com/sagarkpanda/sso-labs"
+      status: "Completed"
+      pageLink: "/projects/sso-proj/"
+      # image: "https://i.ibb.co/ynq1PYyT/sso.png"
+      content: |
+        Production-style Identity and Access Management (IAM) lab demonstrating how a centralized directory, modern Identity Providers, and a real application work together using LDAP, OpenID Connect (OIDC), and Single Sign-On (SSO). The project covers identity federation, token-based authentication, and group-driven authorization across both self-hosted and cloud identity platforms.
+
+      architecture: >
+        OpenLDAP serves as the central directory for users and groups, while Keycloak
+        federates identities from LDAP and issues OpenID Connect tokens. Grafana trusts
+        Keycloak through Generic OAuth for Single Sign-On, with group claims determining
+        application roles. A second authentication provider, Okta, is configured alongside
+        Keycloak to demonstrate multiple independent Identity Providers securing the same
+        application. All components are deployed on separate AWS EC2 instances behind
+        real domain names with automatic HTTPS provided by Caddy.
+
+      icons:
+        - src: "/images/docker.svg"
+          tooltip: "OpenLDAP"
+        - src: "/images/aws.svg"
+          tooltip: "KeyCloak"
+        - src: "/images/postgres.svg"
+          tooltip: "Okta"
+
 # Experience (rendered by layouts/_partials/home/experience.html)
 experience:
   title: "Experience"
