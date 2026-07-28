@@ -106,7 +106,7 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@tailwindcss/cli": "^4.1.17",
     "conventional-changelog-conventionalcommits": "^10.2.1",
-    "semantic-release": "^25.0.6",
+    "semantic-release": "^25.0.8",
     "tailwindcss": "^4.1.17"
   }
 }
