@@ -396,6 +396,7 @@ Recent Grafana versions include a full **SSO Settings UI** (Administration → A
     title="add keycloak with generic oauth"
 >}}
 
+- **Client ID & Client Secret:** Use the Client ID (grafana) and the corresponding Client Secret from the client registered earlier in Keycloak.
 - **Scopes:** `openid profile email groups` — the last scope only works if the client scope from Part 2 has been correctly created and assigned. Requesting a scope that doesn't exist on the client can cause the entire authorization request to be rejected, not just the unrecognized piece — remove any provider-specific defaults (like GitHub's `user:email`) that don't apply to a generic OIDC provider.
 - **Role attribute path:** `contains(groups[*], 'grafana-admins') && 'GrafanaAdmin' || 'Viewer'` — a JMESPath expression evaluated against the token's claims to decide what role to assign.
 - **Allow assign Grafana Admin** — enable this explicitly, or Grafana silently ignores a `GrafanaAdmin` role value even when the path expression correctly returns it.
