@@ -510,7 +510,7 @@ Sign out of Grafana and return to the login page. You should now see two indepen
 Sign in as **Jane Doe** and verify that Grafana grants full server administrator privileges through membership in the **`grafana-admins`** group.
 
 {{< figure
-    src="https://i.ibb.co/Mxv5DsTt/okta-login.gif"
+    src="https://i.ibb.co/4wqvJfH5/okta-login.gif"
     alt="okta login"
     width="1000"
     height="600"
