@@ -350,12 +350,12 @@ Before Grafana can authenticate users through Keycloak, it must first be registe
 Navigate to **Clients → Create client** and configure the following:
 
 - **Client type:** OpenID Connect
-- **Client ID:** `grafana`
+- **Client ID:** grafana
 - **Client authentication:** On
 - **Authorization:** Off
 - **Standard flow:** Enabled
-- **Root URL:** `https://grafana.yourdomain.com`
-- **Valid redirect URI:** `https://grafana.yourdomain.com/login/generic_oauth`
+- **Root URL:** https://grafana.yourdomain.com
+- **Valid redirect URI:** https://grafana.yourdomain.com/login/generic_oauth
 
 The redirect URI must exactly match Grafana's Generic OAuth callback endpoint or the authentication request will be rejected.
 
