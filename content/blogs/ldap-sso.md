@@ -43,6 +43,13 @@ auth.yourdomain.com     →  EC2 #2  →  Keycloak (Docker, production mode) + P
 grafana.yourdomain.com  →  EC2 #3  →  Grafana (Docker), OIDC via both Keycloak and Okta
 ```
 
+{{< figure
+    src="https://i.ibb.co/5gLwRjSS/arch.png"
+    alt="phpldapadmin"
+    width="1000"
+    height="600"
+>}}
+
 ## The Vocabulary — Authentication, Authorization, and the Alphabet Soup
 
 Before touching any tools, it's worth defining a few terms that are often used interchangeably but solve different problems.
