@@ -3,7 +3,7 @@ date: '2026-07-28T10:45:10+05:30'
 draft: false
 title: "Hands-On Lab: Build Single Sign-On (SSO) with LDAP, Keycloak, Okta, OIDC & Grafana"
 description: "A complete, from-scratch identity and access management project — a directory service, an open-source identity provider, a commercial identity provider, and a real application wired into both."
-cover: https://i.ibb.co/ynq1PYyT/sso.png
+cover: https://i.ibb.co/RkxkbvN5/sso.png
 tags:
 - ldap
 - keycloak
