@@ -9,6 +9,7 @@ tags:
 - keycloak
 - okta
 - sso
+- IAM
 categories:
 - authentication and authorization
 ---
@@ -434,7 +435,7 @@ If you don't already have an Okta tenant, sign up for the **Okta Integrator Free
 After completing registration, you'll receive an organization URL similar to:
 
 ```text
-https://dev-12345678.okta.com
+https://integrator-12345678.okta.com
 ```
 
 Register a second, independent Identity Provider on the same Grafana instance. Grafana treats **Okta** as its own dedicated authentication provider, separate from the **Generic OAuth** provider used for Keycloak. Both can be enabled simultaneously, each appearing as its own **"Sign in with..."** button on the Grafana login page.
@@ -501,7 +502,7 @@ Open:
 Configure the provider with:
 
 - **Client ID** and **Client Secret** from the Okta application
-- **Okta Org URL:** your `https://dev-xxxxx.okta.com` tenant
+- **Okta Org URL:** your `https://integrator-xxxxx.okta.com` tenant
 - **Scopes:** `openid profile email groups`
 - **Role Attribute Path:**
 
