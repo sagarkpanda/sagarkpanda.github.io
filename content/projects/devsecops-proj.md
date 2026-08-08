@@ -1,25 +1,71 @@
 ---
 title: "Kubernetes DevSecOps"
 date: 2026-07-01
-summary: "DevSecOps Implemantation from code to cluster"
+summary: "End-to-end DevSecOps implementation from application code to Kubernetes runtime"
 status: "in_progress"
-# cover: "https://i.ibb.co/pjgVNXn4/x.png"
-tags:
-  - "devsecops"
-  # - "kubernetes"
-  - "SAST"
-  - "DAST"
-  # - "Trivy"
-  # - "OWASP ZAP"
-  # - "Falco"
-  # - "Kyverno"
 
-link: "https://github.com/sagarkpanda/devsecops-labs"
-# blogLink: "/blogs/k8s/k8s-monitoring"
-draft: false
+tags:
+ - devsecops
+ - kubernetes
+ - "SAST"
+ - "DAST"
+
+link: "https://github.com/sagarkpanda/otel-labs"
 ---
 
-<!-- Body content pending -- Sagar will write this. -->
-DevSecOps from app code analysis, docker image secure by design, SAST, DAST, Kyverno, Security policy, network poilcy, Falco runtime.
+An end-to-end Kubernetes DevSecOps implementation covering the software delivery lifecycle from application code to Kubernetes runtime.
 
-# Coming Soon.
+The project uses **OTel Labs** as the application workload and **OTel Labs Platform** for the infrastructure, Kubernetes, CI/CD, and security controls.
+
+Security is implemented across the **code-to-cluster** lifecycle:
+
+* **Source code:** SAST and secret detection
+* **Dependencies & IaC:** SCA and configuration scanning
+* **Container images:** vulnerability scanning and SBOM
+* **Kubernetes:** manifest and configuration security
+* **Admission control:** Kyverno security policies
+* **Network security:** Kubernetes network policies
+* **Runtime:** Falco runtime security
+* **Application:** DAST with OWASP ZAP
+* **Security findings:** centralized vulnerability reporting
+
+The goal is to demonstrate how security controls can be integrated throughout the software delivery lifecycle rather than treated as a final security check.
+
+## Repositories
+
+**Application Repo:** {{< icon name="github" size="lg" >}} [otel-labs](https://github.com/sagarkpanda/otel-labs)
+
+**Config and Manifests Repo:** {{< icon name="github" size="lg" >}} [otel-labs-platform](https://github.com/sagarkpanda/otel-labs-platform)
+
+## Status
+
+## Work in progress — progressively implementing and documenting the complete DevSecOps workflow.
+
+### Completed
+
+* Application and platform repositories established
+* GitHub Actions CI/CD and GitOps promotion
+* Gitleaks secret scanning
+* Semgrep SAST
+* Dependency Review
+* CodeQL / GitHub Security
+* Trivy filesystem scanning
+* Trivy container image scanning
+* SBOM generation
+* Trivy Terraform, Kubernetes and configuration scanning
+* DefectDojo security finding management
+* Kubernetes deployment through Argo CD
+* OpenTelemetry Collector and observability integration
+* Container image build, tagging and GHCR publishing
+
+### Pending
+
+* Kyverno admission policies
+* Kubernetes NetworkPolicies / network security
+* OWASP ZAP DAST integration
+* Falco runtime security
+* Final end-to-end DevSecOps workflow validation
+
+> The project is being implemented progressively from **source code → dependencies → container → infrastructure → Kubernetes → admission control → runtime security**.
+
+Last updated: August 8, 2026
