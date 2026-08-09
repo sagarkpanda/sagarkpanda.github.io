@@ -44,28 +44,25 @@ The goal is to demonstrate how security controls can be integrated throughout th
 ### Completed
 
 * Application and platform repositories established
+* Container image build, tagging and GHCR publishing
 * GitHub Actions CI/CD and GitOps promotion
 * Gitleaks secret scanning
 * Semgrep SAST
 * Dependency Review
-* CodeQL / GitHub Security
 * Trivy filesystem scanning
 * Trivy container image scanning
 * SBOM generation
 * Trivy Terraform, Kubernetes and configuration scanning
 * DefectDojo security finding management
 * Kubernetes deployment through Argo CD
-* OpenTelemetry Collector and observability integration
-* Container image build, tagging and GHCR publishing
+* Kyverno admission policies
+* OWASP ZAP DAST integration
 
 ### Pending
 
-* Kyverno admission policies
-* Kubernetes NetworkPolicies / network security
-* OWASP ZAP DAST integration
 * Falco runtime security
 * Final end-to-end DevSecOps workflow validation
 
 > The project is being implemented progressively from **source code → dependencies → container → infrastructure → Kubernetes → admission control → runtime security**.
 
-Last updated: August 8, 2026
+Last updated: August 9, 2026
