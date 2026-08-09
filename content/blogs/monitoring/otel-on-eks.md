@@ -503,6 +503,10 @@ To explore distributed tracing, open the Node Frontend service from the APM view
 
 Honeycomb is an observability platform built around OpenTelemetry with AI-assisted observability capabilities. Since both application and Kubernetes telemetry flow through the OTel Collector's multi-exporter pipeline, the same data lands in Honeycomb without additional instrumentation.
 
+Honeycomb also provides ready-made templates for common observability use cases. These can be accessed from **Boards → Templates**, where templates such as **Kubernetes Node Metrics**, **Kubernetes Pod Metrics**, and **Kubernetes Workload Health** are available. Selecting a template lets use review the prebuilt board and save it, after which the saved board becomes available directly under the **Boards** section for future use.
+
+{{< figure src="https://i.ibb.co/8CLh903/hc-dashboards.png" alt="Honeycomb Templates" width="1000" height="600" title="Honeycomb Dashboard Templates" >}}
+
 The query builder is solid for slicing metrics and traces, but where Honeycomb stands out is the MCP server and Canvas — once connected to Claude, your telemetry becomes something you can interrogate in plain English rather than hand-writing queries.
 
 {{< figure src="https://i.ibb.co/TqMSNr2D/x.jpg" alt="Honeycomb Canvas" width="1000" height="600" title="Honeycomb Canvas" >}}
