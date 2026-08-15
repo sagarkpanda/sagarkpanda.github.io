@@ -553,5 +553,3 @@ At this stage, the platform is fully operational and telemetry is flowing from b
 [**Checkout more Monitoring and Observability Articles →**](/blogs/#o11y) -->
 
 <!-- [**Read more articles on Kubernetes →**](/blogs/#kubernetes) -->
-
-[**Explore ArgoCD in Detail →**]({{< relref "argocd" >}})

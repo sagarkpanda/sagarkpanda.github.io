@@ -250,9 +250,9 @@ projects:
         - src: "/images/postgres.svg"
           tooltip: "Okta"
 
-    - name: "DevSecOps Labs (PyGoat)"
-      link: "https://github.com/sagarkpanda/devsecops-labs"
-      status: "In Progress"
+    - name: "DevSecOps on EKS"
+      link: "https://github.com/sagarkpanda/otel-lab-platform"
+      status: "Completed"
       pageLink: "/projects/devsecops-proj/"
       # image: "https://raw.githubusercontent.com/sagarkpanda/otel-labs/main/images/o11y.png"
       content: |
