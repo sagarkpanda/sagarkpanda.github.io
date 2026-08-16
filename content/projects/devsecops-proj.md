@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes DevSecOps"
-date: 2026-07-01
+date: 2026-08-14
 summary: "End-to-end DevSecOps implementation from application code to Kubernetes runtime"
 status: "completed"
 # cover: "https://i.ibb.co/pjgVNXn4/x.png"
