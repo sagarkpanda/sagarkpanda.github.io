@@ -14,6 +14,8 @@ tags:
 - cloud
 - terraform
 - new relic
+- "Argo CD"
+- EKS
 series:
 - Observability
 series_order: 3

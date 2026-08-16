@@ -1,7 +1,7 @@
 ---
 title: "End-to-End DevSecOps on EKS: Code, Containers, Kubernetes & Runtime Security"
 description: "Hands-on DevSecOps on EKS with Gitleaks, Semgrep, Trivy, Kyverno, Falco, OWASP ZAP and DefectDojo"
-date: "2026-08-13"
+date: "2026-08-15"
 cover: "https://i.ibb.co/RGKsN3Gz/devsecops.png"
 tags:
   - DevSecOps
@@ -16,7 +16,8 @@ tags:
   - Falco
   - DefectDojo
   - GitOps
-  - ArgoCD
+  - "Argo CD"
+  - EKS
 ---
 
 ## Why this setup?
@@ -1586,7 +1587,7 @@ The workflow first checks whether the application is reachable. If it is, ZAP ru
 
 It is triggered by the `github-actions[bot]` commit used in the GitOps promotion flow.
 
-The gh action for zap can also create an issue in gh if you set that to true. You also get a html report for easy reading.
+The gh action zap can also create a issue in gh if you set that to true. You also get a html report for easy reading." → "The ZAP action can also open a GitHub issue automatically by setting issue: true. An HTML report is also generated alongside the XML for easier reading."
 
 {{< figure src="https://i.ibb.co/60188LSJ/zap-report.png" alt="owasp zap report" width="1000" height="600" title="ZAP HTML report" >}}
 

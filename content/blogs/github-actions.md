@@ -9,6 +9,7 @@ tags:
 - github
 - devops
 - pipeline
+- "GitHub Actions"
 series:
 - GitHub Actions
 series_order: 1

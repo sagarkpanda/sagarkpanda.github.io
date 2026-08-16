@@ -9,6 +9,7 @@ tags:
 - github
 - devops
 - repo automation
+- "GitHub Actions"
 series:
 - GitHub Actions
 series_order: 2
