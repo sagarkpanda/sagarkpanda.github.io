@@ -1782,31 +1782,9 @@ Actions → Gitleaks
 Actions → Trivy Config Scan
 Actions → OWASP ZAP DAST
 ```
-Kyverno and Falco are deployed as part of the platform bootstrap/GitOps setup.
+Kyverno and Falco are deployed as part of the platform bootstrap/GitOps setup. Use the earlier testing steps ☝️ [***Falco*** ](#try-it-manually) and [***Kyverno*** ](#try-it-manually-1)
 
-### Step 4: Test Kyverno
-
-Try a non-compliant image:
-
-```bash
-kubectl run test-pod \
-  --image nginx:latest \
-  -n otel-labs
-```
-
-The admission request should be rejected by Kyverno.
-
-Then use an explicitly tagged image with resource requests and limits:
-
-```bash
-kubectl run test-pod \
-  --image ghcr.io/sagarkpanda/node-frontend:abc1234 \
-  --requests=cpu=100m,memory=128Mi \
-  --limits=cpu=500m,memory=512Mi \
-  -n otel-labs
-```
-
-### Step 5: Review DefectDojo
+### Step 4: Review DefectDojo
 
 ```text
 Dashboard → Products → Otel Labs
