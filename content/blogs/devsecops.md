@@ -33,7 +33,7 @@ This post builds on the [otel labs]({{< relref "otel-on-eks" >}}) infrastructure
 
 The separation is intentional. The application repository owns the security of the application and the artifacts it produces, while the platform repository owns the security of the infrastructure and the workloads that are deployed and run. Although **OWASP ZAP is an application-security tool**, we keep its workflow in the platform repository because the scan runs against the deployed application, and this lets us use the `github-actions[bot]` commit condition from the GitOps deployment flow to trigger the scan at the right point.
 
-> **Note:** ZAP was originally an OWASP project, it is now an independent open-source project supported by Checkmarx. This article may still use **OWASP ZAP** in a few places because the name remains widely recognized.
+> **Note:** ZAP was originally an OWASP project and is now an independent open-source project supported by Checkmarx. This article still uses **OWASP ZAP** because the name remains widely recognized.
 
 ```mermaid
 flowchart TB
@@ -1587,7 +1587,7 @@ The workflow first checks whether the application is reachable. If it is, ZAP ru
 
 It is triggered by the `github-actions[bot]` commit used in the GitOps promotion flow.
 
-The gh action zap can also create a issue in gh if you set that to true. You also get a html report for easy reading." → "The ZAP action can also open a GitHub issue automatically by setting issue: true. An HTML report is also generated alongside the XML for easier reading."
+The ZAP action can also open a GitHub issue automatically by setting issue: true. An HTML report is also generated alongside the XML and JSON for easier reading.
 
 {{< figure src="https://i.ibb.co/60188LSJ/zap-report.png" alt="owasp zap report" width="1000" height="600" title="ZAP HTML report" >}}
 
