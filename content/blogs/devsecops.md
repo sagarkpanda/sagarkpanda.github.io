@@ -1710,7 +1710,7 @@ helm upgrade --install falco falcosecurity/falco \
 
 Once the cluster is ready, you can create the `otel-labs` application as usual by applying the Argo CD root application. If you want to access the Argo CD UI, you can also create the Argo CD ingress.
 
-For the complete application deployment steps, refer to the [OTel on EKS](https://sagarpanda.com/monitoring/otel-on-eks/) guide.
+For the complete application deployment steps, refer to the [OTel on EKS](https://sagarpanda.com/blogs/monitoring/otel-on-eks/) guide.
 
 ### FalcoSidekick
 
@@ -1786,9 +1786,7 @@ Kyverno and Falco are deployed as part of the platform bootstrap/GitOps setup. U
 
 ### Step 4: Review DefectDojo
 
-```text
-Dashboard → Products → Otel Labs
-```
+DD should now show chart at the home page, with additional info about number of engagements, findings and etc.
 
 The configured scans feed their results into the relevant DefectDojo engagements.
 
