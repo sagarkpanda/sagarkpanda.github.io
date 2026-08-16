@@ -8,7 +8,7 @@ status: "completed"
 tags:
   - devsecops
   - kubernetes
-  - github-actions
+  - github actions
   - kyverno
   - falco
   - trivy
