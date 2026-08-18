@@ -35,60 +35,6 @@ The separation is intentional. The application repository owns the security of t
 
 > **Note:** ZAP was originally an OWASP project and is now an independent open-source project supported by Checkmarx. This article still uses **OWASP ZAP** because the name remains widely recognized.
 
-```mermaid
-flowchart TB
-    APP["Application Repo<br/><b>otel-labs</b><br/><br/>Application Security:<br/>• Gitleaks (secrets)<br/>• Semgrep (SAST)<br/>• Trivy FS (dependencies)<br/>• Trivy Image (containers)<br/>• Build & Push to GHCR"]
-
-    PLATFORM["Platform Repo<br/><b>otel-labs-platform</b><br/><br/>Platform Security:<br/>• Gitleaks (secrets)<br/>• Trivy Config (Terraform + K8s)<br/>• Kyverno (admission policy)<br/>• Falco (runtime detection)<br/>• OWASP ZAP (DAST)"]
-
-    APP_REPORTS["SARIF / scan reports"]
-    PLATFORM_REPORTS["SARIF / scan reports"]
-
-    DEFECTDOJO["DefectDojo<br/><b>Centralized findings</b>"]
-
-    APP --> APP_REPORTS
-    PLATFORM --> PLATFORM_REPORTS
-
-    APP_REPORTS --> DEFECTDOJO
-    PLATFORM_REPORTS --> DEFECTDOJO
-
-    classDef repo fill:none,stroke:#333,stroke-width:1.5px
-    classDef reports fill:none,stroke:#666,stroke-width:1px
-    classDef center fill:none,stroke:#333,stroke-width:1.5px
-
-    class APP,PLATFORM repo
-    class APP_REPORTS,PLATFORM_REPORTS reports
-    class DEFECTDOJO center
-```
-
-The security layers are deliberately different:
-
-```text
-Source code
-    ↓
-Gitleaks / Semgrep
-    ↓
-Dependencies & build artifacts
-    ↓
-Trivy
-    ↓
-Infrastructure configuration
-    ↓
-Trivy Config
-    ↓
-Kubernetes admission
-    ↓
-Kyverno
-    ↓
-Running workload
-    ↓
-Falco
-    ↓
-Live web application
-    ↓
-OWASP ZAP
-```
-
 
 ## Table of Contents
 
@@ -226,8 +172,8 @@ on:
       - 'go-inventory/**'
 
 permissions:
-  contents: read
-  security-events: write
+  ....
+  ....
 
 jobs:
   semgrep:
@@ -238,8 +184,8 @@ jobs:
       image: semgrep/semgrep
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      .....
+      .....
 
       - name: Run Semgrep
         continue-on-error: true
@@ -298,15 +244,14 @@ updates:
   # Go dependencies
   - package-ecosystem: gomod
     directory: /go-inventory
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 10
+    ....
+    ....
 
   # GitHub Actions
   - package-ecosystem: github-actions
     directory: /
-    schedule:
-      interval: weekly
+    ....
+    ....
 ```
 
 **How it works:**
@@ -395,10 +340,8 @@ name: Build, Scan and Push Images
 
 on:
   push:
-    branches: [main]
-    paths-ignore:
-      - '**/*.md'
-      - '.github/workflows/gitleaks.yml'
+    ....
+    ....
 
 jobs:
   build-scan-push:
@@ -408,28 +351,8 @@ jobs:
       TRIVY_CONFIG: .trivy/config.yaml
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Generate short SHA tag
-        run: |
-          echo "SHORT_SHA=$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
-
-      - name: Login to GHCR
-        uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build latest images
-        run: docker compose build
-
-      - name: Tag SHA images
-        run: |
-          docker tag ghcr.io/${{ env.GHCR_OWNER }}/node-frontend:latest \
-            ghcr.io/${{ env.GHCR_OWNER }}/node-frontend:${SHORT_SHA}
-          # ... repeat for other images
+      -....
+       ....
 
       - name: Scan node-frontend image
         uses: aquasecurity/trivy-action@v0.36.0
@@ -566,10 +489,10 @@ permissions:
 
 jobs:
   trivy-k8s:
-    runs-on: ubuntu-latest
+    ....
 
     steps:
-      - uses: actions/checkout@v4
+      - ...
 
       - name: Scan Kubernetes manifests
         uses: aquasecurity/trivy-action@v0.36.0
@@ -593,16 +516,14 @@ jobs:
         run: |
           curl -X POST \
             "${{ secrets.DEFECTDOJO_URL }}/api/v2/reimport-scan/" \
-            -F "product_type_name=SP Org" \
-            -F "product_name=Otel Labs" \
-            -F "engagement_name=Platform Sec Engagement" \
-            -F "test_title=Trivy Kubernetes"
+            ....
+            ....
 
   trivy-terraform:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - ....
 
       - name: Scan Terraform
         uses: aquasecurity/trivy-action@v0.36.0
@@ -616,20 +537,15 @@ jobs:
           exit-code: 0
 
       - name: Upload Terraform SARIF to GitHub Security
-        uses: github/codeql-action/upload-sarif@v4
-        with:
-          sarif_file: trivy-terraform.sarif
-          category: trivy-terraform
+        ....
+        ....
 
       - name: Upload to DefectDojo
         if: always()
         run: |
           curl -X POST \
-            "${{ secrets.DEFECTDOJO_URL }}/api/v2/reimport-scan/" \
-            -F "product_type_name=SP Org" \
-            -F "product_name=Otel Labs" \
-            -F "engagement_name=Platform Sec Engagement" \
-            -F "test_title=Trivy Terraform"
+            ....
+            ....
 ```
 
 We therefore run two configuration scans:
