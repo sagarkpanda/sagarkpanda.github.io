@@ -280,6 +280,7 @@ While Dependabot handles **automatic updates**, **Trivy FS** provides **active v
 
 The two can work together:
 
+```text
 Trivy FS
 ↓
 Detects vulnerable dependencies
@@ -291,6 +292,7 @@ Dependabot
 Creates update PRs
 ↓
 Merge and re-scan with Trivy
+```
 
 This gives you **both visibility and automation** for dependency management.
 
@@ -302,21 +304,7 @@ This is the area covered by **SCA (Software Composition Analysis)** or dependenc
 
 We use Trivy's filesystem scan to check the repository before the application is turned into its final container image.
 
-**Included in:** `.github/workflows/build-scan-push.yml`
-
-```yaml
-jobs:
-  build-scan-push:
-    runs-on: ubuntu-latest
-    env:
-      TRIVY_CONFIG: .trivy/config.yaml
-
-    steps:
-      # ... build steps ...
-
-      # Trivy FS scans for dependency vulnerabilities
-      # (runs before image build for early detection)
-```
+**Included in:** `.github/workflows/build-scan-push.yml` — runs before the image build step so vulnerabilities in dependencies are caught before the final artifact is produced.
 
 For this project, the relevant inputs include:
 
@@ -712,7 +700,7 @@ The command executes successfully, and Falco detects the process execution with 
 CUSTOM ALERT: whoami executed in container
 ```
 
-{{< figure src="https://i.ibb.co/7Jp7hFWk/falco-whoami.png" alt="falco alert" width="1000" height="600" title="custom alert triggerd on match" >}}
+{{< figure src="https://i.ibb.co/7Jp7hFWk/falco-whoami.png" alt="falco alert" width="1000" height="600" title="custom alert triggered on match" >}}
 
 The alert includes details such as the process, command, container name, image, namespace, and pod name.
 
@@ -765,6 +753,7 @@ You can also create custom rules and have them run for example using whoami or l
   priority: WARNING
   tags: [falco_lab, system]
 ```
+
 The resulting events can be viewed through the **Falcosidekick UI**.
 
 {{< figure src="https://i.ibb.co/sdfLJc3s/sidekickui.png" alt="falco sidekick" width="1000" height="600" title="falco sidekick ui view" >}}
@@ -926,7 +915,7 @@ A compliant workload with an explicitly tagged image and the required resources 
 
 There's also a test workload under archive/falco-trigger.yml. You can use it to test the policies because its image comes from the trusted registry already allowed by our policy.
 
-First apply the workload by commenting anything that violates policy like requests and limits or namespace. You would see that it would fail with violations shows, if you uncommnet them and try again, it is complinat and would work just fine.
+First apply the workload by commenting anything that violates policy like requests and limits or namespace. You would see that it would fail with violations shows, if you uncomment them and try again, it is compliant and would work just fine.
 
 {{< figure src="https://i.ibb.co/cdWmPP3/kyverno-test.png" alt="kyverno policie test" width="1000" height="600" title="kyverno compliance" >}}
 
@@ -987,12 +976,14 @@ When we work in the DefectDojo UI, we use the hierarchy above.
 
 When we automate the same process from GitHub Actions, the API uses different field names:
 
-    product_type_name = SP Org
-    product_name      = Otel Labs
-    engagement_name   = App Sec Engagement
-    test_title        = Gitleaks
-    scan_type         = SARIF
-    file              = scanner-result.sarif
+```text
+product_type_name = SP Org
+product_name      = Otel Labs
+engagement_name   = App Sec Engagement
+test_title        = Gitleaks
+scan_type         = SARIF
+file              = scanner-result.sarif
+```
 
 The API terminology does not map one-to-one to the labels we see in the current UI, so it is useful to keep the two views separate.
 
@@ -1018,100 +1009,39 @@ Once the DefectDojo structure makes sense, the GitHub Actions workflow can autom
 For example, our ZAP workflow sends its report to the DefectDojo `reimport-scan` API:
 
 ```bash
-
-    curl -X POST \
-      "${{ secrets.DEFECTDOJO_URL }}/api/v2/reimport-scan/" \
-      -H "Authorization: Token ${{ secrets.DEFECTDOJO_API_KEY }}" \
-      -H "Accept: application/json" \
-      -F "scan_type=ZAP Scan" \
-      -F "file=@report_xml.xml" \
-      -F "auto_create_context=true" \
-      -F "product_type_name=$DD_PRODUCT_TYPE" \
-      -F "product_name=$DD_PRODUCT" \
-      -F "engagement_name=$DD_ENGAGEMENT" \
-      -F "test_title=OWASP ZAP DAST" \
-      -F "close_old_findings=true" \
-      -F "do_not_reactivate=false" \
-      -F "environment=$DD_ENVIRONMENT" \
-      -F "build_id=$DD_BUILD_ID" \
-      -F "branch_tag=$DD_BRANCH" \
-      -F "commit_hash=$DD_COMMIT" \
-      -F "tags=github-actions,zap,dast,$DD_BRANCH"
+curl -X POST \
+  "${{ secrets.DEFECTDOJO_URL }}/api/v2/reimport-scan/" \
+  -H "Authorization: Token ${{ secrets.DEFECTDOJO_API_KEY }}" \
+  -H "Accept: application/json" \
+  -F "scan_type=ZAP Scan" \
+  -F "file=@report_xml.xml" \
+  -F "auto_create_context=true" \
+  -F "product_type_name=$DD_PRODUCT_TYPE" \
+  -F "product_name=$DD_PRODUCT" \
+  -F "engagement_name=$DD_ENGAGEMENT" \
+  -F "test_title=OWASP ZAP DAST" \
+  -F "close_old_findings=true" \
+  -F "do_not_reactivate=false" \
+  -F "environment=$DD_ENVIRONMENT" \
+  -F "build_id=$DD_BUILD_ID" \
+  -F "branch_tag=$DD_BRANCH" \
+  -F "commit_hash=$DD_COMMIT" \
+  -F "tags=github-actions,zap,dast,$DD_BRANCH"
 ```
 
-There is quite a bit happening in this request.
-
-### Connecting to DefectDojo
-
-The first part tells GitHub Actions where to send the scan:
-
-    "${{ secrets.DEFECTDOJO_URL }}/api/v2/reimport-scan/"
-
-The URL and API token are stored as GitHub Actions secrets rather than being written directly into the workflow.
-
-    -H "Authorization: Token ${{ secrets.DEFECTDOJO_API_KEY }}"
-    -H "Accept: application/json"
-
-The first header authenticates the request with the DefectDojo API.
-
-### Sending the scanner result
-
-These fields tell DefectDojo what we are importing:
-
-    -F "scan_type=ZAP Scan"
-    -F "file=@report_xml.xml"
-
-`scan_type` tells DefectDojo how to interpret the report, while `file` uploads the actual ZAP XML report generated by the workflow.
-
-### Automatically creating the context
-
-One useful option is:
-
-    -F "auto_create_context=true"
-
-This allows DefectDojo to automatically create the required context when it does not already exist.
-
-The context is based on the values we provide for:
-
-    -F "product_type_name=$DD_PRODUCT_TYPE"
-    -F "product_name=$DD_PRODUCT"
-    -F "engagement_name=$DD_ENGAGEMENT"
-    -F "test_title=OWASP ZAP DAST"
-
-For our project, these correspond to:
-
-**SP Org → Otel Labs → App Sec Engagement → OWASP ZAP DAST**
+The request handles several things in one call: it authenticates via the API token secret, identifies where to store the result using `product_type_name`, `product_name`, `engagement_name`, and `test_title`, uploads the actual ZAP XML report, passes build metadata (environment, branch, commit, build ID) for traceability, tags the import for easy filtering, and uses `auto_create_context=true` so DefectDojo creates the required hierarchy automatically on first run.
 
 {{< figure src="https://i.ibb.co/Jw6B4cSD/engmnts-auto-created-by-api.png" alt="engagements" width="1000" height="600" title="auto created engagements" >}}
 {{< figure src="https://i.ibb.co/twWN6cyT/dast-findings.png" alt="zap finding" width="1000" height="600" title="one of the zap finding" >}}
-
-So the workflow does not need us to manually create every object before the first scan is imported.
-
-### Tracking the environment and build
-
-We also pass information about where and how the scan was produced:
-
-    -F "environment=$DD_ENVIRONMENT"
-    -F "build_id=$DD_BUILD_ID"
-    -F "branch_tag=$DD_BRANCH"
-    -F "commit_hash=$DD_COMMIT"
-
-This gives the imported findings additional context, such as the environment that was scanned, the application build, the Git branch, and the commit that produced the scan.
-
-### Tags
-
-We also add tags to the imported results:
-
-    -F "tags=github-actions,zap,dast,$DD_BRANCH"
-
-This makes it easier to identify results that came from the GitHub Actions ZAP workflow.
 
 ### Closing and reactivating findings
 
 The reimport also controls what happens to findings from earlier scans.
 
-    -F "close_old_findings=true"
-    -F "do_not_reactivate=false"
+```text
+-F "close_old_findings=true"
+-F "do_not_reactivate=false"
+```
 
 `close_old_findings=true` tells DefectDojo to close old findings that are no longer present in the newly imported scan.
 
@@ -1127,12 +1057,14 @@ For scanners that produce SARIF output, we also upload the results to the **GitH
 
 This gives us two different views:
 
-    Scanner
-       ↓
-    SARIF
-       ├──→ GitHub Security
-       │
-       └──→ DefectDojo
+```text
+Scanner
+   ↓
+SARIF
+   ├──→ GitHub Security
+   │
+   └──→ DefectDojo
+```
 
 GitHub Security is useful for seeing security findings directly alongside the repository and its pull requests, while DefectDojo gives us the centralized view across the different scanners and engagements.
 
@@ -1183,17 +1115,19 @@ The basic pattern is:
 
 This gives us three different places for the same security workflow:
 
-    Scanner
-       ↓
-    Scan report
-       ├──→ GitHub Security
-       │       SARIF
-       │
-       ├──→ GitHub Actions Artifact
-       │       Raw report
-       │
-       └──→ DefectDojo
-               Findings
+```text
+Scanner
+   ↓
+Scan report
+   ├──→ GitHub Security
+   │       SARIF
+   │
+   ├──→ GitHub Actions Artifact
+   │       Raw report
+   │
+   └──→ DefectDojo
+           Findings
+```
 
 Each serves a different purpose:
 
@@ -1226,31 +1160,7 @@ The last two options enable Kyverno `PolicyException` support and tell Kyverno w
 --set features.policyExceptions.namespace=argocd
 ```
 
-The `argocd` namespace here is **our choice**. Kyverno does not require PolicyExceptions to be stored there.
-
-We chose `argocd` because the policies and their exceptions are managed through our GitOps setup and stored with the ArgoCD-related resources.
-
-You could use another namespace instead. The important part is that the namespace configured here must match the namespace where you create the `PolicyException` resources.
-
-For example, if we configured:
-
-```bash
---set features.policyExceptions.namespace=security
-```
-
-then the PolicyException would need to be created in the `security` namespace.
-
-So the important relationship is:
-
-```text
-Kyverno configuration
-        ↓
-PolicyException namespace
-        ↓
-Where the exceptions are created
-```
-
-The namespace does not change what the exception does. It simply tells Kyverno where to look for the `PolicyException` resources.
+The `argocd` namespace here is **our choice**. Kyverno does not require PolicyExceptions to be stored there. We chose `argocd` because the policies and their exceptions are managed through our GitOps setup. The important part is that the namespace configured here must match the namespace where you create the `PolicyException` resources.
 
 In this lab, the policies and policyexceptions are stored under:
 
@@ -1308,7 +1218,7 @@ The two rules handle related but separate checks:
 
 Because the policy uses `Enforce`, a Pod that violates either rule is rejected during admission.
 
-We also have policies for resource requests and limits and for restricting images to trusted registries. You can see the complete set of policies used in this lab in:
+We also have policies for resource requests and limits and for restricting images to trusted registries. You can see the complete set of policies used in this lab in the repository.
 
 ### Policy exception
 
@@ -1343,17 +1253,9 @@ spec:
           names: [traefik, traefik-*]
 ```
 
-This exception is deliberately narrow.
+This exception is deliberately narrow. It does not disable the policies globally — the specified rules are excluded only for the matching Traefik Deployment and Pods in the `traefik` namespace.
 
-It does not disable the policies globally. It says that the specified rules from `resource-security` and `trusted-image-registries` are excluded only for the matching Traefik Deployment and Pods in the `traefik` namespace.
-
-Notice that the `PolicyException` itself is stored in the `argocd` namespace. That matches the namespace configured when Kyverno was installed:
-
-```bash
---set features.policyExceptions.namespace=argocd
-```
-
-The workload being excepted is still in the `traefik` namespace. These are two different things:
+Notice that the `PolicyException` itself is stored in the `argocd` namespace (where Kyverno looks for exceptions), while the workload being excepted is in the `traefik` namespace. These are two different things:
 
 - `namespace: argocd` — where the `PolicyException` resource is stored.
 - `namespaces: [traefik]` — which workloads the exception applies to.
@@ -1503,7 +1405,7 @@ The workflow first checks whether the application is reachable. If it is, ZAP ru
 
 It is triggered by the `github-actions[bot]` commit used in the GitOps promotion flow.
 
-The ZAP action can also open a GitHub issue automatically by setting issue: true. An HTML report is also generated alongside the XML and JSON for easier reading.
+The ZAP action can also open a GitHub issue automatically by setting `issue: true`. An HTML report is also generated alongside the XML and JSON for easier reading.
 
 {{< figure src="https://i.ibb.co/60188LSJ/zap-report.png" alt="owasp zap report" width="1000" height="600" title="ZAP HTML report" >}}
 
@@ -1560,32 +1462,15 @@ DefectDojo
 The important part is that these tools are not doing the same job.
 
 ```text
-Gitleaks
-→ secrets
-
-Semgrep
-→ source-code security
-
-Trivy FS
-→ dependencies
-
-Trivy Image
-→ container artifacts
-
-Trivy Config
-→ Terraform and Kubernetes configuration
-
-Kyverno
-→ admission-time enforcement
-
-Falco
-→ runtime behavior
-
-OWASP ZAP
-→ live application testing
-
-DefectDojo
-→ centralized findings
+Gitleaks        → secrets
+Semgrep         → source-code security
+Trivy FS        → dependencies
+Trivy Image     → container artifacts
+Trivy Config    → Terraform and Kubernetes configuration
+Kyverno         → admission-time enforcement
+Falco           → runtime behavior
+OWASP ZAP       → live application testing
+DefectDojo      → centralized findings
 ```
 
 ## Deployment & Setup {#deployment}
@@ -1626,7 +1511,7 @@ helm upgrade --install falco falcosecurity/falco \
 
 Once the cluster is ready, you can create the `otel-labs` application as usual by applying the Argo CD root application. If you want to access the Argo CD UI, you can also create the Argo CD ingress.
 
-For the complete application deployment steps, refer to the [OTel on EKS](https://sagarpanda.com/blogs/monitoring/otel-on-eks/) guide.
+For the complete application deployment steps, refer to the [OTel on EKS](https://sagarpanda.com/monitoring/otel-on-eks/) guide.
 
 ### FalcoSidekick
 
@@ -1642,13 +1527,7 @@ If you want to access the **FalcoSidekick UI**, enable the UI as part of the Hel
 
 You can also configure FalcoSidekick to forward Falco alerts to the OTel platform by updating its ConfigMap.
 
-If you only want to verify that Falco is detecting events and do not need FalcoSidekick or its UI, you can omit:
-
-```bash
---set falcosidekick.enabled=true
-```
-
-Falco can run without Sidekick; Sidekick is used when you want to forward and manage the Falco events through additional outputs.
+If you only want to verify that Falco is detecting events and do not need FalcoSidekick or its UI, you can omit `--set falcosidekick.enabled=true`. Falco can run without Sidekick; Sidekick is used when you want to forward and manage the Falco events through additional outputs.
 
 ### Step 2: Configure GitHub secrets
 
@@ -1698,11 +1577,14 @@ Actions → Gitleaks
 Actions → Trivy Config Scan
 Actions → OWASP ZAP DAST
 ```
-Kyverno and Falco are deployed as part of the platform bootstrap/GitOps setup. Use the earlier testing steps ☝️ [***Falco*** ](#try-it-manually) and [***Kyverno*** ](#try-it-manually-1)
+
+Kyverno and Falco are deployed as part of the platform bootstrap/GitOps setup. Use the earlier testing steps ☝️ [***Falco***](#try-it-manually) and [***Kyverno***](#try-it-manually-1)
 
 ### Step 4: Review DefectDojo
 
-DD should now show chart at the home page, with additional info about number of engagements, findings and etc.
+```text
+Dashboard → Products → Otel Labs
+```
 
 The configured scans feed their results into the relevant DefectDojo engagements.
 
@@ -1722,24 +1604,6 @@ The configured scans feed their results into the relevant DefectDojo engagements
 | DAST | OWASP ZAP | The deployed web application |
 | Findings | DefectDojo | Centralized security findings |
 
-The project is therefore less about collecting security tools and more about putting the right control at the right point in the application lifecycle:
-
-```text
-Code
- ↓
-Dependencies
- ↓
-Container
- ↓
-Infrastructure
- ↓
-Admission
- ↓
-Runtime
- ↓
-Live application
-```
-
 ## Troubleshooting {#troubleshooting}
 
 ### Workflows Not Running
@@ -1754,21 +1618,10 @@ Reduce false positives using the repository's Gitleaks configuration/ignore rule
 
 Use a scoped `PolicyException` for legitimate workloads rather than disabling the policy globally.
 
-### ZAP Scan Skipped
-
-Check:
-
-1. The application is reachable.
-2. The triggering commit is from `github-actions[bot]`.
-
 ## Next Steps {#next-steps}
 
-1. **Tune policies** — Adjust Kyverno policies for your organization.
-2. **Custom Falco rules** — Add detections for application-specific behavior.
-3. **Network policies** — Restrict pod-to-pod communication.
-4. **RBAC refinement** — Limit service-account permissions.
-5. **Audit logging** — Enable Kubernetes audit logging for compliance.
-6. **Vault** - Use Hashicorp vault for secret management
+1. **Network policies** — Restrict pod-to-pod communication.
+2. **Vault** — Use Hashicorp Vault for secret management.
 
 ## References {#references}
 
@@ -1779,4 +1632,3 @@ Check:
 - [Falco Documentation](https://falco.org/docs/getting-started/falco-kubernetes-quickstart/)
 - [OWASP ZAP](https://www.zaproxy.org/)
 - [DefectDojo](https://github.com/DefectDojo/DefectDojo)
-
