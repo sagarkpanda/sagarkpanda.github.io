@@ -3028,3 +3028,22 @@ html.dark .article-header p{
     gap:4px;
   }
 }
+
+.status-link {
+  text-decoration: none;
+}
+
+.status-tick {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.status-link:hover .status-text {
+  text-decoration: underline;
+}
+
+.status-tick {
+  color: #22c55e;
+  font-weight: 700;
+  margin-right: 5px;
+}

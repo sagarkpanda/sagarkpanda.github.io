@@ -76,7 +76,21 @@ export default function Home() {
       <Section command="cat ./education" title="Education" id="education"><div className="edu-grid">{site.education.map((e) => <div className="terminal-card" key={e.degree}><h3>{e.degree}</h3><a href={e.url} target="_blank" rel="noreferrer">{e.school}</a><p>{e.date} · GPA {e.gpa}</p></div>)}</div></Section>
       <Section command="tail -n 5 ~/blog" title="Latest Writing" id="blog"><p className="section-lead">Practical notes on DevOps, Kubernetes, AWS, CI/CD, observability, and security.</p><div className="post-list">{posts.map((p) => <PostCard key={p.route} post={p} />)}</div><Link className="text-link" href="/blogs/">cd /blogs → all posts</Link></Section>
       <Section command="ping sagar --interactive" title="Get In Touch" id="contact"><div className="contact-card"><p>My inbox is always open. Whether it is an infrastructure question, collaboration, or just a technical discussion, send me a note.</p><a className="button primary" href={`mailto:${site.email}`}>$ mail {site.email}</a></div></Section>
-      <footer className="footer"><span>$ echo "built by Sagar Panda"</span><span>© {new Date().getFullYear()} · Next.js · Tailwind CSS</span></footer>
+      {/* <footer className="footer"><span>$ echo "built by Sagar Panda"</span><span>© {new Date().getFullYear()} · Next.js · Tailwind CSS</span></footer>
+       */}
+       <footer className="footer">
+        <span>$ echo "built by Sagar Panda"</span>
+            <a
+              href="https://status.sagarpanda.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="status-link"
+            >
+              <span className="status-tick">✓</span>
+              <span className="status-text">All Systems Operational</span>
+            </a>
+        <span>© {new Date().getFullYear()} · Next.js · Tailwind CSS</span>
+      </footer>
     </main>
   );
 }
