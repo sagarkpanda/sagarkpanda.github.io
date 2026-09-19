@@ -1,43 +1,49 @@
-# Sagar Panda — Next.js site (Portfolio Revision 4)
+<!-- # Personal Portfolio and Blog
+Hosted on github pages (github.io)
 
-Next.js App Router + TypeScript + Tailwind CSS personal site migrated from the Hugo source.
 
-## Content
+⏩ Have a look at the [website↗](https://sagarpanda.com/)
 
-Blog and project content is Markdown (`.md`). MDX is intentionally not used.
+<img width="1823" height="688" alt="image" src="https://github.com/user-attachments/assets/20d0113d-7480-45b1-aa0e-343aa965937b" />
 
-## Local development
 
-```bash
-npm install
-npm run dev
-```
+Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profiile theme </a>
 
-Open http://localhost:3000
+[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml) -->
 
-## Production/static build
+# Sagar Panda | DevOps, Cloud & Kubernetes
 
-```bash
-npm run build
-```
+Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blogs, projects, and hands-on labs focused on Cloud, Kubernetes, GitOps, Infrastructure as Code, CI/CD, Observability, and DevSecOps.
 
-The project uses Next.js static export for GitHub Pages.
+🚀 **Explore my portfolio ↗** https://sagarpanda.com
 
-## Blog
+<a href="https://sagarpanda.com/" target="_blank" rel="noopener noreferrer">
+  <img
+    alt="Sagar Panda Portfolio"
+    src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-next.png"
+  />
+</a>
 
-- 6 posts per page
-- `/blogs/` is page 1
-- `/blogs/page/2/`, etc. for later pages
-- Clickable tags at `/tags/<tag>/`
-- Previous/next navigation
-- Related posts
-- Table of contents
-- Author byline
+## 📚 What You'll Find
 
-## Portfolio revision
+- Technical blogs and tutorials
+- DevOps, Cloud, and Kubernetes content
+- GitOps and Infrastructure as Code projects
+- CI/CD and DevSecOps experiments
+- Observability and OpenTelemetry labs
+- Personal portfolio
 
-This is the fourth revision of the Sagar Panda portfolio, migrated to Next.js with Markdown-based blog content and static export for GitHub Pages.
+## 🛠 Built With
 
-## Search
+- **Hugo**
+- **Hugo Narrow Theme**
+- **GitHub Actions** for automated deployment
+- **GitHub Pages** for hosting
 
-The site search index is generated automatically before each production build. It searches blog posts only, including titles, descriptions, content, tags, and categories. Homepage section shortcuts remain available in the search modal.
+## 🚀 Deployment Status
+
+[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml)
+
+<!-- Built with ❤️ -->
+
+Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme.
