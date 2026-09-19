@@ -3,6 +3,7 @@ import {
   displayDate,
   getCollection,
   readingTime,
+  normalizeTaxonomySlug,
 } from "@/lib/content";
 
 import type { ContentItem } from "@/types/content";
@@ -276,9 +277,7 @@ export default function BlogArticle({
                     (tag, tagIndex) => (
                       <Link
                         key={`${tag}-${tagIndex}`}
-                        href={`/tags/${encodeURIComponent(
-                          tag
-                        )}/`}
+                        href={`/tags/${normalizeTaxonomySlug(tag)}/`}
                         className="metadata-tag"
                       >
                         {tag}

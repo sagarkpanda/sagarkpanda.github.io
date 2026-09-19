@@ -28,3 +28,6 @@ Thumbs.db
 
 # Local archives
 *.zip
+
+# search index
+search-index.json
