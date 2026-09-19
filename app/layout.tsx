@@ -57,6 +57,14 @@ export default function RootLayout({
         <ScrollToTop />
 
         <script
+          async
+          defer
+          data-website-id="d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50"
+          src="https://data.sagarpanda.com/data.js"
+          data-host-url="https://data.sagarpanda.com"
+        />
+
+        <script
           dangerouslySetInnerHTML={{
             __html: `try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`,
           }}
