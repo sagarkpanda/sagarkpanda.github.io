@@ -12,9 +12,9 @@ const links = [
   ["About", "cd /about", "/#about"],
   ["Skills", "cd /skills", "/#skills"],
   ["Projects", "cd /projects", "/#projects"],
-  ["Blogs", "cd /blogs", "/blogs/"],
   ["Experience", "cd /experience", "/#experience"],
   ["Contact", "cd /contact", "/#contact"],
+  ["Blogs", "cd /blogs", "/blogs/"],
 ] as const;
 
 export default function SiteHeader() {
