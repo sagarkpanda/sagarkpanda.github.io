@@ -3031,6 +3031,7 @@ html.dark .article-header p{
 
 .status-link {
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .status-tick {
