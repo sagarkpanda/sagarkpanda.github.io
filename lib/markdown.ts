@@ -36,22 +36,134 @@ function escapeAttr(value: string) {
     .replaceAll(">", "&gt;");
 }
 
-function getShortcodeAttr(attrs: string, name: string) {
+function getShortcodeAttr(
+  attrs: string,
+  name: string
+) {
   return (
     attrs.match(
-      new RegExp(`\\b${name}=["']([^"']*)["']`, "i")
+      new RegExp(
+        `\\b${name}=["']([^"']*)["']`,
+        "i"
+      )
     )?.[1] ?? ""
+  );
+}
+
+/*
+ * HTML elements that are intentionally allowed
+ * inside the Markdown content.
+ *
+ * Unknown tags such as:
+ *
+ *   <number>
+ *   <name>
+ *   <filename>
+ *   <username>
+ *   <url>
+ *   <container_id>
+ *
+ * are treated as literal Markdown text instead
+ * of being interpreted by rehypeRaw as HTML.
+ */
+const allowedHtmlTags = new Set([
+  "a",
+  "abbr",
+  "article",
+  "b",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "caption",
+  "code",
+  "col",
+  "colgroup",
+  "dd",
+  "del",
+  "details",
+  "div",
+  "em",
+  "figcaption",
+  "figure",
+  "footer",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "head",
+  "header",
+  "hr",
+  "html",
+  "i",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "li",
+  "main",
+  "mark",
+  "nav",
+  "ol",
+  "p",
+  "pre",
+  "s",
+  "section",
+  "small",
+  "span",
+  "strong",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "tfoot",
+  "th",
+  "thead",
+  "title",
+  "tr",
+  "u",
+  "ul",
+]);
+
+function escapeUnknownHtmlTags(text: string) {
+  return text.replace(
+    /<\/?([A-Za-z][A-Za-z0-9_-]*)(?:\s[^<>]*?)?\s*\/?>/g,
+    (
+      match: string,
+      tagName: string
+    ) => {
+      if (
+        allowedHtmlTags.has(
+          tagName.toLowerCase()
+        )
+      ) {
+        return match;
+      }
+
+      return match
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+    }
   );
 }
 
 export function prepareMarkdown(source: string) {
   const protectedCode = protectCode(source);
+
   let text = protectedCode.text;
 
   /*
    * Remove HTML comments.
    */
-  text = text.replace(/<!--[\s\S]*?-->/g, "");
+  text = text.replace(
+    /<!--[\s\S]*?-->/g,
+    ""
+  );
 
   /*
    * Normalize <br> tags.
@@ -87,27 +199,54 @@ export function prepareMarkdown(source: string) {
   text = text.replace(
     /\{\{<\s*figure\b([\s\S]*?)>\}\}/gi,
     (_, attrs: string) => {
-      const src = getShortcodeAttr(attrs, "src");
+      const src = getShortcodeAttr(
+        attrs,
+        "src"
+      );
 
       if (!src) {
         return "";
       }
 
       const alt =
-        getShortcodeAttr(attrs, "alt") || "Image";
+        getShortcodeAttr(
+          attrs,
+          "alt"
+        ) || "Image";
 
-      const width = getShortcodeAttr(attrs, "width");
-      const height = getShortcodeAttr(attrs, "height");
-      const title = getShortcodeAttr(attrs, "title");
+      const width =
+        getShortcodeAttr(
+          attrs,
+          "width"
+        );
 
-      const safeSrc = escapeAttr(src);
-      const safeAlt = escapeAttr(alt);
+      const height =
+        getShortcodeAttr(
+          attrs,
+          "height"
+        );
+
+      const title =
+        getShortcodeAttr(
+          attrs,
+          "title"
+        );
+
+      const safeSrc =
+        escapeAttr(src);
+
+      const safeAlt =
+        escapeAttr(alt);
 
       const imageAttributes = [
         `src="${safeSrc}"`,
         `alt="${safeAlt}"`,
-        width ? `width="${escapeAttr(width)}"` : "",
-        height ? `height="${escapeAttr(height)}"` : "",
+        width
+          ? `width="${escapeAttr(width)}"`
+          : "",
+        height
+          ? `height="${escapeAttr(height)}"`
+          : "",
       ]
         .filter(Boolean)
         .join(" ");
@@ -116,7 +255,9 @@ export function prepareMarkdown(source: string) {
         "<figure>",
         `<img ${imageAttributes} />`,
         title
-          ? `<figcaption>${escapeAttr(title)}</figcaption>`
+          ? `<figcaption>${escapeAttr(
+              title
+            )}</figcaption>`
           : "",
         "</figure>",
       ]
@@ -163,11 +304,38 @@ export function prepareMarkdown(source: string) {
    * Escape XML-style tags such as:
    *
    * <foo:bar>
+   *
+   * These are not intended to become HTML elements.
    */
   text = text.replace(
     /<([A-Za-z][A-Za-z0-9_-]*:[A-Za-z0-9_-]+)>/g,
-    (_, inner) => `&lt;${inner}&gt;`
+    (_, inner) =>
+      `&lt;${inner}&gt;`
   );
+
+  /*
+   * Escape unknown HTML-like tags.
+   *
+   * This is the Hugo -> ReactMarkdown compatibility
+   * fix.
+   *
+   * For example:
+   *
+   *   Use !<number> to reuse the command
+   *
+   * becomes:
+   *
+   *   Use !&lt;number&gt; to reuse the command
+   *
+   * while legitimate HTML such as:
+   *
+   *   <small>text</small>
+   *   <label>text</label>
+   *   <br />
+   *
+   * remains untouched.
+   */
+  text = escapeUnknownHtmlTags(text);
 
   /*
    * Hugo icon shortcode fallback.
@@ -188,7 +356,9 @@ export function prepareMarkdown(source: string) {
       const match = posts.find(
         (p) =>
           p.slug === target ||
-          p.slug.endsWith(`/${target}`)
+          p.slug.endsWith(
+            `/${target}`
+          )
       );
 
       return match

@@ -6,11 +6,15 @@ export type Frontmatter = {
   draft?: boolean;
   tags?: string[];
   categories?: string[];
+
   series?: string[] | string;
+  series_order?: number;
+
   cover?: string;
   status?: string;
   link?: string;
   blogLink?: string;
+
   [key: string]: unknown;
 };
 

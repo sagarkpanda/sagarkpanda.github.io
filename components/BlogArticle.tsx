@@ -11,6 +11,91 @@ import MarkdownContent from "@/components/MarkdownContent";
 import TableOfContents from "@/components/TableOfContents";
 import { extractHeadings } from "@/lib/headings";
 
+import SeriesNavigation, {
+  type SeriesGroup,
+} from "@/components/SeriesNavigation";
+
+/*
+ * Build the series navigation for the current article.
+ *
+ * This function MUST remain outside BlogArticle and RelatedPosts
+ * so both functions can access it safely.
+ */
+function getSeriesGroups(
+  post: ContentItem,
+  posts: ContentItem[]
+): SeriesGroup[] {
+  const rawSeries = post.data.series;
+
+  const seriesNames =
+    typeof rawSeries === "string"
+      ? [rawSeries]
+      : Array.isArray(rawSeries)
+        ? rawSeries
+        : [];
+
+  if (!seriesNames.length) {
+    return [];
+  }
+
+  return seriesNames
+    .map((seriesName) => {
+      const articles = posts
+        .filter((item) => {
+          const raw = item.data.series;
+
+          const names =
+            typeof raw === "string"
+              ? [raw]
+              : Array.isArray(raw)
+                ? raw
+                : [];
+
+          return names.some(
+            (name) =>
+              name.toLowerCase() ===
+              seriesName.toLowerCase()
+          );
+        })
+        .sort((a, b) => {
+          const orderA =
+            typeof a.data.series_order === "number"
+              ? a.data.series_order
+              : Number.MAX_SAFE_INTEGER;
+
+          const orderB =
+            typeof b.data.series_order === "number"
+              ? b.data.series_order
+              : Number.MAX_SAFE_INTEGER;
+
+          return orderA - orderB;
+        });
+
+      const currentIndex =
+        articles.findIndex(
+          (item) => item.route === post.route
+        ) + 1;
+
+      return {
+        name: seriesName,
+        currentIndex,
+        articles: articles.map((item) => ({
+          title: String(item.data.title),
+          route: item.route,
+          order:
+            typeof item.data.series_order === "number"
+              ? item.data.series_order
+              : 0,
+        })),
+      };
+    })
+    .filter(
+      (series) =>
+        series.articles.length > 0 &&
+        series.currentIndex > 0
+    );
+}
+
 function RelatedPosts({
   post,
 }: {
@@ -110,6 +195,11 @@ export default function BlogArticle({
 }) {
   const posts = getCollection("blogs");
 
+  const seriesGroups = getSeriesGroups(
+    post,
+    posts
+  );
+
   const index = posts.findIndex(
     (item) => item.route === post.route
   );
@@ -145,31 +235,65 @@ export default function BlogArticle({
           By <strong>Sagar Panda</strong>
         </div>
 
-        <div className="article-meta">
-          <span>
-            {displayDate(post.data.date)}
-          </span>
+        <div
+          className={`article-meta-panel ${
+            seriesGroups.length === 0
+              ? "no-series"
+              : ""
+          }`}
+        >
+          <div className="article-meta-details">
+            <div className="article-meta-top">
+              <span>
+                {displayDate(post.data.date)}
+              </span>
 
-          <span>·</span>
+              <span>·</span>
 
-          <span>
-            {readingTime(post.content)} min read
-          </span>
-        </div>
+              <span>
+                {readingTime(post.content)} min read
+              </span>
+            </div>
 
-        <div className="article-tags">
-          {(post.data.tags || []).map(
-            (tag, i) => (
-              <Link
-                key={`${tag}-${i}`}
-                href={`/tags/${encodeURIComponent(
-                  tag
-                )}/`}
-                className="tag-link"
-              >
-                #{tag}
-              </Link>
-            )
+            <div className="article-meta-divider" />
+
+            <div className="article-meta-row">
+              <span className="article-meta-label">
+                Author:
+              </span>
+
+              <strong>Sagar Panda</strong>
+            </div>
+
+            {(post.data.tags ?? []).length > 0 && (
+              <div className="article-meta-row">
+                <span className="article-meta-label">
+                  Tags:
+                </span>
+
+                <div className="article-meta-values">
+                  {[...new Set(post.data.tags ?? [])].map(
+                    (tag, tagIndex) => (
+                      <Link
+                        key={`${tag}-${tagIndex}`}
+                        href={`/tags/${encodeURIComponent(
+                          tag
+                        )}/`}
+                        className="metadata-tag"
+                      >
+                        {tag}
+                      </Link>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {seriesGroups.length > 0 && (
+            <SeriesNavigation
+              series={seriesGroups}
+            />
           )}
         </div>
       </header>
