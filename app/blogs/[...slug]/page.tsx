@@ -38,7 +38,7 @@ export async function generateMetadata({
     : "/images/og-image.png";
 
   const postUrl =
-    `https://next.sagarpanda.com/blogs/${post.slug}/`;
+    `https://sagarpanda.com/blogs/${post.slug}/`;
 
   return {
     title: {
@@ -91,11 +91,11 @@ export default async function BlogPage({
   );
 
   const postUrl =
-    `https://next.sagarpanda.com/blogs/${post.slug}/`;
+    `https://sagarpanda.com/blogs/${post.slug}/`;
 
   const cover = post.data.cover
     ? String(post.data.cover)
-    : "https://next.sagarpanda.com/images/og-image.png";
+    : "https://sagarpanda.com/images/og-image.png";
 
   const publishedDate = post.data.date
     ? new Date(String(post.data.date)).toISOString()
@@ -113,17 +113,17 @@ export default async function BlogPage({
 
     author: {
       "@type": "Person",
-      "@id": "https://next.sagarpanda.com/#person",
+      "@id": "https://sagarpanda.com/#person",
       name: "Sagar Panda",
-      url: "https://next.sagarpanda.com/",
+      url: "https://sagarpanda.com/",
       jobTitle: "DevOps & Cloud Engineer",
     },
 
     publisher: {
       "@type": "Person",
-      "@id": "https://next.sagarpanda.com/#person",
+      "@id": "https://sagarpanda.com/#person",
       name: "Sagar Panda",
-      url: "https://next.sagarpanda.com/",
+      url: "https://sagarpanda.com/",
     },
 
     ...(publishedDate

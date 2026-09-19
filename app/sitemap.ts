@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCollection } from "@/lib/content";
 
-const SITE_URL = "https://next.sagarpanda.com";
+const SITE_URL = "https://sagarpanda.com";
 const PAGE_SIZE = 6;
 
 export const dynamic = "force-static";

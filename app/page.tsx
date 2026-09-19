@@ -6,21 +6,21 @@ const websiteSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://next.sagarpanda.com/#website",
+      "@id": "https://sagarpanda.com/#website",
       name: "Sagar Panda | DevOps & Cloud Engineer",
-      url: "https://next.sagarpanda.com/",
+      url: "https://sagarpanda.com/",
       description:
         "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing practical tutorials on cloud infrastructure, CI/CD, observability, and DevSecOps.",
       inLanguage: "en",
       author: {
-        "@id": "https://next.sagarpanda.com/#person",
+        "@id": "https://sagarpanda.com/#person",
       },
     },
     {
       "@type": "Person",
-      "@id": "https://next.sagarpanda.com/#person",
+      "@id": "https://sagarpanda.com/#person",
       name: "Sagar Panda",
-      url: "https://next.sagarpanda.com/",
+      url: "https://sagarpanda.com/",
       jobTitle: "DevOps & Cloud Engineer",
     },
   ],

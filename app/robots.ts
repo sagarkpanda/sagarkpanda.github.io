@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://next.sagarpanda.com/sitemap.xml",
+    sitemap: "https://sagarpanda.com/sitemap.xml",
   };
 }
