@@ -9,9 +9,29 @@ import PostCard from "@/components/PostCard";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllTags().map(([slug]) => ({
-    tag: [slug],
-  }));
+  const tags = getAllTags();
+
+  return tags.flatMap(([slug, name]) => {
+    const params = [
+      {
+        tag: [slug],
+      },
+    ];
+
+    const originalSlug = name
+      .trim()
+      .replace(/['’]/g, "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+    if (originalSlug !== slug) {
+      params.push({
+        tag: [originalSlug],
+      });
+    }
+
+    return params;
+  });
 }
 
 export default async function TagPage({
@@ -21,7 +41,8 @@ export default async function TagPage({
 }) {
   const { tag } = await params;
 
-  const slug = tag.join("/");
+  const slug = tag.join("/").toLowerCase();
+
   const name = getTagName(slug);
   const posts = getPostsByTag(slug);
 
