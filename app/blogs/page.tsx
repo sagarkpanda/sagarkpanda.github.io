@@ -9,6 +9,9 @@ export const dynamicParams = false;
 
 export const metadata: Metadata = {
   title: "Blogs",
+  alternates: {
+    canonical: "/blogs/",
+  },
 };
 
 export function generateStaticParams() {

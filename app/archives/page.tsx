@@ -5,6 +5,9 @@ import { getCollection, displayDate } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Archives",
   description: "Browse all articles in chronological order.",
+  alternates: {
+    canonical: "/archives/",
+  },
 };
 
 type ArchiveGroup = {

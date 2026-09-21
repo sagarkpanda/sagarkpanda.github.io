@@ -5,6 +5,9 @@ import { getCollection } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Categories",
   description: "Browse posts by category.",
+  alternates: {
+    canonical: "/categories/",
+  },
 };
 
 function slugify(value: string): string {

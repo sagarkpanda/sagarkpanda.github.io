@@ -52,6 +52,9 @@ export async function generateMetadata({
   return {
     title,
     description: `Posts in the ${title} category.`,
+    alternates: {
+      canonical: `/categories/${category}/`,
+    },
   };
 }
 

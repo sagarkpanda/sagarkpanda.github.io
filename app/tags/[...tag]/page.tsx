@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   getAllTags,
   getPostsByTag,
@@ -32,6 +33,25 @@ export function generateStaticParams() {
 
     return params;
   });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ tag: string[] }>;
+}): Promise<Metadata> {
+  const { tag } = await params;
+
+  const slug = tag.join("/").toLowerCase();
+  const name = getTagName(slug);
+
+  return {
+    title: `#${name}`,
+    description: `Articles tagged with ${name}.`,
+    alternates: {
+      canonical: `/tags/${slug}/`,
+    },
+  };
 }
 
 export default async function TagPage({

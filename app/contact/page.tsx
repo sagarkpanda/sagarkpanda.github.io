@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Sagar Panda for infrastructure, DevOps, cloud, Kubernetes, and technical discussions.",
+  alternates: {
+    canonical: "/contact/",
+  },
 };
 
 export default function ContactPage() {

@@ -66,6 +66,9 @@ export async function generateMetadata({
   return {
     title,
     description: `Articles in the ${title} series.`,
+    alternates: {
+      canonical: `/series/${series}/`,
+    },
   };
 }
 

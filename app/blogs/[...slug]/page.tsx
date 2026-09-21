@@ -47,6 +47,10 @@ export async function generateMetadata({
 
     description,
 
+    alternates: {
+      canonical: postUrl,
+    },
+
     openGraph: {
       title: postTitle,
       description,

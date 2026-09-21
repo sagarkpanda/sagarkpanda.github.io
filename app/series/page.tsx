@@ -5,6 +5,9 @@ import { getCollection } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Series",
   description: "Browse posts grouped into series.",
+  alternates: {
+    canonical: "/series/",
+  },
 };
 
 export default function SeriesPage() {
