@@ -149,9 +149,40 @@ export default async function BlogPage({
       : {}),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${postUrl}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://sagarpanda.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blogs",
+        item: "https://sagarpanda.com/blogs/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: postTitle,
+        item: postUrl,
+      },
+    ],
+  };
+
   return (
     <>
-      <JsonLd data={blogPostingSchema} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [blogPostingSchema, breadcrumbSchema],
+        }}
+      />
 
       <main className="shell article-shell">
         <BlogArticle post={post} />
