@@ -3031,10 +3031,19 @@ html.dark .article-header p{
   }
 
   .article-meta-row{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:4px;
-  }
+  align-items:baseline;
+  flex-direction:row;
+  gap:12px;
+}
+
+.article-meta-row strong{
+  white-space:nowrap;
+}
+
+.article-meta-values{
+  flex:1 1 auto;
+}
+
 }
 
 .status-link {
