@@ -3084,3 +3084,49 @@ html.dark .article-header p{
   flex-direction: column;
   gap: 1rem;
 }
+
+/* =========================================================
+   Tags chip
+   ========================================================= */
+
+/* =========================================================
+   Tags
+   ========================================================= */
+
+.tag-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tag-index-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-sizing: border-box;
+  padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.tag-index-item:hover {
+  border-color: var(--accent);
+}
+
+.tag-index-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  font-size: 0.78rem;
+  line-height: 1;
+}
