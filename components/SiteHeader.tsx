@@ -148,7 +148,7 @@ export default function SiteHeader() {
           <a
             href={site.social[0][1]}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="github-link"
             aria-label="GitHub"
             title="GitHub"

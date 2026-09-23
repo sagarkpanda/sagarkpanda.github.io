@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: "/search/",
+  },
 };
 
 export const dynamic = "force-static";

@@ -145,6 +145,35 @@ export default function MarkdownContent({
           );
         },
 
+        a({
+          href,
+          children,
+          ...props
+        }) {
+          const isExternal =
+            typeof href === "string" &&
+            /^(https?:)?\/\//i.test(href);
+
+          return (
+            <a
+              href={href}
+              {...props}
+              target={
+                isExternal
+                  ? "_blank"
+                  : props.target
+              }
+              rel={
+                isExternal
+                  ? "noopener noreferrer"
+                  : props.rel
+              }
+            >
+              {children}
+            </a>
+          );
+        },
+
         code({
           className,
           children,

@@ -141,6 +141,7 @@ export default function ImageLightbox({
               <img
                 src={src}
                 alt={alt}
+                decoding="async"
               />
             </div>
           </div>,
@@ -161,6 +162,8 @@ export default function ImageLightbox({
         <img
           src={src}
           alt={alt}
+          loading="lazy"
+          decoding="async"
         />
       </button>
 

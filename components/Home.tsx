@@ -73,7 +73,12 @@ export default function Home() {
         <div className="hero-grid">
           <div>
             <div className="avatar-wrap">
-              <img src={site.avatar} alt={site.name} />
+              <img
+                src={site.avatar}
+                alt={site.name}
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
           </div>
 
@@ -105,7 +110,7 @@ export default function Home() {
                     key={n}
                     href={u}
                     target={u.startsWith("http") ? "_blank" : undefined}
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={n}
                     title={n}
                   >
@@ -229,7 +234,7 @@ export default function Home() {
                     <a
                       href={x.url}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       {x.company}
                     </a>
@@ -258,7 +263,7 @@ export default function Home() {
               <a
                 href={e.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 {e.school}
               </a>
