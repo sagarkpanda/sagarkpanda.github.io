@@ -22,6 +22,12 @@ const websiteSchema = {
       name: "Sagar Panda",
       url: "https://sagarpanda.com/",
       jobTitle: "DevOps & Cloud Engineer",
+      sameAs: [
+        "https://github.com/sagarkpanda",
+        "https://www.linkedin.com/in/sagarkpanda/",
+        "https://sagarkpanda.medium.com/",
+        "https://bsky.app/profile/sagarpanda.com",
+      ],
     },
   ],
 };

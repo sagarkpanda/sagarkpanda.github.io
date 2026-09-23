@@ -1,42 +1,62 @@
-import Home from "@/components/Home";
-import JsonLd from "@/components/JsonLd";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  getAllTags,
+  getPostsByTag,
+} from "@/lib/content";
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://sagarpanda.com/#website",
-      name: "Sagar Panda | DevOps & Cloud Engineer",
-      url: "https://sagarpanda.com/",
-      description:
-        "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing practical tutorials on cloud infrastructure, CI/CD, observability, and DevSecOps.",
-      inLanguage: "en",
-      author: {
-        "@id": "https://sagarpanda.com/#person",
-      },
-    },
-    {
-      "@type": "Person",
-      "@id": "https://sagarpanda.com/#person",
-      name: "Sagar Panda",
-      url: "https://sagarpanda.com/",
-      jobTitle: "DevOps & Cloud Engineer",
-      sameAs: [
-        "https://github.com/sagarkpanda",
-        "https://www.linkedin.com/in/sagarkpanda/",
-        "https://sagarkpanda.medium.com/",
-        "https://bsky.app/profile/sagarpanda.com",
-      ],
-    },
-  ],
+export const metadata: Metadata = {
+  title: "Tags",
+  description: "Browse all posts by tag.",
+  alternates: {
+    canonical: "/tags/",
+  },
 };
 
-export default function Page() {
+export default function TagsPage() {
+  const tags = getAllTags()
+    .map(([slug, name]) => ({
+      slug,
+      name,
+      count: getPostsByTag(slug).length,
+    }))
+    .sort((a, b) => {
+      if (b.count !== a.count) {
+        return b.count - a.count;
+      }
+
+      return a.name.localeCompare(b.name);
+    });
+
   return (
-    <>
-      <JsonLd data={websiteSchema} />
-      <Home />
-    </>
+    <main className="shell page-shell">
+      <section className="section">
+        <div className="command">
+          $ cd /tags && sort -nr
+        </div>
+
+        <h1>Tags</h1>
+
+        <p className="section-lead">
+          Browse all articles by tag.
+        </p>
+
+        <div className="tag-index">
+          {tags.map((tag) => (
+            <Link
+              key={tag.slug}
+              href={`/tags/${tag.slug}/`}
+              className="tag-index-item"
+            >
+              <span>{tag.name}</span>
+
+              <span className="tag-index-count">
+                {tag.count}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
