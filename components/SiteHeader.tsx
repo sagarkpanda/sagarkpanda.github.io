@@ -10,8 +10,7 @@ import { site } from "@/lib/site-data";
 
 const links = [
   ["Home", "cd /", "/"],
-  ["About", "cd /about", "/#about"],
-  ["Skills", "cd /skills", "/#skills"],
+  ["About", "cd /about", "/about/"],
   ["Projects", "cd /projects", "/#projects"],
   ["Experience", "cd /experience", "/#experience"],
   ["Contact", "cd /contact", "/contact/"],
@@ -31,8 +30,12 @@ export default function SiteHeader() {
         setActive(hash);
       } else if (window.location.pathname.startsWith("/blogs")) {
         setActive("blogs");
+      } else if (window.location.pathname.startsWith("/about")) {
+        setActive("about");
       } else if (window.location.pathname.startsWith("/contact")) {
         setActive("contact");
+      } else if (window.location.pathname === "/") {
+        setActive("");
       } else {
         setActive("");
       }
@@ -43,10 +46,9 @@ export default function SiteHeader() {
 
     const sectionIds = [
       "about",
-      "skills",
       "projects",
       "experience",
-      "contact"
+      "contact",
     ];
 
     const sections = sectionIds
@@ -70,25 +72,20 @@ export default function SiteHeader() {
         {
           rootMargin: "-18% 0px -62% 0px",
           threshold: [0.1, 0.25, 0.5],
-        },
+        }
       );
 
       sections.forEach((section) => observer.observe(section));
 
       return () => {
-        window.removeEventListener(
-          "hashchange",
-          updateFromLocation,
-        );
+        window.removeEventListener("hashchange", updateFromLocation);
         observer.disconnect();
       };
     }
 
-    return () =>
-      window.removeEventListener(
-        "hashchange",
-        updateFromLocation,
-      );
+    return () => {
+      window.removeEventListener("hashchange", updateFromLocation);
+    };
   }, [pathname]);
 
   return (
@@ -104,42 +101,36 @@ export default function SiteHeader() {
         </Link>
 
         <nav
-          className={
-            open ? "mobile-nav open" : "mobile-nav"
-          }
+          className={open ? "mobile-nav open" : "mobile-nav"}
           aria-label="Main navigation"
         >
-          {links.map(
-            ([desktopLabel, mobileLabel, href]) => {
-              const key =
-                desktopLabel === "Blogs"
-                  ? "blogs"
-                  : desktopLabel === "Contact"
-                    ? "contact"
-                    : href.replace("/#", "");
+          {links.map(([desktopLabel, mobileLabel, href]) => {
+            const key =
+              desktopLabel === "Blogs"
+                ? "blogs"
+                : desktopLabel === "Contact"
+                  ? "contact"
+                  : desktopLabel.toLowerCase();
 
-              const isActive = active === key;
+            const isActive = active === key;
 
-              return (
-                <Link
-                  key={href}
-                  href={href}
-                  className={
-                    isActive ? "nav-active" : undefined
-                  }
-                  onClick={() => setOpen(false)}
-                >
-                  <span className="nav-label-desktop">
-                    {desktopLabel}
-                  </span>
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={isActive ? "nav-active" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                <span className="nav-label-desktop">
+                  {desktopLabel}
+                </span>
 
-                  <span className="nav-label-mobile">
-                    {mobileLabel}
-                  </span>
-                </Link>
-              );
-            },
-          )}
+                <span className="nav-label-mobile">
+                  {mobileLabel}
+                </span>
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="nav-actions">
@@ -160,11 +151,7 @@ export default function SiteHeader() {
 
           <button
             type="button"
-            className={
-              open
-                ? "menu-toggle is-open"
-                : "menu-toggle"
-            }
+            className={open ? "menu-toggle is-open" : "menu-toggle"}
             aria-label={
               open
                 ? "Close navigation menu"

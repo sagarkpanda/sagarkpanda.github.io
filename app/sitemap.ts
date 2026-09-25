@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/`,
     },
     {
+      url: `${SITE_URL}/about/`,
+    },
+    {
+      url: `${SITE_URL}/contact/`,
+    },
+    {
       url: `${SITE_URL}/blogs/`,
     },
     {
@@ -56,19 +62,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${SITE_URL}/archives/`,
     },
-    {
-      url: `${SITE_URL}/contact/`,
-    },
   ];
 
-  // Blog pagination pages
   for (let page = 2; page <= totalPages; page++) {
     urls.push({
       url: `${SITE_URL}/blogs/page/${page}/`,
     });
   }
 
-  // Individual blog posts
   for (const post of posts) {
     urls.push({
       url: `${SITE_URL}/blogs/${post.slug}/`,
@@ -78,7 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Tags
   const tags = getAllTags();
 
   for (const [slug] of tags) {
@@ -87,7 +87,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Categories
   const categories = new Set<string>();
 
   for (const post of posts) {
@@ -106,7 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Series
   const series = new Set<string>();
 
   for (const post of posts) {

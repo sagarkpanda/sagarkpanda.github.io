@@ -17,7 +17,6 @@ type SearchItem = {
 
 const sections = [
   ["About", "/#about"],
-  ["Skills", "/#skills"],
   ["Projects", "/#projects"],
   ["Experience", "/#experience"],
   ["Education", "/#education"],

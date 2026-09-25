@@ -3139,3 +3139,31 @@ html.dark .article-header p{
   font-size: 0.78rem;
   line-height: 1;
 }
+
+/* =========================================================
+   ABOUT — INTEGRATED SKILLS
+   ========================================================= */
+
+.about-skills{
+  margin-top:46px;
+  padding-top:34px;
+  border-top:1px solid var(--line);
+}
+
+.about-skills h3{
+  margin:0 0 18px;
+  font-size:20px;
+}
+
+@media (max-width:900px){
+  .about-skills{
+    margin-top:36px;
+    padding-top:28px;
+  }
+}
+
+.about-skills{
+  margin-top:72px;
+  padding-top:72px;
+  border-top:1px solid var(--line);
+}
