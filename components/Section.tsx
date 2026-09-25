@@ -2,7 +2,19 @@
 
 import { useEffect, useRef } from "react";
 
-export default function Section({ command, title, children, id }: { command: string; title: string; children: React.ReactNode; id?: string }) {
+export default function Section({
+  command,
+  title,
+  children,
+  id,
+  headingLevel = "h2",
+}: {
+  command: string;
+  title: string;
+  children: React.ReactNode;
+  id?: string;
+  headingLevel?: "h1" | "h2";
+}) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -24,7 +36,7 @@ export default function Section({ command, title, children, id }: { command: str
   return (
     <section ref={ref} id={id} className="section section-reveal">
       <div className="command">$ {command}</div>
-      <h2>{title}</h2>
+      {headingLevel === "h1" ? <h1>{title}</h1> : <h2>{title}</h2>}
       {children}
     </section>
   );

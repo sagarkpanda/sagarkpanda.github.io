@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="shell">
-      <Contact />
+      <Contact headingLevel="h1"/>
     </main>
   );
 }

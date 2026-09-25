@@ -48,9 +48,18 @@ const skillGroups = [
   },
 ];
 
-export default function About() {
+export default function About({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   return (
-    <Section command="cat about.md" title="About Me" id="about">
+    <Section
+      command="cat about.md"
+      title="About Me"
+      id="about"
+      headingLevel={headingLevel}
+    >
       {/* Existing About content — unchanged */}
       <div className="about-grid">
         <div>
@@ -66,8 +75,8 @@ export default function About() {
           </p>
 
           <p>
-            I prefer infrastructure that is reproducible, deployments that
-            are boring, and systems that are easier to operate than they were
+            I prefer infrastructure that is reproducible, deployments that are
+            boring, and systems that are easier to operate than they were
             yesterday.
           </p>
         </div>

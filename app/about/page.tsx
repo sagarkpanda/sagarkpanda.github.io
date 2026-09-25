@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="shell">
-      <About />
+      <About headingLevel="h1" />
     </main>
   );
 }
