@@ -13,6 +13,7 @@ const websiteSchema = {
         "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. Sharing practical tutorials on cloud infrastructure, CI/CD, observability, and DevSecOps.",
       inLanguage: "en",
       author: {
+        "@type": "Person",
         "@id": "https://sagarpanda.com/#person",
       },
     },
