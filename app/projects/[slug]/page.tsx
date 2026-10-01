@@ -22,7 +22,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const tags = (p.data.tags || []).map((tag) => normalizeTag(String(tag)));
   return <main className="shell"><article>
     <header className="article-header"><div className="eyebrow">~/projects/{p.slug}</div><h1>{p.data.title}</h1><p>{p.data.summary}</p>
-      <div className="article-meta">{p.data.date} · {String(p.data.status || "")}{p.data.link && <> · <a href={String(p.data.link)} target="_blank" rel="noreferrer">GitHub ↗</a></>}</div>
+      <div className="article-meta">{p.data.date} · {String(p.data.status || "")}{p.data.link && <> · <a href={String(p.data.link)} target="_blank" rel="noopener noreferrer">GitHub ↗</a></>}</div>
       {!!tags.length && <div className="tags project-tags">{tags.map((tag) => <span className="tech-chip" key={tag}>{tag}</span>)}</div>}
     </header>
     <div className="article-body"><MarkdownContent source={p.content}/></div>
