@@ -1,7 +1,7 @@
 export const site = {
   name: "Sagar Panda",
   title: "Sagar Panda | DevOps & Cloud Engineer",
-  description:"DevOps and Cloud Engineer specializing in AWS, Kubernetes, Terraform, CI/CD, observability, and DevSecOps.",
+  description:"Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. I share practical guides on CI/CD, observability, and DevSecOps.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   email: "sagar.chip239@aleeas.com",
   avatar: "/images/circle_profile.webp",

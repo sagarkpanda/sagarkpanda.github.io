@@ -64,7 +64,7 @@ export default function About({
       <div className="about-grid">
         <div>
           <p>
-            Senior DevOps Engineer with 7+ years of experience building
+            Senior DevOps Engineer with 6+ years of experience building
             cloud-native platforms and automating software delivery.
           </p>
 
@@ -83,7 +83,7 @@ export default function About({
 
         <div className="stats">
           <div>
-            <strong>7+</strong>
+            <strong>6+</strong>
             <span>years experience</span>
           </div>
 
