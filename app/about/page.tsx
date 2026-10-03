@@ -72,7 +72,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={jsonLd} />
 
-      <main className="shell">
+      <main id="main-content" className="shell">
         <About headingLevel="h1" />
       </main>
     </>

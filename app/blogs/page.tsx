@@ -53,7 +53,7 @@ export function BlogIndex({
   );
 
   return (
-    <main className="shell page-shell">
+    <main id="main-content" className="shell page-shell">
       <section className="section">
         <div className="command">
           $ cd /blogs && ls -lt

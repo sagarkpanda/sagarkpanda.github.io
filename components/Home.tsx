@@ -19,7 +19,7 @@ export default function Home() {
   const projects = getCollection("projects");
 
   return (
-    <main className="shell home">
+    <main id="main-content" className="shell home">
       <section className="hero">
         <div className="terminal-line">$ whoami</div>
 

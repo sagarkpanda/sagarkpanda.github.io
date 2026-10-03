@@ -55,6 +55,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+
         <SiteHeader />
 
         {children}

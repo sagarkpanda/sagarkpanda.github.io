@@ -180,11 +180,14 @@ export default async function BlogPage({
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@graph": [blogPostingSchema, breadcrumbSchema],
+          "@graph": [
+            blogPostingSchema,
+            breadcrumbSchema,
+          ],
         }}
       />
 
-      <main className="shell article-shell">
+      <main id="main-content" className="shell article-shell">
         <BlogArticle post={post} />
       </main>
     </>
