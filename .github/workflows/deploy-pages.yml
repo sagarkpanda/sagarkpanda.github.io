@@ -3,6 +3,12 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+       - 'README.md'
+       - 'LICENSE'
+       - '.github/workflows/*release*'
+       - ".gitignore"
+       - ".gitattributes"
   workflow_dispatch:
 
 permissions:

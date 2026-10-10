@@ -47,3 +47,11 @@ Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blog
 <!-- Built with ❤️ -->
 
 <!-- Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme. -->
+
+## License
+
+The source code is licensed under the MIT License, subject to the
+exclusions stated in `LICENSE`.
+
+Blog content, personal photographs, branding, and other excluded
+materials are not covered by the MIT License.
