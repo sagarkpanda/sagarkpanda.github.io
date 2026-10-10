@@ -35,15 +35,15 @@ Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blog
 
 ## 🛠 Built With
 
-- **Hugo**
-- **Hugo Narrow Theme**
+- **Next.js**
+- **TypeScript, Bun , Node.js, npm**
 - **GitHub Actions** for automated deployment
 - **GitHub Pages** for hosting
 
 ## 🚀 Deployment Status
 
-[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml)
+[![Deploy Next.js to GitHub Pages](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml)
 
 <!-- Built with ❤️ -->
 
-Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme.
+<!-- Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme. -->
