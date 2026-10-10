@@ -22,13 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version: "1.4.2"
+
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
-      - run: npm run build
+
+      - run: bun install --frozen-lockfile
+
+      - run: bun run build
         env:
           NEXT_PUBLIC_SITE_URL: https://sagarpanda.com
+
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./out

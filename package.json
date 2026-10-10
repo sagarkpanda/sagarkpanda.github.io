@@ -155,5 +155,8 @@
       ],
       "@semantic-release/github"
     ]
-  }
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ]
 }
