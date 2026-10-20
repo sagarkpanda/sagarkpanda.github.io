@@ -1,0 +1,3 @@
+<script lang="ts">import type { PageData } from './$types'; let { data }: { data: PageData } = $props();</script>
+<svelte:head><title>Categories | Sagar Panda</title><meta name="description" content="Browse posts by category."/><link rel="canonical" href="https://sagarpanda.com/categories/"/></svelte:head>
+<main id="main-content" class="shell page-shell"><section class="section"><div class="command">$ ls ~/categories</div><h1>Categories</h1><p class="section-lead">Browse posts by category.</p><div class="post-list">{#each data.categories as item}<a class="related-card" href={'/categories/' + item.slug + '/'}><strong>{item.name}</strong><small>{item.count} {item.count === 1 ? 'post' : 'posts'}</small></a>{/each}</div></section></main>

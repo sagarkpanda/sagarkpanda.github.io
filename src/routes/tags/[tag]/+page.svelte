@@ -1,0 +1,3 @@
+<script lang="ts">import type { PageData } from './$types'; import PostCard from '$lib/PostCard.svelte'; let { data }: { data: PageData } = $props();</script>
+<svelte:head><title>Tag: {data.tag} | Sagar Panda</title><meta name="description" content={'Posts tagged ' + data.tag + '.'}/><link rel="canonical" href={'https://sagarpanda.com/tags/' + data.slug + '/'}/></svelte:head>
+<main id="main-content" class="shell page-shell"><section class="section"><div class="command">$ grep -R "{data.tag}" ~/blogs</div><h1>#{data.tag}</h1><p class="section-lead">Articles tagged with {data.tag}.</p><div class="post-list">{#each data.posts as post}<PostCard {post}/>{/each}</div><a class="text-link" href="/tags/">← all tags</a></section></main>

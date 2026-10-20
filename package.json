@@ -1,0 +1,158 @@
+{
+  "name": "sagarpanda-portfolio-sveltekit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --host 0.0.0.0",
+    "predev": "node generate-search-index.mjs",
+    "build": "vite build",
+    "prebuild": "node generate-search-index.mjs",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "prepare": "svelte-kit sync",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@sveltejs/adapter-static": "^3.0.8",
+    "@sveltejs/kit": "^2.20.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "semantic-release": "^25.0.9",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
+    "lucide-svelte": "^0.468.0",
+    "marked": "^15.0.7",
+    "mermaid": "^11.12.0",
+    "simple-icons": "^16.30.0",
+    "tailwindcss": "^4.1.13"
+  },
+  "trustedDependencies": [
+    "esbuild"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "breaking": true,
+              "release": "major"
+            },
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "release": false
+            },
+            {
+              "type": "style",
+              "release": false
+            },
+            {
+              "type": "test",
+              "release": false
+            },
+            {
+              "type": "ci",
+              "release": false
+            },
+            {
+              "type": "build",
+              "release": false
+            },
+            {
+              "type": "chore",
+              "release": false
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "presetConfig": {
+            "types": [
+              {
+                "type": "feat",
+                "section": "\u2728 Features",
+                "hidden": false
+              },
+              {
+                "type": "fix",
+                "section": "\ud83d\udc1b Bug Fixes",
+                "hidden": false
+              },
+              {
+                "type": "perf",
+                "section": "\u26a1 Performance",
+                "hidden": false
+              },
+              {
+                "type": "refactor",
+                "section": "\u267b\ufe0f Refactoring",
+                "hidden": false
+              },
+              {
+                "type": "docs",
+                "section": "\ud83d\udcdd Documentation",
+                "hidden": false
+              },
+              {
+                "type": "style",
+                "section": "\ud83c\udfa8 Styling",
+                "hidden": false
+              },
+              {
+                "type": "ci",
+                "section": "\ud83d\udc77 CI",
+                "hidden": false
+              },
+              {
+                "type": "build",
+                "section": "\ud83d\udce6 Build System",
+                "hidden": false
+              },
+              {
+                "type": "chore",
+                "section": "\ud83e\uddf9 Maintenance",
+                "hidden": false
+              }
+            ]
+          }
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
+}
