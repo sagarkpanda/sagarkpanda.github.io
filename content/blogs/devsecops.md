@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "End-to-End DevSecOps on EKS: Code, Containers, Kubernetes & Runtime Security"
 description: "Hands-on DevSecOps on EKS with Gitleaks, Semgrep, Trivy, Kyverno, Falco, OWASP ZAP and DefectDojo"
 date: "2026-08-15"
@@ -1630,4 +1630,4 @@ Use a scoped `PolicyException` for legitimate workloads rather than disabling th
 - [Kyverno Documentation](https://kyverno.io/)
 - [Falco Documentation](https://falco.org/docs/getting-started/falco-kubernetes-quickstart/)
 - [OWASP ZAP](https://www.zaproxy.org/)
-- [DefectDojo](https://github.com/DefectDojo/DefectDojo) -->
+- [DefectDojo](https://github.com/DefectDojo/DefectDojo)
