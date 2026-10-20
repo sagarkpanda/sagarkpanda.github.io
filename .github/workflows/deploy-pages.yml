@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [nextjs]
+    branches: [main]
     paths-ignore:
        - 'README.md'
        - 'LICENSE'
