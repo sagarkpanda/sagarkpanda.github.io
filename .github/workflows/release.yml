@@ -13,6 +13,10 @@ on:
       - ".gitattributes"
       - ".github/workflows/deploy-pages.yml"
       - ".github/workflows/release.yml"
+      
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 permissions:
   contents: write
