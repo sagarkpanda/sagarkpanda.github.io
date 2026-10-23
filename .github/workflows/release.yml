@@ -12,6 +12,7 @@ on:
       - "License"
       - ".gitattributes"
       - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/release.yml"
 
 permissions:
   contents: write
