@@ -1,6 +1,12 @@
 name: Deploy SvelteKit to GitHub Pages
 
 on:
+  push:
+    branches: [svelte]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '.github/workflows/*release*'
   workflow_dispatch:
 
 permissions:
