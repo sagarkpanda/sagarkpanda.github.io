@@ -131,7 +131,7 @@ Now to start the containers, first navigate the location where the compose file 
 $ docker compose up -d
 ```
 
-To understand more about docker, check out these articles. [**_Docker_**](/blogs/docker/docker-setup/)
+To understand more about docker, checkout out these articles. [**_Docker_**](/tags/docker/)
 
 Once the images are pulled and ran without any error, we can browse the particular applications.
 

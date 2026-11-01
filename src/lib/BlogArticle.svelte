@@ -9,14 +9,10 @@
   type PostMeta = Pick<ContentItem, 'slug' | 'route' | 'data'>;
   let { post, allPosts, related }: { post: ContentItem; allPosts: PostMeta[]; related: PostMeta[] } = $props();
   const rawSeries = (value: unknown): string[] => typeof value === 'string' ? [value] : Array.isArray(value) ? value.map(String) : [];
-
-  const seriesGroups: SeriesGroup[] = $derived(
-    rawSeries(post.data.series).map((seriesName) => {
-      const articles = allPosts.filter((item) => rawSeries(item.data.series).some((name) => name.toLowerCase() === seriesName.toLowerCase())).sort((a,b) => (typeof a.data.series_order === 'number' ? a.data.series_order : Number.MAX_SAFE_INTEGER) - (typeof b.data.series_order === 'number' ? b.data.series_order : Number.MAX_SAFE_INTEGER));
-      return { name: seriesName, currentIndex: articles.findIndex((item) => item.route === post.route) + 1, articles: articles.map((item) => ({ title: String(item.data.title ?? item.slug), route: item.route, order: typeof item.data.series_order === 'number' ? item.data.series_order : 0 })) };
-    }).filter((series) => series.articles.length > 0 && series.currentIndex > 0)
-  );
-
+  const seriesGroups: SeriesGroup[] = $derived(rawSeries(post.data.series).map((seriesName) => {
+    const articles = allPosts.filter((item) => rawSeries(item.data.series).some((name) => name.toLowerCase() === seriesName.toLowerCase())).sort((a,b) => (typeof a.data.series_order === 'number' ? a.data.series_order : Number.MAX_SAFE_INTEGER) - (typeof b.data.series_order === 'number' ? b.data.series_order : Number.MAX_SAFE_INTEGER));
+    return { name: seriesName, currentIndex: articles.findIndex((item) => item.route === post.route) + 1, articles: articles.map((item) => ({ title: String(item.data.title ?? item.slug), route: item.route, order: typeof item.data.series_order === 'number' ? item.data.series_order : 0 })) };
+  }).filter((series) => series.articles.length > 0 && series.currentIndex > 0));
   const index = $derived(allPosts.findIndex((item) => item.route === post.route));
   const previous = $derived(index >= 0 ? allPosts[index + 1] : undefined);
   const next = $derived(index > 0 ? allPosts[index - 1] : undefined);

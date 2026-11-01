@@ -31,7 +31,7 @@
     <button class="search-backdrop" aria-label="Close search" onclick={close} type="button"></button>
     <div class="search-dialog">
       <div class="search-dialog-head"><span><Search size={16}/> search</span><button class="icon-button" onclick={close} aria-label="Close search" type="button"><X size={16}/></button></div>
-      <form onsubmit={submit}><div class="search-input-wrap"><input use:focus bind:value={query} placeholder="Search blog posts..." aria-label="Search blog posts"/>{#if query}<button type="button" class="search-clear" onclick={() => query = ''} aria-label="Clear search"><X size={17}/></button>{/if}</div></form>
+      <form onsubmit={submit}><div class="search-input-wrap"><!-- svelte-ignore a11y_autofocus --><input autofocus bind:value={query} placeholder="Search blog posts..." aria-label="Search blog posts"/>{#if query}<button type="button" class="search-clear" onclick={() => query = ''} aria-label="Clear search"><X size={17}/></button>{/if}</div></form>
       {#if !normalized}
         <div class="search-suggestions"><div class="search-suggestions-title">jump to section</div>{#each filteredSections as [name, href]}<a href={href} onclick={close}>{name}<span>↗</span></a>{/each}</div>
       {:else}

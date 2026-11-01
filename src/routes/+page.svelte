@@ -49,5 +49,5 @@
     <a class="text-link" href="/blogs/">cd /blogs → all posts</a>
   </Section>
   <Contact />
-  <footer class="footer"><span>$ echo "built by Sagar Panda"</span><a href="https://status.sagarpanda.com" target="_blank" rel="noopener noreferrer" class="status-link"><span class="status-tick">✓</span><span class="status-text">All Systems Operational</span></a><span>© {new Date().getFullYear()} · Svelte · Tailwind CSS</span></footer>
+  <footer class="footer"><span>$ echo "built by Sagar Panda"</span><a href="https://status.sagarpanda.com" target="_blank" rel="noopener noreferrer" class="status-link"><span class="status-tick">✓</span><span class="status-text">All Systems Operational</span></a><span>© {new Date().getFullYear()} · Next.js · Tailwind CSS</span></footer>
 </main>

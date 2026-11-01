@@ -3,7 +3,7 @@
   import hljs from 'highlight.js/lib/common';
   import 'highlight.js/styles/github-dark.css';
   let { html }: { html: string } = $props();
-  let root = $state<HTMLDivElement | undefined>();
+  let root: HTMLDivElement | undefined;
   let lightbox = $state('');
   let lightboxAlt = $state('');
   onMount(() => {
@@ -74,10 +74,4 @@
   function closeLightbox(event?: MouseEvent) { if (event && event.target !== event.currentTarget) return; lightbox = ''; }
 </script>
 <div bind:this={root} class="markdown-content">{@html html}</div>
-{#if lightbox}
-  <!-- svelte-ignore a11y_click_events_have_key_events -->
-  <div class="image-lightbox" role="dialog" aria-modal="true" tabindex="-1" aria-label={lightboxAlt || 'Image preview'} onclick={closeLightbox}>
-    <button type="button" class="image-lightbox-close" aria-label="Close image" onclick={(event) => { event.stopPropagation(); lightbox = ''; }}>×</button>
-    <div class="image-lightbox-content"><img src={lightbox} alt={lightboxAlt} decoding="async"/></div>
-  </div>
-{/if}
+{#if lightbox}<div class="image-lightbox" role="dialog" aria-modal="true" tabindex="-1" aria-label={lightboxAlt || 'Image preview'} onclick={closeLightbox} onkeydown={(event) => { if (event.key === 'Escape') closeLightbox(); }}><button type="button" class="image-lightbox-close" aria-label="Close image" onclick={(event) => { event.stopPropagation(); lightbox = ''; }}>×</button><div class="image-lightbox-content"><img src={lightbox} alt={lightboxAlt} decoding="async"/></div></div>{/if}

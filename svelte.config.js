@@ -1,4 +1,3 @@
-// svelte.config.js
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -9,13 +8,11 @@ const config = {
       pages: 'out',
       assets: 'out',
       fallback: '404.html',
-      precompress: true,
+      precompress: false,
       strict: true
     }),
     paths: { base: '' },
-    prerender: {
-      handleMissingId: 'warn' // Fixes the /blogs/#docker prerender failure
-    }
+    prerender: { handleMissingId: 'warn' }
   }
 };
 

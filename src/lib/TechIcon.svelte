@@ -1,12 +1,13 @@
 <script lang="ts">
   import { Code2 } from 'lucide-svelte';
-  import * as si from 'simple-icons';
+  import { siAnsible, siApache, siArgo, siDocker, siFalco, siGithub, siGithubactions, siGitlab, siGrafana, siHelm, siJenkins, siKubernetes, siLinux, siMedium, siNewrelic, siNginx, siOpentelemetry, siPrometheus, siSonarqubeserver, siTerraform, siTrivy } from 'simple-icons';
+  const icons: Record<string, { path: string } | undefined> = { siAnsible, siApache, siArgo, siDocker, siFalco, siGithub, siGithubactions, siGitlab, siGrafana, siHelm, siJenkins, siKubernetes, siLinux, siMedium, siNewrelic, siNginx, siOpentelemetry, siPrometheus, siSonarqubeserver, siTerraform, siTrivy };
   let { name, size = 17 }: { name: string; size?: number } = $props();
   const iconNames: Record<string, string> = {
     AWS:'siAmazonaws', 'Microsoft Azure':'siMicrosoftazure', Kubernetes:'siKubernetes', Helm:'siHelm', 'Argo CD':'siArgo', Kustomize:'siKustomize', Prometheus:'siPrometheus', Grafana:'siGrafana', OpenTelemetry:'siOpentelemetry', 'New Relic':'siNewrelic', 'GitHub Actions':'siGithubactions', 'GitLab CI/CD':'siGitlab', Jenkins:'siJenkins', Terraform:'siTerraform', Ansible:'siAnsible', Linux:'siLinux', 'Apache HTTP Server':'siApache', NGINX:'siNginx', 'Apache/Nginx':'siNginx', SonarQube:'siSonarqubeserver', Trivy:'siTrivy', Falco:'siFalco', GitHub:'siGithub', Medium:'siMedium', Docker:'siDocker'
   };
  let icon = $derived(
-  (si as unknown as Record<string, { path: string } | undefined>)[iconNames[name]]
+  icons[iconNames[name]]
 );
 </script>
 {#if name === 'LinkedIn'}

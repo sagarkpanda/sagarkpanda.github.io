@@ -6,4 +6,3 @@ build/
 .env.*
 !.env.example
 .DS_Store
-search-index.json

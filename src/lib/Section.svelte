@@ -3,20 +3,21 @@
   let { command, title, id, headingLevel = 'h2', children }: {
     command: string; title: string; id?: string; headingLevel?: 'h1' | 'h2'; children: Snippet;
   } = $props();
-  let section: HTMLElement | undefined;
+  let section = $state<HTMLElement | undefined>();
   onMount(() => {
-    if (!section) return;
+    const el = section;
+    if (!el) return;
     if (!('IntersectionObserver' in window)) {
-      section.classList.add('is-visible');
+      el.classList.add('is-visible');
       return;
     }
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        section.classList.add('is-visible');
-        observer.unobserve(section);
+        el.classList.add('is-visible');
+        observer.unobserve(el);
       }
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    observer.observe(section);
+    observer.observe(el);
     return () => observer.disconnect();
   });
 </script>

@@ -1,57 +1,58 @@
-<!-- # Personal Portfolio and Blog
-Hosted on github pages (github.io)
+# Sagar Panda Portfolio — SvelteKit migration
 
+This project migrates the existing Next.js portfolio to **Svelte 5 + SvelteKit**, keeping the existing visual system, content, route structure, and GitHub Pages static hosting target.
 
-⏩ Have a look at the [website↗](https://sagarpanda.com/)
+## Requirements
 
-<img width="1823" height="688" alt="image" src="https://github.com/user-attachments/assets/20d0113d-7480-45b1-aa0e-343aa965937b" />
+- Node.js 22+
+- Bun 1.4.2 (primary package manager)
 
+## Local development
 
-Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profiile theme </a>
+```powershell
+bun install
+bun run dev
+```
 
-[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml) -->
+Open `http://localhost:5173/`.
 
-# Sagar Panda | DevOps, Cloud & Kubernetes
+## Validation and static build
 
-Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blogs, projects, and hands-on labs focused on Cloud, Kubernetes, GitOps, Infrastructure as Code, CI/CD, Observability, and DevSecOps.
+```powershell
+bun run check
+bun run build
+```
 
-🚀 **Explore my portfolio ↗** https://sagarpanda.com
+The static site is written to `out/`. The build regenerates `static/search-index.json` from the Markdown content before exporting the site.
 
-<a href="https://sagarpanda.com/" target="_blank" rel="noopener noreferrer">
-  <img
-    alt="Sagar Panda Portfolio"
-    src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-next.png"
-  />
-</a>
+## npm compatibility
 
-## 📚 What You'll Find
+The project supports npm as well:
 
-- Technical blogs and tutorials
-- DevOps, Cloud, and Kubernetes content
-- GitOps and Infrastructure as Code projects
-- CI/CD and DevSecOps experiments
-- Observability and OpenTelemetry labs
-- Personal portfolio
+```powershell
+npm install
+npm run dev
+npm run check
+npm run build
+```
 
-## 🛠 Built With
+A `bun.lock` and `package-lock.json` must be generated from this SvelteKit package manifest in an environment with access to the package registry. Do not copy either lockfile from the old Next.js project because it describes a different dependency graph.
 
-- **SvelteKit**
-- **TypeScript, Bun , Node.js, npm**
-- **GitHub Actions** for automated deployment
-- **GitHub Pages** for hosting
+## Project layout
 
-## 🚀 Deployment Status
+- `src/routes/` — SvelteKit routes and prerender loaders
+- `src/lib/` — shared layout, content, article, navigation, and UI components
+- `content/blogs/` and `content/projects/` — original Markdown content
+- `static/` — original public assets, search index, and custom-domain `CNAME`
+- `.github/workflows/deploy-pages.yml` — GitHub Pages static deployment
+- `.github/workflows/release.yml` — Semantic Release workflow
 
-[![Deploy Next.js to GitHub Pages](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml)
+## Migration notes
 
-<!-- Built with ❤️ -->
+- `/about/` and `/contact/` remain dedicated pages and are also represented as sections on the homepage.
+- Homepage sections use the original IntersectionObserver reveal behavior and section-aware navigation.
+- Taxonomy links use normalized lowercase slugs; tag matching is case-insensitive.
+- Markdown is preprocessed for the original content's figure shortcodes, custom heading IDs, and `relref` links.
+- Umami analytics retains the existing website ID, host URL, and domain restriction.
 
-<!-- Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme. -->
-
-## License
-
-The source code is licensed under the MIT License, subject to the
-exclusions stated in `LICENSE`.
-
-Blog content, personal photographs, branding, and other excluded
-materials are not covered by the MIT License.
+The build must pass locally and in GitHub Actions before this migration should replace the live site.
