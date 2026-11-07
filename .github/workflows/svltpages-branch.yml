@@ -26,42 +26,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout source branch
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
-      # Setup Bun
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: "1.4.2"
 
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: 22
 
-      # Install dependencies
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      # Build SvelteKit
       - name: Build SvelteKit
         run: bun run build
 
-      # Deploy to svelte-pages branch
+      - name: Verify build output
+        run: |
+          set -e
+
+          test -d out || {
+            echo "Build output directory ./out does not exist"
+            exit 1
+          }
+
+          test -f out/index.html || {
+            echo "out/index.html does not exist"
+            exit 1
+          }
+
+          echo "Build output verified successfully"
+
       - name: Deploy to svelte-pages branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-
-          # Verify build output
-          test -d out || {
-            echo "Build output directory ./out does not exist"
-            exit 1
-          }
 
           # Clone existing deployment branch
           git clone \
@@ -75,21 +79,32 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Remove previous deployment files, preserving Git history
+          # Remove previous deployment files
           find . -mindepth 1 -maxdepth 1 \
             ! -name ".git" -exec rm -rf {} +
 
           # Copy new build output
           cp -a ../out/. .
 
-          # Stage deployment changes
+          # Disable GitHub Pages Jekyll processing
+          touch .nojekyll
+
+          # Preserve custom domain
+          echo "sagarpanda.com" > CNAME
+
+          # Verify important deployment files
+          test -f index.html
+          test -f .nojekyll
+          test -f CNAME
+
+          # Stage changes
           git add -A
 
-          # Commit and push only if files have changed
+          # Commit only when files have changed
           if ! git diff --cached --quiet; then
             git commit -m "Deploy: ${GITHUB_SHA}"
 
-            # Normal push: never overwrite existing branch history
+            # Push without overwriting existing history
             git push origin svelte-pages
           else
             echo "No deployment changes detected"
