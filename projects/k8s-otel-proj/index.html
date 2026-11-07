@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171c1a" />
+    <script>try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+    <script async defer data-website-id="d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50" src="https://data.sagarpanda.com/data.js" data-host-url="https://data.sagarpanda.com" data-domains="sagarpanda.com"></script>
+    <link href="../../_app/immutable/entry/start.CX_m6At0.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DlDzRnip.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Didy5nkT.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/8sR6O1Q_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C8Vc_BRP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.CTRYTfI1.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dp1pzeXC.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Bzak7iHL.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B5ImHjwb.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BRunHMFR.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/0Jni705S.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BT8IETzV.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DM8x1Z5c.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdPrqwks.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Q_DXER49.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B8E94oKp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CAQZqaFW.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdE4l8N_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DoP1yD-K.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/12.BCNEYa3h.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D9lmUG1I.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C365Jnfj.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B_KoV3r4.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DyyQqIqB.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/images/favicon.svg"/> <meta property="og:site_name" content="Sagar Panda | DevOps &amp; Cloud Engineer"/><!----><!--1lrslch--><link rel="canonical" href="https://sagarpanda.com/projects/k8s-otel-proj/"/><meta property="og:type" content="article"/><meta property="og:image" content="https://sagarpanda.com/images/og-image.png"/><meta name="description" content="GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS."/><!----><title>Kubernetes Observability with AI | Projects</title>
+		<link href="../../_app/immutable/assets/0.Bo0C80tV.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/vendor-highlight.BEHUn5zE.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a href="#main-content" class="skip-link">Skip to main content</a> <header class="site-header"><div class="shell nav"><a href="/" class="brand"><span class="prompt">sagar@cloud</span><span class="brand-path">:~$</span></a> <nav class="mobile-nav" aria-label="Main navigation"><!--[--><a href="/"><span class="nav-label-desktop">Home</span><span class="nav-label-mobile">cd /</span></a><a href="/about/"><span class="nav-label-desktop">About</span><span class="nav-label-mobile">cd /about</span></a><a href="/#projects"><span class="nav-label-desktop">Projects</span><span class="nav-label-mobile">cd /projects</span></a><a href="/#experience"><span class="nav-label-desktop">Experience</span><span class="nav-label-mobile">cd /experience</span></a><a href="/contact/"><span class="nav-label-desktop">Contact</span><span class="nav-label-mobile">cd /contact</span></a><a href="/blogs/"><span class="nav-label-desktop">Blogs</span><span class="nav-label-mobile">cd /blogs</span></a><!--]--></nav> <div class="nav-actions"><button class="icon-button search-button" type="button" aria-label="Search" title="Search (Ctrl+K)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-search"><!--[--><!----><circle cx="11" cy="11" r="8"><!----></circle><!----><!----><path d="m21 21-4.3-4.3"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!----></button> <!--[-1--><!--]--><!----> <a href="https://github.com/sagarkpanda" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub" title="GitHub"><!--[1--><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" class="brand-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg><!--]--><!----></a> <button type="button" class="icon-button" aria-label="Toggle theme"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon"><!--[--><!----><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!--]--></button> <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span aria-hidden="true"><i></i><i></i><i></i></span></button></div></div></header><!----> <div id="main-content"><!--[--><main class="shell"><article class="section"><a href="/projects/">← all projects</a><h1>Kubernetes Observability with AI</h1><!----><div class="markdown-content"><!----><h2 id="otel-labs-platform-opentelemetry-on-eks-end-to-end-observability">OTel Labs Platform – OpenTelemetry on EKS: End-to-End Observability</h2>
+<h3 id="infrastructure-and-gitops-platform-for-the-otel-labs-opentelemetry-demo-application">Infrastructure and GitOps platform for the <strong>otel-labs</strong> OpenTelemetry demo application.</h3>
+<p>The repository provisions an Amazon EKS cluster using Terraform and deploys platform components such as ArgoCD, Traefik, OpenTelemetry Collector, and Kubernetes observability tooling using GitOps.</p>
+<p>The companion application repository is: <a href="https://github.com/sagarkpanda/otel-labs" target="_blank" rel="noopener noreferrer">◉ otel-labs</a></p>
+<p><code>otel-labs</code> contains the instrumented applications:</p>
+<ul>
+<li>Node Frontend</li>
+<li>Python Orders API</li>
+<li>Go Inventory API</li>
+</ul>
+<p>Container images built from <code>otel-labs</code> are consumed and deployed by this repository.</p>
+<h2 id="architecture">Architecture</h2>
+<pre><code class="language-mermaid">flowchart TB
+
+    A[&quot;GitHub Repo&lt;br/&gt;otel-labs&quot;]
+
+    A --&gt;|&quot;Builds Images&quot;| B[&quot;GHCR&quot;]
+
+    B --&gt;|&quot;Pulled by&quot;| C[&quot;Amazon EKS&quot;]
+
+    subgraph C [&quot;Amazon EKS&quot;]
+
+        T[&quot;Traefik&quot;]
+
+        N[&quot;Node Frontend&quot;]
+
+        P[&quot;Python Orders&quot;]
+
+        G[&quot;Go Inventory&quot;]
+
+        O[&quot;OpenTelemetry Collector&quot;]
+
+        T --&gt; N
+
+        N --&gt; P
+        N --&gt; G
+
+        N -. Telemetry .-&gt; O
+        P -. Telemetry .-&gt; O
+        G -. Telemetry .-&gt; O
+
+    end
+
+    O --&gt; NR[&quot;New Relic&quot;]
+    O --&gt; HC[&quot;Honeycomb&quot;]
+</code></pre>
+<h2 id="components">Components</h2>
+<h3 id="infrastructure">Infrastructure</h3>
+<p>Provisioned using Terraform:</p>
+<ul>
+<li>VPC</li>
+<li>Public Subnets</li>
+<li>Amazon EKS</li>
+<li>Managed Node Group</li>
+<li>EKS Addons</li>
+</ul>
+<h3 id="gitops">GitOps</h3>
+<p>Managed using ArgoCD:</p>
+<ul>
+<li>Traefik</li>
+<li>OpenTelemetry Collector</li>
+<li>kube-state-metrics</li>
+<li>Node Frontend</li>
+<li>Python Orders</li>
+<li>Go Inventory</li>
+</ul>
+<h3 id="observability">Observability</h3>
+<p>OpenTelemetry Collector receives:</p>
+<ul>
+<li>Metrics</li>
+<li>Logs</li>
+<li>Traces</li>
+</ul>
+<p>and exports telemetry to:</p>
+<ul>
+<li>New Relic</li>
+<li>Honeycomb</li>
+</ul>
+<p>The collector also gathers Kubernetes telemetry using:</p>
+<ul>
+<li>kubeletstats</li>
+<li>k8s_cluster</li>
+<li>kube-state-metrics</li>
+</ul>
+<h2 id="repository-structure">Repository Structure</h2>
+<pre><code class="language-text">.
+├── terraform/
+│   ├── eks.tf
+│   ├── nodegroup.tf
+│   ├── addons.tf
+│   ├── bootstrap.sh
+│   └── ...
+│
+└── k8s/
+    ├── argo-apps/
+    ├── node-frontend/
+    ├── python-orders/
+    ├── go-inventory/
+    ├── otel-collector/
+    └── kustomization.yml
+</code></pre>
+<h2 id="relationship-with-otel-labs">Relationship with otel-labs</h2>
+<p>This repository manages the platform.</p>
+<p>The application repository manages the workloads.</p>
+<pre><code class="language-mermaid">flowchart LR
+
+    subgraph APP [&quot;otel-labs&quot;]
+        A[&quot;Source Code&quot;]
+        B[&quot;Dockerfiles&quot;]
+        C[&quot;OpenTelemetry Instrumentation&quot;]
+        D[&quot;GitHub Actions&quot;]
+    end
+
+    subgraph PLATFORM [&quot;otel-labs-platform&quot;]
+        E[&quot;Terraform&quot;]
+        F[&quot;ArgoCD&quot;]
+        G[&quot;Traefik&quot;]
+        H[&quot;OpenTelemetry Collector&quot;]
+        I[&quot;Kubernetes Manifests&quot;]
+    end
+
+    D --&gt;|&quot;Build Images&quot;| J[&quot;GHCR&quot;]
+
+    D --&gt;|&quot;Update Image Tag&quot;| I
+
+    I --&gt;|&quot;GitOps Sync&quot;| F
+</code></pre>
+<p>When a new image is built from <code>otel-labs</code>, ArgoCD can deploy the updated image into the Kubernetes cluster managed by this repository.</p>
+<h2 id="cluster-bootstrap">Cluster Bootstrap</h2>
+<p>Provision the cluster:</p>
+<pre><code class="language-bash">cd terraform
+
+terraform init
+
+terraform plan
+
+terraform apply
+</code></pre>
+<p>Terraform creates:</p>
+<ul>
+<li>VPC</li>
+<li>EKS Cluster</li>
+<li>Managed Node Group</li>
+<li>EKS Addons</li>
+</ul>
+<p>After the infrastructure is ready, the bootstrap script installs ArgoCD and applies required Kubernetes resources.</p>
+<pre><code class="language-text">Terraform Apply
+       │
+       ▼
+Amazon EKS
+       │
+       ▼
+bootstrap.sh
+       │
+       ├── Update kubeconfig
+       ├── Install ArgoCD
+       ├── Create Namespaces
+       └── Apply Secrets
+</code></pre>
+<blockquote>
+<p>If you want, you can use kubectl apply -f root_apps.yaml in the bootstartp so the workload is also created automatically</p>
+</blockquote>
+<h2 id="deploying-argocd-applications">Deploying ArgoCD Applications</h2>
+<p>The repository supports three deployment approaches.</p>
+<h3 id="option-1-individual-applications">Option 1: Individual Applications</h3>
+<p>Create each ArgoCD Application separately.</p>
+<pre><code class="language-bash">kubectl apply -f k8s/argo-apps/traefik-app.yml
+
+kubectl apply -f k8s/argo-apps/kube-state-metrics-app.yml
+
+kubectl apply -f k8s/argo-apps/otel-collector-app.yml
+
+kubectl apply -f k8s/argo-apps/node-frontend-app.yml
+
+kubectl apply -f k8s/argo-apps/python-orders-app.yml
+
+kubectl apply -f k8s/argo-apps/go-inventory-app.yml
+</code></pre>
+<h3 id="option-2-root-application-app-of-apps">Option 2: Root Application (App of Apps)</h3>
+<p>A single parent application creates all child applications.</p>
+<pre><code class="language-text">Root Application
+      │
+      ├── Traefik
+      ├── kube-state-metrics
+      ├── OpenTelemetry Collector
+      ├── Node Frontend
+      ├── Python Orders
+      └── Go Inventory
+</code></pre>
+<p>This is the classic ArgoCD App of Apps pattern.</p>
+<h3 id="option-3-kustomize-bootstrap">Option 3: Kustomize Bootstrap</h3>
+<p>Apply the root Kustomization.</p>
+<pre><code class="language-bash">kubectl apply -k k8s
+</code></pre>
+<pre><code class="language-text">k8s/
+│
+├── argo-apps/
+│   ├── *.yml
+│
+└── kustomization.yml
+</code></pre>
+<p>This creates all ArgoCD Applications in a single command.</p>
+<h2 id="accessing-argocd">Accessing ArgoCD</h2>
+<p>Port-forward locally:</p>
+<pre><code class="language-bash">kubectl port-forward svc/argocd-server -n argocd 8080:80
+</code></pre>
+<p>Or access through the configured Traefik ingress by applying the ingress</p>
+<pre><code class="language-bash">kubectl apply -fk8s/infra/argo/argo-ingress.yml
+</code></pre>
+<h2 id="kubernetes-observability">Kubernetes Observability</h2>
+<p>The OpenTelemetry Collector gathers cluster telemetry from multiple sources.</p>
+<pre><code class="language-text">kubeletstats
+      │
+      ├── Node Metrics
+      ├── Pod Metrics
+      └── Container Metrics
+
+k8s_cluster
+      │
+      ├── Cluster State
+      └── Kubernetes Events
+
+kube-state-metrics
+      │
+      ├── Deployments
+      ├── StatefulSets
+      ├── Services
+      └── Replica Status
+</code></pre>
+<p>This telemetry is exported together with application telemetry to both observability backends.</p>
+<h2 id="claude-mcp">Claude MCP</h2>
+<p>Integrate Honeycomb MCP server with  <a href="/blogs/monitoring/otel-on-eks/#ask-claude"><em><strong>Claude</strong></em></a> to and ask questions in natural language about cluster and applications. Honeycomb canvas also has the same AI capabilities.</p>
+<h2 id="related-projects">Related Projects</h2>
+<p><a href="/projects/devsecops-proj/"><strong>DevSecOps Implementation</strong></a></p>
+<!----></div> <!--[-1--><!--]--><!----></article></main><!--]--><!----></div> <!--[-1--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_82qrg4 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CX_m6At0.js"),
+						import("../../_app/immutable/entry/app.CTRYTfI1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 12],
+							data: [null,{type:"data",data:{project:{slug:"k8s-otel-proj",route:"/projects/k8s-otel-proj/",sourcePath:"/content/projects/k8s-otel-proj.md",content:"\n## OTel Labs Platform – OpenTelemetry on EKS: End-to-End Observability\n\n\n### Infrastructure and GitOps platform for the **otel-labs** OpenTelemetry demo application.\n\nThe repository provisions an Amazon EKS cluster using Terraform and deploys platform components such as ArgoCD, Traefik, OpenTelemetry Collector, and Kubernetes observability tooling using GitOps.\n\nThe companion application repository is: [◉ otel-labs](https://github.com/sagarkpanda/otel-labs)\n\n`otel-labs` contains the instrumented applications:\n\n* Node Frontend\n* Python Orders API\n* Go Inventory API\n\nContainer images built from `otel-labs` are consumed and deployed by this repository.\n\n\n## Architecture\n\n```mermaid\nflowchart TB\n\n    A[\"GitHub Repo\u003Cbr/>otel-labs\"]\n\n    A -->|\"Builds Images\"| B[\"GHCR\"]\n\n    B -->|\"Pulled by\"| C[\"Amazon EKS\"]\n\n    subgraph C [\"Amazon EKS\"]\n\n        T[\"Traefik\"]\n\n        N[\"Node Frontend\"]\n\n        P[\"Python Orders\"]\n\n        G[\"Go Inventory\"]\n\n        O[\"OpenTelemetry Collector\"]\n\n        T --> N\n\n        N --> P\n        N --> G\n\n        N -. Telemetry .-> O\n        P -. Telemetry .-> O\n        G -. Telemetry .-> O\n\n    end\n\n    O --> NR[\"New Relic\"]\n    O --> HC[\"Honeycomb\"]\n```\n\n## Components\n\n### Infrastructure\n\nProvisioned using Terraform:\n\n* VPC\n* Public Subnets\n* Amazon EKS\n* Managed Node Group\n* EKS Addons\n\n### GitOps\n\nManaged using ArgoCD:\n\n* Traefik\n* OpenTelemetry Collector\n* kube-state-metrics\n* Node Frontend\n* Python Orders\n* Go Inventory\n\n### Observability\n\nOpenTelemetry Collector receives:\n\n* Metrics\n* Logs\n* Traces\n\nand exports telemetry to:\n\n* New Relic\n* Honeycomb\n\nThe collector also gathers Kubernetes telemetry using:\n\n* kubeletstats\n* k8s_cluster\n* kube-state-metrics\n\n## Repository Structure\n\n```text\n.\n├── terraform/\n│   ├── eks.tf\n│   ├── nodegroup.tf\n│   ├── addons.tf\n│   ├── bootstrap.sh\n│   └── ...\n│\n└── k8s/\n    ├── argo-apps/\n    ├── node-frontend/\n    ├── python-orders/\n    ├── go-inventory/\n    ├── otel-collector/\n    └── kustomization.yml\n```\n\n## Relationship with otel-labs\n\nThis repository manages the platform.\n\nThe application repository manages the workloads.\n\n```mermaid\nflowchart LR\n\n    subgraph APP [\"otel-labs\"]\n        A[\"Source Code\"]\n        B[\"Dockerfiles\"]\n        C[\"OpenTelemetry Instrumentation\"]\n        D[\"GitHub Actions\"]\n    end\n\n    subgraph PLATFORM [\"otel-labs-platform\"]\n        E[\"Terraform\"]\n        F[\"ArgoCD\"]\n        G[\"Traefik\"]\n        H[\"OpenTelemetry Collector\"]\n        I[\"Kubernetes Manifests\"]\n    end\n\n    D -->|\"Build Images\"| J[\"GHCR\"]\n\n    D -->|\"Update Image Tag\"| I\n\n    I -->|\"GitOps Sync\"| F\n```\n\nWhen a new image is built from `otel-labs`, ArgoCD can deploy the updated image into the Kubernetes cluster managed by this repository.\n\n## Cluster Bootstrap\n\nProvision the cluster:\n\n```bash\ncd terraform\n\nterraform init\n\nterraform plan\n\nterraform apply\n```\n\nTerraform creates:\n\n* VPC\n* EKS Cluster\n* Managed Node Group\n* EKS Addons\n\nAfter the infrastructure is ready, the bootstrap script installs ArgoCD and applies required Kubernetes resources.\n\n```text\nTerraform Apply\n       │\n       ▼\nAmazon EKS\n       │\n       ▼\nbootstrap.sh\n       │\n       ├── Update kubeconfig\n       ├── Install ArgoCD\n       ├── Create Namespaces\n       └── Apply Secrets\n```\n> If you want, you can use kubectl apply -f root_apps.yaml in the bootstartp so the workload is also created automatically\n\n## Deploying ArgoCD Applications\n\nThe repository supports three deployment approaches.\n\n### Option 1: Individual Applications\n\nCreate each ArgoCD Application separately.\n\n```bash\nkubectl apply -f k8s/argo-apps/traefik-app.yml\n\nkubectl apply -f k8s/argo-apps/kube-state-metrics-app.yml\n\nkubectl apply -f k8s/argo-apps/otel-collector-app.yml\n\nkubectl apply -f k8s/argo-apps/node-frontend-app.yml\n\nkubectl apply -f k8s/argo-apps/python-orders-app.yml\n\nkubectl apply -f k8s/argo-apps/go-inventory-app.yml\n```\n\n### Option 2: Root Application (App of Apps)\n\nA single parent application creates all child applications.\n\n```text\nRoot Application\n      │\n      ├── Traefik\n      ├── kube-state-metrics\n      ├── OpenTelemetry Collector\n      ├── Node Frontend\n      ├── Python Orders\n      └── Go Inventory\n```\n\nThis is the classic ArgoCD App of Apps pattern.\n\n\n### Option 3: Kustomize Bootstrap\n\nApply the root Kustomization.\n\n```bash\nkubectl apply -k k8s\n```\n\n```text\nk8s/\n│\n├── argo-apps/\n│   ├── *.yml\n│\n└── kustomization.yml\n```\n\nThis creates all ArgoCD Applications in a single command.\n\n\n## Accessing ArgoCD\n\nPort-forward locally:\n\n```bash\nkubectl port-forward svc/argocd-server -n argocd 8080:80\n```\n\nOr access through the configured Traefik ingress by applying the ingress\n\n```bash\nkubectl apply -fk8s/infra/argo/argo-ingress.yml\n```\n\n## Kubernetes Observability\n\nThe OpenTelemetry Collector gathers cluster telemetry from multiple sources.\n\n```text\nkubeletstats\n      │\n      ├── Node Metrics\n      ├── Pod Metrics\n      └── Container Metrics\n\nk8s_cluster\n      │\n      ├── Cluster State\n      └── Kubernetes Events\n\nkube-state-metrics\n      │\n      ├── Deployments\n      ├── StatefulSets\n      ├── Services\n      └── Replica Status\n```\n\nThis telemetry is exported together with application telemetry to both observability backends.\n\n## Claude MCP\n\nIntegrate Honeycomb MCP server with  [***Claude***](/blogs/monitoring/otel-on-eks/#ask-claude) to and ask questions in natural language about cluster and applications. Honeycomb canvas also has the same AI capabilities.\n\n## Related Projects\n\n[**DevSecOps Implementation**](/projects/devsecops-proj/)",html:"\u003Ch2 id=\"otel-labs-platform-opentelemetry-on-eks-end-to-end-observability\">OTel Labs Platform – OpenTelemetry on EKS: End-to-End Observability\u003C/h2>\n\u003Ch3 id=\"infrastructure-and-gitops-platform-for-the-otel-labs-opentelemetry-demo-application\">Infrastructure and GitOps platform for the \u003Cstrong>otel-labs\u003C/strong> OpenTelemetry demo application.\u003C/h3>\n\u003Cp>The repository provisions an Amazon EKS cluster using Terraform and deploys platform components such as ArgoCD, Traefik, OpenTelemetry Collector, and Kubernetes observability tooling using GitOps.\u003C/p>\n\u003Cp>The companion application repository is: \u003Ca href=\"https://github.com/sagarkpanda/otel-labs\" target=\"_blank\" rel=\"noopener noreferrer\">◉ otel-labs\u003C/a>\u003C/p>\n\u003Cp>\u003Ccode>otel-labs\u003C/code> contains the instrumented applications:\u003C/p>\n\u003Cul>\n\u003Cli>Node Frontend\u003C/li>\n\u003Cli>Python Orders API\u003C/li>\n\u003Cli>Go Inventory API\u003C/li>\n\u003C/ul>\n\u003Cp>Container images built from \u003Ccode>otel-labs\u003C/code> are consumed and deployed by this repository.\u003C/p>\n\u003Ch2 id=\"architecture\">Architecture\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">flowchart TB\n\n    A[&quot;GitHub Repo&lt;br/&gt;otel-labs&quot;]\n\n    A --&gt;|&quot;Builds Images&quot;| B[&quot;GHCR&quot;]\n\n    B --&gt;|&quot;Pulled by&quot;| C[&quot;Amazon EKS&quot;]\n\n    subgraph C [&quot;Amazon EKS&quot;]\n\n        T[&quot;Traefik&quot;]\n\n        N[&quot;Node Frontend&quot;]\n\n        P[&quot;Python Orders&quot;]\n\n        G[&quot;Go Inventory&quot;]\n\n        O[&quot;OpenTelemetry Collector&quot;]\n\n        T --&gt; N\n\n        N --&gt; P\n        N --&gt; G\n\n        N -. Telemetry .-&gt; O\n        P -. Telemetry .-&gt; O\n        G -. Telemetry .-&gt; O\n\n    end\n\n    O --&gt; NR[&quot;New Relic&quot;]\n    O --&gt; HC[&quot;Honeycomb&quot;]\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"components\">Components\u003C/h2>\n\u003Ch3 id=\"infrastructure\">Infrastructure\u003C/h3>\n\u003Cp>Provisioned using Terraform:\u003C/p>\n\u003Cul>\n\u003Cli>VPC\u003C/li>\n\u003Cli>Public Subnets\u003C/li>\n\u003Cli>Amazon EKS\u003C/li>\n\u003Cli>Managed Node Group\u003C/li>\n\u003Cli>EKS Addons\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"gitops\">GitOps\u003C/h3>\n\u003Cp>Managed using ArgoCD:\u003C/p>\n\u003Cul>\n\u003Cli>Traefik\u003C/li>\n\u003Cli>OpenTelemetry Collector\u003C/li>\n\u003Cli>kube-state-metrics\u003C/li>\n\u003Cli>Node Frontend\u003C/li>\n\u003Cli>Python Orders\u003C/li>\n\u003Cli>Go Inventory\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"observability\">Observability\u003C/h3>\n\u003Cp>OpenTelemetry Collector receives:\u003C/p>\n\u003Cul>\n\u003Cli>Metrics\u003C/li>\n\u003Cli>Logs\u003C/li>\n\u003Cli>Traces\u003C/li>\n\u003C/ul>\n\u003Cp>and exports telemetry to:\u003C/p>\n\u003Cul>\n\u003Cli>New Relic\u003C/li>\n\u003Cli>Honeycomb\u003C/li>\n\u003C/ul>\n\u003Cp>The collector also gathers Kubernetes telemetry using:\u003C/p>\n\u003Cul>\n\u003Cli>kubeletstats\u003C/li>\n\u003Cli>k8s_cluster\u003C/li>\n\u003Cli>kube-state-metrics\u003C/li>\n\u003C/ul>\n\u003Ch2 id=\"repository-structure\">Repository Structure\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-text\">.\n├── terraform/\n│   ├── eks.tf\n│   ├── nodegroup.tf\n│   ├── addons.tf\n│   ├── bootstrap.sh\n│   └── ...\n│\n└── k8s/\n    ├── argo-apps/\n    ├── node-frontend/\n    ├── python-orders/\n    ├── go-inventory/\n    ├── otel-collector/\n    └── kustomization.yml\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"relationship-with-otel-labs\">Relationship with otel-labs\u003C/h2>\n\u003Cp>This repository manages the platform.\u003C/p>\n\u003Cp>The application repository manages the workloads.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">flowchart LR\n\n    subgraph APP [&quot;otel-labs&quot;]\n        A[&quot;Source Code&quot;]\n        B[&quot;Dockerfiles&quot;]\n        C[&quot;OpenTelemetry Instrumentation&quot;]\n        D[&quot;GitHub Actions&quot;]\n    end\n\n    subgraph PLATFORM [&quot;otel-labs-platform&quot;]\n        E[&quot;Terraform&quot;]\n        F[&quot;ArgoCD&quot;]\n        G[&quot;Traefik&quot;]\n        H[&quot;OpenTelemetry Collector&quot;]\n        I[&quot;Kubernetes Manifests&quot;]\n    end\n\n    D --&gt;|&quot;Build Images&quot;| J[&quot;GHCR&quot;]\n\n    D --&gt;|&quot;Update Image Tag&quot;| I\n\n    I --&gt;|&quot;GitOps Sync&quot;| F\n\u003C/code>\u003C/pre>\n\u003Cp>When a new image is built from \u003Ccode>otel-labs\u003C/code>, ArgoCD can deploy the updated image into the Kubernetes cluster managed by this repository.\u003C/p>\n\u003Ch2 id=\"cluster-bootstrap\">Cluster Bootstrap\u003C/h2>\n\u003Cp>Provision the cluster:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">cd terraform\n\nterraform init\n\nterraform plan\n\nterraform apply\n\u003C/code>\u003C/pre>\n\u003Cp>Terraform creates:\u003C/p>\n\u003Cul>\n\u003Cli>VPC\u003C/li>\n\u003Cli>EKS Cluster\u003C/li>\n\u003Cli>Managed Node Group\u003C/li>\n\u003Cli>EKS Addons\u003C/li>\n\u003C/ul>\n\u003Cp>After the infrastructure is ready, the bootstrap script installs ArgoCD and applies required Kubernetes resources.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Terraform Apply\n       │\n       ▼\nAmazon EKS\n       │\n       ▼\nbootstrap.sh\n       │\n       ├── Update kubeconfig\n       ├── Install ArgoCD\n       ├── Create Namespaces\n       └── Apply Secrets\n\u003C/code>\u003C/pre>\n\u003Cblockquote>\n\u003Cp>If you want, you can use kubectl apply -f root_apps.yaml in the bootstartp so the workload is also created automatically\u003C/p>\n\u003C/blockquote>\n\u003Ch2 id=\"deploying-argocd-applications\">Deploying ArgoCD Applications\u003C/h2>\n\u003Cp>The repository supports three deployment approaches.\u003C/p>\n\u003Ch3 id=\"option-1-individual-applications\">Option 1: Individual Applications\u003C/h3>\n\u003Cp>Create each ArgoCD Application separately.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl apply -f k8s/argo-apps/traefik-app.yml\n\nkubectl apply -f k8s/argo-apps/kube-state-metrics-app.yml\n\nkubectl apply -f k8s/argo-apps/otel-collector-app.yml\n\nkubectl apply -f k8s/argo-apps/node-frontend-app.yml\n\nkubectl apply -f k8s/argo-apps/python-orders-app.yml\n\nkubectl apply -f k8s/argo-apps/go-inventory-app.yml\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"option-2-root-application-app-of-apps\">Option 2: Root Application (App of Apps)\u003C/h3>\n\u003Cp>A single parent application creates all child applications.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Root Application\n      │\n      ├── Traefik\n      ├── kube-state-metrics\n      ├── OpenTelemetry Collector\n      ├── Node Frontend\n      ├── Python Orders\n      └── Go Inventory\n\u003C/code>\u003C/pre>\n\u003Cp>This is the classic ArgoCD App of Apps pattern.\u003C/p>\n\u003Ch3 id=\"option-3-kustomize-bootstrap\">Option 3: Kustomize Bootstrap\u003C/h3>\n\u003Cp>Apply the root Kustomization.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl apply -k k8s\n\u003C/code>\u003C/pre>\n\u003Cpre>\u003Ccode class=\"language-text\">k8s/\n│\n├── argo-apps/\n│   ├── *.yml\n│\n└── kustomization.yml\n\u003C/code>\u003C/pre>\n\u003Cp>This creates all ArgoCD Applications in a single command.\u003C/p>\n\u003Ch2 id=\"accessing-argocd\">Accessing ArgoCD\u003C/h2>\n\u003Cp>Port-forward locally:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl port-forward svc/argocd-server -n argocd 8080:80\n\u003C/code>\u003C/pre>\n\u003Cp>Or access through the configured Traefik ingress by applying the ingress\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl apply -fk8s/infra/argo/argo-ingress.yml\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"kubernetes-observability\">Kubernetes Observability\u003C/h2>\n\u003Cp>The OpenTelemetry Collector gathers cluster telemetry from multiple sources.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">kubeletstats\n      │\n      ├── Node Metrics\n      ├── Pod Metrics\n      └── Container Metrics\n\nk8s_cluster\n      │\n      ├── Cluster State\n      └── Kubernetes Events\n\nkube-state-metrics\n      │\n      ├── Deployments\n      ├── StatefulSets\n      ├── Services\n      └── Replica Status\n\u003C/code>\u003C/pre>\n\u003Cp>This telemetry is exported together with application telemetry to both observability backends.\u003C/p>\n\u003Ch2 id=\"claude-mcp\">Claude MCP\u003C/h2>\n\u003Cp>Integrate Honeycomb MCP server with  \u003Ca href=\"/blogs/monitoring/otel-on-eks/#ask-claude\">\u003Cem>\u003Cstrong>Claude\u003C/strong>\u003C/em>\u003C/a> to and ask questions in natural language about cluster and applications. Honeycomb canvas also has the same AI capabilities.\u003C/p>\n\u003Ch2 id=\"related-projects\">Related Projects\u003C/h2>\n\u003Cp>\u003Ca href=\"/projects/devsecops-proj/\">\u003Cstrong>DevSecOps Implementation\u003C/strong>\u003C/a>\u003C/p>\n",data:{title:"Kubernetes Observability with AI",date:"2026-06-20",summary:"GitOps infrastructure and Kubernetes platform for an OpenTelemetry observability demo, provisioned on Amazon EKS.",status:"completed",tags:["traefik","opentelemetry","new relic","honeycomb"],link:"https://github.com/sagarkpanda/otel-labs-platform",blogLink:"otel-on-eks",draft:false},headings:[{id:"otel-labs-platform-opentelemetry-on-eks-end-to-end-observability",text:"OTel Labs Platform – OpenTelemetry on EKS: End-to-End Observability",level:2},{id:"infrastructure-and-gitops-platform-for-the-otel-labs-opentelemetry-demo-application",text:"Infrastructure and GitOps platform for the otel-labs OpenTelemetry demo application.",level:3},{id:"architecture",text:"Architecture",level:2},{id:"components",text:"Components",level:2},{id:"infrastructure",text:"Infrastructure",level:3},{id:"gitops",text:"GitOps",level:3},{id:"observability",text:"Observability",level:3},{id:"repository-structure",text:"Repository Structure",level:2},{id:"relationship-with-otel-labs",text:"Relationship with otel-labs",level:2},{id:"cluster-bootstrap",text:"Cluster Bootstrap",level:2},{id:"deploying-argocd-applications",text:"Deploying ArgoCD Applications",level:2},{id:"option-1-individual-applications",text:"Option 1: Individual Applications",level:3},{id:"option-2-root-application-app-of-apps",text:"Option 2: Root Application (App of Apps)",level:3},{id:"option-3-kustomize-bootstrap",text:"Option 3: Kustomize Bootstrap",level:3},{id:"accessing-argocd",text:"Accessing ArgoCD",level:2},{id:"kubernetes-observability",text:"Kubernetes Observability",level:2},{id:"claude-mcp",text:"Claude MCP",level:2},{id:"related-projects",text:"Related Projects",level:2}],readingTime:4}},uses:{params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

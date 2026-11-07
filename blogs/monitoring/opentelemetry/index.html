@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171c1a" />
+    <script>try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+    <script async defer data-website-id="d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50" src="https://data.sagarpanda.com/data.js" data-host-url="https://data.sagarpanda.com" data-domains="sagarpanda.com"></script>
+    <link href="../../../_app/immutable/entry/start.CX_m6At0.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DlDzRnip.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Didy5nkT.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/8sR6O1Q_.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/C8Vc_BRP.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.CTRYTfI1.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Dp1pzeXC.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bzak7iHL.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B5ImHjwb.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/BRunHMFR.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/0Jni705S.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.BT8IETzV.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DM8x1Z5c.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DdPrqwks.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Q_DXER49.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B8E94oKp.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CAQZqaFW.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DdE4l8N_.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DoP1yD-K.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/6.BhYDygD8.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B_KoV3r4.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DyyQqIqB.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/C365Jnfj.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CD518ExD.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/BRwWwwUv.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CebEnE_5.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/images/favicon.svg"/> <meta property="og:site_name" content="Sagar Panda | DevOps &amp; Cloud Engineer"/><!----><!--wbgyck--><meta name="description" content="Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics"/><link rel="canonical" href="https://sagarpanda.com/blogs/monitoring/opentelemetry/"/> <meta property="og:type" content="article"/><meta property="og:title" content="Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo"/><meta property="og:description" content="Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics"/><meta property="og:url" content="https://sagarpanda.com/blogs/monitoring/opentelemetry/"/><meta property="og:image" content="https://i.ibb.co/TxQpjhPB/x.jpg"/> <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo"/><meta name="twitter:description" content="Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics"/><meta name="twitter:image" content="https://i.ibb.co/TxQpjhPB/x.jpg"/><!----><!--hjdz75--><!----><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://sagarpanda.com/blogs/monitoring/opentelemetry/#article","headline":"Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo","description":"Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics","url":"https://sagarpanda.com/blogs/monitoring/opentelemetry/","image":"https://i.ibb.co/TxQpjhPB/x.jpg","inLanguage":"en","author":{"@type":"Person","@id":"https://sagarpanda.com/#person","name":"Sagar Panda","url":"https://sagarpanda.com/","jobTitle":"DevOps & Cloud Engineer"},"publisher":{"@type":"Person","@id":"https://sagarpanda.com/#person","name":"Sagar Panda","url":"https://sagarpanda.com/"},"datePublished":"2026-06-08T03:40:10.000Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://sagarpanda.com/blogs/monitoring/opentelemetry/"},"keywords":["monitoring","observability","o11y","devops","opentelemetry","otel"]},{"@type":"BreadcrumbList","@id":"https://sagarpanda.com/blogs/monitoring/opentelemetry/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sagarpanda.com/"},{"@type":"ListItem","position":2,"name":"Blogs","item":"https://sagarpanda.com/blogs/"},{"@type":"ListItem","position":3,"name":"Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo","item":"https://sagarpanda.com/blogs/monitoring/opentelemetry/"}]}]}</script><!----><!----><title>Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo</title>
+		<link href="../../../_app/immutable/assets/0.Bo0C80tV.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/vendor-highlight.BEHUn5zE.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a href="#main-content" class="skip-link">Skip to main content</a> <header class="site-header"><div class="shell nav"><a href="/" class="brand"><span class="prompt">sagar@cloud</span><span class="brand-path">:~$</span></a> <nav class="mobile-nav" aria-label="Main navigation"><!--[--><a href="/"><span class="nav-label-desktop">Home</span><span class="nav-label-mobile">cd /</span></a><a href="/about/"><span class="nav-label-desktop">About</span><span class="nav-label-mobile">cd /about</span></a><a href="/#projects"><span class="nav-label-desktop">Projects</span><span class="nav-label-mobile">cd /projects</span></a><a href="/#experience"><span class="nav-label-desktop">Experience</span><span class="nav-label-mobile">cd /experience</span></a><a href="/contact/"><span class="nav-label-desktop">Contact</span><span class="nav-label-mobile">cd /contact</span></a><a href="/blogs/"><span class="nav-label-desktop">Blogs</span><span class="nav-label-mobile">cd /blogs</span></a><!--]--></nav> <div class="nav-actions"><button class="icon-button search-button" type="button" aria-label="Search" title="Search (Ctrl+K)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-search"><!--[--><!----><circle cx="11" cy="11" r="8"><!----></circle><!----><!----><path d="m21 21-4.3-4.3"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!----></button> <!--[-1--><!--]--><!----> <a href="https://github.com/sagarkpanda" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub" title="GitHub"><!--[1--><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" class="brand-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg><!--]--><!----></a> <button type="button" class="icon-button" aria-label="Toggle theme"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon"><!--[--><!----><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!--]--></button> <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span aria-hidden="true"><i></i><i></i><i></i></span></button></div></div></header><!----> <div id="main-content"><!--[--><!----> <main id="main-content" class="shell article-shell"><article><header class="article-header"><div class="eyebrow">~/blogs/monitoring/opentelemetry</div> <h1>Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo</h1> <!--[-1--><!--]--> <div class="article-author">By <strong>Sagar Panda</strong></div> <div class="article-meta-panel"><div class="article-meta-details"><div class="article-meta-top"><span>8 Jun 2026</span><span>·</span><span>16 min read</span></div> <div class="article-meta-divider"></div> <div class="article-meta-row"><span class="article-meta-label">Author:</span><strong>Sagar Panda</strong></div> <!--[0--><div class="article-meta-row"><span class="article-meta-label">Tags:</span><div class="article-meta-values"><!--[--><a href="/tags/monitoring/" class="metadata-tag">monitoring</a><a href="/tags/observability/" class="metadata-tag">observability</a><a href="/tags/o11y/" class="metadata-tag">o11y</a><a href="/tags/devops/" class="metadata-tag">devops</a><a href="/tags/opentelemetry/" class="metadata-tag">opentelemetry</a><a href="/tags/otel/" class="metadata-tag">otel</a><!--]--></div></div><!--]--></div> <!--[0--><!--[0--><div class="series-panel"><!--[-1--><!--]--><div class="series-panel-header"><div class="series-name" title="Observability">Observability</div><div class="series-count">2/3</div></div><nav class="series-list" aria-label="Observability series"><!--[--><a href="/blogs/monitoring/observability/" class="series-item"><span class="series-order">1</span><span class="series-title" title="Observability 101: Understanding Metrics, Traces and Logs">Observability 101: Understanding Metrics, Traces and Logs</span></a><a href="/blogs/monitoring/opentelemetry/" class="series-item current" aria-current="page"><span class="series-order">2</span><span class="series-title" title="Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo">Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo</span></a><a href="/blogs/monitoring/otel-on-eks/" class="series-item"><span class="series-order">3</span><span class="series-title" title="Seeing Inside Amazon EKS with OpenTelemetry 🔍">Seeing Inside Amazon EKS with OpenTelemetry 🔍</span></a><!--]--></nav></div><!--]--><!--]--></div></header> <!--[0--><div class="article-cover"><img src="https://i.ibb.co/TxQpjhPB/x.jpg" alt="Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo" loading="eager" fetchpriority="high"/></div><!--]--> <div class="article-content"><!--[0--><section class="toc"><button type="button" class="toc-toggle" aria-expanded="false"><span class="toc-toggle-left"><span class="toc-terminal" aria-hidden="true">$</span><span class="toc-current-heading">table of contents</span></span><span class="toc-arrow" aria-hidden="true">▼</span></button><!--[-1--><!--]--></section><!--]--><!----><div class="article-body"><!----><div class="markdown-content"><!----><h2 id="preface">Preface</h2>
+<p>In the <a href="/blogs/monitoring/observability/"><strong><em>previous article</em></strong></a>, we covered the core observability concepts theoretically. The next step is exploring them practically using the OpenTelemetry Demo application.</p>
+<p>The goal here is not to memorize PromQL syntax, but to understand how telemetry actually appears inside a real observability platform. So, let&#39;s get started.</p>
+<h2 id="cloning-the-repository">Cloning the Repository</h2>
+<p>The OpenTelemetry Demo repository already contains a complete observability stack including:</p>
+<ul>
+<li>OpenTelemetry Collector</li>
+<li>Prometheus</li>
+<li>Jaeger</li>
+<li>OpenSearch</li>
+<li>Grafana</li>
+</ul>
+<p>Clone the repository:</p>
+<pre><code class="language-bash">git clone https://github.com/open-telemetry/opentelemetry-demo.git
+
+cd opentelemetry-demo
+</code></pre>
+<h2 id="starting-the-observability-stack">Starting the Observability Stack</h2>
+<p>The demo ships with multiple Docker Compose files. Start the stack by ruuning it using these 2 main compose files:</p>
+<pre><code class="language-bash">docker compose -f compose.yaml -f compose.observability.yaml up -d
+</code></pre>
+<p>This starts:</p>
+<ul>
+<li>frontend application</li>
+<li>OpenTelemetry Collector</li>
+<li>Prometheus</li>
+<li>Jaeger</li>
+<li>OpenSearch</li>
+<li>Grafana</li>
+</ul>
+<p>Verify containers:</p>
+<pre><code class="language-bash">docker ps
+</code></pre>
+<p>Expected containers include:</p>
+<pre><code class="language-text">frontend-proxy
+otel-collector
+prometheus
+jaeger
+opensearch
+grafana
+
+and more container of the demo application
+</code></pre>
+<h2 id="understanding-the-architecture">Understanding the Architecture</h2>
+<p>Telemetry flow in the demo looks like:</p>
+<figure>
+<img src="https://i.ibb.co/9mhr7kvC/x.png" alt="otel arch" width="1000" height="600" />
+<figcaption>Telemetry flow with Otel</figcaption>
+</figure>
+
+
+<p>The OpenTelemetry Collector acts as the central telemetry pipeline. Applications send telemetry using OTLP. The Collector processes telemetry and exports it to different backends.</p>
+<h2 id="exploring-the-docker-compose-file">Exploring the Docker Compose File</h2>
+<p>The main observability infrastructure is defined in compose.observability.yaml</p>
+<p>This file defines:</p>
+<ul>
+<li>Prometheus</li>
+<li>Jaeger</li>
+<li>OpenSearch</li>
+<li>Grafana</li>
+<li>OTel Collector</li>
+</ul>
+<p>along with:</p>
+<ul>
+<li>ports</li>
+<li>mounted configs</li>
+<li>startup commands</li>
+<li>networking</li>
+</ul>
+<p>This is essentially the infrastructure wiring for the observability stack.</p>
+<h2 id="understanding-the-collector-configuration">Understanding the Collector Configuration</h2>
+<p>The OpenTelemetry Collector is a vendor-neutral telemetry pipeline that receives, processes, and exports telemetry data. In this demo, the Collector acts as the central hub between the application and the observability backends.</p>
+<p>Common alternatives include:</p>
+<ul>
+<li>Grafana Alloy</li>
+<li>Fluent Bit</li>
+<li>Fluentd</li>
+<li>Vector</li>
+</ul>
+<p>The telemetry pipeline itself is defined inside src/otel-collector/otelcol-config.yml</p>
+<p>This file contains:</p>
+<pre><code class="language-yaml">receivers:
+processors:
+exporters:
+service:
+</code></pre>
+<p>The Collector:</p>
+<ul>
+<li>receives telemetry</li>
+<li>processes telemetry</li>
+<li>exports telemetry</li>
+</ul>
+<p>The demo loads multiple collector configs together using multiple <code>--config</code> arguments from Docker Compose.</p>
+<p>One important component inside the Collector configuration is:</p>
+<pre><code class="language-yaml">connectors:
+  span_metrics:
+</code></pre>
+<p>This converts traces/spans into Prometheus metrics. That is why Prometheus later exposes metrics such as:</p>
+<pre><code class="language-text">traces_span_metrics_calls_total
+</code></pre>
+<p>These metrics are generated from spans.</p>
+<h2 id="understanding-the-prometheus-configuration">Understanding the Prometheus Configuration</h2>
+<p>The demo also includes /etc/prometheus/prometheus-config.yaml</p>
+<p>This is different from traditional Prometheus scraping setups.</p>
+<p>Instead of primarily scraping <code>/metrics</code> endpoints, Prometheus in this setup is integrated with OpenTelemetry telemetry pipelines.</p>
+<p>Important section:</p>
+<pre><code class="language-yaml">otlp:
+  promote_resource_attributes:
+</code></pre>
+<p>This converts OpenTelemetry resource attributes into Prometheus labels.</p>
+<p>Example:</p>
+<pre><code class="language-text">service.name → service_name
+</code></pre>
+<p>This is why metrics later contain labels such as:</p>
+<pre><code class="language-text">service_name
+service_version
+host_name
+status_code
+span_kind
+</code></pre>
+<h2 id="accessing-the-demo-and-observability-tools">Accessing the Demo and Observability Tools</h2>
+<p>Once the stack is running, the OpenTelemetry Demo exposes the storefront and observability tools through a frontend proxy running on port <code>8080</code>.</p>
+<p>Rather than listing every endpoint here, refer to the official documentation screenshot below, which shows the currently available URLs for the demo application, Grafana, Jaeger, the load generator, and other supporting tools.</p>
+<figure>
+<img src="https://i.ibb.co/5Wz6mgQc/x.png" alt="otel apps" width="1000" height="600" />
+<figcaption>Source: otel docs</figcaption>
+</figure>
+
+<p>The OpenTelemetry Demo documentation also explains how the proxy routes requests and how to change the default port if required.</p>
+<p>Open the demo application at <em><strong>&#39;<a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080</a>&#39;</strong></em> and generate telemetry by:</p>
+<ul>
+<li>browsing products</li>
+<li>refreshing pages</li>
+<li>adding items to cart</li>
+<li>checking out</li>
+</ul>
+<p>Without traffic, metrics, traces, and logs will remain mostly empty.</p>
+<p>The demo also includes a load generator service that continuously produces traffic. However, I usually stop the load-generator container while learning a new observability tool. Exploring the application manually generates smaller and more meaningful request flows, making it easier to understand metrics, traces, and service interactions without the noise of constant background traffic.</p>
+<figure>
+<img src="https://i.ibb.co/FqCtr8cM/x.png" alt="otel demo app store" width="1000" height="600" />
+<figcaption>Demo Store APP</figcaption>
+</figure>
+
+<blockquote>
+<p>Note: The Demo includes a feature flag management interface powered by Flagd.</p>
+</blockquote>
+<p>The UI is available through the frontend proxy and allows various behaviors to be enabled or disabled without modifying application code.</p>
+<figure>
+<img src="https://i.ibb.co/b5nsnfVp/x.png" alt="Feature Flag UI" width="1000" height="600" />
+</figure>
+
+<h1 id="prometheus">Prometheus</h1>
+<p>Prometheus is an open-source time-series database and monitoring system.</p>
+<p>It stores metrics, executes PromQL queries, and powers alerting and dashboards.</p>
+<p>Common alternatives include:</p>
+<ul>
+<li>VictoriaMetrics</li>
+<li>InfluxDB</li>
+<li>Datadog Metrics</li>
+<li>New Relic</li>
+</ul>
+<p>Prometheus is available at <em><strong>&#39;<a href="http://localhost:9090" target="_blank" rel="noopener noreferrer">http://localhost:9090</a>&#39;</strong></em>. Try this query first: <em><strong>traces_span_metrics_calls_total</strong></em></p>
+<figure>
+<img src="https://i.ibb.co/hFMMGN4Q/x.png" alt="prom data" width="1000" height="600" />
+</figure>
+
+
+<h3 id="understanding-a-prometheus-metric">Understanding a Prometheus Metric</h3>
+<p>Example output:</p>
+<pre><code class="language-text">traces_span_metrics_calls_total{
+  service_name=&quot;recommendation&quot;,
+  span_kind=&quot;SPAN_KIND_CLIENT&quot;,
+  span_name=&quot;flagd.evaluation.v1.Service/ResolveBoolean&quot;
+}
+</code></pre>
+<p>Prometheus metrics consist of:</p>
+<pre><code class="language-text">metric_name{labels}
+</code></pre>
+<p>Metric name:</p>
+<pre><code class="language-text">traces_span_metrics_calls_total
+</code></pre>
+<p>Labels:</p>
+<pre><code class="language-text">service_name, span_kind, span_name, status_code
+</code></pre>
+<p>These labels originate from OpenTelemetry resource attributes and span metadata.</p>
+<h3 id="understanding-span-kinds">Understanding Span Kinds</h3>
+<p>Different span kinds appeare:</p>
+<pre><code class="language-text">SPAN_KIND_SERVER, SPAN_KIND_CLIENT, SPAN_KIND_INTERNAL
+</code></pre>
+<p>Meaning:</p>
+<pre><code class="language-text">SERVER   → incoming requests | CLIENT   → outgoing dependency calls | INTERNAL → internal service processing
+</code></pre>
+<p>This was the first point where tracing concepts became visible inside Prometheus metrics.</p>
+<h3 id="counters-and-rates">Counters and Rates</h3>
+<p>The metric: <strong>&#39;traces_span_metrics_calls_total&#39;</strong> is a counter. Counters only increase.</p>
+<p>To understand traffic rate, try the query</p>
+<pre><code class="language-promql">rate(traces_span_metrics_calls_total[5m])
+</code></pre>
+<p>This converts counters into, opeartions per second, which is significantly more useful for observability analysis.</p>
+<h3 id="aggregating-by-service">Aggregating by Service</h3>
+<p>The next query using sum groups telemetry per service. This reduces noisy per-span telemetry into a high-level service traffic view.</p>
+<p>Example:</p>
+<pre><code class="language-promql">sum by(service_name)(
+  rate(traces_span_metrics_calls_total[15m])
+)
+</code></pre>
+<p>This shows which services were most active.</p>
+<figure>
+<img src="https://i.ibb.co/jPTYkpRj/x.png" alt="prom data" width="1000" height="600" />
+</figure>
+
+<h3 id="histograms-and-latency">Histograms and Latency</h3>
+<p>Latency metrics appear as histogram buckets:</p>
+<pre><code class="language-promql">traces_span_metrics_duration_milliseconds_bucket
+</code></pre>
+<p>These metrics introduced the <code>le</code> label:</p>
+<pre><code class="language-text">le = less than or equal to
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">le=&quot;8&quot;
+</code></pre>
+<p>means:</p>
+<pre><code class="language-text">Requests completed within 8ms
+</code></pre>
+<p>Histograms allow Prometheus to calculate percentiles such as:</p>
+<ul>
+<li>p50</li>
+<li>p95</li>
+<li>p99</li>
+</ul>
+<h3 id="calculating-p95-latency">Calculating p95 Latency</h3>
+<p>The following query calculates p95 latency per service:</p>
+<pre><code class="language-promql">histogram_quantile(
+  0.95,
+  sum by(le, service_name)(
+    rate(
+      traces_span_metrics_duration_milliseconds_bucket[5m]
+    )
+  )
+)
+</code></pre>
+<p>This reveals slow services such as:</p>
+<pre><code class="language-text">checkout, curreny conversion
+</code></pre>
+<p>With Prometheus we could now see which services are slow but not yet why are they slow? That investigation belongs to tracing systems such as Jaeger.</p>
+<h3 id="filtering-errors">Filtering Errors</h3>
+<p>Error rates can be explored using:</p>
+<pre><code class="language-promql">sum by(service_name)(
+  rate(
+    traces_span_metrics_calls_total{
+      status_code=&quot;STATUS_CODE_ERROR&quot;
+    }[5m]
+  )
+)
+</code></pre>
+<figure>
+<img src="https://i.ibb.co/X6cptbb/x.png" alt="prom data" width="1000" height="600" />
+</figure>
+
+<p>This showes which services were actively generating errors.</p>
+<p>Prometheus time series may still appear with value <code>0</code> because the time series exists historically even if no recent errors occurred.</p>
+<h3 id="filtering-individual-services">Filtering Individual Services</h3>
+<p>Specific services can be isolated using label selectors:</p>
+<pre><code class="language-promql">sum by(span_kind)(
+  rate(
+    traces_span_metrics_calls_total{
+      service_name=&quot;frontend&quot;
+    }[5m]
+  )
+)
+</code></pre>
+<p>This shows how the frontend service behaved internally:</p>
+<ul>
+<li>receiving requests</li>
+<li>making dependency calls</li>
+<li>performing internal processing</li>
+</ul>
+<h3 id="key-observations">Key Observations</h3>
+<p>Prometheus metrics are:</p>
+<ul>
+<li>time-series data</li>
+<li>identified by labels</li>
+<li>aggregated using PromQL</li>
+</ul>
+<p>The OpenTelemetry demo also demonstrates an important modern observability concept:</p>
+<pre><code class="language-text">Metrics generated from traces
+</code></pre>
+<p>using the <code>span_metrics</code> connector inside the OpenTelemetry Collector.</p>
+<p>By the end of the Prometheus exploration, the following concepts become much clearer practically:</p>
+<ul>
+<li>metrics</li>
+<li>labels</li>
+<li>counters</li>
+<li>rates</li>
+<li>histograms</li>
+<li>percentiles</li>
+<li>filtering</li>
+<li>aggregation</li>
+<li>service-level telemetry</li>
+<li>span-derived metrics</li>
+</ul>
+<p>The next step is understanding traces visually using Jaeger.</p>
+<h1 id="jaeger">Jaeger</h1>
+<p>Jaeger is a distributed tracing platform used to visualize requests as they travel across multiple services.</p>
+<p>It helps identify latency bottlenecks, understand service dependencies, and troubleshoot request flows.</p>
+<p>Common alternatives include:</p>
+<ul>
+<li>Grafana Tempo</li>
+<li>Zipkin</li>
+<li>Elastic APM</li>
+<li>Datadog APM</li>
+<li>New Relic Distributed Tracing</li>
+</ul>
+<p>The OpenTelemetry demo also exposes Jaeger through the frontend proxy, <em><strong>&quot;<a href="http://localhost:8080/jaeger/ui/" target="_blank" rel="noopener noreferrer">http://localhost:8080/jaeger/ui/</a>&quot;</strong></em></p>
+<h2 id="exploring-distributed-tracing-with-jaeger">Exploring Distributed Tracing with Jaeger</h2>
+<p>Prometheus successfully answered questions such as: Which services are slow? Which services are generating errors? Which services receive the most traffic? However, metrics alone could not explain: Why is checkout slow? Which dependency caused the delay? What exactly happened during a request?</p>
+<p>This is where distributed tracing becomes useful. Metrics summarize behavior, Traces explain behavior.</p>
+<h3 id="understanding-traces-and-spans">Understanding Traces and Spans</h3>
+<p>A trace represents the complete journey of a request through a distributed system.</p>
+<p>Example:</p>
+<pre><code class="language-text">User Checkout Request
+        ↓
+Frontend
+        ↓
+Checkout
+        ↓
+Cart
+        ↓
+Product Catalog
+        ↓
+Currency
+        ↓
+Payment
+        ↓
+Email
+</code></pre>
+<p>Everything that happens for this request belongs to a single trace. Each individual operation inside that trace is called a span.</p>
+<p>Example:</p>
+<pre><code class="language-text">Trace
+ ├── Frontend Span
+ ├── Checkout Span
+ ├── Cart Span
+ ├── Product Catalog Span
+ ├── Currency Span
+ ├── Payment Span
+ └── Email Span
+</code></pre>
+<p>A trace is therefore a collection of spans.</p>
+<p>After generating traffic by browsing products and placing orders, traces will be immediately available inside the Jaeger search interface.</p>
+<p>Searching for the checkout service quickly reveals complete order execution flows.</p>
+<h3 id="reading-a-trace-timeline">Reading a Trace Timeline</h3>
+<p>To explore tracing in practice, start by selecting a checkout trace from the search results.</p>
+<p>For example:</p>
+<pre><code class="language-text">Service: checkout
+Operation: PlaceOrder
+</code></pre>
+<p>Open one of the traces to view its execution timeline.</p>
+<figure>
+<img src="https://i.ibb.co/PsPTPVd8/x.png" alt="jaegar search" width="1000" height="600" />
+<figcaption>Jaeger trace serach</figcaption>
+</figure>
+
+<p>Each horizontal bar represents a span. The width of the bar represents duration.</p>
+<p>The nesting of spans represents relationships between operations.</p>
+<figure>
+<img src="https://i.ibb.co/6Jf6XSsX/x.png" alt="jaegar search" width="1000" height="600" />
+</figure>
+
+
+<p>The timeline effectively becomes a visual execution diagram of the request.</p>
+<p>Instead of reading logs line by line, the entire request flow becomes visible immediately.</p>
+<h3 id="parent-and-child-spans">Parent and Child Spans</h3>
+<p>Expanding the checkout trace reveals a hierarchy of spans.</p>
+<p>For example:</p>
+<pre><code class="language-text">CheckoutService/PlaceOrder
+</code></pre>
+<p>acts as a parent span.</p>
+<p>Inside it are child spans such as:</p>
+<pre><code class="language-text">GetCart
+
+GetProduct
+
+ConvertCurrency
+
+GetShippingQuote
+
+ChargePayment
+
+SendOrderConfirmation
+</code></pre>
+<figure>
+<img src="https://i.ibb.co/QjJYgB8C/x.png" alt="jaegar search" width="1000" height="600" />
+</figure>
+
+<p>This hierarchy makes it possible to understand which operations belong to a larger workflow.</p>
+<p>The checkout service orchestrates multiple downstream dependencies to complete the order.</p>
+<h3 id="understanding-span-kinds-1">Understanding Span Kinds</h3>
+<p>Selecting an individual span reveals additional metadata.</p>
+<p>One useful field is:</p>
+<pre><code class="language-text">span.kind
+</code></pre>
+<p>Common values include:</p>
+<pre><code class="language-text">SPAN_KIND_SERVER
+
+SPAN_KIND_CLIENT
+
+SPAN_KIND_INTERNAL
+</code></pre>
+<p>Meaning:</p>
+<pre><code class="language-text">SERVER
+Incoming request handled by a service
+
+CLIENT
+Outgoing dependency call
+
+INTERNAL
+Internal processing inside a service
+</code></pre>
+<p>These values help explain the role each operation plays during request execution.</p>
+<h3 id="client-and-server-spans">CLIENT and SERVER Spans</h3>
+<p>A single service call typically generates two spans.</p>
+<p>For example:</p>
+<pre><code class="language-text">Frontend
+    ↓
+Checkout
+</code></pre>
+<p>The frontend service generates a CLIENT span because it initiates the request.</p>
+<p>The checkout service generates a SERVER span because it receives the request.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Frontend
+  CLIENT → CheckoutService/PlaceOrder
+
+Checkout
+  SERVER → CheckoutService/PlaceOrder
+</code></pre>
+<p>Together these spans describe both sides of the same network call.</p>
+<h3 id="trace-ids-and-span-ids">Trace IDs and Span IDs</h3>
+<p>Every trace contains a unique Trace ID.</p>
+<p>Every span contains its own Span ID.</p>
+<p>The Trace ID links all spans belonging to the same request.</p>
+<p>Span IDs uniquely identify individual operations.</p>
+<p>These identifiers become especially useful later when correlating traces with logs.</p>
+<h3 id="investigating-slow-requests">Investigating Slow Requests</h3>
+<p>One checkout trace may show a total duration of approximately:</p>
+<pre><code class="language-text">1.2 seconds
+</code></pre>
+<p>At first glance, this makes the checkout operation appear slow.</p>
+<p>However, expanding the trace reveals how the time is distributed across downstream operations.</p>
+<p>For example:</p>
+<ul>
+<li>cart retrieval</li>
+<li>product lookup</li>
+<li>currency conversion</li>
+<li>shipping calculation</li>
+<li>payment processing</li>
+<li>email generation</li>
+</ul>
+<p>Tracing therefore answers a much more useful question than metrics alone:</p>
+<pre><code class="language-text">Where is the latency occurring?
+</code></pre>
+<h3 id="service-dependencies-become-visible">Service Dependencies Become Visible</h3>
+<p>The checkout trace also reveals service relationships directly.</p>
+<p>For example:</p>
+<pre><code class="language-text">Checkout
+    ↓
+Cart
+
+Checkout
+    ↓
+Product Catalog
+
+Checkout
+    ↓
+Currency
+
+Checkout
+    ↓
+Payment
+
+Checkout
+    ↓
+Shipping
+</code></pre>
+<p>Without reading source code, it becomes possible to understand how services interact with one another.</p>
+<p>This is particularly useful when exploring unfamiliar systems.</p>
+<figure>
+<img src="https://i.ibb.co/TqKstmDC/x.png" alt="jaegar search" width="800" height="400" />
+</figure>
+
+
+<h3 id="finding-bottlenecks">Finding Bottlenecks</h3>
+<p>A practical tracing workflow is:</p>
+<pre><code class="language-text">Start with the largest span.
+
+Expand child spans.
+
+Identify where time is spent.
+
+Continue drilling down until the slow dependency is found.
+</code></pre>
+<p>Metrics identify that a problem exists.</p>
+<p>Tracing identifies where the problem exists.</p>
+<h1 id="opensearch">OpenSearch</h1>
+<p>OpenSearch is used as the log storage backend.</p>
+<p>Responsibilities:</p>
+<p>stores application logs
+indexes log data
+supports searching and filtering</p>
+<p>Common alternatives:</p>
+<p>Elasticsearch
+Loki</p>
+<h2 id="exploring-logs-with-opensearch">Exploring Logs with OpenSearch</h2>
+<p>In the OpenTelemetry Demo, logs are exported through the OpenTelemetry Collector and stored inside OpenSearch indices.</p>
+<p>The architecture looks like:</p>
+<pre><code class="language-text">Application
+    ↓
+OTel SDK
+    ↓
+OTel Collector
+    ↓
+OpenSearch
+    ↓
+OpenSearch Dashboards
+</code></pre>
+<h3 id="enabling-opensearch-dashboards">Enabling OpenSearch Dashboards</h3>
+<p>Unlike Jaeger and Grafana, OpenSearch Dashboards is not enabled by default in the demo.</p>
+<p>The dashboard container must first be added to the observability stack (compose.observability.yaml) right after the opensearch section.</p>
+<pre><code class="language-yaml">  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: opensearch-dashboards
+    restart: unless-stopped
+    ports:
+      - &quot;5601:5601&quot;
+    environment:
+      - OPENSEARCH_HOSTS=[&quot;http://opensearch:9200&quot;]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true &lt;-- This disbales login
+
+    depends_on:
+      opensearch:
+        condition: service_healthy
+</code></pre>
+<p>After restarting the observability stack, OpenSearch Dashboards shoul available at <strong>&#39;<a href="http://localhost:5601" target="_blank" rel="noopener noreferrer">http://localhost:5601</a>&#39;</strong></p>
+<figure>
+<img src="https://i.ibb.co/xqt3s1Y2/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+<p>Unlike Jaeger, OpenSearch initially contains raw indices and documents rather than traces or dashboards.</p>
+<p>The first step is creating a data view.</p>
+<h3 id="creating-a-data-view">Creating a Data View</h3>
+<p>Open Manage menu and then index pattern and click on Create index pattern.</p>
+<p>Serach for otel-logs-*and select @timestamp as the time field.</p>
+<figure>
+<img src="https://i.ibb.co/DD5BvTBh/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+<p>This tells OpenSearch Dashboards which indices should be searched when exploring logs.</p>
+<h3 id="discovering-logs">Discovering Logs</h3>
+<p>After creating the data view, open Discover and select: otel-logs-*</p>
+<p>The interface displays:</p>
+<ul>
+<li>a log volume histogram</li>
+<li>searchable log documents</li>
+<li>timestamps</li>
+<li>indexed fields</li>
+</ul>
+<figure>
+<img src="https://i.ibb.co/NdWJt8TD/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+<p>Each row represents a single log document stored in OpenSearch.</p>
+<p>Unlike traces, which show request flow, logs represent individual events generated by services.</p>
+<h3 id="understanding-a-log-document">Understanding a Log Document</h3>
+<p>Expanding a document reveals the fields captured by OpenTelemetry.</p>
+<p>Example:</p>
+<pre><code class="language-text">resource.service.name
+body
+severity.text
+severity.number
+traceId
+spanId
+@timestamp
+</code></pre>
+<p>Meaning:</p>
+<pre><code class="language-text">resource.service.name → service generating the log
+
+body → log message
+
+severity.text → INFO, WARN, ERROR
+
+traceId → request identifier
+
+spanId → operation identifier
+
+@timestamp → event time
+</code></pre>
+<p>This makes it possible to identify:</p>
+<ul>
+<li>who generated the log</li>
+<li>what happened</li>
+<li>when it happened</li>
+<li>which request generated it</li>
+</ul>
+<h3 id="filtering-logs-by-service">Filtering Logs by Service</h3>
+<p>Logs can be filtered using search queries.</p>
+<p>For example:</p>
+<pre><code class="language-text">resource.service.name:checkout
+</code></pre>
+<p>returns logs generated by the checkout service.</p>
+<figure>
+<img src="https://i.ibb.co/CK0t5DLf/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+
+<p>This is similar to filtering Prometheus metrics using labels.</p>
+<p>Instead of querying telemetry metrics, OpenSearch is querying log documents.</p>
+<h3 id="correlating-logs-with-traces">Correlating Logs with Traces</h3>
+<p>One of the most useful OpenTelemetry features is trace correlation.</p>
+<p>A log document contains:</p>
+<pre><code class="language-text">traceId
+spanId
+</code></pre>
+<p>These values match the identifiers visible inside Jaeger.</p>
+<p>Searching for a specific trace ID:</p>
+<pre><code class="language-text">traceId:b0ca45069ad74d8870a4c655f3129612
+</code></pre>
+<p>returns all logs generated during that request.</p>
+<p>This allows navigation from:</p>
+<pre><code class="language-text">Trace
+    ↓
+Related Logs
+</code></pre>
+<p>which is one of the core observability workflows.</p>
+<h3 id="exploring-errors">Exploring Errors</h3>
+<p>Logs can also be filtered by severity.</p>
+<p>Example:</p>
+<pre><code class="language-text">severity.text:ERROR
+</code></pre>
+<p>or</p>
+<pre><code class="language-text">severity.text:WARN
+</code></pre>
+<p>During exploration, one of the logs revealed a collector error:</p>
+<pre><code class="language-text">unable to dial:
+lookup kafka on 127.0.0.11:53:
+no such host
+</code></pre>
+<p>Expanding the document exposed additional diagnostic information:</p>
+<pre><code class="language-text">attributes.error
+
+attributes.code.file.path
+
+attributes.code.function.name
+
+attributes.code.line.number
+
+attributes.code.stacktrace
+</code></pre>
+<figure>
+<img src="https://i.ibb.co/4n9QnLYM/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+<p>This demonstrates one of the biggest strengths of logs.</p>
+<p>While traces show where a failure occurs, logs often explain why it occurred.</p>
+<h3 id="key-observations-1">Key Observations</h3>
+<p>OpenSearch stores logs as searchable documents.</p>
+<p>During exploration we learned how to:</p>
+<ul>
+<li>create a data view</li>
+<li>search indices</li>
+<li>inspect log documents</li>
+<li>filter by service</li>
+<li>filter by severity</li>
+<li>inspect error details</li>
+<li>correlate logs with traces using trace IDs</li>
+</ul>
+<p>Together with Prometheus and Jaeger, OpenSearch completes the third pillar of observability:</p>
+<pre><code class="language-text">Metrics → Is there a problem?
+
+Traces → Where is the problem?
+
+Logs → What exactly happened?
+</code></pre>
+<h1 id="grafana">Grafana</h1>
+<p>Grafana provides dashboards and visualization capabilities. It helps visualize metrics, logs, and traces, while also enabling the creation of operational dashboards.</p>
+<p>Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a core observability backend. It does not store telemetry itself. Instead, it connects to backends (&#39;data source&#39; in grafana terminology) and provides a unified interface for exploring and visualizing telemetry data.</p>
+<p>Several alternatives exist in this space, with Kibana from the ELK stack being one of the most widely used.</p>
+<h2 id="exploring-grafana">Exploring Grafana</h2>
+<p>Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a telemetry backend. Instead, it acts as a visualization layer on top of multiple observability systems.</p>
+<p>In the OpenTelemetry Demo, Grafana comes preconfigured with multiple data sources including:</p>
+<ul>
+<li>Prometheus for metrics</li>
+<li>Jaeger for traces</li>
+<li>OpenSearch for logs</li>
+</ul>
+<p>This allows telemetry from different systems to be viewed from a single interface.</p>
+<h3 id="data-sources">Data Sources</h3>
+<p>The demo exposes Grafana through the frontend proxy so open it at <strong>&#39;<a href="http://localhost:8080/grafana/" target="_blank" rel="noopener noreferrer">http://localhost:8080/grafana/</a>&#39;</strong>. Now navigate to connections - data source - available data source.</p>
+<figure>
+<img src="https://i.ibb.co/8D2MH1mW/x.png" alt="os db" width="1000" height="800" />
+</figure>
+
+<h3 id="dashboards">Dashboards</h3>
+<p>The demo ships with several preconfigured dashboards including:</p>
+<ul>
+<li>APM Dashboard (Jaeger, Prometheus, OpenSearch)</li>
+<li>Spanmetrics Demo Dashboard</li>
+<li>OpenTelemetry Collector Dashboard</li>
+</ul>
+<p>One particularly useful dashboard is:</p>
+<pre><code class="language-text">APM Dashboard (Jaeger, Prometheus, OpenSearch)
+</code></pre>
+<p>This dashboard combines metrics, traces, and logs into a single operational view. At the top you can view the sources for all the streams and select a service of the app to view its data.</p>
+<p>The dashboard visualizes the RED metrics commonly used for service monitoring:</p>
+<pre><code class="language-text">Rate
+Errors
+Duration
+</code></pre>
+<figure>
+<img src="https://i.ibb.co/Kxtj6PDZ/x.png" alt="Grafana APM Dashboard" width="1000" height="600" />
+<figcaption>red metrics</figcaption>
+</figure>
+
+<figure>
+<img src="https://i.ibb.co/ZpW3x1PN/x.png" alt="Grafana APM Dashboard" width="1000" height="600" />
+<figcaption>logs, traces</figcaption>
+</figure>
+
+<p>These metrics provide a quick overview of service health and are derived from the same telemetry previously explored directly inside Prometheus.</p>
+<p>Grafana does not replace Prometheus, Jaeger, or OpenSearch. Instead, it provides a more user-friendly way to visualize and correlate telemetry across multiple backends.</p>
+<p>For learning purposes, exploring the individual tools directly is often more valuable because it helps build a deeper understanding of metrics, traces, and logs. Once those concepts become familiar, Grafana serves as a convenient layer for operational monitoring and dashboarding.</p>
+<p>At this point, the complete observability stack becomes much easier to understand:</p>
+<pre><code class="language-text">Prometheus → Metrics
+
+Jaeger → Traces
+
+OpenSearch → Logs
+
+Grafana → Visualization and Dashboards
+</code></pre>
+<p>Together these components provide a practical introduction to modern observability using OpenTelemetry.</p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>This article focuses on understanding how telemetry appears inside real observability tools rather than learning every query or dashboard.</p>
+<p>The Otel Demo app provides plenty for further exploration. Try enabling failure-related feature flags, introducing latency, or stopping individual containers and then investigate the resulting behavior across the observability stack.</p>
+<p>As an exercise, start with a failure and follow it through metrics, traces, and logs. Then explore how the same telemetry appears inside Grafana dashboards.</p>
+<p>Another important takeaway is that OpenTelemetry is not tied to Prometheus, Jaeger, OpenSearch, or Grafana. By changing collector and exporter configurations, telemetry can be routed to many different observability backends without modifying application code.</p>
+<p>In a future article, we&#39;ll move beyond the demo application and instrument our own application using OpenTelemetry to understand what is required to generate telemetry from scratch.</p>
+<p>The more scenarios you experiment with, the easier it becomes to understand how modern observability platforms help diagnose and troubleshoot distributed systems.</p>
+<!----></div> <!--[-1--><!--]--><!----></div></div> <div class="article-nav"><!--[0--><a href="/blogs/monitoring/observability/" class="article-nav-card"><span>← previous</span><strong>Observability 101: Understanding Metrics, Traces and Logs</strong></a><!--]--> <!--[0--><a href="/blogs/monitoring/otel-on-eks/" class="article-nav-card article-nav-next"><span>next →</span><strong>Seeing Inside Amazon EKS with OpenTelemetry 🔍</strong></a><!--]--></div> <!--[0--><section class="related-section"><div class="command">$ grep -r "related" ~/blogs</div><h2>Related</h2><div class="related-grid"><!--[--><a href="/blogs/monitoring/observability/" class="related-card"><span>2 Jun 2026</span><strong>Observability 101: Understanding Metrics, Traces and Logs</strong><small>Part 1 - Get to know the 3 pillars and 4 golden signals of distrubuted observability</small></a><a href="/blogs/monitoring/otel-on-eks/" class="related-card"><span>20 Jun 2026</span><strong>Seeing Inside Amazon EKS with OpenTelemetry 🔍</strong><small>Building a Cloud Native observability platform on Amazon EKS with OpenTelemetry, GitOps, Terraform, multi-backend telemetry, and Claude powered analysis</small></a><a href="/blogs/monitoring/blackbox/" class="related-card"><span>25 Sept 2023</span><strong>Visualize Your Website Metrics — Blackbox Exporter and Grafana</strong><small>Configure Blackbox Exporter to View Site details in Grafana, get alerts for TLS expiration and other details.</small></a><!--]--></div></section><!--]--> <footer class="article-footer"><a href="/blogs/">← all posts</a></footer></article><!----></main><!--]--><!----></div> <!--[-1--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_82qrg4 = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.CX_m6At0.js"),
+						import("../../../_app/immutable/entry/app.CTRYTfI1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data: [null,(function(a,b,c,d){a.date="2026-06-08T09:10:10+05:30";a.draft=false;a.title="Hands-On OpenTelemetry: Prometheus, Jaeger, Grafana and the OTel Demo";a.description="Part 2 - Explore Prometheus, Jaegar and Grafna in details for distributed metrics";a.cover="https://i.ibb.co/TxQpjhPB/x.jpg";a.tags=["monitoring","observability","o11y","devops","opentelemetry","otel"];a.series=["Observability"];a.series_order=2;a.categories=["Observability & Monitoring"];b.date="2026-06-02T19:30:10+05:30";b.draft=false;b.title="Observability 101: Understanding Metrics, Traces and Logs";b.description="Part 1 - Get to know the 3 pillars and 4 golden signals of distrubuted observability";b.cover="https://i.ibb.co/Qjqd7Syh/x.jpg";b.tags=["monitoring","observability","o11y","devops","opentelemetry","otel"];b.series=["Observability"];b.series_order=1;b.categories=["Observability & Monitoring"];b.url="/blogs/monitoring/observability/";b.aliases=["/blogs/monitoring/observabilty/"];c.date="2026-06-20T07:45:10+05:30";c.draft=false;c.title="Seeing Inside Amazon EKS with OpenTelemetry 🔍";c.description="Building a Cloud Native observability platform on Amazon EKS with OpenTelemetry, GitOps, Terraform, multi-backend telemetry, and Claude powered analysis";c.cover="https://i.ibb.co/pjgVNXn4/x.png";c.tags=["monitoring","o11y","devops","opentelemetry","kubernetes","aws","cloud","terraform","new relic","Argo CD","EKS"];c.series=["Observability"];c.series_order=3;c.categories=["Observability & Monitoring"];d.date="2023-09-25T19:30:10+05:30";d.draft=false;d.title="Visualize Your Website Metrics — Blackbox Exporter and Grafana";d.description="Configure Blackbox Exporter to View Site details in Grafana, get alerts for TLS expiration and other details.";d.cover="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xbFMqG61f22nlG7Yvb9YHA.png";d.tags=["monitoring","o11y","devops","prometheus","grafana"];d.series=["Prometheus"];d.series_order=3;d.categories=["Observability & Monitoring"];return {type:"data",data:{post:{slug:"monitoring/opentelemetry",route:"/blogs/monitoring/opentelemetry/",sourcePath:"/content/blogs/monitoring/opentelemetry.md",content:"\n## Preface\n\nIn the [**_previous article_**](/blogs/monitoring/observability/), we covered the core observability concepts theoretically. The next step is exploring them practically using the OpenTelemetry Demo application.\n\nThe goal here is not to memorize PromQL syntax, but to understand how telemetry actually appears inside a real observability platform. So, let's get started.\n\n## Cloning the Repository\n\nThe OpenTelemetry Demo repository already contains a complete observability stack including:\n\n* OpenTelemetry Collector\n* Prometheus\n* Jaeger\n* OpenSearch\n* Grafana\n\nClone the repository:\n\n```bash\ngit clone https://github.com/open-telemetry/opentelemetry-demo.git\n\ncd opentelemetry-demo\n```\n\n## Starting the Observability Stack\n\nThe demo ships with multiple Docker Compose files. Start the stack by ruuning it using these 2 main compose files:\n\n```bash\ndocker compose -f compose.yaml -f compose.observability.yaml up -d\n```\n\nThis starts:\n\n* frontend application\n* OpenTelemetry Collector\n* Prometheus\n* Jaeger\n* OpenSearch\n* Grafana\n\nVerify containers:\n\n```bash\ndocker ps\n```\n\nExpected containers include:\n\n```text\nfrontend-proxy\notel-collector\nprometheus\njaeger\nopensearch\ngrafana\n\nand more container of the demo application\n```\n\n## Understanding the Architecture\n\nTelemetry flow in the demo looks like:\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/9mhr7kvC/x.png\" alt=\"otel arch\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Telemetry flow with Otel\u003C/figcaption>\n\u003C/figure>\n\n\nThe OpenTelemetry Collector acts as the central telemetry pipeline. Applications send telemetry using OTLP. The Collector processes telemetry and exports it to different backends.\n\n## Exploring the Docker Compose File\n\nThe main observability infrastructure is defined in compose.observability.yaml\n\nThis file defines:\n\n* Prometheus\n* Jaeger\n* OpenSearch\n* Grafana\n* OTel Collector\n\nalong with:\n\n* ports\n* mounted configs\n* startup commands\n* networking\n\nThis is essentially the infrastructure wiring for the observability stack.\n\n## Understanding the Collector Configuration\n\nThe OpenTelemetry Collector is a vendor-neutral telemetry pipeline that receives, processes, and exports telemetry data. In this demo, the Collector acts as the central hub between the application and the observability backends.\n\nCommon alternatives include:\n\n* Grafana Alloy\n* Fluent Bit\n* Fluentd\n* Vector\n\nThe telemetry pipeline itself is defined inside src/otel-collector/otelcol-config.yml\n\nThis file contains:\n\n```yaml\nreceivers:\nprocessors:\nexporters:\nservice:\n```\n\nThe Collector:\n\n* receives telemetry\n* processes telemetry\n* exports telemetry\n\nThe demo loads multiple collector configs together using multiple `--config` arguments from Docker Compose.\n\nOne important component inside the Collector configuration is:\n\n```yaml\nconnectors:\n  span_metrics:\n```\n\nThis converts traces/spans into Prometheus metrics. That is why Prometheus later exposes metrics such as:\n\n```text\ntraces_span_metrics_calls_total\n```\n\nThese metrics are generated from spans.\n\n## Understanding the Prometheus Configuration\n\nThe demo also includes /etc/prometheus/prometheus-config.yaml\n\nThis is different from traditional Prometheus scraping setups.\n\nInstead of primarily scraping `/metrics` endpoints, Prometheus in this setup is integrated with OpenTelemetry telemetry pipelines.\n\nImportant section:\n\n```yaml\notlp:\n  promote_resource_attributes:\n```\n\nThis converts OpenTelemetry resource attributes into Prometheus labels.\n\nExample:\n\n```text\nservice.name → service_name\n```\n\nThis is why metrics later contain labels such as:\n\n```text\nservice_name\nservice_version\nhost_name\nstatus_code\nspan_kind\n```\n\n## Accessing the Demo and Observability Tools\n\nOnce the stack is running, the OpenTelemetry Demo exposes the storefront and observability tools through a frontend proxy running on port `8080`.\n\nRather than listing every endpoint here, refer to the official documentation screenshot below, which shows the currently available URLs for the demo application, Grafana, Jaeger, the load generator, and other supporting tools.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/5Wz6mgQc/x.png\" alt=\"otel apps\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Source: otel docs\u003C/figcaption>\n\u003C/figure>\n\nThe OpenTelemetry Demo documentation also explains how the proxy routes requests and how to change the default port if required.\n\nOpen the demo application at ***'http://localhost:8080'*** and generate telemetry by:\n\n* browsing products\n* refreshing pages\n* adding items to cart\n* checking out\n\nWithout traffic, metrics, traces, and logs will remain mostly empty.\n\nThe demo also includes a load generator service that continuously produces traffic. However, I usually stop the load-generator container while learning a new observability tool. Exploring the application manually generates smaller and more meaningful request flows, making it easier to understand metrics, traces, and service interactions without the noise of constant background traffic.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/FqCtr8cM/x.png\" alt=\"otel demo app store\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Demo Store APP\u003C/figcaption>\n\u003C/figure>\n\n> Note: The Demo includes a feature flag management interface powered by Flagd.\n\nThe UI is available through the frontend proxy and allows various behaviors to be enabled or disabled without modifying application code.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/b5nsnfVp/x.png\" alt=\"Feature Flag UI\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n# Prometheus\n\nPrometheus is an open-source time-series database and monitoring system.\n\nIt stores metrics, executes PromQL queries, and powers alerting and dashboards.\n\nCommon alternatives include:\n\n* VictoriaMetrics\n* InfluxDB\n* Datadog Metrics\n* New Relic\n\nPrometheus is available at ***'http://localhost:9090'***. Try this query first: ***traces_span_metrics_calls_total***\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/hFMMGN4Q/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\n### Understanding a Prometheus Metric\n\nExample output:\n\n```text\ntraces_span_metrics_calls_total{\n  service_name=\"recommendation\",\n  span_kind=\"SPAN_KIND_CLIENT\",\n  span_name=\"flagd.evaluation.v1.Service/ResolveBoolean\"\n}\n```\n\nPrometheus metrics consist of:\n\n```text\nmetric_name{labels}\n```\n\nMetric name:\n\n```text\ntraces_span_metrics_calls_total\n```\n\nLabels:\n\n```text\nservice_name, span_kind, span_name, status_code\n```\n\nThese labels originate from OpenTelemetry resource attributes and span metadata.\n\n\n### Understanding Span Kinds\n\nDifferent span kinds appeare:\n\n```text\nSPAN_KIND_SERVER, SPAN_KIND_CLIENT, SPAN_KIND_INTERNAL\n```\n\nMeaning:\n\n```text\nSERVER   → incoming requests | CLIENT   → outgoing dependency calls | INTERNAL → internal service processing\n```\n\nThis was the first point where tracing concepts became visible inside Prometheus metrics.\n\n### Counters and Rates\n\nThe metric: **'traces_span_metrics_calls_total'** is a counter. Counters only increase.\n\nTo understand traffic rate, try the query\n\n```promql\nrate(traces_span_metrics_calls_total[5m])\n```\nThis converts counters into, opeartions per second, which is significantly more useful for observability analysis.\n\n### Aggregating by Service\n\nThe next query using sum groups telemetry per service. This reduces noisy per-span telemetry into a high-level service traffic view.\n\nExample:\n\n```promql\nsum by(service_name)(\n  rate(traces_span_metrics_calls_total[15m])\n)\n```\n\nThis shows which services were most active.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/jPTYkpRj/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n### Histograms and Latency\n\nLatency metrics appear as histogram buckets:\n\n```promql\ntraces_span_metrics_duration_milliseconds_bucket\n```\n\nThese metrics introduced the `le` label:\n\n```text\nle = less than or equal to\n```\n\nExample:\n\n```text\nle=\"8\"\n```\n\nmeans:\n\n```text\nRequests completed within 8ms\n```\n\nHistograms allow Prometheus to calculate percentiles such as:\n\n* p50\n* p95\n* p99\n\n### Calculating p95 Latency\n\nThe following query calculates p95 latency per service:\n\n```promql\nhistogram_quantile(\n  0.95,\n  sum by(le, service_name)(\n    rate(\n      traces_span_metrics_duration_milliseconds_bucket[5m]\n    )\n  )\n)\n```\n\nThis reveals slow services such as:\n\n```text\ncheckout, curreny conversion\n```\n\nWith Prometheus we could now see which services are slow but not yet why are they slow? That investigation belongs to tracing systems such as Jaeger.\n\n### Filtering Errors\n\nError rates can be explored using:\n\n```promql\nsum by(service_name)(\n  rate(\n    traces_span_metrics_calls_total{\n      status_code=\"STATUS_CODE_ERROR\"\n    }[5m]\n  )\n)\n```\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/X6cptbb/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\nThis showes which services were actively generating errors.\n\nPrometheus time series may still appear with value `0` because the time series exists historically even if no recent errors occurred.\n\n\n### Filtering Individual Services\n\nSpecific services can be isolated using label selectors:\n\n```promql\nsum by(span_kind)(\n  rate(\n    traces_span_metrics_calls_total{\n      service_name=\"frontend\"\n    }[5m]\n  )\n)\n```\n\nThis shows how the frontend service behaved internally:\n\n* receiving requests\n* making dependency calls\n* performing internal processing\n\n### Key Observations\n\nPrometheus metrics are:\n\n* time-series data\n* identified by labels\n* aggregated using PromQL\n\nThe OpenTelemetry demo also demonstrates an important modern observability concept:\n\n```text\nMetrics generated from traces\n```\n\nusing the `span_metrics` connector inside the OpenTelemetry Collector.\n\nBy the end of the Prometheus exploration, the following concepts become much clearer practically:\n\n* metrics\n* labels\n* counters\n* rates\n* histograms\n* percentiles\n* filtering\n* aggregation\n* service-level telemetry\n* span-derived metrics\n\nThe next step is understanding traces visually using Jaeger.\n\n# Jaeger\n\nJaeger is a distributed tracing platform used to visualize requests as they travel across multiple services.\n\nIt helps identify latency bottlenecks, understand service dependencies, and troubleshoot request flows.\n\nCommon alternatives include:\n\n* Grafana Tempo\n* Zipkin\n* Elastic APM\n* Datadog APM\n* New Relic Distributed Tracing\n\nThe OpenTelemetry demo also exposes Jaeger through the frontend proxy, ***\"http://localhost:8080/jaeger/ui/\"***\n\n## Exploring Distributed Tracing with Jaeger\n\nPrometheus successfully answered questions such as: Which services are slow? Which services are generating errors? Which services receive the most traffic? However, metrics alone could not explain: Why is checkout slow? Which dependency caused the delay? What exactly happened during a request?\n\nThis is where distributed tracing becomes useful. Metrics summarize behavior, Traces explain behavior.\n\n### Understanding Traces and Spans\n\nA trace represents the complete journey of a request through a distributed system.\n\nExample:\n\n```text\nUser Checkout Request\n        ↓\nFrontend\n        ↓\nCheckout\n        ↓\nCart\n        ↓\nProduct Catalog\n        ↓\nCurrency\n        ↓\nPayment\n        ↓\nEmail\n```\n\nEverything that happens for this request belongs to a single trace. Each individual operation inside that trace is called a span.\n\nExample:\n\n```text\nTrace\n ├── Frontend Span\n ├── Checkout Span\n ├── Cart Span\n ├── Product Catalog Span\n ├── Currency Span\n ├── Payment Span\n └── Email Span\n```\n\nA trace is therefore a collection of spans.\n\nAfter generating traffic by browsing products and placing orders, traces will be immediately available inside the Jaeger search interface.\n\nSearching for the checkout service quickly reveals complete order execution flows.\n\n### Reading a Trace Timeline\n\nTo explore tracing in practice, start by selecting a checkout trace from the search results.\n\nFor example:\n\n```text\nService: checkout\nOperation: PlaceOrder\n```\n\nOpen one of the traces to view its execution timeline.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/PsPTPVd8/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Jaeger trace serach\u003C/figcaption>\n\u003C/figure>\n\nEach horizontal bar represents a span. The width of the bar represents duration.\n\nThe nesting of spans represents relationships between operations.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/6Jf6XSsX/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\nThe timeline effectively becomes a visual execution diagram of the request.\n\nInstead of reading logs line by line, the entire request flow becomes visible immediately.\n\n### Parent and Child Spans\n\nExpanding the checkout trace reveals a hierarchy of spans.\n\nFor example:\n\n```text\nCheckoutService/PlaceOrder\n```\n\nacts as a parent span.\n\nInside it are child spans such as:\n\n```text\nGetCart\n\nGetProduct\n\nConvertCurrency\n\nGetShippingQuote\n\nChargePayment\n\nSendOrderConfirmation\n```\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/QjJYgB8C/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\nThis hierarchy makes it possible to understand which operations belong to a larger workflow.\n\nThe checkout service orchestrates multiple downstream dependencies to complete the order.\n\n### Understanding Span Kinds\n\nSelecting an individual span reveals additional metadata.\n\nOne useful field is:\n\n```text\nspan.kind\n```\n\nCommon values include:\n\n```text\nSPAN_KIND_SERVER\n\nSPAN_KIND_CLIENT\n\nSPAN_KIND_INTERNAL\n```\n\nMeaning:\n\n```text\nSERVER\nIncoming request handled by a service\n\nCLIENT\nOutgoing dependency call\n\nINTERNAL\nInternal processing inside a service\n```\n\nThese values help explain the role each operation plays during request execution.\n\n### CLIENT and SERVER Spans\n\nA single service call typically generates two spans.\n\nFor example:\n\n```text\nFrontend\n    ↓\nCheckout\n```\n\nThe frontend service generates a CLIENT span because it initiates the request.\n\nThe checkout service generates a SERVER span because it receives the request.\n\nConceptually:\n\n```text\nFrontend\n  CLIENT → CheckoutService/PlaceOrder\n\nCheckout\n  SERVER → CheckoutService/PlaceOrder\n```\n\nTogether these spans describe both sides of the same network call.\n\n### Trace IDs and Span IDs\n\nEvery trace contains a unique Trace ID.\n\nEvery span contains its own Span ID.\n\nThe Trace ID links all spans belonging to the same request.\n\nSpan IDs uniquely identify individual operations.\n\nThese identifiers become especially useful later when correlating traces with logs.\n\n\n### Investigating Slow Requests\n\nOne checkout trace may show a total duration of approximately:\n\n```text\n1.2 seconds\n```\n\nAt first glance, this makes the checkout operation appear slow.\n\nHowever, expanding the trace reveals how the time is distributed across downstream operations.\n\nFor example:\n\n* cart retrieval\n* product lookup\n* currency conversion\n* shipping calculation\n* payment processing\n* email generation\n\nTracing therefore answers a much more useful question than metrics alone:\n\n```text\nWhere is the latency occurring?\n```\n\n### Service Dependencies Become Visible\n\nThe checkout trace also reveals service relationships directly.\n\nFor example:\n\n```text\nCheckout\n    ↓\nCart\n\nCheckout\n    ↓\nProduct Catalog\n\nCheckout\n    ↓\nCurrency\n\nCheckout\n    ↓\nPayment\n\nCheckout\n    ↓\nShipping\n```\n\nWithout reading source code, it becomes possible to understand how services interact with one another.\n\nThis is particularly useful when exploring unfamiliar systems.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/TqKstmDC/x.png\" alt=\"jaegar search\" width=\"800\" height=\"400\" />\n\u003C/figure>\n\n\n### Finding Bottlenecks\n\nA practical tracing workflow is:\n\n```text\nStart with the largest span.\n\nExpand child spans.\n\nIdentify where time is spent.\n\nContinue drilling down until the slow dependency is found.\n```\n\nMetrics identify that a problem exists.\n\nTracing identifies where the problem exists.\n\n# OpenSearch\n\nOpenSearch is used as the log storage backend.\n\nResponsibilities:\n\nstores application logs\nindexes log data\nsupports searching and filtering\n\nCommon alternatives:\n\nElasticsearch\nLoki\n\n## Exploring Logs with OpenSearch\n\nIn the OpenTelemetry Demo, logs are exported through the OpenTelemetry Collector and stored inside OpenSearch indices.\n\nThe architecture looks like:\n\n```text\nApplication\n    ↓\nOTel SDK\n    ↓\nOTel Collector\n    ↓\nOpenSearch\n    ↓\nOpenSearch Dashboards\n```\n\n### Enabling OpenSearch Dashboards\n\nUnlike Jaeger and Grafana, OpenSearch Dashboards is not enabled by default in the demo.\n\nThe dashboard container must first be added to the observability stack (compose.observability.yaml) right after the opensearch section.\n\n```yaml\n  opensearch-dashboards:\n    image: opensearchproject/opensearch-dashboards:latest\n    container_name: opensearch-dashboards\n    restart: unless-stopped\n    ports:\n      - \"5601:5601\"\n    environment:\n      - OPENSEARCH_HOSTS=[\"http://opensearch:9200\"]\n      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true \u003C-- This disbales login\n\n    depends_on:\n      opensearch:\n        condition: service_healthy\n```\n\nAfter restarting the observability stack, OpenSearch Dashboards shoul available at **'http://localhost:5601'**\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/xqt3s1Y2/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\nUnlike Jaeger, OpenSearch initially contains raw indices and documents rather than traces or dashboards.\n\nThe first step is creating a data view.\n\n### Creating a Data View\n\nOpen Manage menu and then index pattern and click on Create index pattern.\n\nSerach for otel-logs-*and select @timestamp as the time field.\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/DD5BvTBh/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\nThis tells OpenSearch Dashboards which indices should be searched when exploring logs.\n\n### Discovering Logs\n\nAfter creating the data view, open Discover and select: otel-logs-*\n\nThe interface displays:\n\n* a log volume histogram\n* searchable log documents\n* timestamps\n* indexed fields\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/NdWJt8TD/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\nEach row represents a single log document stored in OpenSearch.\n\nUnlike traces, which show request flow, logs represent individual events generated by services.\n\n### Understanding a Log Document\n\nExpanding a document reveals the fields captured by OpenTelemetry.\n\nExample:\n\n```text\nresource.service.name\nbody\nseverity.text\nseverity.number\ntraceId\nspanId\n@timestamp\n```\n\nMeaning:\n\n```text\nresource.service.name → service generating the log\n\nbody → log message\n\nseverity.text → INFO, WARN, ERROR\n\ntraceId → request identifier\n\nspanId → operation identifier\n\n@timestamp → event time\n```\n\nThis makes it possible to identify:\n\n* who generated the log\n* what happened\n* when it happened\n* which request generated it\n\n### Filtering Logs by Service\n\nLogs can be filtered using search queries.\n\nFor example:\n\n```text\nresource.service.name:checkout\n```\n\nreturns logs generated by the checkout service.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/CK0t5DLf/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\nThis is similar to filtering Prometheus metrics using labels.\n\nInstead of querying telemetry metrics, OpenSearch is querying log documents.\n\n### Correlating Logs with Traces\n\nOne of the most useful OpenTelemetry features is trace correlation.\n\nA log document contains:\n\n```text\ntraceId\nspanId\n```\n\nThese values match the identifiers visible inside Jaeger.\n\nSearching for a specific trace ID:\n\n```text\ntraceId:b0ca45069ad74d8870a4c655f3129612\n```\n\nreturns all logs generated during that request.\n\nThis allows navigation from:\n\n```text\nTrace\n    ↓\nRelated Logs\n```\n\nwhich is one of the core observability workflows.\n\n### Exploring Errors\n\nLogs can also be filtered by severity.\n\nExample:\n\n```text\nseverity.text:ERROR\n```\n\nor\n\n```text\nseverity.text:WARN\n```\n\nDuring exploration, one of the logs revealed a collector error:\n\n```text\nunable to dial:\nlookup kafka on 127.0.0.11:53:\nno such host\n```\n\nExpanding the document exposed additional diagnostic information:\n\n```text\nattributes.error\n\nattributes.code.file.path\n\nattributes.code.function.name\n\nattributes.code.line.number\n\nattributes.code.stacktrace\n```\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/4n9QnLYM/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\nThis demonstrates one of the biggest strengths of logs.\n\nWhile traces show where a failure occurs, logs often explain why it occurred.\n\n### Key Observations\n\nOpenSearch stores logs as searchable documents.\n\nDuring exploration we learned how to:\n\n* create a data view\n* search indices\n* inspect log documents\n* filter by service\n* filter by severity\n* inspect error details\n* correlate logs with traces using trace IDs\n\nTogether with Prometheus and Jaeger, OpenSearch completes the third pillar of observability:\n\n```text\nMetrics → Is there a problem?\n\nTraces → Where is the problem?\n\nLogs → What exactly happened?\n```\n\n# Grafana\n\nGrafana provides dashboards and visualization capabilities. It helps visualize metrics, logs, and traces, while also enabling the creation of operational dashboards.\n\nUnlike Prometheus, Jaeger, and OpenSearch, Grafana is not a core observability backend. It does not store telemetry itself. Instead, it connects to backends ('data source' in grafana terminology) and provides a unified interface for exploring and visualizing telemetry data.\n\nSeveral alternatives exist in this space, with Kibana from the ELK stack being one of the most widely used.\n\n## Exploring Grafana\n\nUnlike Prometheus, Jaeger, and OpenSearch, Grafana is not a telemetry backend. Instead, it acts as a visualization layer on top of multiple observability systems.\n\nIn the OpenTelemetry Demo, Grafana comes preconfigured with multiple data sources including:\n\n* Prometheus for metrics\n* Jaeger for traces\n* OpenSearch for logs\n\nThis allows telemetry from different systems to be viewed from a single interface.\n\n### Data Sources\n\nThe demo exposes Grafana through the frontend proxy so open it at **'http://localhost:8080/grafana/'**. Now navigate to connections - data source - available data source.\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/8D2MH1mW/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n### Dashboards\n\nThe demo ships with several preconfigured dashboards including:\n\n* APM Dashboard (Jaeger, Prometheus, OpenSearch)\n* Spanmetrics Demo Dashboard\n* OpenTelemetry Collector Dashboard\n\nOne particularly useful dashboard is:\n\n```text\nAPM Dashboard (Jaeger, Prometheus, OpenSearch)\n```\nThis dashboard combines metrics, traces, and logs into a single operational view. At the top you can view the sources for all the streams and select a service of the app to view its data.\n\nThe dashboard visualizes the RED metrics commonly used for service monitoring:\n\n```text\nRate\nErrors\nDuration\n```\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/Kxtj6PDZ/x.png\" alt=\"Grafana APM Dashboard\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>red metrics\u003C/figcaption>\n\u003C/figure>\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/ZpW3x1PN/x.png\" alt=\"Grafana APM Dashboard\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>logs, traces\u003C/figcaption>\n\u003C/figure>\n\nThese metrics provide a quick overview of service health and are derived from the same telemetry previously explored directly inside Prometheus.\n\nGrafana does not replace Prometheus, Jaeger, or OpenSearch. Instead, it provides a more user-friendly way to visualize and correlate telemetry across multiple backends.\n\nFor learning purposes, exploring the individual tools directly is often more valuable because it helps build a deeper understanding of metrics, traces, and logs. Once those concepts become familiar, Grafana serves as a convenient layer for operational monitoring and dashboarding.\n\nAt this point, the complete observability stack becomes much easier to understand:\n\n```text\nPrometheus → Metrics\n\nJaeger → Traces\n\nOpenSearch → Logs\n\nGrafana → Visualization and Dashboards\n```\nTogether these components provide a practical introduction to modern observability using OpenTelemetry.\n\n## Wrapping Up\n\nThis article focuses on understanding how telemetry appears inside real observability tools rather than learning every query or dashboard.\n\nThe Otel Demo app provides plenty for further exploration. Try enabling failure-related feature flags, introducing latency, or stopping individual containers and then investigate the resulting behavior across the observability stack.\n\nAs an exercise, start with a failure and follow it through metrics, traces, and logs. Then explore how the same telemetry appears inside Grafana dashboards.\n\nAnother important takeaway is that OpenTelemetry is not tied to Prometheus, Jaeger, OpenSearch, or Grafana. By changing collector and exporter configurations, telemetry can be routed to many different observability backends without modifying application code.\n\nIn a future article, we'll move beyond the demo application and instrument our own application using OpenTelemetry to understand what is required to generate telemetry from scratch.\n\nThe more scenarios you experiment with, the easier it becomes to understand how modern observability platforms help diagnose and troubleshoot distributed systems.\n\n\n",html:"\u003Ch2 id=\"preface\">Preface\u003C/h2>\n\u003Cp>In the \u003Ca href=\"/blogs/monitoring/observability/\">\u003Cstrong>\u003Cem>previous article\u003C/em>\u003C/strong>\u003C/a>, we covered the core observability concepts theoretically. The next step is exploring them practically using the OpenTelemetry Demo application.\u003C/p>\n\u003Cp>The goal here is not to memorize PromQL syntax, but to understand how telemetry actually appears inside a real observability platform. So, let&#39;s get started.\u003C/p>\n\u003Ch2 id=\"cloning-the-repository\">Cloning the Repository\u003C/h2>\n\u003Cp>The OpenTelemetry Demo repository already contains a complete observability stack including:\u003C/p>\n\u003Cul>\n\u003Cli>OpenTelemetry Collector\u003C/li>\n\u003Cli>Prometheus\u003C/li>\n\u003Cli>Jaeger\u003C/li>\n\u003Cli>OpenSearch\u003C/li>\n\u003Cli>Grafana\u003C/li>\n\u003C/ul>\n\u003Cp>Clone the repository:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">git clone https://github.com/open-telemetry/opentelemetry-demo.git\n\ncd opentelemetry-demo\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"starting-the-observability-stack\">Starting the Observability Stack\u003C/h2>\n\u003Cp>The demo ships with multiple Docker Compose files. Start the stack by ruuning it using these 2 main compose files:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">docker compose -f compose.yaml -f compose.observability.yaml up -d\n\u003C/code>\u003C/pre>\n\u003Cp>This starts:\u003C/p>\n\u003Cul>\n\u003Cli>frontend application\u003C/li>\n\u003Cli>OpenTelemetry Collector\u003C/li>\n\u003Cli>Prometheus\u003C/li>\n\u003Cli>Jaeger\u003C/li>\n\u003Cli>OpenSearch\u003C/li>\n\u003Cli>Grafana\u003C/li>\n\u003C/ul>\n\u003Cp>Verify containers:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">docker ps\n\u003C/code>\u003C/pre>\n\u003Cp>Expected containers include:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">frontend-proxy\notel-collector\nprometheus\njaeger\nopensearch\ngrafana\n\nand more container of the demo application\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"understanding-the-architecture\">Understanding the Architecture\u003C/h2>\n\u003Cp>Telemetry flow in the demo looks like:\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/9mhr7kvC/x.png\" alt=\"otel arch\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Telemetry flow with Otel\u003C/figcaption>\n\u003C/figure>\n\n\n\u003Cp>The OpenTelemetry Collector acts as the central telemetry pipeline. Applications send telemetry using OTLP. The Collector processes telemetry and exports it to different backends.\u003C/p>\n\u003Ch2 id=\"exploring-the-docker-compose-file\">Exploring the Docker Compose File\u003C/h2>\n\u003Cp>The main observability infrastructure is defined in compose.observability.yaml\u003C/p>\n\u003Cp>This file defines:\u003C/p>\n\u003Cul>\n\u003Cli>Prometheus\u003C/li>\n\u003Cli>Jaeger\u003C/li>\n\u003Cli>OpenSearch\u003C/li>\n\u003Cli>Grafana\u003C/li>\n\u003Cli>OTel Collector\u003C/li>\n\u003C/ul>\n\u003Cp>along with:\u003C/p>\n\u003Cul>\n\u003Cli>ports\u003C/li>\n\u003Cli>mounted configs\u003C/li>\n\u003Cli>startup commands\u003C/li>\n\u003Cli>networking\u003C/li>\n\u003C/ul>\n\u003Cp>This is essentially the infrastructure wiring for the observability stack.\u003C/p>\n\u003Ch2 id=\"understanding-the-collector-configuration\">Understanding the Collector Configuration\u003C/h2>\n\u003Cp>The OpenTelemetry Collector is a vendor-neutral telemetry pipeline that receives, processes, and exports telemetry data. In this demo, the Collector acts as the central hub between the application and the observability backends.\u003C/p>\n\u003Cp>Common alternatives include:\u003C/p>\n\u003Cul>\n\u003Cli>Grafana Alloy\u003C/li>\n\u003Cli>Fluent Bit\u003C/li>\n\u003Cli>Fluentd\u003C/li>\n\u003Cli>Vector\u003C/li>\n\u003C/ul>\n\u003Cp>The telemetry pipeline itself is defined inside src/otel-collector/otelcol-config.yml\u003C/p>\n\u003Cp>This file contains:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-yaml\">receivers:\nprocessors:\nexporters:\nservice:\n\u003C/code>\u003C/pre>\n\u003Cp>The Collector:\u003C/p>\n\u003Cul>\n\u003Cli>receives telemetry\u003C/li>\n\u003Cli>processes telemetry\u003C/li>\n\u003Cli>exports telemetry\u003C/li>\n\u003C/ul>\n\u003Cp>The demo loads multiple collector configs together using multiple \u003Ccode>--config\u003C/code> arguments from Docker Compose.\u003C/p>\n\u003Cp>One important component inside the Collector configuration is:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-yaml\">connectors:\n  span_metrics:\n\u003C/code>\u003C/pre>\n\u003Cp>This converts traces/spans into Prometheus metrics. That is why Prometheus later exposes metrics such as:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">traces_span_metrics_calls_total\n\u003C/code>\u003C/pre>\n\u003Cp>These metrics are generated from spans.\u003C/p>\n\u003Ch2 id=\"understanding-the-prometheus-configuration\">Understanding the Prometheus Configuration\u003C/h2>\n\u003Cp>The demo also includes /etc/prometheus/prometheus-config.yaml\u003C/p>\n\u003Cp>This is different from traditional Prometheus scraping setups.\u003C/p>\n\u003Cp>Instead of primarily scraping \u003Ccode>/metrics\u003C/code> endpoints, Prometheus in this setup is integrated with OpenTelemetry telemetry pipelines.\u003C/p>\n\u003Cp>Important section:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-yaml\">otlp:\n  promote_resource_attributes:\n\u003C/code>\u003C/pre>\n\u003Cp>This converts OpenTelemetry resource attributes into Prometheus labels.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">service.name → service_name\n\u003C/code>\u003C/pre>\n\u003Cp>This is why metrics later contain labels such as:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">service_name\nservice_version\nhost_name\nstatus_code\nspan_kind\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"accessing-the-demo-and-observability-tools\">Accessing the Demo and Observability Tools\u003C/h2>\n\u003Cp>Once the stack is running, the OpenTelemetry Demo exposes the storefront and observability tools through a frontend proxy running on port \u003Ccode>8080\u003C/code>.\u003C/p>\n\u003Cp>Rather than listing every endpoint here, refer to the official documentation screenshot below, which shows the currently available URLs for the demo application, Grafana, Jaeger, the load generator, and other supporting tools.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/5Wz6mgQc/x.png\" alt=\"otel apps\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Source: otel docs\u003C/figcaption>\n\u003C/figure>\n\n\u003Cp>The OpenTelemetry Demo documentation also explains how the proxy routes requests and how to change the default port if required.\u003C/p>\n\u003Cp>Open the demo application at \u003Cem>\u003Cstrong>&#39;\u003Ca href=\"http://localhost:8080\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:8080\u003C/a>&#39;\u003C/strong>\u003C/em> and generate telemetry by:\u003C/p>\n\u003Cul>\n\u003Cli>browsing products\u003C/li>\n\u003Cli>refreshing pages\u003C/li>\n\u003Cli>adding items to cart\u003C/li>\n\u003Cli>checking out\u003C/li>\n\u003C/ul>\n\u003Cp>Without traffic, metrics, traces, and logs will remain mostly empty.\u003C/p>\n\u003Cp>The demo also includes a load generator service that continuously produces traffic. However, I usually stop the load-generator container while learning a new observability tool. Exploring the application manually generates smaller and more meaningful request flows, making it easier to understand metrics, traces, and service interactions without the noise of constant background traffic.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/FqCtr8cM/x.png\" alt=\"otel demo app store\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Demo Store APP\u003C/figcaption>\n\u003C/figure>\n\n\u003Cblockquote>\n\u003Cp>Note: The Demo includes a feature flag management interface powered by Flagd.\u003C/p>\n\u003C/blockquote>\n\u003Cp>The UI is available through the frontend proxy and allows various behaviors to be enabled or disabled without modifying application code.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/b5nsnfVp/x.png\" alt=\"Feature Flag UI\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\u003Ch1 id=\"prometheus\">Prometheus\u003C/h1>\n\u003Cp>Prometheus is an open-source time-series database and monitoring system.\u003C/p>\n\u003Cp>It stores metrics, executes PromQL queries, and powers alerting and dashboards.\u003C/p>\n\u003Cp>Common alternatives include:\u003C/p>\n\u003Cul>\n\u003Cli>VictoriaMetrics\u003C/li>\n\u003Cli>InfluxDB\u003C/li>\n\u003Cli>Datadog Metrics\u003C/li>\n\u003Cli>New Relic\u003C/li>\n\u003C/ul>\n\u003Cp>Prometheus is available at \u003Cem>\u003Cstrong>&#39;\u003Ca href=\"http://localhost:9090\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:9090\u003C/a>&#39;\u003C/strong>\u003C/em>. Try this query first: \u003Cem>\u003Cstrong>traces_span_metrics_calls_total\u003C/strong>\u003C/em>\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/hFMMGN4Q/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\n\u003Ch3 id=\"understanding-a-prometheus-metric\">Understanding a Prometheus Metric\u003C/h3>\n\u003Cp>Example output:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">traces_span_metrics_calls_total{\n  service_name=&quot;recommendation&quot;,\n  span_kind=&quot;SPAN_KIND_CLIENT&quot;,\n  span_name=&quot;flagd.evaluation.v1.Service/ResolveBoolean&quot;\n}\n\u003C/code>\u003C/pre>\n\u003Cp>Prometheus metrics consist of:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">metric_name{labels}\n\u003C/code>\u003C/pre>\n\u003Cp>Metric name:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">traces_span_metrics_calls_total\n\u003C/code>\u003C/pre>\n\u003Cp>Labels:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">service_name, span_kind, span_name, status_code\n\u003C/code>\u003C/pre>\n\u003Cp>These labels originate from OpenTelemetry resource attributes and span metadata.\u003C/p>\n\u003Ch3 id=\"understanding-span-kinds\">Understanding Span Kinds\u003C/h3>\n\u003Cp>Different span kinds appeare:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">SPAN_KIND_SERVER, SPAN_KIND_CLIENT, SPAN_KIND_INTERNAL\n\u003C/code>\u003C/pre>\n\u003Cp>Meaning:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">SERVER   → incoming requests | CLIENT   → outgoing dependency calls | INTERNAL → internal service processing\n\u003C/code>\u003C/pre>\n\u003Cp>This was the first point where tracing concepts became visible inside Prometheus metrics.\u003C/p>\n\u003Ch3 id=\"counters-and-rates\">Counters and Rates\u003C/h3>\n\u003Cp>The metric: \u003Cstrong>&#39;traces_span_metrics_calls_total&#39;\u003C/strong> is a counter. Counters only increase.\u003C/p>\n\u003Cp>To understand traffic rate, try the query\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">rate(traces_span_metrics_calls_total[5m])\n\u003C/code>\u003C/pre>\n\u003Cp>This converts counters into, opeartions per second, which is significantly more useful for observability analysis.\u003C/p>\n\u003Ch3 id=\"aggregating-by-service\">Aggregating by Service\u003C/h3>\n\u003Cp>The next query using sum groups telemetry per service. This reduces noisy per-span telemetry into a high-level service traffic view.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">sum by(service_name)(\n  rate(traces_span_metrics_calls_total[15m])\n)\n\u003C/code>\u003C/pre>\n\u003Cp>This shows which services were most active.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/jPTYkpRj/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\u003Ch3 id=\"histograms-and-latency\">Histograms and Latency\u003C/h3>\n\u003Cp>Latency metrics appear as histogram buckets:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">traces_span_metrics_duration_milliseconds_bucket\n\u003C/code>\u003C/pre>\n\u003Cp>These metrics introduced the \u003Ccode>le\u003C/code> label:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">le = less than or equal to\n\u003C/code>\u003C/pre>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">le=&quot;8&quot;\n\u003C/code>\u003C/pre>\n\u003Cp>means:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Requests completed within 8ms\n\u003C/code>\u003C/pre>\n\u003Cp>Histograms allow Prometheus to calculate percentiles such as:\u003C/p>\n\u003Cul>\n\u003Cli>p50\u003C/li>\n\u003Cli>p95\u003C/li>\n\u003Cli>p99\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"calculating-p95-latency\">Calculating p95 Latency\u003C/h3>\n\u003Cp>The following query calculates p95 latency per service:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">histogram_quantile(\n  0.95,\n  sum by(le, service_name)(\n    rate(\n      traces_span_metrics_duration_milliseconds_bucket[5m]\n    )\n  )\n)\n\u003C/code>\u003C/pre>\n\u003Cp>This reveals slow services such as:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">checkout, curreny conversion\n\u003C/code>\u003C/pre>\n\u003Cp>With Prometheus we could now see which services are slow but not yet why are they slow? That investigation belongs to tracing systems such as Jaeger.\u003C/p>\n\u003Ch3 id=\"filtering-errors\">Filtering Errors\u003C/h3>\n\u003Cp>Error rates can be explored using:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">sum by(service_name)(\n  rate(\n    traces_span_metrics_calls_total{\n      status_code=&quot;STATUS_CODE_ERROR&quot;\n    }[5m]\n  )\n)\n\u003C/code>\u003C/pre>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/X6cptbb/x.png\" alt=\"prom data\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\u003Cp>This showes which services were actively generating errors.\u003C/p>\n\u003Cp>Prometheus time series may still appear with value \u003Ccode>0\u003C/code> because the time series exists historically even if no recent errors occurred.\u003C/p>\n\u003Ch3 id=\"filtering-individual-services\">Filtering Individual Services\u003C/h3>\n\u003Cp>Specific services can be isolated using label selectors:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-promql\">sum by(span_kind)(\n  rate(\n    traces_span_metrics_calls_total{\n      service_name=&quot;frontend&quot;\n    }[5m]\n  )\n)\n\u003C/code>\u003C/pre>\n\u003Cp>This shows how the frontend service behaved internally:\u003C/p>\n\u003Cul>\n\u003Cli>receiving requests\u003C/li>\n\u003Cli>making dependency calls\u003C/li>\n\u003Cli>performing internal processing\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"key-observations\">Key Observations\u003C/h3>\n\u003Cp>Prometheus metrics are:\u003C/p>\n\u003Cul>\n\u003Cli>time-series data\u003C/li>\n\u003Cli>identified by labels\u003C/li>\n\u003Cli>aggregated using PromQL\u003C/li>\n\u003C/ul>\n\u003Cp>The OpenTelemetry demo also demonstrates an important modern observability concept:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Metrics generated from traces\n\u003C/code>\u003C/pre>\n\u003Cp>using the \u003Ccode>span_metrics\u003C/code> connector inside the OpenTelemetry Collector.\u003C/p>\n\u003Cp>By the end of the Prometheus exploration, the following concepts become much clearer practically:\u003C/p>\n\u003Cul>\n\u003Cli>metrics\u003C/li>\n\u003Cli>labels\u003C/li>\n\u003Cli>counters\u003C/li>\n\u003Cli>rates\u003C/li>\n\u003Cli>histograms\u003C/li>\n\u003Cli>percentiles\u003C/li>\n\u003Cli>filtering\u003C/li>\n\u003Cli>aggregation\u003C/li>\n\u003Cli>service-level telemetry\u003C/li>\n\u003Cli>span-derived metrics\u003C/li>\n\u003C/ul>\n\u003Cp>The next step is understanding traces visually using Jaeger.\u003C/p>\n\u003Ch1 id=\"jaeger\">Jaeger\u003C/h1>\n\u003Cp>Jaeger is a distributed tracing platform used to visualize requests as they travel across multiple services.\u003C/p>\n\u003Cp>It helps identify latency bottlenecks, understand service dependencies, and troubleshoot request flows.\u003C/p>\n\u003Cp>Common alternatives include:\u003C/p>\n\u003Cul>\n\u003Cli>Grafana Tempo\u003C/li>\n\u003Cli>Zipkin\u003C/li>\n\u003Cli>Elastic APM\u003C/li>\n\u003Cli>Datadog APM\u003C/li>\n\u003Cli>New Relic Distributed Tracing\u003C/li>\n\u003C/ul>\n\u003Cp>The OpenTelemetry demo also exposes Jaeger through the frontend proxy, \u003Cem>\u003Cstrong>&quot;\u003Ca href=\"http://localhost:8080/jaeger/ui/\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:8080/jaeger/ui/\u003C/a>&quot;\u003C/strong>\u003C/em>\u003C/p>\n\u003Ch2 id=\"exploring-distributed-tracing-with-jaeger\">Exploring Distributed Tracing with Jaeger\u003C/h2>\n\u003Cp>Prometheus successfully answered questions such as: Which services are slow? Which services are generating errors? Which services receive the most traffic? However, metrics alone could not explain: Why is checkout slow? Which dependency caused the delay? What exactly happened during a request?\u003C/p>\n\u003Cp>This is where distributed tracing becomes useful. Metrics summarize behavior, Traces explain behavior.\u003C/p>\n\u003Ch3 id=\"understanding-traces-and-spans\">Understanding Traces and Spans\u003C/h3>\n\u003Cp>A trace represents the complete journey of a request through a distributed system.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">User Checkout Request\n        ↓\nFrontend\n        ↓\nCheckout\n        ↓\nCart\n        ↓\nProduct Catalog\n        ↓\nCurrency\n        ↓\nPayment\n        ↓\nEmail\n\u003C/code>\u003C/pre>\n\u003Cp>Everything that happens for this request belongs to a single trace. Each individual operation inside that trace is called a span.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Trace\n ├── Frontend Span\n ├── Checkout Span\n ├── Cart Span\n ├── Product Catalog Span\n ├── Currency Span\n ├── Payment Span\n └── Email Span\n\u003C/code>\u003C/pre>\n\u003Cp>A trace is therefore a collection of spans.\u003C/p>\n\u003Cp>After generating traffic by browsing products and placing orders, traces will be immediately available inside the Jaeger search interface.\u003C/p>\n\u003Cp>Searching for the checkout service quickly reveals complete order execution flows.\u003C/p>\n\u003Ch3 id=\"reading-a-trace-timeline\">Reading a Trace Timeline\u003C/h3>\n\u003Cp>To explore tracing in practice, start by selecting a checkout trace from the search results.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Service: checkout\nOperation: PlaceOrder\n\u003C/code>\u003C/pre>\n\u003Cp>Open one of the traces to view its execution timeline.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/PsPTPVd8/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Jaeger trace serach\u003C/figcaption>\n\u003C/figure>\n\n\u003Cp>Each horizontal bar represents a span. The width of the bar represents duration.\u003C/p>\n\u003Cp>The nesting of spans represents relationships between operations.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/6Jf6XSsX/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\n\u003Cp>The timeline effectively becomes a visual execution diagram of the request.\u003C/p>\n\u003Cp>Instead of reading logs line by line, the entire request flow becomes visible immediately.\u003C/p>\n\u003Ch3 id=\"parent-and-child-spans\">Parent and Child Spans\u003C/h3>\n\u003Cp>Expanding the checkout trace reveals a hierarchy of spans.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">CheckoutService/PlaceOrder\n\u003C/code>\u003C/pre>\n\u003Cp>acts as a parent span.\u003C/p>\n\u003Cp>Inside it are child spans such as:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">GetCart\n\nGetProduct\n\nConvertCurrency\n\nGetShippingQuote\n\nChargePayment\n\nSendOrderConfirmation\n\u003C/code>\u003C/pre>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/QjJYgB8C/x.png\" alt=\"jaegar search\" width=\"1000\" height=\"600\" />\n\u003C/figure>\n\n\u003Cp>This hierarchy makes it possible to understand which operations belong to a larger workflow.\u003C/p>\n\u003Cp>The checkout service orchestrates multiple downstream dependencies to complete the order.\u003C/p>\n\u003Ch3 id=\"understanding-span-kinds-1\">Understanding Span Kinds\u003C/h3>\n\u003Cp>Selecting an individual span reveals additional metadata.\u003C/p>\n\u003Cp>One useful field is:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">span.kind\n\u003C/code>\u003C/pre>\n\u003Cp>Common values include:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">SPAN_KIND_SERVER\n\nSPAN_KIND_CLIENT\n\nSPAN_KIND_INTERNAL\n\u003C/code>\u003C/pre>\n\u003Cp>Meaning:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">SERVER\nIncoming request handled by a service\n\nCLIENT\nOutgoing dependency call\n\nINTERNAL\nInternal processing inside a service\n\u003C/code>\u003C/pre>\n\u003Cp>These values help explain the role each operation plays during request execution.\u003C/p>\n\u003Ch3 id=\"client-and-server-spans\">CLIENT and SERVER Spans\u003C/h3>\n\u003Cp>A single service call typically generates two spans.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Frontend\n    ↓\nCheckout\n\u003C/code>\u003C/pre>\n\u003Cp>The frontend service generates a CLIENT span because it initiates the request.\u003C/p>\n\u003Cp>The checkout service generates a SERVER span because it receives the request.\u003C/p>\n\u003Cp>Conceptually:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Frontend\n  CLIENT → CheckoutService/PlaceOrder\n\nCheckout\n  SERVER → CheckoutService/PlaceOrder\n\u003C/code>\u003C/pre>\n\u003Cp>Together these spans describe both sides of the same network call.\u003C/p>\n\u003Ch3 id=\"trace-ids-and-span-ids\">Trace IDs and Span IDs\u003C/h3>\n\u003Cp>Every trace contains a unique Trace ID.\u003C/p>\n\u003Cp>Every span contains its own Span ID.\u003C/p>\n\u003Cp>The Trace ID links all spans belonging to the same request.\u003C/p>\n\u003Cp>Span IDs uniquely identify individual operations.\u003C/p>\n\u003Cp>These identifiers become especially useful later when correlating traces with logs.\u003C/p>\n\u003Ch3 id=\"investigating-slow-requests\">Investigating Slow Requests\u003C/h3>\n\u003Cp>One checkout trace may show a total duration of approximately:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">1.2 seconds\n\u003C/code>\u003C/pre>\n\u003Cp>At first glance, this makes the checkout operation appear slow.\u003C/p>\n\u003Cp>However, expanding the trace reveals how the time is distributed across downstream operations.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cul>\n\u003Cli>cart retrieval\u003C/li>\n\u003Cli>product lookup\u003C/li>\n\u003Cli>currency conversion\u003C/li>\n\u003Cli>shipping calculation\u003C/li>\n\u003Cli>payment processing\u003C/li>\n\u003Cli>email generation\u003C/li>\n\u003C/ul>\n\u003Cp>Tracing therefore answers a much more useful question than metrics alone:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Where is the latency occurring?\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"service-dependencies-become-visible\">Service Dependencies Become Visible\u003C/h3>\n\u003Cp>The checkout trace also reveals service relationships directly.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Checkout\n    ↓\nCart\n\nCheckout\n    ↓\nProduct Catalog\n\nCheckout\n    ↓\nCurrency\n\nCheckout\n    ↓\nPayment\n\nCheckout\n    ↓\nShipping\n\u003C/code>\u003C/pre>\n\u003Cp>Without reading source code, it becomes possible to understand how services interact with one another.\u003C/p>\n\u003Cp>This is particularly useful when exploring unfamiliar systems.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/TqKstmDC/x.png\" alt=\"jaegar search\" width=\"800\" height=\"400\" />\n\u003C/figure>\n\n\n\u003Ch3 id=\"finding-bottlenecks\">Finding Bottlenecks\u003C/h3>\n\u003Cp>A practical tracing workflow is:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Start with the largest span.\n\nExpand child spans.\n\nIdentify where time is spent.\n\nContinue drilling down until the slow dependency is found.\n\u003C/code>\u003C/pre>\n\u003Cp>Metrics identify that a problem exists.\u003C/p>\n\u003Cp>Tracing identifies where the problem exists.\u003C/p>\n\u003Ch1 id=\"opensearch\">OpenSearch\u003C/h1>\n\u003Cp>OpenSearch is used as the log storage backend.\u003C/p>\n\u003Cp>Responsibilities:\u003C/p>\n\u003Cp>stores application logs\nindexes log data\nsupports searching and filtering\u003C/p>\n\u003Cp>Common alternatives:\u003C/p>\n\u003Cp>Elasticsearch\nLoki\u003C/p>\n\u003Ch2 id=\"exploring-logs-with-opensearch\">Exploring Logs with OpenSearch\u003C/h2>\n\u003Cp>In the OpenTelemetry Demo, logs are exported through the OpenTelemetry Collector and stored inside OpenSearch indices.\u003C/p>\n\u003Cp>The architecture looks like:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Application\n    ↓\nOTel SDK\n    ↓\nOTel Collector\n    ↓\nOpenSearch\n    ↓\nOpenSearch Dashboards\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"enabling-opensearch-dashboards\">Enabling OpenSearch Dashboards\u003C/h3>\n\u003Cp>Unlike Jaeger and Grafana, OpenSearch Dashboards is not enabled by default in the demo.\u003C/p>\n\u003Cp>The dashboard container must first be added to the observability stack (compose.observability.yaml) right after the opensearch section.\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-yaml\">  opensearch-dashboards:\n    image: opensearchproject/opensearch-dashboards:latest\n    container_name: opensearch-dashboards\n    restart: unless-stopped\n    ports:\n      - &quot;5601:5601&quot;\n    environment:\n      - OPENSEARCH_HOSTS=[&quot;http://opensearch:9200&quot;]\n      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true &lt;-- This disbales login\n\n    depends_on:\n      opensearch:\n        condition: service_healthy\n\u003C/code>\u003C/pre>\n\u003Cp>After restarting the observability stack, OpenSearch Dashboards shoul available at \u003Cstrong>&#39;\u003Ca href=\"http://localhost:5601\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:5601\u003C/a>&#39;\u003C/strong>\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/xqt3s1Y2/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\u003Cp>Unlike Jaeger, OpenSearch initially contains raw indices and documents rather than traces or dashboards.\u003C/p>\n\u003Cp>The first step is creating a data view.\u003C/p>\n\u003Ch3 id=\"creating-a-data-view\">Creating a Data View\u003C/h3>\n\u003Cp>Open Manage menu and then index pattern and click on Create index pattern.\u003C/p>\n\u003Cp>Serach for otel-logs-*and select @timestamp as the time field.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/DD5BvTBh/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\u003Cp>This tells OpenSearch Dashboards which indices should be searched when exploring logs.\u003C/p>\n\u003Ch3 id=\"discovering-logs\">Discovering Logs\u003C/h3>\n\u003Cp>After creating the data view, open Discover and select: otel-logs-*\u003C/p>\n\u003Cp>The interface displays:\u003C/p>\n\u003Cul>\n\u003Cli>a log volume histogram\u003C/li>\n\u003Cli>searchable log documents\u003C/li>\n\u003Cli>timestamps\u003C/li>\n\u003Cli>indexed fields\u003C/li>\n\u003C/ul>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/NdWJt8TD/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\u003Cp>Each row represents a single log document stored in OpenSearch.\u003C/p>\n\u003Cp>Unlike traces, which show request flow, logs represent individual events generated by services.\u003C/p>\n\u003Ch3 id=\"understanding-a-log-document\">Understanding a Log Document\u003C/h3>\n\u003Cp>Expanding a document reveals the fields captured by OpenTelemetry.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">resource.service.name\nbody\nseverity.text\nseverity.number\ntraceId\nspanId\n@timestamp\n\u003C/code>\u003C/pre>\n\u003Cp>Meaning:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">resource.service.name → service generating the log\n\nbody → log message\n\nseverity.text → INFO, WARN, ERROR\n\ntraceId → request identifier\n\nspanId → operation identifier\n\n@timestamp → event time\n\u003C/code>\u003C/pre>\n\u003Cp>This makes it possible to identify:\u003C/p>\n\u003Cul>\n\u003Cli>who generated the log\u003C/li>\n\u003Cli>what happened\u003C/li>\n\u003Cli>when it happened\u003C/li>\n\u003Cli>which request generated it\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"filtering-logs-by-service\">Filtering Logs by Service\u003C/h3>\n\u003Cp>Logs can be filtered using search queries.\u003C/p>\n\u003Cp>For example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">resource.service.name:checkout\n\u003C/code>\u003C/pre>\n\u003Cp>returns logs generated by the checkout service.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/CK0t5DLf/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\n\u003Cp>This is similar to filtering Prometheus metrics using labels.\u003C/p>\n\u003Cp>Instead of querying telemetry metrics, OpenSearch is querying log documents.\u003C/p>\n\u003Ch3 id=\"correlating-logs-with-traces\">Correlating Logs with Traces\u003C/h3>\n\u003Cp>One of the most useful OpenTelemetry features is trace correlation.\u003C/p>\n\u003Cp>A log document contains:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">traceId\nspanId\n\u003C/code>\u003C/pre>\n\u003Cp>These values match the identifiers visible inside Jaeger.\u003C/p>\n\u003Cp>Searching for a specific trace ID:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">traceId:b0ca45069ad74d8870a4c655f3129612\n\u003C/code>\u003C/pre>\n\u003Cp>returns all logs generated during that request.\u003C/p>\n\u003Cp>This allows navigation from:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Trace\n    ↓\nRelated Logs\n\u003C/code>\u003C/pre>\n\u003Cp>which is one of the core observability workflows.\u003C/p>\n\u003Ch3 id=\"exploring-errors\">Exploring Errors\u003C/h3>\n\u003Cp>Logs can also be filtered by severity.\u003C/p>\n\u003Cp>Example:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">severity.text:ERROR\n\u003C/code>\u003C/pre>\n\u003Cp>or\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">severity.text:WARN\n\u003C/code>\u003C/pre>\n\u003Cp>During exploration, one of the logs revealed a collector error:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">unable to dial:\nlookup kafka on 127.0.0.11:53:\nno such host\n\u003C/code>\u003C/pre>\n\u003Cp>Expanding the document exposed additional diagnostic information:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">attributes.error\n\nattributes.code.file.path\n\nattributes.code.function.name\n\nattributes.code.line.number\n\nattributes.code.stacktrace\n\u003C/code>\u003C/pre>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/4n9QnLYM/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\u003Cp>This demonstrates one of the biggest strengths of logs.\u003C/p>\n\u003Cp>While traces show where a failure occurs, logs often explain why it occurred.\u003C/p>\n\u003Ch3 id=\"key-observations-1\">Key Observations\u003C/h3>\n\u003Cp>OpenSearch stores logs as searchable documents.\u003C/p>\n\u003Cp>During exploration we learned how to:\u003C/p>\n\u003Cul>\n\u003Cli>create a data view\u003C/li>\n\u003Cli>search indices\u003C/li>\n\u003Cli>inspect log documents\u003C/li>\n\u003Cli>filter by service\u003C/li>\n\u003Cli>filter by severity\u003C/li>\n\u003Cli>inspect error details\u003C/li>\n\u003Cli>correlate logs with traces using trace IDs\u003C/li>\n\u003C/ul>\n\u003Cp>Together with Prometheus and Jaeger, OpenSearch completes the third pillar of observability:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Metrics → Is there a problem?\n\nTraces → Where is the problem?\n\nLogs → What exactly happened?\n\u003C/code>\u003C/pre>\n\u003Ch1 id=\"grafana\">Grafana\u003C/h1>\n\u003Cp>Grafana provides dashboards and visualization capabilities. It helps visualize metrics, logs, and traces, while also enabling the creation of operational dashboards.\u003C/p>\n\u003Cp>Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a core observability backend. It does not store telemetry itself. Instead, it connects to backends (&#39;data source&#39; in grafana terminology) and provides a unified interface for exploring and visualizing telemetry data.\u003C/p>\n\u003Cp>Several alternatives exist in this space, with Kibana from the ELK stack being one of the most widely used.\u003C/p>\n\u003Ch2 id=\"exploring-grafana\">Exploring Grafana\u003C/h2>\n\u003Cp>Unlike Prometheus, Jaeger, and OpenSearch, Grafana is not a telemetry backend. Instead, it acts as a visualization layer on top of multiple observability systems.\u003C/p>\n\u003Cp>In the OpenTelemetry Demo, Grafana comes preconfigured with multiple data sources including:\u003C/p>\n\u003Cul>\n\u003Cli>Prometheus for metrics\u003C/li>\n\u003Cli>Jaeger for traces\u003C/li>\n\u003Cli>OpenSearch for logs\u003C/li>\n\u003C/ul>\n\u003Cp>This allows telemetry from different systems to be viewed from a single interface.\u003C/p>\n\u003Ch3 id=\"data-sources\">Data Sources\u003C/h3>\n\u003Cp>The demo exposes Grafana through the frontend proxy so open it at \u003Cstrong>&#39;\u003Ca href=\"http://localhost:8080/grafana/\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:8080/grafana/\u003C/a>&#39;\u003C/strong>. Now navigate to connections - data source - available data source.\u003C/p>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/8D2MH1mW/x.png\" alt=\"os db\" width=\"1000\" height=\"800\" />\n\u003C/figure>\n\n\u003Ch3 id=\"dashboards\">Dashboards\u003C/h3>\n\u003Cp>The demo ships with several preconfigured dashboards including:\u003C/p>\n\u003Cul>\n\u003Cli>APM Dashboard (Jaeger, Prometheus, OpenSearch)\u003C/li>\n\u003Cli>Spanmetrics Demo Dashboard\u003C/li>\n\u003Cli>OpenTelemetry Collector Dashboard\u003C/li>\n\u003C/ul>\n\u003Cp>One particularly useful dashboard is:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">APM Dashboard (Jaeger, Prometheus, OpenSearch)\n\u003C/code>\u003C/pre>\n\u003Cp>This dashboard combines metrics, traces, and logs into a single operational view. At the top you can view the sources for all the streams and select a service of the app to view its data.\u003C/p>\n\u003Cp>The dashboard visualizes the RED metrics commonly used for service monitoring:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Rate\nErrors\nDuration\n\u003C/code>\u003C/pre>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/Kxtj6PDZ/x.png\" alt=\"Grafana APM Dashboard\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>red metrics\u003C/figcaption>\n\u003C/figure>\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/ZpW3x1PN/x.png\" alt=\"Grafana APM Dashboard\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>logs, traces\u003C/figcaption>\n\u003C/figure>\n\n\u003Cp>These metrics provide a quick overview of service health and are derived from the same telemetry previously explored directly inside Prometheus.\u003C/p>\n\u003Cp>Grafana does not replace Prometheus, Jaeger, or OpenSearch. Instead, it provides a more user-friendly way to visualize and correlate telemetry across multiple backends.\u003C/p>\n\u003Cp>For learning purposes, exploring the individual tools directly is often more valuable because it helps build a deeper understanding of metrics, traces, and logs. Once those concepts become familiar, Grafana serves as a convenient layer for operational monitoring and dashboarding.\u003C/p>\n\u003Cp>At this point, the complete observability stack becomes much easier to understand:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">Prometheus → Metrics\n\nJaeger → Traces\n\nOpenSearch → Logs\n\nGrafana → Visualization and Dashboards\n\u003C/code>\u003C/pre>\n\u003Cp>Together these components provide a practical introduction to modern observability using OpenTelemetry.\u003C/p>\n\u003Ch2 id=\"wrapping-up\">Wrapping Up\u003C/h2>\n\u003Cp>This article focuses on understanding how telemetry appears inside real observability tools rather than learning every query or dashboard.\u003C/p>\n\u003Cp>The Otel Demo app provides plenty for further exploration. Try enabling failure-related feature flags, introducing latency, or stopping individual containers and then investigate the resulting behavior across the observability stack.\u003C/p>\n\u003Cp>As an exercise, start with a failure and follow it through metrics, traces, and logs. Then explore how the same telemetry appears inside Grafana dashboards.\u003C/p>\n\u003Cp>Another important takeaway is that OpenTelemetry is not tied to Prometheus, Jaeger, OpenSearch, or Grafana. By changing collector and exporter configurations, telemetry can be routed to many different observability backends without modifying application code.\u003C/p>\n\u003Cp>In a future article, we&#39;ll move beyond the demo application and instrument our own application using OpenTelemetry to understand what is required to generate telemetry from scratch.\u003C/p>\n\u003Cp>The more scenarios you experiment with, the easier it becomes to understand how modern observability platforms help diagnose and troubleshoot distributed systems.\u003C/p>\n",data:a,headings:[{id:"preface",text:"Preface",level:2},{id:"cloning-the-repository",text:"Cloning the Repository",level:2},{id:"starting-the-observability-stack",text:"Starting the Observability Stack",level:2},{id:"understanding-the-architecture",text:"Understanding the Architecture",level:2},{id:"exploring-the-docker-compose-file",text:"Exploring the Docker Compose File",level:2},{id:"understanding-the-collector-configuration",text:"Understanding the Collector Configuration",level:2},{id:"understanding-the-prometheus-configuration",text:"Understanding the Prometheus Configuration",level:2},{id:"accessing-the-demo-and-observability-tools",text:"Accessing the Demo and Observability Tools",level:2},{id:"prometheus",text:"Prometheus",level:1},{id:"understanding-a-prometheus-metric",text:"Understanding a Prometheus Metric",level:3},{id:"understanding-span-kinds",text:"Understanding Span Kinds",level:3},{id:"counters-and-rates",text:"Counters and Rates",level:3},{id:"aggregating-by-service",text:"Aggregating by Service",level:3},{id:"histograms-and-latency",text:"Histograms and Latency",level:3},{id:"calculating-p95-latency",text:"Calculating p95 Latency",level:3},{id:"filtering-errors",text:"Filtering Errors",level:3},{id:"filtering-individual-services",text:"Filtering Individual Services",level:3},{id:"key-observations",text:"Key Observations",level:3},{id:"jaeger",text:"Jaeger",level:1},{id:"exploring-distributed-tracing-with-jaeger",text:"Exploring Distributed Tracing with Jaeger",level:2},{id:"understanding-traces-and-spans",text:"Understanding Traces and Spans",level:3},{id:"reading-a-trace-timeline",text:"Reading a Trace Timeline",level:3},{id:"parent-and-child-spans",text:"Parent and Child Spans",level:3},{id:"understanding-span-kinds-1",text:"Understanding Span Kinds",level:3},{id:"client-and-server-spans",text:"CLIENT and SERVER Spans",level:3},{id:"trace-ids-and-span-ids",text:"Trace IDs and Span IDs",level:3},{id:"investigating-slow-requests",text:"Investigating Slow Requests",level:3},{id:"service-dependencies-become-visible",text:"Service Dependencies Become Visible",level:3},{id:"finding-bottlenecks",text:"Finding Bottlenecks",level:3},{id:"opensearch",text:"OpenSearch",level:1},{id:"exploring-logs-with-opensearch",text:"Exploring Logs with OpenSearch",level:2},{id:"enabling-opensearch-dashboards",text:"Enabling OpenSearch Dashboards",level:3},{id:"creating-a-data-view",text:"Creating a Data View",level:3},{id:"discovering-logs",text:"Discovering Logs",level:3},{id:"understanding-a-log-document",text:"Understanding a Log Document",level:3},{id:"filtering-logs-by-service",text:"Filtering Logs by Service",level:3},{id:"correlating-logs-with-traces",text:"Correlating Logs with Traces",level:3},{id:"exploring-errors",text:"Exploring Errors",level:3},{id:"key-observations-1",text:"Key Observations",level:3},{id:"grafana",text:"Grafana",level:1},{id:"exploring-grafana",text:"Exploring Grafana",level:2},{id:"data-sources",text:"Data Sources",level:3},{id:"dashboards",text:"Dashboards",level:3},{id:"wrapping-up",text:"Wrapping Up",level:2}],readingTime:16},related:[{slug:"monitoring/observability",route:"/blogs/monitoring/observability/",data:b},{slug:"monitoring/otel-on-eks",route:"/blogs/monitoring/otel-on-eks/",data:c},{slug:"monitoring/blackbox",route:"/blogs/monitoring/blackbox/",data:d}],allPosts:[{slug:"devsecops",route:"/blogs/devsecops/",data:{title:"End-to-End DevSecOps on EKS: Code, Containers, Kubernetes & Runtime Security",description:"Hands-on DevSecOps on EKS with Gitleaks, Semgrep, Trivy, Kyverno, Falco, OWASP ZAP and DefectDojo",date:"2026-08-15",cover:"https://i.ibb.co/RGKsN3Gz/devsecops.png",tags:["DevSecOps","GitHub Actions","Kubernetes","EKS","Kyverno","Trivy","OWASP ZAP","Gitleaks","Semgrep","Falco","DefectDojo","GitOps","Argo CD","EKS"]}},{slug:"ldap-sso",route:"/blogs/ldap-sso/",data:{date:"2026-07-28T10:45:10+05:30",draft:false,title:"Hands-On Lab: Build Single Sign-On (SSO) with LDAP, Keycloak, Okta, OIDC & Grafana",description:"A complete, from-scratch identity and access management project — a directory service, an open-source identity provider, a commercial identity provider, and a real application wired into both.",cover:"https://i.ibb.co/RkxkbvN5/sso.png",tags:["ldap","keycloak","okta","sso","IAM"],categories:["authentication and authorization"]}},{slug:"monitoring/otel-on-eks",route:"/blogs/monitoring/otel-on-eks/",data:c},{slug:"monitoring/opentelemetry",route:"/blogs/monitoring/opentelemetry/",data:a},{slug:"monitoring/observability",route:"/blogs/monitoring/observability/",data:b},{slug:"github-automation",route:"/blogs/github-automation/",data:{date:"2026-05-24T12:45:10+05:30",draft:false,title:"Turn Your GitHub Repository into a Self-Managing Workflow",description:"Learn to manage github repo with automation. Create PR/Issue templates, label PRs automatically and more.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BKfu-QFmcuj1zpFzHqWSYA.png",tags:["ci/cd","github","devops","repo automation","GitHub Actions"],series:["GitHub Actions"],series_order:2,categories:["Linux & Automation"]}},{slug:"aws/s3files",route:"/blogs/aws/s3files/",data:{date:"2026-04-22T12:30:10+05:30",draft:false,title:"Beyond Objects — Using Amazon S3 Files as a Native File System on EC2",description:"Learn how to mount S3 buckets natively on your EC2 instances using the new NFS v4.1+ interface.",cover:"https://i.ibb.co/cSqmmDcV/x.jpg",tags:["aws","s3","s3files","cloud","devops"],categories:["AWS"]}},{slug:"aws/cloudfront",route:"/blogs/aws/cloudfront/",data:{date:"2026-04-19T10:15:10+05:30",draft:false,title:"Cache Me If You Can - AWS CloudFront in Action 🌏",description:"CloudFront is a CDN service that speeds up web content delivery by caching it on servers around the world.",cover:"https://i.ibb.co/cSvqh9kd/x.jpg",tags:["aws","cloudfront","cdn","devops","cloud"],categories:["AWS"]}},{slug:"gitlab/gitlab-setup",route:"/blogs/gitlab/gitlab-setup/",data:{date:"2026-04-12T10:45:10+05:30",draft:false,title:"GitLab Setup Unlocked: Your 10-Minute Fast-Track Guide",description:"Launch Your Own GitLab Instance in Minutes",cover:"https://i.ibb.co/ZpbkFk97/x.jpg",tags:["gitlab","aws"],categories:["Git"],url:"/blogs/gitlab/gitlab-setup/",aliases:["/blogs/gitlab_setup/"]}},{slug:"k8s/statefulset",route:"/blogs/k8s/statefulset/",data:{date:"2026-04-07T10:30:10+05:30",draft:false,title:"Kubernetes StatefulSets Explained - When and Why to Use Them",description:"Part XV: Understanding Stable Pod Identity, Headless Services, and Persistent Storage in StatefulSets",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jhtaeySqKrPpqKg8p3WRqA.png",tags:["kubernetes","statefulset","pv","pvc"],categories:["Kubernetes & Containers"],url:"/blogs/k8s/statefulset/",aliases:["/blogs/statefulset/"]}},{slug:"kafka",route:"/blogs/kafka/",data:{date:"2026-03-18T19:26:10+05:30",draft:false,title:"Kafka - The Calm Brain in the Middle of Chaotic Microservices.",description:"Microservices are loud. Kafka makes them finally think together",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*FtTi1Yxel568GbnO7l0_0Q.png",tags:["kafka","microservices","mq"],categories:["Data Streaming","Message Queue"]}},{slug:"terraform/tf-module",route:"/blogs/terraform/tf-module/",data:{date:"2024-12-22T19:26:10+05:30",draft:false,title:"Terraform Modules - Simplify, Organise and Reuse Your IAC",description:"Chapter VI - Learn what is Module in Terraform/OpenTofu and how it helps us in reusing the same config.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*I_rBd_SMpsI8tXzk5mk3Zg.png",tags:["AWS","Terraform","Terraform Module","devops"],categories:["Cloud Infrastructure"]}},{slug:"nginx/nginx-mtls",route:"/blogs/nginx/nginx-mtls/",data:{date:"2024-12-09T19:26:10+05:30",draft:false,title:"Set Up mTLS in NGINX for Robust Web Security.",description:"Discover how mTLS strengthens security and learn to set it up with NGINX.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZhRTae65blWVYB0aXvHoJA.png",tags:["nginx","mtls","tls","web security","devops"],categories:["Linux & Automation"]}},{slug:"k8s/k8s-probes",route:"/blogs/k8s/k8s-probes/",data:{date:"2024-11-11T19:26:10+05:30",draft:false,title:"Kubernetes Health Checks with Probes",description:"Part XIV — Learn how Kubernetes Readiness, Liveness, and Startup probes keep your applications healthy and resilient",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*nbqglR7NZ7k96PykFRClQw.png",tags:["kubernetes","probes","k8s"],categories:["Kubernetes & Containers"]}},{slug:"linux/crowdsec",route:"/blogs/linux/crowdsec/",data:{date:"2024-09-30T19:26:10+05:30",draft:false,title:"Fortify Your Security with CrowdSec — A Quick Start Guide",description:"Install and configure CrowdSec for securing your infrastructure, a step by step guide for getting started.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iV7RJZ44oOMYMJSi0V517g.png",tags:["linux","firewall","security","devops","crowdsec","cloud security"],categories:["Linux & Automation"]}},{slug:"terraform/terraform-aws-vpc",route:"/blogs/terraform/terraform-aws-vpc/",data:{date:"2024-09-20T19:26:10+05:30",draft:false,title:"Automate AWS VPC Setup with Terraform",description:"Build Your Own AWS VPC - Simple Terraform Deployment Steps!",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*e779UvuArbonBmYoTt9tYQ.png",tags:["AWS","vpc","cloud","terraform"],categories:["Cloud Infrastructure"]}},{slug:"aws/aws-secretmanager",route:"/blogs/aws/aws-secretmanager/",data:{date:"2024-09-14T19:26:10+05:30",draft:false,title:"AWS Secrets Manager: A Secure Solution for Credential Management",description:"AWS Secrets Manager is a service designed to help us securely store and manage sensitive information such as passwords, API keys etc.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6eDcfbngtrF1eiKzstWkKA.png",tags:["aws","secret manager","cloud","app security"],categories:["AWS"]}},{slug:"aws/aws-waf",route:"/blogs/aws/aws-waf/",data:{date:"2024-08-20T19:26:10+05:30",draft:false,title:"AWS WAF with Load Balancer - Beginner’s Guide",description:"AWS Web Application Firewall is a security service that helps protect web apps from common web exploits and attacks",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JJlzcHjGcywNPhgKk6a6ig.png",tags:["aws","waf","web security","devops"],categories:["AWS"]}},{slug:"linux/shellscript4",route:"/blogs/linux/shellscript4/",data:{date:"2024-06-26T19:26:10+05:30",draft:false,title:"The Essential Role of Exit Codes in Bash Scripting",description:"Part 4: Using exit codes with if condition, manipulation by forcing exit codes.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AMpzINCW_0-_yto6ZmXu2Q.png",tags:["linux","shell scrpting","devops","bash"],series:["Shell Scricpting"],series_order:4,categories:["Linux & Automation"]}},{slug:"k8s/k8s-monitoring",route:"/blogs/k8s/k8s-monitoring/",data:{date:"2024-06-10T19:26:10+05:30",draft:false,title:"Monitoring Kubernetes Cluster with Prometheus and Grafana",description:"Part XIII — Helm setup to Monitor your k8s infra using Prometheus and Grafana.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3KFSsDiBc2tqs8HhPJmTJA.png",tags:["kubernetes","monitoring","devops","prometheus","grafana","o11y"],categories:["Kubernetes & Containers"]}},{slug:"linux/linux-tips2",route:"/blogs/linux/linux-tips2/",data:{date:"2024-05-28T19:26:10+05:30",draft:false,title:"Linux Terminal tips - Part 2",description:"Reverse cmd search, date and time in history and more.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*oJHs4IQgdGgHM-W4aiBuwQ.png",tags:["linux","teminal","tips"],series:["Linux Tips"],series_order:2,categories:["Linux & Automation"]}},{slug:"k8s/rbac",route:"/blogs/k8s/rbac/",data:{date:"2024-05-20T19:26:10+05:30",draft:false,title:"Kubernetes Security — Role Based Access Control (RBAC)",description:"Part XII — User Management in K8s with RBAC using Entra ID aka Azure Active Directory.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JPtYpwRPmc1fOMMLPgiCAQ.png",tags:["kubernetes","k8s","devops","rbac"],categories:["Kubernetes & Containers"]}},{slug:"terraform/terraform5",route:"/blogs/terraform/terraform5/",data:{date:"2024-05-12T10:26:10+05:30",draft:false,title:"Dynamic Data fetching — Data Sources in Terraform/OpenTofu",description:"Chapter V - Dynamically fetch data from remote using data source in Terraform/OpenTofu.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6h8tusJxak5v3v4ViKYdw.png",tags:["AWS","vpc","devops","terraform"],categories:["Cloud Infrastructure"]}},{slug:"linux/linux-tips1",route:"/blogs/linux/linux-tips1/",data:{date:"2024-05-05T19:26:10+05:30",draft:false,title:"Linux Terminal tips - Part 1",description:"Essential Linux Terminal Hacks for Efficiency",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LNuC4HwvmpE28qItI9T7RA.png",tags:["linux","terminal","tips"],series:["Linux Tips"],series_order:1,categories:["Linux & Automation"]}},{slug:"k8s/helm",route:"/blogs/k8s/helm/",data:{date:"2024-05-01T19:26:10+05:30",draft:false,title:"Helm — Your Compass in the Kubernetes Universe",description:"Part XI - Getting started with Helm, the package manager for Kubernetes for easy application management.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Nx1uEfCb2u81ST0RPMB8mg.jpeg",tags:["helm","kubernetes","k8s","devops"],categories:["Kubernetes & Containers"]}},{slug:"aws/aws-alb",route:"/blogs/aws/aws-alb/",data:{date:"2024-04-27T19:26:10+05:30",draft:false,title:"How AWS ALB Keeps Your Apps in Line!",description:"See how AWS ALB effortlessly manages traffic, and supports high availability to keep your app running smoothly.",cover:"https://i.ibb.co/GvPkHTRn/x.jpg",tags:["aws","alb","cloud","load balanncer"],categories:["AWS"]}},{slug:"aws/aws-lambda",route:"/blogs/aws/aws-lambda/",data:{date:"2024-04-27T19:26:10+05:30",draft:false,title:"AWS Lambda - The Serverless Function",description:"Schedule auto turn on/off EC2 instances with Lambda Function based on a cron schedule",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bTINZh_GvTsK8OrClazywQ.jpeg",tags:["aws","lambda","cloud","cost optimaization","AWS EC2"],categories:["AWS"]}},{slug:"k8s/nginx-ingress-tls",route:"/blogs/k8s/nginx-ingress-tls/",data:{date:"2024-04-07T19:26:10+05:30",draft:false,title:"Ingress in K8s - Name based Routing with TLS",description:"Part IX - Using Domain name with TLS Cert for Nginx Ingress Controller.",cover:"https://miro.medium.com/v2/resize:fit:1356/format:webp/1*yecPvYFABn0s-xmGCJLLbA.png",tags:["nginx","tls","kubernetes","ingress","devops"],categories:["Kubernetes & Containers"]}},{slug:"k8s/nginx-ingress",route:"/blogs/k8s/nginx-ingress/",data:{date:"2024-04-01T19:26:10+05:30",draft:false,title:"Getting Started with Ingress In Kubernetes",description:"Nginx Ingress setup in kubernetes",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HdEt8m8cjh5ANwSkYL6P4A.png",tags:["ingress","nginx","kubernetes"],categories:["Kubernetes & Containers"]}},{slug:"linux/shellscrpt3",route:"/blogs/linux/shellscrpt3/",data:{date:"2024-03-22T19:26:10+05:30",draft:false,title:"If Statement - Conditional in Bash Scripting",description:"Part 3: Usage of if, else and elif statements in shell scripting",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aYAEBPL0-U8a-fXcPpr9Ug.png",tags:["linux","shell scrpting","devops","bash"],series:["Shell Scricpting"],series_order:3,categories:["Linux & Automation"]}},{slug:"linux/shellscript2",route:"/blogs/linux/shellscript2/",data:{date:"2024-03-10T19:26:10+05:30",draft:false,title:"Variables and Math Functions in Bash",description:"Part 2: Usage of variables to set changeable data, and math functions for arithmetic operations",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XufA9FFra4lI34SOm3UDtA.png",tags:["linux","shell scrpting","devops","bash"],series:["Shell Scricpting"],series_order:2,categories:["Linux & Automation"]}},{slug:"linux/shellscript1",route:"/blogs/linux/shellscript1/",data:{date:"2024-02-29T19:26:10+05:30",draft:false,title:"Introduction to Shell Scripting for Beginners",description:"Part 1: Introduction to Bash, shell and scripting for task automation",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HVqm9vCg6-5t6qGpu1g86A.png",tags:["linux","shell scrpting","devops","bash"],series:["Shell Scricpting"],series_order:1,categories:["Linux & Automation"]}},{slug:"k8s/argocd",route:"/blogs/k8s/argocd/",data:{date:"2024-02-10T19:26:10+05:30",draft:false,title:"ArgoCD GitOps for Kubernetes - From Code to Cluster",description:"Part VII - Continuous deployment of containerized applications into Kubernetes.",cover:"https://i.ibb.co/tT8ZWJyH/x.jpg",tags:["argo cd","kubernetes","gitops","devops","ci/cd"],categories:["Kubernetes & Containers"]}},{slug:"k8s/calico-cni",route:"/blogs/k8s/calico-cni/",data:{date:"2024-01-22T19:26:10+05:30",draft:false,title:"Calico and Kubernetes: A Perfect Pair for Robust Network Policy",description:"Part VI — In K8s, a network policy defines how pods are allowed to communicate with each other.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UEgbzVzkRaUUnRhYEKaCqw.png",tags:["cni","kubernetes","k8s","networking","calico"],categories:["Kubernetes & Containers"]}},{slug:"nginx/letsencrypt-ssl",route:"/blogs/nginx/letsencrypt-ssl/",data:{date:"2023-11-06T19:26:10+05:30",draft:false,title:"Let’s Encrypt SSL Configuration using Certbot",description:"Setup SSL certificate for free. Secure your application with Let’s Encrypt - DIY Guide",cover:"https://miro.medium.com/v2/resize:fit:1280/format:webp/1*rYd5jblnBNdOUHyFiQFKXw.png",tags:["nginx","tls","web security","devops"],categories:["Linux & Automation"]}},{slug:"github-actions",route:"/blogs/github-actions/",data:{date:"2023-10-21T19:26:10+05:30",draft:false,title:"A Beginner’s Introduction to GitHub Actions",description:"GitHub Actions is a modern CI/CD alternative to Jenkins.",cover:"https://miro.medium.com/v2/resize:fit:1358/format:webp/1*_7mJjD1resPodxT7agk16w.png",tags:["ci/cd","github","devops","pipeline","GitHub Actions"],series:["GitHub Actions"],series_order:1,categories:["Linux & Automation"]}},{slug:"monitoring/blackbox",route:"/blogs/monitoring/blackbox/",data:d},{slug:"monitoring/alertmanager",route:"/blogs/monitoring/alertmanager/",data:{date:"2023-09-08T19:30:10+05:30",draft:false,title:"How to Send Email Alerts using Prometheus AlertManager",description:"Get mail alerts from Prometheus about server resource usage.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y--eGmBDkRNT1NAWiv-Wtw.jpeg",tags:["monitoring","o11y","devops","prometheus","grafana"],series:["Prometheus"],series_order:2,categories:["Observability & Monitoring"]}},{slug:"monitoring/prometheus",route:"/blogs/monitoring/prometheus/",data:{date:"2023-08-26T19:30:10+05:30",draft:false,title:"Setup Monitoring with Prometheus and Grafana.",description:"Monitoring Linux Server with Prometheus Node exporter. Setup using docker.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*32z2k-B-WPcunJTX3iAF5w.png",tags:["monitoring","o11y","devops","prometheus","grafana"],series:["Prometheus"],series_order:1,categories:["Observability & Monitoring"]}},{slug:"terraform/terraform2",route:"/blogs/terraform/terraform2/",data:{date:"2023-07-09T10:26:10+05:30",draft:false,title:"Terraform on AWS — Outputs, Indexing and Variables",description:"Chapter II —Generating Output, using Variables and Refactoring the Script into different files.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ADb5oFBqgBA4h-SDyW2D7Q.jpeg",tags:["AWS","vpc","devops","terraform"],categories:["Cloud Infrastructure"]}},{slug:"terraform/terraform-setup",route:"/blogs/terraform/terraform-setup/",data:{date:"2023-07-02T10:26:10+05:30",draft:false,title:"Infrastructure as Code (IAC) - Automation using Terraform 101",description:"Chapter I — Getting Started, setup, terminologies and basic examples..",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fCBP8ShpFHETAU7JEenXLQ.png",tags:["AWS","Terraform","DevOps"],categories:["Cloud Infrastructure"]}},{slug:"k8s/deployments",route:"/blogs/k8s/deployments/",data:{date:"2023-06-24T19:26:10+05:30",draft:false,title:"Delving into the World of Deployments in Kubernetes",description:"Part IV— Deployment using YAML, Strategies and Rollback.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6QedAYWDv2AtCstjHta8Dg.png",tags:["kubernetes","k8s","devops"],categories:["Kubernetes & Containers"]}},{slug:"k8s/k8s-intro",route:"/blogs/k8s/k8s-intro/",data:{date:"2023-06-22T19:26:10+05:30",draft:false,title:"Container Orchestration: Kubernetes 101",description:"Part I — Intro, Components and Architecture",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*NoGlXoElqYHzO15bqlEErQ.png",tags:["kubernetes","k8s","devops"],categories:["Kubernetes & Containers"]}},{slug:"ansible/ansible3",route:"/blogs/ansible/ansible3/",data:{date:"2023-06-18T19:26:10+05:30",draft:false,title:"Ansible — Error Handling, Roles and Valult",description:"Part 3: Learn about Notify Handler, Error handling, Vault and Roles",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-anirzVIreNx1SOSAJl88w.jpeg",tags:["ansible","devops"],series:["Ansible Fundamentals"],series_order:3,categories:["Asnible"]}},{slug:"ansible/ansible2",route:"/blogs/ansible/ansible2/",data:{date:"2023-05-29T19:26:10+05:30",draft:false,title:"Ansible - Groups, Vars and Loop",description:"Chapter 2 - Groups, Variables, Conditionals and Loops in Ansible",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bT5aEzzjUduWEy4rTVniFQ.jpeg",tags:["ansible","devops"],series:["Ansible Fundamentals"],series_order:2,categories:["Asnible"]}},{slug:"ansible/ansible1",route:"/blogs/ansible/ansible1/",data:{date:"2023-05-21T19:26:10+05:30",draft:false,title:"Getting started with Ansible - Configuration Managament",description:"Chapter 1 - Installation, basics and playbook",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a1Bd73PrCYh4g2P7IU1vOA.jpeg",tags:["ansible","devops"],series:["Ansible Fundamentals"],series_order:1,categories:["Asnible"]}},{slug:"sonarqube-jenkins",route:"/blogs/sonarqube-jenkins/",data:{date:"2023-05-01T19:26:10+05:30",draft:false,title:"SonarQube Setup with Jenkins",description:"Code Quality Analysis with SonrQube on Jenkins",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XIBVAu-3lA0o7rivQ4Cvug.jpeg",tags:["Jenkins","SonarQube","DevOps","ci/cd"],categories:["CI/CD Automation"]}},{slug:"nginx/nginx-lb",route:"/blogs/nginx/nginx-lb/",data:{date:"2023-04-22T19:26:10+05:30",draft:false,title:"Load Balancing Magic — Unleashing the Potential of NGINX.",description:"Load Balance Multiple servers with Nginx. Run multiple servers (containers) using Docker Compose.",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KtQHN4HBPNple7bwXDUCsg.png",tags:["nginx","loadbalancer","devops"],categories:["Linux & Automation"]}},{slug:"docker/docker-operations",route:"/blogs/docker/docker-operations/",data:{date:"2023-04-16T19:26:10+05:30",draft:false,title:"Docker - Build and Push operations.",description:"Docker Chapter 2 — How to Build and Push your first image.",cover:"https://miro.medium.com/v2/resize:fit:1016/format:webp/1*ktQe3mbLm09C8kyetxI-aA.png",tags:["docker","devops"],categories:["Kubernetes & Containers"]}},{slug:"docker/docker-setup",route:"/blogs/docker/docker-setup/",data:{date:"2023-04-16T19:26:10+05:30",draft:false,title:"Docker: Containerization for beginners.",description:"Docker Chapter 1 — How to Install Docker on Linux and Windows.",cover:"https://miro.medium.com/v2/resize:fit:1202/format:webp/1*Ms3dGlKGPJhQPkPe9c-73w.jpeg",tags:["docker","devops"],categories:["Kubernetes & Containers"]}},{slug:"apache/apache-config",route:"/blogs/apache/apache-config/",data:{date:"2023-03-27T19:26:10+05:30",draft:false,title:"Apache HTTP Server Configurations",description:"Apache HTTP Server Setup: A Guide to Key Configurations",cover:"https://miro.medium.com/v2/resize:fit:900/format:webp/1*lP93d4wUMT7XNug-XyzuQQ.png",tags:["apache","http server","devops"],series:["Web Servers"],series_order:2,categories:["Webserver"]}},{slug:"apache/apache-setup",route:"/blogs/apache/apache-setup/",data:{date:"2023-01-25T19:26:10+05:30",draft:false,title:"How to install Apache HTTP web server on Linux.",description:"Learn How to setup Apache HTTP webserver",cover:"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*B-C9bRZB0-23FLkyjZqJQg.png",tags:["apache","http server","devops"],series:["Web Servers"],series_order:2,categories:["Webserver"]}}]},uses:{params:["slug"]}}}({},{},{},{}))],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

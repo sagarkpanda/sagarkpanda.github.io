@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171c1a" />
+    <script>try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+    <script async defer data-website-id="d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50" src="https://data.sagarpanda.com/data.js" data-host-url="https://data.sagarpanda.com" data-domains="sagarpanda.com"></script>
+    <link href="../../_app/immutable/entry/start.CX_m6At0.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DlDzRnip.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Didy5nkT.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/8sR6O1Q_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C8Vc_BRP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.CTRYTfI1.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dp1pzeXC.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Bzak7iHL.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B5ImHjwb.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BRunHMFR.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/0Jni705S.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BT8IETzV.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DM8x1Z5c.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdPrqwks.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Q_DXER49.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B8E94oKp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CAQZqaFW.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdE4l8N_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DoP1yD-K.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/12.BCNEYa3h.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D9lmUG1I.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C365Jnfj.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B_KoV3r4.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DyyQqIqB.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/images/favicon.svg"/> <meta property="og:site_name" content="Sagar Panda | DevOps &amp; Cloud Engineer"/><!----><!--1lrslch--><link rel="canonical" href="https://sagarpanda.com/projects/sso-proj/"/><meta property="og:type" content="article"/><meta property="og:image" content="https://sagarpanda.com/images/og-image.png"/><meta name="description" content="A production-style identity and access management lab demonstrating LDAP, OpenID Connect, Keycloak, Okta, and Grafana."/><!----><title>Enterprise SSO Identity Stack | Projects</title>
+		<link href="../../_app/immutable/assets/0.Bo0C80tV.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/vendor-highlight.BEHUn5zE.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a href="#main-content" class="skip-link">Skip to main content</a> <header class="site-header"><div class="shell nav"><a href="/" class="brand"><span class="prompt">sagar@cloud</span><span class="brand-path">:~$</span></a> <nav class="mobile-nav" aria-label="Main navigation"><!--[--><a href="/"><span class="nav-label-desktop">Home</span><span class="nav-label-mobile">cd /</span></a><a href="/about/"><span class="nav-label-desktop">About</span><span class="nav-label-mobile">cd /about</span></a><a href="/#projects"><span class="nav-label-desktop">Projects</span><span class="nav-label-mobile">cd /projects</span></a><a href="/#experience"><span class="nav-label-desktop">Experience</span><span class="nav-label-mobile">cd /experience</span></a><a href="/contact/"><span class="nav-label-desktop">Contact</span><span class="nav-label-mobile">cd /contact</span></a><a href="/blogs/"><span class="nav-label-desktop">Blogs</span><span class="nav-label-mobile">cd /blogs</span></a><!--]--></nav> <div class="nav-actions"><button class="icon-button search-button" type="button" aria-label="Search" title="Search (Ctrl+K)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-search"><!--[--><!----><circle cx="11" cy="11" r="8"><!----></circle><!----><!----><path d="m21 21-4.3-4.3"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!----></button> <!--[-1--><!--]--><!----> <a href="https://github.com/sagarkpanda" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub" title="GitHub"><!--[1--><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" class="brand-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg><!--]--><!----></a> <button type="button" class="icon-button" aria-label="Toggle theme"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon"><!--[--><!----><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!--]--></button> <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span aria-hidden="true"><i></i><i></i><i></i></span></button></div></div></header><!----> <div id="main-content"><!--[--><main class="shell"><article class="section"><a href="/projects/">← all projects</a><h1>Enterprise SSO Identity Stack</h1><!----><div class="markdown-content"><!----><h2 id="enterprise-sso-identity-stack">Enterprise SSO Identity Stack</h2>
+<h3 id="production-style-identity-and-access-management-using-ldap-openid-connect-keycloak-and-okta">Production-style Identity and Access Management using LDAP, OpenID Connect, Keycloak and Okta</h3>
+<p>This project demonstrates how modern applications implement <strong>Single Sign-On (SSO)</strong> using open standards rather than vendor-specific integrations.</p>
+<p>Beginning with a centralized LDAP directory, the lab federates identities into <strong>Keycloak</strong>, configures <strong>Okta</strong> as a second independent Identity Provider, and secures <strong>Grafana</strong> using <strong>OpenID Connect (OIDC)</strong> with group-based authorization.</p>
+<p>Rather than focusing on a single product, the project illustrates how directory services, identity providers, authentication protocols, and applications work together to form a complete Identity and Access Management (IAM) architecture.</p>
+<p>The complete implementation is documented in the accompanying blog post.</p>
+<h2 id="architecture">Architecture</h2>
+<pre><code class="language-mermaid">flowchart LR
+
+    U([User])
+
+    C[Caddy]
+
+    G[Grafana]
+    PLA[phpLDAPadmin]
+
+    K[Keycloak]
+    O[Okta]
+
+    L[(OpenLDAP)]
+
+    U --&gt;|HTTPS| C
+
+    C --&gt;|HTTPS| G
+    C --&gt;|HTTPS| PLA
+
+    G --&gt;|OIDC| K
+    G --&gt;|OIDC| O
+
+    K --&gt;|LDAP Federation| L
+
+    PLA --&gt;|Manage Users &amp; Groups| L
+</code></pre>
+<p>The project demonstrates two independent authentication paths for the same application:</p>
+<ul>
+<li><strong>OpenLDAP → Keycloak → Grafana</strong></li>
+<li><strong>Okta Universal Directory → Grafana</strong></li>
+</ul>
+<p>Both providers authenticate users via <strong>OpenID Connect (OIDC)</strong>, allowing Grafana to rely on standards rather than vendor-specific integrations.</p>
+<hr>
+<h2 id="components">Components</h2>
+<h3 id="directory-layer">Directory Layer</h3>
+<p><strong>OpenLDAP</strong> serves as the centralized directory storing users, groups, and directory objects.</p>
+<p>Directory administration is performed through <strong>phpLDAPadmin</strong>, while Keycloak federates identities directly from LDAP without duplicating user credentials.</p>
+<h3 id="identity-providers">Identity Providers</h3>
+<p>The project demonstrates two approaches to Identity and Access Management.</p>
+<h4 id="keycloak">Keycloak</h4>
+<ul>
+<li>LDAP Federation</li>
+<li>User Synchronization</li>
+<li>OpenID Connect (OIDC)</li>
+<li>Group Mapping</li>
+<li>Token Claims</li>
+</ul>
+<h4 id="okta">Okta</h4>
+<ul>
+<li>Universal Directory</li>
+<li>Users &amp; Groups</li>
+<li>OpenID Connect (OIDC)</li>
+<li>Group Claims</li>
+<li>Enterprise Single Sign-On</li>
+</ul>
+<p>Grafana is configured to trust <strong>both Identity Providers</strong>, demonstrating how modern applications authenticate users through standard protocols regardless of where identities are managed.</p>
+<hr>
+<h2 id="authentication-flows">Authentication Flows</h2>
+<h3 id="openldap-keycloak-grafana">OpenLDAP → Keycloak → Grafana</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+
+    participant User
+    participant Grafana
+    participant Keycloak
+    participant LDAP
+
+    User-&gt;&gt;Grafana: Access Application
+    Grafana-&gt;&gt;Keycloak: Redirect (OIDC Login)
+    Keycloak-&gt;&gt;LDAP: Authenticate User
+    LDAP--&gt;&gt;Keycloak: User &amp; Groups
+    Keycloak--&gt;&gt;Grafana: ID Token + Group Claims
+    Grafana--&gt;&gt;User: Authenticated Session
+</code></pre>
+<h3 id="okta-grafana">Okta → Grafana</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+
+    participant User
+    participant Grafana
+    participant Okta
+
+    User-&gt;&gt;Grafana: Access Application
+    Grafana-&gt;&gt;Okta: Redirect (OIDC Login)
+    Okta--&gt;&gt;Grafana: ID Token + Group Claims
+    Grafana--&gt;&gt;User: Authenticated Session
+</code></pre>
+<p>The authentication mechanism remains identical from Grafana&#39;s perspective. The only difference is where identities are validated—<strong>OpenLDAP (through Keycloak)</strong> or <strong>Okta Universal Directory</strong>.</p>
+<hr>
+<h2 id="technology-stack">Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>OpenLDAP</strong></td>
+<td>Central directory service</td>
+</tr>
+<tr>
+<td><strong>phpLDAPadmin</strong></td>
+<td>LDAP administration</td>
+</tr>
+<tr>
+<td><strong>Keycloak</strong></td>
+<td>Self-hosted Identity Provider</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Keycloak database</td>
+</tr>
+<tr>
+<td><strong>Okta</strong></td>
+<td>Cloud Identity Provider</td>
+</tr>
+<tr>
+<td><strong>Grafana</strong></td>
+<td>OIDC-enabled application</td>
+</tr>
+<tr>
+<td><strong>Caddy</strong></td>
+<td>Reverse proxy with automatic HTTPS</td>
+</tr>
+<tr>
+<td><strong>Docker Compose</strong></td>
+<td>Service deployment</td>
+</tr>
+<tr>
+<td><strong>AWS EC2</strong></td>
+<td>Infrastructure hosting</td>
+</tr>
+</tbody></table>
+<h2 id="what-the-project-demonstrates">What the Project Demonstrates</h2>
+<ul>
+<li>Building an LDAP directory from scratch</li>
+<li>Managing users and groups</li>
+<li>LDAP federation into Keycloak</li>
+<li>OpenID Connect (OIDC)</li>
+<li>Single Sign-On (SSO)</li>
+<li>Integrating Grafana with multiple Identity Providers</li>
+<li>Group-based authorization using token claims</li>
+<li>Automatic HTTPS with Caddy</li>
+<li>Multi-server deployment across AWS EC2 instances</li>
+<li>Production-style IAM architecture using open standards</li>
+</ul>
+<!----></div> <!--[-1--><!--]--><!----></article></main><!--]--><!----></div> <!--[-1--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_82qrg4 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CX_m6At0.js"),
+						import("../../_app/immutable/entry/app.CTRYTfI1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 12],
+							data: [null,{type:"data",data:{project:{slug:"sso-proj",route:"/projects/sso-proj/",sourcePath:"/content/projects/sso-proj.md",content:"\n## Enterprise SSO Identity Stack\n\n### Production-style Identity and Access Management using LDAP, OpenID Connect, Keycloak and Okta\n\nThis project demonstrates how modern applications implement **Single Sign-On (SSO)** using open standards rather than vendor-specific integrations.\n\nBeginning with a centralized LDAP directory, the lab federates identities into **Keycloak**, configures **Okta** as a second independent Identity Provider, and secures **Grafana** using **OpenID Connect (OIDC)** with group-based authorization.\n\nRather than focusing on a single product, the project illustrates how directory services, identity providers, authentication protocols, and applications work together to form a complete Identity and Access Management (IAM) architecture.\n\nThe complete implementation is documented in the accompanying blog post.\n\n## Architecture\n\n```mermaid\nflowchart LR\n\n    U([User])\n\n    C[Caddy]\n\n    G[Grafana]\n    PLA[phpLDAPadmin]\n\n    K[Keycloak]\n    O[Okta]\n\n    L[(OpenLDAP)]\n\n    U -->|HTTPS| C\n\n    C -->|HTTPS| G\n    C -->|HTTPS| PLA\n\n    G -->|OIDC| K\n    G -->|OIDC| O\n\n    K -->|LDAP Federation| L\n\n    PLA -->|Manage Users & Groups| L\n  ```\n\nThe project demonstrates two independent authentication paths for the same application:\n\n- **OpenLDAP → Keycloak → Grafana**\n- **Okta Universal Directory → Grafana**\n\nBoth providers authenticate users via **OpenID Connect (OIDC)**, allowing Grafana to rely on standards rather than vendor-specific integrations.\n\n---\n\n## Components\n\n### Directory Layer\n\n**OpenLDAP** serves as the centralized directory storing users, groups, and directory objects.\n\nDirectory administration is performed through **phpLDAPadmin**, while Keycloak federates identities directly from LDAP without duplicating user credentials.\n\n### Identity Providers\n\nThe project demonstrates two approaches to Identity and Access Management.\n\n#### Keycloak\n\n- LDAP Federation\n- User Synchronization\n- OpenID Connect (OIDC)\n- Group Mapping\n- Token Claims\n\n#### Okta\n\n- Universal Directory\n- Users & Groups\n- OpenID Connect (OIDC)\n- Group Claims\n- Enterprise Single Sign-On\n\nGrafana is configured to trust **both Identity Providers**, demonstrating how modern applications authenticate users through standard protocols regardless of where identities are managed.\n\n---\n\n## Authentication Flows\n\n### OpenLDAP → Keycloak → Grafana\n\n```mermaid\nsequenceDiagram\n\n    participant User\n    participant Grafana\n    participant Keycloak\n    participant LDAP\n\n    User->>Grafana: Access Application\n    Grafana->>Keycloak: Redirect (OIDC Login)\n    Keycloak->>LDAP: Authenticate User\n    LDAP-->>Keycloak: User & Groups\n    Keycloak-->>Grafana: ID Token + Group Claims\n    Grafana-->>User: Authenticated Session\n```\n\n### Okta → Grafana\n\n```mermaid\nsequenceDiagram\n\n    participant User\n    participant Grafana\n    participant Okta\n\n    User->>Grafana: Access Application\n    Grafana->>Okta: Redirect (OIDC Login)\n    Okta-->>Grafana: ID Token + Group Claims\n    Grafana-->>User: Authenticated Session\n```\n\nThe authentication mechanism remains identical from Grafana's perspective. The only difference is where identities are validated—**OpenLDAP (through Keycloak)** or **Okta Universal Directory**.\n\n---\n\n## Technology Stack\n\n| Component | Purpose |\n|-----------|---------|\n| **OpenLDAP** | Central directory service |\n| **phpLDAPadmin** | LDAP administration |\n| **Keycloak** | Self-hosted Identity Provider |\n| **PostgreSQL** | Keycloak database |\n| **Okta** | Cloud Identity Provider |\n| **Grafana** | OIDC-enabled application |\n| **Caddy** | Reverse proxy with automatic HTTPS |\n| **Docker Compose** | Service deployment |\n| **AWS EC2** | Infrastructure hosting |\n\n\n## What the Project Demonstrates\n\n- Building an LDAP directory from scratch\n- Managing users and groups\n- LDAP federation into Keycloak\n- OpenID Connect (OIDC)\n- Single Sign-On (SSO)\n- Integrating Grafana with multiple Identity Providers\n- Group-based authorization using token claims\n- Automatic HTTPS with Caddy\n- Multi-server deployment across AWS EC2 instances\n- Production-style IAM architecture using open standards",html:"\u003Ch2 id=\"enterprise-sso-identity-stack\">Enterprise SSO Identity Stack\u003C/h2>\n\u003Ch3 id=\"production-style-identity-and-access-management-using-ldap-openid-connect-keycloak-and-okta\">Production-style Identity and Access Management using LDAP, OpenID Connect, Keycloak and Okta\u003C/h3>\n\u003Cp>This project demonstrates how modern applications implement \u003Cstrong>Single Sign-On (SSO)\u003C/strong> using open standards rather than vendor-specific integrations.\u003C/p>\n\u003Cp>Beginning with a centralized LDAP directory, the lab federates identities into \u003Cstrong>Keycloak\u003C/strong>, configures \u003Cstrong>Okta\u003C/strong> as a second independent Identity Provider, and secures \u003Cstrong>Grafana\u003C/strong> using \u003Cstrong>OpenID Connect (OIDC)\u003C/strong> with group-based authorization.\u003C/p>\n\u003Cp>Rather than focusing on a single product, the project illustrates how directory services, identity providers, authentication protocols, and applications work together to form a complete Identity and Access Management (IAM) architecture.\u003C/p>\n\u003Cp>The complete implementation is documented in the accompanying blog post.\u003C/p>\n\u003Ch2 id=\"architecture\">Architecture\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">flowchart LR\n\n    U([User])\n\n    C[Caddy]\n\n    G[Grafana]\n    PLA[phpLDAPadmin]\n\n    K[Keycloak]\n    O[Okta]\n\n    L[(OpenLDAP)]\n\n    U --&gt;|HTTPS| C\n\n    C --&gt;|HTTPS| G\n    C --&gt;|HTTPS| PLA\n\n    G --&gt;|OIDC| K\n    G --&gt;|OIDC| O\n\n    K --&gt;|LDAP Federation| L\n\n    PLA --&gt;|Manage Users &amp; Groups| L\n\u003C/code>\u003C/pre>\n\u003Cp>The project demonstrates two independent authentication paths for the same application:\u003C/p>\n\u003Cul>\n\u003Cli>\u003Cstrong>OpenLDAP → Keycloak → Grafana\u003C/strong>\u003C/li>\n\u003Cli>\u003Cstrong>Okta Universal Directory → Grafana\u003C/strong>\u003C/li>\n\u003C/ul>\n\u003Cp>Both providers authenticate users via \u003Cstrong>OpenID Connect (OIDC)\u003C/strong>, allowing Grafana to rely on standards rather than vendor-specific integrations.\u003C/p>\n\u003Chr>\n\u003Ch2 id=\"components\">Components\u003C/h2>\n\u003Ch3 id=\"directory-layer\">Directory Layer\u003C/h3>\n\u003Cp>\u003Cstrong>OpenLDAP\u003C/strong> serves as the centralized directory storing users, groups, and directory objects.\u003C/p>\n\u003Cp>Directory administration is performed through \u003Cstrong>phpLDAPadmin\u003C/strong>, while Keycloak federates identities directly from LDAP without duplicating user credentials.\u003C/p>\n\u003Ch3 id=\"identity-providers\">Identity Providers\u003C/h3>\n\u003Cp>The project demonstrates two approaches to Identity and Access Management.\u003C/p>\n\u003Ch4 id=\"keycloak\">Keycloak\u003C/h4>\n\u003Cul>\n\u003Cli>LDAP Federation\u003C/li>\n\u003Cli>User Synchronization\u003C/li>\n\u003Cli>OpenID Connect (OIDC)\u003C/li>\n\u003Cli>Group Mapping\u003C/li>\n\u003Cli>Token Claims\u003C/li>\n\u003C/ul>\n\u003Ch4 id=\"okta\">Okta\u003C/h4>\n\u003Cul>\n\u003Cli>Universal Directory\u003C/li>\n\u003Cli>Users &amp; Groups\u003C/li>\n\u003Cli>OpenID Connect (OIDC)\u003C/li>\n\u003Cli>Group Claims\u003C/li>\n\u003Cli>Enterprise Single Sign-On\u003C/li>\n\u003C/ul>\n\u003Cp>Grafana is configured to trust \u003Cstrong>both Identity Providers\u003C/strong>, demonstrating how modern applications authenticate users through standard protocols regardless of where identities are managed.\u003C/p>\n\u003Chr>\n\u003Ch2 id=\"authentication-flows\">Authentication Flows\u003C/h2>\n\u003Ch3 id=\"openldap-keycloak-grafana\">OpenLDAP → Keycloak → Grafana\u003C/h3>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">sequenceDiagram\n\n    participant User\n    participant Grafana\n    participant Keycloak\n    participant LDAP\n\n    User-&gt;&gt;Grafana: Access Application\n    Grafana-&gt;&gt;Keycloak: Redirect (OIDC Login)\n    Keycloak-&gt;&gt;LDAP: Authenticate User\n    LDAP--&gt;&gt;Keycloak: User &amp; Groups\n    Keycloak--&gt;&gt;Grafana: ID Token + Group Claims\n    Grafana--&gt;&gt;User: Authenticated Session\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"okta-grafana\">Okta → Grafana\u003C/h3>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">sequenceDiagram\n\n    participant User\n    participant Grafana\n    participant Okta\n\n    User-&gt;&gt;Grafana: Access Application\n    Grafana-&gt;&gt;Okta: Redirect (OIDC Login)\n    Okta--&gt;&gt;Grafana: ID Token + Group Claims\n    Grafana--&gt;&gt;User: Authenticated Session\n\u003C/code>\u003C/pre>\n\u003Cp>The authentication mechanism remains identical from Grafana&#39;s perspective. The only difference is where identities are validated—\u003Cstrong>OpenLDAP (through Keycloak)\u003C/strong> or \u003Cstrong>Okta Universal Directory\u003C/strong>.\u003C/p>\n\u003Chr>\n\u003Ch2 id=\"technology-stack\">Technology Stack\u003C/h2>\n\u003Ctable>\n\u003Cthead>\n\u003Ctr>\n\u003Cth>Component\u003C/th>\n\u003Cth>Purpose\u003C/th>\n\u003C/tr>\n\u003C/thead>\n\u003Ctbody>\u003Ctr>\n\u003Ctd>\u003Cstrong>OpenLDAP\u003C/strong>\u003C/td>\n\u003Ctd>Central directory service\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>phpLDAPadmin\u003C/strong>\u003C/td>\n\u003Ctd>LDAP administration\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Keycloak\u003C/strong>\u003C/td>\n\u003Ctd>Self-hosted Identity Provider\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>PostgreSQL\u003C/strong>\u003C/td>\n\u003Ctd>Keycloak database\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Okta\u003C/strong>\u003C/td>\n\u003Ctd>Cloud Identity Provider\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Grafana\u003C/strong>\u003C/td>\n\u003Ctd>OIDC-enabled application\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Caddy\u003C/strong>\u003C/td>\n\u003Ctd>Reverse proxy with automatic HTTPS\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Docker Compose\u003C/strong>\u003C/td>\n\u003Ctd>Service deployment\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>AWS EC2\u003C/strong>\u003C/td>\n\u003Ctd>Infrastructure hosting\u003C/td>\n\u003C/tr>\n\u003C/tbody>\u003C/table>\n\u003Ch2 id=\"what-the-project-demonstrates\">What the Project Demonstrates\u003C/h2>\n\u003Cul>\n\u003Cli>Building an LDAP directory from scratch\u003C/li>\n\u003Cli>Managing users and groups\u003C/li>\n\u003Cli>LDAP federation into Keycloak\u003C/li>\n\u003Cli>OpenID Connect (OIDC)\u003C/li>\n\u003Cli>Single Sign-On (SSO)\u003C/li>\n\u003Cli>Integrating Grafana with multiple Identity Providers\u003C/li>\n\u003Cli>Group-based authorization using token claims\u003C/li>\n\u003Cli>Automatic HTTPS with Caddy\u003C/li>\n\u003Cli>Multi-server deployment across AWS EC2 instances\u003C/li>\n\u003Cli>Production-style IAM architecture using open standards\u003C/li>\n\u003C/ul>\n",data:{title:"Enterprise SSO Identity Stack",date:"2026-07-28",summary:"A production-style identity and access management lab demonstrating LDAP, OpenID Connect, Keycloak, Okta, and Grafana.",status:"completed",tags:["LDAP","Keycloak","Okta","OpenID Connect","SSO"],link:"https://github.com/sagarkpanda/sso-lab",blogLink:"ldap-sso",draft:false},headings:[{id:"enterprise-sso-identity-stack",text:"Enterprise SSO Identity Stack",level:2},{id:"production-style-identity-and-access-management-using-ldap-openid-connect-keycloak-and-okta",text:"Production-style Identity and Access Management using LDAP, OpenID Connect, Keycloak and Okta",level:3},{id:"architecture",text:"Architecture",level:2},{id:"components",text:"Components",level:2},{id:"directory-layer",text:"Directory Layer",level:3},{id:"identity-providers",text:"Identity Providers",level:3},{id:"keycloak",text:"Keycloak",level:4},{id:"okta",text:"Okta",level:4},{id:"authentication-flows",text:"Authentication Flows",level:2},{id:"openldap-keycloak-grafana",text:"OpenLDAP → Keycloak → Grafana",level:3},{id:"okta-grafana",text:"Okta → Grafana",level:3},{id:"technology-stack",text:"Technology Stack",level:2},{id:"what-the-project-demonstrates",text:"What the Project Demonstrates",level:2}],readingTime:3}},uses:{params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

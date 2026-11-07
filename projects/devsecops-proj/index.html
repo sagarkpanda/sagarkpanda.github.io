@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171c1a" />
+    <script>try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+    <script async defer data-website-id="d54a4c4b-cf7c-4d93-a5dd-2bba2c2edb50" src="https://data.sagarpanda.com/data.js" data-host-url="https://data.sagarpanda.com" data-domains="sagarpanda.com"></script>
+    <link href="../../_app/immutable/entry/start.CX_m6At0.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DlDzRnip.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Didy5nkT.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/8sR6O1Q_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/-UyI9lYi.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C8Vc_BRP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B0XwC4Ot.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.CTRYTfI1.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dp1pzeXC.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Bzak7iHL.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B5ImHjwb.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BRunHMFR.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/0Jni705S.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BT8IETzV.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DM8x1Z5c.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdPrqwks.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Q_DXER49.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B8E94oKp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CAQZqaFW.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DdE4l8N_.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DoP1yD-K.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/12.BCNEYa3h.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D9lmUG1I.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C365Jnfj.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B_KoV3r4.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DyyQqIqB.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/images/favicon.svg"/> <meta property="og:site_name" content="Sagar Panda | DevOps &amp; Cloud Engineer"/><!----><!--1lrslch--><link rel="canonical" href="https://sagarpanda.com/projects/devsecops-proj/"/><meta property="og:type" content="article"/><meta property="og:image" content="https://sagarpanda.com/images/og-image.png"/><meta name="description" content="End-to-end DevSecOps implementation from application code to Kubernetes runtime"/><!----><title>Kubernetes DevSecOps | Projects</title>
+		<link href="../../_app/immutable/assets/0.Bo0C80tV.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/vendor-highlight.BEHUn5zE.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><a href="#main-content" class="skip-link">Skip to main content</a> <header class="site-header"><div class="shell nav"><a href="/" class="brand"><span class="prompt">sagar@cloud</span><span class="brand-path">:~$</span></a> <nav class="mobile-nav" aria-label="Main navigation"><!--[--><a href="/"><span class="nav-label-desktop">Home</span><span class="nav-label-mobile">cd /</span></a><a href="/about/"><span class="nav-label-desktop">About</span><span class="nav-label-mobile">cd /about</span></a><a href="/#projects"><span class="nav-label-desktop">Projects</span><span class="nav-label-mobile">cd /projects</span></a><a href="/#experience"><span class="nav-label-desktop">Experience</span><span class="nav-label-mobile">cd /experience</span></a><a href="/contact/"><span class="nav-label-desktop">Contact</span><span class="nav-label-mobile">cd /contact</span></a><a href="/blogs/"><span class="nav-label-desktop">Blogs</span><span class="nav-label-mobile">cd /blogs</span></a><!--]--></nav> <div class="nav-actions"><button class="icon-button search-button" type="button" aria-label="Search" title="Search (Ctrl+K)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-search"><!--[--><!----><circle cx="11" cy="11" r="8"><!----></circle><!----><!----><path d="m21 21-4.3-4.3"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!----></button> <!--[-1--><!--]--><!----> <a href="https://github.com/sagarkpanda" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub" title="GitHub"><!--[1--><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" class="brand-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg><!--]--><!----></a> <button type="button" class="icon-button" aria-label="Toggle theme"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon"><!--[--><!----><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"><!----></path><!----><!--]--><!--[--><!--[--><!--]--><!--]--></svg><!--]--></button> <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span aria-hidden="true"><i></i><i></i><i></i></span></button></div></div></header><!----> <div id="main-content"><!--[--><main class="shell"><article class="section"><a href="/projects/">← all projects</a><h1>Kubernetes DevSecOps</h1><!----><div class="markdown-content"><!----><h2 id="kubernetes-devsecops-end-to-end-security-from-code-to-runtime">Kubernetes DevSecOps – End-to-End Security from Code to Runtime</h2>
+<figure>
+<img src="https://i.ibb.co/nMdLT5ZQ/proj-arch.png" alt="arch" width="1000" height="600" />
+<figcaption>Project Overview</figcaption>
+</figure>
+
+
+<h3 id="complete-devsecops-implementation-spanning-application-code-container-images-infrastructure-kubernetes-policies-runtime-detection-and-dynamic-application-testing">Complete DevSecOps implementation spanning application code, container images, infrastructure, Kubernetes policies, runtime detection, and dynamic application testing.</h3>
+<p>This project demonstrates security controls integrated throughout the software delivery lifecycle rather than treated as a final security check.</p>
+<p>The implementation uses <strong>OTel Labs</strong> as the instrumented application and <strong>OTel Labs Platform</strong> for infrastructure, Kubernetes, CI/CD, and security controls.</p>
+<p>Builds on the <a href="/projects/k8s-otel-proj/">OTel on EKS</a> infrastructure foundation.</p>
+<h2 id="security-layers">Security Layers</h2>
+<p>Security is implemented across seven distinct layers:</p>
+<pre><code class="language-mermaid">graph TD
+    A[&quot;Application Layer&lt;br/&gt;Gitleaks, Semgrep&lt;br/&gt;Dependabot&quot;]
+    B[&quot;Artifact Layer&lt;br/&gt;Trivy FS, Trivy Image&lt;br/&gt;SBOM&quot;]
+    C[&quot;Infrastructure Layer&lt;br/&gt;Trivy Config&lt;br/&gt;GitHub Security&quot;]
+    D[&quot;Admission Control&lt;br/&gt;Kyverno Policies&lt;br/&gt;Policy Exceptions&quot;]
+    E[&quot;Runtime Layer&lt;br/&gt;Falco&lt;br/&gt;FalcoSidekick&quot;]
+    F[&quot;Testing Layer&lt;br/&gt;OWASP ZAP DAST&quot;]
+    G[&quot;Findings Layer&lt;br/&gt;DefectDojo&quot;]
+
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G
+</code></pre>
+<h2 id="architecture">Architecture</h2>
+<pre><code class="language-mermaid">flowchart TB
+    APP[&quot;Application Repo&lt;br/&gt;&lt;b&gt;otel-labs&lt;/b&gt;&quot;]
+
+    APPSCAN[&quot;Security Scanning&lt;br/&gt;Gitleaks&lt;br/&gt;Semgrep&lt;br/&gt;Trivy FS&quot;]
+
+    BUILD[&quot;Build &amp; Scan&lt;br/&gt;Container Images&lt;br/&gt;Trivy Image&lt;br/&gt;Push to GHCR&quot;]
+
+    GITOPS[&quot;GitOps Promotion&lt;br/&gt;Update image tags&quot;]
+
+    PLATFORM[&quot;Platform Repo&lt;br/&gt;&lt;b&gt;otel-labs-platform&lt;/b&gt;&quot;]
+
+    PLAFSCAN[&quot;Security Scanning&lt;br/&gt;Gitleaks&lt;br/&gt;Trivy Config&quot;]
+
+    ARGOCD[&quot;ArgoCD Sync&lt;br/&gt;Kyverno Policies&lt;br/&gt;Applications&quot;]
+
+    K8S[&quot;Kubernetes Cluster&lt;br/&gt;Kyverno Admission&lt;br/&gt;Falco Runtime&quot;]
+
+    DAST[&quot;OWASP ZAP&lt;br/&gt;Dynamic Testing&quot;]
+
+    DD[&quot;DefectDojo&lt;br/&gt;Centralized Findings&quot;]
+
+    APP --&gt; APPSCAN --&gt; BUILD --&gt; GITOPS --&gt; PLATFORM
+    PLATFORM --&gt; PLAFSCAN --&gt; ARGOCD --&gt; K8S
+    K8S --&gt; DAST --&gt; DD
+
+    classDef repo fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff
+    classDef scan fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef deploy fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
+    classDef central fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+
+    class APP,PLATFORM repo
+    class APPSCAN,PLAFSCAN,BUILD,DAST scan
+    class ARGOCD,K8S deploy
+    class DD central
+</code></pre>
+<h2 id="scanning-detection">Scanning &amp; Detection</h2>
+<pre><code class="language-mermaid">graph LR
+    SRC[&quot;Source Code&quot;]
+    DEP[&quot;Dependencies&quot;]
+    IMG[&quot;Container Image&quot;]
+    INF[&quot;Infrastructure&quot;]
+    ADM[&quot;Admission&quot;]
+    RUN[&quot;Runtime&quot;]
+    APP[&quot;Application&quot;]
+
+    SRC --&gt;|Gitleaks&lt;br/&gt;Semgrep| SC[&quot;Secrets &amp; SAST&quot;]
+    DEP --&gt;|Trivy FS&lt;br/&gt;Dependabot| DD[&quot;SCA&quot;]
+    IMG --&gt;|Trivy Image| DI[&quot;Container Vulns&quot;]
+    INF --&gt;|Trivy Config| CI[&quot;Config Issues&quot;]
+    ADM --&gt;|Kyverno| KP[&quot;Policy Enforcement&quot;]
+    RUN --&gt;|Falco| FR[&quot;Runtime Detection&quot;]
+    APP --&gt;|OWASP ZAP| AD[&quot;Application Vulns&quot;]
+
+    SC --&gt; DF[&quot;DefectDojo&lt;br/&gt;Centralized Findings&quot;]
+    DD --&gt; DF
+    DI --&gt; DF
+    CI --&gt; DF
+    KP --&gt; DF
+    FR --&gt; DF
+    AD --&gt; DF
+</code></pre>
+<h2 id="repositories">Repositories</h2>
+<p><strong>Application Repository:</strong> <a href="https://github.com/sagarkpanda/otel-labs" target="_blank" rel="noopener noreferrer">◉ otel-labs</a></p>
+<ul>
+<li>Source code for Node.js, Python, and Go services</li>
+<li>Application security scanning (Gitleaks, Semgrep, Trivy)</li>
+<li>Container image builds and publishing to GHCR</li>
+</ul>
+<p><strong>Platform Repository:</strong> <a href="https://github.com/sagarkpanda/otel-labs-platform" target="_blank" rel="noopener noreferrer">◉ otel-labs-platform</a></p>
+<ul>
+<li>Terraform infrastructure (EKS, VPC, networking)</li>
+<li>Kubernetes manifests and ArgoCD applications</li>
+<li>Kyverno security policies and exceptions</li>
+<li>Infrastructure and configuration scanning</li>
+<li>OWASP ZAP DAST configuration</li>
+</ul>
+<h2 id="components">Components</h2>
+<h3 id="application-layer-security">Application Layer Security</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Gitleaks</strong></td>
+<td>Secret detection in code and Git history</td>
+</tr>
+<tr>
+<td><strong>Semgrep</strong></td>
+<td>SAST — insecure coding patterns</td>
+</tr>
+<tr>
+<td><strong>Dependabot</strong></td>
+<td>Automated dependency updates</td>
+</tr>
+</tbody></table>
+<h3 id="artifact-infrastructure-layer">Artifact &amp; Infrastructure Layer</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Trivy FS</strong></td>
+<td>SCA — dependency vulnerability scanning</td>
+</tr>
+<tr>
+<td><strong>Trivy Image</strong></td>
+<td>Container image vulnerability scanning</td>
+</tr>
+<tr>
+<td><strong>Trivy Config</strong></td>
+<td>Terraform and Kubernetes configuration scanning</td>
+</tr>
+</tbody></table>
+<h3 id="kubernetes-runtime-layer">Kubernetes &amp; Runtime Layer</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Kyverno</strong></td>
+<td>Admission control and security policy enforcement</td>
+</tr>
+<tr>
+<td><strong>Falco</strong></td>
+<td>Runtime behavior detection and alerting</td>
+</tr>
+<tr>
+<td><strong>OWASP ZAP</strong></td>
+<td>Dynamic application security testing</td>
+</tr>
+</tbody></table>
+<h3 id="findings-management">Findings Management</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GitHub Security</strong></td>
+<td>Centralized SARIF findings in GitHub</td>
+</tr>
+<tr>
+<td><strong>DefectDojo</strong></td>
+<td>Centralized vulnerability management across all scanners</td>
+</tr>
+</tbody></table>
+<h2 id="key-features">Key Features</h2>
+<p>✅ <strong>Application Security</strong> — Gitleaks, Semgrep, Trivy scanning across multiple languages (Node.js, Python, Go)</p>
+<p>✅ <strong>Infrastructure as Code Scanning</strong> — Terraform and Kubernetes manifest validation</p>
+<p>✅ <strong>Kubernetes Admission Control</strong> — Kyverno policies enforcing image tags, resource limits, trusted registries</p>
+<p>✅ <strong>Policy Exceptions</strong> — Scoped exceptions for legitimate platform workloads</p>
+<p>✅ <strong>Runtime Security</strong> — Falco detecting suspicious process execution and file access</p>
+<p>✅ <strong>Dynamic Testing</strong> — OWASP ZAP scanning deployed applications</p>
+<p>✅ <strong>Centralized Findings</strong> — DefectDojo aggregating results from all security tools</p>
+<p>✅ <strong>GitOps Integration</strong> — Security scanning triggered by GitHub Actions, results fed to DefectDojo</p>
+<h2 id="workflow">Workflow</h2>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Dev as Developer
+    participant GA as GitHub Actions
+    participant GH as GHCR
+    participant AC as ArgoCD
+    participant K8s as Kubernetes
+    participant ZAP as OWASP ZAP
+    participant DD as DefectDojo
+
+    Dev-&gt;&gt;GA: Push to otel-labs
+    GA-&gt;&gt;GA: Gitleaks, Semgrep, Trivy FS
+    GA-&gt;&gt;GH: Build &amp; Scan Images
+    GA-&gt;&gt;AC: Update image tags
+
+    AC-&gt;&gt;K8s: Sync manifests
+    K8s-&gt;&gt;K8s: Kyverno validation
+    K8s-&gt;&gt;K8s: Deploy workloads
+    K8s-&gt;&gt;K8s: Falco monitoring
+
+    K8s-&gt;&gt;ZAP: Application ready
+    ZAP-&gt;&gt;ZAP: Run DAST scan
+
+    GA-&gt;&gt;DD: Report findings
+    ZAP-&gt;&gt;DD: Report findings
+
+    DD-&gt;&gt;Dev: Security dashboard
+</code></pre>
+<h2 id="deployment">Deployment</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>AWS account with EKS permissions</li>
+<li>kubectl configured</li>
+<li>GitHub repositories set up</li>
+<li>DefectDojo instance (local or cloud)</li>
+</ul>
+<h3 id="bootstrap">Bootstrap</h3>
+<p>Provision the infrastructure:</p>
+<pre><code class="language-bash">cd terraform
+terraform init
+terraform plan
+terraform apply
+</code></pre>
+<p>The bootstrap script automatically installs:</p>
+<ul>
+<li>ArgoCD</li>
+<li>Kyverno</li>
+<li>Falco</li>
+</ul>
+<h3 id="configure-security-workflows">Configure Security Workflows</h3>
+<p>Set GitHub Actions secrets in both repositories:</p>
+<pre><code class="language-text">DEFECTDOJO_URL
+DEFECTDOJO_API_KEY
+</code></pre>
+<h3 id="deploy-applications">Deploy Applications</h3>
+<p>Applications deploy via ArgoCD using the GitOps pattern:</p>
+<pre><code class="language-bash">kubectl apply -f k8s/argo-apps/root-app.yml
+</code></pre>
+<p>Or individually:</p>
+<pre><code class="language-bash">kubectl apply -f k8s/argo-apps/kyverno-policy.yml
+kubectl apply -f k8s/argo-apps/traefik-app.yml
+kubectl apply -f k8s/argo-apps/node-frontend-app.yml
+# ... etc
+</code></pre>
+<h2 id="end-to-end-flow">End-to-End Flow</h2>
+<pre><code class="language-mermaid">graph TD
+    A[&quot;Code Commit&lt;br/&gt;otel-labs main&quot;]
+    B[&quot;Application&lt;br/&gt;Security Layer&quot;]
+    C[&quot;Gitleaks&lt;br/&gt;Semgrep&lt;br/&gt;Dependabot&quot;]
+    D[&quot;Build &amp; Artifact&lt;br/&gt;Security Layer&quot;]
+    E[&quot;Trivy FS&lt;br/&gt;Trivy Image&lt;br/&gt;SBOM&quot;]
+    F[&quot;Container Push&lt;br/&gt;to GHCR&quot;]
+    G[&quot;GitOps Promotion&lt;br/&gt;to platform repo&quot;]
+    H[&quot;Infrastructure&lt;br/&gt;Security Layer&quot;]
+    I[&quot;Gitleaks&lt;br/&gt;Trivy Config&quot;]
+    J[&quot;ArgoCD Sync&quot;]
+    K[&quot;Kubernetes Cluster&quot;]
+    L[&quot;Admission Control&quot;]
+    M[&quot;Kyverno&lt;br/&gt;Policies&quot;]
+    N[&quot;Accepted&lt;br/&gt;Workloads&quot;]
+    O[&quot;Runtime&lt;br/&gt;Security Layer&quot;]
+    P[&quot;Falco&lt;br/&gt;FalcoSidekick&quot;]
+    Q[&quot;Application Testing&quot;]
+    R[&quot;OWASP ZAP&lt;br/&gt;DAST&quot;]
+    S[&quot;Findings&lt;br/&gt;Management&quot;]
+    T[&quot;DefectDojo&lt;br/&gt;Centralized View&quot;]
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+    D --&gt; E
+    E --&gt; F
+    F --&gt; G
+    G --&gt; H
+    H --&gt; I
+    I --&gt; J
+    J --&gt; K
+    K --&gt; L
+    L --&gt; M
+    M --&gt; N
+    N --&gt; O
+    O --&gt; P
+    P --&gt; Q
+    Q --&gt; R
+    R --&gt; S
+    S --&gt; T
+
+    C -.-&gt;|SARIF| T
+    E -.-&gt;|SARIF| T
+    I -.-&gt;|SARIF| T
+    P -.-&gt;|Events| T
+    R -.-&gt;|XML| T
+</code></pre>
+<h2 id="blog-post">Blog Post</h2>
+<p>For a detailed walkthrough of the complete implementation, architecture decisions, and hands-on examples, see:</p>
+<p><a href="/blogs/devsecops/"><strong>End-to-End DevSecOps on EKS: Code, Containers, Kubernetes &amp; Runtime Security</strong></a></p>
+<p>The blog covers:</p>
+<ul>
+<li>Application security scanning (Gitleaks, Semgrep, Trivy)</li>
+<li>Infrastructure scanning (Trivy Config)</li>
+<li>Kyverno concepts and policy enforcement</li>
+<li>Falco runtime detection with practical examples</li>
+<li>OWASP ZAP dynamic testing</li>
+<li>DefectDojo centralized findings management</li>
+<li>End-to-end deployment and setup</li>
+</ul>
+<h2 id="implementation-status">Implementation Status</h2>
+<pre><code class="language-mermaid">graph LR
+    A[&quot;Source Code&quot;] --&gt;|✅| B[&quot;Dependencies&quot;]
+    B --&gt;|✅| C[&quot;Container Image&quot;]
+    C --&gt;|✅| D[&quot;Infrastructure&quot;]
+    D --&gt;|✅| E[&quot;Kubernetes&quot;]
+    E --&gt;|✅| F[&quot;Admission Control&quot;]
+    F --&gt;|✅| G[&quot;Runtime&quot;]
+    G --&gt;|✅| H[&quot;Application&quot;]
+    H --&gt;|✅| I[&quot;Centralized Findings&quot;]
+
+    classDef complete fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
+    class A,B,C,D,E,F,G,H,I complete
+</code></pre>
+<h3 id="completed">Completed</h3>
+<ul>
+<li>✅ Gitleaks secret scanning (application + platform repos)</li>
+<li>✅ Semgrep SAST analysis</li>
+<li>✅ Dependabot dependency updates</li>
+<li>✅ Trivy filesystem scanning (SCA)</li>
+<li>✅ Trivy container image scanning</li>
+<li>✅ Trivy configuration scanning (Terraform + Kubernetes)</li>
+<li>✅ GitHub Security integration (SARIF uploads)</li>
+<li>✅ DefectDojo centralized findings management</li>
+<li>✅ Kyverno admission policies (image tags, resource limits, trusted registries)</li>
+<li>✅ Kyverno policy exceptions (scoped exemptions)</li>
+<li>✅ Falco runtime security with FalcoSidekick</li>
+<li>✅ OWASP ZAP DAST integration</li>
+<li>✅ End-to-end workflow validation</li>
+<li>✅ Comprehensive blog documentation</li>
+</ul>
+<h2 id="related-projects">Related Projects</h2>
+<p><a href="/projects/k8s-otel-proj/"><strong>Infrastructure foundation and observability setup: OTel on EKS</strong></a></p>
+<!----></div> <!--[-1--><!--]--><!----></article></main><!--]--><!----></div> <!--[-1--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_82qrg4 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CX_m6At0.js"),
+						import("../../_app/immutable/entry/app.CTRYTfI1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 12],
+							data: [null,{type:"data",data:{project:{slug:"devsecops-proj",route:"/projects/devsecops-proj/",sourcePath:"/content/projects/devsecops-proj.md",content:"\n## Kubernetes DevSecOps – End-to-End Security from Code to Runtime\n\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/nMdLT5ZQ/proj-arch.png\" alt=\"arch\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Project Overview\u003C/figcaption>\n\u003C/figure>\n\n\n### Complete DevSecOps implementation spanning application code, container images, infrastructure, Kubernetes policies, runtime detection, and dynamic application testing.\n\nThis project demonstrates security controls integrated throughout the software delivery lifecycle rather than treated as a final security check.\n\nThe implementation uses **OTel Labs** as the instrumented application and **OTel Labs Platform** for infrastructure, Kubernetes, CI/CD, and security controls.\n\nBuilds on the [OTel on EKS](/projects/k8s-otel-proj/) infrastructure foundation.\n\n## Security Layers\n\nSecurity is implemented across seven distinct layers:\n\n```mermaid\ngraph TD\n    A[\"Application Layer\u003Cbr/>Gitleaks, Semgrep\u003Cbr/>Dependabot\"]\n    B[\"Artifact Layer\u003Cbr/>Trivy FS, Trivy Image\u003Cbr/>SBOM\"]\n    C[\"Infrastructure Layer\u003Cbr/>Trivy Config\u003Cbr/>GitHub Security\"]\n    D[\"Admission Control\u003Cbr/>Kyverno Policies\u003Cbr/>Policy Exceptions\"]\n    E[\"Runtime Layer\u003Cbr/>Falco\u003Cbr/>FalcoSidekick\"]\n    F[\"Testing Layer\u003Cbr/>OWASP ZAP DAST\"]\n    G[\"Findings Layer\u003Cbr/>DefectDojo\"]\n\n    A --> B --> C --> D --> E --> F --> G\n```\n\n## Architecture\n\n```mermaid\nflowchart TB\n    APP[\"Application Repo\u003Cbr/>\u003Cb>otel-labs\u003C/b>\"]\n\n    APPSCAN[\"Security Scanning\u003Cbr/>Gitleaks\u003Cbr/>Semgrep\u003Cbr/>Trivy FS\"]\n\n    BUILD[\"Build & Scan\u003Cbr/>Container Images\u003Cbr/>Trivy Image\u003Cbr/>Push to GHCR\"]\n\n    GITOPS[\"GitOps Promotion\u003Cbr/>Update image tags\"]\n\n    PLATFORM[\"Platform Repo\u003Cbr/>\u003Cb>otel-labs-platform\u003C/b>\"]\n\n    PLAFSCAN[\"Security Scanning\u003Cbr/>Gitleaks\u003Cbr/>Trivy Config\"]\n\n    ARGOCD[\"ArgoCD Sync\u003Cbr/>Kyverno Policies\u003Cbr/>Applications\"]\n\n    K8S[\"Kubernetes Cluster\u003Cbr/>Kyverno Admission\u003Cbr/>Falco Runtime\"]\n\n    DAST[\"OWASP ZAP\u003Cbr/>Dynamic Testing\"]\n\n    DD[\"DefectDojo\u003Cbr/>Centralized Findings\"]\n\n    APP --> APPSCAN --> BUILD --> GITOPS --> PLATFORM\n    PLATFORM --> PLAFSCAN --> ARGOCD --> K8S\n    K8S --> DAST --> DD\n\n    classDef repo fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff\n    classDef scan fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff\n    classDef deploy fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff\n    classDef central fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff\n\n    class APP,PLATFORM repo\n    class APPSCAN,PLAFSCAN,BUILD,DAST scan\n    class ARGOCD,K8S deploy\n    class DD central\n```\n\n## Scanning & Detection\n\n```mermaid\ngraph LR\n    SRC[\"Source Code\"]\n    DEP[\"Dependencies\"]\n    IMG[\"Container Image\"]\n    INF[\"Infrastructure\"]\n    ADM[\"Admission\"]\n    RUN[\"Runtime\"]\n    APP[\"Application\"]\n\n    SRC -->|Gitleaks\u003Cbr/>Semgrep| SC[\"Secrets & SAST\"]\n    DEP -->|Trivy FS\u003Cbr/>Dependabot| DD[\"SCA\"]\n    IMG -->|Trivy Image| DI[\"Container Vulns\"]\n    INF -->|Trivy Config| CI[\"Config Issues\"]\n    ADM -->|Kyverno| KP[\"Policy Enforcement\"]\n    RUN -->|Falco| FR[\"Runtime Detection\"]\n    APP -->|OWASP ZAP| AD[\"Application Vulns\"]\n\n    SC --> DF[\"DefectDojo\u003Cbr/>Centralized Findings\"]\n    DD --> DF\n    DI --> DF\n    CI --> DF\n    KP --> DF\n    FR --> DF\n    AD --> DF\n```\n\n## Repositories\n\n**Application Repository:** [◉ otel-labs](https://github.com/sagarkpanda/otel-labs)\n* Source code for Node.js, Python, and Go services\n* Application security scanning (Gitleaks, Semgrep, Trivy)\n* Container image builds and publishing to GHCR\n\n**Platform Repository:** [◉ otel-labs-platform](https://github.com/sagarkpanda/otel-labs-platform)\n* Terraform infrastructure (EKS, VPC, networking)\n* Kubernetes manifests and ArgoCD applications\n* Kyverno security policies and exceptions\n* Infrastructure and configuration scanning\n* OWASP ZAP DAST configuration\n\n## Components\n\n### Application Layer Security\n\n| Tool | Purpose |\n|------|---------|\n| **Gitleaks** | Secret detection in code and Git history |\n| **Semgrep** | SAST — insecure coding patterns |\n| **Dependabot** | Automated dependency updates |\n\n### Artifact & Infrastructure Layer\n\n| Tool | Purpose |\n|------|---------|\n| **Trivy FS** | SCA — dependency vulnerability scanning |\n| **Trivy Image** | Container image vulnerability scanning |\n| **Trivy Config** | Terraform and Kubernetes configuration scanning |\n\n### Kubernetes & Runtime Layer\n\n| Tool | Purpose |\n|------|---------|\n| **Kyverno** | Admission control and security policy enforcement |\n| **Falco** | Runtime behavior detection and alerting |\n| **OWASP ZAP** | Dynamic application security testing |\n\n### Findings Management\n\n| Tool | Purpose |\n|------|---------|\n| **GitHub Security** | Centralized SARIF findings in GitHub |\n| **DefectDojo** | Centralized vulnerability management across all scanners |\n\n## Key Features\n\n✅ **Application Security** — Gitleaks, Semgrep, Trivy scanning across multiple languages (Node.js, Python, Go)\n\n✅ **Infrastructure as Code Scanning** — Terraform and Kubernetes manifest validation\n\n✅ **Kubernetes Admission Control** — Kyverno policies enforcing image tags, resource limits, trusted registries\n\n✅ **Policy Exceptions** — Scoped exceptions for legitimate platform workloads\n\n✅ **Runtime Security** — Falco detecting suspicious process execution and file access\n\n✅ **Dynamic Testing** — OWASP ZAP scanning deployed applications\n\n✅ **Centralized Findings** — DefectDojo aggregating results from all security tools\n\n✅ **GitOps Integration** — Security scanning triggered by GitHub Actions, results fed to DefectDojo\n\n## Workflow\n\n```mermaid\nsequenceDiagram\n    participant Dev as Developer\n    participant GA as GitHub Actions\n    participant GH as GHCR\n    participant AC as ArgoCD\n    participant K8s as Kubernetes\n    participant ZAP as OWASP ZAP\n    participant DD as DefectDojo\n\n    Dev->>GA: Push to otel-labs\n    GA->>GA: Gitleaks, Semgrep, Trivy FS\n    GA->>GH: Build & Scan Images\n    GA->>AC: Update image tags\n\n    AC->>K8s: Sync manifests\n    K8s->>K8s: Kyverno validation\n    K8s->>K8s: Deploy workloads\n    K8s->>K8s: Falco monitoring\n\n    K8s->>ZAP: Application ready\n    ZAP->>ZAP: Run DAST scan\n\n    GA->>DD: Report findings\n    ZAP->>DD: Report findings\n\n    DD->>Dev: Security dashboard\n```\n\n## Deployment\n\n### Prerequisites\n\n* AWS account with EKS permissions\n* kubectl configured\n* GitHub repositories set up\n* DefectDojo instance (local or cloud)\n\n### Bootstrap\n\nProvision the infrastructure:\n\n```bash\ncd terraform\nterraform init\nterraform plan\nterraform apply\n```\n\nThe bootstrap script automatically installs:\n* ArgoCD\n* Kyverno\n* Falco\n\n### Configure Security Workflows\n\nSet GitHub Actions secrets in both repositories:\n\n```text\nDEFECTDOJO_URL\nDEFECTDOJO_API_KEY\n```\n\n### Deploy Applications\n\nApplications deploy via ArgoCD using the GitOps pattern:\n\n```bash\nkubectl apply -f k8s/argo-apps/root-app.yml\n```\n\nOr individually:\n\n```bash\nkubectl apply -f k8s/argo-apps/kyverno-policy.yml\nkubectl apply -f k8s/argo-apps/traefik-app.yml\nkubectl apply -f k8s/argo-apps/node-frontend-app.yml\n# ... etc\n```\n\n## End-to-End Flow\n\n```mermaid\ngraph TD\n    A[\"Code Commit\u003Cbr/>otel-labs main\"]\n    B[\"Application\u003Cbr/>Security Layer\"]\n    C[\"Gitleaks\u003Cbr/>Semgrep\u003Cbr/>Dependabot\"]\n    D[\"Build & Artifact\u003Cbr/>Security Layer\"]\n    E[\"Trivy FS\u003Cbr/>Trivy Image\u003Cbr/>SBOM\"]\n    F[\"Container Push\u003Cbr/>to GHCR\"]\n    G[\"GitOps Promotion\u003Cbr/>to platform repo\"]\n    H[\"Infrastructure\u003Cbr/>Security Layer\"]\n    I[\"Gitleaks\u003Cbr/>Trivy Config\"]\n    J[\"ArgoCD Sync\"]\n    K[\"Kubernetes Cluster\"]\n    L[\"Admission Control\"]\n    M[\"Kyverno\u003Cbr/>Policies\"]\n    N[\"Accepted\u003Cbr/>Workloads\"]\n    O[\"Runtime\u003Cbr/>Security Layer\"]\n    P[\"Falco\u003Cbr/>FalcoSidekick\"]\n    Q[\"Application Testing\"]\n    R[\"OWASP ZAP\u003Cbr/>DAST\"]\n    S[\"Findings\u003Cbr/>Management\"]\n    T[\"DefectDojo\u003Cbr/>Centralized View\"]\n\n    A --> B\n    B --> C\n    C --> D\n    D --> E\n    E --> F\n    F --> G\n    G --> H\n    H --> I\n    I --> J\n    J --> K\n    K --> L\n    L --> M\n    M --> N\n    N --> O\n    O --> P\n    P --> Q\n    Q --> R\n    R --> S\n    S --> T\n\n    C -.->|SARIF| T\n    E -.->|SARIF| T\n    I -.->|SARIF| T\n    P -.->|Events| T\n    R -.->|XML| T\n```\n\n## Blog Post\n\nFor a detailed walkthrough of the complete implementation, architecture decisions, and hands-on examples, see:\n\n[**End-to-End DevSecOps on EKS: Code, Containers, Kubernetes & Runtime Security**](/blogs/devsecops/)\n\nThe blog covers:\n* Application security scanning (Gitleaks, Semgrep, Trivy)\n* Infrastructure scanning (Trivy Config)\n* Kyverno concepts and policy enforcement\n* Falco runtime detection with practical examples\n* OWASP ZAP dynamic testing\n* DefectDojo centralized findings management\n* End-to-end deployment and setup\n\n## Implementation Status\n\n```mermaid\ngraph LR\n    A[\"Source Code\"] -->|✅| B[\"Dependencies\"]\n    B -->|✅| C[\"Container Image\"]\n    C -->|✅| D[\"Infrastructure\"]\n    D -->|✅| E[\"Kubernetes\"]\n    E -->|✅| F[\"Admission Control\"]\n    F -->|✅| G[\"Runtime\"]\n    G -->|✅| H[\"Application\"]\n    H -->|✅| I[\"Centralized Findings\"]\n\n    classDef complete fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff\n    class A,B,C,D,E,F,G,H,I complete\n```\n\n### Completed\n\n* ✅ Gitleaks secret scanning (application + platform repos)\n* ✅ Semgrep SAST analysis\n* ✅ Dependabot dependency updates\n* ✅ Trivy filesystem scanning (SCA)\n* ✅ Trivy container image scanning\n* ✅ Trivy configuration scanning (Terraform + Kubernetes)\n* ✅ GitHub Security integration (SARIF uploads)\n* ✅ DefectDojo centralized findings management\n* ✅ Kyverno admission policies (image tags, resource limits, trusted registries)\n* ✅ Kyverno policy exceptions (scoped exemptions)\n* ✅ Falco runtime security with FalcoSidekick\n* ✅ OWASP ZAP DAST integration\n* ✅ End-to-end workflow validation\n* ✅ Comprehensive blog documentation\n\n## Related Projects\n\n[**Infrastructure foundation and observability setup: OTel on EKS**](/projects/k8s-otel-proj/)\n",html:"\u003Ch2 id=\"kubernetes-devsecops-end-to-end-security-from-code-to-runtime\">Kubernetes DevSecOps – End-to-End Security from Code to Runtime\u003C/h2>\n\u003Cfigure>\n\u003Cimg src=\"https://i.ibb.co/nMdLT5ZQ/proj-arch.png\" alt=\"arch\" width=\"1000\" height=\"600\" />\n\u003Cfigcaption>Project Overview\u003C/figcaption>\n\u003C/figure>\n\n\n\u003Ch3 id=\"complete-devsecops-implementation-spanning-application-code-container-images-infrastructure-kubernetes-policies-runtime-detection-and-dynamic-application-testing\">Complete DevSecOps implementation spanning application code, container images, infrastructure, Kubernetes policies, runtime detection, and dynamic application testing.\u003C/h3>\n\u003Cp>This project demonstrates security controls integrated throughout the software delivery lifecycle rather than treated as a final security check.\u003C/p>\n\u003Cp>The implementation uses \u003Cstrong>OTel Labs\u003C/strong> as the instrumented application and \u003Cstrong>OTel Labs Platform\u003C/strong> for infrastructure, Kubernetes, CI/CD, and security controls.\u003C/p>\n\u003Cp>Builds on the \u003Ca href=\"/projects/k8s-otel-proj/\">OTel on EKS\u003C/a> infrastructure foundation.\u003C/p>\n\u003Ch2 id=\"security-layers\">Security Layers\u003C/h2>\n\u003Cp>Security is implemented across seven distinct layers:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">graph TD\n    A[&quot;Application Layer&lt;br/&gt;Gitleaks, Semgrep&lt;br/&gt;Dependabot&quot;]\n    B[&quot;Artifact Layer&lt;br/&gt;Trivy FS, Trivy Image&lt;br/&gt;SBOM&quot;]\n    C[&quot;Infrastructure Layer&lt;br/&gt;Trivy Config&lt;br/&gt;GitHub Security&quot;]\n    D[&quot;Admission Control&lt;br/&gt;Kyverno Policies&lt;br/&gt;Policy Exceptions&quot;]\n    E[&quot;Runtime Layer&lt;br/&gt;Falco&lt;br/&gt;FalcoSidekick&quot;]\n    F[&quot;Testing Layer&lt;br/&gt;OWASP ZAP DAST&quot;]\n    G[&quot;Findings Layer&lt;br/&gt;DefectDojo&quot;]\n\n    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"architecture\">Architecture\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">flowchart TB\n    APP[&quot;Application Repo&lt;br/&gt;&lt;b&gt;otel-labs&lt;/b&gt;&quot;]\n\n    APPSCAN[&quot;Security Scanning&lt;br/&gt;Gitleaks&lt;br/&gt;Semgrep&lt;br/&gt;Trivy FS&quot;]\n\n    BUILD[&quot;Build &amp; Scan&lt;br/&gt;Container Images&lt;br/&gt;Trivy Image&lt;br/&gt;Push to GHCR&quot;]\n\n    GITOPS[&quot;GitOps Promotion&lt;br/&gt;Update image tags&quot;]\n\n    PLATFORM[&quot;Platform Repo&lt;br/&gt;&lt;b&gt;otel-labs-platform&lt;/b&gt;&quot;]\n\n    PLAFSCAN[&quot;Security Scanning&lt;br/&gt;Gitleaks&lt;br/&gt;Trivy Config&quot;]\n\n    ARGOCD[&quot;ArgoCD Sync&lt;br/&gt;Kyverno Policies&lt;br/&gt;Applications&quot;]\n\n    K8S[&quot;Kubernetes Cluster&lt;br/&gt;Kyverno Admission&lt;br/&gt;Falco Runtime&quot;]\n\n    DAST[&quot;OWASP ZAP&lt;br/&gt;Dynamic Testing&quot;]\n\n    DD[&quot;DefectDojo&lt;br/&gt;Centralized Findings&quot;]\n\n    APP --&gt; APPSCAN --&gt; BUILD --&gt; GITOPS --&gt; PLATFORM\n    PLATFORM --&gt; PLAFSCAN --&gt; ARGOCD --&gt; K8S\n    K8S --&gt; DAST --&gt; DD\n\n    classDef repo fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff\n    classDef scan fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff\n    classDef deploy fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff\n    classDef central fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff\n\n    class APP,PLATFORM repo\n    class APPSCAN,PLAFSCAN,BUILD,DAST scan\n    class ARGOCD,K8S deploy\n    class DD central\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"scanning-detection\">Scanning &amp; Detection\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">graph LR\n    SRC[&quot;Source Code&quot;]\n    DEP[&quot;Dependencies&quot;]\n    IMG[&quot;Container Image&quot;]\n    INF[&quot;Infrastructure&quot;]\n    ADM[&quot;Admission&quot;]\n    RUN[&quot;Runtime&quot;]\n    APP[&quot;Application&quot;]\n\n    SRC --&gt;|Gitleaks&lt;br/&gt;Semgrep| SC[&quot;Secrets &amp; SAST&quot;]\n    DEP --&gt;|Trivy FS&lt;br/&gt;Dependabot| DD[&quot;SCA&quot;]\n    IMG --&gt;|Trivy Image| DI[&quot;Container Vulns&quot;]\n    INF --&gt;|Trivy Config| CI[&quot;Config Issues&quot;]\n    ADM --&gt;|Kyverno| KP[&quot;Policy Enforcement&quot;]\n    RUN --&gt;|Falco| FR[&quot;Runtime Detection&quot;]\n    APP --&gt;|OWASP ZAP| AD[&quot;Application Vulns&quot;]\n\n    SC --&gt; DF[&quot;DefectDojo&lt;br/&gt;Centralized Findings&quot;]\n    DD --&gt; DF\n    DI --&gt; DF\n    CI --&gt; DF\n    KP --&gt; DF\n    FR --&gt; DF\n    AD --&gt; DF\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"repositories\">Repositories\u003C/h2>\n\u003Cp>\u003Cstrong>Application Repository:\u003C/strong> \u003Ca href=\"https://github.com/sagarkpanda/otel-labs\" target=\"_blank\" rel=\"noopener noreferrer\">◉ otel-labs\u003C/a>\u003C/p>\n\u003Cul>\n\u003Cli>Source code for Node.js, Python, and Go services\u003C/li>\n\u003Cli>Application security scanning (Gitleaks, Semgrep, Trivy)\u003C/li>\n\u003Cli>Container image builds and publishing to GHCR\u003C/li>\n\u003C/ul>\n\u003Cp>\u003Cstrong>Platform Repository:\u003C/strong> \u003Ca href=\"https://github.com/sagarkpanda/otel-labs-platform\" target=\"_blank\" rel=\"noopener noreferrer\">◉ otel-labs-platform\u003C/a>\u003C/p>\n\u003Cul>\n\u003Cli>Terraform infrastructure (EKS, VPC, networking)\u003C/li>\n\u003Cli>Kubernetes manifests and ArgoCD applications\u003C/li>\n\u003Cli>Kyverno security policies and exceptions\u003C/li>\n\u003Cli>Infrastructure and configuration scanning\u003C/li>\n\u003Cli>OWASP ZAP DAST configuration\u003C/li>\n\u003C/ul>\n\u003Ch2 id=\"components\">Components\u003C/h2>\n\u003Ch3 id=\"application-layer-security\">Application Layer Security\u003C/h3>\n\u003Ctable>\n\u003Cthead>\n\u003Ctr>\n\u003Cth>Tool\u003C/th>\n\u003Cth>Purpose\u003C/th>\n\u003C/tr>\n\u003C/thead>\n\u003Ctbody>\u003Ctr>\n\u003Ctd>\u003Cstrong>Gitleaks\u003C/strong>\u003C/td>\n\u003Ctd>Secret detection in code and Git history\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Semgrep\u003C/strong>\u003C/td>\n\u003Ctd>SAST — insecure coding patterns\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Dependabot\u003C/strong>\u003C/td>\n\u003Ctd>Automated dependency updates\u003C/td>\n\u003C/tr>\n\u003C/tbody>\u003C/table>\n\u003Ch3 id=\"artifact-infrastructure-layer\">Artifact &amp; Infrastructure Layer\u003C/h3>\n\u003Ctable>\n\u003Cthead>\n\u003Ctr>\n\u003Cth>Tool\u003C/th>\n\u003Cth>Purpose\u003C/th>\n\u003C/tr>\n\u003C/thead>\n\u003Ctbody>\u003Ctr>\n\u003Ctd>\u003Cstrong>Trivy FS\u003C/strong>\u003C/td>\n\u003Ctd>SCA — dependency vulnerability scanning\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Trivy Image\u003C/strong>\u003C/td>\n\u003Ctd>Container image vulnerability scanning\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Trivy Config\u003C/strong>\u003C/td>\n\u003Ctd>Terraform and Kubernetes configuration scanning\u003C/td>\n\u003C/tr>\n\u003C/tbody>\u003C/table>\n\u003Ch3 id=\"kubernetes-runtime-layer\">Kubernetes &amp; Runtime Layer\u003C/h3>\n\u003Ctable>\n\u003Cthead>\n\u003Ctr>\n\u003Cth>Tool\u003C/th>\n\u003Cth>Purpose\u003C/th>\n\u003C/tr>\n\u003C/thead>\n\u003Ctbody>\u003Ctr>\n\u003Ctd>\u003Cstrong>Kyverno\u003C/strong>\u003C/td>\n\u003Ctd>Admission control and security policy enforcement\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>Falco\u003C/strong>\u003C/td>\n\u003Ctd>Runtime behavior detection and alerting\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>OWASP ZAP\u003C/strong>\u003C/td>\n\u003Ctd>Dynamic application security testing\u003C/td>\n\u003C/tr>\n\u003C/tbody>\u003C/table>\n\u003Ch3 id=\"findings-management\">Findings Management\u003C/h3>\n\u003Ctable>\n\u003Cthead>\n\u003Ctr>\n\u003Cth>Tool\u003C/th>\n\u003Cth>Purpose\u003C/th>\n\u003C/tr>\n\u003C/thead>\n\u003Ctbody>\u003Ctr>\n\u003Ctd>\u003Cstrong>GitHub Security\u003C/strong>\u003C/td>\n\u003Ctd>Centralized SARIF findings in GitHub\u003C/td>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd>\u003Cstrong>DefectDojo\u003C/strong>\u003C/td>\n\u003Ctd>Centralized vulnerability management across all scanners\u003C/td>\n\u003C/tr>\n\u003C/tbody>\u003C/table>\n\u003Ch2 id=\"key-features\">Key Features\u003C/h2>\n\u003Cp>✅ \u003Cstrong>Application Security\u003C/strong> — Gitleaks, Semgrep, Trivy scanning across multiple languages (Node.js, Python, Go)\u003C/p>\n\u003Cp>✅ \u003Cstrong>Infrastructure as Code Scanning\u003C/strong> — Terraform and Kubernetes manifest validation\u003C/p>\n\u003Cp>✅ \u003Cstrong>Kubernetes Admission Control\u003C/strong> — Kyverno policies enforcing image tags, resource limits, trusted registries\u003C/p>\n\u003Cp>✅ \u003Cstrong>Policy Exceptions\u003C/strong> — Scoped exceptions for legitimate platform workloads\u003C/p>\n\u003Cp>✅ \u003Cstrong>Runtime Security\u003C/strong> — Falco detecting suspicious process execution and file access\u003C/p>\n\u003Cp>✅ \u003Cstrong>Dynamic Testing\u003C/strong> — OWASP ZAP scanning deployed applications\u003C/p>\n\u003Cp>✅ \u003Cstrong>Centralized Findings\u003C/strong> — DefectDojo aggregating results from all security tools\u003C/p>\n\u003Cp>✅ \u003Cstrong>GitOps Integration\u003C/strong> — Security scanning triggered by GitHub Actions, results fed to DefectDojo\u003C/p>\n\u003Ch2 id=\"workflow\">Workflow\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">sequenceDiagram\n    participant Dev as Developer\n    participant GA as GitHub Actions\n    participant GH as GHCR\n    participant AC as ArgoCD\n    participant K8s as Kubernetes\n    participant ZAP as OWASP ZAP\n    participant DD as DefectDojo\n\n    Dev-&gt;&gt;GA: Push to otel-labs\n    GA-&gt;&gt;GA: Gitleaks, Semgrep, Trivy FS\n    GA-&gt;&gt;GH: Build &amp; Scan Images\n    GA-&gt;&gt;AC: Update image tags\n\n    AC-&gt;&gt;K8s: Sync manifests\n    K8s-&gt;&gt;K8s: Kyverno validation\n    K8s-&gt;&gt;K8s: Deploy workloads\n    K8s-&gt;&gt;K8s: Falco monitoring\n\n    K8s-&gt;&gt;ZAP: Application ready\n    ZAP-&gt;&gt;ZAP: Run DAST scan\n\n    GA-&gt;&gt;DD: Report findings\n    ZAP-&gt;&gt;DD: Report findings\n\n    DD-&gt;&gt;Dev: Security dashboard\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"deployment\">Deployment\u003C/h2>\n\u003Ch3 id=\"prerequisites\">Prerequisites\u003C/h3>\n\u003Cul>\n\u003Cli>AWS account with EKS permissions\u003C/li>\n\u003Cli>kubectl configured\u003C/li>\n\u003Cli>GitHub repositories set up\u003C/li>\n\u003Cli>DefectDojo instance (local or cloud)\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"bootstrap\">Bootstrap\u003C/h3>\n\u003Cp>Provision the infrastructure:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">cd terraform\nterraform init\nterraform plan\nterraform apply\n\u003C/code>\u003C/pre>\n\u003Cp>The bootstrap script automatically installs:\u003C/p>\n\u003Cul>\n\u003Cli>ArgoCD\u003C/li>\n\u003Cli>Kyverno\u003C/li>\n\u003Cli>Falco\u003C/li>\n\u003C/ul>\n\u003Ch3 id=\"configure-security-workflows\">Configure Security Workflows\u003C/h3>\n\u003Cp>Set GitHub Actions secrets in both repositories:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-text\">DEFECTDOJO_URL\nDEFECTDOJO_API_KEY\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"deploy-applications\">Deploy Applications\u003C/h3>\n\u003Cp>Applications deploy via ArgoCD using the GitOps pattern:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl apply -f k8s/argo-apps/root-app.yml\n\u003C/code>\u003C/pre>\n\u003Cp>Or individually:\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-bash\">kubectl apply -f k8s/argo-apps/kyverno-policy.yml\nkubectl apply -f k8s/argo-apps/traefik-app.yml\nkubectl apply -f k8s/argo-apps/node-frontend-app.yml\n# ... etc\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"end-to-end-flow\">End-to-End Flow\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">graph TD\n    A[&quot;Code Commit&lt;br/&gt;otel-labs main&quot;]\n    B[&quot;Application&lt;br/&gt;Security Layer&quot;]\n    C[&quot;Gitleaks&lt;br/&gt;Semgrep&lt;br/&gt;Dependabot&quot;]\n    D[&quot;Build &amp; Artifact&lt;br/&gt;Security Layer&quot;]\n    E[&quot;Trivy FS&lt;br/&gt;Trivy Image&lt;br/&gt;SBOM&quot;]\n    F[&quot;Container Push&lt;br/&gt;to GHCR&quot;]\n    G[&quot;GitOps Promotion&lt;br/&gt;to platform repo&quot;]\n    H[&quot;Infrastructure&lt;br/&gt;Security Layer&quot;]\n    I[&quot;Gitleaks&lt;br/&gt;Trivy Config&quot;]\n    J[&quot;ArgoCD Sync&quot;]\n    K[&quot;Kubernetes Cluster&quot;]\n    L[&quot;Admission Control&quot;]\n    M[&quot;Kyverno&lt;br/&gt;Policies&quot;]\n    N[&quot;Accepted&lt;br/&gt;Workloads&quot;]\n    O[&quot;Runtime&lt;br/&gt;Security Layer&quot;]\n    P[&quot;Falco&lt;br/&gt;FalcoSidekick&quot;]\n    Q[&quot;Application Testing&quot;]\n    R[&quot;OWASP ZAP&lt;br/&gt;DAST&quot;]\n    S[&quot;Findings&lt;br/&gt;Management&quot;]\n    T[&quot;DefectDojo&lt;br/&gt;Centralized View&quot;]\n\n    A --&gt; B\n    B --&gt; C\n    C --&gt; D\n    D --&gt; E\n    E --&gt; F\n    F --&gt; G\n    G --&gt; H\n    H --&gt; I\n    I --&gt; J\n    J --&gt; K\n    K --&gt; L\n    L --&gt; M\n    M --&gt; N\n    N --&gt; O\n    O --&gt; P\n    P --&gt; Q\n    Q --&gt; R\n    R --&gt; S\n    S --&gt; T\n\n    C -.-&gt;|SARIF| T\n    E -.-&gt;|SARIF| T\n    I -.-&gt;|SARIF| T\n    P -.-&gt;|Events| T\n    R -.-&gt;|XML| T\n\u003C/code>\u003C/pre>\n\u003Ch2 id=\"blog-post\">Blog Post\u003C/h2>\n\u003Cp>For a detailed walkthrough of the complete implementation, architecture decisions, and hands-on examples, see:\u003C/p>\n\u003Cp>\u003Ca href=\"/blogs/devsecops/\">\u003Cstrong>End-to-End DevSecOps on EKS: Code, Containers, Kubernetes &amp; Runtime Security\u003C/strong>\u003C/a>\u003C/p>\n\u003Cp>The blog covers:\u003C/p>\n\u003Cul>\n\u003Cli>Application security scanning (Gitleaks, Semgrep, Trivy)\u003C/li>\n\u003Cli>Infrastructure scanning (Trivy Config)\u003C/li>\n\u003Cli>Kyverno concepts and policy enforcement\u003C/li>\n\u003Cli>Falco runtime detection with practical examples\u003C/li>\n\u003Cli>OWASP ZAP dynamic testing\u003C/li>\n\u003Cli>DefectDojo centralized findings management\u003C/li>\n\u003Cli>End-to-end deployment and setup\u003C/li>\n\u003C/ul>\n\u003Ch2 id=\"implementation-status\">Implementation Status\u003C/h2>\n\u003Cpre>\u003Ccode class=\"language-mermaid\">graph LR\n    A[&quot;Source Code&quot;] --&gt;|✅| B[&quot;Dependencies&quot;]\n    B --&gt;|✅| C[&quot;Container Image&quot;]\n    C --&gt;|✅| D[&quot;Infrastructure&quot;]\n    D --&gt;|✅| E[&quot;Kubernetes&quot;]\n    E --&gt;|✅| F[&quot;Admission Control&quot;]\n    F --&gt;|✅| G[&quot;Runtime&quot;]\n    G --&gt;|✅| H[&quot;Application&quot;]\n    H --&gt;|✅| I[&quot;Centralized Findings&quot;]\n\n    classDef complete fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff\n    class A,B,C,D,E,F,G,H,I complete\n\u003C/code>\u003C/pre>\n\u003Ch3 id=\"completed\">Completed\u003C/h3>\n\u003Cul>\n\u003Cli>✅ Gitleaks secret scanning (application + platform repos)\u003C/li>\n\u003Cli>✅ Semgrep SAST analysis\u003C/li>\n\u003Cli>✅ Dependabot dependency updates\u003C/li>\n\u003Cli>✅ Trivy filesystem scanning (SCA)\u003C/li>\n\u003Cli>✅ Trivy container image scanning\u003C/li>\n\u003Cli>✅ Trivy configuration scanning (Terraform + Kubernetes)\u003C/li>\n\u003Cli>✅ GitHub Security integration (SARIF uploads)\u003C/li>\n\u003Cli>✅ DefectDojo centralized findings management\u003C/li>\n\u003Cli>✅ Kyverno admission policies (image tags, resource limits, trusted registries)\u003C/li>\n\u003Cli>✅ Kyverno policy exceptions (scoped exemptions)\u003C/li>\n\u003Cli>✅ Falco runtime security with FalcoSidekick\u003C/li>\n\u003Cli>✅ OWASP ZAP DAST integration\u003C/li>\n\u003Cli>✅ End-to-end workflow validation\u003C/li>\n\u003Cli>✅ Comprehensive blog documentation\u003C/li>\n\u003C/ul>\n\u003Ch2 id=\"related-projects\">Related Projects\u003C/h2>\n\u003Cp>\u003Ca href=\"/projects/k8s-otel-proj/\">\u003Cstrong>Infrastructure foundation and observability setup: OTel on EKS\u003C/strong>\u003C/a>\u003C/p>\n",data:{title:"Kubernetes DevSecOps",date:"2026-08-14",summary:"End-to-end DevSecOps implementation from application code to Kubernetes runtime",status:"completed",tags:["devsecops","kubernetes","github actions","kyverno","falco","trivy","SAST","DAST","SCA"],link:"https://github.com/sagarkpanda/otel-labs-platform",blogLink:"/blogs/devsecops",draft:false},headings:[{id:"kubernetes-devsecops-end-to-end-security-from-code-to-runtime",text:"Kubernetes DevSecOps – End-to-End Security from Code to Runtime",level:2},{id:"complete-devsecops-implementation-spanning-application-code-container-images-infrastructure-kubernetes-policies-runtime-detection-and-dynamic-application-testing",text:"Complete DevSecOps implementation spanning application code, container images, infrastructure, Kubernetes policies, runtime detection, and dynamic application testing.",level:3},{id:"security-layers",text:"Security Layers",level:2},{id:"architecture",text:"Architecture",level:2},{id:"scanning-detection",text:"Scanning & Detection",level:2},{id:"repositories",text:"Repositories",level:2},{id:"components",text:"Components",level:2},{id:"application-layer-security",text:"Application Layer Security",level:3},{id:"artifact-infrastructure-layer",text:"Artifact & Infrastructure Layer",level:3},{id:"kubernetes-runtime-layer",text:"Kubernetes & Runtime Layer",level:3},{id:"findings-management",text:"Findings Management",level:3},{id:"key-features",text:"Key Features",level:2},{id:"workflow",text:"Workflow",level:2},{id:"deployment",text:"Deployment",level:2},{id:"prerequisites",text:"Prerequisites",level:3},{id:"bootstrap",text:"Bootstrap",level:3},{id:"configure-security-workflows",text:"Configure Security Workflows",level:3},{id:"deploy-applications",text:"Deploy Applications",level:3},{id:"end-to-end-flow",text:"End-to-End Flow",level:2},{id:"blog-post",text:"Blog Post",level:2},{id:"implementation-status",text:"Implementation Status",level:2},{id:"completed",text:"Completed",level:3},{id:"related-projects",text:"Related Projects",level:2}],readingTime:6}},uses:{params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
