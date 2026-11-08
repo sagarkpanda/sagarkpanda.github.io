@@ -35,7 +35,7 @@ Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blog
 
 ## 🛠 Built With
 
-- **Next.js**
+- **SvelteKit**
 - **TypeScript, Bun , Node.js, npm**
 - **GitHub Actions** for automated deployment
 - **GitHub Pages** for hosting
