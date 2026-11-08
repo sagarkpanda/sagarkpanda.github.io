@@ -1,58 +1,57 @@
-# Sagar Panda Portfolio — SvelteKit migration
+<!-- # Personal Portfolio and Blog
+Hosted on github pages (github.io)
 
-This project migrates the existing Next.js portfolio to **Svelte 5 + SvelteKit**, keeping the existing visual system, content, route structure, and GitHub Pages static hosting target.
 
-## Requirements
+⏩ Have a look at the [website↗](https://sagarpanda.com/)
 
-- Node.js 22+
-- Bun 1.4.2 (primary package manager)
+<img width="1823" height="688" alt="image" src="https://github.com/user-attachments/assets/20d0113d-7480-45b1-aa0e-343aa965937b" />
 
-## Local development
 
-```powershell
-bun install
-bun run dev
-```
+Based on <a href="https://gohugo.io"> Hugo </a> and <a href="https://github.com/gurusabarish/hugo-profile">Hugo Profiile theme </a>
 
-Open `http://localhost:5173/`.
+[![Deployment](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy.yaml) -->
 
-## Validation and static build
+# Sagar Panda | DevOps, Cloud & Kubernetes
 
-```powershell
-bun run check
-bun run build
-```
+Personal website of **Sagar Panda**, a DevOps Engineer, featuring technical blogs, projects, and hands-on labs focused on Cloud, Kubernetes, GitOps, Infrastructure as Code, CI/CD, Observability, and DevSecOps.
 
-The static site is written to `out/`. The build regenerates `static/search-index.json` from the Markdown content before exporting the site.
+🚀 **Explore my portfolio ↗** https://sagarpanda.com
 
-## npm compatibility
+<a href="https://sagarpanda.com/" target="_blank" rel="noopener noreferrer">
+  <img
+    alt="Sagar Panda Portfolio"
+    src="https://raw.githubusercontent.com/sagarkpanda/sagarkpanda/main/images/portfolio-next.png"
+  />
+</a>
 
-The project supports npm as well:
+## 📚 What You'll Find
 
-```powershell
-npm install
-npm run dev
-npm run check
-npm run build
-```
+- Technical blogs and tutorials
+- DevOps, Cloud, and Kubernetes content
+- GitOps and Infrastructure as Code projects
+- CI/CD and DevSecOps experiments
+- Observability and OpenTelemetry labs
+- Personal portfolio
 
-A `bun.lock` and `package-lock.json` must be generated from this SvelteKit package manifest in an environment with access to the package registry. Do not copy either lockfile from the old Next.js project because it describes a different dependency graph.
+## 🛠 Built With
 
-## Project layout
+- **Next.js**
+- **TypeScript, Bun , Node.js, npm**
+- **GitHub Actions** for automated deployment
+- **GitHub Pages** for hosting
 
-- `src/routes/` — SvelteKit routes and prerender loaders
-- `src/lib/` — shared layout, content, article, navigation, and UI components
-- `content/blogs/` and `content/projects/` — original Markdown content
-- `static/` — original public assets, search index, and custom-domain `CNAME`
-- `.github/workflows/deploy-pages.yml` — GitHub Pages static deployment
-- `.github/workflows/release.yml` — Semantic Release workflow
+## 🚀 Deployment Status
 
-## Migration notes
+[![Deploy Next.js to GitHub Pages](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/sagarkpanda/sagarkpanda.github.io/actions/workflows/deploy-pages.yml)
 
-- `/about/` and `/contact/` remain dedicated pages and are also represented as sections on the homepage.
-- Homepage sections use the original IntersectionObserver reveal behavior and section-aware navigation.
-- Taxonomy links use normalized lowercase slugs; tag matching is case-insensitive.
-- Markdown is preprocessed for the original content's figure shortcodes, custom heading IDs, and `relref` links.
-- Umami analytics retains the existing website ID, host URL, and domain restriction.
+<!-- Built with ❤️ -->
 
-The build must pass locally and in GitHub Actions before this migration should replace the live site.
+<!-- Powered By <a href="https://gohugo.io">Hugo</a> and the <a href="https://github.com/tom2almighty/hugo-narrow">Hugo Narrow</a> theme. -->
+
+## License
+
+The source code is licensed under the MIT License, subject to the
+exclusions stated in `LICENSE`.
+
+Blog content, personal photographs, branding, and other excluded
+materials are not covered by the MIT License.
