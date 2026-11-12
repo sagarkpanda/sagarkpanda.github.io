@@ -29,9 +29,9 @@ jobs:
       - uses: oven-sh/setup-bun@v2.2.0
         with:
           bun-version: "1.4.2"
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
-        with:
-          node-version: 22
+      #- uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      #  with:
+      #    node-version: 22
       - run: bun install
       - run: bun run build
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
