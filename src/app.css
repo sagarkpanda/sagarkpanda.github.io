@@ -1002,7 +1002,7 @@ h3{
 }
 
 .article-body>h2:first-child,
-.article-body>h3:first-child{
+.article-body>h3:first-child,.article-body>.markdown-content>h2:first-child,.article-body>.markdown-content>h3:first-child{
   margin-top:18px;
 }
 
