@@ -23,7 +23,7 @@
     <div class="eyebrow">~/blogs/{post.slug}</div>
     <h1>{post.data.title ?? post.slug}</h1>
     {#if post.data.summary}<p>{post.data.summary}</p>{/if}
-    <div class="article-author">By <strong>Sagar Panda</strong></div>
+    <!-- <div class="article-author">By <strong>Sagar Panda</strong></div> -->
     <div class="article-meta-panel" class:no-series={seriesGroups.length === 0}>
       <div class="article-meta-details">
         <div class="article-meta-top"><span>{displayDate(post.data.date)}</span><span>·</span><span>{post.readingTime} min read</span></div>
