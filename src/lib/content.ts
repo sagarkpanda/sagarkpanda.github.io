@@ -219,7 +219,7 @@ function parseFiles(
         '<a href="$1" target="_blank" rel="noopener noreferrer"'
       );
 
-      const words = parsed.content.trim().split(/\s+/).filter(Boolean).length;
+      const words = parsed.content.replace(/[`*_#>-]/g, ' ').split(/\s+/).filter(Boolean).length;
 
       return {
         slug,
