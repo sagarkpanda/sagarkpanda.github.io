@@ -46,7 +46,7 @@
   <Section command="tail -n 5 ~/blog" title="Latest Writing" id="blog">
     <p class="section-lead">Practical notes on DevOps, Kubernetes, AWS, CI/CD, observability, and security.</p>
     <div class="post-list">{#each data.latestPosts as post}<PostCard {post}/>{/each}</div>
-    <a class="text-link" href="/blogs/">cd /blogs → all posts</a>
+    <a class="text-link" href="/blogs/"> all posts → </a>
   </Section>
   <Contact />
   <footer class="footer"><span>$ echo "built by Sagar Panda"</span><a href="https://status.sagarpanda.com" target="_blank" rel="noopener noreferrer" class="status-link"><span class="status-tick">✓</span><span class="status-text">All Systems Operational</span></a><span>© {new Date().getFullYear()} · SvelteKit · Tailwind CSS</span></footer>

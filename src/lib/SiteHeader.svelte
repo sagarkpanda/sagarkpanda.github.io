@@ -7,6 +7,8 @@
   import { site } from '$lib/site';
   let { dark, onToggleTheme }: { dark: boolean; onToggleTheme: () => void } = $props();
   let open = $state(false);
+  let navEl = $state<HTMLElement | undefined>();
+  let toggleEl = $state<HTMLButtonElement | undefined>();
   let active = $state('');
   const links = [
     { desktop: 'Home', mobile: 'cd /', href: '/' },
@@ -40,15 +42,26 @@
   });
   onMount(() => {
     const shortcut = (event: KeyboardEvent) => { if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); window.dispatchEvent(new CustomEvent('open-site-search')); } };
+    // Mobile menu: close when tapping outside the panel or pressing Escape.
+    // No-op on desktop, where the menu is inline and `open` is never true.
+    const closeOnOutside = (event: PointerEvent) => {
+      if (!open) return;
+      const target = event.target as Node | null;
+      if (target && (navEl?.contains(target) || toggleEl?.contains(target))) return;
+      open = false;
+    };
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') open = false; };
+    window.addEventListener('pointerdown', closeOnOutside);
+    window.addEventListener('keydown', closeOnEscape);
     window.addEventListener('hashchange', updateActive);
     window.addEventListener('keydown', shortcut);
-    return () => { window.removeEventListener('hashchange', updateActive); window.removeEventListener('keydown', shortcut); sectionObserver?.disconnect(); };
+    return () => { window.removeEventListener('hashchange', updateActive); window.removeEventListener('pointerdown', closeOnOutside); window.removeEventListener('keydown', closeOnEscape); window.removeEventListener('keydown', shortcut); sectionObserver?.disconnect(); };
   });
 </script>
 <header class="site-header">
   <div class="shell nav">
     <a href="/" class="brand" onclick={() => open = false}><span class="prompt">sagar@cloud</span><span class="brand-path">:~$</span></a>
-    <nav class:open class="mobile-nav" aria-label="Main navigation">
+    <nav bind:this={navEl} class:open class="mobile-nav" aria-label="Main navigation">
       {#each links as link}
         <a href={link.href} class:nav-active={active === (link.desktop === 'Blogs' ? 'blogs' : link.desktop.toLowerCase())} onclick={() => { open = false; if (link.href.startsWith('/#')) active = link.href.slice(2); }}>
           <span class="nav-label-desktop">{link.desktop}</span><span class="nav-label-mobile">{link.mobile}</span>
@@ -59,7 +72,7 @@
       <SearchButton />
       <a href={site.social[0][1]} target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub" title="GitHub"><TechIcon name="GitHub" size={17}/></a>
       <button type="button" class="icon-button" aria-label="Toggle theme" onclick={onToggleTheme}>{#if dark}<Sun size={16}/>{:else}<Moon size={16}/>{/if}</button>
-      <button type="button" class:is-open={open} class="menu-toggle" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onclick={() => open = !open}><span aria-hidden="true"><i></i><i></i><i></i></span></button>
+      <button type="button" bind:this={toggleEl} class:is-open={open} class="menu-toggle" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onclick={() => open = !open}><span aria-hidden="true"><i></i><i></i><i></i></span></button>
     </div>
   </div>
 </header>

@@ -12,6 +12,7 @@
   --line:#ddd;
   --accent:#16a34a;
   --accent2:#0f7a36;
+  --wip:#d97706;
   --code:#111827;
 }
 
@@ -23,6 +24,7 @@ html.dark{
   --line:#344039;
   --accent:#4ade80;
   --accent2:#86efac;
+  --wip:#fbbf24;
   --code:#111714;
 }
 
@@ -609,6 +611,10 @@ h3{
   border-radius:50%;
   background:var(--accent);
   box-shadow:0 0 10px var(--accent);
+}
+.status-dot.wip{
+  background:var(--wip);
+  box-shadow:0 0 10px var(--wip);
 }
 
 .project-card h3{
