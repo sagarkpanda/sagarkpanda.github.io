@@ -1,14 +1,15 @@
-name: Deploy To svelte-pages branch (bun)
+name: Push To svelte-pages Branch
 
 on:
   push:
     branches:
       - svelte
+      # - main
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
       - '.github/workflows/*release*'
-
+      - '.github/workflows/snyk-security.yml'
   workflow_dispatch:
 
 permissions:
@@ -102,7 +103,7 @@ jobs:
 
           # Commit only when files have changed
           if ! git diff --cached --quiet; then
-            git commit -m "Deploy: ${GITHUB_SHA}"
+            git commit -m "Update Deployment: ${GITHUB_SHA}"
 
             # Push without overwriting existing history
             git push origin svelte-pages
