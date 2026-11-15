@@ -1,0 +1,1 @@
+import"./Bzak7iHL.js";import{p as e,b as p,A as i,d as n,a as d,g as m,u as c}from"./CNkm6lEj.js";import{h}from"./BCG-WVzV.js";import{h as f}from"./BMsKUaCB.js";function J(l,a){e(a,!0);let t=c(()=>JSON.stringify(a.data).replace(/</g,"\\u003c"));f("hjdz75",s=>{var r=i(),o=n(r);h(o,()=>`<script type="application/ld+json">${m(t)}<\/script>`),d(s,r)}),p()}export{J};
