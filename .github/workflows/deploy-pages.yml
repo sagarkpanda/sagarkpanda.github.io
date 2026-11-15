@@ -7,6 +7,8 @@ on:
       - 'README.md'
       - 'LICENSE'
       - '.github/workflows/*release*'
+      - '.github/workflows/svltpages-branch.yml'
+      - '.github/workflows/snyk-security.yml'
   workflow_dispatch:
 
 permissions:
