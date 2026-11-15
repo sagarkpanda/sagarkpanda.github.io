@@ -12,6 +12,9 @@ on:
       - "License"
       - ".gitattributes"
       - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/snyk-security.yml"
+      - ".github/workflows/svltpages-branch.yml"
+      - ".github/workflows/release.yml"
 
 permissions:
   contents: write
