@@ -32,7 +32,12 @@
 
 <svelte:head>
   <title>Sagar Panda | DevOps &amp; Cloud Engineer</title>
-  <link rel="icon" href="/images/favicon.svg" />
+  <!-- Favicons: .ico (16/32/48) for legacy browsers and Google, SVG for modern browsers,
+       180px apple-touch-icon for iOS, and the manifest for Android / install icons (192, 512) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="apple-touch-icon" href="/images/favicon-180x180.png" sizes="180x180" />
+  <link rel="manifest" href="/site.webmanifest" />
   <meta
     property="og:site_name"
     content="Sagar Panda | DevOps &amp; Cloud Engineer"
