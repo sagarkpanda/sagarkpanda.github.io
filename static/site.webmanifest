@@ -1,0 +1,30 @@
+{
+  "name": "Sagar Panda | DevOps & Cloud Engineer",
+  "short_name": "Sagar Panda",
+  "description": "Senior DevOps Engineer specializing in AWS, Kubernetes, and Terraform. I share practical guides on CI/CD, observability, and DevSecOps.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#171c1a",
+  "theme_color": "#171c1a",
+  "icons": [
+    {
+      "src": "/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
