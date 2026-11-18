@@ -10,6 +10,7 @@
   <title>Blogs | Sagar Panda</title>
   <meta name="description" content="Technical notes and hands-on guides covering DevOps, AWS, Kubernetes, Terraform, CI/CD, observability, and security." />
   <link rel="canonical" href="https://sagarpanda.com/blogs/" />
+  <meta property="og:url" content="https://sagarpanda.com/blogs/" />
   <meta property="og:title" content="Blogs | Sagar Panda" />
   <meta property="og:image" content="https://sagarpanda.com/images/og-image.png" />
 </svelte:head>

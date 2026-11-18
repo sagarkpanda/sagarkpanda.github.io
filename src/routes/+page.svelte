@@ -15,6 +15,8 @@
   <title>{site.title}</title>
   <meta name="description" content={site.description}/>
   <link rel="canonical" href="https://sagarpanda.com/"/>
+  <meta property="og:url" content="https://sagarpanda.com/"/>
+  <link rel="preload" as="image" href={site.avatar} fetchpriority="high"/>
   <meta property="og:title" content={site.title}/><meta property="og:description" content={site.description}/>
   <meta property="og:image" content="https://sagarpanda.com/images/og-image.png"/><meta name="twitter:card" content="summary_large_image"/>
 </svelte:head>

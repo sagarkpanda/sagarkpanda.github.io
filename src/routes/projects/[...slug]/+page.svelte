@@ -36,6 +36,7 @@
 <svelte:head>
   <title>{title}</title>
   <link rel="canonical" href={'https://sagarpanda.com' + project.route} />
+  <meta property="og:url" content={'https://sagarpanda.com' + project.route} />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://sagarpanda.com/images/og-image.png" />
   <meta name="description" content={description} />
