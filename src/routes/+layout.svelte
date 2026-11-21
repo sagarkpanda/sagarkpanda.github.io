@@ -1,8 +1,8 @@
 <script lang="ts">
   import '../app.css';
   import SiteHeader from '$lib/SiteHeader.svelte';
-  import ScrollToTop from '$lib/ScrollToTop.svelte';
   import Footer from '$lib/Footer.svelte';
+  import ScrollToTop from '$lib/ScrollToTop.svelte';
   import { onMount, type Snippet } from 'svelte';
 
   let { children }: { children: Snippet } = $props();
@@ -53,6 +53,8 @@
   {@render children()}
 </div>
 
-<Footer />
+<div class="shell">
+  <Footer />
+</div>
 
 <ScrollToTop />
